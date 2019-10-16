@@ -1,0 +1,13 @@
+Contains any reusable components for multiple pages:
+
+************************************************************************
+Please keep a list of the components you make and how they can be used, 
+proper documentation would make it easier for people to know how to use
+the components you make, keep the list identical to the file structure
+
+ex:
+VideoPlayer: allows someone to play videos from a link
+    required props: 
+        url: the url to the embeded video
+************************************************************************
+

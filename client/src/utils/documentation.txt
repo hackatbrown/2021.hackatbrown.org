@@ -1,0 +1,12 @@
+Contains any reusable functions that can be used throughout the application:
+
+************************************************************************
+Please keep a short list and discription of what is in this utilities 
+component, keep the list identical to the file structure
+
+ex:
+Areas: contains a series of functions that allows one to compute the 
+areas of multiple shapes including circles, elipses, rectangles,
+triangles, pentagons, etc. 
+************************************************************************
+

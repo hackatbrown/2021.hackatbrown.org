@@ -1,0 +1,11 @@
+Contains the pages of the application, :
+
+************************************************************************
+Please keep a short list and discription of what is in the page, keep 
+the list identical to the file structure
+
+ex:
+Sponsorship: contains information about H@B for potential sponsors
+************************************************************************
+
+Sponsorship: contains information about H@B for potential sponsors
