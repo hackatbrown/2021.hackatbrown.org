@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
+import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage/SponsorshipPage";
 
 const App: React.FC = () => {
     return (
