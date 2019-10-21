@@ -1,5 +1,9 @@
 import React from "react";
 import "./SponsorshipPage.css";
+import SponsorHome from "./SponsorHome";
+import SponsorVideo from "./SponsorVideo"
+import WhySponsor from "./WhySponsor"
+import SponsorTiers from "./SponsorTiers"
 
 /**
  * define a type model for the props you are passing in to the component
@@ -27,11 +31,12 @@ export default class SponsorshipPage extends React.Component<
     }
     render() {
         return (
-            <p>
-                Welcome to the sponsorship page, the message is:{" "}
-                <strong>{this.props.msg}</strong> and the state of the app is{" "}
-                <strong>{this.state.state}</strong>
-            </p>
+          <div className="sponsor">
+            <SponsorHome />
+            <SponsorVideo />
+            <WhySponsor />
+            <SponsorTiers />
+          </div>
         );
     }
 }
