@@ -51,13 +51,13 @@ the best way to learn!
 
     .
     ├── src: where all the code lives
-    ├────── assets: where images and data, are stored
-    ├────────────── data: local data
-    ├────────────────────── PageSpecificName: ex. Sponsorship
-    ├────────────── images: contains all the images we use
-    ├────────────────────── PageSpecificName: ex. Sponsorship
-    ├────── components: where shared components between pages are stored
-    ├────────────── ComponentName: ex. VideoComponent
+        ├─── assets: where images and data, are stored
+            ├─── data: local data
+                ├─── PageSpecificName: ex. Sponsorship
+            ├─── images: contains all the images we use
+                ├─── PageSpecificName: ex. Sponsorship
+        ├─── components: where shared components between pages are stored
+                ├─── ComponentName: ex. VideoComponent
     ├────── pages: where we specify each of the pages we are building
     ├────────────── PageName: ex SponsorshipPage
     ├────────────────────── components: the component for this specific page
