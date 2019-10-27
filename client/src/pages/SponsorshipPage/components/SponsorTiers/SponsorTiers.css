@@ -1,0 +1,174 @@
+.sponsor-tiers {
+  padding-bottom: 170px;
+}
+
+h3 {
+  margin-bottom: 42px;
+  font-weight: bold;
+  font-size: 36px;
+}
+
+
+svg {
+    height: 1.4rem;
+    fill: currentColor;
+}
+
+td.check {
+  z-index: 1;
+  text-align: center;
+}
+
+th {
+  text-align: center;
+  width: 90px;
+  height: 74px;
+}
+
+border-spacing: 20px 0;
+
+/* $table-border-color: #eaeaea; */
+
+th {
+    border-bottom: 1px solid $table-border-color !important;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.table td {
+  border-top: 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Header Titles */
+th:not(:first-child) {
+    width: 9%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    text-align: center;
+}
+
+/* Header Amount */
+span.amount {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+tbody:before {
+    /* Top spacing */
+    content: "-";
+    display: block;
+    line-height: 3.2rem;
+    color: transparent;
+}
+
+tbody + tbody {
+    border-top: 0 !important;
+}
+
+tbody tr {
+    font-weight: 300;
+
+    /* tbody Header */
+    &:first-child td {
+        font-weight: $font-weight-bold;
+        color: $grey;
+
+        border-top: 0;
+    }
+
+    &:last-child td {
+        border-bottom: 1px solid $table-border-color;
+    }
+
+    td,
+    th {
+        border-top-color: $table-border-color !important;
+    }
+}
+
+td:not(:first-child) {
+    text-align: center;
+}
+
+.category {
+  color: #828282;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+    color: #62a6c1;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+    color: #f99a6e;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    color: #49b9c6;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+    color: #93a9ef;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+    color: #fb7169;
+}
+
+th:nth-child(7),
+td:nth-child(7) {
+    color: #fe3474;
+}
+
+/* Checkmarks */
+td.check {
+    position: relative;
+    text-align: center;
+
+    &:before {
+        content: " ";
+        z-index: -1;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 5%;
+        right: 5%;
+
+        background-color: #efeff0;
+    }
+
+    &:last-child {
+        padding-left: 1.5%;
+
+        &:before {
+            right: 0;
+        }
+    }
+}
+
+table td.check:before {
+    content: " ";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5%;
+    right: 5%;
+    background-color: #EFEFF0;
+}
