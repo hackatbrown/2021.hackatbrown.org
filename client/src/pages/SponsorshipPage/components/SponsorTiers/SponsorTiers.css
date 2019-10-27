@@ -140,6 +140,8 @@ td.check {
     position: relative;
     text-align: center;
 
+    font-size: 1.4rem;
+
     &:before {
         content: " ";
         z-index: -1;
