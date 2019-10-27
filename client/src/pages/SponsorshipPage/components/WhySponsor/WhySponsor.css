@@ -31,7 +31,16 @@ p {
 .why-sponsor-left{
   margin-top:100px;
 }
+
+.why-sponsor-right {
+  margin-top:100px;
+}
+
 .past-projects {
   margin-top: 100px;
   margin-bottom:100px;
+}
+
+.lego-graphics {
+  padding-top: 5rem;
 }
