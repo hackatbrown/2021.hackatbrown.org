@@ -118,8 +118,8 @@ export default class WhySponsor extends React.Component<
                                 </a>
 
                                 <p>
-                                    You'll reach Martin Chu, our sponsorship
-                                    lead.
+                                    You'll reach Martin Chu and Prithu Dasgupta, our sponsorship
+                                    leads.
                                 </p>
                             </div>
 
