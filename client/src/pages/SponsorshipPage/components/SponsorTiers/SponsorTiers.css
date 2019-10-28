@@ -10,7 +10,7 @@ h3 {
 
 
 svg {
-    height: 1.4rem;
+    height: 1rem;
     fill: currentColor;
 }
 
@@ -35,18 +35,18 @@ th {
 
 .table thead th {
     vertical-align: bottom;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid #eaecef;
 }
 
 .table td {
   border-top: 0;
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #eaecef;
 }
 
 /* Header Titles */
 th:not(:first-child) {
     width: 10.5%;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
     text-transform: lowercase;
     text-align: center;
@@ -102,7 +102,7 @@ td:not(:first-child) {
 th:nth-child(1),
 td:nth-child(1) {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 16px;
 }
 
 th:nth-child(2),
@@ -140,7 +140,7 @@ td.check {
     position: relative;
     text-align: center;
 
-    font-size: 1.4rem;
+    font-size: 1rem;
 
     &:before {
         content: " ";
