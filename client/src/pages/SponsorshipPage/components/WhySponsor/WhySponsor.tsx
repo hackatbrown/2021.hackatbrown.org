@@ -31,15 +31,15 @@ export default class WhySponsor extends React.Component<
                     <Row>
                         <Col sm={7}>
                             <div className="why-sponsor-left">
-                                <h3>Why Sponsor Us?</h3>
+                                <h3>Why sponsor us?</h3>
 
-                                <p>Meet with talented students:</p>
+                                <p id="heading">Meet with talented students:</p>
 
                                 <ul>
                                     <li>
                                         Connect with amazing computer science,
                                         design, and engineering students from
-                                        Brown, RISD, MIT, and more!
+                                        Brown, RISD, MIT, and more! 
                                     </li>
                                     <li>
                                         Get access to 500+ applicant resumes,
@@ -48,7 +48,7 @@ export default class WhySponsor extends React.Component<
                                     </li>
                                 </ul>
 
-                                <p>Promote diversity and inclusion:</p>
+                                <p id="heading">Promote diversity and inclusion:</p>
 
                                 <ul>
                                     <li>
@@ -63,7 +63,7 @@ export default class WhySponsor extends React.Component<
                                     </li>
                                 </ul>
 
-                                <p>Showcase your company and brand:</p>
+                                <p id="heading">Showcase your company and brand:</p>
 
                                 <ul>
                                     <li>
@@ -83,17 +83,17 @@ export default class WhySponsor extends React.Component<
 
                             <div className="past-projects">
                                 <h3> Past Projects </h3>
-                                <p>Best potential for social impact:</p>
-                                <p>Reach Mental Health</p>
-                                <p>
+                                <p id="heading">Best potential for social impact:</p>
+                                <p id="heading">Reach Mental Health</p>
+                                <p id="text">
                                     A portal to creating customized chat rooms
                                     based on the symptoms or problems that they
                                     encounter in daily life.
                                 </p>
 
-                                <p>Best Hack with Facebook:</p>
-                                <p>Babel Fish</p>
-                                <p>
+                                <p id="heading">Best Hack with Facebook:</p>
+                                <p id="heading">Babel Fish</p>
+                                <p id="text">
                                     A video chat app that translates speech in
                                     real-time for everyone else in the chat,
                                     enabling people who don't speak a common
@@ -101,8 +101,8 @@ export default class WhySponsor extends React.Component<
                                     internet.
                                 </p>
 
-                                <p>Best Hack with Spell:</p>
-                                <p>Autism Inspire</p>
+                                <p id="heading">Best Hack with Spell:</p>
+                                <p id="heading">Autism Inspire</p>
                                 <p>
                                     A system that allows an AI to communicate
                                     with patients for early autism treatment via
