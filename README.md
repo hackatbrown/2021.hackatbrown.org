@@ -13,17 +13,14 @@ We will be using:
     -   To verify that it works, open the terminal and type `git`.
         -   If it works, you should see a help menu printed out for you.
 -   Node ([install](https://nodejs.org/en/))
-    -   Pick the version "Recommended For Most Users".
+    -   Pick the version "Recommended For Most Users"
     -   _What is this?_
         -   Node is a "JavaScript runtime." JavaScript was initially built solely
             for the browser. Node allows JS to be run on a computer (in a script for example).
+        -   We will be using it to install other libraries and modules we'll need
+            for our React app.
     -   To verify that it works, open the terminal and type `node --version`.
         -   If it works, you should see the version number appear
--   Yarn ([install](https://yarnpkg.com/lang/en/))
-    - _What is this?_
-        - Yarn is a package manager for Node.js.
-        - We will be using it to install other libraries and modules we'll need
-            for our React app.
 -   For your text editor, we recommend [VS Code](https://code.visualstudio.com).
     It's not necessary, but it has handy features that will help us during the
     development process.
