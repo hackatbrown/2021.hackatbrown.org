@@ -58,13 +58,13 @@ the best way to learn!
                 ├─── PageSpecificName: ex. Sponsorship
         ├─── components: where shared components between pages are stored
                 ├─── ComponentName: ex. VideoComponent
-    ├────── pages: where we specify each of the pages we are building
-    ├────────────── PageName: ex SponsorshipPage
-    ├────────────────────── components: the component for this specific page
-    ├──────────────────────────────── ComponentName: ex. SponsorHome
-    ├────────────────────── PageName: ex. SponsorshipPage
-    ├────── utils: where we store common functions used
-    ├────────────── UtilName: ex. CalculateArea
+        ├─── pages: where we specify each of the pages we are building
+            ├─── PageName: ex SponsorshipPage
+                ├─── components: the component for this specific page
+                    ├─── ComponentName: ex. SponsorHome
+                ├─── PageName: ex. SponsorshipPage
+        ├─── utils: where we store common functions used
+            ├── UtilName: ex. CalculateArea
     └──
 
 Try to stick to the above layout and reference it
