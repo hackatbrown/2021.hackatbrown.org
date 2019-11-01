@@ -5,6 +5,29 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  margin: 20rem 4rem 0 4rem;
+}
+
+.announcement {
+  font-size: 75px;
+}
+
+.input-box {
+  width: 60%;
+  height: 40px;
+  font-size: 15px;
+}
+
+.input-box:hover {
+  background-color: rgba(30, 30, 30, 0.05);
+}
+
+.input-button {
+  width: 15%;
+  height: 40px;
+  font-size: 15px;
+  margin-left: 1rem;
 }
 
 code {

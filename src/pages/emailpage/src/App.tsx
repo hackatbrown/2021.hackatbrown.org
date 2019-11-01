@@ -33,14 +33,15 @@ render() {
   console.log(this.state);
   return (
     <div>
-      <h1>Hack@Brown 2020 Coming Soon!</h1>
+      <h1 className="announcement">Hack@Brown 2020 Coming Soon!</h1>
       <form onSubmit={e => this.handleSubmit(e)}>
         <input
+          className="input-box"
           type="text"
           placeholder="Enter your email here to get updated!"
           value={this.state.currentTask}
           onChange={e => this.setState({currentTask: e.target.value})} />
-        <button type="submit">Submit</button>
+        <button className="input-button" type="submit">Submit</button>
         </form>
     </div>
   )
