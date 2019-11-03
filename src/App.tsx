@@ -10,12 +10,12 @@ const App: React.FC = () => {
             <Switch>
                 <Route path="/sponsors">
                     <div className="App">
-                        <SponsorshipPage msg="this is how to use props in typescript" />
+                        <SponsorshipPage />
                     </div>
                 </Route>
                 <Route path="/">
                     <div className="App">
-                        <SponsorshipPage msg="this is how to use props in typescript" />
+                        <SponsorshipPage />
                     </div>
                 </Route>
             </Switch>

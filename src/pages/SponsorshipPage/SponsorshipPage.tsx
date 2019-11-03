@@ -8,9 +8,7 @@ import SponsorTiers from "../components/SponsorTiers/SponsorTiers";
 /**
  * define a type model for the props you are passing in to the component
  */
-type SponsorshipProps = {
-    msg: string;
-};
+type SponsorshipProps = {};
 
 /**
  * define a type model for the state of the page
