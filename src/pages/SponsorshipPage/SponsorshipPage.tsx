@@ -1,9 +1,9 @@
 import React from "react";
 import "./SponsorshipPage.css";
-import SponsorHome from "../components/SponsorHome/SponsorHome";
-import SponsorVideo from "../components/SponsorVideo/SponsorVideo";
-import WhySponsor from "../components/WhySponsor/WhySponsor";
-import SponsorTiers from "../components/SponsorTiers/SponsorTiers";
+import SponsorHome from "./components/SponsorHome/SponsorHome";
+import SponsorVideo from "./components/SponsorVideo/SponsorVideo";
+import WhySponsor from "./components/WhySponsor/WhySponsor";
+import SponsorTiers from "./components/SponsorTiers/SponsorTiers";
 
 /**
  * define a type model for the props you are passing in to the component

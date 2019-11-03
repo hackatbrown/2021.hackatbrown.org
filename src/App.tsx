@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage/SponsorshipPage";
+import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 const App: React.FC = () => {
     return (
