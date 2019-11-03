@@ -62,9 +62,10 @@ the best way to learn!
             ├─── PageName: ex SponsorshipPage
                 ├─── components: the component for this specific page
                     ├─── ComponentName: ex. SponsorHome
-                ├─── PageName: ex. SponsorshipPage
+                ├─── PageName.tsx: where the page's content and logic lives
+                ├─── PageName.css: where the page's style lives
         ├─── utils: where we store common functions used
             ├── UtilName: ex. CalculateArea
     └──
 
-Try to stick to the above layout and reference it
+Try to stick to the above layout and reference it.
