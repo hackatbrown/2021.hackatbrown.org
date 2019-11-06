@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import logo from './logo.svg';
+import './EmailPage.css';
 
 interface IState {
   currentTask: string;
   tasks: Array<string>;
 }
 
-export class App extends React.Component<{}, IState> {
+export default class EmailPage extends React.Component<{}, IState> {
 
   constructor(props: {}) {
     super(props);
@@ -49,4 +49,4 @@ render() {
 
 }
 
-export default App;
+
