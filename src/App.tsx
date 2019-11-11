@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import EmailPage from "./pages/EmailPage/EmailPage";
+// import EmailPage from "./pages/EmailPage/EmailPage";
 
 const App: React.FC = () => {
     return (
@@ -17,7 +17,7 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/">
                     <div className="App">
-                        <EmailPage />
+                        <SponsorshipPage />
                     </div>
                 </Route>
             </Switch>
