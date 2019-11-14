@@ -1,36 +1,55 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin: 20rem 4rem 0 4rem;
+/* body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    margin: 20rem 4rem 0 4rem;
+} */
+
+h1 {
+    color: black;
+}
+
+.email-page {
+    background-color: #009490;
 }
 
 .announcement {
-  font-size: 75px;
+    font-size: 75px;
 }
 
 .input-box {
-  width: 60%;
-  height: 40px;
-  font-size: 15px;
+    width: 60%;
+    height: 40px;
+    font-size: 15px;
+    background-color: transparent;
+    border: solid #f9c9d0 2px;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 20px;
 }
-
+::placeholder {
+    color: #f9c9d1;
+}
 .input-box:hover {
-  background-color: rgba(30, 30, 30, 0.05);
+    background-color: rgba(30, 30, 30, 0.05);
 }
 
 .input-button {
-  width: 15%;
-  height: 40px;
-  font-size: 15px;
-  margin-left: 1rem;
+    width: 15%;
+    height: 40px;
+    font-size: 15px;
+    margin-left: 1rem;
+    color: white;
+    background-color: #e5758d;
+    border-radius: 50px;
+    border: 0px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+} */
