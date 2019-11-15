@@ -47,54 +47,52 @@ export default class EmailPage extends React.Component<{}, IState> {
         console.log(this.state);
         return (
             <div className="email-page">
-                <img className="error-img" src={error_img}></img>
-                <h1 style={{ color: "white" }}>Well, this is awkward...</h1>
-                <p style={{ color: "#A6D3D0" }}>
-                    {" "}
-                    Our site is currently under construction to prepare for
-                    Hack@Brown 2020! <br />
-                    Sign up to recieve email alerts below and we'll let you know
-                    when we're back.
-                </p>
-                <form onSubmit={e => this.handleSubmit(e)}>
-                    <input
-                        className="input-box"
-                        type="text"
-                        placeholder="Email"
-                        value={this.state.currentTask}
-                        onChange={e =>
-                            this.setState({ currentTask: e.target.value })
-                        }
-                    />
+                <div>
+                    <img className="error-img" src={error_img}></img>
+                    <h1 className="heading">Well, this is awkward...</h1>
+                    <p style={{ color: "#A6D3D0", margin: "10px 0" }}>
+                        {" "}
+                        Our site is currently under construction to prepare for
+                        Hack@Brown 2020! <br />
+                        Sign up to recieve email alerts below and we'll let you know
+                        when we're back.
+                    </p>
+                    <form onSubmit={e => this.handleSubmit(e)}>
+                        <input
+                            className="input-box"
+                            type="text"
+                            placeholder="Email"
+                            value={this.state.currentTask}
+                            onChange={e =>
+                                this.setState({ currentTask: e.target.value })
+                            }
+                        />
 
-                    <button className="input-button" type="submit">
-                        Submit
-                    </button>
-                </form>
+                        <button className="input-button" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
                 <div className="past-websites-link">
                     <a
-                        style={{ color: "white" }}
                         href={"https://2019.hackatbrown.org/"}
                     >
                         Hack@Brown 2019
                     </a>{" "}
                     |{" "}
                     <a
-                        style={{ color: "white" }}
                         href={"https://2018.hackatbrown.org/"}
                     >
                         Hack@Brown 2018
                     </a>{" "}
                     |{" "}
                     <a
-                        style={{ color: "white" }}
                         href={"https://2017.hackatbrown.org/"}
                     >
                         Hack@Brown 2017
                     </a>{" "}
                     |{" "}
                     <a
-                        style={{ color: "white" }}
                         href={"https://2016.hackatbrown.org/"}
                     >
                         Hack@Brown 2016
