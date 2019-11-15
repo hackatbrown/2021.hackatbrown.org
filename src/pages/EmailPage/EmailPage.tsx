@@ -1,7 +1,7 @@
 import React from "react";
 import "./EmailPage.css";
 import axios from "axios";
-
+import error_img from "../../assets/images/EmailPage/error_img.png";
 interface IState {
     currentTask: string;
     tasks: Array<string>;
