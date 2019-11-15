@@ -30,11 +30,11 @@ export default class EmailPage extends React.Component<{}, IState> {
         console.log(this.state);
         return (
             <div className="email-page">
-                <img id="404-img" src={error_img}></img>
+                <img className="error-img" src={error_img}></img>
                 <h1 style={{ color: "white" }}>Well, this is awkward...</h1>
                 <p style={{ color: "#A6D3D0" }}>
                     {" "}
-                    Our site is cuirrently under construction to prepare for
+                    Our site is currently under construction to prepare for
                     Hack@Brown 2020! <br />
                     Sign up to recieve email alerts below and we'll let you know
                     when we're back.
@@ -43,7 +43,7 @@ export default class EmailPage extends React.Component<{}, IState> {
                     <input
                         className="input-box"
                         type="text"
-                        placeholder="Enter your email here to get updated!"
+                        placeholder="Email"
                         value={this.state.currentTask}
                         onChange={e =>
                             this.setState({ currentTask: e.target.value })
@@ -54,7 +54,7 @@ export default class EmailPage extends React.Component<{}, IState> {
                         Submit
                     </button>
                 </form>
-                <div style={{ color: "white" }}>
+                <div className="past-websites-link">
                     <a
                         style={{ color: "white" }}
                         href={"https://2019.hackatbrown.org/"}
