@@ -1,11 +1,11 @@
 import React from "react";
-//import logo from './logo.svg';
 import "./EmailPage.css";
-import error_img from "../../assets/images/EmailPage/error_img.png";
+import axios from "axios";
 
 interface IState {
     currentTask: string;
     tasks: Array<string>;
+    errorStatus: string;
 }
 
 export default class EmailPage extends React.Component<{}, IState> {
@@ -14,16 +14,33 @@ export default class EmailPage extends React.Component<{}, IState> {
 
         this.state = {
             currentTask: "",
-            tasks: []
+            tasks: [],
+            errorStatus: ""
         };
     }
 
     handleSubmit(e: any) {
         e.preventDefault();
+
         this.setState({
             currentTask: "",
             tasks: [...this.state.tasks, this.state.currentTask]
         });
+
+        // register the email saved in the current state
+        const to_register = {
+            email: this.state.currentTask
+        };
+
+        // send post request
+        axios
+            .post("<api link to push email to database>", { to_register })
+            .then(res => {
+                // set the error status message in state
+                this.setState({
+                    errorStatus: res.data.message
+                });
+            });
     }
 
     render() {
