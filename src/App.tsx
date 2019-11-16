@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import EmailPage from "./pages/EmailPage/EmailPage";
 
@@ -20,6 +21,11 @@ const App: React.FC = () => {
                         <EmailPage />
                     </div>
                 </Route>
+                <Route path="/registration">
+                    <div className="App">
+                        <RegistrationPage />
+                    </div>
+                </Route
             </Switch>
         </Router>
     );
