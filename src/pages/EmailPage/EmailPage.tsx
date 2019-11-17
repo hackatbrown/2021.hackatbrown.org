@@ -32,9 +32,10 @@ export default class EmailPage extends React.Component<{}, IState> {
             email: this.state.currentTask
         };
 
+        const POST_URL = "<api link to push email to database>";
         // send post request
         axios
-            .post("<api link to push email to database>", { to_register })
+            .post(POST_URL, { to_register })
             .then(res => {
                 // set the error status message in state
                 this.setState({
