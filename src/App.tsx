@@ -17,7 +17,8 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/">
                     <div className="App">
-                        <EmailPage />
+                        <SponsorshipPage />
+                        {/* <EmailPage /> */}
                     </div>
                 </Route>
             </Switch>
