@@ -1,0 +1,9 @@
+.basic-info-1 {
+  display: 'flex';
+  flexWrap: 'wrap';
+}
+
+.basic-info-2 {
+  display: 'flex';
+  flexWrap: 'wrap';
+}

@@ -16,7 +16,7 @@ const App: React.FC = () => {
                         <SponsorshipPage />
                     </div>
                 </Route>
-                <Route path="/">
+                <Route path="/emails">
                     <div className="App">
                         <EmailPage />
                     </div>
@@ -25,7 +25,7 @@ const App: React.FC = () => {
                     <div className="App">
                         <RegistrationPage />
                     </div>
-                </Route
+                </Route>
             </Switch>
         </Router>
     );
