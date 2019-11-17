@@ -20,6 +20,11 @@ const App: React.FC = () => {
                         <EmailPage />
                     </div>
                 </Route>
+                {/* <Route path="/landingpage">
+                    <div className="App">
+                        <LandingPage />
+                    </div>
+                </Route> */}
             </Switch>
         </Router>
     );
