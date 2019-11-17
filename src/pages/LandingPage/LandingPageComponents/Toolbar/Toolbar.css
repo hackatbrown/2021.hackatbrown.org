@@ -1,0 +1,17 @@
+.toolbar {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2vh 2rem 2vh 2rem;
+    background-color: #ededed;
+}
+
+#logo-img {
+    max-width: 30px;
+    max-height: 30px;
+    width: auto;
+    height: auto;
+}

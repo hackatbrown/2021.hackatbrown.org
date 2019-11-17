@@ -1,0 +1,15 @@
+.main {
+    height: 100vh;
+    align-content: center;
+}
+
+#main-img {
+    min-height: 80vh;
+    max-width: 90%;
+    height: auto;
+    width: auto;
+}
+
+.main-div {
+    margin: 6rem 2rem 0 2rem;
+}
