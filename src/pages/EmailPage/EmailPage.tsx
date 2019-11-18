@@ -90,10 +90,6 @@ export default class EmailPage extends React.Component<{}, IState> {
                     )}
                 </div>
                 <div className="past-websites-link">
-                    <a href={"https://2020.hackatbrown.org/sponsors"}>
-                        Sponsorship
-                    </a>{" "}
-                    |{" "}
                     <a href={"https://2019.hackatbrown.org/"}>
                         Hack@Brown 2019
                     </a>{" "}
