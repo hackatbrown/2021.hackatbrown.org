@@ -7,6 +7,7 @@ interface IState {
     tasks: Array<string>;
     errorStatus: string;
     hasSubmit: boolean;
+    lastEmail: string;
 }
 
 export default class EmailPage extends React.Component<{}, IState> {
@@ -17,6 +18,7 @@ export default class EmailPage extends React.Component<{}, IState> {
             currentTask: "",
             tasks: [],
             errorStatus: "",
+            lastEmail: "",
             hasSubmit: false
         };
     }
@@ -49,6 +51,7 @@ export default class EmailPage extends React.Component<{}, IState> {
                 // set the error status message in state
                 this.setState({
                     errorStatus: res.data.message,
+                    lastEmail: res.data.email,
                     hasSubmit: true
                 });
             });
@@ -85,10 +88,12 @@ export default class EmailPage extends React.Component<{}, IState> {
                     {this.state.hasSubmit && (
                         <p style={{ color: "#A6D3D0", margin: "10px 0" }}>
                             {this.state.errorStatus ||
-                                "You have successfully added your email!"}
+                                "We have successfully added: " +
+                                    this.state.lastEmail}
                         </p>
                     )}
                 </div>
+
                 <div className="past-websites-link">
                     <a href={"https://2019.hackatbrown.org/"}>
                         Hack@Brown 2019
