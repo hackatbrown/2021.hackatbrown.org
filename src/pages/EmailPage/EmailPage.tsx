@@ -47,7 +47,6 @@ export default class EmailPage extends React.Component<{}, IState> {
             )
             .then(res => {
                 // set the error status message in state
-
                 this.setState({
                     errorStatus: res.data.message,
                     hasSubmit: true
@@ -56,7 +55,6 @@ export default class EmailPage extends React.Component<{}, IState> {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="email-page">
                 <div>
