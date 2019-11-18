@@ -1,5 +1,16 @@
 import React from "react";
 import "./OptionalInfo.css";
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Checkbox from '@material-ui/core/Checkbox';
+import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Button from '@material-ui/core/Button';
 
 /**
@@ -26,6 +37,27 @@ export default class OptionalInfo extends React.Component<
     render() {
         return (
             <div className="optional-info">
+                <p> Resumes are only used to provide information to sponsors and are not used in the lottery process.</p>
+                <TextField
+                      id="link"
+                      placeholder="Additional Link"
+                      margin="normal"
+                      onChange={this.props.handleFormChange}
+                 />
+                 <p>How did you find out about us?</p>
+                 <TextField
+                      id="findout"
+                      margin="normal"
+                      onChange={this.props.handleFormChange}
+                 />
+                 <p>Additional Comments:</p>
+                 <TextField
+                    placeholder="Anything else you'd like us to know?"
+                     multiline={true}
+                     rows={2}
+                     rowsMax={4}
+                    />
+
             </div>
         );
     }
