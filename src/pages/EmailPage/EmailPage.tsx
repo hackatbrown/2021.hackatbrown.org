@@ -6,6 +6,7 @@ interface IState {
     currentTask: string;
     tasks: Array<string>;
     errorStatus: string;
+    hasSubmit: boolean;
 }
 
 export default class EmailPage extends React.Component<{}, IState> {
@@ -15,7 +16,8 @@ export default class EmailPage extends React.Component<{}, IState> {
         this.state = {
             currentTask: "",
             tasks: [],
-            errorStatus: ""
+            errorStatus: "",
+            hasSubmit: false
         };
     }
 
@@ -24,23 +26,31 @@ export default class EmailPage extends React.Component<{}, IState> {
 
         this.setState({
             currentTask: "",
-            tasks: [...this.state.tasks, this.state.currentTask]
+            tasks: [this.state.currentTask]
         });
 
         // Prepare form data
-        var email_signup_data =  new FormData();
+        var email_signup_data = new FormData();
         email_signup_data.append("email", this.state.currentTask);
 
         // Need headers
-        const config = { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
+        const config = {
+            headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
 
         // send post request
         axios
-            .post("https://api2020-hackatbrown.herokuapp.com/email_signup/register", email_signup_data, config)
+            .post(
+                "https://api2020-hackatbrown.herokuapp.com/email_signup/register",
+                email_signup_data,
+                config
+            )
             .then(res => {
                 // set the error status message in state
+
                 this.setState({
-                    errorStatus: res.data.message
+                    errorStatus: res.data.message,
+                    hasSubmit: true
                 });
             });
     }
@@ -56,8 +66,8 @@ export default class EmailPage extends React.Component<{}, IState> {
                         {" "}
                         Our site is currently under construction to prepare for
                         Hack@Brown 2020! <br />
-                        Sign up to recieve email alerts below and we'll let you know
-                        when we're back.
+                        Sign up to recieve email alerts below and we'll let you
+                        know when we're back.
                     </p>
                     <form onSubmit={e => this.handleSubmit(e)}>
                         <input
@@ -74,29 +84,31 @@ export default class EmailPage extends React.Component<{}, IState> {
                             Submit
                         </button>
                     </form>
+                    {this.state.hasSubmit && (
+                        <p style={{ color: "#A6D3D0", margin: "10px 0" }}>
+                            {this.state.errorStatus ||
+                                "You have successfully added your email!"}
+                        </p>
+                    )}
                 </div>
                 <div className="past-websites-link">
-                    <a
-                        href={"https://2019.hackatbrown.org/"}
-                    >
+                    <a href={"https://2020.hackatbrown.org/sponsors"}>
+                        Sponsorship
+                    </a>{" "}
+                    |{" "}
+                    <a href={"https://2019.hackatbrown.org/"}>
                         Hack@Brown 2019
                     </a>{" "}
                     |{" "}
-                    <a
-                        href={"https://2018.hackatbrown.org/"}
-                    >
+                    <a href={"https://2018.hackatbrown.org/"}>
                         Hack@Brown 2018
                     </a>{" "}
                     |{" "}
-                    <a
-                        href={"https://2017.hackatbrown.org/"}
-                    >
+                    <a href={"https://2017.hackatbrown.org/"}>
                         Hack@Brown 2017
                     </a>{" "}
                     |{" "}
-                    <a
-                        href={"https://2016.hackatbrown.org/"}
-                    >
+                    <a href={"https://2016.hackatbrown.org/"}>
                         Hack@Brown 2016
                     </a>
                 </div>
