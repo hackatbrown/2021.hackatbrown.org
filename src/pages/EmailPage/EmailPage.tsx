@@ -27,14 +27,16 @@ export default class EmailPage extends React.Component<{}, IState> {
             tasks: [...this.state.tasks, this.state.currentTask]
         });
 
-        // register the email saved in the current state
-        const to_register = {
-            email: this.state.currentTask
-        };
+        // Prepare form data
+        var email_signup_data =  new FormData();
+        email_signup_data.append("email", this.state.currentTask);
+
+        // Need headers
+        const config = { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }
 
         // send post request
         axios
-            .post("<api link to push email to database>", { to_register })
+            .post("https://api2020-hackatbrown.herokuapp.com/email_signup/register", email_signup_data, config)
             .then(res => {
                 // set the error status message in state
                 this.setState({
