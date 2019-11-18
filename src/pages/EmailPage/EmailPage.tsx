@@ -87,6 +87,7 @@ export default class EmailPage extends React.Component<{}, IState> {
                     </form>
                     {this.state.hasSubmit && (
                         <p style={{ color: "#A6D3D0", margin: "10px 0" }}>
+                            {/* if there is an error message, print it, otherwise, it is a success */}
                             {this.state.errorStatus ||
                                 "We have successfully added: " +
                                     this.state.lastEmail}
