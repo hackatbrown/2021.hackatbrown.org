@@ -51,51 +51,75 @@ export default class MoreInfo extends React.Component<
                     <FormControl className="raceInfo">
                       <FormLabel>Race?</FormLabel>
                       <FormGroup>
-                        <FormControlLabel
-                          control={<Checkbox id="race" value="nonhispanicwhite" />}
-                          label="Non Hispanic White"
-                          onChange={this.props.handleFormChange}
-                        />
-                        <FormControlLabel
-                          control={<Checkbox id="race" value="latino/hispanic" />}
-                          label="Latino/Hispanic"
-                          onChange={this.props.handleFormChange}
-                        />
-                        <FormControlLabel
-                          control={<Checkbox id="race" value="eastasian" />}
-                          label="East Asian"
-                          onChange={this.props.handleFormChange}
-                        />
-                        <FormControlLabel
-                          control={<Checkbox id="race" value="black" />}
+                          <Grid container spacing={3}>
+                              <Grid item >
+                                <FormControlLabel
+                                control={<Checkbox id="race" value="yes" />}
+                                label="Non Hispanic White"
+                                onChange={this.props.handleFormChange}
+                                />
+                            </Grid>
+                            <Grid item >
+                                 <FormControlLabel
+                                  control={<Checkbox id="race" value="yes" />}
+                                 label="Latino/Hispanic"
+                                 onChange={this.props.handleFormChange}
+                                  />
+                                </Grid>
+                                <Grid item >
+                                    <FormControlLabel
+                                 control={<Checkbox id="race" value="yes" />}
+                                 label="East Asian"
+                                 onChange={this.props.handleFormChange}
+                                />
+                                </Grid>
+                        </Grid>
+                        <Grid container spacing={3}>
+                       <Grid item>
+                           <FormControlLabel
+                          control={<Checkbox id="race" value="yes" />}
                           label="Black"
                           onChange={this.props.handleFormChange}
-                        />
+                            />
+                        </Grid> 
+                        <Grid item>
                         <FormControlLabel
-                          control={<Checkbox id="race" value="pacificislander" />}
+                          control={<Checkbox id="race" value="yes" />}
                           label="Pacific Islander"
                           onChange={this.props.handleFormChange}
-                        />
+                         />
+                        </Grid>
+                        <Grid item>
                         <FormControlLabel
-                          control={<Checkbox id="race" value="southasian" />}
+                          control={<Checkbox id="race" value="yes" />}
                           label="South Asian"
                           onChange={this.props.handleFormChange}
-                        />
-                        <FormControlLabel
-                          control={<Checkbox id="race" value="middleeastern" />}
+                         />
+                        </Grid>
+                        </Grid>
+                        <Grid container spacing={3}>
+                        <Grid item>
+                            <FormControlLabel
+                          control={<Checkbox id="race" value="yes" />}
                           label="Middle Eastern"
                           onChange={this.props.handleFormChange}
                         />
+                        </Grid>
+                        <Grid item>
                         <FormControlLabel
-                          control={<Checkbox id="race" value="nativeamerican" />}
+                          control={<Checkbox id="race" value="yes" />}
                           label="Native American"
                           onChange={this.props.handleFormChange}
-                        />
+                            />
+                         </Grid>
+                         <Grid item>
                          <FormControlLabel
-                          control={<Checkbox id="race" value="other" />}
+                          control={<Checkbox id="race" value="yes" />}
                           label="Other"
                           onChange={this.props.handleFormChange}
                         />
+                        </Grid>
+                        </Grid>
                       </FormGroup>
                     </FormControl>
                   </div>

@@ -13,6 +13,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from '@material-ui/core/Button';
 
+
 /**
  * define a type model for the props you are passing in to the component
  */
@@ -33,15 +34,24 @@ export default class OptionalInfo extends React.Component<
 > {
     constructor(props: OptionalInfoProps) {
         super(props);
+        
     }
     render() {
         return (
             <div className="optional-info">
                 <p> Resumes are only used to provide information to sponsors and are not used in the lottery process.</p>
+                <Button
+                  variant="contained"
+                  color="default"
+                  margin-bottom ="3%"
+                  onChange={this.props.handleFormChange}
+                 >
+                    Upload
+                  </Button>
                 <TextField
                       id="link"
                       placeholder="Additional Link"
-                      margin="normal"
+                      margin-top="normal%"
                       onChange={this.props.handleFormChange}
                  />
                  <p>How did you find out about us?</p>

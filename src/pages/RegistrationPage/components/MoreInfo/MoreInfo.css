@@ -1,6 +1,13 @@
 .Race{
     display:flex;
+    
 }
 .Gender{
     margin-bottom: 5%;
+}
+.Github{
+    margin-top: 2%;
+}
+.Linkedin{
+    margin-top: 2%;
 }
