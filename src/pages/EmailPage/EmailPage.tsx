@@ -82,10 +82,10 @@ export default class EmailPage extends React.Component<{}, IState> {
     render() {
         return (
             <div className="email-page">
-                <div>
+                <div style={{padding: '1em 0'}}>
                     <img className="error-img" src={error_img}></img>
                     <h1 className="heading">Well, this is awkward...</h1>
-                    <p style={{ color: "#A6D3D0", margin: "10px 0" }}>
+                    <p style={{ color: "#A6D3D0", margin: "10px" }}>
                         {" "}
                         Our site is currently under construction to prepare for
                         Hack@Brown 2020! <br />
