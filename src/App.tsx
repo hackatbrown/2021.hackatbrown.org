@@ -4,6 +4,7 @@ import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import EmailPage from "./pages/EmailPage/EmailPage";
+import Toolbar from './components/Toolbar/Toolbar';
 
 const App: React.FC = () => {
     return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/registration">
                     <div className="App">
+                        <Toolbar backgroundColor={"#4F5C6B"}/>
                         <RegistrationPage />
                     </div>
                 </Route>

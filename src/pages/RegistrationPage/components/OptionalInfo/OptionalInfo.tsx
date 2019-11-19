@@ -18,15 +18,28 @@ import Button from '@material-ui/core/Button';
  * define a type model for the props you are passing in to the component
  */
  type OptionalInfoProps = {
+   handleFileUpload: (arg0: any) => void
    handleFormChange: (arg0: any) => void
    incrementStage: () => void
    decrementStage: () => void
+   fileName: string
  };
 
 /**
  * define a type model for the state of the page
  */
-type OptionalInfoState = {};
+type OptionalInfoState = {
+  fileName: string
+};
+
+const buttonStyle:React.CSSProperties = {
+  textTransform: 'none',
+  color: 'white',
+  background: 'transparent',
+  borderRadius: '16.5px',
+  border: '2px solid #FFFFFF',
+  height: '40px',
+};
 
 export default class OptionalInfo extends React.Component<
     OptionalInfoProps,
@@ -34,39 +47,79 @@ export default class OptionalInfo extends React.Component<
 > {
     constructor(props: OptionalInfoProps) {
         super(props);
-        
+        this.state = {
+          fileName: ""
+        };
     }
+
+    componentWillReceiveProps = (nextProps:any) => {
+      if (nextProps.fileName !== this.state.fileName) {
+        this.setState({
+          fileName: nextProps.fileName
+        });
+      }
+    }
+
     render() {
         return (
             <div className="optional-info">
-                <p> Resumes are only used to provide information to sponsors and are not used in the lottery process.</p>
-                <Button
-                  variant="contained"
-                  color="default"
-                  margin-bottom ="3%"
-                  onChange={this.props.handleFormChange}
-                 >
-                    Upload
-                  </Button>
-                <TextField
-                      id="link"
-                      placeholder="Additional Link"
-                      margin-top="normal%"
+                <div className="optional-info-1">
+                  <p style={{marginBottom: "20px"}}> Resumes are only used to provide information to sponsors and are not used in the lottery process.</p>
+                  <Grid container spacing={2}>
+                    <Grid item>
+                      <Button style={buttonStyle} variant="contained" component="label">
+                        Upload File
+                        <input
+                          type="file"
+                          style={{ display: "none" }}
+                          onChange={this.props.handleFileUpload}/>
+                      </Button>
+                    </Grid>
+                    <Grid item>
+                      <p>{this.state.fileName}</p>
+                    </Grid>
+                  </Grid>
+                </div>
+
+                <div className="optional-info-2">
+                  <TextField
+                        id="link"
+                        placeholder="Additional Link"
+                        margin="normal"
+                        onChange={this.props.handleFormChange}
+                        InputProps={{
+                            style: {
+                                color: "white"
+                            }
+                        }}
+                   />
+                   <p style={{marginTop: "20px"}}>How did you find out about us?</p>
+                   <TextField
+                        id="findout"
+                        margin="normal"
+                        onChange={this.props.handleFormChange}
+                        InputProps={{
+                            style: {
+                                color: "white"
+                            }
+                        }}
+                   />
+                   <p style={{marginTop: "20px", marginBottom: "10px"}}>Additional Comments:</p>
+                   <TextField
+                      id="comments"
+                      variant="outlined"
+                      placeholder="Anything else you'd like us to know?"
+                      multiline={true}
+                      rows={2}
+                      rowsMax={4}
                       onChange={this.props.handleFormChange}
-                 />
-                 <p>How did you find out about us?</p>
-                 <TextField
-                      id="findout"
-                      margin="normal"
-                      onChange={this.props.handleFormChange}
-                 />
-                 <p>Additional Comments:</p>
-                 <TextField
-                    placeholder="Anything else you'd like us to know?"
-                     multiline={true}
-                     rows={2}
-                     rowsMax={4}
-                    />
+                      InputProps={{
+                          style: {
+                              color: "white"
+                          }
+                      }}
+                  />
+                </div>
 
             </div>
         );

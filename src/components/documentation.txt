@@ -10,3 +10,5 @@ VideoPlayer: allows someone to play videos from a link
     required props:
         url: the url to the embeded video
 ************************************************************************
+
+Toolbar: contains the navigation bar at the top of every page

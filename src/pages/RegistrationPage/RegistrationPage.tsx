@@ -32,6 +32,20 @@ type RegistrationState = {
     website: string
     github: string
     linkedin: string
+    resume: any
+    link: string
+    findout: string
+    comments: string
+    fileName: string
+};
+
+const buttonStyle:React.CSSProperties = {
+  textTransform: 'none',
+  color: 'white',
+  background: 'transparent',
+  borderRadius: '16.5px',
+  border: '2px solid #FFFFFF',
+  height: '40px',
 };
 
 export default class RegistrationPage extends React.Component<
@@ -55,9 +69,15 @@ export default class RegistrationPage extends React.Component<
             race: "",
             website: "",
             github: "",
-            linkedin: ""
+            linkedin: "",
+            resume: null,
+            link: "",
+            findout: "",
+            comments: "",
+            fileName: ""
         };
         this.handleFormChange = this.handleFormChange.bind(this);
+        this.handleFileUpload = this.handleFileUpload.bind(this);
     }
 
     /* Functions to change the stage of the form */
@@ -88,7 +108,14 @@ export default class RegistrationPage extends React.Component<
       this.setState({
         [name]: value
       } as any);
+    }
 
+    /* Function to handle file uploads */
+    handleFileUpload = (event: any) => {
+      this.setState({
+        resume: event.target.files[0],
+        fileName: event.target.files[0].name
+      })
     }
 
     /* Function that will send data to backend upon form submission */
@@ -108,11 +135,15 @@ export default class RegistrationPage extends React.Component<
         race: this.state.race,
         website: this.state.website,
         github: this.state.github,
-        linkedin: this.state.linkedin
+        linkedin: this.state.linkedin,
+        resume: this.state.resume,
+        link: this.state.link,
+        findout: this.state.findout,
+        comment: this.state.comments
       };
 
       /* display contents of registration info for error checking */
-      alert(`Form Details: \n
+      console.log(`Form Details: \n
           First Name: ${registrationInfo.firstName} \n
           Last Name: ${registrationInfo.lastName} \n
           School: ${registrationInfo.school} \n
@@ -121,7 +152,16 @@ export default class RegistrationPage extends React.Component<
           Over 18?: ${registrationInfo.over18} \n
           First Hackathon?: ${registrationInfo.firstHack} \n
           Travel Reimbursements?: ${registrationInfo.travelReimburse} \n
-          Traveling From: ${registrationInfo.travelOrigin} \n`
+          Traveling From: ${registrationInfo.travelOrigin} \n
+          Gender: ${registrationInfo.gender} \n
+          Race: ${registrationInfo.race} \n
+          Website: ${registrationInfo.website} \n
+          Github: ${registrationInfo.github} \n
+          LinkedIn: ${registrationInfo.linkedin} \n
+          Resume: ${registrationInfo.resume} \n
+          Link: ${registrationInfo.link} \n
+          Findout: ${registrationInfo.findout} \n
+          Comment: ${registrationInfo.comment}`
       );
 
       // send post request
@@ -134,39 +174,53 @@ export default class RegistrationPage extends React.Component<
     /* Form Title list */
     nameList = ["Basic Information", "More Information", "Optional Information"];
 
-    /* Components List */
-    basicComp = (<BasicInfo handleFormChange={this.handleFormChange} incrementStage={this.incrementStage} decrementStage={this.decrementStage}/>);
-    moreComp = (<MoreInfo handleFormChange={this.handleFormChange} incrementStage={this.incrementStage} decrementStage={this.decrementStage}/>);
-    optionalComp = (<OptionalInfo handleFormChange={this.handleFormChange}incrementStage={this.incrementStage} decrementStage={this.decrementStage}/>);
-    compList = [this.basicComp, this.moreComp, this.optionalComp];
-
     /* Button List */
     basicButtons = (
       <div className="form-buttons">
-        <Button className="next" onClick={this.incrementStage}>Next</Button>
+        <Button className="next" style={buttonStyle} onClick={this.incrementStage}>Next</Button>
       </div>);
     moreButtons = (
       <div className="form-buttons">
-        <Button className="back" onClick={this.decrementStage}>Back</Button>
-        <Button className="next" onClick={this.incrementStage}>Next</Button>
+        <Button className="back" style={buttonStyle} onClick={this.decrementStage}>Back</Button>
+        <Button className="next" style={buttonStyle} onClick={this.incrementStage}>Next</Button>
       </div>
     );
     submitButtons = (
       <div className="form-buttons">
-        <Button className="back" onClick={this.decrementStage}>Back</Button>
-        <Button className="submit" onClick={this.submitForm}>Submit Application</Button>
+        <Button className="back" style={buttonStyle} onClick={this.decrementStage}>Back</Button>
+        <Button className="submit" style={buttonStyle} onClick={this.submitForm}>Submit Application</Button>
       </div>
     );
     buttonList = [this.basicButtons, this.moreButtons, this.submitButtons];
 
     render() {
+        /* Components List */
+        let basicComp = (<BasicInfo
+          handleFormChange={this.handleFormChange}
+          incrementStage={this.incrementStage}
+          decrementStage={this.decrementStage}/>
+        );
+        let moreComp = (<MoreInfo
+          handleFormChange={this.handleFormChange}
+          incrementStage={this.incrementStage}
+          decrementStage={this.decrementStage}/>
+        );
+        let optionalComp = (<OptionalInfo
+          handleFileUpload={this.handleFileUpload}
+          handleFormChange={this.handleFormChange}
+          incrementStage={this.incrementStage}
+          decrementStage={this.decrementStage}
+          fileName={this.state.fileName}/>
+        );
+        let compList = [basicComp, moreComp, optionalComp];
+
         return (
             <div className="registration">
                 <div className="form-name">
                   <h1>{this.nameList[this.state.formStage]}</h1>
                 </div>
                 <div className="form-content">
-                  {this.compList[this.state.formStage]}
+                  {compList[this.state.formStage]}
                 </div>
                 {this.buttonList[this.state.formStage]}
             </div>

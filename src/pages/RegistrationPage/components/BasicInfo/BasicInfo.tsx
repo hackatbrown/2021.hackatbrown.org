@@ -11,6 +11,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 /**
  * define a type model for the props you are passing in to the component
@@ -26,6 +27,11 @@ type BasicInfoProps = {
  */
 type BasicInfoState = {};
 
+const textLeft = {
+  marginRight: '50px',
+  color: 'white'
+};
+
 export default class BasicInfo extends React.Component<
     BasicInfoProps,
     BasicInfoState
@@ -40,31 +46,53 @@ export default class BasicInfo extends React.Component<
                 <form>
                   <div className="basic-info-1">
                     <TextField
+                      style={textLeft}
                       id="firstName"
                       placeholder="First Name"
                       margin="normal"
                       onChange={this.props.handleFormChange}
+                      InputProps={{
+                          style: {
+                              color: "white"
+                          }
+                      }}
                     />
                     <TextField
                       id="lastName"
                       placeholder="Last Name"
                       margin="normal"
                       onChange={this.props.handleFormChange}
+                      InputProps={{
+                          style: {
+                              color: "white"
+                          }
+                      }}
                     />
                   </div>
 
                   <div className="basic-info-2">
                     <TextField
+                      style={textLeft}
                       id="school"
                       placeholder="School"
                       margin="normal"
                       onChange={this.props.handleFormChange}
+                      InputProps={{
+                          style: {
+                              color: "white"
+                          }
+                      }}
                     />
                     <TextField
                       id="majors"
                       placeholder="Major(s)"
                       margin="normal"
                       onChange={this.props.handleFormChange}
+                      InputProps={{
+                          style: {
+                              color: "white"
+                          }
+                      }}
                     />
                   </div>
 
@@ -75,71 +103,111 @@ export default class BasicInfo extends React.Component<
                       placeholder="Month/Year"
                       margin="normal"
                       InputLabelProps={{
+                        style: {
+                          color: "white"
+                        },
                         shrink: true,
                       }}
                       onChange={this.props.handleFormChange}
+                      InputProps={{
+                          style: {
+                              color: "white"
+                          }
+                      }}
                     />
                   </div>
 
                   <div className="basic-info-4">
                     <FormControl className="over18">
-                      <FormLabel>Will you be over 18 on January 26th?</FormLabel>
+                      <FormLabel style={{color: "white"}}>Will you be over 18 on January 26th?</FormLabel>
                       <FormGroup>
-                        <FormControlLabel
-                          control={<Checkbox id="over18" value="yes" />}
-                          label="Yes"
-                          onChange={this.props.handleFormChange}
-                        />
-                        <FormControlLabel
-                          control={<Checkbox id="over18" value="no" />}
-                          label="No"
-                          onChange={this.props.handleFormChange}
-                        />
+                      <Grid container spacing={2}>
+                          <Grid item >
+                            <FormControlLabel
+                              style={{color: "white"}}
+                              control={<Checkbox style={{color: "white"}} id="over18" value="yes" />}
+                              label="Yes"
+                              onChange={this.props.handleFormChange}
+                            />
+                          </Grid>
+                          <Grid item>
+                            <FormControlLabel
+                              style={{color: "white"}}
+                              control={<Checkbox style={{color: "white"}} id="over18" value="no" />}
+                              label="No"
+                              onChange={this.props.handleFormChange}
+                            />
+                          </Grid>
+                      </Grid>
                       </FormGroup>
                     </FormControl>
                   </div>
 
                   <div className="basic-info-5">
                     <FormControl className="firstHack">
-                      <FormLabel>Is this your first hackathon?</FormLabel>
+                      <FormLabel style={{color: "white"}}>Is this your first hackathon?</FormLabel>
                       <FormGroup>
-                        <FormControlLabel
-                          control={<Checkbox id="firstHack" value="yes" />}
-                          label="Yes"
-                          onChange={this.props.handleFormChange}
-                        />
-                        <FormControlLabel
-                          control={<Checkbox id="firstHack" value="no" />}
-                          label="No"
-                          onChange={this.props.handleFormChange}
-                        />
+                        <Grid container spacing={2}>
+                            <Grid item >
+                              <FormControlLabel
+                                style={{color: "white"}}
+                                control={<Checkbox style={{color: "white"}} id="firstHack" value="yes" />}
+                                label="Yes"
+                                onChange={this.props.handleFormChange}
+                              />
+                            </Grid>
+                            <Grid item>
+                              <FormControlLabel
+                                style={{color: "white"}}
+                                control={<Checkbox style={{color: "white"}} id="firstHack" value="no" />}
+                                label="No"
+                                onChange={this.props.handleFormChange}
+                              />
+                            </Grid>
+                        </Grid>
                       </FormGroup>
                     </FormControl>
                   </div>
 
                   <div className="basic-info-6">
                     <FormControl className="travelReimburse">
-                      <FormLabel>Do you need travel reimbursements?</FormLabel>
-                      <FormLabel>*Reimbursements only available for travel within the U.S.</FormLabel>
+                      <FormLabel style={{color: "white"}}>Do you need travel reimbursements?</FormLabel>
+                      <FormLabel style={{color: "white"}}>*Reimbursements only available for travel within the U.S.</FormLabel>
                       <FormGroup>
-                        <FormControlLabel
-                          control={<Checkbox id="travelReimburse" value="yes" />}
-                          label="Yes"
-                          onChange={this.props.handleFormChange}
-                        />
-                        <FormControlLabel
-                          control={<Checkbox id="travelReimburse" value="no" />}
-                          label="No"
-                          onChange={this.props.handleFormChange}
-                        />
+                        <Grid container spacing={3}>
+                            <Grid item >
+                              <FormControlLabel
+                                style={{color: "white"}}
+                                control={<Checkbox style={{color: "white"}} id="travelReimburse" value="yes" />}
+                                label="Yes"
+                                onChange={this.props.handleFormChange}
+                              />
+                            </Grid>
+                            <Grid item>
+                              <FormControlLabel
+                                style={{color: "white"}}
+                                control={<Checkbox style={{color: "white"}} id="travelReimburse" value="no" />}
+                                label="No"
+                                onChange={this.props.handleFormChange}
+                              />
+                            </Grid>
+                            <Grid item>
+                              <TextField
+                                style={{color: "white"}}
+                                id="travelOrigin"
+                                placeholder="Traveling from? (City, State)"
+                                margin="normal"
+                                onChange={this.props.handleFormChange}
+                                InputProps={{
+                                    style: {
+                                        color: "white"
+                                    }
+                                }}
+                              />
+                            </Grid>
+                        </Grid>
                       </FormGroup>
                     </FormControl>
-                    <TextField
-                      id="travelOrigin"
-                      placeholder="Traveling from? (City, State)"
-                      margin="normal"
-                      onChange={this.props.handleFormChange}
-                    />
                   </div>
                 </form>
             </div>
