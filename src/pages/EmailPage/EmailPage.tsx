@@ -33,10 +33,8 @@ export default class EmailPage extends React.Component<{}, IState> {
         if (splitEmail.length !== 2) {
             return "ERROR";
         }
-        console.log(splitEmail);
         let formatted = splitEmail[0];
         formatted = formatted.toLowerCase();
-        console.log(formatted + "@" + splitEmail[1]);
         return formatted + "@" + splitEmail[1];
     }
 
