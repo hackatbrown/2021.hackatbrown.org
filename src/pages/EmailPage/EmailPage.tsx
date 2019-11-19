@@ -22,6 +22,23 @@ export default class EmailPage extends React.Component<{}, IState> {
             hasSubmit: false
         };
     }
+    /**
+     * split the email around the @ symbol and put everything before it to lowercase
+     *
+     * @param email string of email
+     */
+    fixEmail(email: string) {
+        let splitEmail = email.split("@");
+
+        if (splitEmail.length !== 2) {
+            return "ERROR";
+        }
+        console.log(splitEmail);
+        let formatted = splitEmail[0];
+        formatted = formatted.toLowerCase();
+        console.log(formatted + "@" + splitEmail[1]);
+        return formatted + "@" + splitEmail[1];
+    }
 
     handleSubmit(e: any) {
         e.preventDefault();
@@ -33,28 +50,35 @@ export default class EmailPage extends React.Component<{}, IState> {
 
         // Prepare form data
         var email_signup_data = new FormData();
-        email_signup_data.append("email", this.state.currentTask);
-
-        // Need headers
-        const config = {
-            headers: { "Content-Type": "application/x-www-form-urlencoded" }
-        };
-
-        // send post request
-        axios
-            .post(
-                "https://api2020-hackatbrown.herokuapp.com/email_signup/register",
-                email_signup_data,
-                config
-            )
-            .then(res => {
-                // set the error status message in state
-                this.setState({
-                    errorStatus: res.data.message,
-                    lastEmail: res.data.email,
-                    hasSubmit: true
-                });
+        const email = this.fixEmail(this.state.currentTask);
+        if (email === "ERROR") {
+            this.setState({
+                errorStatus: "Invalid email address: " + this.state.currentTask,
+                lastEmail: this.state.currentTask,
+                hasSubmit: true
             });
+        } else {
+            email_signup_data.append("email", email);
+            // Need headers
+            const config = {
+                headers: { "Content-Type": "application/x-www-form-urlencoded" }
+            };
+            // send post request
+            axios
+                .post(
+                    "https://api2020-hackatbrown.herokuapp.com/email_signup/register",
+                    email_signup_data,
+                    config
+                )
+                .then(res => {
+                    // set the error status message in state
+                    this.setState({
+                        errorStatus: res.data.message,
+                        lastEmail: res.data.email,
+                        hasSubmit: true
+                    });
+                });
+        }
     }
 
     render() {
