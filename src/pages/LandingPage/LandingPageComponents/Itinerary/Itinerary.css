@@ -1,29 +1,32 @@
 .itinerary {
-    height: 80vh;
-    align-content: center;
-    margin: 3rem 10% 2rem 10%;
+    min-height: 100vh;
+    margin: 0 10% 2rem 10%;
     display: flex;
-    align-content: flex-end;
-}
-
-.itinerary-filler {
-    background-color: #f7f7f7;
-    margin: 2rem 1rem 0 0;
+    justify-content: flex-end;
+    background-color: wheat;
 }
 
 .itinerary-div {
-    padding: 1rem;
+    background-color: teal;
+    margin: 20vh 10% 5vh 10%;
     text-align: left;
-    max-width: 400px;
-    min-width: 40%;
+    width: 20rem;
 }
 
 .itinerary-header {
-    padding: 0rem 3rem 0 3rem;
+    padding: 3rem;
+}
+
+.itinerary-date {
+    margin: 3rem 0 0 0;
+    font-size: 1.5rem;
 }
 
 .itinerary-list {
-    padding: 1rem 3rem 3rem 3rem;
     max-height: 400px;
     overflow: scroll;
+}
+
+.itinerary-time {
+    padding: 0 5rem 0 1rem;
 }

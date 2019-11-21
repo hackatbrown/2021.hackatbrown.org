@@ -24,105 +24,112 @@ export default class Itinerary extends React.Component<
     render() {
         return (
             <div className="itinerary">
-                <Container>
-                    <Row>
-                        <div className="itinerary-filler"><Col sm={6}></Col></div>
-                        <div className="itinerary-div">
-                            <Col>
+                <table className="itinerary-div">
+                    <tr className="itinerary-header"><h1>Itinerary</h1></tr>
+                    
+                    <div className="itinerary-list">
+                    <tr className="itinerary-date">Saturday, January 25th</tr>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                            <Row><div className="itinerary-header"><h1>Itinerary</h1></div></Row>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                        <div className="itinerary-list">
-                        <Row><div className="itinerary-date"><h4>Saturday, January 26th</h4></div></Row>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
 
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
-
-                            <br></br>
-                            <Row><div className="itinerary-date"><h4>Sunday, January 27th</h4></div></Row>
-
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col><div className="itinerary-time"><p>9-9:30</p></div></Col>
-                                <Col>
-                                    <div className="itinerary-label"><p>Registration</p></div>
-                                    <div className="itinerary-location"><p>Location</p></div>
-                                </Col>
-                            </Row>
-
-                            </div>
-                            </Col>
-                        </div>
-                    </Row>
-                </Container>
+                    </div>
+                </table>
             </div>
         );
     }

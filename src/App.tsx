@@ -2,7 +2,8 @@ import React from "react";
 import "./App.css";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import EmailPage from "./pages/EmailPage/EmailPage";
+// import EmailPage from "./pages/emailpage/EmailPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
 
 const App: React.FC = () => {
     return (
@@ -17,7 +18,7 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/">
                     <div className="App">
-                        <EmailPage />
+                        <LandingPage />
                     </div>
                 </Route>
                 {/* <Route path="/landingpage">

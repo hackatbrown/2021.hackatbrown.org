@@ -1,22 +1,29 @@
 .intro {
-    height: 80vh;
+    min-height: 100vh;
     align-content: center;
-    margin: 5rem 10% 2rem 10%;
+    margin: 2rem 10% 2rem 10%;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background-color: aqua;
 }
 
-#intro-img {
-    margin: 2rem;
-    min-height: 50vh;
-    max-width: 80%;
-    height: auto;
-    width: auto;
+#garden-img {
+    background: pink;
+    max-width: 60%;
 }
 
 .intro-blurb {
+    margin: 0 10% 0 2rem;
+    max-width: 20rem;
+    min-width: 30vw;
     text-align: left;
-    margin: 2rem 1rem 0 0;
 }
 
-.intro-img-div {
-    text-align: right;
+.intro-blurb-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }

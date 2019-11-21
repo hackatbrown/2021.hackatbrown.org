@@ -24,9 +24,6 @@ export default class FAQ extends React.Component<
     render() {
         return (
             <div className="faq">
-                <Container>
-                    <Row>
-                        <Col>
                         <div className="faq-text">
                             <div className="faq-header">
                                 <h1>F.A.Q</h1>
@@ -59,15 +56,10 @@ export default class FAQ extends React.Component<
                                 </p>
                             </div>
                         </div>
-                        </Col>
-
-                        <Col>
+                        
                         <div className="faq-img-div">
                             <img id="faq-img" src={faqImg}></img>
                         </div>
-                        </Col>
-                    </Row>
-                </Container>
             </div>
         );
     }

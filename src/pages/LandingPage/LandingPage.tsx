@@ -5,6 +5,7 @@ import Intro from "./LandingPageComponents/Intro/Intro";
 import Itinerary from "./LandingPageComponents/Itinerary/Itinerary";
 import Main from "./LandingPageComponents/Main/Main";
 import Sponsors from "./LandingPageComponents/Sponsors/Sponsors";
+import Footer from "./LandingPageComponents/Footer/Footer";
 
 type LandingPageProps = {};
 
@@ -30,6 +31,7 @@ export default class LandingPage extends React.Component<
                 <Itinerary />
                 <FAQ />
                 <Sponsors />
+                <Footer />
             </div>
         );
     }
