@@ -93,7 +93,7 @@ export default class Toolbar extends React.Component<
                           <Button
                             style={tabStyle}
                             label="sponsors"
-                            component={props => <Link to="/sponsors" {...props}/>}
+                            component={props => <Link to="/sponsor" {...props}/>}
                             linkButton={true}>
                             Sponsors
                           </Button>
