@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import placeholderImg from "../../../../assets/images/LandingPage/placeholder2.png"
-import sponsorsImg from "../../../../assets/images/LandingPage/placeholder.png";
+import sponsorsImg from "../../../../assets/images/LandingPage/scene_sponsors_transparent_left1.png";
 
 type SponsorsProps = {};
 
@@ -83,9 +83,9 @@ export default class Sponsors extends React.Component<
                             <img className="sponsors-img-micro" src={placeholderImg}></img>
                         </div>
                     </div>
-                    <div className="sponsors-img">
-                        <img id="sponsors-image" src={sponsorsImg}></img>
-                    </div>
+                </div>
+                <div className="sponsors-img">
+                    <img id="sponsors-image" src={sponsorsImg}></img>
                 </div>
             </div>
         );

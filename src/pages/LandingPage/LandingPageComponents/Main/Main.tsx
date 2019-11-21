@@ -1,6 +1,6 @@
 import React from "react";
 import "./Main.css";
-import mainPic from "../../../../assets/images/LandingPage/placeholder.png";
+import mainPic from "../../../../assets/images/LandingPage/scene_garage_transparent.png";
 
 type MainProps = {};
 
@@ -22,6 +22,7 @@ export default class Main extends React.Component<
         return (
             <div className="main">
                 <div className="main-div">
+                    <h1 className="main-text">Hack@Brown 2020 presents:</h1>
                     <img id="main-img" src={mainPic}></img>
                 </div>
             </div>

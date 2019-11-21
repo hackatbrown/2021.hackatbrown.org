@@ -2,13 +2,18 @@
     min-height: 100vh;
     align-content: center;
     margin: 2rem 10% 2rem 10%;
-    background-color: lightgreen;
+    background-color: lightsalmon;
     text-align: left;
+    color: white;
 }
 
 .sponsors-heading {
     margin: 0 10% 2rem 10%;
     padding: 3rem 0 0 0;
+}
+
+h1 {
+    color: white;
 }
 
 .sponsors-items {
@@ -79,4 +84,5 @@
 
 #sponsors-image {
     max-width: 80%;
+    margin: -3rem 0 4rem 0;
 }

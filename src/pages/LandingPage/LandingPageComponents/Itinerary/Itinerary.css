@@ -3,10 +3,12 @@
     margin: 0 10% 2rem 10%;
     display: flex;
     justify-content: flex-end;
-    background-color: wheat;
+    background-color: lightsalmon;
 }
 
 .itinerary-div {
+    position: relative;
+    z-index: 3;
     background-color: teal;
     margin: 20vh 10% 5vh 10%;
     text-align: left;
@@ -22,6 +24,10 @@
     font-size: 1.5rem;
 }
 
+.itinerary-items {
+    margin: 0 2rem 0 0;
+}
+
 .itinerary-list {
     max-height: 400px;
     overflow: scroll;
@@ -29,4 +35,9 @@
 
 .itinerary-time {
     padding: 0 5rem 0 1rem;
+}
+
+#itinerary-img {
+    margin: 0 10% 2rem 10%;
+    max-width: 30rem;
 }

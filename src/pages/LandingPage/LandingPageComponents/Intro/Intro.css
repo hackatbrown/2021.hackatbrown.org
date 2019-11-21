@@ -7,11 +7,11 @@
     max-width: 100%;
     align-items: flex-start;
     justify-content: flex-end;
-    background-color: aqua;
+    background-color: lightsalmon;
+    color: white;
 }
 
 #garden-img {
-    background: pink;
     max-width: 60%;
 }
 

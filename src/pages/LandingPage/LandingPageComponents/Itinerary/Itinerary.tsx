@@ -1,9 +1,9 @@
 import React from "react";
 import "./Itinerary.css";
-import itineraryImg from "../../../../assets/images/LandingPage/placeholder-square.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import itineraryImg from "../../../../assets/images/LandingPage/scene_itinerary_mobile.png";
 
 type ItineraryProps = {};
 
@@ -24,6 +24,9 @@ export default class Itinerary extends React.Component<
     render() {
         return (
             <div className="itinerary">
+                <div className="itinerary-bg-img">
+                    <img id="itinerary-img" src={itineraryImg}></img>
+                </div>
                 <table className="itinerary-div">
                     <tr className="itinerary-header"><h1>Itinerary</h1></tr>
                     

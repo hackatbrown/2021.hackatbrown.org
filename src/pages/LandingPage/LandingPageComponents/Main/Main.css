@@ -1,12 +1,18 @@
 .main {
     min-height: 100vh;
     align-content: center;
-    background-color: lightseagreen;
+    background-color: lightsalmon;
 }
 
 #main-img {
-    min-height: 80vh;
     max-width: 90%;
+}
+
+.main-text {
+    margin: 1rem 10% 1rem 10%;
+    text-align: left;
+    font-size: 2rem;
+    color: white;
 }
 
 .main-div {
