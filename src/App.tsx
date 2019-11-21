@@ -3,7 +3,8 @@ import "./App.css";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import EmailPage from "./pages/EmailPage/EmailPage";
-// import LandingPage from "./pages/LandingPage/LandingPage";
+import LandingPage from "./pages/LandingPage/LandingPage";
+import Toolbar from './components/Toolbar/Toolbar';
 
 const App: React.FC = () => {
     return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/">
                     <div className="App">
+                        <Toolbar backgroundColor={"#000000"}/>
                         <LandingPage />
                     </div>
                 </Route>
