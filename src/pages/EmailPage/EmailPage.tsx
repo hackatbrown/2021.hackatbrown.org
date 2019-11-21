@@ -89,7 +89,7 @@ export default class EmailPage extends React.Component<{}, IState> {
                         {" "}
                         Our site is currently under construction to prepare for
                         Hack@Brown 2020! <br />
-                        Sign up to recieve email alerts below and we'll let you
+                        Sign up to receive email alerts below and we'll let you
                         know when we're back.
                     </p>
                     <form onSubmit={e => this.handleSubmit(e)}>
