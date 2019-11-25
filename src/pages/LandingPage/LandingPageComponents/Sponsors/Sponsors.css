@@ -1,8 +1,7 @@
 .sponsors {
     min-height: 100vh;
     align-content: center;
-    margin: 2rem 10% 2rem 10%;
-    background-color: lightsalmon;
+    margin: 5rem 10% 2rem 10%;
     text-align: left;
     color: white;
 }
@@ -29,6 +28,7 @@ h1 {
 }
 
 .sponsors-peta {
+    margin-top: -2rem;
     max-width: 30rem;
 }
 
@@ -83,6 +83,6 @@ h1 {
 }
 
 #sponsors-image {
-    max-width: 80%;
+    max-width: 90%;
     margin: -3rem 0 4rem 0;
 }

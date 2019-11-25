@@ -28,12 +28,15 @@ export default class Main extends React.Component<
                     <img id="main-img" src={mainPic}></img>
                 </div>
                 <div className="main-items">
-                <div className="main-date">
+                <div className="main-login">
                     <img id="stickynote-img" src={stickyNotePic}></img>
+                    <p className="stickynote-login">Log in/Join</p>
+                    <p className="stickynote-dashboard">Dashboard</p>
                 </div>
 
-                <div className="main-login">
+                <div className="main-cal">
                     <img id="calendar-img" src={calendarPic}></img>
+                    <p className="main-date"><p>January</p> 25-26</p>
                 </div>
                 </div>
             </div>

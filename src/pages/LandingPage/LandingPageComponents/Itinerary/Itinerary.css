@@ -3,7 +3,6 @@
     margin: 5rem 10% 2rem 10%;
     display: flex;
     justify-content: flex-end;
-    background-color: lightsalmon;
     background-image: url("../../../../assets/images/LandingPage/scene_itinerary_mobile.png");
     background-repeat: no-repeat;
     background-size: contain; 
@@ -32,6 +31,7 @@
 }
 
 .itinerary-items {
+    color: white;
     margin: 0 2rem 0 0;
 }
 

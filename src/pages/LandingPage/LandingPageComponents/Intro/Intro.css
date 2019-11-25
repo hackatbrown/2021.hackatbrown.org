@@ -1,13 +1,12 @@
 .intro {
     min-height: 100vh;
     align-content: center;
-    margin: 2rem 10% 2rem 10%;
+    margin: 7rem 10% 2rem 10%;
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
     align-items: flex-start;
     justify-content: flex-end;
-    background-color: lightsalmon;
     color: white;
 }
 

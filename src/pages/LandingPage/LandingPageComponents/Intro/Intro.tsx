@@ -1,8 +1,5 @@
 import React from "react";
 import "./Intro.css";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import gardenImg from "../../../../assets/images/LandingPage/scene_garden_transparent1.png";
 
 type IntroProps = {};

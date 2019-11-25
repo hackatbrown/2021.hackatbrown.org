@@ -1,7 +1,6 @@
 .main {
     min-height: 100vh;
     align-content: center;
-    background-color: pink;
 }
 
 #main-img {
@@ -9,7 +8,7 @@
 }
 
 .main-text {
-    margin: 0 10% 1rem 10%;
+    margin: 3rem 10% 1rem 10%;
     text-align: left;
     font-size: 2rem;
     color: white;
@@ -31,10 +30,93 @@
     min-width: 10vw;
 }
 
-@media screen and (max-width: 800px) {
+.main-login {
+    transform: rotate(-15deg);
+    position: relative;
+}
+
+.main-cal {
+    position: relative;
+}
+
+.main-date {
+    font-size: 2rem;
+    position: absolute;
+    top: 35%;
+    right:35%;
+}
+
+.stickynote-login:hover {
+    color: #00857a;
+    border: 2px solid #00857a;
+}
+
+.stickynote-dashboard:hover {
+    color: #00857a;
+}
+
+.stickynote-login {
+    transition: 0.3s;
+    font-size: 2rem;
+    position: absolute;
+    top: 25%;
+    right:22.5%;
+    border-radius: 15px;
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.stickynote-dashboard {
+    transition: 0.3s;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    right:25%;
+}
+
+@media screen and (max-width: 600px) {
     #calendar-img, #stickynote-img {
         max-width: 40vw;
         min-width: 10vw;
+    }
+    .main-date {
+        font-size: 5vw;
+        right: 30%;
+    }
+
+    .stickynote-login {
+        font-size: 4vw;
+        right: 22.5%;
+        padding: 2px;
+        border-radius:10px;
+    }
+    .stickynote-dashboard {
+        font-size: 4vw;
+        right: 25%;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .main {
+        min-height: 50vh;
+    }
+    #calendar-img, #stickynote-img {
+        max-width: 40vh;
+        min-width: 10vh;
+    }
+    .main-date {
+        font-size: 5vh;
+        right: 30%;
+    }
+    .stickynote-login {
+        font-size: 4vh;
+        right: 22.5%;
+        padding: 2px;
+        border-radius:10px;
+    }
+    .stickynote-dashboard {
+        font-size: 4vh;
+        right: 25%;
     }
 }
 

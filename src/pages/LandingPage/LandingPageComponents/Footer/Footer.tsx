@@ -1,6 +1,5 @@
 import React from "react";
 import "./Footer.css";
-import itineraryImg from "../../../../assets/images/LandingPage/placeholder-square.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";

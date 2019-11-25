@@ -32,6 +32,7 @@ export default class Toolbar extends React.Component<
                         </div>
                         </Col>
 
+                        <div className="toolbar-items">
                         <Col>
                         <div className="toolbar-about">
                             <p>About</p>
@@ -57,10 +58,11 @@ export default class Toolbar extends React.Component<
                         </Col>
 
                         <Col>
-                        <div className="toolbar-logout">
-                            <p>Logout</p>
+                        <div className="toolbar-signin">
+                            <p>Join/Login</p>
                         </div>
                         </Col>
+                        </div>
                     </Row>
                 </Container>
             </div>

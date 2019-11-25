@@ -1,9 +1,5 @@
 import React from "react";
 import "./Itinerary.css";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import itineraryImg from "../../../../assets/images/LandingPage/scene_itinerary_mobile.png";
 
 type ItineraryProps = {};
 

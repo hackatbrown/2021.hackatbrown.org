@@ -1,8 +1,5 @@
 import React from "react";
 import "./faq.css";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import faqImg from "../../../../assets/images/LandingPage/scene_faq_transparent.png";
 
 type FAQprops = {};
@@ -35,7 +32,7 @@ export default class FAQ extends React.Component<
                                     All undergraduate and graduate students are welcome.
                                 </p>
                             </div>
-
+                            <br></br>
                             <div className="faq-2">
                                 <h4>I don't have a team. Can I still participate?</h4>
                                 <p>
@@ -45,7 +42,7 @@ export default class FAQ extends React.Component<
                                     to work with. You’re welcome to have up to four people on a team.
                                 </p>
                             </div>
-
+                            <br></br>
                             <div className="faq-3">
                                 <h4>Will there be a standby line the day-of the event?</h4>
                                 <p>
