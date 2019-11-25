@@ -1,14 +1,4 @@
 .sponsors {
-<<<<<<< HEAD
-    height: 80vh;
-    align-content: center;
-    margin: 2rem 10% 2rem 10%;
-}
-
-.sponsors-heading {
-    margin: 0rem 2rem 0rem 1rem;
-    text-align: right;
-=======
     min-height: 100vh;
     align-content: center;
     margin: 5rem 10% 2rem 10%;
@@ -95,5 +85,4 @@ h1 {
 #sponsors-image {
     max-width: 90%;
     margin: -3rem 0 4rem 0;
->>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 }

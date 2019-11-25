@@ -1,26 +1,4 @@
 .faq {
-<<<<<<< HEAD
-    height: 80vh;
-    align-content: center;
-    margin: 5rem 10% 2rem 10%;
-}
-
-#faq-img {
-    margin: 2rem;
-    min-height: 50vh;
-    max-width: 80%;
-    height: auto;
-    width: auto;
-}
-
-.faq-text {
-    text-align: left;
-    margin: 2rem 1rem 0 0;
-}
-
-.faq-img-div {
-    text-align: right;
-=======
     min-height: 100vh;
     align-content: center;
     margin: 3rem 10% 2rem 10%;
@@ -43,5 +21,4 @@
     max-width: 20rem;
     min-width: 30vw;
     text-align: left;
->>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 }

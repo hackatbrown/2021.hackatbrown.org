@@ -1,43 +1,14 @@
 .itinerary {
-<<<<<<< HEAD
-    height: 80vh;
-    align-content: center;
-    margin: 3rem 10% 2rem 10%;
-    display: flex;
-    align-content: flex-end;
-}
-
-.itinerary-filler {
-    background-color: #f7f7f7;
-    margin: 2rem 1rem 0 0;
-}
-
-.itinerary-div {
-    padding: 1rem;
-    text-align: left;
-    max-width: 400px;
-    min-width: 40%;
-}
-
-.itinerary-header {
-    padding: 0rem 3rem 0 3rem;
-}
-
-.itinerary-list {
-    padding: 1rem 3rem 3rem 3rem;
-    max-height: 400px;
-    overflow: scroll;
-=======
     min-height: 100vh;
     margin: 5rem 10% 2rem 10%;
     display: flex;
     justify-content: flex-end;
     background-image: url("../../../../assets/images/LandingPage/scene_itinerary_mobile.png");
     background-repeat: no-repeat;
-    background-size: contain; 
+    background-size: contain;
     background-position-y: bottom;
     background-position-x: center;
-    background-size: 
+    background-size: ;
 }
 
 .itinerary-div {
@@ -76,5 +47,4 @@
 #itinerary-img {
     margin: 0 10% 2rem 10%;
     max-width: 30rem;
->>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 }

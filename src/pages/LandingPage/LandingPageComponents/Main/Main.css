@@ -1,23 +1,9 @@
 .main {
-<<<<<<< HEAD
-    height: 100vh;
-=======
     min-height: 100vh;
->>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
     align-content: center;
 }
 
 #main-img {
-<<<<<<< HEAD
-    min-height: 80vh;
-    max-width: 90%;
-    height: auto;
-    width: auto;
-}
-
-.main-div {
-    margin: 6rem 2rem 0 2rem;
-=======
     max-width: 90%;
 }
 
@@ -39,7 +25,8 @@
     justify-content: space-around;
 }
 
-#calendar-img, #stickynote-img {
+#calendar-img,
+#stickynote-img {
     max-width: 20rem;
     min-width: 10vw;
 }
@@ -57,7 +44,7 @@
     font-size: 2rem;
     position: absolute;
     top: 35%;
-    right:35%;
+    right: 35%;
 }
 
 .stickynote-login:hover {
@@ -74,7 +61,7 @@
     font-size: 2rem;
     position: absolute;
     top: 25%;
-    right:22.5%;
+    right: 22.5%;
     border-radius: 15px;
     padding: 5px;
     border: 2px solid black;
@@ -85,11 +72,12 @@
     font-size: 2rem;
     position: absolute;
     top: 50%;
-    right:25%;
+    right: 25%;
 }
 
 @media screen and (max-width: 600px) {
-    #calendar-img, #stickynote-img {
+    #calendar-img,
+    #stickynote-img {
         max-width: 40vw;
         min-width: 10vw;
     }
@@ -102,7 +90,7 @@
         font-size: 4vw;
         right: 22.5%;
         padding: 2px;
-        border-radius:10px;
+        border-radius: 10px;
     }
     .stickynote-dashboard {
         font-size: 4vw;
@@ -114,7 +102,8 @@
     .main {
         min-height: 50vh;
     }
-    #calendar-img, #stickynote-img {
+    #calendar-img,
+    #stickynote-img {
         max-width: 40vh;
         min-width: 10vh;
     }
@@ -126,7 +115,7 @@
         font-size: 4vh;
         right: 22.5%;
         padding: 2px;
-        border-radius:10px;
+        border-radius: 10px;
     }
     .stickynote-dashboard {
         font-size: 4vh;
@@ -138,5 +127,4 @@
     .main {
         min-height: 50vh;
     }
->>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 }

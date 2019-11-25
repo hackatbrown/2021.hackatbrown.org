@@ -1,13 +1,7 @@
 import React from "react";
 import "./Sponsors.css";
-<<<<<<< HEAD
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-=======
 import placeholderImg from "../../../../assets/images/LandingPage/placeholder2.png"
 import sponsorsImg from "../../../../assets/images/LandingPage/scene_sponsors_transparent_left1.png";
->>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 
 type SponsorsProps = {};
 
@@ -28,17 +22,6 @@ export default class Sponsors extends React.Component<
     render() {
         return (
             <div className="sponsors">
-<<<<<<< HEAD
-                <Container>
-                    <Row>
-                        <Col>
-                        <div className="sponsors-heading">
-                            <h1>Sponsors</h1>
-                        </div>
-                        </Col>
-                    </Row>
-                </Container>
-=======
                 <div className="sponsors-heading">
                     <h1>Sponsors</h1>
                 </div>
@@ -101,7 +84,6 @@ export default class Sponsors extends React.Component<
                 <div className="sponsors-img">
                     <img id="sponsors-image" src={sponsorsImg}></img>
                 </div>
->>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
             </div>
         );
     }
