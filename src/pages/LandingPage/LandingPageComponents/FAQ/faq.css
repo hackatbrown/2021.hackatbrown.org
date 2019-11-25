@@ -1,7 +1,7 @@
 .faq {
     min-height: 100vh;
     align-content: center;
-    margin: 0 10% 2rem 10%;
+    margin: 5rem 10% 2rem 10%;
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;

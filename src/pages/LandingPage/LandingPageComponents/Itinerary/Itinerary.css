@@ -1,18 +1,25 @@
 .itinerary {
     min-height: 100vh;
-    margin: 0 10% 2rem 10%;
+    margin: 5rem 10% 2rem 10%;
     display: flex;
     justify-content: flex-end;
     background-color: lightsalmon;
+    background-image: url("../../../../assets/images/LandingPage/scene_itinerary_mobile.png");
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position-y: bottom;
+    background-position-x: center;
+    background-size: 
 }
 
 .itinerary-div {
-    position: relative;
-    z-index: 3;
-    background-color: teal;
-    margin: 20vh 10% 5vh 10%;
+    color: white;
+    background-color: darkcyan;
+    margin: 20% 10% 20% 10%;
     text-align: left;
     width: 20rem;
+    max-height: 500px;
+    padding: 1rem 2rem 1rem 2rem;
 }
 
 .itinerary-header {
@@ -21,7 +28,7 @@
 
 .itinerary-date {
     margin: 3rem 0 0 0;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .itinerary-items {

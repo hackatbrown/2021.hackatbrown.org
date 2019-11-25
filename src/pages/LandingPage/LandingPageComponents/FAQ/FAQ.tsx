@@ -3,7 +3,7 @@ import "./faq.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import faqImg from "../../../../assets/images/LandingPage/placeholder-square.png";
+import faqImg from "../../../../assets/images/LandingPage/scene_faq_transparent.png";
 
 type FAQprops = {};
 
