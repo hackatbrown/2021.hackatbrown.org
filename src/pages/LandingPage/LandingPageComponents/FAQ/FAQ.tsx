@@ -1,9 +1,13 @@
 import React from "react";
 import "./faq.css";
+<<<<<<< HEAD
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import faqImg from "../../../../assets/images/LandingPage/placeholder-square.png";
+=======
+import faqImg from "../../../../assets/images/LandingPage/scene_faq_transparent.png";
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 
 type FAQprops = {};
 
@@ -24,9 +28,12 @@ export default class FAQ extends React.Component<
     render() {
         return (
             <div className="faq">
+<<<<<<< HEAD
                 <Container>
                     <Row>
                         <Col>
+=======
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
                         <div className="faq-text">
                             <div className="faq-header">
                                 <h1>F.A.Q</h1>
@@ -38,7 +45,11 @@ export default class FAQ extends React.Component<
                                     All undergraduate and graduate students are welcome.
                                 </p>
                             </div>
+<<<<<<< HEAD
 
+=======
+                            <br></br>
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
                             <div className="faq-2">
                                 <h4>I don't have a team. Can I still participate?</h4>
                                 <p>
@@ -48,7 +59,11 @@ export default class FAQ extends React.Component<
                                     to work with. You’re welcome to have up to four people on a team.
                                 </p>
                             </div>
+<<<<<<< HEAD
 
+=======
+                            <br></br>
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
                             <div className="faq-3">
                                 <h4>Will there be a standby line the day-of the event?</h4>
                                 <p>
@@ -59,6 +74,7 @@ export default class FAQ extends React.Component<
                                 </p>
                             </div>
                         </div>
+<<<<<<< HEAD
                         </Col>
 
                         <Col>
@@ -68,6 +84,12 @@ export default class FAQ extends React.Component<
                         </Col>
                     </Row>
                 </Container>
+=======
+                        
+                        <div className="faq-img-div">
+                            <img id="faq-img" src={faqImg}></img>
+                        </div>
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
             </div>
         );
     }

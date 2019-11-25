@@ -1,9 +1,12 @@
 import React from "react";
 import "./Itinerary.css";
+<<<<<<< HEAD
 import itineraryImg from "../../../../assets/images/LandingPage/placeholder-square.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+=======
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 
 type ItineraryProps = {};
 
@@ -24,6 +27,7 @@ export default class Itinerary extends React.Component<
     render() {
         return (
             <div className="itinerary">
+<<<<<<< HEAD
                 <Container>
                     <Row>
                         <div className="itinerary-filler"><Col sm={6}></Col></div>
@@ -123,6 +127,215 @@ export default class Itinerary extends React.Component<
                         </div>
                     </Row>
                 </Container>
+=======
+                <div className="itinerary-div">
+                    <table>
+                    <tr className="itinerary-header"><h1>Itinerary</h1></tr>
+                    
+                    <div className="itinerary-list">
+                    <tr className="itinerary-date">Saturday, January 25th</tr>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <tr className="itinerary-date">Sunday, January 26th</tr>
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+
+                    <div className="itinerary-items">
+                        <tr>
+                            <td className="itinerary-time">9:30</td>
+                            <td className="itinerary-event">Registration</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td className="itinerary-location">Sayles Hall</td>
+                        </tr>
+                    </div>
+                    </div>
+                </table>
+                </div>
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
             </div>
         );
     }

@@ -2,6 +2,7 @@
     position: fixed;
     z-index: 1;
     top: 0;
+<<<<<<< HEAD
     text-align: center;
     width: 100%;
     justify-content: space-between;
@@ -10,8 +11,47 @@
 }
 
 #logo-img {
+=======
+    width: 100%;
+    padding: 3vh 2rem 2vh 2rem;
+    color: white;
+    background-color: rgba(234, 142, 99, 0.9);
+}
+
+#logo-img {
+    display: flex;
+    align-content: flex-start;
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
     max-width: 30px;
     max-height: 30px;
     width: auto;
     height: auto;
+<<<<<<< HEAD
+=======
+}
+
+.toolbar-items {
+    display: flex;
+    flex-direction: row;
+}
+
+.toolbar-signin {
+    padding: 0 1rem 0 1rem;
+    border-radius: 10px;
+    border: 1px solid white;
+    transition: 0.3s;
+}
+
+.toolbar-about:hover, .toolbar-itinerary:hover, .toolbar-sponsors:hover, .toolbar-faq:hover {
+    transition: 0.3s;
+}
+
+.toolbar-about:hover, .toolbar-itinerary:hover, .toolbar-sponsors:hover, .toolbar-faq:hover {
+    color: teal;
+}
+
+.toolbar-signin:hover {
+    color: teal;
+    border: 1px solid teal;
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 }

@@ -1,4 +1,5 @@
 .sponsors {
+<<<<<<< HEAD
     height: 80vh;
     align-content: center;
     margin: 2rem 10% 2rem 10%;
@@ -7,4 +8,92 @@
 .sponsors-heading {
     margin: 0rem 2rem 0rem 1rem;
     text-align: right;
+=======
+    min-height: 100vh;
+    align-content: center;
+    margin: 5rem 10% 2rem 10%;
+    text-align: left;
+    color: white;
+}
+
+.sponsors-heading {
+    margin: 0 10% 2rem 10%;
+    padding: 3rem 0 0 0;
+}
+
+h1 {
+    color: white;
+}
+
+.sponsors-items {
+    margin: 2rem 10% 2rem 10%;
+    padding: 0 0 4rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.sponsors-name {
+    margin: 2rem 0 1rem 0;
+}
+
+.sponsors-peta {
+    margin-top: -2rem;
+    max-width: 30rem;
+}
+
+.sponsors-img-peta {
+    max-width: 14rem;
+    margin: 0.5rem;
+}
+
+.sponsors-tera {
+    max-width: 30rem;
+}
+
+.sponsors-img-tera {
+    max-width: 12rem;
+    margin: 0.5rem;
+}
+
+.sponsors-giga {
+    max-width: 30rem;
+}
+
+.sponsors-img-giga {
+    max-width: 10rem;
+    margin: 0.5rem;
+}
+
+.sponsors-mega {
+    max-width: 30rem;
+}
+
+.sponsors-img-mega {
+    max-width: 10rem;
+    margin: 0.5rem;
+}
+
+.sponsors-kilo {
+    max-width: 30rem;
+}
+
+.sponsors-img-kilo {
+    max-width: 8rem;
+    margin: 0.5rem;
+}
+
+.sponsors-micro {
+    max-width: 30rem;
+}
+
+.sponsors-img-micro {
+    max-width: 8rem;
+    margin: 0.5rem;
+}
+
+#sponsors-image {
+    max-width: 90%;
+    margin: -3rem 0 4rem 0;
+>>>>>>> 1d54320d6a14a43398d774cfd2fa8794d7c9f817
 }
