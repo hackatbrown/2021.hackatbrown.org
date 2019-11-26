@@ -5,11 +5,15 @@ import MoreInfo from "./components/MoreInfo/MoreInfo";
 import OptionalInfo from "./components/OptionalInfo/OptionalInfo"
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
-
+import shelfImage from "../../assets/images/Registration/shelvescomputer.jpg"
+import bookImage from "../../assets/images/Registration/shelvesbook.jpg"
+import trophyImage from "../../assets/images/Registration/shelvestrophy.jpg"
+import bookGif from "../../assets/images/Registration/book_animation.gif"
 /**
  * define a type model for the props you are passing in to the component
  */
-type RegistrationProps = {};
+type RegistrationProps = {
+};
 
 /**
  * define a type model for the state of the page
@@ -35,7 +39,8 @@ type RegistrationState = {
     resume: any
     findout: string[]
     comments: string
-    fileName: string
+    fileName: string,
+    inTransition: boolean
 };
 
 const buttonStyle:React.CSSProperties = {
@@ -72,7 +77,8 @@ export default class RegistrationPage extends React.Component<
             resume: null,
             findout: [],
             comments: "",
-            fileName: ""
+            fileName: "",
+            inTransition: false
         };
         this.handleFormChange = this.handleFormChange.bind(this);
         this.handleFileUpload = this.handleFileUpload.bind(this);
@@ -85,6 +91,17 @@ export default class RegistrationPage extends React.Component<
           formStage: this.state.formStage + 1
         });
       }
+
+      this.setState({
+        inTransition: true
+      });
+
+      setTimeout(()=>{
+        this.setState({
+          inTransition: false,
+          formStage: this.state.formStage + 1
+        });
+      }, 1000);
     }
 
     decrementStage = () => {
@@ -93,6 +110,17 @@ export default class RegistrationPage extends React.Component<
           formStage: this.state.formStage - 1
         });
       }
+
+      this.setState({
+        inTransition: true
+      })
+
+      setTimeout(()=>{
+        this.setState({
+          inTransition: false,
+          formStage: this.state.formStage - 1
+        });
+      }, 1000)
     }
 
     /* Function to handle changing state based on submitted data */
@@ -244,9 +272,10 @@ export default class RegistrationPage extends React.Component<
           fileName={this.state.fileName}/>
         );
         let compList = [basicComp, moreComp, optionalComp];
-
+        let backgroundImageList = [shelfImage, bookImage, trophyImage];
+        let gifImageList = [shelfImage, bookGif, trophyImage];//set timeout? if I can get it to go once
         return (
-            <div className="registration">
+            <div className="registration" style={{backgroundImage: `url(${this.state.inTransition ? gifImageList[this.state.formStage] : backgroundImageList[this.state.formStage]})`}}>
                 <div className="form-name">
                   <h1>{this.nameList[this.state.formStage]}</h1>
                 </div>
