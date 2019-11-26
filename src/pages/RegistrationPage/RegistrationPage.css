@@ -4,6 +4,7 @@
   background-color: #4F5C6B;
   min-height: 100vh;
   color: white;
+  background-size: 1400px 100%;
 }
 
 .form-name {
@@ -17,3 +18,4 @@
   min-height: 65vh;
   margin-bottom: 30px;
 }
+
