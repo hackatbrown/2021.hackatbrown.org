@@ -96,12 +96,14 @@ export default class RegistrationPage extends React.Component<
         inTransition: true
       });
 
+      /**
       setTimeout(()=>{
         this.setState({
           inTransition: false,
           formStage: this.state.formStage + 1
         });
       }, 1000);
+      */
     }
 
     decrementStage = () => {
@@ -115,12 +117,14 @@ export default class RegistrationPage extends React.Component<
         inTransition: true
       })
 
+      /*
       setTimeout(()=>{
         this.setState({
           inTransition: false,
           formStage: this.state.formStage - 1
         });
       }, 1000)
+      */
     }
 
     /* Function to handle changing state based on submitted data */
