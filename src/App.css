@@ -1,5 +1,19 @@
+@font-face {
+    font-family: "Covik Sans";
+    src: url("assets/fonts/Covik Sans-Regular.otf");
+}
+
+@font-face {
+    font-family: "Akkurat Pro";
+    src: url("assets/fonts/Akkurat Pro-Regular.otf");
+}
+
 .App {
     text-align: center;
-    font-family: Work Sans;
+    font-family: Akkurat Pro, sans-serif;
     height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Covik Sans, sans-serif;
 }
