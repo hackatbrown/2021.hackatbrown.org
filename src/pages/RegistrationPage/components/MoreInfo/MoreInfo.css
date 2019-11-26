@@ -11,3 +11,7 @@
 .Github{
     margin-bottom: 1%;
 }
+
+.MuiMenu-paper {
+  display: none;
+}

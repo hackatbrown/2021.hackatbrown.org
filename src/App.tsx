@@ -5,6 +5,8 @@ import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import EmailPage from "./pages/EmailPage/EmailPage";
 import Toolbar from './components/Toolbar/Toolbar';
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 const App: React.FC = () => {
     return (

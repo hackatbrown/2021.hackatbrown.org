@@ -23,18 +23,17 @@ type RegistrationState = {
     school: string
     majors: string
     gradDate: string /* consider changing type */
-    over18: boolean
-    firstHack: boolean
-    travelReimburse: boolean
+    over18: boolean | null
+    firstHack: boolean | null
+    travelReimburse: boolean | null
     travelOrigin: string
-    gender: string
-    race: string
+    gender: string[]
+    race: string[]
     website: string
     github: string
     linkedin: string
     resume: any
-    link: string
-    findout: string
+    findout: string[]
     comments: string
     fileName: string
 };
@@ -61,18 +60,17 @@ export default class RegistrationPage extends React.Component<
             school: "",
             majors: "",
             gradDate: "", /* consider changing type */
-            over18: true,
-            firstHack: true,
-            travelReimburse: false,
+            over18: null,
+            firstHack: null,
+            travelReimburse: null,
             travelOrigin: "",
-            gender: "",
-            race: "",
+            gender: [],
+            race: [],
             website: "",
             github: "",
             linkedin: "",
             resume: null,
-            link: "",
-            findout: "",
+            findout: [],
             comments: "",
             fileName: ""
         };
@@ -82,21 +80,28 @@ export default class RegistrationPage extends React.Component<
 
     /* Functions to change the stage of the form */
     incrementStage = () => {
-      this.setState({
-        formStage: this.state.formStage + 1
-      });
+      if ((this.state.formStage + 1) <= 2 ){
+        this.setState({
+          formStage: this.state.formStage + 1
+        });
+      }
     }
 
     decrementStage = () => {
-      this.setState({
-        formStage: this.state.formStage - 1
-      });
+      if ((this.state.formStage - 1) >= 0) {
+        this.setState({
+          formStage: this.state.formStage - 1
+        });
+      }
     }
 
     /* Function to handle changing state based on submitted data */
     handleFormChange = (event: any) => {
       let name = event.target.id;
       let value = event.target.value;
+
+      console.log(name);
+      console.log(value);
 
       /* case where value is yes/no -> convert to boolean */
       if (value === "yes") {
@@ -107,6 +112,30 @@ export default class RegistrationPage extends React.Component<
 
       this.setState({
         [name]: value
+      } as any);
+    }
+
+    handleMultiFormChange = (event: any) => {
+      let name = event.target.id;
+      let newVals;
+      if (name === "gender") {
+        newVals = [...this.state.gender];
+      } else if (name === "race") {
+        newVals = [...this.state.race]
+      } else {
+        newVals = [...this.state.findout]
+      }
+
+      if (event.target.checked) {
+        newVals.push(event.target.value);
+      } else {
+        newVals.splice(newVals.indexOf(event.target.value), 1);
+      }
+
+      console.log(newVals);
+
+      this.setState({
+        [name]: newVals
       } as any);
     }
 
@@ -137,7 +166,6 @@ export default class RegistrationPage extends React.Component<
         github: this.state.github,
         linkedin: this.state.linkedin,
         resume: this.state.resume,
-        link: this.state.link,
         findout: this.state.findout,
         comment: this.state.comments
       };
@@ -159,7 +187,6 @@ export default class RegistrationPage extends React.Component<
           Github: ${registrationInfo.github} \n
           LinkedIn: ${registrationInfo.linkedin} \n
           Resume: ${registrationInfo.resume} \n
-          Link: ${registrationInfo.link} \n
           Findout: ${registrationInfo.findout} \n
           Comment: ${registrationInfo.comment}`
       );
@@ -181,13 +208,13 @@ export default class RegistrationPage extends React.Component<
       </div>);
     moreButtons = (
       <div className="form-buttons">
-        <Button className="back" style={buttonStyle} onClick={this.decrementStage}>Back</Button>
+        <Button className="back" style={buttonStyle} onClick={this.decrementStage}>Previous</Button>
         <Button className="next" style={buttonStyle} onClick={this.incrementStage}>Next</Button>
       </div>
     );
     submitButtons = (
       <div className="form-buttons">
-        <Button className="back" style={buttonStyle} onClick={this.decrementStage}>Back</Button>
+        <Button className="back" style={buttonStyle} onClick={this.decrementStage}>Previous</Button>
         <Button className="submit" style={buttonStyle} onClick={this.submitForm}>Submit Application</Button>
       </div>
     );
@@ -196,16 +223,20 @@ export default class RegistrationPage extends React.Component<
     render() {
         /* Components List */
         let basicComp = (<BasicInfo
+          currentSelected={this.state}
           handleFormChange={this.handleFormChange}
           incrementStage={this.incrementStage}
           decrementStage={this.decrementStage}/>
         );
         let moreComp = (<MoreInfo
+          currentSelected={this.state}
+          handleMultiFormChange={this.handleMultiFormChange}
           handleFormChange={this.handleFormChange}
           incrementStage={this.incrementStage}
           decrementStage={this.decrementStage}/>
         );
         let optionalComp = (<OptionalInfo
+          currentSelected={this.state}
           handleFileUpload={this.handleFileUpload}
           handleFormChange={this.handleFormChange}
           incrementStage={this.incrementStage}
@@ -222,7 +253,14 @@ export default class RegistrationPage extends React.Component<
                 <div className="form-content">
                   {compList[this.state.formStage]}
                 </div>
-                {this.buttonList[this.state.formStage]}
+                <div className="form-progress">
+                  <div className="buttons">
+                    {this.buttonList[this.state.formStage]}
+                  </div>
+                  <div className="stage">
+                    <p>{this.state.formStage + 1}/3</p>
+                  </div>
+                </div>
             </div>
         );
     }

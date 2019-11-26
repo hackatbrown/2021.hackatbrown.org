@@ -23,6 +23,9 @@ import Button from '@material-ui/core/Button';
    incrementStage: () => void
    decrementStage: () => void
    fileName: string
+   currentSelected: {
+    [key: string]: string | boolean | any
+   }
  };
 
 /**
@@ -82,31 +85,52 @@ export default class OptionalInfo extends React.Component<
                 </div>
 
                 <div className="optional-info-2">
-                  <TextField
-                        id="link"
-                        placeholder="Additional Link"
-                        margin="normal"
-                        onChange={this.props.handleFormChange}
-                        InputProps={{
-                            style: {
-                                color: "white"
-                            }
-                        }}
-                   />
-                   <p style={{marginTop: "20px"}}>How did you find out about us?</p>
-                   <TextField
-                        id="findout"
-                        margin="normal"
-                        onChange={this.props.handleFormChange}
-                        InputProps={{
-                            style: {
-                                color: "white"
-                            }
-                        }}
-                   />
+                   <div className="Website">
+                     <TextField
+                       id="website"
+                       defaultValue={this.props.currentSelected['website']}
+                       placeholder="Website"
+                       margin="normal"
+                       onChange={this.props.handleFormChange}
+                       InputProps={{
+                           style: {
+                               color: "white"
+                           }
+                       }}
+                     />
+                     </div>
+                     <div className="Github">
+                     <TextField
+                       id="github"
+                       defaultValue={this.props.currentSelected['github']}
+                       placeholder="Github"
+                       margin="normal"
+                       onChange={this.props.handleFormChange}
+                       InputProps={{
+                           style: {
+                               color: "white"
+                           }
+                       }}
+                     />
+                     </div>
+                     <div className="Linkedin">
+                     <TextField
+                       id="linkedin"
+                       defaultValue={this.props.currentSelected['linkedin']}
+                       placeholder="Linkedin"
+                       margin="normal"
+                       onChange={this.props.handleFormChange}
+                       InputProps={{
+                           style: {
+                               color: "white"
+                           }
+                       }}
+                     />
+                     </div>
                    <p style={{marginTop: "20px", marginBottom: "10px"}}>Additional Comments:</p>
                    <TextField
                       id="comments"
+                      defaultValue={this.props.currentSelected['comments']}
                       variant="outlined"
                       placeholder="Anything else you'd like us to know?"
                       multiline={true}
