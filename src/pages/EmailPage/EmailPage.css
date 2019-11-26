@@ -85,10 +85,10 @@
     }
 }
 .past-websites-link {
+    position: absolute;
     width: 100%;
     bottom: 0;
     align-self: center;
-    position: absolute;
     bottom: 3vmin;
     color: white;
 }
@@ -100,6 +100,14 @@
 .past-websites-link a {
     color: #A6D3D0;
 }
+
+@media only screen and (max-height: 700px) {
+    .past-websites-link {
+        padding-top: 3.5em;
+        position: relative;
+        bottom: 3vmin;
+    }
+  }
 
 /* code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
