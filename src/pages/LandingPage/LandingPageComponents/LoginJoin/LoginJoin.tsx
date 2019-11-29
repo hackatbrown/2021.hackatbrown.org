@@ -4,6 +4,7 @@ import './LoginJoin.css'
 import Firebase from '../../../../components/Firebase';
 import * as EmailValidator from 'email-validator';
 import stickyNotePic from "../../../../assets/images/LandingPage/asset_sticky_note_transparent.png";
+import axios from 'axios';
 
 type LoginJoinProps = {
   firebase : (Firebase | null)
@@ -124,18 +125,28 @@ export default class LoginJoin extends Component<
               });
             } else {
               currFirebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-                // HOW DO I PASS USER AROUND & WORK ON SENDING TO BACKEND
-                // u.user.getIdToken(/* forceRefresh */ true).then(function(idToken) {
-                //   // Send token to your backend via HTTPS
-                //   // ...
-                // }).catch(function(error) {
-                //   // Handle error
-                // });
+                
               }).then((u)=>{
                 // sucessfully signed up
-                this.setState({
-                  show: false // close modal
-                });
+                let curr = this;
+                this.state.user.getIdToken(/* forceRefresh */ true).then((idToken: any) => {
+                  // Send token to your backend via HTTPS
+                  const hackerInfo = {
+                    fire_id: idToken,
+                    email: curr.state.email
+                  }
+
+                  axios.post('<api link to push form to database>', { hackerInfo })
+                  .then(res => {
+                    // depending on what is sent to backend
+                  })
+                  }).catch((error: any) => {
+                    // Handle error
+                  });
+
+                  this.setState({
+                    show: false // close modal
+                  });
               })
               .catch((error) => {
                 this.setState({
@@ -281,7 +292,7 @@ export default class LoginJoin extends Component<
         <Modal
           className="login-join-modal"
           containerClassName="login-join-body"
-          closeOnOuterClick={true}
+          closeOnOuterClick={false}
           show={this.state.show}
           onClose={this.close}
         >
