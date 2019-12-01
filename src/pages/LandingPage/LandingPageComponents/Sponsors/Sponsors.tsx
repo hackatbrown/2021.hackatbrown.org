@@ -1,7 +1,12 @@
 import React from "react";
 import "./Sponsors.css";
-import placeholderImg from "../../../../assets/images/LandingPage/placeholder2.png"
+import placeholderImg from "../../../../assets/images/LandingPage/placeholder2.png";
 import sponsorsImg from "../../../../assets/images/LandingPage/scene_sponsors_transparent_left1.png";
+import facebookImg from "../../../../assets/images/LandingPage/companylogo/facebook.png";
+import googleImg from "../../../../assets/images/LandingPage/companylogo/google.png";
+import bookbubImg from "../../../../assets/images/LandingPage/companylogo/bookbub.jpg";
+import digitalAssetImg from "../../../../assets/images/LandingPage/companylogo/digital-asset.png";
+import herokuImg from "../../../../assets/images/LandingPage/companylogo/heroku-purple.png";
 
 type SponsorsProps = {};
 
@@ -47,37 +52,26 @@ export default class Sponsors extends React.Component<
                     <div className="sponsors-giga">
                         <h2 className="sponsors-name">Giga</h2>
                         <div className="sponsors-img">
-                            <img className="sponsors-img-giga" src={placeholderImg}></img>
-                            <img className="sponsors-img-giga" src={placeholderImg}></img>
-                            <img className="sponsors-img-giga" src={placeholderImg}></img>
-                            <img className="sponsors-img-giga" src={placeholderImg}></img>
+                            <a href="https://www.facebook.com" target="_blank"><img className="sponsors-img-giga" src={facebookImg}></img></a>
+                            <a href="https://digitalasset.com/" target="_blank"><img className="sponsors-img-giga" src={digitalAssetImg}></img></a>
                         </div>
                     </div>
                     <div className="sponsors-mega">
                         <h2 className="sponsors-name">Mega</h2>
                         <div className="sponsors-img">
-                            <img className="sponsors-img-mega" src={placeholderImg}></img>
-                            <img className="sponsors-img-mega" src={placeholderImg}></img>
-                            <img className="sponsors-img-mega" src={placeholderImg}></img>
-                            <img className="sponsors-img-mega" src={placeholderImg}></img>
+                            <a href="https://www.google.com/" target="_blank"><img className="sponsors-img-mega" src={googleImg}></img></a>
                         </div>
                     </div>
                     <div className="sponsors-kilo">
                         <h2 className="sponsors-name">Kilo</h2>
                         <div className="sponsors-img">
-                            <img className="sponsors-img-kilo" src={placeholderImg}></img>
-                            <img className="sponsors-img-kilo" src={placeholderImg}></img>
-                            <img className="sponsors-img-kilo" src={placeholderImg}></img>
-                            <img className="sponsors-img-kilo" src={placeholderImg}></img>
+                            <a href="https://www.heroku.com/" target="_blank"><img className="sponsors-img-kilo" src={herokuImg}></img></a>
                         </div>
                     </div>
                     <div className="sponsors-micro">
                         <h2 className="sponsors-name">Micro</h2>
                         <div className="sponsors-img">
-                            <img className="sponsors-img-micro" src={placeholderImg}></img>
-                            <img className="sponsors-img-micro" src={placeholderImg}></img>
-                            <img className="sponsors-img-micro" src={placeholderImg}></img>
-                            <img className="sponsors-img-micro" src={placeholderImg}></img>
+                            <a href="https://www.bookbub.com" target="_blank"><img className="sponsors-img-micro" src={bookbubImg}></img></a>
                         </div>
                     </div>
                 </div>

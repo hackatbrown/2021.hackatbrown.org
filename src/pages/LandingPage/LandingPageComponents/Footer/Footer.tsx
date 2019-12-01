@@ -34,20 +34,19 @@ export default class Itinerary extends React.Component<
                         <Col>
                             <div className="socials">
                                 <h5>Socials</h5>
-                                <p>Instagram</p>
-                                <p>Facebook</p>
-                                <p>Twitter</p>
-                                <p>Medium</p>
+                                <p><a className="footerlink" href="https://www.instagram.com/hackatbrown/" target="_blank">Instagram</a></p>
+                                <p><a className="footerlink" href="https://www.facebook.com/hackatbrown/" target="_blank">Facebook</a></p>
+                                <p><a className="footerlink" href="https://twitter.com/hackatbrown/" target="_blank">Twitter</a></p>
+                                <p><a className="footerlink" href="https://medium.com/hack-at-brown" target="_blank">Medium</a></p>
                             </div>
                         </Col>
                         <Col>
                             <div className="previous">
                                 <h5>Previous</h5>
-                                <p>Hack@Brown 2019</p>
-                                <p>Hack@Brown 2018</p>
-                                <p>Hack@Brown 2017</p>
-                                <p>Hack@Brown 2016</p>
-                                <p>Hack@Brown 2015</p>
+                                <p><a className="footerlink" href="https://2019.hackatbrown.org/" target="_blank">Hack@Brown 2019</a></p>
+                                <p><a className="footerlink" href="https://2018.hackatbrown.org/" target="_blank">Hack@Brown 2018</a></p>
+                                <p><a className="footerlink" href="https://2017.hackatbrown.org/" target="_blank">Hack@Brown 2017</a></p>
+                                <p><a className="footerlink" href="https://2016.hackatbrown.org/" target="_blank">Hack@Brown 2016</a></p>
                             </div>
                         </Col>
                         <Col>

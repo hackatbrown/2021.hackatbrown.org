@@ -15,6 +15,12 @@
     max-height: 30px;
     width: auto;
     height: auto;
+    transition: 0.2s;
+}
+
+#logo-img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 .toolbar-items {
@@ -26,18 +32,17 @@
     padding: 0 1rem 0 1rem;
     border-radius: 10px;
     border: 1px solid white;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .toolbar-about:hover, .toolbar-itinerary:hover, .toolbar-sponsors:hover, .toolbar-faq:hover {
-    transition: 0.3s;
-}
-
-.toolbar-about:hover, .toolbar-itinerary:hover, .toolbar-sponsors:hover, .toolbar-faq:hover {
-    color: teal;
+    transition: 0.2s;
+    color: rgb(0, 146, 141);
+    cursor: pointer;
 }
 
 .toolbar-signin:hover {
     color: teal;
-    border: 1px solid teal;
+    border: 1px solid rgb(0, 146, 141);;
+    cursor: pointer;
 }

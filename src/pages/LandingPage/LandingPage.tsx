@@ -29,11 +29,11 @@ export default class LandingPage extends React.Component<
             <div className="landing-page">
                 <Toolbar/>
                 <Main />
-                <Intro />
-                <Itinerary />
-                <FAQ />
-                <Sponsors />
-                <Footer />
+                <div id="intro"><Intro /></div>
+                <div id="itinerary"><Itinerary /></div>
+                <div id="faq"><FAQ /></div>
+                <div id="sponsors"><Sponsors /></div>
+                <div id="footer"><Footer /></div>
             </div>
         );
     }

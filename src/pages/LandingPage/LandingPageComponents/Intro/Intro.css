@@ -1,7 +1,7 @@
 .intro {
     min-height: 100vh;
     align-content: center;
-    margin: 7rem 10% 2rem 10%;
+    margin: 4rem 10% 2rem 10%;
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
@@ -15,7 +15,7 @@
 }
 
 .intro-blurb {
-    margin: 4rem 10% 0 2rem;
+    margin: 5% 10% 0 2rem;
     max-width: 20rem;
     min-width: 30vw;
     text-align: left;

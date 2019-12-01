@@ -47,12 +47,14 @@
 }
 
 .stickynote-login:hover {
-    color: #00857a;
-    border: 2px solid #00857a;
+    color: rgb(0, 146, 141);
+    border: 2px solid rgb(0, 146, 141);
+    cursor: pointer;
 }
 
 .stickynote-dashboard:hover {
-    color: #00857a;
+    color: rgb(0, 146, 141);
+    cursor: pointer;
 }
 
 .stickynote-login {

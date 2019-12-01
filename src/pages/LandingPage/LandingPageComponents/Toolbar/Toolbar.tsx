@@ -3,7 +3,8 @@ import "./Toolbar.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import logoImg from "../../../../assets/images/LandingPage/placeholder-square.png";
+import logoImg from "../../../../assets/images/LandingPage/whitepaw.png";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 type ToolbarProps = {};
 
@@ -21,6 +22,11 @@ export default class Toolbar extends React.Component<
             state: "good"
         };
     }
+
+    scrollToTop = () => {
+        scroll.scrollToTop();
+      };
+
     render() {
         return (
             <div className="toolbar">
@@ -28,32 +34,32 @@ export default class Toolbar extends React.Component<
                     <Row>
                         <Col>
                         <div className="toolbar-logo">
-                            <img id="logo-img" src={logoImg}></img>
+                            <img id="logo-img" src={logoImg} onClick={this.scrollToTop}></img>
                         </div>
                         </Col>
 
                         <div className="toolbar-items">
                         <Col>
                         <div className="toolbar-about">
-                            <p>About</p>
+                            <Link activeClass="active" to="intro" spy={true} smooth={true} offset={-70} duration={500}>About</Link>
                         </div>
                         </Col>
 
                         <Col>
                         <div className="toolbar-itinerary">
-                            <p>Itinerary</p>
+                        <Link activeClass="active" to="itinerary" spy={true} smooth={true} offset={-70} duration={500}>Itinerary</Link>
                         </div>
                         </Col>
 
                         <Col>
                         <div className="toolbar-faq">
-                            <p>FAQ</p>
+                        <Link activeClass="active" to="faq" spy={true} smooth={true} offset={-70} duration={500}>FAQ</Link>
                         </div>
                         </Col>
 
                         <Col>
                         <div className="toolbar-sponsors">
-                            <p>Sponsors</p>
+                        <Link activeClass="active" to="sponsors" spy={true} smooth={true} offset={-70} duration={500}>Sponsors</Link>
                         </div>
                         </Col>
 

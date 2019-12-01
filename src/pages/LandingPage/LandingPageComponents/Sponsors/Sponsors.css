@@ -1,7 +1,7 @@
 .sponsors {
     min-height: 100vh;
     align-content: center;
-    margin: 5rem 10% 2rem 10%;
+    margin: 0 10% 2rem 10%;
     text-align: left;
     color: white;
 }
@@ -20,7 +20,7 @@ h1 {
     padding: 0 0 4rem 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .sponsors-name {
@@ -33,8 +33,14 @@ h1 {
 }
 
 .sponsors-img-peta {
+    transition: .2s ease-in-out;
     max-width: 14rem;
     margin: 0.5rem;
+}
+
+.sponsors-img-peta:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .sponsors-tera {
@@ -42,8 +48,14 @@ h1 {
 }
 
 .sponsors-img-tera {
+    transition: .2s ease-in-out;
     max-width: 12rem;
     margin: 0.5rem;
+}
+
+.sponsors-img-tera:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .sponsors-giga {
@@ -51,8 +63,14 @@ h1 {
 }
 
 .sponsors-img-giga {
+    transition: .2s ease-in-out;
     max-width: 10rem;
     margin: 0.5rem;
+}
+
+.sponsors-img-giga:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .sponsors-mega {
@@ -60,8 +78,14 @@ h1 {
 }
 
 .sponsors-img-mega {
+    transition: .2s ease-in-out;
     max-width: 10rem;
     margin: 0.5rem;
+}
+
+.sponsors-img-mega:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .sponsors-kilo {
@@ -69,8 +93,14 @@ h1 {
 }
 
 .sponsors-img-kilo {
+    transition: .2s ease-in-out;
     max-width: 8rem;
     margin: 0.5rem;
+}
+
+.sponsors-img-kilo:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .sponsors-micro {
@@ -78,11 +108,18 @@ h1 {
 }
 
 .sponsors-img-micro {
+    transition: .2s ease-in-out;
     max-width: 8rem;
     margin: 0.5rem;
+}
+
+.sponsors-img-micro:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 #sponsors-image {
     max-width: 90%;
     margin: -3rem 0 4rem 0;
 }
+

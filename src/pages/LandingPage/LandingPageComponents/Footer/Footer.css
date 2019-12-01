@@ -17,3 +17,14 @@
 .message {
     font-size: 1rem;
 }
+
+.footerlink {
+    color: white;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.footerlink:hover {
+    color: #FF844C;
+    text-decoration: none;
+}
