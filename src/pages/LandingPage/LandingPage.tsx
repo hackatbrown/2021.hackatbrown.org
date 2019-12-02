@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
-import FAQ from "./LandingPageComponents/FAQ/FAQ"
+import FAQ from "./LandingPageComponents/FAQ/FAQ";
 import Intro from "./LandingPageComponents/Intro/Intro";
 import Itinerary from "./LandingPageComponents/Itinerary/Itinerary";
 import Main from "./LandingPageComponents/Main/Main";
@@ -27,7 +27,7 @@ export default class LandingPage extends React.Component<
     render() {
         return (
             <div className="landing-page">
-                <Toolbar/>
+                <Toolbar />
                 <Main />
                 <div id="intro"><Intro /></div>
                 <div id="itinerary"><Itinerary /></div>

@@ -63,11 +63,11 @@ export default class Toolbar extends React.Component<
                         </div>
                         </Col>
 
-                        <Col>
-                        <div className="toolbar-signin">
-                            <p>Join/Login</p>
-                        </div>
-                        </Col>
+                            <Col>
+                                <div className="toolbar-signin">
+                                    <p>Join/Login</p>
+                                </div>
+                            </Col>
                         </div>
                     </Row>
                 </Container>
