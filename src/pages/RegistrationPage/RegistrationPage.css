@@ -4,7 +4,9 @@
   background-color: #4F5C6B;
   min-height: 100vh;
   color: white;
-  background-size: 1400px 100%;
+  background-size: cover;
+  background-position-y: bottom;
+  background-repeat: no-repeat;
 }
 
 .form-name {
