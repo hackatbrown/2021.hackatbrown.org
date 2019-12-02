@@ -9,6 +9,7 @@ import Dashboard from './pages/DashboardPage/DashboardHome';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+import { FirebaseContextConsumer } from './components/Firebase/context'
 
 const theme = createMuiTheme({
   overrides: {
@@ -65,7 +66,10 @@ const App: React.FC = () => {
                 <Route path="/dashboard">
                   <div className="App">
                     <Toolbar backgroundColor={"#008D8A"}/>
-                    <Dashboard />
+                    
+                    <FirebaseContextConsumer>
+                        {firebase => <Dashboard firebase={(firebase == null) ? null : firebase.firebase} />}
+                    </FirebaseContextConsumer>
                   </div>
                 </Route>
             </Switch>
