@@ -60,6 +60,7 @@
 @media screen and (max-width: 600px) {
     .itinerary-div {
         margin: 0 0 0 20vw;
-        min-width: 20rem;
+        min-width: 16rem;
+        max-width: 18rem;
     }
 }
