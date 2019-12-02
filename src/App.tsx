@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -9,6 +10,8 @@ import Dashboard from './pages/DashboardPage/DashboardHome';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+
+import { FirebaseContextConsumer } from './components/Firebase/context'
 
 const theme = createMuiTheme({
   overrides: {
@@ -44,6 +47,11 @@ const App: React.FC = () => {
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
+                <Route path="/">
+                    <div className="App">
+                        <LandingPage />
+                    </div>
+                </Route>
                 <Route path="/sponsors">
                     <div className="App">
                         <SponsorshipPage />
@@ -58,7 +66,9 @@ const App: React.FC = () => {
                     <ThemeProvider theme={theme}>
                       <div className="App">
                           <Toolbar backgroundColor={"#4F5C6B"}/>
-                          <RegistrationPage />
+                          <FirebaseContextConsumer>
+                            {firebase => <RegistrationPage firebase={(firebase == null) ? null : firebase.firebase} />}
+                          </FirebaseContextConsumer>
                       </div>
                     </ThemeProvider>
                 </Route>

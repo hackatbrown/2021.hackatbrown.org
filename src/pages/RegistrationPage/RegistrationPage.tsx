@@ -12,17 +12,23 @@ import bookGif from "../../assets/images/Registration/book_animation.gif"
 import trophyGif from "../../assets/images/Registration/shelvestrophy.gif"
 import tvGif from "../../assets/images/Registration/tv_animation.gif"
 
+import firebase from 'firebase'; // for getting access to storage
+import Firebase from "../../components/Firebase"; // for user
+
 
 /**
  * define a type model for the props you are passing in to the component
  */
 type RegistrationProps = {
+    firebase : (Firebase | null)
 };
 
 /**
  * define a type model for the state of the page
  */
 type RegistrationState = {
+    user: any,
+    error: string,
     /* screen size information */
     width: number,
     /* 0 -> basic information, 1 -> more information, 2 -> optional information */
@@ -66,6 +72,8 @@ export default class RegistrationPage extends React.Component<
     constructor(props: RegistrationProps) {
         super(props);
         this.state = {
+            user: null,
+            error: "",
             width: window.innerWidth,
             formStage: 0,
             firstName: "",
@@ -187,9 +195,70 @@ export default class RegistrationPage extends React.Component<
     handleFileUpload = (event: any) => {
       this.setState({
         resume: event.target.files[0],
-        fileName: event.target.files[0].name
+        fileName: this.state.user.uid
       })
+
+      // Rename the file to uid and upload to storage:
+      const uploadTask = firebase.storage().ref(`resumes/${this.state.user.uid}`).put(this.state.resume);
+      uploadTask.on(
+        "state_changed",
+        snapshot => {
+          // progress function ...
+          // const progress = Math.round(
+          //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          // );
+          // this.setState({ progress });
+        },
+        error => {
+          // Error function ...
+          // console.log(error);
+          this.setState({
+            error: "Sorry, something went wrong while trying to upload your resume. Please try again later."
+          })
+        },
+        // Following is for file preview:
+        // () => {
+        //   // complete function ...
+        //   firebase.storage()
+        //     .ref("resumes")
+        //     .child(resume.name)
+        //     .getDownloadURL()
+        //     .then(url => {
+        //       this.setState({ url });
+        //     });
+        // }
+      );
     }
+
+    // handleUpload = () => {
+    //   // Rename the file to uid and upload to storage:
+    //   const uploadTask = firebase.storage().ref(`resumes/${this.state.user.uid}`).put(this.state.resume);
+    //   uploadTask.on(
+    //     "state_changed",
+    //     snapshot => {
+    //       // progress function ...
+    //       // const progress = Math.round(
+    //       //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+    //       // );
+    //       // this.setState({ progress });
+    //     },
+    //     error => {
+    //       // Error function ...
+    //       console.log(error);
+    //     },
+    //     // Following is for file preview:
+    //     // () => {
+    //     //   // complete function ...
+    //     //   firebase.storage()
+    //     //     .ref("resumes")
+    //     //     .child(resume.name)
+    //     //     .getDownloadURL()
+    //     //     .then(url => {
+    //     //       this.setState({ url });
+    //     //     });
+    //     // }
+    //   );
+    // };
 
     /* Function that will send data to backend upon form submission */
     submitForm = (event: any) => {
@@ -290,7 +359,8 @@ export default class RegistrationPage extends React.Component<
           handleFormChange={this.handleFormChange}
           incrementStage={this.incrementStage}
           decrementStage={this.decrementStage}
-          fileName={this.state.fileName}/>
+          fileName={this.state.fileName}
+          error={this.state.error}/>
         );
         let compList = [basicComp, moreComp, optionalComp];
         let backgroundImageList = [shelfImage, bookImage, trophyImage];

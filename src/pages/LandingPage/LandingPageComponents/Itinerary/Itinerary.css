@@ -1,0 +1,29 @@
+.itinerary {
+    height: 80vh;
+    align-content: center;
+    margin: 3rem 10% 2rem 10%;
+    display: flex;
+    align-content: flex-end;
+}
+
+.itinerary-filler {
+    background-color: #f7f7f7;
+    margin: 2rem 1rem 0 0;
+}
+
+.itinerary-div {
+    padding: 1rem;
+    text-align: left;
+    max-width: 400px;
+    min-width: 40%;
+}
+
+.itinerary-header {
+    padding: 0rem 3rem 0 3rem;
+}
+
+.itinerary-list {
+    padding: 1rem 3rem 3rem 3rem;
+    max-height: 400px;
+    overflow: scroll;
+}

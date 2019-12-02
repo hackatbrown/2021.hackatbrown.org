@@ -17,6 +17,7 @@ import Button from '@material-ui/core/Button';
    currentSelected: {
     [key: string]: string | boolean | any
    }
+   error: string
  };
 
 /**
@@ -24,6 +25,7 @@ import Button from '@material-ui/core/Button';
  */
 type OptionalInfoState = {
   fileName: string
+  error: string
 };
 
 const buttonStyle:React.CSSProperties = {
@@ -42,7 +44,8 @@ export default class OptionalInfo extends React.Component<
     constructor(props: OptionalInfoProps) {
         super(props);
         this.state = {
-          fileName: ""
+          fileName: "",
+          error: this.props.error
         };
     }
 
@@ -52,6 +55,9 @@ export default class OptionalInfo extends React.Component<
           fileName: nextProps.fileName
         });
       }
+      this.setState({
+        error: nextProps.error
+      });
     }
 
     render() {
@@ -66,9 +72,12 @@ export default class OptionalInfo extends React.Component<
                         Upload File
                         <input
                           type="file"
+                          accept="application/pdf, application/msword"
                           style={{ display: "none" }}
                           onChange={this.props.handleFileUpload}/>
                       </Button>
+                      <br />
+                      {this.state.error}
                     </Grid>
                     <Grid item style={{marginTop: "10px", marginBottom: "auto"}}>
                       <p>{this.state.fileName}</p>
