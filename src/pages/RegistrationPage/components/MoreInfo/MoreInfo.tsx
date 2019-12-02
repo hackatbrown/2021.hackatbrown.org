@@ -1,22 +1,43 @@
 import React from "react";
 import "./MoreInfo.css";
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
-import TextField from '@material-ui/core/TextField';
-import Grid from '@material-ui/core/Grid';
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Button from '@material-ui/core/Button';
-import { Collapse } from 'react-collapse';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
+import { withStyles } from '@material-ui/core/styles';
+import { Popper, Paper} from "@material-ui/core";
+
+
+const DropButton = withStyles(theme => ({
+  root: {
+    textTransform: 'none',
+    borderBottom: '3px solid',
+    borderRadius: '0px',
+    borderColor: "#FFFFFF",
+    fontSize: '18px',
+    color: "#FFFFFF",
+    backgroundColor: 'transparent',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+    '&:active': {
+      boxShadow: 'none',
+    },
+    '&:focus': {
+      boxShadow: 'none',
+    },
+  },
+}))(Button);
+
+const buttonStyle:React.CSSProperties = {
+  textTransform: 'none',
+  color: 'white',
+  background: 'transparent',
+  borderRadius: '16.5px',
+  border: '2px solid #FFFFFF',
+  height: '40px',
+  fontSize: '16px',
+  fontFamily: 'Work Sans'
+};
 
 /**
  * define a type model for the props you are passing in to the component
@@ -38,7 +59,26 @@ type MoreInfoState = {
   raceOpened: boolean
   genderOpened: boolean
   howFindOutOpened: boolean
+  anchorEl: any
+  raceText: string | undefined
+  genderText: string | undefined
+  howFindOutText: string | undefined
+  raceArrowTransform: {}
+  genderArrowTransform: {}
+  findoutArrowTransform: {}
+  racePreferNot: boolean
+  genderPreferNot: boolean
 };
+
+let races = ["non-hispanic-white", "latino-hispanic", "south-asian", "east-asian", "south-east-asian", "middle-eastern", "pacific-islander", "native-american", "other", "prefer-not"];
+let racesLabels = ["Non Hispanic White", "Latino/Hispanic", "South Asian" ,"East Asian", "Southeast Asian", "Middle Eastern", "Pacific Islander", "Native American", "Other", "Prefer not to say"];
+
+let genders = ["female", "male", "non-binary", "transgender", "non-conforming", "intersex", "questioning", "other", "prefer-not"];
+let gendersLabels = ["Female", "Male", "Non-binary", "Transgender", "Non-conforming", "Intersex", "Questioning", "Other", "Prefer not to say"];
+
+let findouts = ["social-media", "search-engine", "friends-family", "sponsors", "other"];
+let findoutsLabels = ["Social Media", "Search Engine", "Heard from Friends/Family", "Heard from our Sponsors", "Other"];
+
 
 export default class MoreInfo extends React.Component<
     MoreInfoProps,
@@ -49,25 +89,78 @@ export default class MoreInfo extends React.Component<
         this.state = {
           raceOpened: false,
           genderOpened: false,
-          howFindOutOpened: false
+          howFindOutOpened: false,
+          anchorEl: null,
+          raceText: this.convertSelection("race", this.props.currentSelected['race']),
+          genderText: this.convertSelection("gender", this.props.currentSelected['gender']),
+          howFindOutText: this.convertSelection("findout", this.props.currentSelected['findout']),
+          genderArrowTransform: { transform: 'none' },
+          raceArrowTransform: { transform: 'none' },
+          findoutArrowTransform: { transform: 'none' },
+          racePreferNot: false,
+          genderPreferNot: false
         };
+    }
+
+
+    convertSelection = (id:string,  selected:string[]) => {
+      let newString:string = "";
+      switch (id) {
+        case "race": {
+          if (selected.length == 0) {
+            newString = "Race (Select all that applies)";
+            return newString;
+          } else {
+            let converted = selected.map(x => racesLabels[races.indexOf(x)]);
+            return converted.join(', ');
+          }
+          break;
+        }
+        case "gender": {
+          if (selected.length == 0) {
+            newString = "Gender (Select all that applies)";
+            return newString;
+          } else {
+            let converted = selected.map(x => gendersLabels[genders.indexOf(x)]);
+            return converted.join(', ');
+          }
+        }
+        case "findout": {
+          if (selected.length == 0) {
+            newString = "How did you find out about us?";
+            return newString;
+          } else {
+            let converted = selected.map(x => findoutsLabels[findouts.indexOf(x)]);
+            return converted.join(', ');
+          }
+        }
+      }
     }
 
     raceControl = (event:any) => {
       this.setState({
-        raceOpened: this.state.raceOpened ? false : true
+        anchorEl: event.currentTarget,
+        raceOpened: this.state.raceOpened ? false : true,
+        raceText: this.convertSelection("race", this.props.currentSelected['race']),
+        raceArrowTransform: this.state.raceOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
       });
     }
 
     genderControl = (event:any) => {
       this.setState({
-        genderOpened: this.state.genderOpened ? false : true
+        anchorEl: event.currentTarget,
+        genderOpened: this.state.genderOpened ? false : true,
+        genderText: this.convertSelection("gender", this.props.currentSelected['gender']),
+        genderArrowTransform: this.state.genderOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
       });
     }
 
     howFindOutControl = (event:any) => {
       this.setState({
-        howFindOutOpened: this.state.howFindOutOpened ? false : true
+        anchorEl: event.currentTarget,
+        howFindOutOpened: this.state.howFindOutOpened ? false : true,
+        howFindOutText: this.convertSelection("findout", this.props.currentSelected['findout']),
+        findoutArrowTransform: this.state.howFindOutOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
       });
     }
 
@@ -75,70 +168,117 @@ export default class MoreInfo extends React.Component<
       return this.props.currentSelected[id].includes(value);
     }
 
+    disableRestRace = (event:any) => {
+      this.setState({
+        racePreferNot: this.state.racePreferNot ? false: true
+      });
+    }
+
+    disableRestGender = (event:any) => {
+      this.setState({
+        genderPreferNot: this.state.genderPreferNot ? false: true
+      });
+    }
+
     render() {
-        let races = ["non-hispanic-white", "latino-hispanic", "east-south-asian", "middle-eastern", "pacific-islander", "native-american", "other", "prefer-not"];
-        let racesLabels = ["Non Hispanic White", "Latino/Hispanic", "East/South Asian", "Middle Eastern", "Pacific Islander", "Native American", "Other", "Prefer not to say"];
-
-        let genders = ["female", "male", "non-binary", "transgender", "non-conforming", "intersex", "questioning", "other", "prefer-not"];
-        let gendersLabels = ["Female", "Male", "Non-binary", "Transgender", "Non-conforming", "Intersex", "Questioning", "Other", "Prefer not to say"];
-
-        let findouts = ["social-media", "search-engine", "friends-family", "sponsors", "other"];
-        let findoutsLabels = ["Social Media", "Search Engine", "Heard from Friends/Family", "Heard from our Sponsors", "Other"];
-
         return (
             <div className="more-info">
-                <p style={{marginBottom: "20px"}}>We ask the following to know more about who is attending our event.</p>
+                <p id="description-more-info">We ask the following to know more about who is attending our event.</p>
                 <form>
-                  <Button onClick={this.raceControl}> Race (Select all that applies) </Button>
-                  <Collapse isOpened={this.state.raceOpened}>
-                    <div className="Race">
-                      <FormControl className="raceInfo">
-                        <FormGroup>
-                          {races.map((value, index) => {
-                            return <FormControlLabel
-                            control={<Checkbox style={{color: "white"}} checked={this.isChecked("race", value)} id="race" value={value} />}
+                  <div className="race">
+                    <DropButton onClick={this.raceControl}>
+                     {this.state.raceText}
+                     <svg style={this.state.raceArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
+                     </svg>
+                    </DropButton>
+                    <Popper
+                      open={this.state.raceOpened}
+                      anchorEl={this.state.anchorEl}
+                      placement="bottom-start"
+                    >
+                      <Paper className="form-popup">
+                        {races.slice(0, races.length - 1).map((value, index) => {
+                          return <div>
+                            <FormControlLabel
+                            control={<Checkbox disabled={this.state.racePreferNot} style={{color: "white"}} checked={this.isChecked("race", value)} id="race" value={value} />}
                             label={racesLabels[index]}
                             onChange={this.props.handleMultiFormChange}
                             />
+                          </div>
+                        })}
+                        <div>
+                          <FormControlLabel
+                          control={<Checkbox onClick={this.disableRestRace} style={{color: "white"}} checked={this.isChecked("race", "prefer-not")} id="race" value={"prefer-not"} />}
+                          label={racesLabels[races.length - 1]}
+                          onChange={this.props.handleMultiFormChange}
+                          />
+                        </div>
+                        <Button style={buttonStyle} onClick={this.raceControl}> Save </Button>
+                      </Paper>
+                    </Popper>
+                  </div>
+
+                  <div className="gender">
+                    <DropButton onClick={this.genderControl}>
+                      {this.state.genderText}
+                      <svg style={this.state.genderArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
+                      </svg>
+                    </DropButton>
+                    <Popper
+                      open={this.state.genderOpened}
+                      anchorEl={this.state.anchorEl}
+                      placement="bottom-start"
+                    >
+                      <Paper className="form-popup">
+                          {genders.slice(0, genders.length - 1).map((value, index) => {
+                            return <div>
+                              <FormControlLabel
+                              control={<Checkbox disabled={this.state.genderPreferNot} style={{color: "white"}} checked={this.isChecked("gender", value)} id="gender" value={value} />}
+                              label={gendersLabels[index]}
+                              onChange={this.props.handleMultiFormChange}
+                              />
+                            </div>
                           })}
-                        </FormGroup>
-                      </FormControl>
-                    </div>
-                  </Collapse>
-
-                  <Button onClick={this.genderControl}> Gender (Select all that applies) </Button>
-                  <Collapse isOpened={this.state.genderOpened}>
-                  <div className="Gender">
-                    <FormControl className="genderInfo">
-                      <FormGroup>
-                        {genders.map((value, index) => {
-                          return <FormControlLabel
-                          control={<Checkbox style={{color: "white"}} checked={this.isChecked("gender", value)} id="gender" value={value} />}
-                          label={gendersLabels[index]}
-                          onChange={this.props.handleMultiFormChange}
-                          />
-                        })}
-                      </FormGroup>
-                    </FormControl>
+                          <div>
+                            <FormControlLabel
+                            control={<Checkbox onClick={this.disableRestGender} style={{color: "white"}} checked={this.isChecked("race", "prefer-not")} id="race" value={"prefer-not"} />}
+                            label={racesLabels[races.length - 1]}
+                            onChange={this.props.handleMultiFormChange}
+                            />
+                          </div>
+                          <Button style={buttonStyle} onClick={this.genderControl}> Save </Button>
+                      </Paper>
+                    </Popper>
                   </div>
-                  </Collapse>
 
-                  <Button onClick={this.howFindOutControl}> How did you find out about us? </Button>
-                  <Collapse isOpened={this.state.howFindOutOpened}>
-                  <div className="findOut">
-                    <FormControl className="findOutInfo">
-                      <FormGroup>
-                        {findouts.map((value, index) => {
-                          return <FormControlLabel
-                          control={<Checkbox style={{color: "white"}} checked={this.isChecked("findout", value)} id="findout" value={value} />}
-                          label={findoutsLabels[index]}
-                          onChange={this.props.handleMultiFormChange}
-                          />
-                        })}
-                      </FormGroup>
-                    </FormControl>
+                  <div className="howFindOut">
+                    <DropButton onClick={this.howFindOutControl}>
+                      {this.state.howFindOutText}
+                      <svg style={this.state.findoutArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                       <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
+                      </svg>
+                    </DropButton>
+                    <Popper
+                      open={this.state.howFindOutOpened}
+                      anchorEl={this.state.anchorEl}
+                      placement="bottom-start"
+                    >
+                      <Paper className="form-popup">
+                          {findouts.map((value, index) => {
+                            return <div>
+                              <FormControlLabel
+                              control={<Checkbox style={{color: "white"}} checked={this.isChecked("findout", value)} id="findout" value={value} />}
+                              label={findoutsLabels[index]}
+                              onChange={this.props.handleMultiFormChange}
+                              />
+                            </div>
+                          })}
+                          <Button style={buttonStyle} onClick={this.howFindOutControl}> Save </Button>
+                      </Paper>
+                    </Popper>
                   </div>
-                  </Collapse>
                 </form>
             </div>
         );

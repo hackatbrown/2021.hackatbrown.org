@@ -8,6 +8,10 @@
     background-color: #ededed;
 }
 
+.toolbar .container {
+  margin-right: 0px !important;
+}
+
 #logo-img {
     max-width: 30px;
     max-height: 30px;

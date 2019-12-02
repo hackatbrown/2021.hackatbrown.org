@@ -2,14 +2,8 @@ import React from "react";
 import "./BasicInfo.css";
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import TextField from '@material-ui/core/TextField';
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -204,7 +198,7 @@ export default class BasicInfo extends React.Component<
                   <div className="basic-info-6">
                     <FormControl className="travelReimburse">
                       <FormLabel style={{color: "white"}}>Do you need travel reimbursements?</FormLabel>
-                      <FormLabel style={{color: "white"}}>*Reimbursements only available for travel within the U.S.</FormLabel>
+                      <FormLabel id="subtext" style={{color: "white"}}>*Reimbursements only available for travel within the U.S.</FormLabel>
                       <RadioGroup
                         defaultValue={this.props.currentSelected['travelReimburse'] == null ?
                         "none" : this.props.currentSelected['travelReimburse'] ? "yes" : "no"}>

@@ -9,6 +9,7 @@ import shelfImage from "../../assets/images/Registration/shelvescomputer.jpg"
 import bookImage from "../../assets/images/Registration/shelvesbook.jpg"
 import trophyImage from "../../assets/images/Registration/shelvestrophy.jpg"
 import bookGif from "../../assets/images/Registration/book_animation.gif"
+import trophyGif from "../../assets/images/Registration/shelvestrophy.gif"
 /**
  * define a type model for the props you are passing in to the component
  */
@@ -50,6 +51,7 @@ const buttonStyle:React.CSSProperties = {
   borderRadius: '16.5px',
   border: '2px solid #FFFFFF',
   height: '40px',
+  fontSize: '16px'
 };
 
 export default class RegistrationPage extends React.Component<
@@ -84,47 +86,39 @@ export default class RegistrationPage extends React.Component<
         this.handleFileUpload = this.handleFileUpload.bind(this);
     }
 
+    renderImageNext = () => {
+      this.setState({
+        inTransition: true
+      });
+      setTimeout(this.incrementStage, 1000);
+    }
+
+    renderImageSubmit = (event:any) => {
+      this.setState({
+        inTransition: true
+      });
+      setTimeout(()=>{
+        this.submitForm(event)
+      }, 2000);
+    }
+
     /* Functions to change the stage of the form */
     incrementStage = () => {
       if ((this.state.formStage + 1) <= 2 ){
         this.setState({
-          formStage: this.state.formStage + 1
+          formStage: this.state.formStage + 1,
+          inTransition: false
         });
       }
-
-      this.setState({
-        inTransition: true
-      });
-
-      /**
-      setTimeout(()=>{
-        this.setState({
-          inTransition: false,
-          formStage: this.state.formStage + 1
-        });
-      }, 1000);
-      */
     }
 
     decrementStage = () => {
       if ((this.state.formStage - 1) >= 0) {
         this.setState({
-          formStage: this.state.formStage - 1
+          formStage: this.state.formStage - 1,
+          inTransition: false
         });
       }
-
-      this.setState({
-        inTransition: true
-      })
-
-      /*
-      setTimeout(()=>{
-        this.setState({
-          inTransition: false,
-          formStage: this.state.formStage - 1
-        });
-      }, 1000)
-      */
     }
 
     /* Function to handle changing state based on submitted data */
@@ -236,18 +230,18 @@ export default class RegistrationPage extends React.Component<
     /* Button List */
     basicButtons = (
       <div className="form-buttons">
-        <Button className="next" style={buttonStyle} onClick={this.incrementStage}>Next</Button>
+        <Button className="next" style={buttonStyle} onClick={this.renderImageNext}>Next</Button>
       </div>);
     moreButtons = (
       <div className="form-buttons">
         <Button className="back" style={buttonStyle} onClick={this.decrementStage}>Previous</Button>
-        <Button className="next" style={buttonStyle} onClick={this.incrementStage}>Next</Button>
+        <Button className="next" style={buttonStyle} onClick={this.renderImageNext}>Next</Button>
       </div>
     );
     submitButtons = (
       <div className="form-buttons">
         <Button className="back" style={buttonStyle} onClick={this.decrementStage}>Previous</Button>
-        <Button className="submit" style={buttonStyle} onClick={this.submitForm}>Submit Application</Button>
+        <Button className="submit" style={buttonStyle} onClick={this.renderImageSubmit}>Submit Application</Button>
       </div>
     );
     buttonList = [this.basicButtons, this.moreButtons, this.submitButtons];
@@ -277,7 +271,7 @@ export default class RegistrationPage extends React.Component<
         );
         let compList = [basicComp, moreComp, optionalComp];
         let backgroundImageList = [shelfImage, bookImage, trophyImage];
-        let gifImageList = [shelfImage, bookGif, trophyImage];//set timeout? if I can get it to go once
+        let gifImageList = [shelfImage, bookGif, trophyGif];//set timeout? if I can get it to go once
         return (
             <div className="registration" style={{backgroundImage: `url(${this.state.inTransition ? gifImageList[this.state.formStage] : backgroundImageList[this.state.formStage]})`}}>
                 <div className="form-name">

@@ -1,16 +1,7 @@
 import React from "react";
 import "./OptionalInfo.css";
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import Checkbox from '@material-ui/core/Checkbox';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Button from '@material-ui/core/Button';
 
 
@@ -67,9 +58,10 @@ export default class OptionalInfo extends React.Component<
         return (
             <div className="optional-info">
                 <div className="optional-info-1">
-                  <p style={{marginBottom: "20px"}}> Resumes are only used to provide information to sponsors and are not used in the lottery process.</p>
+                  <p id="description"> Resumes are only used to provide information to sponsors and are not used in the lottery process.</p>
                   <Grid container spacing={2}>
                     <Grid item>
+                      <p> Resume: </p>
                       <Button style={buttonStyle} variant="contained" component="label">
                         Upload File
                         <input
@@ -78,7 +70,7 @@ export default class OptionalInfo extends React.Component<
                           onChange={this.props.handleFileUpload}/>
                       </Button>
                     </Grid>
-                    <Grid item>
+                    <Grid item style={{marginTop: "10px", marginBottom: "auto"}}>
                       <p>{this.state.fileName}</p>
                     </Grid>
                   </Grid>
@@ -132,7 +124,6 @@ export default class OptionalInfo extends React.Component<
                       id="comments"
                       defaultValue={this.props.currentSelected['comments']}
                       variant="outlined"
-                      placeholder="Anything else you'd like us to know?"
                       multiline={true}
                       rows={2}
                       rowsMax={4}

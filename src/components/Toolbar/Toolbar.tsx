@@ -22,14 +22,17 @@ const logoutStyle:React.CSSProperties = {
   background: 'transparent',
   borderRadius: '16.5px',
   border: '2px solid #FFFFFF',
-  height: '33px',
-  padding: '15px'
+  height: '40px',
+  width: '112px',
+  padding: '15px',
+  fontSize: '18px'
 };
 
 const tabStyle:React.CSSProperties = {
   textTransform: 'none',
   color: 'white',
-  background: 'transparent'
+  background: 'transparent',
+  fontSize: '18px'
 }
 
 export default class Toolbar extends React.Component<

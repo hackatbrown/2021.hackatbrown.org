@@ -12,8 +12,14 @@
   margin-bottom: 24px;
 }
 
+.form-name h1 {
+  font-family: covik-sans, sans-serif;
+  font-weight: 500;
+  font-size: 52px;
+}
+
 .form-content {
-  overflow: scroll;
+  font-family: Akkurat Pro;
   max-height: 65vh;
   min-height: 65vh;
   margin-bottom: 30px;
@@ -26,4 +32,27 @@
 
 .buttons {
   margin-right: 30px;
+}
+
+.stage {
+  margin-top: 10px;
+  margin-bottom: auto;
+  font-size: 18px;
+}
+
+.next {
+  width: 112px !important;
+}
+
+.back {
+  width: 112px !important;
+  margin-right: 20px !important;
+}
+
+.submit {
+  width: 253px !important;
+}
+
+button {
+  outline: none !important;
 }
