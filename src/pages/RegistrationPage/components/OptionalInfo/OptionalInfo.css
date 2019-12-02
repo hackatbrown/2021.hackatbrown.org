@@ -1,7 +1,25 @@
 #description {
-  font-size: 24px;
   margin-bottom: 40px;
-  width: 600px;
+}
+
+@media screen and (min-width: 500px) {
+  #description {
+    font-size: 24px;
+    width: 600px;
+  }
+  #comments {
+    width: 395px !important;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  #description{
+    font-size: 18px;
+    width: 80vw;
+  }
+  #comments {
+    width: 266px !important;
+  }
 }
 
 .optional-info-1 {
@@ -34,8 +52,4 @@
 
 .Linkedin {
   margin-bottom: 30px;
-}
-
-#comments {
-  width: 395px !important;
 }

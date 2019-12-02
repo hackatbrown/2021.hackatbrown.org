@@ -10,6 +10,9 @@ import bookImage from "../../assets/images/Registration/shelvesbook.jpg"
 import trophyImage from "../../assets/images/Registration/shelvestrophy.jpg"
 import bookGif from "../../assets/images/Registration/book_animation.gif"
 import trophyGif from "../../assets/images/Registration/shelvestrophy.gif"
+import tvGif from "../../assets/images/Registration/tv_animation.gif"
+
+
 /**
  * define a type model for the props you are passing in to the component
  */
@@ -20,6 +23,8 @@ type RegistrationProps = {
  * define a type model for the state of the page
  */
 type RegistrationState = {
+    /* screen size information */
+    width: number,
     /* 0 -> basic information, 1 -> more information, 2 -> optional information */
     formStage: number
     /* form submission information */
@@ -61,6 +66,7 @@ export default class RegistrationPage extends React.Component<
     constructor(props: RegistrationProps) {
         super(props);
         this.state = {
+            width: window.innerWidth,
             formStage: 0,
             firstName: "",
             lastName: "",
@@ -85,6 +91,18 @@ export default class RegistrationPage extends React.Component<
         this.handleFormChange = this.handleFormChange.bind(this);
         this.handleFileUpload = this.handleFileUpload.bind(this);
     }
+
+    componentWillMount = () => {
+      window.addEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    componentWillUnmount = () => {
+      window.removeEventListener('resize', this.handleWindowSizeChange);
+    }
+
+    handleWindowSizeChange = () => {
+      this.setState({ width: window.innerWidth });
+    };
 
     renderImageNext = () => {
       this.setState({
@@ -247,6 +265,11 @@ export default class RegistrationPage extends React.Component<
     buttonList = [this.basicButtons, this.moreButtons, this.submitButtons];
 
     render() {
+        /* window size */
+        const { width } = this.state;
+        console.log(width);
+        const isMobile = width <= 500;
+
         /* Components List */
         let basicComp = (<BasicInfo
           currentSelected={this.state}
@@ -271,24 +294,43 @@ export default class RegistrationPage extends React.Component<
         );
         let compList = [basicComp, moreComp, optionalComp];
         let backgroundImageList = [shelfImage, bookImage, trophyImage];
-        let gifImageList = [shelfImage, bookGif, trophyGif];//set timeout? if I can get it to go once
-        return (
-            <div className="registration" style={{backgroundImage: `url(${this.state.inTransition ? gifImageList[this.state.formStage] : backgroundImageList[this.state.formStage]})`}}>
-                <div className="form-name">
-                  <h1>{this.nameList[this.state.formStage]}</h1>
-                </div>
-                <div className="form-content">
-                  {compList[this.state.formStage]}
-                </div>
-                <div className="form-progress">
-                  <div className="buttons">
-                    {this.buttonList[this.state.formStage]}
+        let gifImageList = [tvGif, bookGif, trophyGif];
+
+        if (isMobile) {
+          return (
+            <div className="registration" style={{paddingBottom: '30px', width: '100vw'}}>
+              {compList.map((value, index) => {
+                return <div>
+                  <div className="form-name">
+                    <h1>{this.nameList[index]}</h1>
                   </div>
-                  <div className="stage">
-                    <p>{this.state.formStage + 1}/3</p>
+                  <div className="form-content-mobile">
+                    {value}
                   </div>
                 </div>
+              })}
+              <Button className="submit" style={buttonStyle} onClick={this.renderImageSubmit}>Submit Application</Button>
             </div>
-        );
+          );
+        } else {
+          return (
+              <div className="registration" style={{backgroundImage: `url(${this.state.inTransition ? gifImageList[this.state.formStage] : backgroundImageList[this.state.formStage]})`}}>
+                  <div className="form-name">
+                    <h1>{this.nameList[this.state.formStage]}</h1>
+                  </div>
+                  <div className="form-content">
+                    {compList[this.state.formStage]}
+                  </div>
+                  <div className="form-progress">
+                    <div className="buttons">
+                      {this.buttonList[this.state.formStage]}
+                    </div>
+                    <div className="stage">
+                      <p>{this.state.formStage + 1}/3</p>
+                    </div>
+                  </div>
+              </div>
+          );
+        }
     }
 }

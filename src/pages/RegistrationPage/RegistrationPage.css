@@ -12,15 +12,33 @@
   margin-bottom: 24px;
 }
 
+
 .form-name h1 {
   font-family: covik-sans, sans-serif;
   font-weight: 500;
-  font-size: 52px;
+}
+
+@media screen and (min-width: 500px) {
+  .form-name h1 {
+    font-size: 52px;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  .form-name h1 {
+    font-size: 36px;
+  }
 }
 
 .form-content {
   font-family: Akkurat Pro;
   max-height: 65vh;
+  min-height: 65vh;
+  margin-bottom: 30px;
+}
+
+.form-content-mobile {
+  font-family: Akkurat Pro;
   min-height: 65vh;
   margin-bottom: 30px;
 }

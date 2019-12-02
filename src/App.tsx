@@ -5,6 +5,7 @@ import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import EmailPage from "./pages/EmailPage/EmailPage";
 import Toolbar from './components/Toolbar/Toolbar';
+import Dashboard from './pages/DashboardPage/DashboardHome';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -60,6 +61,12 @@ const App: React.FC = () => {
                           <RegistrationPage />
                       </div>
                     </ThemeProvider>
+                </Route>
+                <Route path="/dashboard">
+                  <div className="App">
+                    <Toolbar backgroundColor={"#008D8A"}/>
+                    <Dashboard />
+                  </div>
                 </Route>
             </Switch>
         </Router>

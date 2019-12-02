@@ -59,9 +59,9 @@ export default class OptionalInfo extends React.Component<
             <div className="optional-info">
                 <div className="optional-info-1">
                   <p id="description"> Resumes are only used to provide information to sponsors and are not used in the lottery process.</p>
+                  <p> Resume: </p>
                   <Grid container spacing={2}>
                     <Grid item>
-                      <p> Resume: </p>
                       <Button style={buttonStyle} variant="contained" component="label">
                         Upload File
                         <input
