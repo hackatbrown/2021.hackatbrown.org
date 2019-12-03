@@ -31,7 +31,7 @@ export default class Sponsors extends React.Component<
                     <h1>Sponsors</h1>
                 </div>
                 <div className="sponsors-items">
-                    <div className="sponsors-peta">
+                    {/* <div className="sponsors-peta">
                         <h2 className="sponsors-name">Peta</h2>
                         <div className="sponsors-img">
                             <img className="sponsors-img-peta" src={placeholderImg}></img>
@@ -48,7 +48,7 @@ export default class Sponsors extends React.Component<
                             <img className="sponsors-img-tera" src={placeholderImg}></img>
                             <img className="sponsors-img-tera" src={placeholderImg}></img>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="sponsors-giga">
                         <h2 className="sponsors-name">Giga</h2>
                         <div className="sponsors-img">
