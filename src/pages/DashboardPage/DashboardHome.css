@@ -19,8 +19,50 @@
   font-style: normal;
   font-weight: 500;
   color: white;
+  margin-top: 30px;
 }
 
 .message {
   color: white;
+}
+
+#start {
+  width: 497px;
+  height: 82px;
+  margin-top: 30px;
+  font-family: Akkurat Pro;
+  font-size: 24px;
+}
+
+#app-stat {
+  margin-top: 30px;
+  font-size: 24px;
+  font-family: Akkurat Pro;
+}
+
+#inner-button {
+  width:412.84px;
+  height: 52px;
+  margin-bottom: 30px;
+}
+
+#status {
+  width: 510px;
+  height: 400px;
+}
+
+#outer-button {
+  width: 497px;
+  height: 186px;
+  margin-top: 40px;
+}
+
+#reimbursement {
+  width: 497px;
+  height: 111px;
+  margin-top: 40px;
+}
+#apply-reimbursement {
+  font-family: Akkurat Pro;
+  font-size: 20px;
 }

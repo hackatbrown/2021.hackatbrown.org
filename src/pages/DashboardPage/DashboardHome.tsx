@@ -28,9 +28,9 @@ const buttonStyle:React.CSSProperties = {
   background: 'transparent',
   borderRadius: '15px',
   border: '2px solid #FFFFFF',
-  height: '82px',
-  width: '497px',
-  fontSize: '24px'
+  //height: '82px',
+  //width: '497px',
+  //fontSize: '24px'
 };
 
 export default class DashboardHome extends React.Component<
@@ -42,7 +42,7 @@ export default class DashboardHome extends React.Component<
         this.state = {
             user: null,
             name: "there",
-            appSubmitted: false,
+            appSubmitted: true,
             error: ""
         }
     }
@@ -109,7 +109,7 @@ export default class DashboardHome extends React.Component<
         content =
           <div className="start-app">
             <Button
-              className="start"
+              id="start"
               style={buttonStyle}
               component={props => <Link to="/registration" {...props}/>}
               linkButton={true}
@@ -119,16 +119,35 @@ export default class DashboardHome extends React.Component<
           </div>
       } else { // else, app completed
         content =
-        <div className="start-app">
-            {/* TODO: Edit app */}
-            {/* <Button
-              className="start"
+        <div id="status">
+             <div id="outer-button"
+             style={buttonStyle}
+             //component={props => <Link to="/registration" {...props}/>}
+             //linkButton={true}
+             >
+            <p id="app-stat">Application Status 
+            <br></br>
+            IN PROGRESS</p>
+            <Button 
+              id="inner-button"
               style={buttonStyle}
               component={props => <Link to="/registration" {...props}/>}
               linkButton={true}
+              >
+                Edit Your Application
+
+            </Button>
+            </div> 
+            <Button 
+            id="reimbursement"
+            style={buttonStyle}
+            component={props => <Link to="/registration" {...props}/>}
+            linkButton={true}
             >
-              Start Your Application
-            </Button> */}
+            <p id="apply-reimbursement">Apply for Reimbursement
+            <br></br>
+            *available after Hackathon</p>
+            </Button>
           </div>
       }
 
