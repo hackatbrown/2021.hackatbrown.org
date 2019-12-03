@@ -1,6 +1,6 @@
 import React from "react";
 import "./Main.css";
-import mainPic from "../../../../assets/images/LandingPage/placeholder.png";
+// import mainPic from "../../../../assets/images/LandingPage/placeholder.png";
 
 type MainProps = {};
 
@@ -22,7 +22,7 @@ export default class Main extends React.Component<
         return (
             <div className="main">
                 <div className="main-div">
-                    <img id="main-img" src={mainPic}></img>
+                    {/* <img id="main-img" src={mainPic}></img> */}
                 </div>
             </div>
         );

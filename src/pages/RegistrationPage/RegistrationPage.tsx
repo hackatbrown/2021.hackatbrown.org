@@ -100,6 +100,16 @@ export default class RegistrationPage extends React.Component<
         this.handleFileUpload = this.handleFileUpload.bind(this);
     }
 
+    // Check if user is logged in when component mounts
+    componentDidMount = () => {
+      let currFirebase = this.props.firebase;
+      if (currFirebase == null) { // if true, error
+
+      } else {
+        currFirebase.doAuthListener(this); // check if user is logged in or not
+      }
+    }
+
     componentWillMount = () => {
       window.addEventListener('resize', this.handleWindowSizeChange);
     }
@@ -193,16 +203,23 @@ export default class RegistrationPage extends React.Component<
 
     /* Function to handle file uploads */
     handleFileUpload = (event: any) => {
+      console.log("EVENT.TARGET.FILES:");
+      console.log(event.target.files[0]);
       this.setState({
         resume: event.target.files[0],
-        fileName: this.state.user.uid
+        fileName: event.target.files[0].name
       })
-
+      console.log("this.state.resume");
+      console.log(this.state.resume);
       // Rename the file to uid and upload to storage:
-      const uploadTask = firebase.storage().ref(`resumes/${this.state.user.uid}`).put(this.state.resume);
+      const { resume } = event.target.files[0];
+      console.log("RESUME = this.state");
+      console.log(resume);
+      const uploadTask = firebase.storage().ref(`resumes/${this.state.user.uid}/${this.state.user.uid}`).put(event.target.files[0]);
       uploadTask.on(
         "state_changed",
         snapshot => {
+          console.log("i should habe done experience");
           // progress function ...
           // const progress = Math.round(
           //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
@@ -228,6 +245,7 @@ export default class RegistrationPage extends React.Component<
         //     });
         // }
       );
+      console.log("dev is fun");
     }
 
     // handleUpload = () => {

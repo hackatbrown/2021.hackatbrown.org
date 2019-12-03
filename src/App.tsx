@@ -47,11 +47,6 @@ const App: React.FC = () => {
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
-                <Route path="/">
-                    <div className="App">
-                        <LandingPage />
-                    </div>
-                </Route>
                 <Route path="/sponsors">
                     <div className="App">
                         <SponsorshipPage />
@@ -65,7 +60,9 @@ const App: React.FC = () => {
                 <Route path="/registration">
                     <ThemeProvider theme={theme}>
                       <div className="App">
-                          <Toolbar backgroundColor={"#4F5C6B"}/>
+                          <FirebaseContextConsumer>
+                            {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#4F5C6B"} />}
+                          </FirebaseContextConsumer>
                           <FirebaseContextConsumer>
                             {firebase => <RegistrationPage firebase={(firebase == null) ? null : firebase.firebase} />}
                           </FirebaseContextConsumer>
@@ -74,9 +71,18 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/dashboard">
                   <div className="App">
-                    <Toolbar backgroundColor={"#008D8A"}/>
+                    <FirebaseContextConsumer>
+                      {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#008D8A"} />}
+                    </FirebaseContextConsumer>
                     <Dashboard />
                   </div>
+                </Route>
+                <Route path="/">
+                    <div className="App">
+                      <FirebaseContextConsumer>
+                        {firebase => <LandingPage firebase={(firebase == null) ? null : firebase.firebase} />}
+                      </FirebaseContextConsumer>
+                    </div>
                 </Route>
             </Switch>
         </Router>

@@ -72,7 +72,7 @@ export default class OptionalInfo extends React.Component<
                         Upload File
                         <input
                           type="file"
-                          accept="application/pdf, application/msword"
+                          // accept="application/pdf, application/msword"
                           style={{ display: "none" }}
                           onChange={this.props.handleFileUpload}/>
                       </Button>

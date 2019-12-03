@@ -1,12 +1,12 @@
 import React from "react";
 import "./LandingPage.css";
-import FAQ from "./LandingPageComponents/FAQ/FAQ"
-import Intro from "./LandingPageComponents/Intro/Intro";
+// import FAQ from "./LandingPageComponents/FAQ/FAQ"
+// import Intro from "./LandingPageComponents/Intro/Intro";
 import LoginJoin from "./LandingPageComponents/LoginJoin/LoginJoin";
 import Itinerary from "./LandingPageComponents/Itinerary/Itinerary";
 import Main from "./LandingPageComponents/Main/Main";
 import Sponsors from "./LandingPageComponents/Sponsors/Sponsors";
-import Toolbar from"./LandingPageComponents/Toolbar/Toolbar";
+// import Toolbar from"./LandingPageComponents/Toolbar/Toolbar";
 
 import { FirebaseContextConsumer } from '../../components/Firebase/context'
 import Firebase from '../../components/Firebase';
@@ -63,7 +63,7 @@ export default class LandingPage extends React.Component<
         }
         return (
             <div className="landing-page">
-                <Toolbar />
+                {/* <Toolbar /> */}
                 <Main />
                 {content}
 
@@ -71,9 +71,9 @@ export default class LandingPage extends React.Component<
                   {firebase => <FileUpload firebase={(firebase == null) ? null : firebase.firebase} />}
                 </FirebaseContextConsumer>
 
-                <Intro />
+                {/* <Intro /> */}
                 <Itinerary />
-                <FAQ />
+                {/* <FAQ /> */}
                 <Sponsors />
             </div>
         );
