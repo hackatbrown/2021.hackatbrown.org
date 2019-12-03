@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'Covik Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../../../assets/fonts/Covik-Sans-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Akkurat Pro';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../../../../assets/fonts/Akkurat-Pro-Regular.otf');
+}
+
+.error-message {
+  font-family: Akkurat Pro;
+  color: red;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.message {
+  font-family: Akkurat Pro;
+  font-size: 13px;
+}
+
+.login-join-modal {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999; transition:
+  opacity 1s ease-in 0s;
+  pointer-events: auto;
+  overflow-y: auto;
+}
+
+#text {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+}
+
+.login-join-body {
+  width: 430px;
+  position: relative;
+  margin: 10% auto;
+
+  background: #FFFFFF;
+  border-radius: 12px;
+}
+
+#other-tab {
+  background: #E8E8E8;
+}
+
+#active-tab {
+  background: #FFFFFF;
+}
+
+.join-tab {
+  width: 215px;
+  height: 80px;
+
+  border: none;
+  border-radius: 12px 0px;
+
+  font-family: Covik Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.login-tab {
+  width: 215px;
+  height: 80px;
+  
+  border: none;
+  border-radius: 0px 12px;
+
+  font-family: Covik Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+form {
+  margin-top: 30px;
+  text-align: left;
+  padding-left: 47px;
+  padding-right: 47px;
+  font-family: Akkurat Pro;
+  padding-bottom: 32px;
+}
+
+button:focus {
+  outline: 0;
+}
+
+label {
+  line-height: 19px;
+  font-size: 16px;
+}
+
+.form-control {
+  width: 336.5px;
+  height: 33px;
+  border: 1px solid #B8B8B8;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+
+.button-row {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.login-join-button {
+  width: 72.39px;
+  height: 33px;
+  
+  border: 1px solid #B8B8B8;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  background: #009490;
+
+  font-size: 12px;
+  line-height: 33px;
+  
+  color: #FFFFFF;
+
+  margin-left: 18px;
+}
+
+.cancel-button {
+  width: 72.39px;
+  height: 33px;
+  
+  border: 1px solid #B8B8B8;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  background: #FFFFFF;
+
+  font-size: 12px;
+  line-height: 33px;
+  
+  color: #2D3D53;
+}
+
+#forgot-pw {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+#forgot-pw:hover {
+  text-decoration:underline;
+}
+
+#submit-button {
+  width: 72.39px;
+  height: 33px;
+  
+  border: 1px solid #B8B8B8;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+  background: #753BBD;
+
+  font-size: 12px;
+  line-height: 33px;
+  
+  color: #FFFFFF;
+
+  margin-left: 18px;
+}
+
+.stickynote-button:hover {
+  color: #00857a;
+  border: 2px solid #00857a;
+  cursor: pointer;
+}
+
+.stickynote-button {
+  /* transform: rotate(-15deg); */
+  transition: 0.3s;
+  font-size: 2rem;
+  position: absolute;
+  top: 25%;
+  right: 22.5%;
+  border-radius: 15px;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+@media screen and (max-height: 600px) {
+  .stickynote-login {
+      font-size: 4vh;
+      right: 22.5%;
+      padding: 2px;
+      border-radius: 10px;
+  }
+  .stickynote-dashboard {
+      font-size: 4vh;
+      right: 25%;
+  }
+}

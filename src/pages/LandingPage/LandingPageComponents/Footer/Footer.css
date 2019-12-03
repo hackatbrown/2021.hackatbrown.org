@@ -1,0 +1,30 @@
+.footer {
+    background-color: #415364;
+    color: white;
+    text-align: left;
+    padding: 2rem 10% 1rem 10%;
+}
+
+.current {
+    margin: 0 0 1rem 0;
+}
+
+.socials, .previous, .links, .misc {
+    font-size: 0.8rem;
+    margin: 0 0.5rem 2rem 0.5rem;
+}
+
+.message {
+    font-size: 1rem;
+}
+
+.footerlink {
+    color: white;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.footerlink:hover {
+    color: #FF844C;
+    text-decoration: none;
+}
