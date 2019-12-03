@@ -2,7 +2,9 @@ import React from "react";
 import "./Main.css";
 import mainPic from "../../../../assets/images/LandingPage/scene_garage_transparent.png";
 import calendarPic from "../../../../assets/images/LandingPage/asset_calendar_transparent.png";
-import stickyNotePic from "../../../../assets/images/LandingPage/asset_sticky_note_transparent.png";
+// import stickyNotePic from "../../../../assets/images/LandingPage/asset_sticky_note_transparent.png";
+import { FirebaseContextConsumer } from "../../../../components/Firebase/context";
+import LoginJoin from "../LoginJoin/LoginJoin";
 
 type MainProps = {};
 
@@ -25,11 +27,14 @@ export default class Main extends React.Component<MainProps, MainState> {
                     <img id="main-img" src={mainPic}></img>
                 </div>
                 <div className="main-items">
-                    <div className="main-login">
-                        <img id="stickynote-img" src={stickyNotePic}></img>
-                        <p className="stickynote-login">Log in/Join</p>
-                        <p className="stickynote-dashboard">Dashboard</p>
-                    </div>
+                    {/* <div className="main-login">
+                        <img id="stickynote-img" src={stickyNotePic}></img> */}
+                        <FirebaseContextConsumer>
+                            {firebase => <LoginJoin firebase={(firebase == null) ? null : firebase.firebase} />}
+                        </FirebaseContextConsumer>
+                        {/* <p className="stickynote-login">Log in/Join</p>
+                        <p className="stickynote-dashboard">Dashboard</p> */}
+                    {/* </div> */}
 
                     <div className="main-cal">
                         <img id="calendar-img" src={calendarPic}></img>

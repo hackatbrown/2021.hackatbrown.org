@@ -18,7 +18,9 @@ const App: React.FC = () => {
                 </Route>
                 <Route path="/">
                     <div className="App">
-                        <LandingPage />
+                        <div className="App">
+                            <LandingPage />
+                        </div>
                     </div>
                 </Route>
                 {/* <Route path="/landingpage">
