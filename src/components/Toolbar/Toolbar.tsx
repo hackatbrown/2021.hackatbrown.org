@@ -6,13 +6,15 @@ import Col from "react-bootstrap/Col";
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { createMuiTheme, withStyles, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import Firebase from "../Firebase";
 
 type ToolbarProps = {
     backgroundColor: string;
+    firebase: (Firebase | null)
 };
 
 type ToolbarState = {
-    state: string;
+    user: any
 };
 
 /** custom styling for toolbar buttons */
@@ -42,10 +44,45 @@ export default class Toolbar extends React.Component<
     constructor(props: ToolbarProps) {
         super(props);
         this.state = {
-            state: "good"
+            user: null
         };
     }
+
+    // Workaround of having nothing as else case if firebase is null
+    doNothing = () => {}
+
+    // Check if user is logged in when component mounts
+    componentWillMount = () => {
+        let currFirebase = this.props.firebase;
+        if (currFirebase == null) { // if true, error
+
+        } else {
+            currFirebase.doAuthListener(this); // check if user is logged in or not
+        }
+    }
+
     render() {
+        let button; // display login/join or dashboard button
+        if (this.state.user != null) { // if true, user is logged in
+            // TODO: Go to dashboard
+            button =
+              <Button
+                label="logout"
+                style={logoutStyle}
+                component={props => <Link to="/logout" {...props}/>}
+                onClick={(this.props.firebase == null) ? this.doNothing : this.props.firebase.doLogOut}
+                linkButton={true}>
+                Log out
+              </Button>
+                // <button onClick={(this.props.firebase == null) ? this.doNothing : this.props.firebase.doLogOut} style={logoutStyle}>
+                //     <p>Log out</p>
+                // </button>
+        } else { // else, user is not logged in
+            // button =
+            //     <button onClick={(this.props.firebase == null) ? this.doNothing : this.props.firebase.doLogOut} className="toolbar-signin">
+            //                         <p>Join/Login</p>
+            //                     </button>
+        }
         return (
             <div className="toolbar" style={{backgroundColor: this.props.backgroundColor}}>
                 <Container>
@@ -105,13 +142,7 @@ export default class Toolbar extends React.Component<
 
                         <Col>
                         <div className="toolbar-logout">
-                          <Button
-                            label="logout"
-                            style={logoutStyle}
-                            component={props => <Link to="/logout" {...props}/>}
-                            linkButton={true}>
-                            Log out
-                          </Button>
+                          {button}
                         </div>
                         </Col>
                     </Row>

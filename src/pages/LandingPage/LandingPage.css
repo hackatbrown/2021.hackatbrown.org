@@ -1,0 +1,18 @@
+.round-clear-button {
+    width: 263px;
+    height: 67px;
+    
+    font-family: Covik Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    /* line-height: auto; */
+    
+    color: #415364;
+    
+    transform: rotate(-15deg);
+  
+    border: 3px solid #415364;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }

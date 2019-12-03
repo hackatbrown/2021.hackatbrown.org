@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -9,6 +10,8 @@ import Dashboard from './pages/DashboardPage/DashboardHome';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
+
+import { FirebaseContextConsumer } from './components/Firebase/context'
 
 const theme = createMuiTheme({
   overrides: {
@@ -59,16 +62,29 @@ const App: React.FC = () => {
                 <Route path="/registration">
                     <ThemeProvider theme={theme}>
                       <div className="App">
-                          <Toolbar backgroundColor={"#4F5C6B"}/>
-                          <RegistrationPage apiURL={apiURL}/>
+                          <FirebaseContextConsumer>
+                            {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#4F5C6B"} />}
+                          </FirebaseContextConsumer>
+                          <FirebaseContextConsumer>
+                            {firebase => <RegistrationPage apiURL={apiURL} firebase={(firebase == null) ? null : firebase.firebase} />}
+                          </FirebaseContextConsumer>
                       </div>
                     </ThemeProvider>
                 </Route>
                 <Route path="/dashboard">
                   <div className="App">
-                    <Toolbar backgroundColor={"#008D8A"}/>
+                    <FirebaseContextConsumer>
+                      {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#008D8A"} />}
+                    </FirebaseContextConsumer>
                     <Dashboard />
                   </div>
+                </Route>
+                <Route path="/">
+                    <div className="App">
+                      <FirebaseContextConsumer>
+                        {firebase => <LandingPage firebase={(firebase == null) ? null : firebase.firebase} />}
+                      </FirebaseContextConsumer>
+                    </div>
                 </Route>
             </Switch>
         </Router>

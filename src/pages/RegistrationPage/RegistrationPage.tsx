@@ -12,18 +12,25 @@ import bookGif from "../../assets/images/Registration/book_animation.gif"
 import trophyGif from "../../assets/images/Registration/shelvestrophy.gif"
 import tvGif from "../../assets/images/Registration/tv_animation.gif"
 
+import firebase from 'firebase'; // for getting access to storage
+import Firebase from "../../components/Firebase"; // for user
+
 
 /**
  * define a type model for the props you are passing in to the component
  */
 type RegistrationProps = {
-  apiURL: string
+    apiURL : string
+    firebase : (Firebase | null)
 };
 
 /**
  * define a type model for the state of the page
  */
 type RegistrationState = {
+    user: any,
+    error: string,
+    missingInfo: string,
     /* screen size information */
     width: number,
     /* 0 -> basic information, 1 -> more information, 2 -> optional information */
@@ -68,6 +75,9 @@ export default class RegistrationPage extends React.Component<
     constructor(props: RegistrationProps) {
         super(props);
         this.state = {
+            user: null,
+            error: "",
+            missingInfo: "",
             width: window.innerWidth,
             formStage: 0,
             firstName: "",
@@ -94,6 +104,16 @@ export default class RegistrationPage extends React.Component<
         this.handleFileUpload = this.handleFileUpload.bind(this);
     }
 
+    // Check if user is logged in when component mounts
+    componentDidMount = () => {
+      let currFirebase = this.props.firebase;
+      if (currFirebase == null) { // if true, error
+
+      } else {
+        currFirebase.doAuthListener(this); // check if user is logged in or not
+      }
+    }
+
     componentWillMount = () => {
       window.addEventListener('resize', this.handleWindowSizeChange);
     }
@@ -117,9 +137,23 @@ export default class RegistrationPage extends React.Component<
       this.setState({
         inTransition: true
       });
-      setTimeout(()=>{
-        this.submitForm(event)
-      }, 2000);
+
+      let errorMessage:string | null = this.checkMissing();
+      if (errorMessage === null) {
+        this.setState({
+          missingInfo: ""
+        });
+        setTimeout(()=>{
+          this.submitForm(event)
+          this.setState({
+            inTransition: false
+          });
+        }, 3000);
+      } else {
+        this.setState({
+          missingInfo: errorMessage
+        });
+      }
     }
 
     /* Functions to change the stage of the form */
@@ -187,64 +221,113 @@ export default class RegistrationPage extends React.Component<
 
     /* Function to handle file uploads */
     handleFileUpload = (event: any) => {
+      console.log("EVENT.TARGET.FILES:");
+      console.log(event.target.files[0]);
       this.setState({
         resume: event.target.files[0],
         fileName: event.target.files[0].name
       })
+      console.log("this.state.resume");
+      console.log(this.state.resume);
+      // Rename the file to uid and upload to storage:
+      const { resume } = event.target.files[0];
+      console.log("RESUME = this.state");
+      console.log(resume);
+      const uploadTask = firebase.storage().ref(`resumes/${this.state.user.uid}/${this.state.user.uid}`).put(event.target.files[0]);
+      uploadTask.on(
+        "state_changed",
+        snapshot => {
+          console.log("i should habe done experience");
+          // progress function ...
+          // const progress = Math.round(
+          //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          // );
+          // this.setState({ progress });
+        },
+        error => {
+          // Error function ...
+          // console.log(error);
+          this.setState({
+            error: "Sorry, something went wrong while trying to upload your resume. Please try again later."
+          })
+        },
+      );
+      console.log("dev is fun");
+    }
+
+    checkMissing = () => {
+      if (this.state.firstName.trim() === "" || this.state.lastName.trim() === "" || this.state.school.trim() === "" ||
+          this.state.majors.trim() === "" || this.state.gradDate.trim() === "" || this.state.over18 === null ||
+          this.state.firstHack === null || this.state.travelReimburse === null) {
+
+        return "You are missing required field(s) in the Basic Information section!";
+      } else if (this.state.gender.length === 0|| this.state.race.length === 0 || this.state.findout.length === 0) {
+        return "You are missing required field(s) in the More Information section!";
+      }
+      return null;
     }
 
     /* Function that will send data to backend upon form submission */
     submitForm = (event: any) => {
       event.preventDefault();
-      const registrationInfo =
-        {"data":
-          {
-            first_name: this.state.firstName,
-            last_name: this.state.lastName,
-            school: this.state.school,
-            major: this.state.majors,
-            grad_date: this.state.gradDate,
-            age: this.state.over18,
-            first_hackathon: this.state.firstHack,
-            fund_travel: this.state.travelReimburse,
-            traveling_address: this.state.travelOrigin,
-            gender: this.state.gender,
-            race: this.state.race,
-            website: this.state.website,
-            github: this.state.github,
-            linkedin: this.state.linkedin,
-            heard: this.state.findout,
-            other_comments: this.state.comments
-          }};
+      const registrationData = {
+        first_name: this.state.firstName,
+        last_name: this.state.lastName,
+        school: this.state.school,
+        major: this.state.majors,
+        grad_date: this.state.gradDate,
+        age: this.state.over18,
+        first_hackathon: this.state.firstHack,
+        fund_travel: this.state.travelReimburse,
+        traveling_address: this.state.travelOrigin,
+        gender: this.state.gender,
+        race: this.state.race,
+        website: this.state.website,
+        github: this.state.github,
+        linkedin: this.state.linkedin,
+        heard: this.state.findout,
+        other_comments: this.state.comments
+      };
 
-      /* display contents of registration info for error checking
-      console.log(registrationInfo.gender);
-      console.log(`Form Details: \n
-          First Name: ${registrationInfo.first_name} \n
-          Last Name: ${registrationInfo.last_name} \n
-          School: ${registrationInfo.school} \n
-          Majors: ${registrationInfo.major} \n
-          Graduation Date: ${registrationInfo.grad_date} \n
-          Over 18?: ${registrationInfo.age} \n
-          First Hackathon?: ${registrationInfo.first_hackathon} \n
-          Travel Reimbursements?: ${registrationInfo.fund_travel} \n
-          Traveling From: ${registrationInfo.traveling_address} \n
-          Gender: ${registrationInfo.gender} \n
-          Race: ${registrationInfo.race} \n
-          Website: ${registrationInfo.website} \n
-          Github: ${registrationInfo.github} \n
-          LinkedIn: ${registrationInfo.linkedin} \n
-          Resume: ${registrationInfo.resume} \n
-          Findout: ${registrationInfo.heard} \n
-          Comment: ${registrationInfo.other_comments}`
-      );
-      */
+      const api = this.props.apiURL;
+      this.state.user.getIdToken(true).then(function(idToken:string){
+        var registrationForm = new FormData();
+        registrationForm.append("data", JSON.stringify(registrationData));
+        registrationForm.append("fire_token", idToken);
+        const config = {
+          headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
+        axios
+         .post(
+             api + "/hacker_registration/submit",
+             registrationForm,
+             config
+         )
+         .then(res => {
+             // set the error status message in state
+             console.log(res)
+         });
+      }).catch(function(error:any) {
+        console.log('error');
+      });
+    }
 
-      // send post request
-      axios.post(this.props.apiURL + "/hacker_registration/submit", { registrationInfo })
-        .then(res => {
-          // depending on what is sent to backend
-        })
+    getData = () => {
+      const api = this.props.apiURL;
+      this.state.user.getIdToken(true).then(function(idToken:string){
+        axios
+         .get(
+             api + "/hacker_registration/hacker", {
+               params: {
+                 'fire-token': idToken
+               }
+             })
+         .then(res => {
+             console.log(res);
+         });
+      }).catch(function(error:any) {
+        console.log('error');
+      });
     }
 
     /* Form Title list */
@@ -295,7 +378,8 @@ export default class RegistrationPage extends React.Component<
           handleFormChange={this.handleFormChange}
           incrementStage={this.incrementStage}
           decrementStage={this.decrementStage}
-          fileName={this.state.fileName}/>
+          fileName={this.state.fileName}
+          error={this.state.error}/>
         );
         let compList = [basicComp, moreComp, optionalComp];
         let backgroundImageList = [shelfImage, bookImage, trophyImage];
@@ -315,11 +399,12 @@ export default class RegistrationPage extends React.Component<
                 </div>
               })}
               <Button className="submit" style={buttonStyle} onClick={this.renderImageSubmit}>Submit Application</Button>
+              <div className="error" style={{visibility: this.state.formStage === 2 ? 'visible' : 'hidden'}}>{this.state.missingInfo}</div>
             </div>
           );
         } else {
           return (
-              <div className="registration" style={{backgroundImage: `url(${this.state.inTransition ? gifImageList[this.state.formStage] : backgroundImageList[this.state.formStage]})`}}>
+              <div className="registration" style={{backgroundImage: `url(${(this.state.inTransition && this.state.missingInfo === "") ? gifImageList[this.state.formStage] : backgroundImageList[this.state.formStage]})`}}>
                   <div className="form-name">
                     <h1>{this.nameList[this.state.formStage]}</h1>
                   </div>
@@ -333,6 +418,9 @@ export default class RegistrationPage extends React.Component<
                     <div className="stage">
                       <p>{this.state.formStage + 1}/3</p>
                     </div>
+                  </div>
+                  <div className="error" style={{visibility: this.state.formStage === 2 ? 'visible' : 'hidden'}}>
+                    {this.state.missingInfo}
                   </div>
               </div>
           );
