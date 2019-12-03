@@ -38,6 +38,8 @@ const theme = createMuiTheme({
   }
 });
 
+const apiURL:string = "https://api2020-staging.herokuapp.com";
+
 const App: React.FC = () => {
     return (
         <Router>
@@ -58,7 +60,7 @@ const App: React.FC = () => {
                     <ThemeProvider theme={theme}>
                       <div className="App">
                           <Toolbar backgroundColor={"#4F5C6B"}/>
-                          <RegistrationPage />
+                          <RegistrationPage apiURL={apiURL}/>
                       </div>
                     </ThemeProvider>
                 </Route>

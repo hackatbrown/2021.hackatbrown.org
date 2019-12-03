@@ -17,6 +17,7 @@ import tvGif from "../../assets/images/Registration/tv_animation.gif"
  * define a type model for the props you are passing in to the component
  */
 type RegistrationProps = {
+  apiURL: string
 };
 
 /**
@@ -58,6 +59,7 @@ const buttonStyle:React.CSSProperties = {
   height: '40px',
   fontSize: '16px'
 };
+
 
 export default class RegistrationPage extends React.Component<
     RegistrationProps,
@@ -194,49 +196,52 @@ export default class RegistrationPage extends React.Component<
     /* Function that will send data to backend upon form submission */
     submitForm = (event: any) => {
       event.preventDefault();
-      const registrationInfo = {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        school: this.state.school,
-        majors: this.state.majors,
-        gradDate: this.state.gradDate,
-        over18: this.state.over18,
-        firstHack: this.state.firstHack,
-        travelReimburse: this.state.travelReimburse,
-        travelOrigin: this.state.travelOrigin,
-        gender: this.state.gender,
-        race: this.state.race,
-        website: this.state.website,
-        github: this.state.github,
-        linkedin: this.state.linkedin,
-        resume: this.state.resume,
-        findout: this.state.findout,
-        comment: this.state.comments
-      };
+      const registrationInfo =
+        {"data":
+          {
+            first_name: this.state.firstName,
+            last_name: this.state.lastName,
+            school: this.state.school,
+            major: this.state.majors,
+            grad_date: this.state.gradDate,
+            age: this.state.over18,
+            first_hackathon: this.state.firstHack,
+            fund_travel: this.state.travelReimburse,
+            traveling_address: this.state.travelOrigin,
+            gender: this.state.gender,
+            race: this.state.race,
+            website: this.state.website,
+            github: this.state.github,
+            linkedin: this.state.linkedin,
+            heard: this.state.findout,
+            other_comments: this.state.comments
+          }};
 
-      /* display contents of registration info for error checking */
+      /* display contents of registration info for error checking
+      console.log(registrationInfo.gender);
       console.log(`Form Details: \n
-          First Name: ${registrationInfo.firstName} \n
-          Last Name: ${registrationInfo.lastName} \n
+          First Name: ${registrationInfo.first_name} \n
+          Last Name: ${registrationInfo.last_name} \n
           School: ${registrationInfo.school} \n
-          Majors: ${registrationInfo.majors} \n
-          Graduation Date: ${registrationInfo.gradDate} \n
-          Over 18?: ${registrationInfo.over18} \n
-          First Hackathon?: ${registrationInfo.firstHack} \n
-          Travel Reimbursements?: ${registrationInfo.travelReimburse} \n
-          Traveling From: ${registrationInfo.travelOrigin} \n
+          Majors: ${registrationInfo.major} \n
+          Graduation Date: ${registrationInfo.grad_date} \n
+          Over 18?: ${registrationInfo.age} \n
+          First Hackathon?: ${registrationInfo.first_hackathon} \n
+          Travel Reimbursements?: ${registrationInfo.fund_travel} \n
+          Traveling From: ${registrationInfo.traveling_address} \n
           Gender: ${registrationInfo.gender} \n
           Race: ${registrationInfo.race} \n
           Website: ${registrationInfo.website} \n
           Github: ${registrationInfo.github} \n
           LinkedIn: ${registrationInfo.linkedin} \n
           Resume: ${registrationInfo.resume} \n
-          Findout: ${registrationInfo.findout} \n
-          Comment: ${registrationInfo.comment}`
+          Findout: ${registrationInfo.heard} \n
+          Comment: ${registrationInfo.other_comments}`
       );
+      */
 
       // send post request
-      axios.post('<api link to push form to database>', { registrationInfo })
+      axios.post(this.props.apiURL + "/hacker_registration/submit", { registrationInfo })
         .then(res => {
           // depending on what is sent to backend
         })
