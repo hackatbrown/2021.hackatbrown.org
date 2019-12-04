@@ -67,3 +67,60 @@
   font-family: Akkurat Pro;
   font-size: 20px;
 }
+
+@media screen and (max-width: 500px){
+  .dashboard {
+    background: url("../../assets/images/Dashboard/mobile_dash.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .main-pane {
+    width: 84%;
+  }
+
+  #outer-button {
+    width: 60%;
+  }
+
+  #inner-button {
+    width: 65%;
+  }
+
+  #reimbursement {
+    width: 60%;
+    float: left;
+  }
+
+  #start{
+    width: 84%;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .dashboard {
+    background: url("../../assets/images/Dashboard/mobile_dash.jpg") no-repeat center center fixed;
+    background-size: cover;
+  }
+  .main-pane {
+    width: 75%;
+  }
+  #outer-button {
+    width: 85%;
+    float:center;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  #inner-button {
+    width: 85%;
+    float:center;
+  }
+  #reimbursement {
+    width: 85%;
+    float: left;
+    margin-left: 15%;
+  }
+  #start{
+    width: 86%;
+    margin-left:8%;
+  }
+}

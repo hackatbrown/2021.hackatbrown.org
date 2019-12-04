@@ -42,7 +42,7 @@ export default class DashboardHome extends React.Component<
         this.state = {
             user: null,
             name: "there",
-            appSubmitted: true,
+            appSubmitted: false,
             error: ""
         }
     }
