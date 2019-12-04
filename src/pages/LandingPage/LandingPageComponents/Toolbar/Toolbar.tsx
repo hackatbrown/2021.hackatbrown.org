@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 
 import logoImg from "../../../../assets/images/LandingPage/whitepaw.png";
 import { Link, animateScroll as scroll } from "react-scroll";
+import Firebase from "../../../../components/Firebase";
 type ToolbarProps = {
     firebase: (Firebase | null)
 };

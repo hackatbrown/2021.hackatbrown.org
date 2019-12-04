@@ -29,7 +29,10 @@
 }
 
 .toolbar-signin {
+    width: 6rem;
+    color: white;
     padding: 0 1rem 0 1rem;
+    background-color: transparent;
     border-radius: 10px;
     border: 1px solid white;
     transition: 0.2s;
