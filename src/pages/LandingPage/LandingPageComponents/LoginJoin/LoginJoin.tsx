@@ -15,7 +15,7 @@ type LoginJoinState = {
   show: boolean; // for modal
   wantToLogIn: boolean; // if true, show login tab; else, show join tab
   forgotPassword: boolean; // if true, show forgot password tab
-      
+
   user: any;
   email: string;
   password: string;
@@ -122,36 +122,40 @@ export default class LoginJoin extends Component<
             let currFirebase = this.props.firebase;
             if (currFirebase == null) { // if true, error
               this.setState({
-                message: "Sorry, something went wrong. Please try again later."
+                message: "A Sorry, something went wrong. Please try again later."
               });
             } else {
-              currFirebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-                
-              }).then((u)=>{
-                // sucessfully signed up
-                let curr = this;
-                this.state.user.getIdToken(/* forceRefresh */ true).then((idToken: any) => {
-                  // Send token to your backend via HTTPS
-                  const hackerInfo = {
-                    fire_id: idToken,
-                    email: curr.state.email
-                  }
-
-                  axios.post('<api link to push form to database>', { hackerInfo })
-                  .then(res => {
-                    // depending on what is sent to backend
-                  })
-                  }).catch((error: any) => {
-                    // Handle error
-                  });
-
-                  this.setState({
-                    show: false // close modal
-                  });
+              let userEmail = this.state.email;
+              let temp = this;
+              currFirebase.doCreateUserWithEmailAndPassword(this.state.email, this.state.password).then(function(u){
+                u.user.getIdToken(true).then(function(idToken){
+                    // Send request to hacker creation route, fields 'fire_token' and 'email'
+                    var registrationForm = new FormData();
+                    registrationForm.append("email", userEmail);
+                    registrationForm.append("fire_token", idToken);
+                    const config = {
+                      headers: { "Content-Type": "application/x-www-form-urlencoded" }
+                    };
+                    axios
+                     .post(
+                         "https://api2020-staging.herokuapp.com/hacker_account/create_hacker",
+                         registrationForm,
+                         config
+                     )
+                     .then(res => {
+                         // set the error status message in state
+                         console.log(res)
+                     });
+                    console.log(idToken);
+                });
+                temp.setState({
+                  show: false // close modal
+                });
               })
               .catch((error) => {
+                console.log(error);
                 this.setState({
-                  message: "Sorry, something went wrong. Please try again later."
+                  message: " B Sorry, something went wrong. Please try again later."
                 });
               })
             }
@@ -213,7 +217,7 @@ export default class LoginJoin extends Component<
   render(){
     let content;
     if (this.state.forgotPassword) { // if true, user want to recover password
-        content = 
+        content =
             <form className='loginJoin-form' onSubmit={this.forgotPassword}>
                 <div className="form-group">
                     <label>Email</label>
@@ -228,7 +232,7 @@ export default class LoginJoin extends Component<
                 </div>
             </form>;
     } else if (this.state.wantToLogIn) { // if true, user wants to log in
-        content = 
+        content =
             <form className='loginJoin-form' onSubmit={this.login}>
                 <div className="form-group">
                     <label>Email</label>
@@ -282,7 +286,7 @@ export default class LoginJoin extends Component<
         } else { // else, user is not logged in
             button = <p onClick={this.show} className="stickynote-button">Log in/Join</p>
         }
-      
+
     return (
       <div>
         <div className="main-login">

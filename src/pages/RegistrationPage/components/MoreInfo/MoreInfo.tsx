@@ -70,13 +70,13 @@ type MoreInfoState = {
   genderPreferNot: boolean
 };
 
-let races = ["non-hispanic-white", "latino-hispanic", "south-asian", "east-asian", "south-east-asian", "middle-eastern", "pacific-islander", "native-american", "other", "prefer-not"];
-let racesLabels = ["Non Hispanic White", "Latino/Hispanic", "South Asian" ,"East Asian", "Southeast Asian", "Middle Eastern", "Pacific Islander", "Native American", "Other", "Prefer not to say"];
+let races = ["non_hispanic_white", "latino_hispanic", "south_asian", "east_asian", "south_east_asian", "black", "middle_eastern", "hawaiian_pacific_islander", "native_american", "other_ethnicity", "race_prefer_not"];
+let racesLabels = ["Non Hispanic White", "Latino/Hispanic", "South Asian" ,"East Asian", "Southeast Asian", "Black/African", "Middle Eastern", "Pacific Islander", "Native American", "Other", "Prefer not to say"];
 
-let genders = ["female", "male", "non-binary", "transgender", "non-conforming", "intersex", "questioning", "other", "prefer-not"];
+let genders = ["female", "male", "non_binary", "transgender", "non_conforming", "intersex", "questioning", "other_gender", "gender_prefer_not"];
 let gendersLabels = ["Female", "Male", "Non-binary", "Transgender", "Non-conforming", "Intersex", "Questioning", "Other", "Prefer not to say"];
 
-let findouts = ["social-media", "search-engine", "friends-family", "sponsors", "other"];
+let findouts = ["social_media", "search_engine", "friend_family", "sponsor", "other_heard"];
 let findoutsLabels = ["Social Media", "Search Engine", "Heard from Friends/Family", "Heard from our Sponsors", "Other"];
 
 

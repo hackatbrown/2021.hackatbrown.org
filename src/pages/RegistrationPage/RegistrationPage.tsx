@@ -12,17 +12,27 @@ import bookGif from "../../assets/images/Registration/book_animation.gif"
 import trophyGif from "../../assets/images/Registration/shelvestrophy.gif"
 import tvGif from "../../assets/images/Registration/tv_animation.gif"
 
+import firebase from 'firebase'; // for getting access to storage
+import Firebase from "../../components/Firebase"; // for user
+
 
 /**
  * define a type model for the props you are passing in to the component
  */
 type RegistrationProps = {
+    apiURL : string
+    firebase : (Firebase | null)
 };
 
 /**
  * define a type model for the state of the page
  */
 type RegistrationState = {
+    user: any,
+    userToken: any,
+    error: string,
+    missingInfo: string,
+    dataRetrieved: boolean,
     /* screen size information */
     width: number,
     /* 0 -> basic information, 1 -> more information, 2 -> optional information */
@@ -59,6 +69,7 @@ const buttonStyle:React.CSSProperties = {
   fontSize: '16px'
 };
 
+
 export default class RegistrationPage extends React.Component<
     RegistrationProps,
     RegistrationState
@@ -66,6 +77,11 @@ export default class RegistrationPage extends React.Component<
     constructor(props: RegistrationProps) {
         super(props);
         this.state = {
+            user: null,
+            userToken: null,
+            error: "",
+            dataRetrieved: false,
+            missingInfo: "",
             width: window.innerWidth,
             formStage: 0,
             firstName: "",
@@ -92,6 +108,17 @@ export default class RegistrationPage extends React.Component<
         this.handleFileUpload = this.handleFileUpload.bind(this);
     }
 
+    // Check if user is logged in when component mounts
+    componentDidMount = () => {
+      let currFirebase = this.props.firebase;
+      if (currFirebase == null) { // if true, error
+
+      } else {
+        currFirebase.doAuthListener(this); // check if user is logged in or not
+        this.getData()
+      }
+    }
+
     componentWillMount = () => {
       window.addEventListener('resize', this.handleWindowSizeChange);
     }
@@ -115,9 +142,23 @@ export default class RegistrationPage extends React.Component<
       this.setState({
         inTransition: true
       });
-      setTimeout(()=>{
-        this.submitForm(event)
-      }, 2000);
+
+      let errorMessage:string | null = this.checkMissing();
+      if (errorMessage === null) {
+        this.setState({
+          missingInfo: ""
+        });
+        setTimeout(()=>{
+          this.submitForm(event)
+          this.setState({
+            inTransition: false
+          });
+        }, 3000);
+      } else {
+        this.setState({
+          missingInfo: errorMessage
+        });
+      }
     }
 
     /* Functions to change the stage of the form */
@@ -185,61 +226,142 @@ export default class RegistrationPage extends React.Component<
 
     /* Function to handle file uploads */
     handleFileUpload = (event: any) => {
+      console.log("EVENT.TARGET.FILES:");
+      console.log(event.target.files[0]);
       this.setState({
         resume: event.target.files[0],
         fileName: event.target.files[0].name
       })
+      console.log("this.state.resume");
+      console.log(this.state.resume);
+      // Rename the file to uid and upload to storage:
+      const { resume } = event.target.files[0];
+      console.log("RESUME = this.state");
+      console.log(resume);
+      const uploadTask = firebase.storage().ref(`resumes/${this.state.user.uid}/${this.state.user.uid}`).put(event.target.files[0]);
+      uploadTask.on(
+        "state_changed",
+        snapshot => {
+          console.log("i should habe done experience");
+          // progress function ...
+          // const progress = Math.round(
+          //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          // );
+          // this.setState({ progress });
+        },
+        error => {
+          // Error function ...
+          // console.log(error);
+          this.setState({
+            error: "Sorry, something went wrong while trying to upload your resume. Please try again later."
+          })
+        },
+      );
+      console.log("dev is fun");
+    }
+
+    checkMissing = () => {
+      if (this.state.firstName.trim() === "" || this.state.lastName.trim() === "" || this.state.school.trim() === "" ||
+          this.state.majors.trim() === "" || this.state.gradDate.trim() === "" || this.state.over18 === null ||
+          this.state.firstHack === null || this.state.travelReimburse === null) {
+
+        return "You are missing required field(s) in the Basic Information section!";
+      } else if (this.state.gender.length === 0|| this.state.race.length === 0 || this.state.findout.length === 0) {
+        return "You are missing required field(s) in the More Information section!";
+      }
+      return null;
     }
 
     /* Function that will send data to backend upon form submission */
     submitForm = (event: any) => {
       event.preventDefault();
-      const registrationInfo = {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
+      const registrationData = {
+        first_name: this.state.firstName,
+        last_name: this.state.lastName,
         school: this.state.school,
-        majors: this.state.majors,
-        gradDate: this.state.gradDate,
-        over18: this.state.over18,
-        firstHack: this.state.firstHack,
-        travelReimburse: this.state.travelReimburse,
-        travelOrigin: this.state.travelOrigin,
+        major: this.state.majors,
+        grad_date: this.state.gradDate,
+        age: this.state.over18,
+        first_hackathon: this.state.firstHack,
+        fund_travel: this.state.travelReimburse,
+        traveling_address: this.state.travelOrigin,
         gender: this.state.gender,
         race: this.state.race,
         website: this.state.website,
         github: this.state.github,
         linkedin: this.state.linkedin,
-        resume: this.state.resume,
-        findout: this.state.findout,
-        comment: this.state.comments
+        heard: this.state.findout,
+        other_comments: this.state.comments
       };
 
-      /* display contents of registration info for error checking */
-      console.log(`Form Details: \n
-          First Name: ${registrationInfo.firstName} \n
-          Last Name: ${registrationInfo.lastName} \n
-          School: ${registrationInfo.school} \n
-          Majors: ${registrationInfo.majors} \n
-          Graduation Date: ${registrationInfo.gradDate} \n
-          Over 18?: ${registrationInfo.over18} \n
-          First Hackathon?: ${registrationInfo.firstHack} \n
-          Travel Reimbursements?: ${registrationInfo.travelReimburse} \n
-          Traveling From: ${registrationInfo.travelOrigin} \n
-          Gender: ${registrationInfo.gender} \n
-          Race: ${registrationInfo.race} \n
-          Website: ${registrationInfo.website} \n
-          Github: ${registrationInfo.github} \n
-          LinkedIn: ${registrationInfo.linkedin} \n
-          Resume: ${registrationInfo.resume} \n
-          Findout: ${registrationInfo.findout} \n
-          Comment: ${registrationInfo.comment}`
-      );
+      const api = this.props.apiURL;
+      this.state.user.getIdToken(true).then(function(idToken:string){
+        console.log(idToken);
+        var registrationForm = new FormData();
+        registrationForm.append("data", JSON.stringify(registrationData));
+        registrationForm.append("fire_token", idToken);
+        const config = {
+          headers: { "Content-Type": "application/x-www-form-urlencoded" }
+        };
+        axios
+         .post(
+             api + "/hacker_registration/submit",
+             registrationForm,
+             config
+         )
+         .then(res => {
+             console.log(res)
+         });
+      }).catch(function(error:any) {
+        console.log('error');
+      });
+    }
 
-      // send post request
-      axios.post('<api link to push form to database>', { registrationInfo })
-        .then(res => {
-          // depending on what is sent to backend
-        })
+    extractFormData = (respData:any) => {
+      let savedInfo = {
+        dataRetrieved: true,
+        firstName: respData["first_name"],
+        lastName: respData["last_name"],
+        school: respData["school"],
+        majors: respData["major"],
+        gradDate: respData["grad_date"],
+        over18: respData["age"] === 1,
+        firstHack: respData["first_hackathon"] === 1,
+        travelReimburse: respData["fund_travel"] === 1,
+        travelOrigin: respData["traveling_address"],
+        gender: respData["gender"],
+        race: respData["race"],
+        website: respData["website"],
+        github: respData["github"],
+        linkedin: respData["linkedin"],
+        findout: respData["heard"],
+        comments: respData["other_comments"]
+      };
+
+      return savedInfo;
+    }
+
+
+    getData = () => {
+      setTimeout(() => {
+        if (this.state.userToken !== null && !this.state.dataRetrieved) {
+          console.log(this.state.userToken);
+          const api = this.props.apiURL;
+          var hackerRequest = new FormData();
+          hackerRequest.append("fire_token", this.state.userToken);
+          console.log(hackerRequest);
+          axios({
+            method: 'post',
+            url: api + '/hacker_registration/hacker',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            data: hackerRequest
+          }).then(response => {
+            console.log(response);
+            let savedInfo = this.extractFormData(response["data"]);
+            this.setState(savedInfo);
+          });
+        }
+      }, 1000);
     }
 
     /* Form Title list */
@@ -264,10 +386,11 @@ export default class RegistrationPage extends React.Component<
     );
     buttonList = [this.basicButtons, this.moreButtons, this.submitButtons];
 
+
     render() {
+        console.log(this.state.firstName);
         /* window size */
         const { width } = this.state;
-        console.log(width);
         const isMobile = width <= 500;
 
         /* Components List */
@@ -290,7 +413,8 @@ export default class RegistrationPage extends React.Component<
           handleFormChange={this.handleFormChange}
           incrementStage={this.incrementStage}
           decrementStage={this.decrementStage}
-          fileName={this.state.fileName}/>
+          fileName={this.state.fileName}
+          error={this.state.error}/>
         );
         let compList = [basicComp, moreComp, optionalComp];
         let backgroundImageList = [shelfImage, bookImage, trophyImage];
@@ -310,11 +434,12 @@ export default class RegistrationPage extends React.Component<
                 </div>
               })}
               <Button className="submit" style={buttonStyle} onClick={this.renderImageSubmit}>Submit Application</Button>
+              <div className="error" style={{visibility: this.state.formStage === 2 ? 'visible' : 'hidden'}}>{this.state.missingInfo}</div>
             </div>
           );
         } else {
           return (
-              <div className="registration" style={{backgroundImage: `url(${this.state.inTransition ? gifImageList[this.state.formStage] : backgroundImageList[this.state.formStage]})`}}>
+              <div className="registration" style={{backgroundImage: `url(${(this.state.inTransition && this.state.missingInfo === "") ? gifImageList[this.state.formStage] : backgroundImageList[this.state.formStage]})`}}>
                   <div className="form-name">
                     <h1>{this.nameList[this.state.formStage]}</h1>
                   </div>
@@ -328,6 +453,9 @@ export default class RegistrationPage extends React.Component<
                     <div className="stage">
                       <p>{this.state.formStage + 1}/3</p>
                     </div>
+                  </div>
+                  <div className="error" style={{visibility: this.state.formStage === 2 ? 'visible' : 'hidden'}}>
+                    {this.state.missingInfo}
                   </div>
               </div>
           );

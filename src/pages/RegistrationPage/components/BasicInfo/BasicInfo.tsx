@@ -10,9 +10,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import NumberFormat from 'react-number-format';
 
 
-interface currFormSelection {
-
-}
 /**
  * define a type model for the props you are passing in to the component
  */
@@ -44,7 +41,7 @@ export default class BasicInfo extends React.Component<
     constructor(props: BasicInfoProps) {
         super(props);
         this.state = {
-          needReimbursementDisplay: "hidden"
+          needReimbursementDisplay: "hidden",
         }
     }
 
@@ -60,6 +57,7 @@ export default class BasicInfo extends React.Component<
       }
     }
 
+
     render() {
         const dynamicTextField = {
           color: "white",
@@ -67,182 +65,181 @@ export default class BasicInfo extends React.Component<
           visibility: this.props.currentSelected['travelReimburse'] ? "visible" : this.state.needReimbursementDisplay
         } as React.CSSProperties;
 
-        console.log(this.props.currentSelected['over18']);
         return (
-            <div className="basic-info">
-                <form>
-                  <div className="basic-info-1">
-                    <TextField
-                      style={textLeft}
-                      id="firstName"
-                      defaultValue={this.props.currentSelected['firstName']}
-                      placeholder="First Name"
-                      margin="normal"
-                      onChange={this.props.handleFormChange}
-                      InputProps={{
-                          style: {
-                              color: "white"
-                          }
-                      }}
-                    />
-                    <TextField
-                      id="lastName"
-                      defaultValue={this.props.currentSelected['lastName']}
-                      placeholder="Last Name"
-                      margin="normal"
-                      onChange={this.props.handleFormChange}
-                      InputProps={{
-                          style: {
-                              color: "white"
-                          }
-                      }}
-                    />
-                  </div>
+          <div className="basic-info">
+            <form>
+              <div className="basic-info-1">
+                <TextField
+                  style={textLeft}
+                  id="firstName"
+                  value={this.props.currentSelected['firstName']}
+                  placeholder="First Name"
+                  margin="normal"
+                  onChange={this.props.handleFormChange}
+                  InputProps={{
+                      style: {
+                          color: "white"
+                      }
+                  }}
+                />
+                <TextField
+                  id="lastName"
+                  value={this.props.currentSelected['lastName']}
+                  placeholder="Last Name"
+                  margin="normal"
+                  onChange={this.props.handleFormChange}
+                  InputProps={{
+                      style: {
+                          color: "white"
+                      }
+                  }}
+                />
+              </div>
 
-                  <div className="basic-info-2">
-                    <TextField
-                      style={textLeft}
-                      id="school"
-                      defaultValue={this.props.currentSelected['school']}
-                      placeholder="School"
-                      margin="normal"
-                      onChange={this.props.handleFormChange}
-                      InputProps={{
-                          style: {
-                              color: "white"
-                          }
-                      }}
-                    />
-                    <TextField
-                      id="majors"
-                      defaultValue={this.props.currentSelected['majors']}
-                      placeholder="Major(s)"
-                      margin="normal"
-                      onChange={this.props.handleFormChange}
-                      InputProps={{
-                          style: {
-                              color: "white"
-                          }
-                      }}
-                    />
-                  </div>
+              <div className="basic-info-2">
+                <TextField
+                  style={textLeft}
+                  id="school"
+                  value={this.props.currentSelected['school']}
+                  placeholder="School"
+                  margin="normal"
+                  onChange={this.props.handleFormChange}
+                  InputProps={{
+                      style: {
+                          color: "white"
+                      }
+                  }}
+                />
+                <TextField
+                  id="majors"
+                  value={this.props.currentSelected['majors']}
+                  placeholder="Major(s)"
+                  margin="normal"
+                  onChange={this.props.handleFormChange}
+                  InputProps={{
+                      style: {
+                          color: "white"
+                      }
+                  }}
+                />
+              </div>
 
-                  <div className="basic-info-3">
-                    <label> Graduation Date </label>
-                    <br/>
-                    <NumberFormat
-                      defaultValue={this.props.currentSelected['gradDate']}
-                      placeholder="Month/Year"
-                      id="gradDate"
-                      onChange={this.props.handleFormChange}
-                      customInput={TextField}
-                      format="##/##"/>
-                  </div>
+              <div className="basic-info-3">
+                <label> Graduation Date </label>
+                <br/>
+                <NumberFormat
+                  value={this.props.currentSelected['gradDate']}
+                  placeholder="Month/Year"
+                  id="gradDate"
+                  onChange={this.props.handleFormChange}
+                  customInput={TextField}
+                  format="##/##"/>
+              </div>
 
-                  <div className="basic-info-4">
-                    <FormControl className="over18">
-                      <FormLabel style={{color: "white"}}>Will you be over 18 on January 26th?</FormLabel>
-                      <RadioGroup
-                        defaultValue={this.props.currentSelected['over18'] == null ?
-                        "none" : this.props.currentSelected['over18'] ? "yes" : "no"}>
-                      <Grid container spacing={2}>
-                          <Grid item >
-                            <FormControlLabel
-                              style={{color: "white"}}
-                              control={<Radio style={{color: "white"}} id="over18" value="yes" />}
-                              label="Yes"
-                              onChange={this.props.handleFormChange}
-                            />
-                          </Grid>
-                          <Grid item>
-                            <FormControlLabel
-                              style={{color: "white"}}
-                              control={<Radio style={{color: "white"}} id="over18" value="no" />}
-                              label="No"
-                              onChange={this.props.handleFormChange}
-                            />
-                          </Grid>
+              <div className="basic-info-4">
+                <FormControl className="over18">
+                  <FormLabel style={{color: "white"}}>Will you be over 18 on January 26th?</FormLabel>
+                  <RadioGroup
+                    value={this.props.currentSelected['over18'] == null ?
+                    "none" : this.props.currentSelected['over18'] ? "yes" : "no"}>
+                  <Grid container spacing={2}>
+                      <Grid item >
+                        <FormControlLabel
+                          style={{color: "white"}}
+                          control={<Radio style={{color: "white"}} id="over18" value="yes" />}
+                          label="Yes"
+                          onChange={this.props.handleFormChange}
+                        />
                       </Grid>
-                      </RadioGroup>
-                    </FormControl>
-                  </div>
+                      <Grid item>
+                        <FormControlLabel
+                          style={{color: "white"}}
+                          control={<Radio style={{color: "white"}} id="over18" value="no" />}
+                          label="No"
+                          onChange={this.props.handleFormChange}
+                        />
+                      </Grid>
+                  </Grid>
+                  </RadioGroup>
+                </FormControl>
+              </div>
 
-                  <div className="basic-info-5">
-                    <FormControl className="firstHack">
-                      <FormLabel style={{color: "white"}}>Is this your first hackathon?</FormLabel>
-                      <RadioGroup
-                        defaultValue={this.props.currentSelected['firstHack'] == null ?
-                        "none" : this.props.currentSelected['firstHack'] ? "yes" : "no"}>
-                        <Grid container spacing={2}>
-                            <Grid item >
-                              <FormControlLabel
-                                style={{color: "white"}}
-                                control={<Radio style={{color: "white"}} id="firstHack" value="yes" />}
-                                label="Yes"
-                                onChange={this.props.handleFormChange}
-                              />
-                            </Grid>
-                            <Grid item>
-                              <FormControlLabel
-                                style={{color: "white"}}
-                                control={<Radio style={{color: "white"}} id="firstHack" value="no" />}
-                                label="No"
-                                onChange={this.props.handleFormChange}
-                              />
-                            </Grid>
+              <div className="basic-info-5">
+                <FormControl className="firstHack">
+                  <FormLabel style={{color: "white"}}>Is this your first hackathon?</FormLabel>
+                  <RadioGroup
+                    value={this.props.currentSelected['firstHack'] == null ?
+                    "none" : this.props.currentSelected['firstHack'] ? "yes" : "no"}>
+                    <Grid container spacing={2}>
+                        <Grid item >
+                          <FormControlLabel
+                            style={{color: "white"}}
+                            control={<Radio style={{color: "white"}} id="firstHack" value="yes" />}
+                            label="Yes"
+                            onChange={this.props.handleFormChange}
+                          />
                         </Grid>
-                      </RadioGroup>
-                    </FormControl>
-                  </div>
+                        <Grid item>
+                          <FormControlLabel
+                            style={{color: "white"}}
+                            control={<Radio style={{color: "white"}} id="firstHack" value="no" />}
+                            label="No"
+                            onChange={this.props.handleFormChange}
+                          />
+                        </Grid>
+                    </Grid>
+                  </RadioGroup>
+                </FormControl>
+              </div>
 
-                  <div className="basic-info-6">
-                    <FormControl className="travelReimburse">
-                      <FormLabel style={{color: "white"}}>Do you need travel reimbursements?</FormLabel>
-                      <FormLabel id="subtext" style={{color: "white"}}>*Reimbursements only available for travel within the U.S.</FormLabel>
-                      <RadioGroup
-                        defaultValue={this.props.currentSelected['travelReimburse'] == null ?
-                        "none" : this.props.currentSelected['travelReimburse'] ? "yes" : "no"}>
-                        <Grid container spacing={3}>
-                            <Grid item >
-                              <FormControlLabel
-                                style={{color: "white"}}
-                                control={<Radio style={{color: "white"}} id="travelReimburse" value="yes" />}
-                                label="Yes"
-                                onChange={this.props.handleFormChange}
-                                onInput={this.updateTravelReimbursePref}
-                              />
-                            </Grid>
-                            <Grid item>
-                              <FormControlLabel
-                                style={{color: "white"}}
-                                control={<Radio style={{color: "white"}} id="travelReimburse" value="no" />}
-                                label="No"
-                                onChange={this.props.handleFormChange}
-                                onInput={this.updateTravelReimbursePref}
-                              />
-                            </Grid>
-                            <Grid item>
-                              <TextField
-                                defaultValue={this.props.currentSelected['travelOrigin']}
-                                style={dynamicTextField}
-                                id="travelOrigin"
-                                placeholder="Traveling from? (City, State)"
-                                margin="dense"
-                                fullWidth
-                                onChange={this.props.handleFormChange}
-                                InputProps={{
-                                    style: {
-                                        color: "white"
-                                    }
-                                }}
-                              />
-                            </Grid>
+              <div className="basic-info-6">
+                <FormControl className="travelReimburse">
+                  <FormLabel style={{color: "white"}}>Do you need travel reimbursements?</FormLabel>
+                  <FormLabel id="subtext" style={{color: "white"}}>*Reimbursements only available for travel within the U.S.</FormLabel>
+                  <RadioGroup
+                    value={this.props.currentSelected['travelReimburse'] == null ?
+                    "none" : this.props.currentSelected['travelReimburse'] ? "yes" : "no"}>
+                    <Grid container spacing={3}>
+                        <Grid item >
+                          <FormControlLabel
+                            style={{color: "white"}}
+                            control={<Radio style={{color: "white"}} id="travelReimburse" value="yes" />}
+                            label="Yes"
+                            onChange={this.props.handleFormChange}
+                            onInput={this.updateTravelReimbursePref}
+                          />
                         </Grid>
-                      </RadioGroup>
-                    </FormControl>
-                  </div>
-                </form>
-            </div>
-        );
+                        <Grid item>
+                          <FormControlLabel
+                            style={{color: "white"}}
+                            control={<Radio style={{color: "white"}} id="travelReimburse" value="no" />}
+                            label="No"
+                            onChange={this.props.handleFormChange}
+                            onInput={this.updateTravelReimbursePref}
+                          />
+                        </Grid>
+                        <Grid item>
+                          <TextField
+                            value={this.props.currentSelected['travelOrigin']}
+                            style={dynamicTextField}
+                            id="travelOrigin"
+                            placeholder="Traveling from? (City, State)"
+                            margin="dense"
+                            fullWidth
+                            onChange={this.props.handleFormChange}
+                            InputProps={{
+                                style: {
+                                    color: "white"
+                                }
+                            }}
+                          />
+                        </Grid>
+                    </Grid>
+                  </RadioGroup>
+                </FormControl>
+              </div>
+            </form>
+        </div>
+      );
     }
 }

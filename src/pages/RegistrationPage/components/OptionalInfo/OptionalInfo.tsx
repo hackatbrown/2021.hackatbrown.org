@@ -17,6 +17,7 @@ import Button from '@material-ui/core/Button';
    currentSelected: {
     [key: string]: string | boolean | any
    }
+   error: string
  };
 
 /**
@@ -24,6 +25,7 @@ import Button from '@material-ui/core/Button';
  */
 type OptionalInfoState = {
   fileName: string
+  error: string
 };
 
 const buttonStyle:React.CSSProperties = {
@@ -42,7 +44,8 @@ export default class OptionalInfo extends React.Component<
     constructor(props: OptionalInfoProps) {
         super(props);
         this.state = {
-          fileName: ""
+          fileName: "",
+          error: this.props.error
         };
     }
 
@@ -52,6 +55,9 @@ export default class OptionalInfo extends React.Component<
           fileName: nextProps.fileName
         });
       }
+      this.setState({
+        error: nextProps.error
+      });
     }
 
     render() {
@@ -66,9 +72,12 @@ export default class OptionalInfo extends React.Component<
                         Upload File
                         <input
                           type="file"
+                          // accept="application/pdf, application/msword"
                           style={{ display: "none" }}
                           onChange={this.props.handleFileUpload}/>
                       </Button>
+                      <br />
+                      {this.state.error}
                     </Grid>
                     <Grid item style={{marginTop: "10px", marginBottom: "auto"}}>
                       <p>{this.state.fileName}</p>
@@ -80,7 +89,7 @@ export default class OptionalInfo extends React.Component<
                    <div className="Website">
                      <TextField
                        id="website"
-                       defaultValue={this.props.currentSelected['website']}
+                       value={this.props.currentSelected['website']}
                        placeholder="Website"
                        margin="normal"
                        onChange={this.props.handleFormChange}
@@ -94,7 +103,7 @@ export default class OptionalInfo extends React.Component<
                      <div className="Github">
                      <TextField
                        id="github"
-                       defaultValue={this.props.currentSelected['github']}
+                       value={this.props.currentSelected['github']}
                        placeholder="Github"
                        margin="normal"
                        onChange={this.props.handleFormChange}
@@ -108,7 +117,7 @@ export default class OptionalInfo extends React.Component<
                      <div className="Linkedin">
                      <TextField
                        id="linkedin"
-                       defaultValue={this.props.currentSelected['linkedin']}
+                       value={this.props.currentSelected['linkedin']}
                        placeholder="Linkedin"
                        margin="normal"
                        onChange={this.props.handleFormChange}
@@ -122,7 +131,7 @@ export default class OptionalInfo extends React.Component<
                    <p style={{marginTop: "20px", marginBottom: "10px"}}>Additional Comments:</p>
                    <TextField
                       id="comments"
-                      defaultValue={this.props.currentSelected['comments']}
+                      value={this.props.currentSelected['comments']}
                       variant="outlined"
                       multiline={true}
                       rows={2}
@@ -135,7 +144,6 @@ export default class OptionalInfo extends React.Component<
                       }}
                   />
                 </div>
-
             </div>
         );
     }

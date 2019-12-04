@@ -26,20 +26,28 @@ const config = {
 
 export default class Firebase {
   auth: app.auth.Auth;
-  
+
   constructor() {
     app.initializeApp(config);
     this.auth = app.auth();
   }
 
   // Authentication API!
-  doAuthListener = (currPage: { setState: { (arg0: { user: app.User; }): void; (arg0: { user: null; }): void; }; }) => {
+  doAuthListener = (currPage: { setState: { (arg0: { user: app.User; userToken: string; }): void; (arg0: { user: null; userToken: null; }): void; }; }) => {
     this.auth.onAuthStateChanged((user) => {
       if (user) {
-        currPage.setState({ user: user });
-        localStorage.setItem('user', user.uid);
+        user.getIdToken().then(function(token:string) {
+          currPage.setState({
+             user: user,
+             userToken: token
+           });
+          localStorage.setItem('user', user.uid);
+        });
       } else {
-        currPage.setState({ user: null });
+        currPage.setState({
+           user: null,
+           userToken: null
+         });
         localStorage.removeItem('user');
       }
     });

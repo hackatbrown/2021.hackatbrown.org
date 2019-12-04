@@ -24,11 +24,11 @@ export default class Itinerary extends React.Component<
         return (
             <div className="itinerary">
                 <div className="itinerary-div">
-                    
+
                     <h1 className="itinerary-header">Itinerary</h1>
                     <div className="itinerary-list">
                         <h2 className="itinerary-date">Saturday, January 25th</h2>
-                    
+
                         <div className="row1">
                             <p className="time">9:00-10:00am</p>
                             <p className="event">Check in</p>
@@ -64,7 +64,7 @@ export default class Itinerary extends React.Component<
                         <div className="row2">
                             <p className="location">Sayles & Friedman</p>
                         </div>
-                    
+
                         <div className="row1">
                             <p className="time">1:00pm</p>
                             <p className="event">Hacking begins!</p>
@@ -91,7 +91,7 @@ export default class Itinerary extends React.Component<
                         <div className="row2">
                             <p className="location">Sayles Auditorium</p>
                         </div>
-                        
+
                         <h2 className="itinerary-date">Sunday, January 26th*</h2>
 
                         <div className="row1">
@@ -144,7 +144,7 @@ export default class Itinerary extends React.Component<
                             <p className="location">Salomon DECI</p>
                         </div>
                     </div>
-                
+
                 </div>
             </div>
         );

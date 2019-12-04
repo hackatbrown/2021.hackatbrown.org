@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
+import LandingPage from "./pages/LandingPage/LandingPage";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 // import EmailPage from "./pages/emailpage/EmailPage";
-import LandingPage from "./pages/LandingPage/LandingPage";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
 import { Router, Switch, Route } from "react-router-dom";
@@ -26,6 +26,7 @@ history.listen(location => {
     ReactGA.set({ page: location.pathname }); // Update the user's current page
     ReactGA.pageview(location.pathname); // Record a pageview for the given page
 });
+
 
 const theme = createMuiTheme({
   overrides: {
@@ -75,7 +76,9 @@ const App: React.FC = () => {
                           <FirebaseContextConsumer>
                               {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#4F5C6B"}/>}
                           </FirebaseContextConsumer>
-                          <RegistrationPage />
+                          <FirebaseContextConsumer>
+                              {firebase => <RegistrationPage firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL}/>}
+                          </FirebaseContextConsumer>
                       </div>
                     </ThemeProvider>
                 </Route>

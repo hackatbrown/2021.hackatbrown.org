@@ -11,7 +11,7 @@ import Firebase from "../Firebase";
 
 type ToolbarProps = {
     firebase: Firebase | null;
-    backgroundColor: string;   
+    backgroundColor: string;
 };
 
 type ToolbarState = {
