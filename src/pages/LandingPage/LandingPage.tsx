@@ -62,7 +62,7 @@ export default class LandingPage extends React.Component<
                     {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} />}
                 </FirebaseContextConsumer>
                 <Main />
-                <div id="intro"><Intro /></div>
+                <Intro />
                 <div id="itinerary"><Itinerary /></div>
                 <div id="faq"><FAQ /></div>
                 <div id="sponsors"><Sponsors /></div>

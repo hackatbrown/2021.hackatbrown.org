@@ -11,7 +11,7 @@
 }
 
 #garden-img {
-    max-width: 60%;
+    max-width: 90%;
 }
 
 .intro-blurb {
@@ -19,10 +19,26 @@
     max-width: 20rem;
     min-width: 30vw;
     text-align: left;
+    position: relative;
+    top: 250px;
 }
 
 .intro-blurb-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+}
+
+/* fix for "Welcome to Garage" */
+@media screen and (max-width: 1291px) {
+    .intro-blurb {
+        max-width: 45rem;
+        position: block;
+        top: initial;
+        margin: 0 auto;
+    }
+
+    #garden-img {
+        padding: 1em 0;
+    }
 }

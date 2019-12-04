@@ -184,11 +184,25 @@ label {
   transition: 0.3s;
   font-size: 2rem;
   position: absolute;
-  top: 25%;
-  right: 22.5%;
+  /* top: 25%;
+  right: 22.5%; */
   border-radius: 15px;
   padding: 5px;
   border: 2px solid black;
+}
+
+/* fix sticky note and calendar stacking size */
+@media screen and (max-width: 500px) {
+  
+}
+
+/* fix sticky note overlap */
+@media screen and (max-width: 750px) {
+  .stickynote-button {
+      font-size: 1.5rem;
+      /* top: 30%;
+      right: 29.5%; */
+  }
 }
 
 @media screen and (max-height: 600px) {
