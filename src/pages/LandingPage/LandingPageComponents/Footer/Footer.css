@@ -24,6 +24,10 @@
     transition: .2s;
 }
 
+.footer p {
+    margin-bottom: 0;
+}
+
 .footerlink:hover {
     color: #FF844C;
     text-decoration: none;

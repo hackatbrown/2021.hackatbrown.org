@@ -1,0 +1,22 @@
+.dashboard {
+  overflow: hidden;
+  background: url("../../assets/images/Dashboard/registration.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+}
+
+.main-pane {
+  width: 35vw;
+  float: left;
+  margin-left: 10vw;
+  margin-top: 20vh;
+  background-color: #008D8A;
+}
+
+.greeting h1 {
+  font-size: 52px;
+  font-family: Covik Sans, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  color: white;
+}

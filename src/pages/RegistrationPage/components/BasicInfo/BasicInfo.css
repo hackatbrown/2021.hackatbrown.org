@@ -1,0 +1,34 @@
+.basic-info-1 {
+  display: 'flex';
+  flexWrap: 'wrap';
+  margin-bottom: 15px;
+}
+
+.basic-info-2 {
+  display: 'flex';
+  flexWrap: 'wrap';
+  margin-bottom: 15px;
+}
+
+.basic-info-3 {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.basic-info-3 label {
+  margin-bottom: 5px;
+  font-family: Akkurat Pro;
+}
+
+.basic-info-4 {
+  margin-bottom: 35px;
+}
+
+.basic-info-5 {
+  margin-bottom: 35px;
+}
+
+#subtext {
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.75) !important;
+}
