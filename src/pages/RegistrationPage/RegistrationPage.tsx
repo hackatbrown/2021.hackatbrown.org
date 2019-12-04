@@ -356,8 +356,8 @@ export default class RegistrationPage extends React.Component<
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             data: hackerRequest
           }).then(response => {
+            console.log(response);
             let savedInfo = this.extractFormData(response["data"]);
-            console.log(this.state);
             this.setState(savedInfo);
           });
         }
