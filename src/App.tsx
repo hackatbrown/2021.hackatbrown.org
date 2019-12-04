@@ -11,6 +11,8 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { FirebaseContextConsumer } from './components/Firebase/context'
 
+import LoginJoin from './pages/LoginJoin/LoginJoin';
+
 const theme = createMuiTheme({
   overrides: {
     MuiInput: {
@@ -38,6 +40,8 @@ const theme = createMuiTheme({
     ].join(','),
   }
 });
+
+const apiURL : string = "https://api2020-staging.herokuapp.com";
 
 const App: React.FC = () => {
     return (
@@ -68,7 +72,15 @@ const App: React.FC = () => {
                     <Toolbar backgroundColor={"#008D8A"}/>
                     
                     <FirebaseContextConsumer>
-                        {firebase => <Dashboard firebase={(firebase == null) ? null : firebase.firebase} />}
+                        {firebase => <Dashboard firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL} />}
+                    </FirebaseContextConsumer>
+                  </div>
+                </Route>
+                <Route>
+                  {/* Temp log in for testing dashboard */}
+                  <div className="App">   
+                    <FirebaseContextConsumer>
+                        {firebase => <LoginJoin firebase={(firebase == null) ? null : firebase.firebase} />}
                     </FirebaseContextConsumer>
                   </div>
                 </Route>
