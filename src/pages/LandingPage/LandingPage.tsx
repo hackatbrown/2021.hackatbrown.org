@@ -8,10 +8,11 @@ import Sponsors from "./LandingPageComponents/Sponsors/Sponsors";
 import Footer from "./LandingPageComponents/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
+
 type LandingPageProps = {};
 
 type LandingPageState = {
-    // user: any;
+  toolbarVisible : boolean
 };
 
 export default class LandingPage extends React.Component<
@@ -21,53 +22,29 @@ export default class LandingPage extends React.Component<
     constructor(props: LandingPageProps) {
         super(props);
         this.state = {
-            // user: null
+          toolbarVisible : true,
         };
     }
 
-    // // Workaround of having nothing as else case if firebase is null
-    // doNothing = () => {}
-
-    // // Check if user is logged in when component mounts
-    // componentDidMount = () => {
-    //     let currFirebase = this.props.firebase;
-    //     if (currFirebase == null) { // if true, error
-
-    //     } else {
-    //         currFirebase.doAuthListener(this); // check if user is logged in or not
-    //     }
-    // }
+    hideToolbar = (display: boolean) => {
+      this.setState({
+        toolbarVisible : display
+      });
+    }
 
     render() {
-        // let content; // display login/join or dashboard button
-        // if (this.state.user != null) { // if true, user is logged in
-        //     content =
-        //       <div>
-        //         <button onClick={
-        //           (this.props.firebase == null) ? this.doNothing : this.props.firebase.doLogOut
-        //         }>Log out</button>
-        //         {/* TODO: Button to dashboard */}
-        //         <button className="round-clear-button" /* onClick={this.show} */ >Dashboard</button>
-        //       </div>
-        // } else { // else, user is not logged in
-        //     content =
-        //       <FirebaseContextConsumer>
-        //         {firebase => <LoginJoin firebase={(firebase == null) ? null : firebase.firebase} />}
-        //       </FirebaseContextConsumer>
-        // }
         return (
             <div className="landing-page">
                 <FirebaseContextConsumer>
                     {firebase => (
                         <Toolbar
-                            firebase={
-                                firebase == null ? null : firebase.firebase
-                            }
+                            firebase={firebase == null ? null : firebase.firebase}
                             backgroundColor={"rgba(234, 142, 99, 0.9)"}
+                            zIndex={this.state.toolbarVisible ? 1 : 0}
                         />
                     )}
                 </FirebaseContextConsumer>
-                <Main />
+                <Main hideToolbar ={this.hideToolbar}/>
                 <Intro />
                 <div id="itinerary">
                     <Itinerary />

@@ -65,6 +65,9 @@ export default class BasicInfo extends React.Component<
           visibility: this.props.currentSelected['travelReimburse'] ? "visible" : this.state.needReimbursementDisplay
         } as React.CSSProperties;
 
+        console.log(this.props);
+        console.log(this.props.currentSelected['over18']);
+
         return (
           <div className="basic-info">
             <form>

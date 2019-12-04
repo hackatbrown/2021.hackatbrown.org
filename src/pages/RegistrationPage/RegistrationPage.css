@@ -51,13 +51,16 @@
 .form-progress {
   display: flex;
   align-items: center;
-  bottom: 20px;
+  margin-bottom: 10px;
   width: 100%;
+}
+
+.form-last-button {
+  margin-bottom: 50px;
 }
 
 .buttons {
   margin-right: 30px;
-  margin-bottom: 30px;
 }
 
 .stage {
@@ -66,8 +69,14 @@
   font-size: 18px;
 }
 
+.backDashboard {
+  width: 200px !important;
+  margin-right: 20px !important;
+}
+
 .next {
   width: 112px !important;
+  margin-right: 20px !important;
 }
 
 .back {

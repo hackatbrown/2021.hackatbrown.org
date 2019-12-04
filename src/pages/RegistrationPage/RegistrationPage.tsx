@@ -11,7 +11,7 @@ import trophyImage from "../../assets/images/Registration/shelvestrophy.jpg"
 import bookGif from "../../assets/images/Registration/book_animation.gif"
 import trophyGif from "../../assets/images/Registration/shelvestrophy.gif"
 import tvGif from "../../assets/images/Registration/tv_animation.gif"
-
+import { Link, Redirect } from 'react-router-dom';
 import firebase from 'firebase'; // for getting access to storage
 import Firebase from "../../components/Firebase"; // for user
 
@@ -35,6 +35,7 @@ type RegistrationState = {
     dataRetrieved: boolean,
     /* screen size information */
     width: number,
+    backDashboard: boolean,
     /* 0 -> basic information, 1 -> more information, 2 -> optional information */
     formStage: number
     /* form submission information */
@@ -83,6 +84,7 @@ export default class RegistrationPage extends React.Component<
             dataRetrieved: false,
             missingInfo: "",
             width: window.innerWidth,
+            backDashboard: false,
             formStage: 0,
             firstName: "",
             lastName: "",
@@ -151,7 +153,8 @@ export default class RegistrationPage extends React.Component<
         setTimeout(()=>{
           this.submitForm(event)
           this.setState({
-            inTransition: false
+            inTransition: false,
+            backDashboard: true
           });
         }, 3000);
       } else {
@@ -325,9 +328,9 @@ export default class RegistrationPage extends React.Component<
         school: respData["school"],
         majors: respData["major"],
         gradDate: respData["grad_date"],
-        over18: respData["age"] === 1,
-        firstHack: respData["first_hackathon"] === 1,
-        travelReimburse: respData["fund_travel"] === 1,
+        over18: respData["age"],
+        firstHack: respData["first_hackathon"],
+        travelReimburse: respData["fund_travel"],
         travelOrigin: respData["traveling_address"],
         gender: respData["gender"],
         race: respData["race"],
@@ -364,6 +367,10 @@ export default class RegistrationPage extends React.Component<
       }, 1000);
     }
 
+    backToDashboard = () => {
+
+    }
+
     /* Form Title list */
     nameList = ["Basic Information", "More Information", "Optional Information"];
 
@@ -388,7 +395,9 @@ export default class RegistrationPage extends React.Component<
 
 
     render() {
-        console.log(this.state.firstName);
+        if (this.state.backDashboard) {
+          return <Redirect to="/dashboard" />
+        }
         /* window size */
         const { width } = this.state;
         const isMobile = width <= 500;
@@ -453,6 +462,9 @@ export default class RegistrationPage extends React.Component<
                     <div className="stage">
                       <p>{this.state.formStage + 1}/3</p>
                     </div>
+                  </div>
+                  <div className="form-last-button">
+                    <Button className="backDashboard" style={buttonStyle} component={props => <Link to="/dashboard" {...props}/>} linkButton={true}> Back to Dashboard </Button>
                   </div>
                   <div className="error" style={{visibility: this.state.formStage === 2 ? 'visible' : 'hidden'}}>
                     {this.state.missingInfo}

@@ -8,14 +8,17 @@ import Navbar from "react-bootstrap/Navbar";
 import logoImg from "../../assets/images/LandingPage/whitepaw.png";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Firebase from "../Firebase";
+import { Redirect } from 'react-router-dom';
 
 type ToolbarProps = {
     firebase: Firebase | null;
     backgroundColor: string;
+    zIndex: number;
 };
 
 type ToolbarState = {
     user: any;
+    redirectLogout: boolean;
 };
 
 export default class Toolbar extends React.Component<
@@ -25,7 +28,8 @@ export default class Toolbar extends React.Component<
     constructor(props: ToolbarProps) {
         super(props);
         this.state = {
-            user: null
+            user: null,
+            redirectLogout: false
         };
     }
 
@@ -46,6 +50,16 @@ export default class Toolbar extends React.Component<
         }
     };
 
+    logOut = () => {
+       if (this.props.firebase != null) {
+         this.props.firebase.doLogOut();
+         this.setState({
+           redirectLogout: true
+         });
+       }
+     }
+
+
     render() {
         let button; // display login/join or dashboard button
         if (this.state.user != null) {
@@ -53,11 +67,7 @@ export default class Toolbar extends React.Component<
             // TODO: Go to dashboard
             button = (
                 <button
-                    onClick={
-                        this.props.firebase == null
-                            ? this.doNothing
-                            : this.props.firebase.doLogOut
-                    }
+                    onClick={this.logOut}
                     className="toolbar-signin"
                 >
                     Log out
@@ -70,8 +80,11 @@ export default class Toolbar extends React.Component<
             //                         <p>Join/Login</p>
             //                     </button>
         }
-        return (
-            <div className="toolbar">
+
+        if (this.state.redirectLogout && window.location.pathname !== "/") {
+          return <Redirect to="/" />
+        } else {
+            return (<div className="toolbar" style={{zIndex: this.props.zIndex}}>
                 <Navbar collapseOnSelect expand="lg" className="toolbar" style={{backgroundColor: this.props.backgroundColor}}>
                     <Navbar.Brand></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -84,11 +97,11 @@ export default class Toolbar extends React.Component<
                             }}
                         >
                             <div>
-                                <img
+                                <a href="/"><img
                                     id="logo-img"
                                     src={logoImg}
                                     onClick={this.scrollToTop}
-                                ></img>
+                                ></img></a>
                             </div>
                         </Nav>
                         <Nav
@@ -97,7 +110,7 @@ export default class Toolbar extends React.Component<
                             }}
                         >
                             <Col>
-                                <div className="toolbar-about">
+                                <div className="toolbar-about" style={{display: window.location.pathname === "/" ? "initial" : "none" }}>
                                     <Link
                                         activeClass="active"
                                         to="intro"
@@ -112,7 +125,7 @@ export default class Toolbar extends React.Component<
                             </Col>
 
                             <Col>
-                                <div className="toolbar-itinerary">
+                                <div className="toolbar-itinerary" style={{display: window.location.pathname === "/" ? "initial" : "none" }}>
                                     <Link
                                         activeClass="active"
                                         to="itinerary"
@@ -127,7 +140,7 @@ export default class Toolbar extends React.Component<
                             </Col>
 
                             <Col>
-                                <div className="toolbar-faq">
+                                <div className="toolbar-faq" style={{display: window.location.pathname === "/" ? "initial" : "none" }}>
                                     <Link
                                         activeClass="active"
                                         to="faq"
@@ -142,7 +155,7 @@ export default class Toolbar extends React.Component<
                             </Col>
 
                             <Col>
-                                <div className="toolbar-sponsors">
+                                <div className="toolbar-sponsors" style={{display: window.location.pathname === "/" ? "initial" : "none" }}>
                                     <Link
                                         activeClass="active"
                                         to="sponsors"
@@ -162,5 +175,6 @@ export default class Toolbar extends React.Component<
                 </Navbar>
             </div>
         );
+      }
     }
 }

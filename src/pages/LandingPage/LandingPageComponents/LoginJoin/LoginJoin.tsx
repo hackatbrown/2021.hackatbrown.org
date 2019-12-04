@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import Modal from 'simple-react-modal'
 import './LoginJoin.css'
 import Firebase from '../../../../components/Firebase';
@@ -9,6 +10,7 @@ import { Link } from 'react-router-dom';
 
 type LoginJoinProps = {
   firebase : (Firebase | null)
+  hideToolbar : any
 };
 
 type LoginJoinState = {
@@ -24,6 +26,8 @@ type LoginJoinState = {
   emailError: string; // error message to display, if no error then set to ''
   passwordError: string;
   message: string;
+
+  justLogged: boolean;
 };
 
 export default class LoginJoin extends Component<
@@ -46,6 +50,8 @@ export default class LoginJoin extends Component<
       emailError: '',
       passwordError: '',
       message: '',
+
+      justLogged: false
     }
   }
 
@@ -63,7 +69,8 @@ export default class LoginJoin extends Component<
   }
 
   show = () => {
-    this.setState({show: true})
+    this.setState({show: true});
+    this.props.hideToolbar(false);
   }
 
   close = () => {
@@ -89,6 +96,7 @@ export default class LoginJoin extends Component<
       passwordError: "" // clear passwordError since sucessful
     });
 
+
     let currFirebase = this.props.firebase;
     if (currFirebase == null) { // if true, error
       this.setState({
@@ -97,8 +105,10 @@ export default class LoginJoin extends Component<
     } else {
       currFirebase.doSignInWithEmailAndPassword(this.state.email, this.state.password).then(()=>{
         this.setState({
-          show: false // close modal
+          show: false, // close modal
+          justLogged: true
         });
+        this.props.hideToolbar(true);
       }).catch((error) => {
           this.setState({
             passwordError: "Please check your email and password and try again. "
@@ -149,8 +159,10 @@ export default class LoginJoin extends Component<
                     console.log(idToken);
                 });
                 temp.setState({
-                  show: false // close modal
+                  show: false, // close modal
+                  justLogged: true
                 });
+                temp.props.hideToolbar(true);
               })
               .catch((error) => {
                 console.log(error);
@@ -213,8 +225,9 @@ export default class LoginJoin extends Component<
       message: ''
     });
   }
- 
-  render(){
+
+
+  modalContent = () => {
     let content;
     if (this.state.forgotPassword) { // if true, user want to recover password
         content =
@@ -253,7 +266,7 @@ export default class LoginJoin extends Component<
                 </div>
             </form>;
       } else { // else, user wants to join
-        content =
+          content =
             <form className='loginJoin-form'  onSubmit={this.join}>
                 <div className="form-group">
                     <label>Email</label>
@@ -276,23 +289,29 @@ export default class LoginJoin extends Component<
                   <button onClick={this.close} className="cancel-button">Cancel</button>
                   <button type="submit" onClick={this.join} className="login-join-button">Join</button>
                 </div>
-            </form>
+            </form>;
+      }
+      return content;
+  }
+
+
+
+  render(){
+      let button; // display login/join or dashboard button
+
+      if (this.state.justLogged) {
+        return <Redirect to="/dashboard" />
       }
 
-      let button; // display login/join or dashboard button
-        if (this.state.user != null) { // if true, user is logged in
-            // TODO: Go to dashboard
-            button = <a href="/dashboard" className="stickynote-button transparent">Dashboard</a>
-        } else { // else, user is not logged in
-            button = <p onClick={this.show} className="stickynote-button">Log in/Join</p>
-        }
+      if (this.state.user != null) { // if true, user is logged in
+          // TODO: Go to dashboard
+          button = <a href="/dashboard" className="stickynote-button transparent">Dashboard</a>
+      } else { // else, user is not logged in
+          button = <p onClick={this.show} className="stickynote-button">Log in/Join</p>
+      }
 
-    return (
-      <div>
-        <div className="main-login">
-          <img id="stickynote-img" src={stickyNotePic}></img>
-          {button}
-        </div>
+      let content = this.modalContent();
+      let modal = (
         <Modal
           className="login-join-modal"
           containerClassName="login-join-body"
@@ -305,7 +324,28 @@ export default class LoginJoin extends Component<
           <br></br>
           {content}
         </Modal>
-      </div>
-    )
+      );
+
+      return (
+        <div>
+          <div className="main-login">
+            <img id="stickynote-img" src={stickyNotePic}></img>
+            {button}
+          </div>
+          <Modal
+            className="login-join-modal"
+            containerClassName="login-join-body"
+            closeOnOuterClick={false}
+            show={this.state.show}
+            onClose={this.close}
+          >
+            <button onClick={this.swapToJoin} className="join-tab" id={this.state.wantToLogIn ? "other-tab" : "active-tab"}>Join</button>
+            <button onClick={this.swapToLogIn} className="login-tab" id={this.state.wantToLogIn ? "active-tab" : "other-tab"}>Log in</button>
+            <br></br>
+            {content}
+          </Modal>
+
+        </div>
+      );
   }
 }
