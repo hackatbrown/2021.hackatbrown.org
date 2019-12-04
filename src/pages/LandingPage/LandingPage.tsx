@@ -4,10 +4,10 @@ import FAQ from "./LandingPageComponents/FAQ/FAQ";
 import Intro from "./LandingPageComponents/Intro/Intro";
 import Itinerary from "./LandingPageComponents/Itinerary/Itinerary";
 import Main from "./LandingPageComponents/Main/Main";
-import LoginJoin from "./LandingPageComponents/LoginJoin/LoginJoin"
+import LoginJoin from "./LandingPageComponents/LoginJoin/LoginJoin";
 import Sponsors from "./LandingPageComponents/Sponsors/Sponsors";
 import Footer from "./LandingPageComponents/Footer/Footer";
-import Toolbar from "./LandingPageComponents/Toolbar/Toolbar";
+import Toolbar from "../../components/Toolbar/Toolbar";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
 type LandingPageProps = {};
 
@@ -59,14 +59,28 @@ export default class LandingPage extends React.Component<
         return (
             <div className="landing-page">
                 <FirebaseContextConsumer>
-                    {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} />}
+                    {firebase => (
+                        <Toolbar
+                            firebase={
+                                firebase == null ? null : firebase.firebase
+                            }
+                        />
+                    )}
                 </FirebaseContextConsumer>
                 <Main />
                 <Intro />
-                <div id="itinerary"><Itinerary /></div>
-                <div id="faq"><FAQ /></div>
-                <div id="sponsors"><Sponsors /></div>
-                <div id="footer"><Footer /></div>
+                <div id="itinerary">
+                    <Itinerary />
+                </div>
+                <div id="faq">
+                    <FAQ />
+                </div>
+                <div id="sponsors">
+                    <Sponsors />
+                </div>
+                <div id="footer">
+                    <Footer />
+                </div>
             </div>
         );
     }
