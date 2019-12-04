@@ -46,7 +46,7 @@ export default class DashboardHome extends React.Component<
             user: null,
             fetchedData: false,
             firstName: "there", // say "Hi, there!" if no name
-            appSubmitted: true,
+            appSubmitted: false,
             accepted: false,
             error: ""
         }
@@ -139,7 +139,7 @@ export default class DashboardHome extends React.Component<
           if (currFirebase != null) {
             currFirebase.doAuthListener(this); // check if user is logged in or not
           }
-          
+
         // } , 2000);
 
         // this.fetchHackerData();
@@ -161,7 +161,7 @@ export default class DashboardHome extends React.Component<
 
     //   // } else {
     //   //   console.log("IN HERE");
-        
+
     //   //   currFirebase.doAuthListener(this); // check if user is logged in or not
     //   //   await undefined;
     //     this.fetchHackerData();
@@ -195,10 +195,10 @@ export default class DashboardHome extends React.Component<
              //linkButton={true}
              >
             <p id="app-stat">
-              <span className="button-title">Application Status</span> 
+              <span className="button-title">Application Status</span>
             <br></br>
             <strong>IN PROGRESS</strong></p>
-            <Button 
+            <Button
               id="inner-button"
               style={buttonStyle}
               component={props => <Link to="/registration" {...props}/>}
@@ -206,8 +206,8 @@ export default class DashboardHome extends React.Component<
               >
                 Edit Your Application
             </Button>
-            </div> 
-            <Button 
+            </div>
+            <Button
               id="reimbursement"
               style={buttonStyle}
               component={props => <Link to="/registration" {...props}/>}
