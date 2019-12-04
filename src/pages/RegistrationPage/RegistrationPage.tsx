@@ -29,8 +29,10 @@ type RegistrationProps = {
  */
 type RegistrationState = {
     user: any,
+    userToken: any,
     error: string,
     missingInfo: string,
+    dataRetrieved: boolean,
     /* screen size information */
     width: number,
     /* 0 -> basic information, 1 -> more information, 2 -> optional information */
@@ -76,7 +78,9 @@ export default class RegistrationPage extends React.Component<
         super(props);
         this.state = {
             user: null,
+            userToken: null,
             error: "",
+            dataRetrieved: false,
             missingInfo: "",
             width: window.innerWidth,
             formStage: 0,
@@ -111,6 +115,7 @@ export default class RegistrationPage extends React.Component<
 
       } else {
         currFirebase.doAuthListener(this); // check if user is logged in or not
+        this.getData()
       }
     }
 
@@ -291,6 +296,7 @@ export default class RegistrationPage extends React.Component<
 
       const api = this.props.apiURL;
       this.state.user.getIdToken(true).then(function(idToken:string){
+        console.log(idToken);
         var registrationForm = new FormData();
         registrationForm.append("data", JSON.stringify(registrationData));
         registrationForm.append("fire_token", idToken);
@@ -304,7 +310,6 @@ export default class RegistrationPage extends React.Component<
              config
          )
          .then(res => {
-             // set the error status message in state
              console.log(res)
          });
       }).catch(function(error:any) {
@@ -312,22 +317,51 @@ export default class RegistrationPage extends React.Component<
       });
     }
 
+    extractFormData = (respData:any) => {
+      let savedInfo = {
+        dataRetrieved: true,
+        firstName: respData["first_name"],
+        lastName: respData["last_name"],
+        school: respData["school"],
+        majors: respData["major"],
+        gradDate: respData["grad_date"],
+        over18: respData["age"] === 1,
+        firstHack: respData["first_hackathon"] === 1,
+        travelReimburse: respData["fund_travel"] === 1,
+        travelOrigin: respData["traveling_address"],
+        gender: respData["gender"],
+        race: respData["race"],
+        website: respData["website"],
+        github: respData["github"],
+        linkedin: respData["linkedin"],
+        findout: respData["heard"],
+        comments: respData["other_comments"]
+      };
+
+      return savedInfo;
+    }
+
+
     getData = () => {
-      const api = this.props.apiURL;
-      this.state.user.getIdToken(true).then(function(idToken:string){
-        axios
-         .get(
-             api + "/hacker_registration/hacker", {
-               params: {
-                 'fire-token': idToken
-               }
-             })
-         .then(res => {
-             console.log(res);
-         });
-      }).catch(function(error:any) {
-        console.log('error');
-      });
+      setTimeout(() => {
+        if (this.state.userToken !== null && !this.state.dataRetrieved) {
+          console.log(this.state.userToken);
+          const api = this.props.apiURL;
+          var hackerRequest = new FormData();
+          hackerRequest.append("fire_token", this.state.userToken);
+          console.log(hackerRequest);
+          axios({
+            method: 'post',
+            url: api + '/hacker_registration/hacker',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            data: hackerRequest
+          }).then(response => {
+            let savedInfo = this.extractFormData(response["data"]);
+            console.log(this.state);
+            this.setState(savedInfo);
+          });
+        }
+      }, 1000);
     }
 
     /* Form Title list */
@@ -352,10 +386,11 @@ export default class RegistrationPage extends React.Component<
     );
     buttonList = [this.basicButtons, this.moreButtons, this.submitButtons];
 
+
     render() {
+        console.log(this.state.firstName);
         /* window size */
         const { width } = this.state;
-        console.log(width);
         const isMobile = width <= 500;
 
         /* Components List */

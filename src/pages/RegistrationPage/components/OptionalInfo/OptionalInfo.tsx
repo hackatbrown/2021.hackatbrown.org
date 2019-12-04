@@ -89,7 +89,7 @@ export default class OptionalInfo extends React.Component<
                    <div className="Website">
                      <TextField
                        id="website"
-                       defaultValue={this.props.currentSelected['website']}
+                       value={this.props.currentSelected['website']}
                        placeholder="Website"
                        margin="normal"
                        onChange={this.props.handleFormChange}
@@ -103,7 +103,7 @@ export default class OptionalInfo extends React.Component<
                      <div className="Github">
                      <TextField
                        id="github"
-                       defaultValue={this.props.currentSelected['github']}
+                       value={this.props.currentSelected['github']}
                        placeholder="Github"
                        margin="normal"
                        onChange={this.props.handleFormChange}
@@ -117,7 +117,7 @@ export default class OptionalInfo extends React.Component<
                      <div className="Linkedin">
                      <TextField
                        id="linkedin"
-                       defaultValue={this.props.currentSelected['linkedin']}
+                       value={this.props.currentSelected['linkedin']}
                        placeholder="Linkedin"
                        margin="normal"
                        onChange={this.props.handleFormChange}
@@ -131,7 +131,7 @@ export default class OptionalInfo extends React.Component<
                    <p style={{marginTop: "20px", marginBottom: "10px"}}>Additional Comments:</p>
                    <TextField
                       id="comments"
-                      defaultValue={this.props.currentSelected['comments']}
+                      value={this.props.currentSelected['comments']}
                       variant="outlined"
                       multiline={true}
                       rows={2}
