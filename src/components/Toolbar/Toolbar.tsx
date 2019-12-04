@@ -79,7 +79,7 @@ export default class Toolbar extends React.Component<
                             className="mr-auto"
                             style={{
                                 alignItems: "center",
-                                justifyContent: "spaceBetween"
+                                paddingLeft: "11vw"
                             }}
                         >
                             <div>
@@ -90,7 +90,11 @@ export default class Toolbar extends React.Component<
                                 ></img>
                             </div>
                         </Nav>
-                        <Nav>
+                        <Nav
+                            style={{
+                                paddingRight: "11vw"
+                            }}
+                        >
                             <Col>
                                 <div className="toolbar-about">
                                     <Link

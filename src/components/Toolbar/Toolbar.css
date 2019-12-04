@@ -3,11 +3,12 @@
     z-index: 1;
     top: 0;
     width: 100%;
-
     color: white;
     background-color: rgba(234, 142, 99, 0.9);
 }
-
+.navBarExtended {
+    padding: 1000px;
+}
 #logo-img {
     display: flex;
     align-content: flex-start;
