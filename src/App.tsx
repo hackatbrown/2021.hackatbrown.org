@@ -6,6 +6,15 @@ import LandingPage from "./pages/LandingPage/LandingPage";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
 import { Router, Switch, Route } from "react-router-dom";
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage"
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import EmailPage from "./pages/EmailPage/EmailPage";
+import Toolbar from './components/Toolbar/Toolbar';
+import Dashboard from './pages/DashboardPage/DashboardHome';
+import "bootstrap-css-only/css/bootstrap.min.css";
+import { createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import { FirebaseContextConsumer } from './components/Firebase/context'
 
 const history = createBrowserHistory();
 
@@ -17,6 +26,36 @@ history.listen(location => {
     ReactGA.set({ page: location.pathname }); // Update the user's current page
     ReactGA.pageview(location.pathname); // Record a pageview for the given page
 });
+
+const theme = createMuiTheme({
+  overrides: {
+    MuiInput: {
+      input: {
+        "&::placeholder": {
+          color: '#FFFFFF'
+        },
+      color: "white", // if you also want to change the color of the input, this is the prop you'd use
+      },
+      underline: {
+        "&:before": {
+          borderBottom: '1px solid #FFFFFF'
+        },
+      }
+    },
+    MuiOutlinedInput: {
+      multiline: {
+        border: '1px solid #FFFFFF'
+      }
+    }
+  },
+  typography: {
+    fontFamily: [
+      'Akkurat Pro'
+    ].join(','),
+  }
+});
+
+const apiURL : string = "https://api2020-staging.herokuapp.com";
 
 const App: React.FC = () => {
     return (
@@ -36,11 +75,28 @@ const App: React.FC = () => {
                         </div>
                     </div>
                 </Route>
-                {/* <Route path="/landingpage">
-                    <div className="App">
-                        <LandingPage />
-                    </div>
-                </Route> */}
+                <Route path="/registration">
+                    <ThemeProvider theme={theme}>
+                      <div className="App">
+                          {/* <Toolbar backgroundColor={"#4F5C6B"}/> */}
+                          <FirebaseContextConsumer>
+                              {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} />}
+                          </FirebaseContextConsumer>
+                          <RegistrationPage />
+                      </div>
+                    </ThemeProvider>
+                </Route>
+                <Route path="/dashboard">
+                  <div className="App">
+                    {/* <Toolbar backgroundColor={"#008D8A"}/> */}
+                    
+                    <FirebaseContextConsumer>
+                        {firebase => <Dashboard firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL} />}
+                    </FirebaseContextConsumer>
+                  </div>
+                </Route>
+                <Route>
+                </Route>
             </Switch>
         </Router>
     );
