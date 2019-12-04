@@ -9,6 +9,7 @@ import axios from "axios";
  * define a type model for the props you are passing in to the component
  */
 type DashboardProps = {
+    apiURL : string
     firebase : (Firebase | null)
 };
 
@@ -17,15 +18,17 @@ type DashboardProps = {
  */
 type DashboardState = {
     user: any,
-    name: string,
+    fetchedData: boolean,
+    firstName: string,
     appSubmitted: boolean,
+    accepted: boolean,
     error: string
 };
 
 const buttonStyle:React.CSSProperties = {
   textTransform: 'none',
   color: 'white',
-  background: 'transparent',
+  background: '#1A9996',
   borderRadius: '15px',
   border: '2px solid #FFFFFF',
   //height: '82px',
@@ -41,8 +44,10 @@ export default class DashboardHome extends React.Component<
         super(props);
         this.state = {
             user: null,
-            name: "there",
+            fetchedData: false,
+            firstName: "there", // say "Hi, there!" if no name
             appSubmitted: true,
+            accepted: false,
             error: ""
         }
     }
@@ -59,28 +64,60 @@ export default class DashboardHome extends React.Component<
               error: "Sorry, something went wrong. Please try again later."
             });
           } else {
-            let session = this;
-            session.state.user.getIdToken(true).then(function(idToken: any) {
-              // Send request to hacker status route, field 'fire_token'
-              axios
-              .post(
-                  "https://api2020-staging.herokuapp.com/hacker_account/hacker_status/",
-                  idToken
-              )
-              .then(res => {
-                  // get response
-                  let name;
-                  if (res.data.name == "") { // if true, user did not submit register form yet
-                    // keep name as "there"
-                  } else {
-                    session.setState({
-                      name: res.data.name,
-                      appSubmitted: res.data.app_submitted
-                    });
-                  }
+            // setTimeout(() => {
+              let session = this;
+              const api = this.props.apiURL;
+              this.state.user.getIdToken(true).then(function(idToken:string){
+                var hackerID = new FormData();
+                hackerID.append("fire_token", idToken);
+                const config = {
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" }
+                };
+                axios
+                .post(
+                    api + "/hacker_account/hacker_status",
+                    hackerID,
+                    config
+                )
+                .then(res => {
+                    // get response
+                    let name;
+                    if (res.data.first_name == "") { // if true, user did not submit register form yet
+                      // keep name as "there"
+                    } else {
+                      session.setState({
+                        firstName: res.data.first_name,
+                        appSubmitted: res.data.app_submitted,
+                        accepted: res.data.accepted
+                      });
+                    }
+                });
+              }).catch(function(error:any) {
+                console.log('error');
               });
-              // console.log(idToken);
-            });
+            // } , 1000);
+            // let session = this;
+            // session.state.user.getIdToken(true).then(function(idToken: any) {
+            //   // Send request to hacker status route, field 'fire_token'
+            //   axios
+            //   .post(
+            //       "https://api2020-staging.herokuapp.com/hacker_account/hacker_status/",
+            //       idToken
+            //   )
+            //   .then(res => {
+            //       // get response
+            //       let name;
+            //       if (res.data.first_name == "") { // if true, user did not submit register form yet
+            //         // keep name as "there"
+            //       } else {
+            //         session.setState({
+            //           firstName: res.data.first_name,
+            //           appSubmitted: res.data.app_submitted
+            //         });
+            //       }
+            //   });
+            //   // console.log(idToken);
+            // });
           }
       }
         // let request: string = "https://api2020-staging.herokuapp.com/hacker_account/hacker_status/" + this.state.user.uid;
@@ -91,17 +128,48 @@ export default class DashboardHome extends React.Component<
     }
 
     // Check if user is logged in when component mounts
-    componentDidMount = () => {
+    componentWillMount = () => {
       let currFirebase = this.props.firebase;
       if (currFirebase == null) { // if true, error
 
       } else {
-        currFirebase.doAuthListener(this); // check if user is logged in or not
-        this.fetchHackerData();
+        // console.log("IN HERE");
+        // setTimeout(() => {
+          // console.log(currFirebase);
+          if (currFirebase != null) {
+            currFirebase.doAuthListener(this); // check if user is logged in or not
+          }
+          
+        // } , 2000);
+
+        // this.fetchHackerData();
       }
     }
 
+    componentDidUpdate = () => {
+      if (!this.state.fetchedData) {
+        this.fetchHackerData();
+        this.setState({
+          fetchedData: true
+        });
+      }
+    }
+
+    // componentDidMount = () => {
+    //   // let currFirebase = this.props.firebase;
+    //   // if (currFirebase == null) { // if true, error
+
+    //   // } else {
+    //   //   console.log("IN HERE");
+        
+    //   //   currFirebase.doAuthListener(this); // check if user is logged in or not
+    //   //   await undefined;
+    //     this.fetchHackerData();
+    // }
+
     render() {
+      // this.fetchHackerData();
+      // console.log(this.state.user);
       let content;
       if (this.state.error != "") { // if true, error
         content = <span className="message">{this.state.error}</span>
@@ -119,15 +187,17 @@ export default class DashboardHome extends React.Component<
           </div>
       } else { // else, app completed
         content =
-        <div id="status">
+        // <div id="status">
+        <div>
              <div id="outer-button"
              style={buttonStyle}
              //component={props => <Link to="/registration" {...props}/>}
              //linkButton={true}
              >
-            <p id="app-stat">Application Status 
+            <p id="app-stat">
+              <span className="button-title">Application Status</span> 
             <br></br>
-            IN PROGRESS</p>
+            <strong>IN PROGRESS</strong></p>
             <Button 
               id="inner-button"
               style={buttonStyle}
@@ -135,18 +205,18 @@ export default class DashboardHome extends React.Component<
               linkButton={true}
               >
                 Edit Your Application
-
             </Button>
             </div> 
             <Button 
-            id="reimbursement"
-            style={buttonStyle}
-            component={props => <Link to="/registration" {...props}/>}
-            linkButton={true}
-            >
-            <p id="apply-reimbursement">Apply for Reimbursement
+              id="reimbursement"
+              style={buttonStyle}
+              component={props => <Link to="/registration" {...props}/>}
+              linkButton={false}
+              disabled >
+            <p id="apply-reimbursement">
+            <span className="button-title">Apply for Reimbursement</span>
             <br></br>
-            *available after Hackathon</p>
+            <span id="sub-text">(Will be available after the hackathon!)</span></p>
             </Button>
           </div>
       }
@@ -155,7 +225,7 @@ export default class DashboardHome extends React.Component<
         <div className="dashboard">
           <div className="main-pane">
             <div className="greeting">
-              <h1> Hi, {this.state.name}! </h1>
+              <h1> Hi, {this.state.firstName}! </h1>
             </div>
             {content}
           </div>
