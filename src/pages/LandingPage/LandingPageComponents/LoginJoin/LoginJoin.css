@@ -81,7 +81,7 @@
   font-size: 24px;
 }
 
-form {
+form.loginJoin-form {
   margin-top: 30px;
   text-align: left;
   padding-left: 47px;
@@ -193,7 +193,7 @@ label {
 
 /* fix sticky note and calendar stacking size */
 @media screen and (max-width: 500px) {
-  
+
 }
 
 /* fix sticky note overlap */

@@ -60,7 +60,7 @@ export default class Toolbar extends React.Component<
                     }
                     className="toolbar-signin"
                 >
-                    <p>Log out</p>
+                    Log out
                 </button>
             );
         } else {

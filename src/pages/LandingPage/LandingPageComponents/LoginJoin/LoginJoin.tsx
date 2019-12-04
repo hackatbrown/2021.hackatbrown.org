@@ -210,12 +210,11 @@ export default class LoginJoin extends Component<
     });
   }
  
- 
   render(){
     let content;
     if (this.state.forgotPassword) { // if true, user want to recover password
         content = 
-            <form onSubmit={this.forgotPassword}>
+            <form className='loginJoin-form' onSubmit={this.forgotPassword}>
                 <div className="form-group">
                     <label>Email</label>
                     <input value={this.state.email} onChange={this.handleEmailChange} type="email" name="email" className="form-control" aria-describedby="emailHelp" />
@@ -230,7 +229,7 @@ export default class LoginJoin extends Component<
             </form>;
     } else if (this.state.wantToLogIn) { // if true, user wants to log in
         content = 
-            <form onSubmit={this.login}>
+            <form className='loginJoin-form' onSubmit={this.login}>
                 <div className="form-group">
                     <label>Email</label>
                     <input value={this.state.email} onChange={this.handleEmailChange} type="email" name="email" className="form-control" aria-describedby="emailHelp" />
@@ -251,7 +250,7 @@ export default class LoginJoin extends Component<
             </form>;
       } else { // else, user wants to join
         content =
-            <form onSubmit={this.join}>
+            <form className='loginJoin-form'  onSubmit={this.join}>
                 <div className="form-group">
                     <label>Email</label>
                     <input value={this.state.email} onChange={this.handleEmailChange} type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
