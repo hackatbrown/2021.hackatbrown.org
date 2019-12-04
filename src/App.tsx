@@ -68,19 +68,12 @@ const App: React.FC = () => {
                         <SponsorshipPage />
                     </div>
                 </Route>
-                <Route path="/">
-                    <div className="App">
-                        <div className="App">
-                            <LandingPage />
-                        </div>
-                    </div>
-                </Route>
                 <Route path="/registration">
                     <ThemeProvider theme={theme}>
                       <div className="App">
                           {/* <Toolbar backgroundColor={"#4F5C6B"}/> */}
                           <FirebaseContextConsumer>
-                              {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} />}
+                              {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#4F5C6B"}/>}
                           </FirebaseContextConsumer>
                           <RegistrationPage />
                       </div>
@@ -89,13 +82,20 @@ const App: React.FC = () => {
                 <Route path="/dashboard">
                   <div className="App">
                     {/* <Toolbar backgroundColor={"#008D8A"}/> */}
-                    
+                    <FirebaseContextConsumer>
+                        {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#1A9996"}/>}
+                    </FirebaseContextConsumer>
                     <FirebaseContextConsumer>
                         {firebase => <Dashboard firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL} />}
                     </FirebaseContextConsumer>
                   </div>
                 </Route>
-                <Route>
+                <Route path="/">
+                    <div className="App">
+                        <div className="App">
+                            <LandingPage />
+                        </div>
+                    </div>
                 </Route>
             </Switch>
         </Router>

@@ -4,7 +4,6 @@ import FAQ from "./LandingPageComponents/FAQ/FAQ";
 import Intro from "./LandingPageComponents/Intro/Intro";
 import Itinerary from "./LandingPageComponents/Itinerary/Itinerary";
 import Main from "./LandingPageComponents/Main/Main";
-import LoginJoin from "./LandingPageComponents/LoginJoin/LoginJoin";
 import Sponsors from "./LandingPageComponents/Sponsors/Sponsors";
 import Footer from "./LandingPageComponents/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
@@ -64,6 +63,7 @@ export default class LandingPage extends React.Component<
                             firebase={
                                 firebase == null ? null : firebase.firebase
                             }
+                            backgroundColor={"rgba(234, 142, 99, 0.9)"}
                         />
                     )}
                 </FirebaseContextConsumer>

@@ -5,6 +5,7 @@ import Firebase from '../../../../components/Firebase';
 import * as EmailValidator from 'email-validator';
 import stickyNotePic from "../../../../assets/images/LandingPage/asset_sticky_note_transparent.png";
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 type LoginJoinProps = {
   firebase : (Firebase | null)
@@ -278,7 +279,7 @@ export default class LoginJoin extends Component<
       let button; // display login/join or dashboard button
         if (this.state.user != null) { // if true, user is logged in
             // TODO: Go to dashboard
-            button = <p className="stickynote-button">Dashboard</p>
+            button = <a href="/dashboard" className="stickynote-button transparent">Dashboard</a>
         } else { // else, user is not logged in
             button = <p onClick={this.show} className="stickynote-button">Log in/Join</p>
         }

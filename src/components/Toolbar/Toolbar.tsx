@@ -11,6 +11,7 @@ import Firebase from "../Firebase";
 
 type ToolbarProps = {
     firebase: Firebase | null;
+    backgroundColor: string;   
 };
 
 type ToolbarState = {
@@ -71,7 +72,7 @@ export default class Toolbar extends React.Component<
         }
         return (
             <div className="toolbar">
-                <Navbar collapseOnSelect expand="lg" className="toolbar">
+                <Navbar collapseOnSelect expand="lg" className="toolbar" style={{backgroundColor: this.props.backgroundColor}}>
                     <Navbar.Brand></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
