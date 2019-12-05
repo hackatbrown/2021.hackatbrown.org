@@ -108,7 +108,7 @@
   }
 }
 
-@media screen and (min-width: 768px){
+@media screen and (max-width: 768px){
   .dashboard {
     background: url("../../assets/images/Dashboard/mobile_dash.jpg") no-repeat center center fixed;
     background-size: cover;
