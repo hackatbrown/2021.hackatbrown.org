@@ -109,12 +109,12 @@ export default class RegistrationPage extends React.Component<
     }
 
     // Check if user is logged in when component mounts
-    componentDidMount = () => {
+    componentDidMount = async () => {
         let currFirebase = this.props.firebase;
         if (currFirebase == null) {
             // if true, error
         } else {
-            currFirebase.doAuthListener(this); // check if user is logged in or not
+            await currFirebase.doAuthListener(this); // check if user is logged in or not
             this.getData();
         }
     };
@@ -203,6 +203,7 @@ export default class RegistrationPage extends React.Component<
 
     handleMultiFormChange = (event: any) => {
         let name = event.target.id;
+        console.log(name);
         let newVals;
         if (name === "gender") {
             newVals = [...this.state.gender];
@@ -224,6 +225,28 @@ export default class RegistrationPage extends React.Component<
             [name]: newVals
         } as any);
     };
+
+    handleDisableAll = (event: any) => {
+      let name = event.target.id;
+
+      if (event.target.checked) {
+        if (name === "gender") {
+          this.setState({
+            [name]: ["gender_prefer_not"]
+          } as any);
+        } else {
+          this.setState({
+            [name]: ["race_prefer_not"]
+          } as any);
+        }
+      } else {
+        console.log("not disabled");
+        this.setState({
+          [name]: []
+        } as any);
+      }
+
+    }
 
     /* Function to handle file uploads */
     handleFileUpload = (event: any) => {
@@ -308,6 +331,7 @@ export default class RegistrationPage extends React.Component<
             heard: this.state.findout,
             other_comments: this.state.comments
         };
+        console.log(registrationData);
 
         const api = this.props.apiURL;
         await this.state.user
@@ -467,6 +491,7 @@ export default class RegistrationPage extends React.Component<
         let moreComp = (
             <MoreInfo
                 currentSelected={this.state}
+                handleDisableAll={this.handleDisableAll}
                 handleMultiFormChange={this.handleMultiFormChange}
                 handleFormChange={this.handleFormChange}
                 incrementStage={this.incrementStage}

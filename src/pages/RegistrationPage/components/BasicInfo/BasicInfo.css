@@ -4,10 +4,18 @@
   margin-bottom: 15px;
 }
 
+.basic-info-1 label {
+  color: white !important;
+}
+
 .basic-info-2 {
   display: 'flex';
   flexWrap: 'wrap';
   margin-bottom: 15px;
+}
+
+.basic-info-2 label {
+  color: white !important;
 }
 
 .basic-info-3 {
@@ -18,14 +26,23 @@
 .basic-info-3 label {
   margin-bottom: 5px;
   font-family: Akkurat Pro;
+  color: white !important;
 }
 
 .basic-info-4 {
   margin-bottom: 35px;
 }
 
+.basic-info-4 label {
+  color: white !important;
+}
+
 .basic-info-5 {
   margin-bottom: 35px;
+}
+
+.basic-info-5 label {
+  color: white !important;
 }
 
 #subtext {

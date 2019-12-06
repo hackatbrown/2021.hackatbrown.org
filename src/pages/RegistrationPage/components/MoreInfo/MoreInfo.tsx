@@ -43,6 +43,7 @@ const buttonStyle:React.CSSProperties = {
  * define a type model for the props you are passing in to the component
  */
  type MoreInfoProps = {
+   handleDisableAll: (arg0: any) => void
    handleFormChange: (arg0: any) => void
    handleMultiFormChange: (arg0: any) => void
    incrementStage: () => void
@@ -68,6 +69,9 @@ type MoreInfoState = {
   findoutArrowTransform: {}
   racePreferNot: boolean
   genderPreferNot: boolean
+  selected: {
+    [key: string]: any
+  }
 };
 
 let races = ["non_hispanic_white", "latino_hispanic", "south_asian", "east_asian", "south_east_asian", "black", "middle_eastern", "hawaiian_pacific_islander", "native_american", "other_ethnicity", "race_prefer_not"];
@@ -98,7 +102,8 @@ export default class MoreInfo extends React.Component<
           raceArrowTransform: { transform: 'none' },
           findoutArrowTransform: { transform: 'none' },
           racePreferNot: false,
-          genderPreferNot: false
+          genderPreferNot: false,
+          selected: this.props.currentSelected
         };
     }
 
@@ -108,7 +113,7 @@ export default class MoreInfo extends React.Component<
       switch (id) {
         case "race": {
           if (selected.length == 0) {
-            newString = "Race (Select all that applies)";
+            newString = "Race (Select all that apply) *";
             return newString;
           } else {
             let converted = selected.map(x => racesLabels[races.indexOf(x)]);
@@ -118,7 +123,7 @@ export default class MoreInfo extends React.Component<
         }
         case "gender": {
           if (selected.length == 0) {
-            newString = "Gender (Select all that applies)";
+            newString = "Gender (Select all that apply) *";
             return newString;
           } else {
             let converted = selected.map(x => gendersLabels[genders.indexOf(x)]);
@@ -127,7 +132,7 @@ export default class MoreInfo extends React.Component<
         }
         case "findout": {
           if (selected.length == 0) {
-            newString = "How did you find out about us?";
+            newString = "How did you find out about us? *";
             return newString;
           } else {
             let converted = selected.map(x => findoutsLabels[findouts.indexOf(x)]);
@@ -165,18 +170,28 @@ export default class MoreInfo extends React.Component<
     }
 
     isChecked = (id:string, value:string) => {
-      return this.props.currentSelected[id].includes(value);
+      // if (value === "gender_prefer_not") {
+      //   return this.props.currentSelected["gender_prefer_not"] === 1 ? true : false;
+      // }
+      //
+      // if (value === "race_prefer_not") {
+      //   return this.props.currentSelected["race_prefer_not"] === 1 ? true : false;
+      // }
+
+      return this.props.currentSelected[id].includes(value)
     }
 
     disableRestRace = (event:any) => {
+      this.props.handleDisableAll(event);
       this.setState({
-        racePreferNot: this.state.racePreferNot ? false: true
+        racePreferNot: this.state.racePreferNot ? false: true,
       });
     }
 
     disableRestGender = (event:any) => {
+      this.props.handleDisableAll(event);
       this.setState({
-        genderPreferNot: this.state.genderPreferNot ? false: true
+        genderPreferNot: this.state.genderPreferNot ? false: true,
       });
     }
 
@@ -184,6 +199,7 @@ export default class MoreInfo extends React.Component<
         return (
             <div className="more-info">
                 <p id="description-more-info">We ask the following to know more about who is attending our event.</p>
+                <p id="required"> *Required </p>
                 <form>
                   <div className="race">
                     <DropButton onClick={this.raceControl}>
@@ -209,9 +225,9 @@ export default class MoreInfo extends React.Component<
                         })}
                         <div>
                           <FormControlLabel
-                          control={<Checkbox onClick={this.disableRestRace} style={{color: "white"}} checked={this.isChecked("race", "prefer-not")} id="race" value={"prefer-not"} />}
+                          control={<Checkbox onClick={this.disableRestRace} style={{color: "white"}} checked={this.isChecked("race", "race_prefer_not")} id="race" value={"race_prefer_not"} />}
                           label={racesLabels[races.length - 1]}
-                          onChange={this.props.handleMultiFormChange}
+                          onChange={this.props.handleDisableAll}
                           />
                         </div>
                         <Button style={buttonStyle} onClick={this.raceControl}> Save </Button>
@@ -243,9 +259,9 @@ export default class MoreInfo extends React.Component<
                           })}
                           <div>
                             <FormControlLabel
-                            control={<Checkbox onClick={this.disableRestGender} style={{color: "white"}} checked={this.isChecked("race", "prefer-not")} id="race" value={"prefer-not"} />}
-                            label={racesLabels[races.length - 1]}
-                            onChange={this.props.handleMultiFormChange}
+                            control={<Checkbox onClick={this.disableRestGender} style={{color: "white"}} checked={this.isChecked("gender", "gender_prefer_not")} id="gender" value={"gender_prefer_not"} />}
+                            label={gendersLabels[genders.length - 1]}
+                            onChange={this.props.handleDisableAll}
                             />
                           </div>
                           <Button style={buttonStyle} onClick={this.genderControl}> Save </Button>

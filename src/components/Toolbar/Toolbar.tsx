@@ -8,7 +8,7 @@ import Navbar from "react-bootstrap/Navbar";
 import logoImg from "../../assets/images/LandingPage/whitepaw.png";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Firebase from "../Firebase";
-import { Redirect } from 'react-router-dom';
+import { Redirect } from "react-router-dom";
 
 type ToolbarProps = {
     firebase: Firebase | null;
@@ -50,14 +50,13 @@ export default class Toolbar extends React.Component<
     };
 
     logOut = () => {
-       if (this.props.firebase != null) {
-         this.props.firebase.doLogOut();
-         this.setState({
-           redirectLogout: true
-         });
-       }
-     }
-
+        if (this.props.firebase != null) {
+            this.props.firebase.doLogOut();
+            this.setState({
+                redirectLogout: true
+            });
+        }
+    };
 
     render() {
         let button; // display login/join or dashboard button
@@ -65,10 +64,7 @@ export default class Toolbar extends React.Component<
             // if true, user is logged in
             // TODO: Go to dashboard
             button = (
-                <button
-                    onClick={this.logOut}
-                    className="toolbar-signin"
-                >
+                <button onClick={this.logOut} className="toolbar-signin">
                     Log out
                 </button>
             );
@@ -81,99 +77,139 @@ export default class Toolbar extends React.Component<
         }
 
         if (this.state.redirectLogout && window.location.pathname !== "/") {
-          return <Redirect to="/" />
+            return <Redirect to="/" />;
         } else {
-            return (<div className="toolbar">
-                <Navbar collapseOnSelect expand="lg" className="toolbar" style={{backgroundColor: this.props.backgroundColor}}>
-                    <Navbar.Brand></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav
-                            className="mr-auto"
+            return (
+                <div className="toolbar">
+                    <Navbar
+                        collapseOnSelect
+                        expand="lg"
+                        className="toolbar"
+                        style={{ backgroundColor: this.props.backgroundColor }}
+                    >
+                        <Navbar.Brand></Navbar.Brand>
+                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                        <Navbar.Collapse
+                            id="responsive-navbar-nav"
                             style={{
                                 alignItems: "center",
-                                paddingLeft: "11vw"
-                            }}
-                        >
-                            <div>
-                                <a href="/"><img
-                                    id="logo-img"
-                                    src={logoImg}
-                                    onClick={this.scrollToTop}
-                                ></img></a>
-                            </div>
-                        </Nav>
-                        <Nav
-                            style={{
+                                paddingLeft: "11vw",
                                 paddingRight: "11vw"
                             }}
                         >
-                            <Col>
-                                <div className="toolbar-about" style={{display: window.location.pathname === "/" ? "initial" : "none" }}>
-                                    <Link
-                                        activeClass="active"
-                                        to="intro"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-70}
-                                        duration={500}
-                                    >
-                                        About
-                                    </Link>
+                            <Nav
+                                className="mr-auto"
+                                style={{ alignItems: "center" }}
+                            >
+                                <div>
+                                    <a href="/">
+                                        <img
+                                            id="logo-img"
+                                            src={logoImg}
+                                            onClick={this.scrollToTop}
+                                        ></img>
+                                    </a>
                                 </div>
-                            </Col>
-
-                            <Col>
-                                <div className="toolbar-itinerary" style={{display: window.location.pathname === "/" ? "initial" : "none" }}>
-                                    <Link
-                                        activeClass="active"
-                                        to="itinerary"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-70}
-                                        duration={500}
+                            </Nav>
+                            <Nav>
+                                <Col>
+                                    <div
+                                        className="toolbar-about"
+                                        style={{
+                                            display:
+                                                window.location.pathname === "/"
+                                                    ? "initial"
+                                                    : "none"
+                                        }}
                                     >
-                                        Itinerary
-                                    </Link>
-                                </div>
-                            </Col>
+                                        <Link
+                                            activeClass="active"
+                                            to="intro"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-70}
+                                            duration={500}
+                                        >
+                                            About
+                                        </Link>
+                                    </div>
+                                </Col>
 
-                            <Col>
-                                <div className="toolbar-faq" style={{display: window.location.pathname === "/" ? "initial" : "none" }}>
-                                    <Link
-                                        activeClass="active"
-                                        to="faq"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-70}
-                                        duration={500}
+                                <Col>
+                                    <div
+                                        className="toolbar-itinerary"
+                                        style={{
+                                            display:
+                                                window.location.pathname === "/"
+                                                    ? "initial"
+                                                    : "none"
+                                        }}
                                     >
-                                        FAQ
-                                    </Link>
-                                </div>
-                            </Col>
+                                        <Link
+                                            activeClass="active"
+                                            to="itinerary"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-70}
+                                            duration={500}
+                                        >
+                                            Itinerary
+                                        </Link>
+                                    </div>
+                                </Col>
 
-                            <Col>
-                                <div className="toolbar-sponsors" style={{display: window.location.pathname === "/" ? "initial" : "none" }}>
-                                    <Link
-                                        activeClass="active"
-                                        to="sponsors"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-70}
-                                        duration={500}
+                                <Col>
+                                    <div
+                                        className="toolbar-faq"
+                                        style={{
+                                            display:
+                                                window.location.pathname === "/"
+                                                    ? "initial"
+                                                    : "none"
+                                        }}
                                     >
-                                        Sponsors
-                                    </Link>
-                                </div>
-                            </Col>
+                                        <Link
+                                            activeClass="active"
+                                            to="faq"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-70}
+                                            duration={500}
+                                        >
+                                            FAQ
+                                        </Link>
+                                    </div>
+                                </Col>
 
-                            <Col>{button}</Col>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
-            </div>
-        );
-      }
+                                <Col>
+                                    <div
+                                        className="toolbar-sponsors"
+                                        style={{
+                                            display:
+                                                window.location.pathname === "/"
+                                                    ? "initial"
+                                                    : "none"
+                                        }}
+                                    >
+                                        <Link
+                                            activeClass="active"
+                                            to="sponsors"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-70}
+                                            duration={500}
+                                        >
+                                            Sponsors
+                                        </Link>
+                                    </div>
+                                </Col>
+
+                                <Col>{button}</Col>
+                            </Nav>
+                        </Navbar.Collapse>
+                    </Navbar>
+                </div>
+            );
+        }
     }
 }

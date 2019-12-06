@@ -196,9 +196,10 @@ label {
   border: 2px solid black;
 }
 
-/* fix sticky note and calendar stacking size */
-@media screen and (max-width: 500px) {
-
+@media screen and (max-width: 550px){
+  .login-join-body {
+    width: inherit;   
+  }
 }
 
 /* fix sticky note overlap */
