@@ -109,12 +109,12 @@ export default class RegistrationPage extends React.Component<
     }
 
     // Check if user is logged in when component mounts
-    componentDidMount = () => {
+    componentDidMount = async () => {
         let currFirebase = this.props.firebase;
         if (currFirebase == null) {
             // if true, error
         } else {
-            currFirebase.doAuthListener(this); // check if user is logged in or not
+            await currFirebase.doAuthListener(this); // check if user is logged in or not
             this.getData();
         }
     };
