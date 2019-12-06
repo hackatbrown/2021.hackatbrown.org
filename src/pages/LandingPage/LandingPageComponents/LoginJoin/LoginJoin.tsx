@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 type LoginJoinProps = {
     firebase: Firebase | null;
     hideToolbar: any;
+    apiURL: string
 };
 
 type LoginJoinState = {
@@ -183,7 +184,7 @@ export default class LoginJoin extends Component<
                                     };
                                     axios
                                         .post(
-                                            "https://api2020-staging.herokuapp.com/hacker_account/create_hacker",
+                                            temp.props.apiURL + "/hacker_account/create_hacker",
                                             registrationForm,
                                             config
                                         )

@@ -101,7 +101,7 @@ const App: React.FC = () => {
                 <Route path="/">
                     <div className="App">
                         <div className="App">
-                            <LandingPage />
+                            <LandingPage apiURL={apiURL}/>
                         </div>
                     </div>
                 </Route>

@@ -10,7 +10,9 @@ import Toolbar from "../../components/Toolbar/Toolbar";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
 import Background from "../../assets/images/LandingPage/temp_background.png";
 
-type LandingPageProps = {};
+type LandingPageProps = {
+  apiURL : string
+};
 
 type LandingPageState = {
   toolbarVisible : boolean
@@ -44,7 +46,7 @@ export default class LandingPage extends React.Component<
                         />
                     )}
                 </FirebaseContextConsumer>
-                <Main hideToolbar ={this.hideToolbar}/>
+                <Main apiURL={this.props.apiURL} hideToolbar ={this.hideToolbar}/>
                 <Intro />
                 <div id="itinerary">
                     <Itinerary />

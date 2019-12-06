@@ -8,6 +8,7 @@ import LoginJoin from "../LoginJoin/LoginJoin";
 
 type MainProps = {
   hideToolbar: any
+  apiURL : string
 };
 
 type MainState = {
@@ -32,7 +33,7 @@ export default class Main extends React.Component<MainProps, MainState> {
                     {/* <div className="main-login">
                         <img id="stickynote-img" src={stickyNotePic}></img> */}
                         <FirebaseContextConsumer>
-                            {firebase => <LoginJoin firebase={(firebase == null) ? null : firebase.firebase} hideToolbar={this.props.hideToolbar} />}
+                            {firebase => <LoginJoin apiURL={this.props.apiURL} firebase={(firebase == null) ? null : firebase.firebase} hideToolbar={this.props.hideToolbar} />}
                         </FirebaseContextConsumer>
                         {/* <p className="stickynote-login">Log in/Join</p>
                         <p className="stickynote-dashboard">Dashboard</p> */}
