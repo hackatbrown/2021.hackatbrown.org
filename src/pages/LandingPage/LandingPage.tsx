@@ -8,6 +8,7 @@ import Sponsors from "./LandingPageComponents/Sponsors/Sponsors";
 import Footer from "./LandingPageComponents/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
+import Background from "../../assets/images/LandingPage/temp_background.png";
 
 type LandingPageProps = {};
 
