@@ -74,7 +74,7 @@ const App: React.FC = () => {
                       <div className="App">
                           {/* <Toolbar backgroundColor={"#4F5C6B"}/> */}
                           <FirebaseContextConsumer>
-                              {firebase => <Toolbar zIndex={1} firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#4F5C6B"}/>}
+                              {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#4F5C6B"}/>}
                           </FirebaseContextConsumer>
                           <FirebaseContextConsumer>
                               {firebase => <RegistrationPage firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL}/>}
@@ -86,7 +86,7 @@ const App: React.FC = () => {
                   <div className="App">
                     {/* <Toolbar backgroundColor={"#008D8A"}/> */}
                     <FirebaseContextConsumer>
-                        {firebase => <Toolbar zIndex={1} firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#1A9996"}/>}
+                        {firebase => <Toolbar firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#1A9996"}/>}
                     </FirebaseContextConsumer>
                     <FirebaseContextConsumer>
                         {firebase => <Dashboard firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL} />}

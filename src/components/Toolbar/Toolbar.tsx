@@ -13,7 +13,6 @@ import { Redirect } from 'react-router-dom';
 type ToolbarProps = {
     firebase: Firebase | null;
     backgroundColor: string;
-    zIndex: number;
 };
 
 type ToolbarState = {
@@ -84,7 +83,7 @@ export default class Toolbar extends React.Component<
         if (this.state.redirectLogout && window.location.pathname !== "/") {
           return <Redirect to="/" />
         } else {
-            return (<div className="toolbar" style={{zIndex: this.props.zIndex}}>
+            return (<div className="toolbar">
                 <Navbar collapseOnSelect expand="lg" className="toolbar" style={{backgroundColor: this.props.backgroundColor}}>
                     <Navbar.Brand></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
