@@ -61,7 +61,7 @@ export default class Itinerary extends React.Component<
                                 <p className="message">Special thanks to Brown Computer
                                     Science and Brown HCRI!
                                 </p>
-                                <p>Copyright 2018 Hack@Brown. Code of Conduct</p>
+                                <p>Copyright 2019 Hack@Brown. Code of Conduct</p>
                             </div>
                         </Col>
                     </Row>
