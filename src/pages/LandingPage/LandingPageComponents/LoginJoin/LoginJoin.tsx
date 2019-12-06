@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
-import Modal from "simple-react-modal";
+import Modal from "react-modal";
 import "./LoginJoin.css";
 import Firebase from "../../../../components/Firebase";
 import * as EmailValidator from "email-validator";
@@ -14,7 +14,7 @@ type LoginJoinProps = {
 };
 
 type LoginJoinState = {
-    show: boolean; // for modal
+    modalIsOpen: boolean; // for modal
     wantToLogIn: boolean; // if true, show login tab; else, show join tab
     forgotPassword: boolean; // if true, show forgot password tab
 
@@ -30,6 +30,8 @@ type LoginJoinState = {
     justLogged: boolean;
 };
 
+Modal.setAppElement('#root'); // ??????????
+
 export default class LoginJoin extends Component<
     LoginJoinProps,
     LoginJoinState
@@ -37,7 +39,7 @@ export default class LoginJoin extends Component<
     constructor(props: LoginJoinProps) {
         super(props);
         this.state = {
-            show: false,
+            modalIsOpen: false,
             wantToLogIn: true,
             forgotPassword: false,
 
@@ -67,14 +69,28 @@ export default class LoginJoin extends Component<
         }
     };
 
-    show = () => {
-        this.setState({ show: true });
-        this.props.hideToolbar(false);
-    };
+    // show = () => {
+    //     this.setState({ modalIsOpen: true });
+    //     this.props.hideToolbar(false);
+    // };
 
-    close = () => {
-        this.setState({ show: false });
-    };
+    // close = () => {
+    //     this.setState({ modalIsOpen: false });
+    // };
+
+    openModal = () => {
+      this.setState({modalIsOpen: true});
+      this.props.hideToolbar(false);
+    }
+   
+    // afterOpenModal() {
+    //   // references are now sync'd and can be accessed.
+    //   this.subtitle.style.color = 'rgb(0, 0, 0, 0.8)';
+    // }
+   
+    closeModal = () => {
+      this.setState({modalIsOpen: false});
+    }
 
     handleEmailChange = (e: { target: { value: any } }) => {
         this.setState({ email: e.target.value });
@@ -109,7 +125,7 @@ export default class LoginJoin extends Component<
                 )
                 .then(() => {
                     this.setState({
-                        show: false, // close modal
+                        modalIsOpen: false, // close modal
                         justLogged: true
                     });
                     this.props.hideToolbar(true);
@@ -137,59 +153,65 @@ export default class LoginJoin extends Component<
                     passwordError: "" // clear passwordError since sucessful
                 });
 
-                let currFirebase = this.props.firebase;
-                if (currFirebase == null) {
-                    // if true, error
-                    this.setState({
-                        message:
-                            "A Sorry, something went wrong. Please try again later."
-                    });
-                } else {
-                    let userEmail = this.state.email;
-                    let temp = this;
-                    currFirebase
-                        .doCreateUserWithEmailAndPassword(
-                            this.state.email,
-                            this.state.password
-                        )
-                        .then(function(u) {
-                            u.user.getIdToken(true).then(function(idToken) {
-                                // Send request to hacker creation route, fields 'fire_token' and 'email'
-                                var registrationForm = new FormData();
-                                registrationForm.append("email", userEmail);
-                                registrationForm.append("fire_token", idToken);
-                                const config = {
-                                    headers: {
-                                        "Content-Type":
-                                            "application/x-www-form-urlencoded"
-                                    }
-                                };
-                                axios
-                                    .post(
-                                        "https://api2020-staging.herokuapp.com/hacker_account/create_hacker",
-                                        registrationForm,
-                                        config
-                                    )
-                                    .then(res => {
-                                        // set the error status message in state
-                                        console.log(res);
-                                    });
-                                console.log(idToken);
-                            });
-                            temp.setState({
-                                show: false, // close modal
-                                justLogged: true
-                            });
-                            temp.props.hideToolbar(true);
-                        })
-                        .catch(error => {
-                            console.log(error);
-                            this.setState({
-                                message:
-                                    " B Sorry, something went wrong. Please try again later."
-                            });
+                if (this.state.password.length >= 6) { // if true, proceed with registration
+                    let currFirebase = this.props.firebase;
+                    if (currFirebase == null) {
+                        // if true, error
+                        this.setState({
+                            message:
+                                "Sorry, something went wrong. Please try again later."
                         });
-                }
+                    } else {
+                        let userEmail = this.state.email;
+                        let temp = this;
+                        currFirebase
+                            .doCreateUserWithEmailAndPassword(
+                                this.state.email,
+                                this.state.password
+                            )
+                            .then(function(u) {
+                                u.user.getIdToken(true).then(function(idToken) {
+                                    // Send request to hacker creation route, fields 'fire_token' and 'email'
+                                    var registrationForm = new FormData();
+                                    registrationForm.append("email", userEmail);
+                                    registrationForm.append("fire_token", idToken);
+                                    const config = {
+                                        headers: {
+                                            "Content-Type":
+                                                "application/x-www-form-urlencoded"
+                                        }
+                                    };
+                                    axios
+                                        .post(
+                                            "https://api2020-staging.herokuapp.com/hacker_account/create_hacker",
+                                            registrationForm,
+                                            config
+                                        )
+                                        .then(res => {
+                                            // set the error status message in state
+                                            console.log(res);
+                                        });
+                                    console.log(idToken);
+                                });
+                                temp.setState({
+                                    modalIsOpen: false, // close modal
+                                    justLogged: true
+                                });
+                                temp.props.hideToolbar(true);
+                            })
+                            .catch(error => {
+                                console.log(error);
+                                this.setState({
+                                    message:
+                                        " Sorry, something went wrong. Please try again later."
+                                });
+                            });
+                    }
+              } else { // else, display error
+                this.setState({
+                    passwordError: "Password must be at least 6 characters!"
+                });
+              }
             } else {
                 // else, display error
                 this.setState({
@@ -271,17 +293,17 @@ export default class LoginJoin extends Component<
                     <div className="message">{this.state.message}</div>
                     <div className="button-row">
                         <button
-                            onClick={this.swapToLogIn}
-                            className="cancel-button"
-                        >
-                            Cancel
-                        </button>
-                        <button
                             type="submit"
                             onClick={this.forgotPassword}
                             id="submit-button"
                         >
                             Submit
+                        </button>
+                        <button
+                            onClick={this.swapToLogIn}
+                            className="cancel-button"
+                        >
+                            Cancel
                         </button>
                     </div>
                 </form>
@@ -320,15 +342,15 @@ export default class LoginJoin extends Component<
                     </div>
                     <div className="message">{this.state.message}</div>
                     <div className="button-row">
-                        <button onClick={this.close} className="cancel-button">
-                            Cancel
-                        </button>
                         <button
                             type="submit"
                             onClick={this.login}
                             className="login-join-button"
                         >
                             Log in
+                        </button>
+                        <button onClick={this.closeModal} className="cancel-button">
+                            Cancel
                         </button>
                     </div>
                 </form>
@@ -379,15 +401,15 @@ export default class LoginJoin extends Component<
                     </div>
                     <div className="message">{this.state.message}</div>
                     <div className="button-row">
-                        <button onClick={this.close} className="cancel-button">
-                            Cancel
-                        </button>
                         <button
                             type="submit"
                             onClick={this.join}
                             className="login-join-button"
                         >
                             Join
+                        </button>
+                        <button onClick={this.closeModal} className="cancel-button">
+                            Cancel
                         </button>
                     </div>
                 </form>
@@ -414,7 +436,7 @@ export default class LoginJoin extends Component<
         } else {
             // else, user is not logged in
             button = (
-                <p onClick={this.show} className="stickynote-button">
+                <p onClick={this.openModal} className="stickynote-button">
                     Log in/Join
                 </p>
             );
@@ -426,8 +448,8 @@ export default class LoginJoin extends Component<
                 className="login-join-modal"
                 containerClassName="login-join-body"
                 closeOnOuterClick={false}
-                show={this.state.show}
-                onClose={this.close}
+                show={this.state.modalIsOpen}
+                onClose={this.closeModal}
             >
                 <button
                     onClick={this.swapToJoin}
@@ -455,12 +477,11 @@ export default class LoginJoin extends Component<
                     {button}
                 </div>
                 <Modal
-                    className="login-join-modal"
-                    containerClassName="login-join-body"
-                    closeOnOuterClick={false}
-                    show={this.state.show}
-                    onClose={this.close}
-                    containerStyle={{ overflowY: "hidden" }}
+                    className="login-join-body"
+                    overlayClassName="login-join-modal"
+                    isOpen={this.state.modalIsOpen}
+                    onRequestClose={this.closeModal}
+                    contentLabel="Example Modal"
                 >
                     <button
                         onClick={this.swapToJoin}
