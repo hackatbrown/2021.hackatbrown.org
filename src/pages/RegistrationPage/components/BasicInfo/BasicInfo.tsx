@@ -57,6 +57,31 @@ export default class BasicInfo extends React.Component<
       }
     }
 
+    limit = (val:string, max:string) => {
+      if (val.length === 1 && val[0] > max[0]) {
+        val = '0' + val;
+      }
+
+      if (val.length === 2) {
+        if (Number(val) === 0) {
+          val = '01';
+
+        //this can happen when user paste number
+      } else if (val > max) {
+          val = max;
+        }
+      }
+
+      return val;
+    }
+
+    gradDateFormat = (val:string) => {
+      let month = this.limit(val.substring(0, 2), '12');
+      let year = val.substring(2, 4);
+
+      return month + (year.length ? '/' + year : '');
+    }
+
 
     render() {
         const dynamicTextField = {
@@ -65,18 +90,17 @@ export default class BasicInfo extends React.Component<
           visibility: this.props.currentSelected['travelReimburse'] ? "visible" : this.state.needReimbursementDisplay
         } as React.CSSProperties;
 
-        console.log(this.props);
-        console.log(this.props.currentSelected['over18']);
-
         return (
           <div className="basic-info">
+            <p> *Required </p>
             <form>
               <div className="basic-info-1">
                 <TextField
+                  required
+                  label="First Name"
                   style={textLeft}
                   id="firstName"
                   value={this.props.currentSelected['firstName']}
-                  placeholder="First Name"
                   margin="normal"
                   onChange={this.props.handleFormChange}
                   InputProps={{
@@ -88,7 +112,8 @@ export default class BasicInfo extends React.Component<
                 <TextField
                   id="lastName"
                   value={this.props.currentSelected['lastName']}
-                  placeholder="Last Name"
+                  required
+                  label="Last Name"
                   margin="normal"
                   onChange={this.props.handleFormChange}
                   InputProps={{
@@ -104,7 +129,8 @@ export default class BasicInfo extends React.Component<
                   style={textLeft}
                   id="school"
                   value={this.props.currentSelected['school']}
-                  placeholder="School"
+                  label="School"
+                  required
                   margin="normal"
                   onChange={this.props.handleFormChange}
                   InputProps={{
@@ -116,7 +142,8 @@ export default class BasicInfo extends React.Component<
                 <TextField
                   id="majors"
                   value={this.props.currentSelected['majors']}
-                  placeholder="Major(s)"
+                  label="Major(s)"
+                  required
                   margin="normal"
                   onChange={this.props.handleFormChange}
                   InputProps={{
@@ -128,19 +155,19 @@ export default class BasicInfo extends React.Component<
               </div>
 
               <div className="basic-info-3">
-                <label> Graduation Date </label>
+                <label> Graduation Date * </label>
                 <br/>
                 <NumberFormat
                   value={this.props.currentSelected['gradDate']}
-                  placeholder="Month/Year"
+                  placeholder="MM/YY"
                   id="gradDate"
                   onChange={this.props.handleFormChange}
                   customInput={TextField}
-                  format="##/##"/>
+                  format={this.gradDateFormat}/>
               </div>
 
               <div className="basic-info-4">
-                <FormControl className="over18">
+                <FormControl required className="over18">
                   <FormLabel style={{color: "white"}}>Will you be over 18 on January 26th?</FormLabel>
                   <RadioGroup
                     value={this.props.currentSelected['over18'] == null ?
@@ -168,7 +195,7 @@ export default class BasicInfo extends React.Component<
               </div>
 
               <div className="basic-info-5">
-                <FormControl className="firstHack">
+                <FormControl required className="firstHack">
                   <FormLabel style={{color: "white"}}>Is this your first hackathon?</FormLabel>
                   <RadioGroup
                     value={this.props.currentSelected['firstHack'] == null ?
@@ -197,8 +224,8 @@ export default class BasicInfo extends React.Component<
 
               <div className="basic-info-6">
                 <FormControl className="travelReimburse">
-                  <FormLabel style={{color: "white"}}>Do you need travel reimbursements?</FormLabel>
-                  <FormLabel id="subtext" style={{color: "white"}}>*Reimbursements only available for travel within the U.S.</FormLabel>
+                  <FormLabel required style={{color: "white"}}>Do you need travel reimbursements?</FormLabel>
+                  <FormLabel id="subtext" style={{color: "white"}}>Reimbursements only available for travel within the U.S.</FormLabel>
                   <RadioGroup
                     value={this.props.currentSelected['travelReimburse'] == null ?
                     "none" : this.props.currentSelected['travelReimburse'] ? "yes" : "no"}>

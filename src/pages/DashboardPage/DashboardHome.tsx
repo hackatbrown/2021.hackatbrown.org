@@ -31,9 +31,6 @@ const buttonStyle: React.CSSProperties = {
     background: "#1A9996",
     borderRadius: "15px",
     border: "2px solid #FFFFFF"
-    //height: '82px',
-    //width: '497px',
-    //fontSize: '24px'
 };
 
 export default class DashboardHome extends React.Component<

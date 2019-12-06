@@ -15,6 +15,7 @@ import "bootstrap-css-only/css/bootstrap.min.css";
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 import { FirebaseContextConsumer } from './components/Firebase/context'
+import { Redirect } from 'react-router-dom';
 
 const history = createBrowserHistory();
 
@@ -77,7 +78,9 @@ const App: React.FC = () => {
                               {firebase => <Toolbar zIndex={1} firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#4F5C6B"}/>}
                           </FirebaseContextConsumer>
                           <FirebaseContextConsumer>
-                              {firebase => <RegistrationPage firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL}/>}
+                          {
+                              firebase => <RegistrationPage firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL}/>
+                          }
                           </FirebaseContextConsumer>
                       </div>
                     </ThemeProvider>
@@ -89,7 +92,9 @@ const App: React.FC = () => {
                         {firebase => <Toolbar zIndex={1} firebase={(firebase == null) ? null : firebase.firebase} backgroundColor={"#1A9996"}/>}
                     </FirebaseContextConsumer>
                     <FirebaseContextConsumer>
-                        {firebase => <Dashboard firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL} />}
+                    {
+                        firebase => <Dashboard firebase={(firebase == null) ? null : firebase.firebase} apiURL={apiURL} />
+                    }
                     </FirebaseContextConsumer>
                   </div>
                 </Route>
