@@ -82,12 +82,12 @@ export default class LoginJoin extends Component<
       this.setState({modalIsOpen: true});
       this.props.hideToolbar(false);
     }
-   
+
     // afterOpenModal() {
     //   // references are now sync'd and can be accessed.
     //   this.subtitle.style.color = 'rgb(0, 0, 0, 0.8)';
     // }
-   
+
     closeModal = () => {
       this.setState({modalIsOpen: false});
     }
@@ -189,9 +189,7 @@ export default class LoginJoin extends Component<
                                         )
                                         .then(res => {
                                             // set the error status message in state
-                                            console.log(res);
                                         });
-                                    console.log(idToken);
                                 });
                                 temp.setState({
                                     modalIsOpen: false, // close modal
@@ -200,7 +198,6 @@ export default class LoginJoin extends Component<
                                 temp.props.hideToolbar(true);
                             })
                             .catch(error => {
-                                console.log(error);
                                 this.setState({
                                     message:
                                         " Sorry, something went wrong. Please try again later."

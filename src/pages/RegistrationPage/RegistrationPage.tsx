@@ -186,9 +186,6 @@ export default class RegistrationPage extends React.Component<
         let name = event.target.id;
         let value = event.target.value;
 
-        console.log(name);
-        console.log(value);
-
         /* case where value is yes/no -> convert to boolean */
         if (value === "yes") {
             value = true;
@@ -203,7 +200,7 @@ export default class RegistrationPage extends React.Component<
 
     handleMultiFormChange = (event: any) => {
         let name = event.target.id;
-        console.log(name);
+
         let newVals;
         if (name === "gender") {
             newVals = [...this.state.gender];
@@ -219,7 +216,6 @@ export default class RegistrationPage extends React.Component<
             newVals.splice(newVals.indexOf(event.target.value), 1);
         }
 
-        console.log(newVals);
 
         this.setState({
             [name]: newVals
@@ -240,7 +236,6 @@ export default class RegistrationPage extends React.Component<
           } as any);
         }
       } else {
-        console.log("not disabled");
         this.setState({
           [name]: []
         } as any);
@@ -288,11 +283,6 @@ export default class RegistrationPage extends React.Component<
         uploadTask.on(
           "state_changed",
           snapshot => {
-            // progress function ...
-            // const progress = Math.round(
-            //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-            // );
-            // this.setState({ progress });
           },
           error => {
             this.setState({
@@ -347,13 +337,11 @@ export default class RegistrationPage extends React.Component<
             heard: this.state.findout,
             other_comments: this.state.comments
         };
-        console.log(registrationData);
 
         const api = this.props.apiURL;
         await this.state.user
             .getIdToken(true)
             .then(async function(idToken: string) {
-                console.log(idToken);
                 var registrationForm = new FormData();
                 registrationForm.append(
                     "data",
@@ -372,11 +360,9 @@ export default class RegistrationPage extends React.Component<
                         config
                     )
                     .then(res => {
-                        console.log(res);
                     });
             })
             .catch(function(error: any) {
-                console.log("error");
             });
     };
 
@@ -407,11 +393,9 @@ export default class RegistrationPage extends React.Component<
     getData = () => {
         setTimeout(() => {
             if (this.state.userToken !== null && !this.state.dataRetrieved) {
-                console.log(this.state.userToken);
                 const api = this.props.apiURL;
                 var hackerRequest = new FormData();
                 hackerRequest.append("fire_token", this.state.userToken);
-                console.log(hackerRequest);
                 axios({
                     method: "post",
                     url: api + "/hacker_registration/hacker",
@@ -420,7 +404,6 @@ export default class RegistrationPage extends React.Component<
                     },
                     data: hackerRequest
                 }).then(response => {
-                    console.log(response);
                     let savedInfo = this.extractFormData(response["data"]);
                     this.setState(savedInfo);
                 });

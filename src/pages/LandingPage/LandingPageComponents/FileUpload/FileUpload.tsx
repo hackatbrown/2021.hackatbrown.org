@@ -58,7 +58,6 @@ export default class FileUpload extends Component<
       },
       error => {
         // Error function ...
-        console.log(error);
       },
       // Following is for file preview:
       // () => {

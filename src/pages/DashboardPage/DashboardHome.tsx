@@ -100,38 +100,9 @@ export default class DashboardHome extends React.Component<
                             });
                     })
                     .catch(function(error: any) {
-                        console.log("error");
                     });
-                // } , 1000);
-                // let session = this;
-                // session.state.user.getIdToken(true).then(function(idToken: any) {
-                //   // Send request to hacker status route, field 'fire_token'
-                //   axios
-                //   .post(
-                //       "https://api2020-staging.herokuapp.com/hacker_account/hacker_status/",
-                //       idToken
-                //   )
-                //   .then(res => {
-                //       // get response
-                //       let name;
-                //       if (res.data.first_name == "") { // if true, user did not submit register form yet
-                //         // keep name as "there"
-                //       } else {
-                //         session.setState({
-                //           firstName: res.data.first_name,
-                //           appSubmitted: res.data.app_submitted
-                //         });
-                //       }
-                //   });
-                //   // console.log(idToken);
-                // });
             }
         }
-        // let request: string = "https://api2020-staging.herokuapp.com/hacker_account/hacker_status/" + this.state.user.uid;
-        // fetch(request)
-        //   .then((response: any) => response.json())
-        //   .then(info => this.setState({ name: info.name, appSubmitted: info.app_submitted }))
-        //   .catch(error => this.setState({ error: "Sorry, something went wrong. Please try again later." }));
     };
 
     // Check if user is logged in when component mounts
@@ -140,16 +111,9 @@ export default class DashboardHome extends React.Component<
         if (currFirebase == null) {
             // if true, error
         } else {
-            // console.log("IN HERE");
-            // setTimeout(() => {
-            // console.log(currFirebase);
             if (currFirebase != null) {
                 currFirebase.doAuthListener(this); // check if user is logged in or not
             }
-
-            // } , 2000);
-
-            // this.fetchHackerData();
         }
     };
 
@@ -162,21 +126,7 @@ export default class DashboardHome extends React.Component<
         }
     };
 
-    // componentDidMount = () => {
-    //   // let currFirebase = this.props.firebase;
-    //   // if (currFirebase == null) { // if true, error
-
-    //   // } else {
-    //   //   console.log("IN HERE");
-
-    //   //   currFirebase.doAuthListener(this); // check if user is logged in or not
-    //   //   await undefined;
-    //     this.fetchHackerData();
-    // }
-
     render() {
-        // this.fetchHackerData();
-        // console.log(this.state.user);
         let content;
         if (this.state.error != "") {
             // if true, error
