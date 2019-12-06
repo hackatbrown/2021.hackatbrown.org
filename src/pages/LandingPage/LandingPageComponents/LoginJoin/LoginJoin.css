@@ -1,233 +1,233 @@
 @font-face {
-  font-family: 'Covik Sans';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../../../../assets/fonts/Covik-Sans-Regular.otf');
+    font-family: "Covik Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../../../assets/fonts/Covik-Sans-Regular.otf");
 }
 
 @font-face {
-  font-family: 'Akkurat Pro';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../../../../assets/fonts/Akkurat-Pro-Regular.otf');
+    font-family: "Akkurat Pro";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../../../../assets/fonts/Akkurat-Pro-Regular.otf");
 }
 
 .error-message {
-  font-family: Akkurat Pro;
-  color: red;
-  font-weight: bold;
-  font-size: 13px;
+    font-family: Akkurat Pro;
+    color: red;
+    font-weight: bold;
+    font-size: 13px;
 }
 
 .message {
-  font-family: Akkurat Pro;
-  font-size: 13px;
+    font-family: Akkurat Pro;
+    font-size: 13px;
 }
 
 .login-join-modal {
-  position: fixed;
-  font-family: Arial, Helvetica, sans-serif;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background: rgba(0, 0, 0, 0.8);
-  z-index: 99999; transition:
-  opacity 1s ease-in 0s;
-  pointer-events: auto;
-  overflow-y: auto;
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    transition: opacity 1s ease-in 0s;
+    pointer-events: auto;
+    overflow-y: auto;
 }
 
 .login-join-body {
-  width: 430px;
-  position: relative;
-  margin: 10% auto;
+    width: 430px;
+    position: relative;
+    margin: 10% auto;
 
-  background: #FFFFFF;
-  border-radius: 12px;
+    background: #ffffff;
+    border-radius: 12px;
 }
 
 #other-tab {
-  background: #E8E8E8;
+    background: #e8e8e8;
 }
 
 #active-tab {
-  background: #FFFFFF;
+    background: #ffffff;
 }
 
 .join-tab {
-  width: 215px;
-  height: 80px;
+    width: 50%;
+    height: 80px;
 
-  border: none;
-  border-radius: 12px 0px;
+    border: none;
+    border-radius: 12px 0px;
 
-  font-family: Covik Sans;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
+    font-family: Covik Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
 }
 
 .login-tab {
-  width: 215px;
-  height: 80px;
+    width: 50%;
+    height: 80px;
 
-  border: none;
-  border-radius: 0px 12px;
+    border: none;
+    border-radius: 0px 12px;
 
-  font-family: Covik Sans;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
+    font-family: Covik Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
 }
 
 form.loginJoin-form {
-  margin-top: 30px;
-  text-align: left;
-  padding-left: 47px;
-  padding-right: 47px;
-  font-family: Akkurat Pro;
-  padding-bottom: 32px;
+    margin-top: 30px;
+    text-align: left;
+    padding-left: 47px;
+    padding-right: 47px;
+    font-family: Akkurat Pro;
+    padding-bottom: 32px;
 }
 
 button:focus {
-  outline: 0;
+    outline: 0;
 }
 
 label {
-  line-height: 19px;
-  font-size: 16px;
+    line-height: 19px;
+    font-size: 16px;
 }
 
 .form-control {
-  width: 336.5px;
-  height: 33px;
-  border: 1px solid #B8B8B8;
-  box-sizing: border-box;
-  border-radius: 2px;
+    width: 336.5px;
+    height: 33px;
+    border: 1px solid #b8b8b8;
+    box-sizing: border-box;
+    border-radius: 2px;
 }
 
 .button-row {
-  margin-top: 15px;
-  text-align: right;
-  overflow: hidden;
+    margin-top: 15px;
+    text-align: right;
+    overflow: hidden;
 }
 
 .button-row button {
-  float: right; /* reverses the button order */
+    float: right; /* reverses the button order */
 }
 
 .login-join-button {
-  width: 72.39px;
-  height: 33px;
+    width: 72.39px;
+    height: 33px;
 
-  border: 1px solid #B8B8B8;
-  box-sizing: border-box;
-  border-radius: 2px;
+    border: 1px solid #b8b8b8;
+    box-sizing: border-box;
+    border-radius: 2px;
 
-  background: #009490;
+    background: #009490;
 
-  font-size: 12px;
-  line-height: 33px;
+    font-size: 12px;
+    line-height: 33px;
 
-  color: #FFFFFF;
+    color: #ffffff;
 
-  margin-left: 18px;
+    margin-left: 18px;
 }
 
 .cancel-button {
-  width: 72.39px;
-  height: 33px;
+    width: 72.39px;
+    height: 33px;
 
-  border: 1px solid #B8B8B8;
-  box-sizing: border-box;
-  border-radius: 2px;
+    border: 1px solid #b8b8b8;
+    box-sizing: border-box;
+    border-radius: 2px;
 
-  background: #FFFFFF;
+    background: #ffffff;
 
-  font-size: 12px;
-  line-height: 33px;
+    font-size: 12px;
+    line-height: 33px;
 
-  color: #2D3D53;
+    color: #2d3d53;
 }
 
 #forgot-pw {
-  font-size: 13px;
-  cursor: pointer;
+    font-size: 13px;
+    cursor: pointer;
 }
 
 #forgot-pw:hover {
-  text-decoration:underline;
+    text-decoration: underline;
 }
 
 #submit-button {
-  width: 72.39px;
-  height: 33px;
+    width: 72.39px;
+    height: 33px;
 
-  border: 1px solid #B8B8B8;
-  box-sizing: border-box;
-  border-radius: 2px;
+    border: 1px solid #b8b8b8;
+    box-sizing: border-box;
+    border-radius: 2px;
 
-  background: #753BBD;
+    background: #753bbd;
 
-  font-size: 12px;
-  line-height: 33px;
+    font-size: 12px;
+    line-height: 33px;
 
-  color: #FFFFFF;
+    color: #ffffff;
 
-  margin-left: 18px;
+    margin-left: 18px;
 }
 
 .stickynote-button:hover {
-  color: #00857a;
-  border: 2px solid #00857a;
-  cursor: pointer;
+    color: #00857a;
+    border: 2px solid #00857a;
+    cursor: pointer;
 }
 
 .stickynote-button {
-  /* transform: rotate(-15deg); */
-  transition: 0.3s;
-  font-size: 2rem;
-  position: absolute;
-  /* top: 25%;
+    /* transform: rotate(-15deg); */
+    transition: 0.3s;
+    font-size: 2rem;
+    position: absolute;
+    /* top: 25%;
   right: 22.5%; */
-  border-radius: 15px;
-  padding: 5px;
-  border: 2px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    border: 2px solid black;
 }
 
-@media screen and (max-width: 550px){
-  .login-join-body {
-    width: inherit;   
-  }
+@media screen and (max-width: 550px) {
+    .login-join-body {
+        width: inherit;
+    }
 }
 
 /* fix sticky note overlap */
 @media screen and (max-width: 750px) {
-  .stickynote-button {
-      font-size: 1.5rem;
-      /* top: 30%;
+    .stickynote-button {
+        font-size: 1.5rem;
+        /* top: 30%;
       right: 29.5%; */
-  }
+    }
 }
 
 @media screen and (max-height: 600px) {
-  .stickynote-login {
-      font-size: 4vh;
-      right: 22.5%;
-      padding: 2px;
-      border-radius: 10px;
-  }
-  .stickynote-dashboard {
-      font-size: 4vh;
-      right: 25%;
-  }
+    .stickynote-login {
+        font-size: 4vh;
+        right: 22.5%;
+        padding: 2px;
+        border-radius: 10px;
+    }
+    .stickynote-dashboard {
+        font-size: 4vh;
+        right: 25%;
+    }
 }
 
 .transparent {
-  color: black;
+    color: black;
 }
 
 .transparent:hover {
-  text-decoration: none;
+    text-decoration: none;
 }

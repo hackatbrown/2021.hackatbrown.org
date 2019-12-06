@@ -101,8 +101,8 @@ export default class MoreInfo extends React.Component<
           genderArrowTransform: { transform: 'none' },
           raceArrowTransform: { transform: 'none' },
           findoutArrowTransform: { transform: 'none' },
-          racePreferNot: false,
-          genderPreferNot: false,
+          racePreferNot: this.props.currentSelected['race'].includes("race_prefer_not"),
+          genderPreferNot: this.props.currentSelected['gender'].includes("gender_prefer_not"),
           selected: this.props.currentSelected
         };
     }

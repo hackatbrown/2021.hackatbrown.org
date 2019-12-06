@@ -10,6 +10,7 @@
     "@types/react-collapse": "^5.0.0",
     "@types/react-dom": "16.9.2",
     "@types/react-input-mask": "^2.0.4",
+    "@types/react-modal": "^3.10.0",
     "@types/react-router-dom": "^5.1.0",
     "@types/react-scroll": "^1.5.4",
     "axios": "^0.19.0",
