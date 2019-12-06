@@ -1,5 +1,4 @@
 .itinerary {
-    min-height: 100vh;
     margin: 2rem 10% 2rem 10%;
     padding: 2rem 0 0 0;
     display: flex;
@@ -25,6 +24,8 @@ h1.itinerary-header {
     min-width: 25rem;
     max-height: 500px;
     padding: 1rem 2rem 4rem 2rem;
+    position: relative;
+    bottom: 5em;
 }
 
 .itinerary-date {
