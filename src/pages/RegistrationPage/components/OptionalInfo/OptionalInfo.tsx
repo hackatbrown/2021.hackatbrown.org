@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
  * define a type model for the props you are passing in to the component
  */
  type OptionalInfoProps = {
+   handleFileChange: (arg0: any) => void
    handleFileUpload: (arg0: any) => void
    handleFormChange: (arg0: any) => void
    incrementStage: () => void
@@ -44,7 +45,7 @@ export default class OptionalInfo extends React.Component<
     constructor(props: OptionalInfoProps) {
         super(props);
         this.state = {
-          fileName: "",
+          fileName: "(PDF, 2 MB max)",
           error: this.props.error
         };
     }
@@ -72,17 +73,18 @@ export default class OptionalInfo extends React.Component<
                         Upload File
                         <input
                           type="file"
-                          // accept="application/pdf, application/msword"
+                          accept="application/pdf"
                           style={{ display: "none" }}
-                          onChange={this.props.handleFileUpload}/>
+                          onChange={this.props.handleFileChange}/>
                       </Button>
-                      <br />
-                      {this.state.error}
                     </Grid>
                     <Grid item style={{marginTop: "10px", marginBottom: "auto"}}>
                       <p>{this.state.fileName}</p>
                     </Grid>
                   </Grid>
+                  <div id="error-message">
+                    {this.state.error}
+                  </div>
                 </div>
 
                 <div className="optional-info-2">

@@ -248,45 +248,60 @@ export default class RegistrationPage extends React.Component<
 
     }
 
-    /* Function to handle file uploads */
-    handleFileUpload = (event: any) => {
-        console.log("EVENT.TARGET.FILES:");
-        console.log(event.target.files[0]);
+    /* Function to handle file change */
+    handleFileChange = (event: any) => {
+      const file = event.target.files;
+      if (event.target.files[0] !== undefined) {
+        let name = event.target.files[0].name;
+        if (name.length > 40) {
+          name = name.substring(0,36) + "...";
+        }
         this.setState({
-            resume: event.target.files[0],
-            fileName: event.target.files[0].name
-        });
-        console.log("this.state.resume");
-        console.log(this.state.resume);
-        // Rename the file to uid and upload to storage:
-        const { resume } = event.target.files[0];
-        console.log("RESUME = this.state");
-        console.log(resume);
-        const uploadTask = firebase
-            .storage()
-            .ref(`resumes/${this.state.user.uid}/${this.state.user.uid}`)
-            .put(event.target.files[0]);
+          resume: file[0],
+          fileName: name
+        }, () => {
+          if (this.state.resume.size > 2000000) {
+            this.setState({
+              error: "File is larger than 2 MB, please upload another file!"
+            });
+          } else {
+            this.setState({
+              error: ""
+            });
+          }
+        })
+      } else {
+        this.setState({
+          resume: null,
+          fileName: "(PDF, 2 MB max)",
+          error: ""
+        })
+      }
+    }
+
+    /* Function to handle file uploads */
+    handleFileUpload = () => {
+      // only if there is a file!!
+      // Rename the file to uid and upload to storage:
+      if (this.state.resume !== null) {
+        const uploadTask = firebase.storage().ref(`resumes/${this.state.user.uid}/${this.state.user.uid}`).put(this.state.resume);
         uploadTask.on(
-            "state_changed",
-            snapshot => {
-                console.log("i should habe done experience");
-                // progress function ...
-                // const progress = Math.round(
-                //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                // );
-                // this.setState({ progress });
-            },
-            error => {
-                // Error function ...
-                // console.log(error);
-                this.setState({
-                    error:
-                        "Sorry, something went wrong while trying to upload your resume. Please try again later."
-                });
-            }
+          "state_changed",
+          snapshot => {
+            // progress function ...
+            // const progress = Math.round(
+            //   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            // );
+            // this.setState({ progress });
+          },
+          error => {
+            this.setState({
+              error: "Sorry, something went wrong while trying to upload your resume. Please try again later."
+            })
+          },
         );
-        console.log("dev is fun");
-    };
+      }
+    }
 
     checkMissing = () => {
         if (
@@ -313,6 +328,7 @@ export default class RegistrationPage extends React.Component<
     /* Function that will send data to backend upon form submission */
     submitForm = async (event: any) => {
         event.preventDefault();
+        this.handleFileUpload(); // upload resume to firebase
         const registrationData = {
             first_name: this.state.firstName,
             last_name: this.state.lastName,
@@ -501,6 +517,7 @@ export default class RegistrationPage extends React.Component<
         let optionalComp = (
             <OptionalInfo
                 currentSelected={this.state}
+                handleFileChange={this.handleFileChange}
                 handleFileUpload={this.handleFileUpload}
                 handleFormChange={this.handleFormChange}
                 incrementStage={this.incrementStage}
