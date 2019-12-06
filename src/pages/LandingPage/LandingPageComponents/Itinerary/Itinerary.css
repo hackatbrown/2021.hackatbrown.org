@@ -86,8 +86,26 @@ h1.itinerary-header {
 
 @media screen and (max-width: 600px) {
     .itinerary-div {
-        margin: 0 0 0 20vw;
-        min-width: 16rem;
-        max-width: 18rem;
+        color: rgb(45, 61, 93);
+        background-color: rgba(229, 228, 228, 0.9);
+        border-radius: 20px;
+        text-align: left;
+        min-width: 18rem;
+        max-width: 25rem;
+        padding: 1rem 2rem 4rem 2rem;
+        position: relative;
+        bottom: 5em;
+    }
+
+    .itinerary {
+        margin: 2rem 10% 2rem 10%;
+        padding: 2rem 0 0 0;
+        display: flex;
+        justify-content: center;
+        background-image: url("../../../../assets/images/LandingPage/scene_itinerary_mobile.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: bottom;
+        background-position-x: center;
     }
 }
