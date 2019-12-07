@@ -62,6 +62,10 @@ export default class LoginJoin extends Component<
 
     // Check if user is logged in when component mounts
     componentDidMount = () => {
+        console.log("updating things rnnn");
+        // this.setState({
+        //     justLogged: false
+        // });
         let currFirebase = this.props.firebase;
         if (currFirebase == null) {
             // if true, error
@@ -416,12 +420,19 @@ export default class LoginJoin extends Component<
         return content;
     };
 
-    render() {
-        let button; // display login/join or dashboard button
-
+    renderRedirect = () => {
         if (this.state.justLogged) {
             return <Redirect to="/dashboard" />;
         }
+    }
+
+    render() {
+        let button; // display login/join or dashboard button
+        
+        // if (this.state.justLogged) {
+        //     // this.resetLogged();
+        //     return <Redirect to="/dashboard" />;
+        // }
 
         if (this.state.user != null) {
             // if true, user is logged in
@@ -470,6 +481,8 @@ export default class LoginJoin extends Component<
 
         return (
             <div>
+                {console.log(this.state.justLogged)}
+                {this.renderRedirect()}
                 <div className="main-login">
                     <img id="stickynote-img" src={stickyNotePic}></img>
                     {button}
