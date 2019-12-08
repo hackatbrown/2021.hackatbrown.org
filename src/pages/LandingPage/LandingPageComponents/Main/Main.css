@@ -21,9 +21,15 @@
 }
 
 .main-text {
-    margin: 3rem 10% 1rem 10%;
+    margin: 1rem 10% 1rem 10%;
     text-align: left;
     font-size: 2rem;
+    color: white;
+}
+
+.registration-duedate {
+    margin: 1rem 10% 0.5rem 10%;
+    font-size: 1.8rem;
     color: white;
 }
 
