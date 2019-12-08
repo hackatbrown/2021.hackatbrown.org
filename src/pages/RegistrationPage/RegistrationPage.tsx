@@ -594,6 +594,7 @@ export default class RegistrationPage extends React.Component<
                     <div
                         className="error"
                         style={{
+                            paddingBottom: "1em",
                             visibility:
                                 this.state.formStage === 2
                                     ? "visible"

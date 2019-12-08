@@ -292,7 +292,7 @@ export default class LoginJoin extends Component<
                             aria-describedby="emailHelp"
                         />
                     </div>
-                    <div className="message">{this.state.message}</div>
+                    <div className="error-message">{this.state.message}</div>
                     <div className="button-row">
                         <button
                             type="submit"
@@ -342,7 +342,7 @@ export default class LoginJoin extends Component<
                             Forgot your password?
                         </a>
                     </div>
-                    <div className="message">{this.state.message}</div>
+                    <div className="error-message">{this.state.message}</div>
                     <div className="button-row">
                         <button
                             type="submit"
@@ -401,7 +401,7 @@ export default class LoginJoin extends Component<
                             {this.state.passwordError}
                         </span>
                     </div>
-                    <div className="message">{this.state.message}</div>
+                    <div className="error-message">{this.state.message}</div>
                     <div className="button-row">
                         <button
                             type="submit"
