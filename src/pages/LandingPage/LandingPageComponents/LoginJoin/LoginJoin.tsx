@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 type LoginJoinProps = {
     firebase: Firebase | null;
     hideToolbar: any;
-    apiURL: string
+    apiURL: string;
 };
 
 type LoginJoinState = {
@@ -31,7 +31,7 @@ type LoginJoinState = {
     justLogged: boolean;
 };
 
-Modal.setAppElement('#root'); // ??????????
+Modal.setAppElement("#root"); // ??????????
 
 export default class LoginJoin extends Component<
     LoginJoinProps,
@@ -84,9 +84,9 @@ export default class LoginJoin extends Component<
     // };
 
     openModal = () => {
-      this.setState({modalIsOpen: true});
-      this.props.hideToolbar(false);
-    }
+        this.setState({ modalIsOpen: true });
+        this.props.hideToolbar(false);
+    };
 
     // afterOpenModal() {
     //   // references are now sync'd and can be accessed.
@@ -94,8 +94,8 @@ export default class LoginJoin extends Component<
     // }
 
     closeModal = () => {
-      this.setState({modalIsOpen: false});
-    }
+        this.setState({ modalIsOpen: false });
+    };
 
     handleEmailChange = (e: { target: { value: any } }) => {
         this.setState({ email: e.target.value });
@@ -161,7 +161,8 @@ export default class LoginJoin extends Component<
                     passwordError: "" // clear passwordError since sucessful
                 });
 
-                if (this.state.password.length >= 6) { // if true, proceed with registration
+                if (this.state.password.length >= 6) {
+                    // if true, proceed with registration
                     let currFirebase = this.props.firebase;
                     if (currFirebase == null) {
                         // if true, error
@@ -182,7 +183,10 @@ export default class LoginJoin extends Component<
                                     // Send request to hacker creation route, fields 'fire_token' and 'email'
                                     var registrationForm = new FormData();
                                     registrationForm.append("email", userEmail);
-                                    registrationForm.append("fire_token", idToken);
+                                    registrationForm.append(
+                                        "fire_token",
+                                        idToken
+                                    );
                                     const config = {
                                         headers: {
                                             "Content-Type":
@@ -191,7 +195,8 @@ export default class LoginJoin extends Component<
                                     };
                                     axios
                                         .post(
-                                            temp.props.apiURL + "/hacker_account/create_hacker",
+                                            temp.props.apiURL +
+                                                "/hacker_account/create_hacker",
                                             registrationForm,
                                             config
                                         )
@@ -207,16 +212,16 @@ export default class LoginJoin extends Component<
                             })
                             .catch(error => {
                                 this.setState({
-                                    message:
-                                        "Account already exists!"
+                                    message: "Account already exists!"
                                 });
                             });
                     }
-              } else { // else, display error
-                this.setState({
-                    passwordError: "Password must be at least 6 characters!"
-                });
-              }
+                } else {
+                    // else, display error
+                    this.setState({
+                        passwordError: "Password must be at least 6 characters!"
+                    });
+                }
             } else {
                 // else, display error
                 this.setState({
@@ -252,7 +257,7 @@ export default class LoginJoin extends Component<
         }
         session.setState({
             message:
-                "If given email was found, you will receive your password reset email shortly; make sure to check your spam folder!"
+                "If the given email was found, you will receive your password reset email shortly! Check your spam!"
         });
     };
 
@@ -354,7 +359,10 @@ export default class LoginJoin extends Component<
                         >
                             Log in
                         </button>
-                        <button onClick={this.closeModal} className="cancel-button">
+                        <button
+                            onClick={this.closeModal}
+                            className="cancel-button"
+                        >
                             Cancel
                         </button>
                     </div>
@@ -413,7 +421,10 @@ export default class LoginJoin extends Component<
                         >
                             Join
                         </button>
-                        <button onClick={this.closeModal} className="cancel-button">
+                        <button
+                            onClick={this.closeModal}
+                            className="cancel-button"
+                        >
                             Cancel
                         </button>
                     </div>
@@ -432,7 +443,8 @@ export default class LoginJoin extends Component<
     render() {
         let button; // display login/join or dashboard button
 
-        if (this.state.user != null) { // if true, user is logged in
+        if (this.state.user != null) {
+            // if true, user is logged in
             button = (
                 <a href="/dashboard" className="stickynote-button transparent">
                     Dashboard
@@ -477,7 +489,11 @@ export default class LoginJoin extends Component<
 
         return (
             <div>
-                {this.state.justLogged ? <Redirect to="/dashboard" /> : this.doNothing}
+                {this.state.justLogged ? (
+                    <Redirect to="/dashboard" />
+                ) : (
+                    this.doNothing
+                )}
                 <div className="main-login">
                     <img id="stickynote-img" src={stickyNotePic}></img>
                     {button}

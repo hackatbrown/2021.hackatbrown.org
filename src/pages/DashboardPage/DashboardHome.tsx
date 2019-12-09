@@ -99,8 +99,7 @@ export default class DashboardHome extends React.Component<
                                 }
                             });
                     })
-                    .catch(function(error: any) {
-                    });
+                    .catch(function(error: any) {});
             }
         }
     };
@@ -175,6 +174,10 @@ export default class DashboardHome extends React.Component<
                         >
                             Edit Your Application
                         </Button>
+                        <p>
+                            * A confirmation email has been sent to you, make
+                            sure to check your Spam!
+                        </p>
                     </div>
                     <Button
                         id="reimbursement"
