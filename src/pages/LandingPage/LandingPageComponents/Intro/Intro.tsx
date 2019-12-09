@@ -35,7 +35,7 @@ export default class Intro extends React.Component<IntroProps, IntroState> {
                         dabbling in Photoshop, or hacking with an Oculus Rift,
                         Hack@Brown is for individuals of all backgrounds and
                         experiences. This year, our theme is ‘Garage.’ We want
-                        you take inspiration from your passions and experiment
+                        you to take inspiration from your passions and experiment
                         with your wildest ideas. Build away!
                     </p>
                 </div>

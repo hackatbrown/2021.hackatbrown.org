@@ -92,7 +92,7 @@ export default class Itinerary extends React.Component<
                             <p className="location">Sayles Auditorium</p>
                         </div>
 
-                        <h2 className="itinerary-date">Sunday, January 26th*</h2>
+                        <h2 className="itinerary-date">Sunday, January 26th</h2>
 
                         <div className="row1">
                             <p className="time">8:00-9:00am</p>
