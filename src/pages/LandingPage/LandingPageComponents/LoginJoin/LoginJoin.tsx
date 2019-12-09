@@ -252,7 +252,7 @@ export default class LoginJoin extends Component<
         }
         session.setState({
             message:
-                "If given email was found, you will receive your password reset email shortly."
+                "If given email was found, you will receive your password reset email shortly; make sure to check your spam folder!"
         });
     };
 
@@ -295,7 +295,7 @@ export default class LoginJoin extends Component<
                             aria-describedby="emailHelp"
                         />
                     </div>
-                    <div className="error-message">{this.state.message}</div>
+                    <div className="info-message">{this.state.message}</div>
                     <div className="button-row">
                         <button
                             type="submit"
