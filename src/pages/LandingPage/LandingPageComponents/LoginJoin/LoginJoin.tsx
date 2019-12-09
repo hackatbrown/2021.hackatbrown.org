@@ -28,7 +28,7 @@ type LoginJoinState = {
     passwordError: string;
     message: string;
 
-    // justLogged: boolean;
+    justLogged: boolean;
 };
 
 Modal.setAppElement('#root'); // ??????????
@@ -51,9 +51,9 @@ export default class LoginJoin extends Component<
 
             emailError: "",
             passwordError: "",
-            message: ""
+            message: "",
 
-            // justLogged: false
+            justLogged: false
         };
     }
 
@@ -200,15 +200,15 @@ export default class LoginJoin extends Component<
                                         });
                                 });
                                 temp.setState({
-                                    modalIsOpen: false // close modal
-                                    // justLogged: true
+                                    modalIsOpen: false, // close modal
+                                    justLogged: true
                                 });
                                 temp.props.hideToolbar(true);
                             })
                             .catch(error => {
                                 this.setState({
                                     message:
-                                        "Sorry, something went wrong. Please try again later."
+                                        "Account already exists!"
                                 });
                             });
                     }
@@ -477,7 +477,7 @@ export default class LoginJoin extends Component<
 
         return (
             <div>
-                {/* {this.state.justLogged ? <Redirect to="/dashboard" /> : this.doNothing} */}
+                {this.state.justLogged ? <Redirect to="/dashboard" /> : this.doNothing}
                 <div className="main-login">
                     <img id="stickynote-img" src={stickyNotePic}></img>
                     {button}
