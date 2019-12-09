@@ -121,7 +121,8 @@
     }
     .main-date {
         font-size: 5vw;
-        /* right: 30%; */
+        right: 20%;
+        left: 20%;
     }
 
     .stickynote-login {
@@ -132,7 +133,15 @@
     }
     .stickynote-dashboard {
         font-size: 4vw;
-        right: 25%;
+        right: 10%;
+    }
+    .registration-duedate {
+        font-size: 3.5vw;
+        color: black;
+    }
+    
+    .dates {
+        margin: -1.5rem 0 0 0;
     }
 }
 
@@ -147,7 +156,8 @@
     }
     .main-date {
         font-size: 5vh;
-        right: 30%;
+        right: 20%;
+        left: 20%;
     }
     .stickynote-login {
         font-size: 4vh;
@@ -157,7 +167,15 @@
     }
     .stickynote-dashboard {
         font-size: 4vh;
-        right: 25%;
+        right: 10%;
+    }
+    .registration-duedate {
+        font-size: 2.5vh;
+        color: black;
+    }
+    
+    .dates {
+        margin: -1.5rem 0 0 0;
     }
 }
 
