@@ -257,7 +257,7 @@ export default class LoginJoin extends Component<
         }
         session.setState({
             message:
-                "If the given email was found, you will receive your password reset email shortly! Check your spam!"
+                "If the given email was found, you will receive your password reset email shortly! Make sure to check your spam!"
         });
     };
 
