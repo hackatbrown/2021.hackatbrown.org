@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 import Modal from "react-modal";
 import "./LoginJoin.css";
 import Firebase from "../../../../components/Firebase";
@@ -28,7 +28,7 @@ type LoginJoinState = {
     passwordError: string;
     message: string;
 
-    justLogged: boolean;
+    // justLogged: boolean;
 };
 
 Modal.setAppElement('#root'); // ??????????
@@ -51,9 +51,9 @@ export default class LoginJoin extends Component<
 
             emailError: "",
             passwordError: "",
-            message: "",
+            message: ""
 
-            justLogged: false
+            // justLogged: false
         };
     }
 
@@ -123,6 +123,9 @@ export default class LoginJoin extends Component<
                 message: "Sorry, something went wrong. Please try again later."
             });
         } else {
+            // this.setState({
+            //     justLogged: true
+            // });
             currFirebase
                 .doSignInWithEmailAndPassword(
                     this.state.email,
@@ -130,8 +133,8 @@ export default class LoginJoin extends Component<
                 )
                 .then(() => {
                     this.setState({
-                        modalIsOpen: false, // close modal
-                        justLogged: true
+                        modalIsOpen: false // close modal
+                        // justLogged: true
                     });
                     this.props.hideToolbar(true);
                 })
@@ -197,15 +200,15 @@ export default class LoginJoin extends Component<
                                         });
                                 });
                                 temp.setState({
-                                    modalIsOpen: false, // close modal
-                                    justLogged: true
+                                    modalIsOpen: false // close modal
+                                    // justLogged: true
                                 });
                                 temp.props.hideToolbar(true);
                             })
                             .catch(error => {
                                 this.setState({
                                     message:
-                                        " Sorry, something went wrong. Please try again later."
+                                        "Sorry, something went wrong. Please try again later."
                                 });
                             });
                     }
@@ -420,23 +423,16 @@ export default class LoginJoin extends Component<
         return content;
     };
 
-    renderRedirect = () => {
-        if (this.state.justLogged) {
-            return <Redirect to="/dashboard" />;
-        }
-    }
+    // renderRedirect = () => {
+    //     if (this.state.justLogged) {
+    //         return <Redirect to="/dashboard" />;
+    //     }
+    // }
 
     render() {
         let button; // display login/join or dashboard button
-        
-        // if (this.state.justLogged) {
-        //     // this.resetLogged();
-        //     return <Redirect to="/dashboard" />;
-        // }
 
-        if (this.state.user != null) {
-            // if true, user is logged in
-            // TODO: Go to dashboard
+        if (this.state.user != null) { // if true, user is logged in
             button = (
                 <a href="/dashboard" className="stickynote-button transparent">
                     Dashboard
@@ -481,8 +477,7 @@ export default class LoginJoin extends Component<
 
         return (
             <div>
-                {console.log(this.state.justLogged)}
-                {this.renderRedirect()}
+                {/* {this.state.justLogged ? <Redirect to="/dashboard" /> : this.doNothing} */}
                 <div className="main-login">
                     <img id="stickynote-img" src={stickyNotePic}></img>
                     {button}
