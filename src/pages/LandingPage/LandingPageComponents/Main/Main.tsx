@@ -42,7 +42,7 @@ export default class Main extends React.Component<MainProps, MainState> {
                     <div className="main-cal">
                         <img id="calendar-img" src={calendarPic}></img>
                         <p className="main-date">
-                            <p>January</p> <div className="dates">25-26</div>
+                            <p style={{marginBottom: '1rem'}}>January</p> <div className="dates">25-26</div>
                             <p className="registration-duedate">Registration due January 5th</p>
                         </p>
                     </div>
