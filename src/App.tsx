@@ -76,13 +76,15 @@ type AppProps = {
  */
 type AppState = {
     user: any;
+    userToken: any;
 };
 
 export default class App extends React.Component<AppProps, AppState> {
     constructor(props: AppProps) {
         super(props);
         this.state = {
-            user: null
+            user: null,
+            userToken: null
         };
     }
 
@@ -171,6 +173,15 @@ export default class App extends React.Component<AppProps, AppState> {
                             </div>
                         </Route>
                     )}
+                    <Route path="/get-hacker-data">
+                        {() => {
+                            this.props.firebase.doAuthListener(this);
+                            window.location.href =
+                                apiURL +
+                                "/download_hackers?fire_token=" +
+                                this.state.userToken;
+                        }}
+                    </Route>
                     <Route path="">
                         <div className="App">
                             <div className="App">
