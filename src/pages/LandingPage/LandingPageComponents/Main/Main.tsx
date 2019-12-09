@@ -28,7 +28,6 @@ export default class Main extends React.Component<MainProps, MainState> {
                 <div className="main-div">
                     <h1 className="main-text">Hack@Brown 2020 presents:</h1>
                     <img id="main-img" src={mainPic}></img>
-                    <p className="registration-duedate">Registration due January 5th</p>
                 </div>
                 <div className="main-items">
                     {/* <div className="main-login">
@@ -43,7 +42,8 @@ export default class Main extends React.Component<MainProps, MainState> {
                     <div className="main-cal">
                         <img id="calendar-img" src={calendarPic}></img>
                         <p className="main-date">
-                            <p>January</p> 25-26
+                            <p>January</p> <div className="dates">25-26</div>
+                            <p className="registration-duedate">Registration due January 5th</p>
                         </p>
                     </div>
                 </div>
