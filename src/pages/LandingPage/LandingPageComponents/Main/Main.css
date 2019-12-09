@@ -5,6 +5,8 @@
     animation: fadeInAnimation ease 1.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    font-family: "Covik Sans";
+    src: url("../../../../assets/fonts/Covik Sans-Regular.otf");
 }
 
 @keyframes fadeInAnimation {
@@ -21,7 +23,7 @@
 }
 
 .main-text {
-    margin: 3rem 10% 1rem 10%;
+    margin: 1rem 10% 1rem 10%;
     text-align: left;
     font-size: 2rem;
     color: white;
@@ -62,7 +64,16 @@
 .main-date {
     font-size: 2.5rem;
     position: absolute;
-    top: 35%;
+    top: 30%;
+}
+
+.registration-duedate {
+    font-size: 1rem;
+    color: black;
+}
+
+.dates {
+    margin: -1.5rem 0 0 0;
 }
 
 .stickynote-login:hover {
@@ -110,7 +121,8 @@
     }
     .main-date {
         font-size: 5vw;
-        /* right: 30%; */
+        right: 20%;
+        left: 20%;
     }
 
     .stickynote-login {
@@ -121,7 +133,15 @@
     }
     .stickynote-dashboard {
         font-size: 4vw;
-        right: 25%;
+        right: 10%;
+    }
+    .registration-duedate {
+        font-size: 3.5vw;
+        color: black;
+    }
+    
+    .dates {
+        margin: -1.5rem 0 0 0;
     }
 }
 
@@ -136,7 +156,8 @@
     }
     .main-date {
         font-size: 5vh;
-        right: 30%;
+        right: 20%;
+        left: 20%;
     }
     .stickynote-login {
         font-size: 4vh;
@@ -146,7 +167,15 @@
     }
     .stickynote-dashboard {
         font-size: 4vh;
-        right: 25%;
+        right: 10%;
+    }
+    .registration-duedate {
+        font-size: 2.5vh;
+        color: black;
+    }
+    
+    .dates {
+        margin: -1.5rem 0 0 0;
     }
 }
 

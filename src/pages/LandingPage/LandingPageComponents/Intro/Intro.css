@@ -41,3 +41,34 @@
         padding: 1em 0;
     }
 }
+
+@media screen and (max-width: 534px) {
+    .intro-blurb-header {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .intro-blurb-header {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media screen and (max-width: 383px) {
+    .intro-blurb-header {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 342px) {
+    .intro-blurb-header {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .intro-blurb-header {
+        font-size: 1.4rem;
+    }
+}
