@@ -295,7 +295,7 @@ export default class LoginJoin extends Component<
                             aria-describedby="emailHelp"
                         />
                     </div>
-                    <div className="error-message">{this.state.message}</div>
+                    <div className="info-message">{this.state.message}</div>
                     <div className="button-row">
                         <button
                             type="submit"

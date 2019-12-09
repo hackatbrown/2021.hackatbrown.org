@@ -19,9 +19,10 @@
     font-size: 13px;
 }
 
-.message {
+.info-message {
     font-family: Akkurat Pro;
     font-size: 13px;
+    color: black;
 }
 
 .login-join-modal {
