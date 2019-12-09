@@ -55,7 +55,7 @@ const theme = createMuiTheme({
     }
 });
 
-const apiURL: string = "https://api2020-staging.herokuapp.com";
+const apiURL: string = "https://api2020-hackatbrown.herokuapp.com";
 
 //   ___   .__   __.  ___________    __    ____      ______   ______    _______   _______    ___
 //  /  /   |  \ |  | |   ____\   \  /  \  /   /     /      | /  __  \  |       \ |   ____|   \  \
