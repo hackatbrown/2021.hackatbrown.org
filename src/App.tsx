@@ -2,20 +2,16 @@ import React from "react";
 import "./App.css";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
-// import EmailPage from "./pages/emailpage/EmailPage";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
 import { Router, Switch, Route } from "react-router-dom";
 import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
-// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import EmailPage from "./pages/EmailPage/EmailPage";
 import Toolbar from "./components/Toolbar/Toolbar";
 import Dashboard from "./pages/DashboardPage/DashboardHome";
 import "bootstrap-css-only/css/bootstrap.min.css";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import { FirebaseContextConsumer } from "./components/Firebase/context";
-import { Redirect } from "react-router-dom";
 import Firebase from "./components/Firebase";
 
 const history = createBrowserHistory();
@@ -55,7 +51,17 @@ const theme = createMuiTheme({
     }
 });
 
-const apiURL: string = "https://api2020-staging.herokuapp.com";
+let apiURL: string;
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    // dev
+    apiURL = "https://api2020-staging.herokuapp.com";
+} else {
+    // prod
+    apiURL = "https://api2020-hackatbrown.herokuapp.com";
+}
+
+console.log(`apiUrl: ${apiURL}`)
 
 //   ___   .__   __.  ___________    __    ____      ______   ______    _______   _______    ___
 //  /  /   |  \ |  | |   ____\   \  /  \  /   /     /      | /  __  \  |       \ |   ____|   \  \
