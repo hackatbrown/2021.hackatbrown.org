@@ -7,7 +7,10 @@ import googleImg from "../../../../assets/images/LandingPage/companylogo/google.
 import bookbubImg from "../../../../assets/images/LandingPage/companylogo/bookbub.jpg";
 import digitalAssetImg from "../../../../assets/images/LandingPage/companylogo/digital-asset.png";
 import herokuImg from "../../../../assets/images/LandingPage/companylogo/heroku-purple.png";
-
+import pathRiseimg from "../../../../assets/images/LandingPage/companylogo/pathrise.svg";
+import citizensbankImg from "../../../../assets/images/LandingPage/companylogo/Citizens-Logo-1.jpg";
+import mouserImg from "../../../../assets/images/LandingPage/companylogo/Mouser.jpg";
+import bloombergImg from "../../../../assets/images/LandingPage/companylogo/Bloomberg.png";
 type SponsorsProps = {};
 
 type SponsorsState = {
@@ -52,26 +55,86 @@ export default class Sponsors extends React.Component<
                     <div className="sponsors-giga">
                         <h2 className="sponsors-name">Giga</h2>
                         <div className="sponsors-img">
-                            <a href="https://www.facebook.com" target="_blank"><img className="sponsors-img-giga" src={facebookImg}></img></a>
-                            <a href="https://digitalasset.com/" target="_blank"><img className="sponsors-img-giga" src={digitalAssetImg}></img></a>
+                            <a href="https://www.facebook.com" target="_blank">
+                                <img
+                                    className="sponsors-img-giga"
+                                    src={facebookImg}
+                                ></img>
+                            </a>
+                            <a href="https://digitalasset.com/" target="_blank">
+                                <img
+                                    className="sponsors-img-giga"
+                                    src={digitalAssetImg}
+                                ></img>
+                            </a>
                         </div>
                     </div>
                     <div className="sponsors-mega">
                         <h2 className="sponsors-name">Mega</h2>
                         <div className="sponsors-img">
-                            <a href="https://www.google.com/" target="_blank"><img className="sponsors-img-mega" src={googleImg}></img></a>
+                            <a href="https://www.google.com/" target="_blank">
+                                <img
+                                    className="sponsors-img-mega"
+                                    src={googleImg}
+                                ></img>
+                            </a>
+                            <a
+                                href="https://www.citizensbank.com"
+                                target="_blank"
+                            >
+                                <img
+                                    className="sponsors-img-mega"
+                                    src={citizensbankImg}
+                                ></img>
+                            </a>
+                            <a href="https://www.bloomberg.com" target="_blank">
+                                <img
+                                    className="sponsors-img-mega"
+                                    src={bloombergImg}
+                                ></img>
+                            </a>
                         </div>
                     </div>
                     <div className="sponsors-kilo">
                         <h2 className="sponsors-name">Kilo</h2>
                         <div className="sponsors-img">
-                            <a href="https://www.heroku.com/" target="_blank"><img className="sponsors-img-kilo" src={herokuImg}></img></a>
+                            <a href="https://www.heroku.com/" target="_blank">
+                                <img
+                                    className="sponsors-img-kilo"
+                                    src={herokuImg}
+                                ></img>
+                            </a>
                         </div>
                     </div>
                     <div className="sponsors-micro">
                         <h2 className="sponsors-name">Micro</h2>
                         <div className="sponsors-img">
-                            <a href="https://www.bookbub.com" target="_blank"><img className="sponsors-img-micro" src={bookbubImg}></img></a>
+                            <a href="https://www.bookbub.com" target="_blank">
+                                <img
+                                    className="sponsors-img-micro"
+                                    src={bookbubImg}
+                                ></img>
+                            </a>
+                            <a href="https://www.pathrise.com" target="_blank">
+                                <img
+                                    className="sponsors-img-micro"
+                                    style={{
+                                        padding: "10px",
+                                        backgroundColor: "white"
+                                    }}
+                                    src={pathRiseimg}
+                                ></img>
+                            </a>
+                            <a href="https://www.mouser.com" target="_blank">
+                                <img
+                                    className="sponsors-img-micro"
+                                    style={{
+                                        padding: "10px",
+                                        backgroundColor: "white"
+                                    }}
+                                    src={mouserImg}
+                                ></img>
+                            </a>
                         </div>
                     </div>
                 </div>
