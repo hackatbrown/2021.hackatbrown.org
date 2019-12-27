@@ -29,16 +29,19 @@
   }
 }
 
-.race {
+.raceDiv {
   margin-bottom: 60px;
 }
 
-.gender {
+.genderDiv {
   margin-bottom: 80px;
 }
 
 .form-popup {
   overflow-y: scroll;
+  position: fixed;
+  z-index: 100;
+  width: inherit;
 }
 
 .form-popup::-webkit-scrollbar {
@@ -60,9 +63,18 @@
 }
 
 @media screen and (min-width: 500px) {
+  .raceDiv {
+    width: 408px !important;
+  }
+  .genderDiv {
+    width: 408px !important;
+  }
+  .howFindOutDiv {
+    width: 408px !important;
+  }
+
   .form-popup {
     background-color: #647381 !important;
-    width: 408px !important;
     padding-top: 15px !important;
     padding-left: 20px !important;
     padding-bottom: 15px !important;
@@ -75,9 +87,17 @@
 }
 
 @media screen and (max-width: 499px) {
+  .raceDiv {
+    width: 350px !important;
+  }
+  .genderDiv {
+    width: 350px !important;
+  }
+  .howFindOutDiv {
+    width: 350px !important;
+  }
   .form-popup {
     background-color: #647381 !important;
-    width: 350px !important;
     padding-top: 15px !important;
     padding-left: 20px !important;
     padding-bottom: 15px !important;
