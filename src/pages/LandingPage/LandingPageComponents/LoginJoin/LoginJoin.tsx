@@ -62,7 +62,6 @@ export default class LoginJoin extends Component<
 
     // Check if user is logged in when component mounts
     componentDidMount = () => {
-        console.log("updating things rnnn");
         // this.setState({
         //     justLogged: false
         // });
