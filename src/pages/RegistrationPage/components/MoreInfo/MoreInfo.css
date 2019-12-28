@@ -37,9 +37,13 @@
   margin-bottom: 80px;
 }
 
+.howFindOutDiv {
+  margin-bottom: 80px;
+}
+
 .form-popup {
   overflow-y: scroll;
-  position: fixed;
+  position: absolute;
   z-index: 100;
   width: inherit;
 }
