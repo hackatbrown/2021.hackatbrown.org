@@ -199,7 +199,8 @@ label {
 
 @media screen and (max-width: 550px) {
     .login-join-body {
-        width: inherit;
+        /* width: inherit; */
+        width: 90%;
     }
 }
 
