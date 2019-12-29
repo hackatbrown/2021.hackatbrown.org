@@ -28,7 +28,6 @@ type DashboardState = {
 const buttonStyle: React.CSSProperties = {
     textTransform: "none",
     color: "white",
-    background: "#1A9996",
     borderRadius: "15px",
     border: "2px solid #FFFFFF"
 };
@@ -152,7 +151,7 @@ export default class DashboardHome extends React.Component<
                 // <div id="status">
                 <div>
                     <div
-                        id="outer-button"
+                        className="dashboard-button"
                         style={buttonStyle}
                         //component={props => <Link to="/registration" {...props}/>}
                         //linkButton={true}
@@ -174,12 +173,13 @@ export default class DashboardHome extends React.Component<
                         >
                             Edit Your Application
                         </Button>
-                        <p>
+                        <p className="sub-text">
                             * A confirmation email has been sent to you, make
                             sure to check your Spam!
                         </p>
                     </div>
                     <Button
+                        className="dashboard-button"
                         id="reimbursement"
                         style={buttonStyle}
                         component={props => (
@@ -189,13 +189,12 @@ export default class DashboardHome extends React.Component<
                         disabled
                     >
                         <p id="apply-reimbursement">
-                            <span className="button-title">
+                            <div className="button-title" id="apply-title">
                                 Apply for Reimbursement
-                            </span>
-                            <br></br>
-                            <span id="sub-text">
+                            </div>
+                            <div id="coming-soon" className="sub-text">
                                 (Will be available after the hackathon!)
-                            </span>
+                            </div>
                         </p>
                     </Button>
                 </div>
@@ -204,6 +203,10 @@ export default class DashboardHome extends React.Component<
 
         return (
             <div className="dashboard">
+                <div id="lights-container">
+                    <img id="lamp" src={require('../../assets/images/Dashboard/dash_lamp.png')}/>
+                    <img id="lamp-light" src={require('../../assets/images/Dashboard/dash_light.png')}/>
+                </div>
                 <div className="main-pane">
                     <div className="greeting">
                         <h1> Hi, {this.state.firstName}! </h1>

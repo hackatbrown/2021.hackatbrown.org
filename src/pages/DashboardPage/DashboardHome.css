@@ -4,23 +4,43 @@
         center center fixed;
     background-size: cover;
     height: 100vh;
+    position: relative;
+}
+
+#lights-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 8vh;
+    position: absolute;
+}
+
+#lamp {
+    margin-left: 12.5vw;
+    width: 34.5vw;
+}
+
+#lamp-light {
+    width: 54.5vw;
+    margin-left: 2.5vw;
+    margin-top: -1.399vw;
+    height: 100vh;
 }
 
 .main-pane {
     width: 34.5vw;
     float: left;
-    /* margin-left: 10vw;
-  margin-top: 20vh; */
     margin-left: 12.5vw;
-    margin-top: 13vh;
+    margin-top: 16vh;
     background-color: transparent;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: absolute;
 }
 
 .greeting h1 {
-    font-size: 52px;
+    font-size: 3.6vw;
     font-family: Covik Sans, sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -37,12 +57,16 @@
     height: 82px;
     margin-top: 30px;
     font-family: Akkurat Pro;
-    font-size: 24px;
+    background-color: #1A9996;
+}
+
+#start .MuiButton-label {
+    font-size: 160%;
 }
 
 #app-stat {
     margin-top: 30px;
-    font-size: 1.7vw;
+    font-size: 119%;
     font-family: Akkurat Pro;
 }
 
@@ -53,6 +77,7 @@
     height: 7vh;
     margin-bottom: 30px;
     font-family: Akkurat Pro;
+    background-color: #1A9996;
 }
 
 /* #status {
@@ -60,26 +85,197 @@
   height: 400px;
 } */
 
-#outer-button {
+.dashboard-button {
     /* width: 497px;
   height: 186px; */
-    width: auto;
+    width: 100%;
     height: auto;
     margin-top: 40px;
     padding-bottom: 10px;
+    background-color: #1A9996;
+}
+
+.MuiButton-label {
+    font-size: 129%;
 }
 
 #reimbursement {
     /* width: 497px;
   height: 111px; */
-    width: 34.5vw;
+    /* width: 34.5vw;
     height: 15vh;
-    margin-top: 40px;
+    margin-top: 40px; */
+    margin-top: 30px;
+    background-color: #1A9996;
 }
 
 #apply-reimbursement {
     font-family: Akkurat Pro;
     font-size: 20px;
+    line-height: normal;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.button-title {
+    font-size: 119%;
+}
+
+.sub-text {
+    font-size: 110%;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+#coming-soon {
+    font-size: 90%;
+}
+
+#apply-title {
+    margin-bottom: 11px;
+}
+
+/* iPhone 6/7/8 Plus */
+@media screen and (max-width: 414px) {
+    .greeting h1 {
+        font-size: 30px;
+    }
+    
+    .button-title {
+        font-size: 20px;
+    }
+
+    .dashboard {
+        background: url("../../assets/images/Dashboard/mobile_dash.jpg")
+            no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .main-pane {
+        width: 75%;
+    }
+
+    .dashboard-button {
+        width: 100%;
+        float: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+
+    #app-stat {
+        font-size: 5.5vw;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    #inner-button {
+        width: 85%;
+        height: auto;
+        float: center;
+        margin-bottom: 10px;
+    }
+
+    #apply-reimbursement {
+        line-height: normal;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    #start {
+        width: 86%;
+    }
+
+    .sub-text {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 0;
+        font-size: 0.875rem;
+    }
+
+    #coming-soon {
+        font-size: 0.875rem;
+    }
+
+    .greeting h1 {
+        font-size: 36px;
+        margin-top: 46px;
+    }
+    
+    .button-title {
+        font-size: 5.5vw;
+    }
+
+    /* .dashboard {
+        margin-right: -1px; 
+    } */
+
+    .dashboard-button {
+        width: 93%;
+        margin-top: 26px;
+    }
+    
+    .MuiButton-label {
+        font-size: 4vw;
+    }
+}
+
+/* iPhone 5/SE */
+@media screen and (max-width: 320px) {
+    .greeting h1 {
+        font-size: 30px;
+        margin-top: 25px;
+    }
+    
+    .button-title {
+        font-size: 20px;
+    }
+
+    .dashboard {
+        background: url("../../assets/images/Dashboard/mobile_dash.jpg")
+            no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    .main-pane {
+        width: 75%;
+    }
+
+    .dashboard-button {
+        width: 100%;
+        float: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 15px;
+    }
+
+    #app-stat {
+        font-size: 5.5vw;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    #inner-button {
+        width: 85%;
+        height: auto;
+        float: center;
+        margin-bottom: 10px;
+    }
+
+    #apply-reimbursement {
+        line-height: normal;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    #start {
+        width: 86%;
+    }
+
+    .sub-text {
+        margin-bottom: 0;
+        font-size: 0.875rem;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -93,17 +289,8 @@
         width: 84%;
     }
 
-    #outer-button {
-        width: 60%;
-    }
-
     #inner-button {
         width: 65%;
-    }
-
-    #reimbursement {
-        width: 60%;
-        float: left;
     }
 
     #start {
@@ -119,33 +306,36 @@
     }
     .main-pane {
         width: 75%;
+        margin-left: 13vw;
     }
-    #outer-button {
-        width: 85%;
-        float: center;
-        margin-left: 15%;
-        margin-right: 15%;
+    .dashboard-button {
+        background-color: #018C88;
     }
     #inner-button {
         width: 85%;
         float: center;
+        background-color: #018C88;
     }
-    #reimbursement {
-        width: 85%;
-        float: left;
-        margin-left: 15%;
-    }
+
     #start {
         width: 86%;
-        margin-left: 8%;
+        height: auto;
+        background-color: #018C88;
     }
-}
-/*margin: inherit;
-  line-height: normal;*/
-#sub-text {
-    font-size: 0.875rem;
-}
 
-.button-title {
-    font-size: 2vw;
+    #start .MuiButton-label {
+        font-size: 16px;
+    }
+
+    #reimbursement {
+        background-color: #018C88;
+    }
+
+    #lamp {
+        display: none;
+    }
+    
+    #lamp-light {
+        display: none;
+    }
 }
