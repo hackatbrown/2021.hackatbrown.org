@@ -135,6 +135,96 @@
     margin-bottom: 11px;
 }
 
+@media screen and (max-width: 1024px) {
+    .dashboard {
+        background: url("../../assets/images/Dashboard/tablet_dash.jpg")
+            no-repeat center center fixed;
+        background-size: cover;
+        background-position: top;
+    }
+
+    .greeting h1 {
+        font-size: 5.6vw;
+    }
+
+    .dashboard-button {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #app-stat {
+        font-size: 165%;
+    }
+
+    .MuiButton-label {
+        font-size: 165%;
+    }
+
+    #inner-button {
+        height: auto;
+    }
+
+    #apply-title {
+        font-size: 165%;
+    }
+
+    @media screen and (min-height: 768px) {
+        .main-pane {
+            margin-top: 22vh;
+        }
+    
+        .dashboard-button {
+            width: 70%;
+            margin-top: 2px;
+        }
+    }
+
+    @media screen and (width: 1024px) and (height: 1366px) {
+        .main-pane {
+            margin-top: 16vh;
+        }
+
+        .dashboard-button {
+            margin-top: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .greeting h1 {
+        font-size: 7.6vw;
+    }
+    .MuiButton-label {
+        font-size: 165%;
+    }
+    .main-pane {
+        margin-top: 16vh;
+    }
+    .dashboard-button {
+        background-color: #1A9996;
+        margin-left: auto;
+        margin-right: auto;
+        width: 83%;
+        margin-top: 40px;
+    }
+    #app-stat {
+        font-size: 165%;
+    }
+    #apply-title {
+        font-size: 165%;
+    }
+    #inner-button {
+        background-color: #1A9996;
+    }
+    #start {
+        background-color: #1A9996;
+    }
+    #reimbursement {
+        background-color: #1A9996;
+    }
+}
+
 /* iPhone 6/7/8 Plus */
 @media screen and (max-width: 414px) {
     .greeting h1 {
@@ -167,6 +257,10 @@
         font-size: 5.5vw;
         margin-top: 15px;
         margin-bottom: 10px;
+    }
+
+    #apply-title {
+        font-size: 20px;
     }
 
     #inner-button {
@@ -278,12 +372,12 @@
     }
 }
 
-@media screen and (max-width: 500px) {
-    .dashboard {
-        background: url("../../assets/images/Dashboard/mobile_dash.jpg")
+@media screen and (max-width: 499px) {
+    /* .dashboard {
+        background: url("../../assets/images/Dashboard/tablet_dash.jpg")
             no-repeat center center fixed;
         background-size: cover;
-    }
+    } */
 
     .main-pane {
         width: 84%;
@@ -296,18 +390,7 @@
     #start {
         width: 84%;
     }
-}
 
-@media screen and (max-width: 768px) {
-    .dashboard {
-        background: url("../../assets/images/Dashboard/mobile_dash.jpg")
-            no-repeat center center fixed;
-        background-size: cover;
-    }
-    .main-pane {
-        width: 75%;
-        margin-left: 13vw;
-    }
     .dashboard-button {
         background-color: #018C88;
     }
@@ -330,6 +413,35 @@
     #reimbursement {
         background-color: #018C88;
     }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-pane {
+        width: 75%;
+        margin-left: 13vw;
+    }
+    /* .dashboard-button {
+        background-color: #1A9996;
+    } */
+    #inner-button {
+        width: 85%;
+        float: center;
+        /* background-color: #1A9996; */
+    }
+
+    #start {
+        width: 86%;
+        height: auto;
+        /* background-color: #1A9996; */
+    }
+
+    #start .MuiButton-label {
+        font-size: 16px;
+    }
+
+    /* #reimbursement {
+        background-color: #1A9996;
+    } */
 
     #lamp {
         display: none;

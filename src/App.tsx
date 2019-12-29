@@ -160,7 +160,7 @@ export default class App extends React.Component<AppProps, AppState> {
                                                     ? null
                                                     : firebase.firebase
                                             }
-                                            backgroundColor={"#018C88"}
+                                            backgroundColor={"#018C8A"}
                                         />
                                     )}
                                 </FirebaseContextConsumer>
