@@ -488,6 +488,7 @@ export default class LoginJoin extends Component<
 
         return (
             <div>
+                {/* <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes"></meta> */}
                 {this.state.justLogged ? (
                     <Redirect to="/dashboard" />
                 ) : (
