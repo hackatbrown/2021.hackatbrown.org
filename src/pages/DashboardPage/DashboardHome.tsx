@@ -174,8 +174,7 @@ export default class DashboardHome extends React.Component<
                             Edit Your Application
                         </Button>
                         <p className="sub-text">
-                            * A confirmation email has been sent to you, make
-                            sure to check your Spam!
+                            A confirmation email has been sent to you.
                         </p>
                     </div>
                     <Button
