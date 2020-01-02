@@ -4,8 +4,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
-import { Popper, Paper} from "@material-ui/core";
-
+import { Popper, Paper, ClickAwayListener } from "@material-ui/core";
 
 const DropButton = withStyles(theme => ({
   root: {
@@ -60,7 +59,6 @@ type MoreInfoState = {
   raceOpened: boolean
   genderOpened: boolean
   howFindOutOpened: boolean
-  anchorEl: any
   raceText: string | undefined
   genderText: string | undefined
   howFindOutText: string | undefined
@@ -94,7 +92,6 @@ export default class MoreInfo extends React.Component<
           raceOpened: false,
           genderOpened: false,
           howFindOutOpened: false,
-          anchorEl: null,
           raceText: this.convertSelection("race", this.props.currentSelected['race']),
           genderText: this.convertSelection("gender", this.props.currentSelected['gender']),
           howFindOutText: this.convertSelection("findout", this.props.currentSelected['findout']),
@@ -143,41 +140,36 @@ export default class MoreInfo extends React.Component<
     }
 
     raceControl = (event:any) => {
-      this.setState({
-        anchorEl: event.currentTarget,
-        raceOpened: this.state.raceOpened ? false : true,
-        raceText: this.convertSelection("race", this.props.currentSelected['race']),
-        raceArrowTransform: this.state.raceOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
-      });
+      if (event.currentTarget.id == "raceButton" || this.state.raceOpened) {
+        this.setState({
+          raceOpened: this.state.raceOpened ? false : true,
+          raceText: this.convertSelection("race", this.props.currentSelected['race']),
+          raceArrowTransform: this.state.raceOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
+        });
+      }
     }
 
     genderControl = (event:any) => {
-      this.setState({
-        anchorEl: event.currentTarget,
-        genderOpened: this.state.genderOpened ? false : true,
-        genderText: this.convertSelection("gender", this.props.currentSelected['gender']),
-        genderArrowTransform: this.state.genderOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
-      });
+      if (event.currentTarget.id == "genderButton" || this.state.genderOpened) {
+        this.setState({
+          genderOpened: this.state.genderOpened ? false : true,
+          genderText: this.convertSelection("gender", this.props.currentSelected['gender']),
+          genderArrowTransform: this.state.genderOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
+        });
+      }
     }
 
     howFindOutControl = (event:any) => {
-      this.setState({
-        anchorEl: event.currentTarget,
-        howFindOutOpened: this.state.howFindOutOpened ? false : true,
-        howFindOutText: this.convertSelection("findout", this.props.currentSelected['findout']),
-        findoutArrowTransform: this.state.howFindOutOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
-      });
+      if (event.currentTarget.id == "howFindOutButton" || this.state.howFindOutOpened) {
+        this.setState({
+          howFindOutOpened: this.state.howFindOutOpened ? false : true,
+          howFindOutText: this.convertSelection("findout", this.props.currentSelected['findout']),
+          findoutArrowTransform: this.state.howFindOutOpened ? {transform: 'none'} : {transform: 'rotate(180deg)'}
+        });
+      }
     }
 
     isChecked = (id:string, value:string) => {
-      // if (value === "gender_prefer_not") {
-      //   return this.props.currentSelected["gender_prefer_not"] === 1 ? true : false;
-      // }
-      //
-      // if (value === "race_prefer_not") {
-      //   return this.props.currentSelected["race_prefer_not"] === 1 ? true : false;
-      // }
-
       return this.props.currentSelected[id].includes(value)
     }
 
@@ -201,100 +193,91 @@ export default class MoreInfo extends React.Component<
                 <p id="description-more-info">We ask the following to know more about who is attending our event.</p>
                 <p id="required"> *Required </p>
                 <form>
-                  <div className="race">
-                    <DropButton onClick={this.raceControl}>
-                     {this.state.raceText}
-                     <svg style={this.state.raceArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
-                     </svg>
-                    </DropButton>
-                    <Popper
-                      open={this.state.raceOpened}
-                      anchorEl={this.state.anchorEl}
-                      placement="bottom-start"
-                    >
-                      <Paper className="form-popup">
-                        {races.slice(0, races.length - 1).map((value, index) => {
-                          return <div>
-                            <FormControlLabel
-                            control={<Checkbox disabled={this.state.racePreferNot} style={{color: "white"}} checked={this.isChecked("race", value)} id="race" value={value} />}
-                            label={racesLabels[index]}
-                            onChange={this.props.handleMultiFormChange}
-                            />
-                          </div>
-                        })}
-                        <div>
-                          <FormControlLabel
-                          control={<Checkbox onClick={this.disableRestRace} style={{color: "white"}} checked={this.isChecked("race", "race_prefer_not")} id="race" value={"race_prefer_not"} />}
-                          label={racesLabels[races.length - 1]}
-                          onChange={this.props.handleDisableAll}
-                          />
-                        </div>
-                        <Button style={buttonStyle} onClick={this.raceControl}> Save </Button>
-                      </Paper>
-                    </Popper>
-                  </div>
-
-                  <div className="gender">
-                    <DropButton onClick={this.genderControl}>
-                      {this.state.genderText}
-                      <svg style={this.state.genderArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                       <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
-                      </svg>
-                    </DropButton>
-                    <Popper
-                      open={this.state.genderOpened}
-                      anchorEl={this.state.anchorEl}
-                      placement="bottom-start"
-                    >
-                      <Paper className="form-popup">
-                          {genders.slice(0, genders.length - 1).map((value, index) => {
+                  <ClickAwayListener onClickAway={this.raceControl}>
+                    <div className="raceDiv">
+                      <DropButton id="raceButton" onClick={this.raceControl}>
+                       {this.state.raceText}
+                       <svg style={this.state.raceArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
+                       </svg>
+                      </DropButton>
+                      {this.state.raceOpened ? (
+                        <div className="form-popup">
+                          {races.slice(0, races.length - 1).map((value, index) => {
                             return <div>
                               <FormControlLabel
-                              control={<Checkbox disabled={this.state.genderPreferNot} style={{color: "white"}} checked={this.isChecked("gender", value)} id="gender" value={value} />}
-                              label={gendersLabels[index]}
+                              control={<Checkbox disabled={this.state.racePreferNot} style={{color: "white"}} checked={this.isChecked("race", value)} id="race" value={value} />}
+                              label={racesLabels[index]}
                               onChange={this.props.handleMultiFormChange}
                               />
                             </div>
                           })}
                           <div>
                             <FormControlLabel
-                            control={<Checkbox onClick={this.disableRestGender} style={{color: "white"}} checked={this.isChecked("gender", "gender_prefer_not")} id="gender" value={"gender_prefer_not"} />}
-                            label={gendersLabels[genders.length - 1]}
+                            control={<Checkbox onClick={this.disableRestRace} style={{color: "white"}} checked={this.isChecked("race", "race_prefer_not")} id="race" value={"race_prefer_not"} />}
+                            label={racesLabels[races.length - 1]}
                             onChange={this.props.handleDisableAll}
                             />
                           </div>
-                          <Button style={buttonStyle} onClick={this.genderControl}> Save </Button>
-                      </Paper>
-                    </Popper>
-                  </div>
+                        </div>
+                    ) : null }
+                    </div>
+                  </ClickAwayListener>
 
-                  <div className="howFindOut">
-                    <DropButton onClick={this.howFindOutControl}>
-                      {this.state.howFindOutText}
-                      <svg style={this.state.findoutArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                       <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
-                      </svg>
-                    </DropButton>
-                    <Popper
-                      open={this.state.howFindOutOpened}
-                      anchorEl={this.state.anchorEl}
-                      placement="bottom-start"
-                    >
-                      <Paper className="form-popup">
-                          {findouts.map((value, index) => {
-                            return <div>
+                  <ClickAwayListener onClickAway={this.genderControl}>
+                    <div className="genderDiv">
+                      <DropButton id="genderButton" onClick={this.genderControl}>
+                        {this.state.genderText}
+                        <svg style={this.state.genderArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
+                        </svg>
+                      </DropButton>
+                      {this.state.genderOpened ? (
+                        <div className="form-popup">
+                            {genders.slice(0, genders.length - 1).map((value, index) => {
+                              return <div>
+                                <FormControlLabel
+                                control={<Checkbox disabled={this.state.genderPreferNot} style={{color: "white"}} checked={this.isChecked("gender", value)} id="gender" value={value} />}
+                                label={gendersLabels[index]}
+                                onChange={this.props.handleMultiFormChange}
+                                />
+                              </div>
+                            })}
+                            <div>
                               <FormControlLabel
-                              control={<Checkbox style={{color: "white"}} checked={this.isChecked("findout", value)} id="findout" value={value} />}
-                              label={findoutsLabels[index]}
-                              onChange={this.props.handleMultiFormChange}
+                              control={<Checkbox onClick={this.disableRestGender} style={{color: "white"}} checked={this.isChecked("gender", "gender_prefer_not")} id="gender" value={"gender_prefer_not"} />}
+                              label={gendersLabels[genders.length - 1]}
+                              onChange={this.props.handleDisableAll}
                               />
                             </div>
-                          })}
-                          <Button style={buttonStyle} onClick={this.howFindOutControl}> Save </Button>
-                      </Paper>
-                    </Popper>
-                  </div>
+                        </div>
+                      ) : null}
+                    </div>
+                  </ClickAwayListener>
+
+                  <ClickAwayListener onClickAway={this.howFindOutControl}>
+                    <div className="howFindOutDiv">
+                      <DropButton id="howFindOutButton" onClick={this.howFindOutControl}>
+                        {this.state.howFindOutText}
+                        <svg style={this.state.findoutArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
+                        </svg>
+                      </DropButton>
+                      {this.state.howFindOutOpened ? (
+                        <div className="form-popup">
+                            {findouts.map((value, index) => {
+                              return <div>
+                                <FormControlLabel
+                                control={<Checkbox style={{color: "white"}} checked={this.isChecked("findout", value)} id="findout" value={value} />}
+                                label={findoutsLabels[index]}
+                                onChange={this.props.handleMultiFormChange}
+                                />
+                              </div>
+                            })}
+                        </div>
+                      ) : null }
+                    </div>
+                  </ClickAwayListener>
                 </form>
             </div>
         );

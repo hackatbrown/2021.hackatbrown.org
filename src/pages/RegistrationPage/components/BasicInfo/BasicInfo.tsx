@@ -98,6 +98,7 @@ export default class BasicInfo extends React.Component<
                 <TextField
                   required
                   label="First Name"
+                  autoComplete="new-password"
                   style={textLeft}
                   id="firstName"
                   value={this.props.currentSelected['firstName']}
@@ -114,6 +115,7 @@ export default class BasicInfo extends React.Component<
                   value={this.props.currentSelected['lastName']}
                   required
                   label="Last Name"
+                  autoComplete="new-password"
                   margin="normal"
                   onChange={this.props.handleFormChange}
                   InputProps={{
@@ -130,6 +132,7 @@ export default class BasicInfo extends React.Component<
                   id="school"
                   value={this.props.currentSelected['school']}
                   label="School"
+                  autoComplete="new-password"
                   required
                   margin="normal"
                   onChange={this.props.handleFormChange}
@@ -145,6 +148,7 @@ export default class BasicInfo extends React.Component<
                   label="Major(s)"
                   required
                   margin="normal"
+                  autoComplete="new-password"
                   onChange={this.props.handleFormChange}
                   InputProps={{
                       style: {
@@ -161,6 +165,7 @@ export default class BasicInfo extends React.Component<
                   value={this.props.currentSelected['gradDate']}
                   placeholder="MM/YY"
                   id="gradDate"
+                  autoComplete="new-password"
                   onChange={this.props.handleFormChange}
                   customInput={TextField}
                   format={this.gradDateFormat}/>
