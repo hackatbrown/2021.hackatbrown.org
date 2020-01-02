@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import DayOfPage from "./pages/DayOfPage/DayOfPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import ReactGA from "react-ga";
@@ -187,6 +188,19 @@ export default class App extends React.Component<AppProps, AppState> {
                                 "/download_hackers?fire_token=" +
                                 this.state.userToken;
                         }}
+                    </Route>
+                    <Route path="/dayof">
+                        <div className="App">
+                            <FirebaseContextConsumer>
+                                {firebase => (
+                                    <Toolbar
+                                        firebase={firebase == null ? null : firebase.firebase}
+                                        backgroundColor={"#415364"}
+                                    />
+                                )}
+                            </FirebaseContextConsumer>
+                            <DayOfPage apiURL={apiURL} />
+                        </div>
                     </Route>
                     <Route path="">
                         <div className="App">

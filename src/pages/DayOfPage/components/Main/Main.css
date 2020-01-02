@@ -1,0 +1,120 @@
+.main {
+    font-family: "Covik Sans";
+    src: url("../../../../assets/fonts/Covik Sans-Regular.otf");
+    background-color: #415364;
+}
+
+#title {
+    height: 100%;
+    width: 100%;
+    /* position: absolute; */
+}
+
+#title-text {
+    padding-top: 184px;
+    /* position: absolute;
+    z-index: 2; */
+}
+
+#title-text h2 {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: -10px;
+}
+
+#title-text h1 {
+    color: #FFFFFF;
+    font-size: 52px;
+    line-height: 64px;
+}
+
+#title-img {
+    width: 100%;
+    /* position: absolute;
+    z-index: 1; */
+}
+
+/* fix for "Welcome to Garage" */
+/* @media screen and (max-width: 1291px) {
+    .main {
+        margin-bottom: inherit;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #calendar-img,
+    #stickynote-img {
+        max-width: 60vw;
+        min-width: 10vw;
+    }
+    .main-date {
+        font-size: 5vw;
+        right: 20%;
+        left: 20%;
+    }
+
+    .stickynote-login {
+        font-size: 4vw;
+        right: 22.5%;
+        padding: 2px;
+        border-radius: 10px;
+    }
+    .stickynote-dashboard {
+        font-size: 4vw;
+        right: 10%;
+    }
+    .registration-duedate {
+        font-size: 3.5vw;
+        color: black;
+    }
+    
+    .dates {
+        margin: -1.5rem 0 0 0;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .main {
+        min-height: 50vh;
+    }
+    #calendar-img,
+    #stickynote-img {
+        max-width: 40vh;
+        min-width: 10vh;
+    }
+    .main-date {
+        font-size: 5vh;
+        right: 20%;
+        left: 20%;
+    }
+    .stickynote-login {
+        font-size: 4vh;
+        right: 22.5%;
+        padding: 2px;
+        border-radius: 10px;
+    }
+    .stickynote-dashboard {
+        font-size: 4vh;
+        right: 10%;
+    }
+    .registration-duedate {
+        font-size: 2.5vh;
+        color: black;
+    }
+    
+    .dates {
+        margin: -1.5rem 0 0 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .main {
+        min-height: 50vh;
+    }
+
+    .main-items {
+        display: flex;
+        flex-wrap: wrap;
+    }
+} */

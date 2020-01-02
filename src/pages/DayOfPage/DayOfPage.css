@@ -1,0 +1,16 @@
+/* #bg-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    z-index: -5;
+} */
+
+.landing-page h1 {
+    color: white;
+}
+
+.landing-page {
+    background-color: #415364;
+}
