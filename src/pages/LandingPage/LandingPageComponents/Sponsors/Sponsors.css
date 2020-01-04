@@ -54,7 +54,7 @@
 } */
 
 .sponsors-giga {
-    max-width: 30rem;
+    /* max-width: 30rem; */
 }
 
 .sponsors-img-giga {
@@ -85,6 +85,19 @@
 
 .sponsors-kilo {
     max-width: 30rem;
+}
+
+@media (min-width: 1990px) {
+    .sponsors-mega {
+        max-width: initial;
+    }
+    .sponsors-mega .sponsors-img {
+        display: flex;
+        flex-direction: column;
+    }
+    .sponsors-kilo {
+        margin-left: 1em;
+    }
 }
 
 .sponsors-img-kilo {
