@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Itinerary.css";
+import itinImg from "../../../../assets/images/LandingPage/scene_itinerary_mobile.png";
 
 type ItineraryProps = {};
 
@@ -23,125 +24,209 @@ export default class Itinerary extends React.Component<
     render() {
         return (
             <div className="itinerary">
-                <div className="itinerary-div">
+                <h1 className="itinerary-header">Itinerary</h1>
+                <div className="parent-container d-flex">
+                <div className="saturday itin-table">
+                    <div className="row"><h3>Saturday, January 26th*</h3></div>
 
-                    <h1 className="itinerary-header">Itinerary</h1>
-                    <div className="itinerary-list">
-                        <h2 className="itinerary-date">Saturday, January 25th</h2>
-
-                        <div className="row1">
-                            <p className="time">9:00-10:00am</p>
-                            <p className="event">Check in</p>
+                    <div className="row">
+                        <div className="col">
+                            <div className="row">9:00-10:00am</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Friedman Lobby</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Check in</div>
+                            <div className="row">Friedman Lobby</div>
                         </div>
+                    </div>
 
-                        <div className="row1">
-                            <p className="time">10:00-11:00am</p>
-                            <p className="event">Sponsor Fair</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">10:00-11:00am</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Sayles Auditorium</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Sponsor Fair</div>
+                            <div className="row">Sayles Auditorium</div>
                         </div>
+                    </div>
 
-                        <div className="row1">
-                            <p className="time">11:00-12:00pm</p>
-                            <p className="event">Kickoff!</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">11:00am-12:00pm</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Salomon DECI</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Kickoff!</div>
+                            <div className="row">Salomon DECI</div>
                         </div>
+                    </div>
 
-                        <div className="row1">
-                            <p className="time">12:00-1:00pm</p>
-                            <p className="event">Lunch & Team Forming</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">12:00-1:00pm</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Sayles & Friedman</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Lunch & Team Forming</div>
+                            <div className="row">Sayles and Friedman</div>
                         </div>
+                    </div>
 
-                        <div className="row1">
-                            <p className="time">1:00pm</p>
-                            <p className="event">Hacking begins!</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">1:00pm</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Sayles & Friedman</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Hacking Begins!</div>
+                            <div className="row">Sayles and Friedman</div>
                         </div>
+                    </div>
 
-                        <div className="row1">
-                            <p className="time">5:30-6:30pm</p>
-                            <p className="event">Dinner</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">5:30pm-6:30pm</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Sayles Auditorium</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Dinner</div>
+                            <div className="row">Sayles Auditorium</div>
                         </div>
+                    </div>
 
-                        <div className="row1">
-                            <p className="time">11:30pm</p>
-                            <p className="event">Midnight Surprise</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">11:30pm</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Sayles Auditorium</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Midnight Surprise</div>
+                            <div className="row">Sayles Auditorium</div>
                         </div>
+                    </div>
+                </div>
 
-                        <h2 className="itinerary-date">Sunday, January 26th</h2>
-
-                        <div className="row1">
-                            <p className="time">8:00-9:00am</p>
-                            <p className="event">Breakfast</p>
+                <div className="sunday itin-table1">
+                    <div className="row"><h3>Sunday, January 27th</h3></div>
+                    <div className="row">
+                        <div className="col">
+                            <div className="row">8:00-9:00am</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Sayles Auditorium</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Breakfast</div>
+                            <div className="row">Sayles Auditorium</div>
                         </div>
+                    </div>
 
-                        <div className="row1">
-                            <p className="time">10:30am</p>
-                            <p className="event">Hacking Ends</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">10:30am</div>
                         </div>
-
-                        <div className="row2">
-                            <p className="location">Submit projects online!</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Hacking ends</div>
+                            <div className="row">*Submit your projects online!</div>
                         </div>
+                    </div>
 
-                        <div className="row1">
-                            <p className="time">11:00am</p>
-                            <p className="event">Judging Begins</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">11:00am</div>
                         </div>
-
-                        <div className="row1">
-                            <p className="time">1:00-2:00pm</p>
-                            <p className="event">Lunch</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Judging begins</div>
                         </div>
+                    </div>
 
-                        <div className="row2">
-                            <p className="location">Sayles Auditorium</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">1:00pm-2:00pm</div>
                         </div>
-
-                        <div className="row1">
-                            <p className="time">1:00-2:00pm</p>
-                            <p className="event">Demo Fair</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Lunch</div>
+                            <div className="row">Sayles Auditorium</div>
                         </div>
+                    </div>
 
-                        <div className="row2">
-                            <p className="location">Friedman 108</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">1:00pm-2:00pm</div>
                         </div>
-
-                        <div className="row1">
-                            <p className="time">2:30pm</p>
-                            <p className="event">Closing Ceremonies</p>
+                        <div className="col">
+                            <div className="row font-weight-bold">Demo Fair</div>
+                            <div className="row">Friedman 108</div>
                         </div>
+                    </div>
 
-                        <div className="row2">
-                            <p className="location">Salomon DECI</p>
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">2:30pm</div>
+                        </div>
+                        <div className="col">
+                            <div className="row font-weight-bold">Closing Ceremonies</div>
+                            <div className="row">Salomon DECI</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                </div>
+
+                <div className="itinerary-img-div">
+                    <img id="itinerary-img" src={itinImg}></img>
+                </div>
+
+                <div className="sunday itin-table2">
+                    <div className="row"><h3>Sunday, January 27th</h3></div>
+                    <div className="row">
+                        <div className="col">
+                            <div className="row">8:00-9:00am</div>
+                        </div>
+                        <div className="col">
+                            <div className="row font-weight-bold">Breakfast</div>
+                            <div className="row">Sayles Auditorium</div>
+                        </div>
+                    </div>
+
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">10:30am</div>
+                        </div>
+                        <div className="col">
+                            <div className="row font-weight-bold">Hacking ends</div>
+                            <div className="row">*Submit your projects online!</div>
+                        </div>
+                    </div>
+
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">11:00am</div>
+                        </div>
+                        <div className="col">
+                            <div className="row font-weight-bold">Judging begins</div>
+                        </div>
+                    </div>
+
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">1:00pm-2:00pm</div>
+                        </div>
+                        <div className="col">
+                            <div className="row font-weight-bold">Lunch</div>
+                            <div className="row">Sayles Auditorium</div>
+                        </div>
+                    </div>
+
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">1:00pm-2:00pm</div>
+                        </div>
+                        <div className="col">
+                            <div className="row font-weight-bold">Demo Fair</div>
+                            <div className="row">Friedman 108</div>
+                        </div>
+                    </div>
+
+                    <div className="row event">
+                        <div className="col">
+                            <div className="row">2:30pm</div>
+                        </div>
+                        <div className="col">
+                            <div className="row font-weight-bold">Closing Ceremonies</div>
+                            <div className="row">Salomon DECI</div>
                         </div>
                     </div>
 
