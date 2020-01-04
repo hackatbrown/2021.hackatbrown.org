@@ -337,7 +337,7 @@ export default class RegistrationPage extends React.Component<
             heard: this.state.findout,
             other_comments: this.state.comments
         };
-        console.log(registrationData);
+        // console.log(registrationData);
 
         const api = this.props.apiURL;
         await this.state.user

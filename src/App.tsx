@@ -56,12 +56,11 @@ let apiURL: string;
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
     // dev
     apiURL = "https://api2020-staging.herokuapp.com";
+    console.log(`apiUrl: ${apiURL}`)
 } else {
     // prod
     apiURL = "https://api2020-hackatbrown.herokuapp.com";
 }
-
-console.log(`apiUrl: ${apiURL}`)
 
 //   ___   .__   __.  ___________    __    ____      ______   ______    _______   _______    ___
 //  /  /   |  \ |  | |   ____\   \  /  \  /   /     /      | /  __  \  |       \ |   ____|   \  \
