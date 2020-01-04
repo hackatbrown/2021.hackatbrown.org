@@ -24,11 +24,10 @@ export default class Itinerary extends React.Component<
     render() {
         return (
             <div className="itinerary">
-                <h1 className="itinerary-header">Itinerary</h1>
-                <div className="parent-container d-flex">
+                <div className="parent-container d-flex justify-content-center">
                 <div className="saturday itin-table">
+                    <div className="row"><h1 className="itinerary-header">Itinerary</h1></div>
                     <div className="row"><h3>Saturday, January 26th*</h3></div>
-
                     <div className="row">
                         <div className="col">
                             <div className="row">9:00-10:00am</div>
@@ -101,6 +100,7 @@ export default class Itinerary extends React.Component<
                 </div>
 
                 <div className="sunday itin-table1">
+                <div className="placeholder-itinerary">.</div>
                     <div className="row"><h3>Sunday, January 27th</h3></div>
                     <div className="row">
                         <div className="col">
@@ -162,7 +162,6 @@ export default class Itinerary extends React.Component<
                     </div>
 
                 </div>
-
                 </div>
 
                 <div className="itinerary-img-div">
