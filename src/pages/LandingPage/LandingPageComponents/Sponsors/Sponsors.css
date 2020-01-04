@@ -59,8 +59,8 @@
 
 .sponsors-img-giga {
     transition: .2s ease-in-out;
-    max-width: 10rem;
-    margin: 0.5rem;
+    max-width: 50vw;
+    margin: 1rem;
 }
 
 .sponsors-img-giga:hover {
@@ -74,7 +74,7 @@
 
 .sponsors-img-mega {
     transition: .2s ease-in-out;
-    max-width: 10rem;
+    max-width: 35vw;
     margin: 0.5rem;
 }
 
@@ -89,7 +89,7 @@
 
 .sponsors-img-kilo {
     transition: .2s ease-in-out;
-    max-width: 8rem;
+    max-width: 25vw;
     margin: 0.5rem;
 }
 
@@ -104,7 +104,7 @@
 
 .sponsors-img-micro {
     transition: .2s ease-in-out;
-    max-width: 8rem;
+    max-width: 15vw;
     margin: 0.5rem;
 }
 
