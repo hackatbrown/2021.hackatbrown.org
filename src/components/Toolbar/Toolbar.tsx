@@ -85,33 +85,28 @@ export default class Toolbar extends React.Component<
                         collapseOnSelect
                         expand="lg"
                         className="toolbar"
-                        style={{ backgroundColor: this.props.backgroundColor }}
+                        style={{
+                            backgroundColor: this.props.backgroundColor,
+                            alignItems: "center",
+                            paddingLeft: "11vw",
+                            paddingRight: "11vw"
+                        }}
                     >
-                        <Navbar.Brand></Navbar.Brand>
+                        <Navbar.Brand>
+                            <div>
+                                <a href="/">
+                                    <img
+                                        id="logo-img"
+                                        src={logoImg}
+                                        onClick={this.scrollToTop}
+                                    ></img>
+                                </a>
+                            </div>
+                        </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse
-                            id="responsive-navbar-nav"
-                            style={{
-                                alignItems: "center",
-                                paddingLeft: "11vw",
-                                paddingRight: "11vw"
-                            }}
-                        >
-                            <Nav
-                                className="mr-auto"
-                                style={{ alignItems: "center" }}
-                            >
-                                <div>
-                                    <a href="/">
-                                        <img
-                                            id="logo-img"
-                                            src={logoImg}
-                                            onClick={this.scrollToTop}
-                                        ></img>
-                                    </a>
-                                </div>
-                            </Nav>
-                            <Nav>
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="mr-auto"></Nav>
+                            <Nav className="tool-bar-container">
                                 <Col>
                                     <div
                                         className="toolbar-about"
