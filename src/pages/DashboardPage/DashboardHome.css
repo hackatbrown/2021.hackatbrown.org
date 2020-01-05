@@ -95,7 +95,7 @@
     background-color: #1A9996;
 }
 
-.MuiButton-label {
+.dashboard .MuiButton-label {
     font-size: 129%;
 }
 
@@ -157,7 +157,7 @@
         font-size: 165%;
     }
 
-    .MuiButton-label {
+    .dashboard .MuiButton-label {
         font-size: 165%;
     }
 
@@ -195,12 +195,15 @@
     .greeting h1 {
         font-size: 7.6vw;
     }
-    .MuiButton-label {
+
+    .dashboard .MuiButton-label {
         font-size: 165%;
     }
+
     .main-pane {
         margin-top: 16vh;
     }
+
     .dashboard-button {
         background-color: #1A9996;
         margin-left: auto;
@@ -208,18 +211,23 @@
         width: 83%;
         margin-top: 40px;
     }
+
     #app-stat {
         font-size: 165%;
     }
+
     #apply-title {
         font-size: 165%;
     }
+
     #inner-button {
         background-color: #1A9996;
     }
+
     #start {
         background-color: #1A9996;
     }
+
     #reimbursement {
         background-color: #1A9996;
     }
@@ -309,7 +317,7 @@
         margin-top: 26px;
     }
     
-    .MuiButton-label {
+    .dashboard .MuiButton-label {
         font-size: 4vw;
     }
 }
