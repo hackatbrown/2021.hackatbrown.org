@@ -58,7 +58,7 @@
 }
 
 .sponsors-img-giga {
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
     max-width: 35vw;
     margin: 1rem;
 }
@@ -73,9 +73,10 @@
 }
 
 .sponsors-img-mega {
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
     max-width: 25vw;
     margin: 0.5rem;
+    object-fit: cover;
 }
 
 .sponsors-img-mega:hover {
@@ -101,9 +102,11 @@
 }
 
 .sponsors-img-kilo {
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
     max-width: 15vw;
+    max-height: 60px;
     margin: 0.5rem;
+    object-fit: cover;
 }
 
 .sponsors-img-kilo:hover {
@@ -116,9 +119,11 @@
 }
 
 .sponsors-img-micro {
-    transition: .2s ease-in-out;
+    transition: 0.2s ease-in-out;
     max-width: 10vw;
+    max-height: 40px;
     margin: 0.5rem;
+    object-fit: cover;
 }
 
 .sponsors-img-micro:hover {

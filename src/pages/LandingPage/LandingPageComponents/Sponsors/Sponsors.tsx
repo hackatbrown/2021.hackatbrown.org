@@ -11,6 +11,9 @@ import pathRiseimg from "../../../../assets/images/LandingPage/companylogo/pathr
 import citizensbankImg from "../../../../assets/images/LandingPage/companylogo/Citizens-Logo-1.jpg";
 import mouserImg from "../../../../assets/images/LandingPage/companylogo/Mouser.jpg";
 import bloombergImg from "../../../../assets/images/LandingPage/companylogo/Bloomberg.png";
+import redfinImg from "../../../../assets/images/LandingPage/companylogo/Redfin.jpg";
+import ripplematchImg from "../../../../assets/images/LandingPage/companylogo/ripplematch.svg";
+
 type SponsorsProps = {};
 
 type SponsorsState = {
@@ -104,6 +107,12 @@ export default class Sponsors extends React.Component<
                                     src={herokuImg}
                                 ></img>
                             </a>
+                            <a href="https://www.redfin.com/" target="_blank">
+                                <img
+                                    className="sponsors-img-kilo"
+                                    src={redfinImg}
+                                ></img>
+                            </a>
                         </div>
                     </div>
                     <div className="sponsors-micro">
@@ -130,9 +139,21 @@ export default class Sponsors extends React.Component<
                                     className="sponsors-img-micro"
                                     style={{
                                         padding: "10px",
-                                        backgroundColor: "white"
+                                        backgroundColor: "white",
+                                        overflow: "hidden",
+                                        objectFit: "cover"
                                     }}
                                     src={mouserImg}
+                                ></img>
+                            </a>
+                            <a href="https://ripplematch.com/" target="_blank">
+                                <img
+                                    className="sponsors-img-micro"
+                                    style={{
+                                        padding: "10px",
+                                        backgroundColor: "white"
+                                    }}
+                                    src={ripplematchImg}
                                 ></img>
                             </a>
                         </div>
