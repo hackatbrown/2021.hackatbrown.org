@@ -13,6 +13,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import { FirebaseContextConsumer } from "./components/Firebase/context";
 import Firebase from "./components/Firebase";
+import CodeOfConductPage from "./pages/CodeOfConductPage/CodeOfConductPage";
 
 const history = createBrowserHistory();
 
@@ -53,10 +54,10 @@ const theme = createMuiTheme({
 
 let apiURL: string;
 
-if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
     // dev
     apiURL = "https://api2020-staging.herokuapp.com";
-    console.log(`apiUrl: ${apiURL}`)
+    console.log(`apiUrl: ${apiURL}`);
 } else {
     // prod
     apiURL = "https://api2020-hackatbrown.herokuapp.com";
@@ -186,6 +187,11 @@ export default class App extends React.Component<AppProps, AppState> {
                                 "/download_hackers?fire_token=" +
                                 this.state.userToken;
                         }}
+                    </Route>
+                    <Route path="/code-of-conduct">
+                        <div className="App">
+                            <CodeOfConductPage />
+                        </div>
                     </Route>
                     <Route path="">
                         <div className="App">

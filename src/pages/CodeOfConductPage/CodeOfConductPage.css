@@ -1,0 +1,43 @@
+.conduct-container {
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction: column;
+    padding: 5rem;
+    font-size: 1.2em;
+}
+.conduct-container h1 {
+    color: #75d6e4;
+    font-size: 3em;
+}
+.conduct-container p {
+    text-align: left;
+}
+.conduct-container a {
+    text-align: left;
+    color: #58e9ff;
+}
+
+.conduct-container ul {
+    text-align: left;
+}
+
+.code-of-conduct {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.conduct-header {
+    margin-bottom: 1rem;
+}
+
+.conduct-header p {
+    color: rgb(242, 242, 242);
+}
+
+.attribution {
+    margin-top: 40px;
+}
