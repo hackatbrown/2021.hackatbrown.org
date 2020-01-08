@@ -231,7 +231,7 @@ export default class CodeOfConductPage extends React.Component<
 
                     <section className="attribution">
                         <p>
-                            Last updated on December 10, 2018. If you have any
+                            Last updated on January 7, 2019. If you have any
                             questions about the code of conduct, please reach
                             out to us at{" "}
                             <a href="mailto:hello@hackatbrown.org">
