@@ -191,15 +191,7 @@ export default class App extends React.Component<AppProps, AppState> {
                     </Route>
                     <Route path="/dayof">
                         <div className="App">
-                            <FirebaseContextConsumer>
-                                {firebase => (
-                                    <Toolbar
-                                        firebase={firebase == null ? null : firebase.firebase}
-                                        backgroundColor={"#415364"}
-                                    />
-                                )}
-                            </FirebaseContextConsumer>
-                            <DayOfPage apiURL={apiURL} />
+                            <DayOfPage />
                         </div>
                     </Route>
                     <Route path="">

@@ -1,16 +1,12 @@
 import React from "react";
 import "./DayOfPage.css";
-import FAQ from "./components/FAQ/FAQ";
-import Intro from "./components/Intro/Intro";
-import Itinerary from "./components/Itinerary/Itinerary";
 import Main from "./components/Main/Main";
-import Sponsors from "./components/Sponsors/Sponsors";
+import Itinerary from "./components/Itinerary/Itinerary"
 import Footer from "./components/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
 
 type LandingPageProps = {
-  apiURL : string
 };
 
 type LandingPageState = {
@@ -37,18 +33,16 @@ export default class LandingPage extends React.Component<
     render() {
         return (
             <div className="landing-page">
+                <FirebaseContextConsumer>
+                   {firebase => (
+                        <Toolbar
+                         firebase={firebase == null ? null : firebase.firebase}
+                         backgroundColor={"#415364"}
+                         />
+                     )}
+                </FirebaseContextConsumer>
                 <Main/>
-                {/* <Main apiURL={this.props.apiURL} hideToolbar ={this.hideToolbar}/>
-                <Intro />
-                <div id="itinerary">
-                    <Itinerary />
-                </div>
-                <div id="faq">
-                    <FAQ />
-                </div>
-                <div id="sponsors">
-                    <Sponsors />
-                </div> */}
+                <Itinerary />
                 <div id="footer">
                     <Footer />
                 </div>
