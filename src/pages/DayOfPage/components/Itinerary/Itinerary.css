@@ -1,67 +1,55 @@
-.itinerary-header {
-    text-align: left;
-}
-
 .dayof-itinerary {
-    padding: 4rem 10% 1rem 20%;
-    /* padding: 2rem 0 0 0; */
+    padding: 0 10% 1rem 20%;
     color: white;
     text-align: left;
-
     background-color: #415364;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.row h3 {
+.dayof-itinerary th:nth-child(1) {
     font-family: Covik Sans;
     font-style: normal;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 36px;
     line-height: 52px;
+    /* identical to box height */
+
     color: #FFFFFF;
+    padding-bottom: 35px;
 }
 
-.event {
-    margin: 1rem 0 0 0;
-    /* grid fix */
-    margin-left: -15px;
-    margin-right: -15px;
+.dayof-itinerary td:nth-child(1) {
+    font-family: Akkurat Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    /* or 133% */
+
+    color: #FFFFFF;
+    padding-bottom: 35px;
 }
 
-#itinerary-img {
-    max-width: 90%;
-    margin: 3rem 0 4rem 0;
+.caption {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 5px;
 }
 
-.saturday {
-    width: 540px;
-    margin: 0 1rem 0 0;
+#prize-title {
+    padding-bottom: 20px;
 }
 
-.sunday {
-    width: 540px;
-    margin: 0 1rem 0 10%;
+#prize-categories {
+    font-weight: normal;
 }
 
-.itin-table2 {
-    display: none;
-}
-
-@media screen and (max-width: 800px) {
-    .itin-table1 {
-        display: none;
-    }
-
-    .itin-table2 {
-        display: inline;
-    }
-
-    #itinerary-img {
-        max-width: 90%;
-        margin: 4rem 0 3rem 0;
-    }
-
-    .itinerary-header {
-        margin-left: -1rem;
-        text-align: left;
+@media screen and (max-width: 414px) {
+    .dayof-itinerary {
+        flex-direction: column;
     }
 }

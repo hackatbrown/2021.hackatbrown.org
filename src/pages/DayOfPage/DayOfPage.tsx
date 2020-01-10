@@ -3,7 +3,7 @@ import "./DayOfPage.css";
 import Main from "./components/Main/Main";
 import Itinerary from "./components/Itinerary/Itinerary"
 import Footer from "./components/Footer/Footer";
-import Toolbar from "../../components/Toolbar/Toolbar";
+import Toolbar from "./components/Toolbar/Toolbar";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
 
 type LandingPageProps = {
@@ -42,7 +42,9 @@ export default class LandingPage extends React.Component<
                      )}
                 </FirebaseContextConsumer>
                 <Main/>
-                <Itinerary />
+                <div id="itinerary">
+                  <Itinerary />
+                </div>
                 <div id="footer">
                     <Footer />
                 </div>

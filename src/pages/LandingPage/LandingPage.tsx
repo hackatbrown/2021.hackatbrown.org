@@ -47,7 +47,9 @@ export default class LandingPage extends React.Component<
                     )}
                 </FirebaseContextConsumer>
                 <Main apiURL={this.props.apiURL} hideToolbar ={this.hideToolbar}/>
-                <Intro />
+                <div id="about">
+                    <Intro />
+                </div>
                 <div id="itinerary">
                     <Itinerary />
                 </div>

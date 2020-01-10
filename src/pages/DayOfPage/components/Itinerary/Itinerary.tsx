@@ -23,250 +23,70 @@ export default class Itinerary extends React.Component<
     render() {
         return (
             <div className="dayof-itinerary">
-                <div className="parent-container d-flex justify-content-center">
-                    <div className="saturday itin-table">
-                        <div className="row">
-                            <h3>SATURDAY</h3>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                                <div className="row">9:00-10:00am</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Check in
-                                </div>
-                                <div className="row">Friedman Lobby</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">10:00-11:00am</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Sponsor Fair
-                                </div>
-                                <div className="row">Sayles Auditorium</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">11:00am-12:00pm</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Kickoff!
-                                </div>
-                                <div className="row">Salomon DECI</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">12:00-1:00pm</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Lunch & Team Forming
-                                </div>
-                                <div className="row">Sayles and Friedman</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">1:00pm</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Hacking Begins!
-                                </div>
-                                <div className="row">Sayles and Friedman</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">5:30pm-6:30pm</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Dinner
-                                </div>
-                                <div className="row">Sayles Auditorium</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">11:30pm</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Midnight Surprise
-                                </div>
-                                <div className="row">Sayles Auditorium</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="sunday itin-table1">
-                        <div className="row">
-                            <h3>SUNDAY</h3>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                                <div className="row">8:00-9:00am</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Breakfast
-                                </div>
-                                <div className="row">Sayles Auditorium</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">10:30am</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Hacking ends
-                                </div>
-                                <div className="row">
-                                    *Submit your projects online!
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">11:00am</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Judging begins
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">1:00pm-2:00pm</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Lunch
-                                </div>
-                                <div className="row">Sayles Auditorium</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">1:00pm-2:00pm</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Demo Fair
-                                </div>
-                                <div className="row">Friedman 108</div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">2:30pm</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Closing Ceremonies
-                                </div>
-                                <div className="row">Salomon DECI</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="sunday itin-table2">
-                    <div className="row">
-                        <h3>Sunday, January 27th</h3>
-                    </div>
-                    <div className="row">
-                        <div className="col">
-                            <div className="row">8:00-9:00am</div>
-                        </div>
-                        <div className="col">
-                            <div className="row font-weight-bold">
-                                Breakfast
-                            </div>
-                            <div className="row">Sayles Auditorium</div>
-                        </div>
-                    </div>
-
-                    <div className="row event">
-                        <div className="col">
-                            <div className="row">10:30am</div>
-                        </div>
-                        <div className="col">
-                            <div className="row font-weight-bold">
-                                Hacking ends
-                            </div>
-                            <div className="row">
-                                *Submit your projects online!
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row event">
-                        <div className="col">
-                            <div className="row">11:00am</div>
-                        </div>
-                        <div className="col">
-                            <div className="row font-weight-bold">
-                                Judging begins
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row event">
-                        <div className="col">
-                            <div className="row">1:00pm-2:00pm</div>
-                        </div>
-                        <div className="col">
-                            <div className="row font-weight-bold">Lunch</div>
-                            <div className="row">Sayles Auditorium</div>
-                        </div>
-                    </div>
-
-                    <div className="row event">
-                        <div className="col">
-                            <div className="row">1:00pm-2:00pm</div>
-                        </div>
-                        <div className="col">
-                            <div className="row font-weight-bold">
-                                Demo Fair
-                            </div>
-                            <div className="row">Friedman 108</div>
-                        </div>
-                    </div>
-
-                    <div className="row event">
-                        <div className="col">
-                            <div className="row">2:30pm</div>
-                        </div>
-                        <div className="col">
-                            <div className="row font-weight-bold">
-                                Closing Ceremonies
-                            </div>
-                            <div className="row">Salomon DECI</div>
-                        </div>
-                    </div>
-                </div>
+                <table>
+                    <tr>
+                        <th className="day">SATURDAY</th>
+                    </tr>
+                    <tr>
+                        <td>9:00am<br/>Registration & Sponsor Fair<br/><div className="caption">Check in at Friedman Lobby,<br/>or Check in at Sayles Hall 108</div></td>
+                    </tr>
+                    <tr>
+                        <td>11:00am – 12:00pm<br/>Kickoff & Keynote Speech<br/><div className="caption">Head to Salomon Hall DECI</div></td>
+                    </tr>
+                    <tr>
+                        <td>12:00pm – 1:00pm<br/>Lunch & Team Forming<br/><div className="caption">Sayles Hall & Friedman Hall 102</div></td>
+                    </tr>
+                    <tr>
+                        <td>1:00pm<br/>Hacking begins!<br/><div className="caption">Sayles Hall<br/>riedman 201, 202, 208</div></td>
+                    </tr>
+                    <tr>
+                        <td>1:30pm – 2:30pm<br/>iOS Workshop<br/><div className="caption">Friedman 108</div></td>
+                    </tr>
+                    <tr>
+                        <td>2:30pm – 3:30pm<br/>Android Workshop<br/><div className="caption">Friedman 108</div></td>
+                    </tr>
+                    <tr>
+                        <td>4:00pm – 5:00pm<br/>Javascript Workshop<br/><div className="caption">Friedman 108</div></td>
+                    </tr>
+                    <tr>
+                        <td>6:00pm – 7:00pm<br/>Dinner<br/><div className="caption">Sayles Hall</div></td>
+                    </tr>
+                    <tr>
+                        <td>10:30pm<br/><div className="caption">Late Night Surprise!</div></td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>SUNDAY</th>
+                    </tr>
+                    <tr>
+                        <td>8:00am – 10:00am<br/>Breakfast</td>
+                    </tr>
+                    <tr>
+                        <td>10:30am<br/>Hacking ends!<br/><div className="caption">Submit projects online</div></td>
+                    </tr>
+                    <tr>
+                        <td>11:00am<br/>Judging<br/><div className="caption">Judging for Sayles Hall Participants</div></td>
+                    </tr>
+                    <tr>
+                        <td>12:00pm<br/>Judging<br/><div className="caption">Judging for Friedman Hall Participants</div></td>
+                    </tr>
+                    <tr>
+                        <td>1:00pm – 2:00pm<br/>Lunch & Demo Fair<br/><div className="caption">Friedman 108</div></td>
+                    </tr>
+                    <tr>
+                        <td>2:30pm – 3:00pm<br/>Closing Ceremony<br/><div className="caption">Salomon Auditorium DECI</div></td>
+                    </tr>
+                    <tr>
+                        <th id="prize-title">Prizes</th>
+                    </tr>
+                    <tr>
+                        <td id="prize-categories">Most Innovative<br/>Best First Time Hacker<br/>Best Hardware Hack<br/>Best Potential for Social Impact<br/>Best Real World Application</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
             </div>
         );
     }
