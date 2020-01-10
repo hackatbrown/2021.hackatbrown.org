@@ -79,6 +79,7 @@ export default class Main extends React.Component<MainProps, MainState> {
                         <h1>Garage 2020</h1>
                     </div>
                     <Countdown date={finish} renderer={renderer} zeroPadTime={2}/>
+                    <div id="wifi">Wifi: HackAtBrown <span>|</span> Password: HackATbrown2020</div>
                 </div>
             </div>
         );
