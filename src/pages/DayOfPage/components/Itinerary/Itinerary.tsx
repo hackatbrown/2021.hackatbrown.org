@@ -37,7 +37,7 @@ export default class Itinerary extends React.Component<
                         <td>12:00pm – 1:00pm<br/>Lunch & Team Forming<br/><div className="caption">Sayles Hall & Friedman Hall 102</div></td>
                     </tr>
                     <tr>
-                        <td>1:00pm<br/>Hacking begins!<br/><div className="caption">Sayles Hall<br/>riedman 201, 202, 208</div></td>
+                        <td>1:00pm<br/>Hacking begins!<br/><div className="caption">Sayles Hall<br/>Friedman 201, 202, 208</div></td>
                     </tr>
                     <tr>
                         <td>1:30pm – 2:30pm<br/>iOS Workshop<br/><div className="caption">Friedman 108</div></td>
