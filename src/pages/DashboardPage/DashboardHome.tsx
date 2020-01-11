@@ -43,7 +43,7 @@ export default class DashboardHome extends React.Component<
             fetchedData: false,
             firstName: "there", // say "Hi, there!" if no name
             appSubmitted: false,
-            accepted: false,
+            accepted: true,
             error: ""
         };
     }
@@ -93,7 +93,7 @@ export default class DashboardHome extends React.Component<
                                     session.setState({
                                         firstName: res.data.first_name,
                                         appSubmitted: res.data.app_submitted,
-                                        accepted: res.data.accepted
+                                       // accepted: res.data.accepted
                                     });
                                 }
                             });
@@ -145,7 +145,7 @@ export default class DashboardHome extends React.Component<
                     </Button>
                 </div>
             );
-        } else {
+        } else if (!this.state.appSubmitted) {
             // else, app completed
             content = (
                 // <div id="status">
@@ -198,7 +198,67 @@ export default class DashboardHome extends React.Component<
                     </Button>
                 </div>
             );
-        }
+        }else if (this.state.accepted){
+            // else, app accepted
+            content = (
+                // <div id="status">
+                <div>
+                    <div
+                        className="dashboard-button"
+                        style={buttonStyle}
+                        //component={props => <Link to="/registration" {...props}/>}
+                        //linkButton={true}
+                    >
+                        <p id="app-stat">
+                            <span className="button-title">
+                                Application Status
+                            </span>
+                            <br></br>
+                            <strong>APPROVED</strong>
+                        </p>
+                        <Button
+                            id="inner-button"
+                            style={buttonStyle}
+                            component={props => (
+                                <Link to="/registration" {...props} />//what should this link to?
+                            )}
+                            linkButton={true}
+                        >
+                            Confirm Attendance
+                        </Button>
+                        <Button
+                            id="inner-button"
+                            style={buttonStyle}
+                            component={props => (
+                                <Link to="/registration" {...props} />//what should this link to?
+                            )}
+                            linkButton={true}
+                        >
+                            Not Attending Anymore
+                        </Button>
+                    </div>
+                    <Button
+                        className="dashboard-button"
+                        id="reimbursement"
+                        style={buttonStyle}
+                        component={props => (
+                            <Link to="/registration" {...props} />
+                        )}
+                        linkButton={false}
+                        disabled
+                    >
+                        <p id="apply-reimbursement">
+                            <div className="button-title" id="apply-title">
+                                Reimbursement Status:
+                            </div>
+                            <div id="coming-soon" className="sub-text">
+                                IN PROGRESS
+                            </div>
+                        </p>
+                    </Button>
+                </div>
+            );
+            }
 
         return (
             <div className="dashboard">
