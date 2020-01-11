@@ -43,7 +43,11 @@ export default class DashboardHome extends React.Component<
             fetchedData: false,
             firstName: "there", // say "Hi, there!" if no name
             appSubmitted: false,
+<<<<<<< Updated upstream
             accepted: true,
+=======
+            accepted: true, // TODO: CHANGE TO FALSE, SET AS TRUE FOR TESTING PURPOSES
+>>>>>>> Stashed changes
             error: ""
         };
     }
@@ -93,7 +97,11 @@ export default class DashboardHome extends React.Component<
                                     session.setState({
                                         firstName: res.data.first_name,
                                         appSubmitted: res.data.app_submitted,
+<<<<<<< Updated upstream
                                        // accepted: res.data.accepted
+=======
+                                        // accepted: res.data.accepted // TODO: UNCOMMENT
+>>>>>>> Stashed changes
                                     });
                                 }
                             });
@@ -130,7 +138,7 @@ export default class DashboardHome extends React.Component<
             // if true, error
             content = <span className="message">{this.state.error}</span>;
         } else if (!this.state.appSubmitted) {
-            // if true, app hasn't been submitted
+            // app hasn't been submitted
             content = (
                 <div className="start-app">
                     <Button
@@ -145,8 +153,13 @@ export default class DashboardHome extends React.Component<
                     </Button>
                 </div>
             );
+<<<<<<< Updated upstream
         } else if (!this.state.appSubmitted) {
             // else, app completed
+=======
+        } else if (this.state.appSubmitted){
+            // if app has been submitted, but decisions not out
+>>>>>>> Stashed changes
             content = (
                 // <div id="status">
                 <div>
