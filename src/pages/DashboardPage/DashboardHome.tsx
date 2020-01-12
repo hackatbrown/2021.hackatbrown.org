@@ -4,6 +4,7 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Firebase from "../../components/Firebase";
 import axios from "axios";
+import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
 
 /**
  * define a type model for the props you are passing in to the component
@@ -23,12 +24,32 @@ type DashboardState = {
     appSubmitted: boolean;
     accepted: boolean;
     error: string;
+    rsvp: any;
+    size: string;
+    legalFirstName: string;
+    legalLastName: string;
+    phoneNumber: string;
+    dietary: string[];
+    projects: string[];
+    requireHost: boolean | null;
+    brownStudent: boolean | null;
+    willingHost: boolean | null;
+    conduct: boolean | null;
+    formSubmitted: boolean;
 };
 
 const buttonStyle: React.CSSProperties = {
     textTransform: "none",
     color: "white",
     borderRadius: "15px",
+    border: "2px solid #FFFFFF"
+};
+
+const buttonClickedStyle: React.CSSProperties = {
+    textTransform: "none",
+    color: "#405464",
+    borderRadius: "15px",
+    background: "white",
     border: "2px solid #FFFFFF"
 };
 
@@ -43,13 +64,123 @@ export default class DashboardHome extends React.Component<
             fetchedData: false,
             firstName: "there", // say "Hi, there!" if no name
             appSubmitted: false,
-<<<<<<< Updated upstream
-            accepted: true,
-=======
             accepted: true, // TODO: CHANGE TO FALSE, SET AS TRUE FOR TESTING PURPOSES
->>>>>>> Stashed changes
-            error: ""
+            error: "",
+            rsvp: null, // true = confirmed attendance, false = not attending anymore
+            size: "",
+            legalFirstName: "",
+            legalLastName: "",
+            phoneNumber: "",
+            dietary: [],
+            projects: [],
+            requireHost: null,
+            brownStudent: null,
+            willingHost: null,
+            conduct: null,
+            formSubmitted: false
         };
+    }
+
+    formSubmittedRender = () => {
+      this.setState({
+        formSubmitted: true
+      });
+    }
+
+    handleDisableAll = (event: any) => {
+      let name = event.target.id;
+      if (event.target.checked) {
+        if (name === "projects") {
+          this.setState({
+            [name]: ["undecided"]
+          } as any);
+        }
+      } else {
+        this.setState({
+          [name]: []
+        } as any);
+      }
+    }
+
+    handleFormChange = (event: any) => {
+        let name = event.target.id;
+        let value = event.target.value;
+
+        /* case where value is yes/no -> convert to boolean */
+        if (value === "yes") {
+            value = true;
+        } else if (value === "no") {
+            value = false;
+        }
+
+        this.setState({
+            [name]: value
+        } as any);
+    };
+
+    handleMultiFormChange = (event: any) => {
+        let name = event.target.id;
+
+        let newVals;
+        if (name === "dietary") {
+            newVals = [...this.state.dietary];
+        } else if (name === "projects") {
+            newVals = [...this.state.projects];
+        }
+
+        if (event.target.checked) {
+            newVals.push(event.target.value);
+        } else {
+            newVals.splice(newVals.indexOf(event.target.value), 1);
+        }
+
+
+        this.setState({
+            [name]: newVals
+        } as any);
+    };
+
+    styleConfirmButton = () => {
+      // corresponds to button for "confirm attendance"
+      if (this.state.rsvp == null) {
+        // no rsvp status selected yet
+        return buttonStyle;
+      } else if (this.state.rsvp) {
+        // confirmed attendance
+        return buttonClickedStyle;
+      } else {
+        // not attending anymore
+        return buttonStyle;
+      }
+    }
+
+    styleNotConfirmButton = () => {
+      // corresponds to button for "not attending anymore"
+      if (this.state.rsvp == null) {
+        // no rsvp status selected yet
+        return buttonStyle;
+      } else if (this.state.rsvp) {
+        // confirmed attendance
+        return buttonStyle;
+      } else {
+        // not attending anymore
+        return buttonClickedStyle;
+      }
+    }
+
+    confirmDenyAcceptance = (event:any) => {
+      let status = event.target.parentNode.id === "confirm";
+
+      if (!status) {
+        // rsvp as no
+        this.setState({
+          formSubmitted: false
+        });
+      }
+
+      this.setState({
+        rsvp: status
+      });
     }
 
     fetchHackerData = () => {
@@ -97,11 +228,9 @@ export default class DashboardHome extends React.Component<
                                     session.setState({
                                         firstName: res.data.first_name,
                                         appSubmitted: res.data.app_submitted,
-<<<<<<< Updated upstream
-                                       // accepted: res.data.accepted
-=======
                                         // accepted: res.data.accepted // TODO: UNCOMMENT
->>>>>>> Stashed changes
+                                        // rsvp: res.data.rsvp // TODO: UNCOMMENT
+                                        // formSubmitted: res.data. // TODO: FIELD FOR WHETHER FORM WAS SUBMITTED
                                     });
                                 }
                             });
@@ -133,12 +262,12 @@ export default class DashboardHome extends React.Component<
     };
 
     render() {
-        let content;
+        let content:any;
         if (this.state.error != "") {
             // if true, error
             content = <span className="message">{this.state.error}</span>;
         } else if (!this.state.appSubmitted) {
-            // app hasn't been submitted
+            // if app hasn't been submitted
             content = (
                 <div className="start-app">
                     <Button
@@ -153,21 +282,13 @@ export default class DashboardHome extends React.Component<
                     </Button>
                 </div>
             );
-<<<<<<< Updated upstream
-        } else if (!this.state.appSubmitted) {
-            // else, app completed
-=======
-        } else if (this.state.appSubmitted){
-            // if app has been submitted, but decisions not out
->>>>>>> Stashed changes
+        } else if (this.state.appSubmitted && !this.state.accepted){
+            // if app has been submitted, but not accepted/decisions not out yet
             content = (
-                // <div id="status">
                 <div>
                     <div
                         className="dashboard-button"
                         style={buttonStyle}
-                        //component={props => <Link to="/registration" {...props}/>}
-                        //linkButton={true}
                     >
                         <p id="app-stat">
                             <span className="button-title">
@@ -177,7 +298,7 @@ export default class DashboardHome extends React.Component<
                             <strong>SUBMITTED</strong>
                         </p>
                         <Button
-                            id="inner-button"
+                            className="inner-button"
                             style={buttonStyle}
                             component={props => (
                                 <Link to="/registration" {...props} />
@@ -211,16 +332,15 @@ export default class DashboardHome extends React.Component<
                     </Button>
                 </div>
             );
-        }else if (this.state.accepted){
-            // else, app accepted
+        } else if (this.state.accepted){
+            // app has been accepted
+            let confirmStyle = this.styleConfirmButton();
+            let notConfirmStyle = this.styleNotConfirmButton();
             content = (
-                // <div id="status">
                 <div>
                     <div
                         className="dashboard-button"
                         style={buttonStyle}
-                        //component={props => <Link to="/registration" {...props}/>}
-                        //linkButton={true}
                     >
                         <p id="app-stat">
                             <span className="button-title">
@@ -230,22 +350,18 @@ export default class DashboardHome extends React.Component<
                             <strong>APPROVED</strong>
                         </p>
                         <Button
-                            id="inner-button"
-                            style={buttonStyle}
-                            component={props => (
-                                <Link to="/registration" {...props} />//what should this link to?
-                            )}
-                            linkButton={true}
+                            className="inner-button"
+                            id="confirm"
+                            style={confirmStyle}
+                            onClick={this.confirmDenyAcceptance}
                         >
-                            Confirm Attendance
+                            {this.state.rsvp ? "Attendance Confirmed!" : "Confirm Attendance" }
                         </Button>
                         <Button
-                            id="inner-button"
-                            style={buttonStyle}
-                            component={props => (
-                                <Link to="/registration" {...props} />//what should this link to?
-                            )}
-                            linkButton={true}
+                            className="inner-button"
+                            id="deny"
+                            style={notConfirmStyle}
+                            onClick={this.confirmDenyAcceptance}
                         >
                             Not Attending Anymore
                         </Button>
@@ -271,7 +387,43 @@ export default class DashboardHome extends React.Component<
                     </Button>
                 </div>
             );
-            }
+        }
+
+        const renderConfirmForm = () => {
+          if (this.state.rsvp == null) {
+            // no response yet
+            return content;
+          } else if (this.state.rsvp && this.state.formSubmitted) {
+            // clicked "attending", but form already submitted
+            return content;
+          } else if(this.state.rsvp) {
+            // clicked "attending", form not submitted yet
+            return <ConfirmForm
+                      user={this.state.user}
+                      apiURL={this.props.apiURL}
+                      currentSelected={this.state}
+                      handleFormChange={this.handleFormChange}
+                      handleMultiFormChange={this.handleMultiFormChange}
+                      handleDisableAll={this.handleDisableAll}
+                      formSubmittedRender={this.formSubmittedRender}
+                    >
+                    </ConfirmForm>;
+          } else if (this.state.rsvp && !this.state.formSubmitted) {
+            // originally not attending, switch to attending
+            return <ConfirmForm
+                      user={this.state.user}
+                      apiURL={this.props.apiURL}
+                      currentSelected={this.state}
+                      handleFormChange={this.handleFormChange}
+                      handleMultiFormChange={this.handleMultiFormChange}
+                      handleDisableAll={this.handleDisableAll}
+                      formSubmittedRender={this.formSubmittedRender}
+                    >
+                    </ConfirmForm>;
+          } else {
+            return content;
+          }
+        }
 
         return (
             <div className="dashboard">
@@ -283,7 +435,7 @@ export default class DashboardHome extends React.Component<
                     <div className="greeting">
                         <h1> Hi, {this.state.firstName}! </h1>
                     </div>
-                    {content}
+                    {renderConfirmForm()}
                 </div>
             </div>
         );
