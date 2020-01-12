@@ -153,7 +153,6 @@ export default class ConfirmForm extends React.Component<
     };
 
     render() {
-        console.log(this.props.currentSelected);
         return (
           <div className="confirm-info">
             <h3> Awesome :) </h3>
