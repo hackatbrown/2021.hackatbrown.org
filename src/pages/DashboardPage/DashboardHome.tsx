@@ -168,6 +168,42 @@ export default class DashboardHome extends React.Component<
       }
     }
 
+    sendRsvpDeny = () => {
+      const denyData = {
+          rsvp: false
+      };
+
+      console.log(denyData);
+
+      const api = this.props.apiURL;
+      let session = this;
+      this.state.user
+          .getIdToken(true)
+          .then(async function(idToken: string) {
+              var denyForm = new FormData();
+              denyForm.append(
+                  "data",
+                  JSON.stringify(denyData)
+              );
+              denyForm.append("fire_token", idToken);
+              const config = {
+                  headers: {
+                      "Content-Type": "application/x-www-form-urlencoded"
+                  }
+              };
+              await axios
+                  .post(
+                      api + "/hacker_registration/submit",
+                      denyForm,
+                      config
+                  )
+                  .then(res => {
+                  });
+          })
+          .catch(function(error: any) {
+          });
+    }
+
     confirmDenyAcceptance = (event:any) => {
       let status = event.target.parentNode.id === "confirm";
 
@@ -176,6 +212,8 @@ export default class DashboardHome extends React.Component<
         this.setState({
           formSubmitted: false
         });
+        // send rsvp = false to backend
+        this.sendRsvpDeny();
       }
 
       this.setState({
@@ -230,7 +268,7 @@ export default class DashboardHome extends React.Component<
                                         appSubmitted: res.data.app_submitted,
                                         // accepted: res.data.accepted // TODO: UNCOMMENT
                                         // rsvp: res.data.rsvp // TODO: UNCOMMENT
-                                        // formSubmitted: res.data. // TODO: FIELD FOR WHETHER FORM WAS SUBMITTED
+                                        // formSubmitted: res.data.form_submitted // TODO: UNCOMMENT
                                     });
                                 }
                             });

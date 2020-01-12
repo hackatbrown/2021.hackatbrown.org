@@ -40,7 +40,7 @@ let dietary = ["vegetarian", "vegan", "kosher", "halal", "nut-allergy", "shellfi
 let dietaryLabels = ["Vegetarian", "Vegan", "Kosher", "Halal", "Nut Allergy", "Shellfish Allergy"];
 
 let projects = ["web", "ios", "android", "hardware", "undecided"];
-let projectsLabels = ["Web Application", "iOS Application", "Android Application", "Hardware Hack", "Undecided"];
+let projectsLabels = ["Web Application", "iOS Application", "Android Application", "Hardware Hack", "Undecided/Other"];
 
 const textLeft = {
   marginRight: '50px',
@@ -104,6 +104,7 @@ export default class ConfirmForm extends React.Component<
         let errorMessage: string | null = this.checkMissing();
         if (errorMessage == null) {
           const confirmData = {
+              rsvp: true,
               sweater_size: this.props.currentSelected.size,
               legal_first: this.props.currentSelected.legalFirstName,
               legal_last: this.props.currentSelected.legalLastName,
@@ -135,7 +136,7 @@ export default class ConfirmForm extends React.Component<
                   };
                   await axios
                       .post(
-                          api + "/hacker_registration/submit", // TODO: CHECK URL PATH
+                          api + "/hacker_registration/submit",
                           confirmForm,
                           config
                       )
@@ -169,7 +170,7 @@ export default class ConfirmForm extends React.Component<
                       <Grid item >
                         <FormControlLabel
                           style={{color: "white"}}
-                          control={<Radio style={{color: "white"}} id="size" value="small" />}
+                          control={<Radio style={{color: "white"}} id="size" value="s" />}
                           label="S"
                           onChange={this.props.handleFormChange}
                         />
@@ -177,7 +178,7 @@ export default class ConfirmForm extends React.Component<
                       <Grid item>
                         <FormControlLabel
                           style={{color: "white"}}
-                          control={<Radio style={{color: "white"}} id="size" value="medium" />}
+                          control={<Radio style={{color: "white"}} id="size" value="m" />}
                           label="M"
                           onChange={this.props.handleFormChange}
                         />
@@ -185,7 +186,7 @@ export default class ConfirmForm extends React.Component<
                       <Grid item>
                         <FormControlLabel
                           style={{color: "white"}}
-                          control={<Radio style={{color: "white"}} id="size" value="large" />}
+                          control={<Radio style={{color: "white"}} id="size" value="l" />}
                           label="L"
                           onChange={this.props.handleFormChange}
                         />
