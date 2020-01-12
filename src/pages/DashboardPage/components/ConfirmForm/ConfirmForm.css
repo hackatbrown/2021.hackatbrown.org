@@ -9,6 +9,15 @@
   max-height: 65vh !important;
 }
 
+.confirm-info a {
+  color: white;
+  font-weight: bold;
+}
+
+.MuiTypography-body1 {
+  font-family: Akkurat Pro !important;
+}
+
 .confirm-info h3 {
   text-align: center;
   font-weight: bold;

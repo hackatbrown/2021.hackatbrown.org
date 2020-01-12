@@ -10,9 +10,8 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import NumberFormat from 'react-number-format';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-import { Popper, Paper, ClickAwayListener } from "@material-ui/core";
 import axios from "axios";
+import { Link } from 'react-router-dom';
 
 /**
  * define a type model for the props you are passing in to the component
@@ -45,7 +44,8 @@ let projectsLabels = ["Web Application", "iOS Application", "Android Application
 
 const textLeft = {
   marginRight: '50px',
-  color: 'white'
+  color: 'white',
+  fontFamily: "Akkurat Pro !important"
 };
 
 const buttonStyle: React.CSSProperties = {
@@ -153,6 +153,7 @@ export default class ConfirmForm extends React.Component<
     };
 
     render() {
+        console.log(this.props.currentSelected);
         return (
           <div className="confirm-info">
             <h3> Awesome :) </h3>
@@ -161,7 +162,7 @@ export default class ConfirmForm extends React.Component<
             <form>
               <div className="confirm">
                 <FormControl className="size">
-                  <FormLabel style={{color: "white"}}>Sweatshirt Size</FormLabel>
+                  <FormLabel required style={{color: "white"}}>Sweatshirt Size</FormLabel>
                   <RadioGroup
                     value={this.props.currentSelected['size'] == null ?
                     "none" : this.props.currentSelected['size']}>
@@ -196,7 +197,7 @@ export default class ConfirmForm extends React.Component<
               </div>
 
               <div className="confirm-text">
-                <FormLabel style={{color: "white"}}>Legal Name (in case of an emergency)</FormLabel>
+                <FormLabel required style={{color: "white"}}>Legal Name (in case of an emergency)</FormLabel>
                 <div className="legal-name">
                   <TextField
                     placeholder="First Name"
@@ -229,7 +230,7 @@ export default class ConfirmForm extends React.Component<
               </div>
 
               <div className="confirm-text">
-                <FormLabel style={{color: "white"}}>Phone Number</FormLabel>
+                <FormLabel required style={{color: "white"}}>Phone Number</FormLabel>
                 <br/>
                 <NumberFormat
                   value={this.props.currentSelected['phoneNumber']}
@@ -255,7 +256,7 @@ export default class ConfirmForm extends React.Component<
               </div>
 
               <div className="confirm-select">
-                <FormLabel style={{color: "white"}}>What kind of project are you planning to make or learn about?</FormLabel>
+                <FormLabel required style={{color: "white"}}>What kind of project are you planning to make or learn about?</FormLabel>
                 <p> You can always change this! Having a better idea of what hackers are interested in helps us support you. </p>
                 {projects.slice(0, projects.length - 1).map((value, index) => {
                   return <div className="options">
@@ -277,7 +278,7 @@ export default class ConfirmForm extends React.Component<
 
             <div className="confirm">
               <FormControl className="requireHost">
-                <FormLabel style={{color: "white"}}>Need somewhere to stay before or after the hackathon?</FormLabel>
+                <FormLabel required style={{color: "white"}}>Need somewhere to stay before or after the hackathon?</FormLabel>
                 <p> Hack@Brown is more than happy to host students who will be arriving early on Friday or leaving
                 late after Sunday. We have plenty of sleeping spaces and air mattresses during the hackathon, but we
                 will also have a limited number of spots for staying in a dorm Saturday night. If you require housing,
@@ -303,7 +304,7 @@ export default class ConfirmForm extends React.Component<
 
             <div className="confirm">
               <FormControl className="brownStudent">
-                <FormLabel style={{color: "white"}}>Are you a Brown student living on campus?</FormLabel>
+                <FormLabel required style={{color: "white"}}>Are you a Brown student living on campus?</FormLabel>
                 <RadioGroup
                   value={this.props.currentSelected['brownStudent'] == null ?
                   "none" : this.props.currentSelected['brownStudent'] ? "yes" : "no"}>
@@ -325,7 +326,7 @@ export default class ConfirmForm extends React.Component<
 
             <div className="confirm">
               <FormControl className="willingHost">
-                <FormLabel style={{color: "white"}}>Are you willing to host a hacker?</FormLabel>
+                <FormLabel required style={{color: "white"}}>Are you willing to host a hacker?</FormLabel>
                 <p> All you need is a place on the floor & we'll provide everything else (air mattresses,
                 blankets, etc.). We'll send out a form asking for more details in the following weeks! </p>
                 <h5> <strong> Why should you host? </strong></h5>
@@ -355,7 +356,8 @@ export default class ConfirmForm extends React.Component<
 
             <div className="confirm">
               <FormControl className="conduct">
-                <FormLabel style={{color: "white"}}>Please read over the Hack@Brown code of conduct.</FormLabel>
+                <FormLabel required style={{color: "white"}}>Please read over the Hack@Brown code of conduct.</FormLabel>
+                <p> Access the code of conduct <Link target="_blank" to="/code-of-conduct">here</Link>.</p>
                 <RadioGroup
                   value={this.props.currentSelected['conduct'] == null ?
                   "none" : this.props.currentSelected['conduct'] ? "yes" : "no"}>

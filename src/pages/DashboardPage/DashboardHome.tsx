@@ -261,6 +261,18 @@ export default class DashboardHome extends React.Component<
         }
     };
 
+    appStatusMessage = () => {
+      if (this.state.accepted && this.state.rsvp == null) {
+        return "ACCEPTED";
+      } else if (this.state.accepted && this.state.rsvp && this.state.formSubmitted) {
+        return "CONFIRMED";
+      } else if (this.state.accepted && !this.state.rsvp) {
+        return "NO LONGER ATTENDING";
+      } else if (!this.state.accepted) {
+        return "SUBMITTED";
+      }
+    }
+
     render() {
         let content:any;
         if (this.state.error != "") {
@@ -347,7 +359,9 @@ export default class DashboardHome extends React.Component<
                                 Application Status
                             </span>
                             <br></br>
-                            <strong>APPROVED</strong>
+                            <strong>
+                              {this.appStatusMessage()}
+                            </strong>
                         </p>
                         <Button
                             className="inner-button"
