@@ -135,7 +135,7 @@ export default class ConfirmForm extends React.Component<
                   };
                   await axios
                       .post(
-                          api + "/hacker_registration/submit", // TODO: CORRECT URL PATH
+                          api + "/hacker_registration/submit", // TODO: CHECK URL PATH
                           confirmForm,
                           config
                       )
