@@ -59,8 +59,9 @@
 
 .sponsors-img-giga {
     transition: 0.2s ease-in-out;
-    max-width: 35vw;
+    max-width: 30vw;
     margin: 1rem;
+    object-fit: cover;
 }
 
 .sponsors-img-giga:hover {
