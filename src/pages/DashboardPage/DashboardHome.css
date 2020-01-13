@@ -70,12 +70,13 @@
     font-family: Akkurat Pro;
 }
 
-#inner-button {
+.inner-button {
     /* width:412.84px;
   height: 52px; */
+    margin-top: 10px !important;
     width: 30vw;
     height: 7vh;
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
     font-family: Akkurat Pro;
     background-color: #1A9996;
 }
@@ -161,7 +162,7 @@
         font-size: 165%;
     }
 
-    #inner-button {
+    .inner-button {
         height: auto;
     }
 
@@ -173,7 +174,7 @@
         .main-pane {
             margin-top: 22vh;
         }
-    
+
         .dashboard-button {
             width: 70%;
             margin-top: 2px;
@@ -220,7 +221,7 @@
         font-size: 165%;
     }
 
-    #inner-button {
+    .inner-button {
         background-color: #1A9996;
     }
 
@@ -234,19 +235,13 @@
 }
 
 /* iPhone 6/7/8 Plus */
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 628px) {
     .greeting h1 {
         font-size: 30px;
     }
-    
+
     .button-title {
         font-size: 20px;
-    }
-
-    .dashboard {
-        background: url("../../assets/images/Dashboard/mobile_dash.jpg")
-            no-repeat center center fixed;
-        background-size: cover;
     }
 
     .main-pane {
@@ -271,11 +266,11 @@
         font-size: 20px;
     }
 
-    #inner-button {
+    .inner-button {
         width: 85%;
         height: auto;
         float: center;
-        margin-bottom: 10px;
+        margin-bottom: 10px !important;
     }
 
     #apply-reimbursement {
@@ -303,20 +298,20 @@
         font-size: 36px;
         margin-top: 46px;
     }
-    
+
     .button-title {
         font-size: 5.5vw;
     }
 
     /* .dashboard {
-        margin-right: -1px; 
+        margin-right: -1px;
     } */
 
     .dashboard-button {
         width: 93%;
         margin-top: 26px;
     }
-    
+
     .dashboard .MuiButton-label {
         font-size: 4vw;
     }
@@ -328,7 +323,7 @@
         font-size: 30px;
         margin-top: 25px;
     }
-    
+
     .button-title {
         font-size: 20px;
     }
@@ -357,11 +352,11 @@
         margin-bottom: 10px;
     }
 
-    #inner-button {
+    .inner-button {
         width: 85%;
         height: auto;
         float: center;
-        margin-bottom: 10px;
+        margin-bottom: 10px !important;
     }
 
     #apply-reimbursement {
@@ -380,49 +375,6 @@
     }
 }
 
-@media screen and (max-width: 499px) {
-    /* .dashboard {
-        background: url("../../assets/images/Dashboard/tablet_dash.jpg")
-            no-repeat center center fixed;
-        background-size: cover;
-    } */
-
-    .main-pane {
-        width: 84%;
-    }
-
-    #inner-button {
-        width: 65%;
-    }
-
-    #start {
-        width: 84%;
-    }
-
-    .dashboard-button {
-        background-color: #018C88;
-    }
-    #inner-button {
-        width: 85%;
-        float: center;
-        background-color: #018C88;
-    }
-
-    #start {
-        width: 86%;
-        height: auto;
-        background-color: #018C88;
-    }
-
-    #start .MuiButton-label {
-        font-size: 16px;
-    }
-
-    #reimbursement {
-        background-color: #018C88;
-    }
-}
-
 @media screen and (max-width: 1024px) {
     .main-pane {
         width: 75%;
@@ -431,7 +383,7 @@
     /* .dashboard-button {
         background-color: #1A9996;
     } */
-    #inner-button {
+    .inner-button {
         width: 85%;
         float: center;
         /* background-color: #1A9996; */
@@ -454,8 +406,55 @@
     #lamp {
         display: none;
     }
-    
+
     #lamp-light {
         display: none;
+    }
+}
+
+@media screen and (max-height: 795px) and (min-width: 343px){
+    .dashboard .MuiButton-label {
+        font-size: 2.5vh;
+    }
+
+    .greeting h1 {
+        margin-top: 10px;
+        font-size: 5vh;
+    }
+
+    #confirm, #deny {
+        height: 7vh;
+    }
+
+    #app-stat {
+        height: 9vh;
+        font-size: 3.5vh;
+    }
+
+    .sub-text {
+        font-size: 2.5vh;
+    }
+
+    #app-stat-title, .button-title {
+        font-size: 3.5vh;
+    }
+
+    #reimbursement {
+        height: 30%;
+    }
+
+    #apply-title {
+        font-size: 3.5vh;
+    }
+
+    #coming-soon {
+        font-size: 2.5vh;
+    }
+
+    .dashboard-button {
+        width: 100%;
+        height: 40%;
+        padding-bottom: 10px;
+        background-color: #1A9996;
     }
 }
