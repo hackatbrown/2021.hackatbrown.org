@@ -36,7 +36,7 @@ type DashboardState = {
     brownStudent: boolean | null;
     willingHost: boolean | null;
     conduct: boolean | null;
-    formSubmitted: boolean;
+    formSubmitted: boolean
 };
 
 const buttonStyle: React.CSSProperties = {
@@ -79,7 +79,7 @@ export default class DashboardHome extends React.Component<
             brownStudent: null,
             willingHost: null,
             conduct: null,
-            formSubmitted: false
+            formSubmitted: false,
         };
     }
 
@@ -207,12 +207,14 @@ export default class DashboardHome extends React.Component<
     }
 
     confirmDenyAcceptance = (event:any) => {
-      let status = event.target.parentNode.id === "confirm";
+      let selected = event.target.parentNode.id;
+
+      let status = selected === "confirm";
 
       if (!status) {
         // rsvp as no
         this.setState({
-          formSubmitted: false
+          formSubmitted: false,
         });
         // send rsvp = false to backend
         this.sendRsvpDeny();
@@ -435,7 +437,7 @@ export default class DashboardHome extends React.Component<
                                 Reimbursement Status:
                             </div>
                             <div id="coming-soon" className="sub-text">
-                                IN PROGRESS
+                                Will be available after the hackathon!
                             </div>
                         </p>
                     </Button>
@@ -444,6 +446,13 @@ export default class DashboardHome extends React.Component<
         }
 
         const renderConfirmForm = () => {
+
+          if (this.state.rsvp === false && this.state.formSubmitted === true) {
+            this.setState({
+                formSubmitted: false
+            });
+          }
+
           if (this.state.rsvp == null) {
             // no response yet
             return content;

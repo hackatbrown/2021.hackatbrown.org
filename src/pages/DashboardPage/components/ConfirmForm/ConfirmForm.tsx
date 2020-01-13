@@ -313,9 +313,8 @@ export default class ConfirmForm extends React.Component<
               <FormControl className="requireHost">
                 <FormLabel required style={{color: "white"}}>Need somewhere to stay before or after the hackathon?</FormLabel>
                 <p> Hack@Brown is more than happy to host students who will be arriving early on Friday or leaving
-                late after Sunday. We have plenty of sleeping spaces and air mattresses during the hackathon, but we
-                will also have a limited number of spots for staying in a dorm Saturday night. If you require housing,
-                we will send you a form to match you with a Brown/RISD student in the weeks preceding the hackathon.</p>
+                late after Sunday. If you require housing, we will send you a form to match you with a
+                Brown/RISD student in the weeks preceding the hackathon.</p>
                 <RadioGroup
                   value={this.props.currentSelected['requireHost'] == null ?
                   "none" : this.props.currentSelected['requireHost'] ? "yes" : "no"}>
