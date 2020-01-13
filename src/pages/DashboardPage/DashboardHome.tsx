@@ -393,7 +393,7 @@ export default class DashboardHome extends React.Component<
                         style={buttonStyle}
                     >
                         <p id="app-stat">
-                            <span className="button-title">
+                            <span className="button-title" id="app-stat-title">
                                 Application Status
                             </span>
                             <br></br>

@@ -234,19 +234,13 @@
 }
 
 /* iPhone 6/7/8 Plus */
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 628px) {
     .greeting h1 {
         font-size: 30px;
     }
 
     .button-title {
         font-size: 20px;
-    }
-
-    .dashboard {
-        background: url("../../assets/images/Dashboard/mobile_dash.jpg")
-            no-repeat center center fixed;
-        background-size: cover;
     }
 
     .main-pane {
@@ -380,49 +374,6 @@
     }
 }
 
-@media screen and (max-width: 499px) {
-    /* .dashboard {
-        background: url("../../assets/images/Dashboard/tablet_dash.jpg")
-            no-repeat center center fixed;
-        background-size: cover;
-    } */
-
-    .main-pane {
-        width: 84%;
-    }
-
-    .inner-button {
-        width: 65%;
-    }
-
-    #start {
-        width: 84%;
-    }
-
-    .dashboard-button {
-        background-color: #018C88;
-    }
-    .inner-button {
-        width: 85%;
-        float: center;
-        background-color: #018C88;
-    }
-
-    #start {
-        width: 86%;
-        height: auto;
-        background-color: #018C88;
-    }
-
-    #start .MuiButton-label {
-        font-size: 16px;
-    }
-
-    #reimbursement {
-        background-color: #018C88;
-    }
-}
-
 @media screen and (max-width: 1024px) {
     .main-pane {
         width: 75%;
@@ -457,5 +408,48 @@
 
     #lamp-light {
         display: none;
+    }
+}
+
+@media screen and (max-height: 795px) and (min-width: 343px){
+    .dashboard .MuiButton-label {
+        font-size: 2.5vh;
+    }
+
+    .greeting h1 {
+        margin-top: 10px;
+        font-size: 5vh;
+    }
+
+    #confirm, #deny {
+        height: 7vh;
+    }
+
+    #app-stat {
+        height: 9vh;
+        font-size: 3.5vh;
+    }
+
+    #app-stat-title {
+        font-size: 3.5vh;
+    }
+
+    #reimbursement {
+        height: 30%;
+    }
+
+    #apply-title {
+        font-size: 3.5vh;
+    }
+
+    #coming-soon {
+        font-size: 2.5vh;
+    }
+
+    .dashboard-button {
+        width: 100%;
+        height: 40%;
+        padding-bottom: 10px;
+        background-color: #1A9996;
     }
 }
