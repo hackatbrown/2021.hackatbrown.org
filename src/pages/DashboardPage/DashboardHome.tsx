@@ -307,7 +307,7 @@ export default class DashboardHome extends React.Component<
       } else if (this.state.accepted && this.state.rsvp && this.state.formSubmitted) {
         return "CONFIRMED";
       } else if (this.state.accepted && !this.state.rsvp) {
-        return "NO LONGER ATTENDING";
+        return "NOT ATTENDING";
       } else if (!this.state.accepted) {
         return "SUBMITTED";
       }
