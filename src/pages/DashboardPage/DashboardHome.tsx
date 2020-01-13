@@ -30,6 +30,7 @@ type DashboardState = {
     legalLastName: string;
     phoneNumber: string;
     dietary: string[];
+    additionalDietary: string;
     projects: string[];
     requireHost: boolean | null;
     brownStudent: boolean | null;
@@ -64,7 +65,7 @@ export default class DashboardHome extends React.Component<
             fetchedData: false,
             firstName: "there", // say "Hi, there!" if no name
             appSubmitted: false,
-            accepted: false, // TODO: CHANGE TO FALSE, SET AS TRUE FOR TESTING PURPOSES
+            accepted: true, // TODO change to false
             error: "",
             rsvp: null, // true = confirmed attendance, false = not attending anymore
             size: "",
@@ -72,6 +73,7 @@ export default class DashboardHome extends React.Component<
             legalLastName: "",
             phoneNumber: "",
             dietary: [],
+            additionalDietary: "",
             projects: [],
             requireHost: null,
             brownStudent: null,
@@ -266,9 +268,9 @@ export default class DashboardHome extends React.Component<
                                     session.setState({
                                         firstName: res.data.first_name,
                                         appSubmitted: res.data.app_submitted,
-                                        accepted: res.data.accepted, // TODO: UNCOMMENT
-                                        rsvp: res.data.rsvp, // TODO: UNCOMMENT
-                                        formSubmitted: res.data.form_submitted // TODO: UNCOMMENT
+                                        // accepted: res.data.accepted,  // TODO UNCOMMENT
+                                        // rsvp: res.data.rsvp, // TODO UNCOMMENT
+                                        // formSubmitted: res.data.form_submitted // TODO UNCOMMENT
                                     });
                                 }
                             });

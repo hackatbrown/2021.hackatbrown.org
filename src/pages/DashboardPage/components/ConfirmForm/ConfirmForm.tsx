@@ -36,8 +36,12 @@ type ConfirmFormState = {
   errorMessage: string;
 };
 
-let dietary = ["vegetarian", "vegan", "kosher", "halal", "nut-allergy", "shellfish-allergy"];
-let dietaryLabels = ["Vegetarian", "Vegan", "Kosher", "Halal", "Nut Allergy", "Shellfish Allergy"];
+let dietary = ["vegetarian", "vegan", "kosher", "halal", "nut-allergy",
+               "shellfish-allergy", "gluten-allergy", "treenut-allergy",
+               "peanut-allergy", "other-dietary"];
+let dietaryLabels = ["Vegetarian", "Vegan", "Kosher", "Halal", "Nut Allergy",
+                     "Shellfish Allergy", "Gluten Allergy", "Tree Nut Allergy",
+                     "Peanut Allergy", "Other, please specify:"];
 
 let projects = ["web", "ios", "android", "hardware", "undecided"];
 let projectsLabels = ["Web Application", "iOS Application", "Android Application", "Hardware Hack", "Undecided/Other"];
@@ -110,6 +114,7 @@ export default class ConfirmForm extends React.Component<
               legal_last: this.props.currentSelected.legalLastName,
               phone: this.props.currentSelected.phoneNumber,
               dietary: this.props.currentSelected.dietary,
+              additional_dietary: this.props.currentSelected.additionalDietary,
               projects: this.props.currentSelected.projects,
               require_host: this.props.currentSelected.requireHost,
               brown_student: this.props.currentSelected.brownStudent,
@@ -166,7 +171,7 @@ export default class ConfirmForm extends React.Component<
                   <RadioGroup
                     value={this.props.currentSelected['size'] == null ?
                     "none" : this.props.currentSelected['size']}>
-                  <Grid container spacing={3}>
+                  <Grid container spacing={2}>
                       <Grid item >
                         <FormControlLabel
                           style={{color: "white"}}
@@ -188,6 +193,14 @@ export default class ConfirmForm extends React.Component<
                           style={{color: "white"}}
                           control={<Radio style={{color: "white"}} id="size" value="l" />}
                           label="L"
+                          onChange={this.props.handleFormChange}
+                        />
+                      </Grid>
+                      <Grid item>
+                        <FormControlLabel
+                          style={{color: "white"}}
+                          control={<Radio style={{color: "white"}} id="size" value="xl" />}
+                          label="XL"
                           onChange={this.props.handleFormChange}
                         />
                       </Grid>
@@ -243,8 +256,8 @@ export default class ConfirmForm extends React.Component<
               </div>
 
               <div className="confirm-select">
-                <FormLabel style={{color: "white"}}>Dietary Restrictions</FormLabel>
-                {dietary.slice(0, dietary.length).map((value, index) => {
+                <FormLabel style={{color: "white"}}>Dietary Restrictions (select all that apply)</FormLabel>
+                {dietary.slice(0, dietary.length - 1).map((value, index) => {
                   return <div className="options">
                     <FormControlLabel
                     control={<Checkbox style={{color: "white"}} checked={this.isChecked("dietary", value)} id="dietary" value={value} />}
@@ -253,10 +266,30 @@ export default class ConfirmForm extends React.Component<
                     />
                   </div>
                 })}
+                <div className="options-other">
+                  <FormControlLabel
+                  control={<Checkbox style={{color: "white"}} checked={this.isChecked("dietary", "other-dietary")} id="dietary" value={"other-dietary"} />}
+                  label={dietaryLabels[dietary.length - 1]}
+                  onChange={this.props.handleMultiFormChange}
+                  />
+                  <TextField
+                    autoComplete="new-password"
+                    style={textLeft}
+                    id="additionalDietary"
+                    value={this.props.currentSelected['additionalDietary']}
+                    margin="none"
+                    onChange={this.props.handleFormChange}
+                    InputProps={{
+                        style: {
+                            color: "white"
+                        }
+                    }}
+                  />
+                </div>
               </div>
 
               <div className="confirm-select">
-                <FormLabel required style={{color: "white"}}>What kind of project are you planning to make or learn about?</FormLabel>
+                <FormLabel required style={{color: "white"}}>What kind of project are you planning to make or learn about? (select all that apply) </FormLabel>
                 <p> You can always change this! Having a better idea of what hackers are interested in helps us support you. </p>
                 {projects.slice(0, projects.length - 1).map((value, index) => {
                   return <div className="options">
