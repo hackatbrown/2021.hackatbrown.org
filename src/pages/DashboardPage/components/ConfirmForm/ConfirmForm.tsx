@@ -36,10 +36,10 @@ type ConfirmFormState = {
   errorMessage: string;
 };
 
-let dietary = ["vegetarian", "vegan", "kosher", "halal", "nut-allergy",
-               "shellfish-allergy", "gluten-allergy", "treenut-allergy",
-               "peanut-allergy", "other-dietary"];
-let dietaryLabels = ["Vegetarian", "Vegan", "Kosher", "Halal", "Nut Allergy",
+let dietary = ["vegetarian", "vegan", "kosher", "halal",
+               "shellfish_allergy", "gluten_allergy", "treenut_allergy",
+               "peanut_allergy", "other_dietary"];
+let dietaryLabels = ["Vegetarian", "Vegan", "Kosher", "Halal",
                      "Shellfish Allergy", "Gluten Allergy", "Tree Nut Allergy",
                      "Peanut Allergy", "Other, please specify:"];
 
