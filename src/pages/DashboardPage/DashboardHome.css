@@ -7,6 +7,10 @@
     position: relative;
 }
 
+dashboard button {
+    font-family: Akkurat Pro, sans-serif;
+}
+
 #lights-container {
     display: flex;
     flex-direction: column;

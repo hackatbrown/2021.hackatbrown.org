@@ -4,7 +4,9 @@
     align-items: flex-start;
     justify-content: start;
     flex-direction: column;
-    padding: 3em;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 45em;
     font-size: 1.2em;
 }
 .conduct-container h1 {
@@ -14,6 +16,7 @@
 
 .conduct-container h2 {
     text-align: left;
+    margin-top: 1em;
 }
 
 .conduct-container p {
@@ -45,4 +48,20 @@
 
 .attribution {
     margin-top: 40px;
+}
+
+.conduct-page {
+    background: white;
+}
+
+.conduct-page h1, .conduct-page p, .conduct-page h2, .conduct-page ul {
+    color: black;
+}
+
+.conduct-page a {
+    color: #dc1a43;
+}
+
+p.conduct-subtitle {
+    color: #555;
 }
