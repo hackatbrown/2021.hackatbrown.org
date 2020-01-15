@@ -20,7 +20,7 @@ export default class CodeOfConductPage extends React.Component<
     }
     render() {
         return (
-            <div className="conduct">
+            <div className="conduct-page">
                 <main className="conduct-container">
                     <div className="conduct-header">
                         <header>

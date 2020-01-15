@@ -50,15 +50,15 @@
     margin-top: 40px;
 }
 
-.conduct {
+.conduct-page {
     background: white;
 }
 
-.conduct h1, .conduct p, .conduct h2, .conduct ul {
+.conduct-page h1, .conduct-page p, .conduct-page h2, .conduct-page ul {
     color: black;
 }
 
-.conduct a {
+.conduct-page a {
     color: #dc1a43;
 }
 
