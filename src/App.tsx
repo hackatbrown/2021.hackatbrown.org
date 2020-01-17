@@ -189,7 +189,7 @@ export default class App extends React.Component<AppProps, AppState> {
                                 this.state.userToken;
                         }}
                     </Route>
-                    <Route path="/dayof">
+                    <Route path="/day-of">
                         <div className="App">
                             <DayOfPage />
                         </div>

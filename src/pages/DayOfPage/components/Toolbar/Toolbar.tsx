@@ -129,7 +129,7 @@ export default class Toolbar extends React.Component<
                                         className="toolbar-itinerary"
                                         style={{
                                             display:
-                                                window.location.pathname === "/dayof"
+                                                window.location.pathname === "/day-of"
                                                     ? "initial"
                                                     : "none"
                                         }}
@@ -152,7 +152,7 @@ export default class Toolbar extends React.Component<
                                         className="toolbar-faq"
                                         style={{
                                             display:
-                                                window.location.pathname === "/dayof"
+                                                window.location.pathname === "/day-of"
                                                     ? "initial"
                                                     : "none"
                                         }}
@@ -168,7 +168,7 @@ export default class Toolbar extends React.Component<
                                         className="toolbar-sponsors"
                                         style={{
                                             display:
-                                                window.location.pathname === "/dayof"
+                                                window.location.pathname === "/day-of"
                                                     ? "initial"
                                                     : "none"
                                         }}
