@@ -1,5 +1,5 @@
 .dayof-itinerary {
-    padding: 0 10% 1rem 20%;
+    /* margin: 0 0 1rem 10%; */
     color: white;
     text-align: left;
     background-color: #415364;
@@ -7,6 +7,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.dayof-itinerary table {
+  margin-right: 10%;
+}
+
+.dayof-itinerary .container {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .dayof-itinerary th:nth-child(1) {
@@ -48,8 +59,40 @@
     font-weight: normal;
 }
 
+.slide {
+  background: none !important;
+}
+
+.container-map {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.labelMap {
+  font-family: Covik Sans;
+  font-weight: bold;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  bottom: 90%;
+  transform: translate(-50%);
+}
+
 @media screen and (max-width: 414px) {
     .dayof-itinerary {
         flex-direction: column;
+        padding-left: 20%;
     }
+
+    .map-sect {
+      margin-left: -20%;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+  .dayof-itinerary .container {
+    max-width: 1200px !important;
+  }
 }
