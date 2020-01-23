@@ -154,10 +154,10 @@ export default class Itinerary extends React.Component<
                                     </tr>
                                     <tr>
                                         <td>
-                                            11:00pm - 12:00pm
+                                            11:30pm - 12:00pm
                                             <br />
                                             <div className="caption">
-                                                Late Night Surprise!
+                                                Midnight Surprise!
                                             </div>
                                         </td>
                                     </tr>
@@ -214,7 +214,7 @@ export default class Itinerary extends React.Component<
                                 </tr>
                                 <tr>
                                     <td>
-                                        2:30pm – 3:30pm
+                                        2:30pm – 3:00pm
                                         <br />
                                         Closing Ceremony
                                         <br />
@@ -250,13 +250,13 @@ export default class Itinerary extends React.Component<
                                 showStatus={false}
                                 showIndicators={false}
                             >
-                                <div className="container-map">
+                                {/* <div className="container-map">
                                     <img className="map-img" src={sayles0} />
                                     <div className="labelMap">
                                         {" "}
                                         Sayles Basement{" "}
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className="container-map">
                                     <img className="map-img" src={sayles1} />
                                     <div className="labelMap">
