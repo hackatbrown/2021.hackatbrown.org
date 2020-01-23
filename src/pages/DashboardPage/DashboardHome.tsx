@@ -349,41 +349,12 @@ export default class DashboardHome extends React.Component<
                                 Application Status
                             </span>
                             <br></br>
-                            <strong>SUBMITTED</strong>
+                            <strong>CLOSED</strong>
                         </p>
-                        <Button
-                            className="inner-button"
-                            style={buttonStyle}
-                            component={props => (
-                                <Link to="/registration" {...props} />
-                            )}
-                            linkButton={true}
-                        >
-                            Edit Your Application
-                        </Button>
                         <p className="sub-text">
-                            A confirmation email has been sent to you.
+                            We hope to see you next year!
                         </p>
                     </div>
-                    <Button
-                        className="dashboard-button"
-                        id="reimbursement"
-                        style={buttonStyle}
-                        component={props => (
-                            <Link to="/registration" {...props} />
-                        )}
-                        linkButton={false}
-                        disabled
-                    >
-                        <p id="apply-reimbursement">
-                            <div className="button-title" id="apply-title">
-                                Apply for Reimbursement
-                            </div>
-                            <div id="coming-soon" className="sub-text">
-                                (Will be available after the hackathon!)
-                            </div>
-                        </p>
-                    </Button>
                 </div>
             );
         } else if (this.state.accepted){
