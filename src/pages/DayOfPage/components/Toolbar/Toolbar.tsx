@@ -80,7 +80,7 @@ export default class Toolbar extends React.Component<
             return <Redirect to="/" />;
         } else {
             let hostname = window.location.href;
-            hostname = hostname.match('.+:\/\/.+\/')[0];
+            hostname = hostname.match(".+://.+/")[0];
             return (
                 <div className="toolbar">
                     <Navbar
@@ -89,36 +89,27 @@ export default class Toolbar extends React.Component<
                         className="toolbar"
                         style={{ backgroundColor: this.props.backgroundColor }}
                     >
-                        <Navbar.Brand></Navbar.Brand>
+                        <Navbar.Brand>
+                            <div>
+                                <a href="/">
+                                    <img
+                                        id="logo-img"
+                                        src={logoImg}
+                                        onClick={this.scrollToTop}
+                                    ></img>
+                                </a>
+                            </div>
+                        </Navbar.Brand>
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse
-                            id="responsive-navbar-nav"
-                            style={{
-                                alignItems: "center",
-                                paddingLeft: "11vw",
-                                paddingRight: "11vw"
-                            }}
-                        >
-                            <Nav
-                                className="mr-auto"
-                                style={{ alignItems: "center" }}
-                            >
-                                <div>
-                                    <a href="/">
-                                        <img
-                                            id="logo-img"
-                                            src={logoImg}
-                                            onClick={this.scrollToTop}
-                                        ></img>
-                                    </a>
-                                </div>
-                            </Nav>
-                            <Nav>
+                        <Navbar.Collapse id="responsive-navbar-nav">
+                            <Nav className="mr-auto"></Nav>
+                            <Nav className="tool-bar-container">
                                 <Col>
-                                    <div
-                                        className="toolbar-about"
-                                    >
-                                        <a href={hostname + "#about"} className="toolbar-about">
+                                    <div className="toolbar-about">
+                                        <a
+                                            href={hostname + "#about"}
+                                            className="toolbar-about"
+                                        >
                                             About
                                         </a>
                                     </div>
@@ -129,7 +120,8 @@ export default class Toolbar extends React.Component<
                                         className="toolbar-itinerary"
                                         style={{
                                             display:
-                                                window.location.pathname === "/day-of"
+                                                window.location.pathname ===
+                                                "/day-of"
                                                     ? "initial"
                                                     : "none"
                                         }}
@@ -152,12 +144,16 @@ export default class Toolbar extends React.Component<
                                         className="toolbar-faq"
                                         style={{
                                             display:
-                                                window.location.pathname === "/day-of"
+                                                window.location.pathname ===
+                                                "/day-of"
                                                     ? "initial"
                                                     : "none"
                                         }}
                                     >
-                                        <a href={hostname + "#faq"} className="toolbar-faq">
+                                        <a
+                                            href={hostname + "#faq"}
+                                            className="toolbar-faq"
+                                        >
                                             FAQ
                                         </a>
                                     </div>
@@ -168,12 +164,16 @@ export default class Toolbar extends React.Component<
                                         className="toolbar-sponsors"
                                         style={{
                                             display:
-                                                window.location.pathname === "/day-of"
+                                                window.location.pathname ===
+                                                "/day-of"
                                                     ? "initial"
                                                     : "none"
                                         }}
                                     >
-                                        <a href={hostname + "#sponsors"} className="toolbar-sponsors">
+                                        <a
+                                            href={hostname + "#sponsors"}
+                                            className="toolbar-sponsors"
+                                        >
                                             Sponsors
                                         </a>
                                     </div>

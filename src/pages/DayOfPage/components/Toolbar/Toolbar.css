@@ -66,3 +66,20 @@
     border: 1px solid rgb(0, 146, 141);
     cursor: pointer;
 }
+
+.tool-bar-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media screen and (max-width: 900px) {
+    .tool-bar-container {
+        height: 100vh;
+        padding-top: 50%;
+        padding-bottom: 50%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}

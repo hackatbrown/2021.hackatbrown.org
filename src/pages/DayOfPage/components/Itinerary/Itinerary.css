@@ -10,19 +10,19 @@
 }
 
 .dayof-itinerary .row {
-  margin-left: auto;
-  margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .dayof-itinerary table {
-  margin-right: 10%;
+    margin-right: 10%;
 }
 
 .dayof-itinerary .container {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .dayof-itinerary th:nth-child(1) {
@@ -33,7 +33,7 @@
     line-height: 52px;
     /* identical to box height */
 
-    color: #FFFFFF;
+    color: #ffffff;
     padding-bottom: 35px;
 }
 
@@ -45,7 +45,7 @@
     line-height: 24px;
     /* or 133% */
 
-    color: #FFFFFF;
+    color: #ffffff;
     padding-bottom: 35px;
 }
 
@@ -56,6 +56,9 @@
     margin-top: 5px;
 }
 
+#saturday {
+    max-width: 300px;
+}
 #prize-title {
     padding-bottom: 20px;
 }
@@ -65,35 +68,35 @@
 }
 
 .slide {
-  background: none !important;
+    background: none !important;
 }
 
 .container-map {
-  position: relative;
-  text-align: center;
-  color: white;
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
 .labelMap {
-  font-family: Covik Sans;
-  font-weight: bold;
-  font-size: 20px;
-  position: absolute;
-  left: 50%;
-  bottom: 90%;
-  transform: translate(-50%);
+    font-family: Covik Sans;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 90%;
+    transform: translate(-50%);
 }
 
-@media screen and  (max-width: 575px) {
-  .dayof-itinerary .col-sm {
-    margin-left: 30%;
-  }
-  .dayof-itinerary .map-sect {
-    margin-left: auto;
-  }
-  .dayof-itinerary .carousel .thumb {
-    width: 55px;
-  }
+@media screen and (max-width: 575px) {
+    .dayof-itinerary .col-sm {
+        margin-left: 30%;
+    }
+    .dayof-itinerary .map-sect {
+        margin-left: auto;
+    }
+    .dayof-itinerary .carousel .thumb {
+        width: 55px;
+    }
 }
 
 @media screen and (max-width: 414px) {
@@ -103,62 +106,61 @@
     }
 
     .map-sect {
-      margin-left: -20%;
-      padding-left: 5%;
+        margin-left: -20%;
+        padding-left: 5%;
     }
-
 }
 
 @media screen and (min-width: 1200px) {
-  .dayof-itinerary .container {
-    max-width: 1200px !important;
-  }
+    .dayof-itinerary .container {
+        max-width: 1200px !important;
+    }
 }
 
-@media screen and  (max-width: 414px) {
-  .dayof-itinerary .col-sm {
-    margin-left: 0%;
-  }
-  .dayof-itinerary .map-sect {
-    margin-left: -11%;
-  }
-  .dayof-itinerary .carousel .thumbs {
-    padding-left: 0;
-  }
+@media screen and (max-width: 414px) {
+    .dayof-itinerary .col-sm {
+        margin-left: 0%;
+    }
+    .dayof-itinerary .map-sect {
+        margin-left: -11%;
+    }
+    .dayof-itinerary .carousel .thumbs {
+        padding-left: 0;
+    }
 }
 
 @media screen and (max-width: 1200px) {
-  .carousel {
-    width: 60% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  #saturday {
-    margin-left: 20%;
-  }
+    .carousel {
+        width: 60% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    #saturday {
+        margin-left: 20%;
+    }
 }
 
 @media screen and (max-width: 769px) {
-  .carousel {
-    width: 80% !important;
-  }
-  .labelMap {
-    /* top: -3px; */
-    width: 100%;
-  }
-  #saturday {
-    margin-left: 16%;
-  }
+    .carousel {
+        width: 80% !important;
+    }
+    .labelMap {
+        /* top: -3px; */
+        width: 100%;
+    }
+    #saturday {
+        margin-left: 16%;
+    }
 }
 
 @media screen and (max-width: 767px) {
-  #saturday {
-    margin-left: 0%;
-  }
+    #saturday {
+        margin-left: 0%;
+    }
 }
 
 @media screen and (max-width: 320px) {
-  .carousel {
-    width: 105% !important;
-  }
+    .carousel {
+        width: 105% !important;
+    }
 }
