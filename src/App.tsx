@@ -192,6 +192,8 @@ export default class App extends React.Component<AppProps, AppState> {
                     <Route path="/day-of">
                         <div className="App">
                             <DayOfPage />
+                        </div>
+                    </Route>
                     <Route path="/code-of-conduct">
                         <div className="App">
                             <CodeOfConductPage />
