@@ -25,7 +25,7 @@ export default class SponsorTiers extends React.Component<
         return (
           <div className="sponsor-tiers">
             <Container>
-              <h3>Sponsorship Tiers</h3>
+              <h3 className="tiers-header">Sponsorship Tiers</h3>
             <div className="table-responsive">
                 <table className="table">
                     <thead>

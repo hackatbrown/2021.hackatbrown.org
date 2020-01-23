@@ -7,8 +7,8 @@ import { FirebaseContextConsumer } from "../../../../components/Firebase/context
 import LoginJoin from "../LoginJoin/LoginJoin";
 
 type MainProps = {
-  hideToolbar: any
-  apiURL : string
+    hideToolbar: any;
+    apiURL: string;
 };
 
 type MainState = {
@@ -32,18 +32,29 @@ export default class Main extends React.Component<MainProps, MainState> {
                 <div className="main-items">
                     {/* <div className="main-login">
                         <img id="stickynote-img" src={stickyNotePic}></img> */}
-                        <FirebaseContextConsumer>
-                            {firebase => <LoginJoin apiURL={this.props.apiURL} firebase={(firebase == null) ? null : firebase.firebase} hideToolbar={this.props.hideToolbar} />}
-                        </FirebaseContextConsumer>
-                        {/* <p className="stickynote-login">Log in/Join</p>
+                    <FirebaseContextConsumer>
+                        {firebase => (
+                            <LoginJoin
+                                apiURL={this.props.apiURL}
+                                firebase={
+                                    firebase == null ? null : firebase.firebase
+                                }
+                                hideToolbar={this.props.hideToolbar}
+                            />
+                        )}
+                    </FirebaseContextConsumer>
+                    {/* <p className="stickynote-login">Log in/Join</p>
                         <p className="stickynote-dashboard">Dashboard</p> */}
                     {/* </div> */}
 
                     <div className="main-cal">
                         <img id="calendar-img" src={calendarPic}></img>
                         <p className="main-date">
-                            <p style={{marginBottom: '1rem'}}>January</p> <div className="dates">25-26</div>
-                            <p className="registration-duedate">Registration due January 5th</p>
+                            <p style={{ marginBottom: "1rem" }}>January</p>{" "}
+                            <div className="dates">25-26</div>
+                            <p className="registration-duedate">
+                                Registration due January 12th
+                            </p>
                         </p>
                     </div>
                 </div>

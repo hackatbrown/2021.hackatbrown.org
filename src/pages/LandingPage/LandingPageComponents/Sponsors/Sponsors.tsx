@@ -5,12 +5,17 @@ import sponsorsImg from "../../../../assets/images/LandingPage/scene_sponsors_tr
 import facebookImg from "../../../../assets/images/LandingPage/companylogo/facebook.png";
 import googleImg from "../../../../assets/images/LandingPage/companylogo/google.png";
 import bookbubImg from "../../../../assets/images/LandingPage/companylogo/bookbub.jpg";
-import digitalAssetImg from "../../../../assets/images/LandingPage/companylogo/digital-asset.png";
+import assentureImg from "../../../../assets/images/LandingPage/companylogo/accenture.png";
 import herokuImg from "../../../../assets/images/LandingPage/companylogo/heroku-purple.png";
 import pathRiseimg from "../../../../assets/images/LandingPage/companylogo/pathrise.svg";
 import citizensbankImg from "../../../../assets/images/LandingPage/companylogo/Citizens-Logo-1.jpg";
 import mouserImg from "../../../../assets/images/LandingPage/companylogo/Mouser.jpg";
 import bloombergImg from "../../../../assets/images/LandingPage/companylogo/Bloomberg.png";
+import redfinImg from "../../../../assets/images/LandingPage/companylogo/Redfin.jpg";
+import ripplematchImg from "../../../../assets/images/LandingPage/companylogo/ripplematch.svg";
+import datamnrImg from "../../../../assets/images/LandingPage/companylogo/dataminr.png";
+import bluesocialImg from "../../../../assets/images/LandingPage/companylogo/bluesocial.png";
+
 type SponsorsProps = {};
 
 type SponsorsState = {
@@ -61,10 +66,18 @@ export default class Sponsors extends React.Component<
                                     src={facebookImg}
                                 ></img>
                             </a>
-                            <a href="https://digitalasset.com/" target="_blank">
+                            <a
+                                href="https://www.accenture.com/us-en"
+                                target="_blank"
+                            >
                                 <img
                                     className="sponsors-img-giga"
-                                    src={digitalAssetImg}
+                                    src={assentureImg}
+                                    style={{
+                                        backgroundColor: "white",
+                                        padding: "20px",
+                                        objectFit: "fill"
+                                    }}
                                 ></img>
                             </a>
                         </div>
@@ -76,6 +89,9 @@ export default class Sponsors extends React.Component<
                                 <img
                                     className="sponsors-img-mega"
                                     src={googleImg}
+                                    style={{
+                                        backgroundColor: "white"
+                                    }}
                                 ></img>
                             </a>
                             <a
@@ -93,6 +109,12 @@ export default class Sponsors extends React.Component<
                                     src={bloombergImg}
                                 ></img>
                             </a>
+                            <a href="https://www.dataminr.com" target="_blank">
+                                <img
+                                    className="sponsors-img-mega"
+                                    src={datamnrImg}
+                                ></img>
+                            </a>
                         </div>
                     </div>
                     <div className="sponsors-kilo">
@@ -102,6 +124,18 @@ export default class Sponsors extends React.Component<
                                 <img
                                     className="sponsors-img-kilo"
                                     src={herokuImg}
+                                ></img>
+                            </a>
+                            <a href="https://www.redfin.com/" target="_blank">
+                                <img
+                                    className="sponsors-img-kilo"
+                                    src={redfinImg}
+                                ></img>
+                            </a>
+                            <a href="https://www.blue.social" target="_blank">
+                                <img
+                                    className="sponsors-img-kilo"
+                                    src={bluesocialImg}
                                 ></img>
                             </a>
                         </div>
@@ -130,9 +164,21 @@ export default class Sponsors extends React.Component<
                                     className="sponsors-img-micro"
                                     style={{
                                         padding: "10px",
-                                        backgroundColor: "white"
+                                        backgroundColor: "white",
+                                        overflow: "hidden",
+                                        objectFit: "cover"
                                     }}
                                     src={mouserImg}
+                                ></img>
+                            </a>
+                            <a href="https://ripplematch.com/" target="_blank">
+                                <img
+                                    className="sponsors-img-micro"
+                                    style={{
+                                        padding: "10px",
+                                        backgroundColor: "white"
+                                    }}
+                                    src={ripplematchImg}
                                 ></img>
                             </a>
                         </div>
