@@ -9,6 +9,11 @@
     justify-content: space-evenly;
 }
 
+.dayof-itinerary .row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .dayof-itinerary table {
   margin-right: 10%;
 }
@@ -79,14 +84,27 @@
   transform: translate(-50%);
 }
 
+@media screen and  (max-width: 575px) {
+  .dayof-itinerary .col-sm {
+    margin-left: 30%;
+  }
+  .dayof-itinerary .map-sect {
+    margin-left: auto;
+  }
+  .dayof-itinerary .carousel .thumb {
+    width: 55px;
+  }
+}
+
 @media screen and (max-width: 414px) {
     .dayof-itinerary {
         flex-direction: column;
-        padding-left: 20%;
+        padding-left: 16%;
     }
 
     .map-sect {
       margin-left: -20%;
+      padding-left: 5%;
     }
 
 }
@@ -94,5 +112,53 @@
 @media screen and (min-width: 1200px) {
   .dayof-itinerary .container {
     max-width: 1200px !important;
+  }
+}
+
+@media screen and  (max-width: 414px) {
+  .dayof-itinerary .col-sm {
+    margin-left: 0%;
+  }
+  .dayof-itinerary .map-sect {
+    margin-left: -11%;
+  }
+  .dayof-itinerary .carousel .thumbs {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .carousel {
+    width: 60% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #saturday {
+    margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .carousel {
+    width: 80% !important;
+  }
+  .labelMap {
+    /* top: -3px; */
+    width: 100%;
+  }
+  #saturday {
+    margin-left: 16%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #saturday {
+    margin-left: 0%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .carousel {
+    width: 105% !important;
   }
 }
