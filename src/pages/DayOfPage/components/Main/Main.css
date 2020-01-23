@@ -1,0 +1,146 @@
+#main-section {
+    font-family: "Covik Sans";
+    src: url("../../../../assets/fonts/Covik Sans-Regular.otf");
+    background-color: #415364;
+}
+
+#title {
+    /* height: 100%;
+    width: 100%; */
+    /* position: absolute; */
+    background-image: url("../../../../assets/images/DayOf/scene_day_of_no_background.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#wifi {
+    font-family: Akkurat Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    padding-top: 10px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+#wifi span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#title-text {
+    padding-top: 145px;
+    padding-bottom: 40px;
+}
+
+#title-text h2 {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: -10px;
+}
+
+#title-text h1 {
+    color: #FFFFFF;
+    font-size: 52px;
+    line-height: 64px;
+}
+
+#coundown-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.digit-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.countdown-digit {
+    font-family: Covik Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 52px;
+    color: #FFFFFF;
+
+    padding: 15px;
+
+    width: 80px;
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+}
+
+#last-digit {
+    margin-right: 0;
+}
+
+.countdown-digit-label {
+    font-family: Akkurat Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    #title {
+        height: 145vh;
+    }
+
+    #title-text {
+        padding-top: 90px;
+        padding-bottom: 15px;
+    }
+
+    #title-text h2 {
+        font-size: 21px;
+    }
+
+    #title-text h1 {
+        font-size: 40px;
+    }
+
+    .countdown-digit {
+        padding: 5px;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 414px) {
+    #title {
+        height: 145vh;
+    }
+
+    #title-text {
+        padding-top: 90px;
+        padding-bottom: 15px;
+    }
+
+    #title-text h2 {
+        font-size: 21px;
+    }
+
+    #title-text h1 {
+        font-size: 40px;
+    }
+
+    .countdown-digit {
+        padding: 10px;
+        width: 70px;
+        height: 70px;
+    }
+}

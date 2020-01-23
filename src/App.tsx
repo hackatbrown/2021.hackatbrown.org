@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import DayOfPage from "./pages/DayOfPage/DayOfPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import SponsorshipPage from "./pages/SponsorshipPage/SponsorshipPage";
 import ReactGA from "react-ga";
@@ -187,6 +188,11 @@ export default class App extends React.Component<AppProps, AppState> {
                                 "/download_hackers?fire_token=" +
                                 this.state.userToken;
                         }}
+                    </Route>
+                    <Route path="/day-of">
+                        <div className="App">
+                            <DayOfPage />
+                        </div>
                     </Route>
                     <Route path="/code-of-conduct">
                         <div className="App">

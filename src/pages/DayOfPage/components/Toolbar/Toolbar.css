@@ -1,0 +1,68 @@
+.toolbar {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    color: white;
+    background-color: rgba(234, 142, 99, 0.9);
+}
+.navBarExtended {
+    padding: 1000px;
+}
+#logo-img {
+    display: flex;
+    align-content: flex-start;
+    max-width: 30px;
+    max-height: 30px;
+    width: auto;
+    height: auto;
+    transition: 0.2s;
+}
+
+#logo-img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.toolbar-items {
+    display: flex;
+    flex-direction: row;
+}
+
+.toolbar-signin {
+    width: 6rem;
+    color: white;
+    padding: 0 1rem 0 1rem;
+    background-color: transparent;
+    border-radius: 10px;
+    border: 1px solid white;
+    transition: 0.2s;
+}
+
+.toolbar-about {
+    color: inherit;
+}
+
+.toolbar-sponsors {
+    color: inherit;
+}
+
+.toolbar-faq {
+    color: inherit;
+}
+
+.toolbar-about:hover,
+.toolbar-itinerary:hover,
+.toolbar-sponsors:hover,
+.toolbar-faq:hover {
+    transition: 0.2s;
+    color: rgb(0, 146, 141);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.toolbar-signin:hover {
+    color: teal;
+    border: 1px solid rgb(0, 146, 141);
+    cursor: pointer;
+}
