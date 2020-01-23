@@ -1,0 +1,67 @@
+.conduct-container {
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction: column;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 45em;
+    font-size: 1.2em;
+}
+.conduct-container h1 {
+    color: #75d6e4;
+    font-size: 3em;
+}
+
+.conduct-container h2 {
+    text-align: left;
+    margin-top: 1em;
+}
+
+.conduct-container p {
+    text-align: left;
+}
+.conduct-container a {
+    text-align: left;
+    color: #58e9ff;
+}
+
+.conduct-container ul {
+    text-align: left;
+}
+
+.code-of-conduct {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.conduct-header {
+    margin-bottom: 1rem;
+}
+
+.conduct-header p {
+    color: rgb(242, 242, 242);
+}
+
+.attribution {
+    margin-top: 40px;
+}
+
+.conduct-page {
+    background: white;
+}
+
+.conduct-page h1, .conduct-page p, .conduct-page h2, .conduct-page ul {
+    color: black;
+}
+
+.conduct-page a {
+    color: #dc1a43;
+}
+
+p.conduct-subtitle {
+    color: #555;
+}

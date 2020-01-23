@@ -100,6 +100,7 @@ export default class OptionalInfo extends React.Component<
                     <div className="Website">
                         <TextField
                             id="website"
+                            autoComplete="new-password"
                             value={this.props.currentSelected["website"]}
                             placeholder="Website"
                             margin="normal"
@@ -114,6 +115,7 @@ export default class OptionalInfo extends React.Component<
                     <div className="Github">
                         <TextField
                             id="github"
+                            autoComplete="new-password"
                             value={this.props.currentSelected["github"]}
                             placeholder="Github"
                             margin="normal"
@@ -128,6 +130,7 @@ export default class OptionalInfo extends React.Component<
                     <div className="Linkedin">
                         <TextField
                             id="linkedin"
+                            autoComplete="new-password"
                             value={this.props.currentSelected["linkedin"]}
                             placeholder="Linkedin"
                             margin="normal"
@@ -144,6 +147,7 @@ export default class OptionalInfo extends React.Component<
                     </p>
                     <TextField
                         id="comments"
+                        autoComplete="new-password"
                         value={this.props.currentSelected["comments"]}
                         variant="outlined"
                         multiline={true}
