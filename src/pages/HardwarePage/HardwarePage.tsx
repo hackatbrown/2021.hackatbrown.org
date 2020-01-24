@@ -34,8 +34,8 @@ export default class HardwarePage extends React.Component<
       }
     render(){
         return(
-            <div className ="hardware-pg">
-                <div>
+            <div >
+                <div className ="hardware-pg">
                 <FirebaseContextConsumer>
                     {firebase => (
                         <Toolbar
@@ -44,9 +44,10 @@ export default class HardwarePage extends React.Component<
                         />
                     )}
                 </FirebaseContextConsumer>
-                </div>
+                
                 <div id="main">
                     <Main />
+                </div>
                 </div>
                 <div id ="footer">
                         <Footer/>
