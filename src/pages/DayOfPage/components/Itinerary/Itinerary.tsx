@@ -134,7 +134,7 @@ export default class Itinerary extends React.Component<
                                         <td>
                                             5:00pm – 6:00pm
                                             <br />
-                                            H1 RoadMap Planning by Facebook
+                                            Bringing Your Hack to Reality by Facebook
                                             <br />
                                             <div className="caption">
                                                 Friedman 108
