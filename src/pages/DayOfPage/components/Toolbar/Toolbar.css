@@ -51,10 +51,15 @@
     color: inherit;
 }
 
+.toolbar-hardware {
+    color: inherit;
+}
+
 .toolbar-about:hover,
 .toolbar-itinerary:hover,
 .toolbar-sponsors:hover,
-.toolbar-faq:hover {
+.toolbar-faq:hover
+.toolbar-hardware:hover {
     transition: 0.2s;
     color: rgb(0, 146, 141);
     cursor: pointer;

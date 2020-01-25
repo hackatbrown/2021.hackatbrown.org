@@ -273,13 +273,13 @@ export default class LoginJoin extends Component<
 
     swapToJoin = () => {
         // swap to join tab and clear any previous errors
-        this.setState({
-            wantToLogIn: false,
-            forgotPassword: false,
-            emailError: "",
-            passwordError: "",
-            message: ""
-        });
+        // this.setState({
+        //     wantToLogIn: false,
+        //     forgotPassword: false,
+        //     emailError: "",
+        //     passwordError: "",
+        //     message: ""
+        // });
     };
 
     modalContent = () => {
