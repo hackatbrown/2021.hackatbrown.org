@@ -70,7 +70,7 @@ export default class Main extends React.Component<MainProps, MainState> {
         };
     }
     render() {
-        const finish = new Date('January 25, 2020 09:00:00');
+        const finish = new Date('January 26, 2020 10:30:00');
         return (
             <div id="main-section">
                 <div id="title">
