@@ -94,7 +94,7 @@ export default class Itinerary extends React.Component<
 
                         <div className="row event">
                             <div className="col">
-                                <div className="row">5:30pm-6:30pm</div>
+                                <div className="row">6:00pm-7:00pm</div>
                             </div>
                             <div className="col">
                                 <div className="row font-weight-bold">
