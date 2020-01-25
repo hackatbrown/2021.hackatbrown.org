@@ -15,6 +15,7 @@ import { ThemeProvider } from "@material-ui/styles";
 import { FirebaseContextConsumer } from "./components/Firebase/context";
 import Firebase from "./components/Firebase";
 import CodeOfConductPage from "./pages/CodeOfConductPage/CodeOfConductPage";
+import HardwarePage from "./pages/HardwarePage/HardwarePage"
 
 const history = createBrowserHistory();
 
@@ -199,6 +200,12 @@ export default class App extends React.Component<AppProps, AppState> {
                             <CodeOfConductPage />
                         </div>
                     </Route>
+                    <Route path="/hardware">
+                        <div className="App">
+                            <HardwarePage apiURL={apiURL} />
+
+                        </div>
+                    </Route>
                     <Route path="">
                         <div className="App">
                             <div className="App">
@@ -206,6 +213,7 @@ export default class App extends React.Component<AppProps, AppState> {
                             </div>
                         </div>
                     </Route>
+                    
                 </Switch>
             </Router>
         );
