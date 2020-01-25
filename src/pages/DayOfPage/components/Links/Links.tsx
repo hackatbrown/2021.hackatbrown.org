@@ -60,7 +60,7 @@ export default class Links extends React.Component<LinksProps, LinksState> {
                     </div>
 
                     <div className="item" id="starterProjects">
-                        <a className="item-link" href="" target="_blank">
+                        <a className="item-link" href="https://docs.google.com/document/d/16r5DBft-xdYWJt0KoB3tECYVcLunn5vYqaCbX1yAZik/edit" target="_blank">
                             <img className="item-img" src={Starter}></img>
                             <p className="links-subheading">
                                 Links to starter projects

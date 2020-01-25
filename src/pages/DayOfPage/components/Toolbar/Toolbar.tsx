@@ -179,6 +179,26 @@ export default class Toolbar extends React.Component<
                                     </div>
                                 </Col>
 
+                                <Col>
+                                    <div
+                                        className="toolbar-hardware"
+                                        style={{
+                                            display:
+                                                window.location.pathname ===
+                                                "/day-of"
+                                                    ? "initial"
+                                                    : "none"
+                                        }}
+                                    >
+                                        <a
+                                            href={'/hardware'}
+                                            className="toolbar-hardware"
+                                        >
+                                            Hardware
+                                        </a>
+                                    </div>
+                                </Col>
+
                                 <Col>{button}</Col>
                             </Nav>
                         </Navbar.Collapse>
