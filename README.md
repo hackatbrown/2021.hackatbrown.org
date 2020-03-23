@@ -1,4 +1,10 @@
-# Hack@Brown 2020 Site
+<h1 align="center">
+    <img src="https://2020.hackatbrown.org/static/media/scene_garage_transparent.dee6376d.png" width="500">
+    <br>
+    Hack@Brown 2020
+</h1>
+
+The front-end for the [2020 Hack@Brown website](https://2020.hackatbrown.org/), written in React + TypeScript. For the back-end API, see [hackatbrown/api-2020.hackatbrown.org](https://github.com/hackatbrown/api-2020.hackatbrown.org). 
 
 ## New to Development?
 
@@ -36,12 +42,12 @@ Then, run:
 
 ```
 cd 2020.hackatbrown.org/client
-yarn install
+npm install
 ```
 
 This will change directories into where the app lives, then install all dependencies.
 
-Then, run `yarn start` and navigate to http://localhost:3000.
+Then, run `npm start` and navigate to http://localhost:3000.
 
 If you run into any setup issues, please let the Dev leads know, and we will address
 it accordingly. Of course, always try to spend some time debugging first—it's
@@ -69,3 +75,12 @@ the best way to learn!
     └──
 
 Try to stick to the above layout and reference it.
+
+## Deployment
+The front-end is deployed using [Netlify](https://www.netlify.com/), a convenient platform for deploying static sites like this one. This allows us to trigger deploys automatically from new commits.
+
+| Branch  |                                    |                                                        |
+|---------|------------------------------------|--------------------------------------------------------|
+| master  | https://2020.hackatbrown.org/      | user-facing site                                       |
+| develop | https://hab2020-dev.netlify.com/   | test production implementation before going live       |
+| admin   | https://hab2020-admin.netlify.com/ | administrative tools (contact Dev leads for more info) |
