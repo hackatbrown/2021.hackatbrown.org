@@ -13,23 +13,32 @@
   max-width: 80%;
 }
 
+#h3-2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
 h3 {
-  font-weight: bold;
   margin-bottom: 20px;
 }
 
 #heading {
-  font-weight: bold;
+  font-weight: 700;
+}
+
+#headingL {
+  font-weight: 600;
 }
 
 #text {
-  margin-bottom:15px;
+  margin-bottom:15px !important;
 }
 p {
-  margin-bottom:0;
+  margin-bottom: 0px !important;
 }
 .why-sponsor-left{
   margin-top:100px;
+  margin-right: 120px;
 }
 
 .why-sponsor-right {
@@ -39,6 +48,8 @@ p {
 .past-projects {
   margin-top: 100px;
   margin-bottom:100px;
+  margin-right: 120px;
+
 }
 
 .lego-graphics {

@@ -31,15 +31,14 @@ export default class WhySponsor extends React.Component<
                     <Row>
                         <Col sm={7}>
                             <div className="why-sponsor-left">
-                                <h3>Why sponsor us?</h3>
+                                <h3><div id="h3-2">Why sponsor us?</div></h3>
 
-                                <p id="heading">Meet with talented students:</p>
-
+                                <p id="heading">Meet talented students:</p>
                                 <ul>
                                     <li>
                                         Connect with amazing computer science,
                                         design, and engineering students from
-                                        Brown, RISD, MIT, and more! 
+                                        Brown, RISD, MIT, and more!
                                     </li>
                                     <li>
                                         Get access to 500+ applicant resumes,
@@ -52,8 +51,8 @@ export default class WhySponsor extends React.Component<
 
                                 <ul>
                                     <li>
-                                        Nearly half of our attendees identify as
-                                        female, and around 20% are from
+                                        Nearly <b>half</b> of our attendees identify as
+                                        female, and around <b>20%</b> are from
                                         underrepresented minorities.
                                     </li>
                                     <li>
@@ -70,7 +69,8 @@ export default class WhySponsor extends React.Component<
                                         Boost your company's brand and show off
                                         your company's technical side through
                                         our sponsorship fair, workshops, and
-                                        demos.
+                                        demos - all revamped on our new
+                                        virtual platform!
                                     </li>
                                     <li>
                                         We’ve had workshops hosted by Google,
@@ -82,8 +82,8 @@ export default class WhySponsor extends React.Component<
                             </div>
 
                             <div className="past-projects">
-                                <h3> Past Projects </h3>
-                                <p id="heading">Best potential for social impact:</p>
+                                <h3><div id="h3-2">Past Projects</div></h3>
+                                <p id="headingL">Best potential for social impact:</p>
                                 <p id="heading">Reach Mental Health</p>
                                 <p id="text">
                                     A portal to creating customized chat rooms
@@ -91,7 +91,7 @@ export default class WhySponsor extends React.Component<
                                     encounter in daily life.
                                 </p>
 
-                                <p id="heading">Best Hack with Facebook:</p>
+                                <p id="headingL">Best Hack with Facebook:</p>
                                 <p id="heading">Babel Fish</p>
                                 <p id="text">
                                     A video chat app that translates speech in
@@ -101,25 +101,41 @@ export default class WhySponsor extends React.Component<
                                     internet.
                                 </p>
 
-                                <p id="heading">Best Hack with Spell:</p>
+                                <p id="headingL">Best Hack with Spell:</p>
                                 <p id="heading">Autism Inspire</p>
-                                <p>
+                                <p id="text">
                                     A system that allows an AI to communicate
                                     with patients for early autism treatment via
-                                    “sketch captioning technology”.
+                                    “sketch captioning technology.”
+                                </p>
+
+                                <p id="headingL">Best Hack that Builds Community (Facebook):</p>
+                                <p id="heading">LinguaML</p>
+                                <p id="text">
+                                    An app that takes a picture of anything
+                                    and converts it to a flashcard in the
+                                    language you are trying to learn.
+                                </p>
+
+                                <p id="headingL">Most Innovative Hack:</p>
+                                <p id="heading">Quickmoji</p>
+                                <p id="text">
+                                    A tool that generates quick emoji and text
+                                    responses by recognizing user emotion in
+                                    real-time.
                                 </p>
                             </div>
                         </Col>
-                        <Col sm={5}>
+                        <Col sm={4}>
                             <div className="why-sponsor-right">
                                 <p>Questions?</p>
                                 <a href="mailto:sponsor@hackatbrown.org">
                                     sponsor@hackatbrown.org
                                 </a>
 
-                                <p>
-                                    You'll reach Martin Chu and Prithu Dasgupta, our sponsorship
-                                    leads.
+                                <p><br/>
+                                    You'll reach Nick Wee and Sheri Zhang,
+                                    our sponsorship leads.
                                 </p>
                             </div>
 
@@ -129,6 +145,7 @@ export default class WhySponsor extends React.Component<
                                 <img id="more-bricks" src={bricks}></img>
                             </div>
                         </Col>
+                        <Col sm={1}></Col>
                     </Row>
                 </Container>
             </div>
