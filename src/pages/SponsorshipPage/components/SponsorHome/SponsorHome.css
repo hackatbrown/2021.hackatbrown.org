@@ -19,3 +19,7 @@ h1 {
 .sponsor-home-blurb {
     margin: 3rem 2rem 3rem 2rem;
 }
+
+.sponsor-home-blurb p{
+	margin-top: 1rem;
+}

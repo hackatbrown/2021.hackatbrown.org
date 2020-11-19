@@ -15,6 +15,7 @@ type SponsorHomeProps = {};
  */
 type SponsorHomeState = {};
 
+// TODO: update fonts/fontsizes
 export default class SponsorHome extends React.Component<
     SponsorHomeProps,
     SponsorHomeState
@@ -36,29 +37,23 @@ export default class SponsorHome extends React.Component<
                             <div className="sponsor-home-blurb">
                                 <h1>Sponsoring</h1>
 
-                                <h1>Hack@Brown 2020</h1>
+                                <h1>Hack@Brown 2021</h1>
                                 <p>
                                     Hack@Brown is Brown University’s annual
                                     hackathon, and we’re back for the seventh
-                                    time on January 24-26, 2020.
+                                    time on <b>January 22-24, 2021</b>.
                                 </p>
 
                                 <p>
-                                    At Hack@Brown 2020, we’ll bring together
-                                    500+ students from Brown, RISD, MIT, and
-                                    other top schools across the country to
-                                    Providence, RI.
-                                </p>
+                                    We’ll bring together 500+ students to our own 
+																		interactive <b>virtual</b> platform.
+																</p>
 
                                 <p>
-                                    In 24 hours, these students will experiment
-                                    with and create a variety of technical
+                                    In 24 hours, these students will create technical
                                     projects using your technologies and APIs.
-                                </p>
-
-                                <p>
-                                    To make it happen, we need some awesome
-                                    sponsors, and we would love for you to be
+                                    To make it happen, we will need the help of
+                                    sponsors, and would love for you to be
                                     one of them!
                                 </p>
                             </div>
