@@ -1,16 +1,6 @@
-#lego-man {
-  max-height: 80%;
-  max-width: 80%;
-}
-
-#lego-bricks {
-  max-height: 80%;
-  max-width: 80%;
-}
-
-#more-bricks {
-  max-height: 80%;
-  max-width: 80%;
+#tacks {
+  max-height: 130%;
+  max-width: 130%;
 }
 
 #h3-2 {
@@ -33,6 +23,12 @@ h3 {
 #text {
   margin-bottom:15px !important;
 }
+
+a {
+  font-weight: 700;
+  color: #57C7B9 !important;
+}
+
 p {
   margin-bottom: 0px !important;
 }
@@ -52,6 +48,6 @@ p {
 
 }
 
-.lego-graphics {
+.tack-graphics {
   padding-top: 5rem;
 }
