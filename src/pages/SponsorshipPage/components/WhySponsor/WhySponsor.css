@@ -16,6 +16,10 @@
 #h3-2 {
   margin-bottom: 20px;
   font-weight: 700;
+  font-family: Recoleta;
+  font-weight: bold;
+  font-size: 40px;  
+line-height: 40px;
 }
 
 h3 {
@@ -24,14 +28,18 @@ h3 {
 
 #heading {
   font-weight: 700;
+  color: #46B5B8;
 }
 
 #headingL {
-  font-weight: 600;
+  font-weight: 500;
+
 }
 
 #text {
   margin-bottom:15px !important;
+  color: #444444;
+
 }
 p {
   margin-bottom: 0px !important;
@@ -54,4 +62,12 @@ p {
 
 .lego-graphics {
   padding-top: 5rem;
+}
+
+.why-sponsor {
+  background: rgba(166, 220, 236, 0.3);
+}
+
+#sponsor-email{
+  color: #46B5B8;;
 }

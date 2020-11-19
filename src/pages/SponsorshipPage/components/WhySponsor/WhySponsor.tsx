@@ -33,7 +33,7 @@ export default class WhySponsor extends React.Component<
                             <div className="why-sponsor-left">
                                 <h3><div id="h3-2">Why sponsor us?</div></h3>
 
-                                <p id="heading">Meet talented students:</p>
+                                <p id="heading1"><b>Meet talented students:</b></p>
                                 <ul>
                                     <li>
                                         Connect with amazing computer science,
@@ -41,36 +41,36 @@ export default class WhySponsor extends React.Component<
                                         Brown, RISD, MIT, and more!
                                     </li>
                                     <li>
-                                        Get access to 500+ applicant resumes,
+                                        Get access to <b>500+</b> applicant resumes,
                                         portfolios, websites, and Github
                                         profiles!
                                     </li>
                                 </ul>
 
-                                <p id="heading">Promote diversity and inclusion:</p>
+                                <p id="heading1"><b>Promote diversity and inclusion:</b></p>
 
                                 <ul>
                                     <li>
-                                        Nearly <b>half</b> of our attendees identify as
+                                        Nearly <b>50%</b> of our attendees identify as
                                         female, and around <b>20%</b> are from
                                         underrepresented minorities.
                                     </li>
                                     <li>
-                                        Help promote diversity and inclusion in
+                                        Help promote <b>diversity</b> and inclusion in
                                         computer science, engineering, and
                                         design at top universities.
                                     </li>
                                 </ul>
 
-                                <p id="heading">Showcase your company and brand:</p>
+                                <p id="heading1"><b>Showcase your company and brand:</b></p>
 
                                 <ul>
                                     <li>
                                         Boost your company's brand and show off
                                         your company's technical side through
                                         our sponsorship fair, workshops, and
-                                        demos - all revamped on our new
-                                        virtual platform!
+                                        demos - all revamped on our <b>new
+                                        virtual platform!</b>
                                     </li>
                                     <li>
                                         We’ve had workshops hosted by Google,
@@ -128,13 +128,13 @@ export default class WhySponsor extends React.Component<
                         </Col>
                         <Col sm={4}>
                             <div className="why-sponsor-right">
-                                <p>Questions?</p>
-                                <a href="mailto:sponsor@hackatbrown.org">
+                                <p><b>Questions?</b></p>
+                                <a id="sponsor-email" href="mailto:sponsor@hackatbrown.org">
                                     sponsor@hackatbrown.org
                                 </a>
 
                                 <p><br/>
-                                    You'll reach Nick Wee and Sheri Zhang,
+                                    Reach out to Nick Wee and Sheri Zhang,
                                     our sponsorship leads.
                                 </p>
                             </div>
