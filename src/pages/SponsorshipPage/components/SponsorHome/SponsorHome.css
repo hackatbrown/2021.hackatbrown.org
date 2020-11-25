@@ -2,10 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    padding: 4rem 3rem 4rem 3rem;
+}
+
+.banner-img-sect {
+    align-self: center;
+}
+
+.sponsor-home-blurb {
+    align-self: center;
 }
 
 #banner-img {
-    /* margin: 3rem; */
     max-height: 100%;
     max-width: 100%;
 }
@@ -18,13 +27,10 @@
 }
 
 .sponsor-home-blurb {
-    margin: 2rem;
+    max-width: 80%;
+    padding-left: 3rem;
 }
 
 .sponsor-home-blurb p{
 	margin-top: 1rem;
-}
-
-.sponsor-home {
-    height: 100vh;
 }
