@@ -1,9 +1,6 @@
-.App-logo {
-    height: 40vmin;
-}
-
 .sponsor {
-  background-color: #FBF8F0;
+    text-align: left;
+    background-color: #FBF8F0;
 }
 
 .title {
@@ -17,7 +14,6 @@
     color: white;
 }
 
-.sponsor {
-    text-align: left;
-    background-color: #fbf8f0;
+.sponsor-home {
+    height: 100vh;
 }
