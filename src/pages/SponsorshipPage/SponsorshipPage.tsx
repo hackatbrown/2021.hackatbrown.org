@@ -31,7 +31,7 @@ export default class SponsorshipPage extends React.Component<
         return (
             <div className="sponsor">
                 <SponsorHome />
-                <SponsorVideo />
+                {/* <SponsorVideo /> */}
                 <WhySponsor />
                 <SponsorTiers />
             </div>

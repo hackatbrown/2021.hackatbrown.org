@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Covik Sans";
-    src: url("assets/fonts/Covik Sans-Regular.otf");
+    /* src: url("assets/fonts/Covik Sans-Regular.otf"); */
 }
 
 @font-face {
     font-family: "Akkurat Pro";
-    src: url("assets/fonts/Akkurat Pro-Regular.otf");
+    /* src: url("assets/fonts/Akkurat Pro-Regular.otf"); */
 }
 
 .App {

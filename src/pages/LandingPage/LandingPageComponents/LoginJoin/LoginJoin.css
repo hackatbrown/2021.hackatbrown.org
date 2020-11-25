@@ -2,14 +2,14 @@
     font-family: "Covik Sans";
     font-style: normal;
     font-weight: 500;
-    src: url("../../../../assets/fonts/Covik-Sans-Regular.otf");
+    /* src: url("../../../../assets/fonts/Covik-Sans-Regular.otf"); */
 }
 
 @font-face {
     font-family: "Akkurat Pro";
     font-style: normal;
     font-weight: 500;
-    src: url("../../../../assets/fonts/Akkurat-Pro-Regular.otf");
+    /* src: url("../../../../assets/fonts/Akkurat-Pro-Regular.otf"); */
 }
 
 .error-message {
