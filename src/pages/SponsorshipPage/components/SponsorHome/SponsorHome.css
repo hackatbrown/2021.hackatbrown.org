@@ -1,24 +1,24 @@
+.sponsor-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #banner-img {
-    margin: 3rem;
-    max-height: 80%;
-    max-width: 80%;
+    /* margin: 3rem; */
+    max-height: 100%;
+    max-width: 100%;
 }
 
-h1 {
-    color: black;
-    font-weight: bold;
-}
-
-.sponsor-home-blurb h3 {
-    font-family: Work Sans;
+.sponsor-home-blurb h1 {
+    font-family: Recoleta;
     font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 32px;
+    font-weight: bold;
+    color: black;
 }
 
 .sponsor-home-blurb {
-    margin: 3rem 2rem 3rem 2rem;
+    margin: 2rem;
 }
 
 .sponsor-home-blurb p{

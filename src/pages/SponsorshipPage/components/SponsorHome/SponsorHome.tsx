@@ -26,7 +26,7 @@ export default class SponsorHome extends React.Component<
     render() {
         return (
             <div className="sponsor-home">
-                <Container>
+                {/* <Container> */}
                     <Row>
                         <Col sm={6}>
                             <div className="banner-img-sect">
@@ -45,7 +45,7 @@ export default class SponsorHome extends React.Component<
                                 </p>
 
                                 <p>
-                                    We’ll bring together 500+ students to our own 
+                                    We’ll bring together 500+ students to our own
 																		interactive <b>virtual</b> platform.
 																</p>
 
@@ -59,7 +59,7 @@ export default class SponsorHome extends React.Component<
                             </div>
                         </Col>
                     </Row>
-                </Container>
+                {/* </Container> */}
             </div>
         );
     }
