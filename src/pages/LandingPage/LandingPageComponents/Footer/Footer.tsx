@@ -25,10 +25,10 @@ export default class Itinerary extends React.Component<
             <div className="footer">
                 <Container>
                     <Row>
-                        <Col sm={3}>
+                        <Col sm={4}>
                             <div className="current">
-                                <h5>Hack@Brown 2020:</h5>
-                                <h3>Garage</h3>
+                                <h5>Hack@Brown 2021:</h5>
+                                <p className="theme">Afterschool</p>
                             </div>
                         </Col>
                         <Col>
@@ -78,6 +78,15 @@ export default class Itinerary extends React.Component<
                                 <p>
                                     <a
                                         className="footerlink"
+                                        href="https://2020.hackatbrown.org/"
+                                        target="_blank"
+                                    >
+                                        Hack@Brown 2020
+                                    </a>
+                                </p>
+                                <p>
+                                    <a
+                                        className="footerlink"
                                         href="https://2019.hackatbrown.org/"
                                         target="_blank"
                                     >
@@ -102,40 +111,18 @@ export default class Itinerary extends React.Component<
                                         Hack@Brown 2017
                                     </a>
                                 </p>
-                                <p>
-                                    <a
-                                        className="footerlink"
-                                        href="https://2016.hackatbrown.org/"
-                                        target="_blank"
-                                    >
-                                        Hack@Brown 2016
-                                    </a>
-                                </p>
                             </div>
                         </Col>
+                        
                         <Col>
-                            <div className="links">
-                                <h5>Links</h5>
-                                <p>
-                                    <a className="footerlink" href="/dashboard">
-                                        Application form
-                                    </a>
-                                </p>
-                                <p>
-                                    <a className="footerlink" href="/">
-                                        Landing page
-                                    </a>
-                                </p>
-                            </div>
-                        </Col>
-                        <Col sm={3}>
                             <div className="misc">
                                 <p className="message">
                                     Special thanks to Brown Computer Science and
                                     Brown HCRI!
                                 </p>
-                                <a href="/code-of-conduct" className="message">
-                                    Copyright 2019 Hack@Brown. Code of Conduct
+                                <br/>
+                                <a href="/code-of-conduct" className="footerlink">
+                                    Copyright 2021 Hack@Brown. Code of Conduct
                                 </a>
                             </div>
                         </Col>
