@@ -41,7 +41,6 @@ p {
   margin-bottom: 0px !important;
 }
 .why-sponsor-left{
-  margin-top:100px;
   margin-right: 120px;
 }
 
@@ -62,6 +61,7 @@ p {
 
 .why-sponsor {
   background: rgba(166, 220, 236, 0.3);
+  padding: 4rem 3rem 4rem 3rem;
 }
 
 #sponsor-email{
