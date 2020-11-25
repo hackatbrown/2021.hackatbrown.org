@@ -8,9 +8,19 @@
     /* src: url("assets/fonts/Akkurat Pro-Regular.otf"); */
 }
 
+@font-face {
+    font-family: "Recoleta";
+    src: url("assets/fonts/Recoleta-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("assets/fonts/Inter-Regular.ttf");
+}
+
 .App {
     text-align: center;
-    font-family: Akkurat Pro, sans-serif;
+    font-family: Inter, sans-serif;
     height: 100%;
     background-image: url("assets/images/LandingPage/temp_background.png");
     background-attachment: fixed;
@@ -19,5 +29,5 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Covik Sans, sans-serif;
+    font-family: Recoleta, sans-serif;
 }

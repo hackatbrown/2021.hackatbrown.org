@@ -24,3 +24,7 @@
 .sponsor-home-blurb p{
 	margin-top: 1rem;
 }
+
+.sponsor-home {
+    height: 100vh;
+}
