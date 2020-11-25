@@ -27,13 +27,13 @@ export default class Itinerary extends React.Component<
                     <Row>
                         <Col sm={4}>
                             <div className="current">
-                                <h5>Hack@Brown 2021:</h5>
+                                <h5 className="col-header">Hack@Brown 2021:</h5>
                                 <p className="theme">Afterschool</p>
                             </div>
                         </Col>
                         <Col>
                             <div className="socials">
-                                <h5>Socials</h5>
+                                <h5 className="col-header">Socials</h5>
                                 <p>
                                     <a
                                         className="footerlink"
@@ -74,7 +74,7 @@ export default class Itinerary extends React.Component<
                         </Col>
                         <Col>
                             <div className="previous">
-                                <h5>Previous</h5>
+                                <h5 className="col-header">Previous</h5>
                                 <p>
                                     <a
                                         className="footerlink"
@@ -114,7 +114,7 @@ export default class Itinerary extends React.Component<
                             </div>
                         </Col>
                         
-                        <Col>
+                        <Col sm={3}>
                             <div className="misc">
                                 <p className="message">
                                     Special thanks to Brown Computer Science and
