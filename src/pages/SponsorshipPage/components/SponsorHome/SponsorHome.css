@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    padding: 4rem 3rem 4rem 3rem;
 }
 
 #banner-img {
-    margin: 3rem;
     max-height: 80%;
     max-width: 80%;
 }
@@ -18,13 +19,9 @@
 }
 
 .sponsor-home-blurb {
-    margin: 3rem 2rem 3rem 2rem;
+    padding: 3rem 2rem 3rem 2rem;
 }
 
 .sponsor-home-blurb p{
 	margin-top: 1rem;
-}
-
-.sponsor-home {
-    height: 100vh;
 }
