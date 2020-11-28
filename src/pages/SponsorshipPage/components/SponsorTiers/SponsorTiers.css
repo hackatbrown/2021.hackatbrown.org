@@ -1,8 +1,6 @@
 .sponsor-tiers {
-  padding-top:100px;
-  padding-bottom: 170px;
-  background: rgba(251,238,181,.3)
-
+  background: rgba(251,238,181,.3);
+  padding: 4rem 3rem 4rem 3rem;
 }
 
 h3.sponsor-tiers {

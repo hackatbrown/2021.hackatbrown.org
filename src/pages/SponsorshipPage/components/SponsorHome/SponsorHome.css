@@ -1,23 +1,34 @@
-#banner-img {
-    margin: 3rem;
-    max-height: 80%;
-    max-width: 80%;
+.sponsor-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 4rem 3rem 4rem 3rem;
 }
 
-h1 {
-    color: black;
-}
-
-.sponsor-home-blurb h3 {
-    font-family: Work Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 32px;
+.banner-img-sect {
+    align-self: center;
 }
 
 .sponsor-home-blurb {
-    margin: 3rem 2rem 3rem 2rem;
+    align-self: center;
+}
+
+#banner-img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.sponsor-home-blurb h1 {
+    font-family: Recoleta;
+    font-style: normal;
+    font-weight: bold;
+    color: black;
+}
+
+.sponsor-home-blurb {
+    max-width: 80%;
+    padding-left: 3rem;
 }
 
 .sponsor-home-blurb p{
