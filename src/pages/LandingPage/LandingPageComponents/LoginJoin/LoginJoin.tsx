@@ -453,7 +453,7 @@ export default class LoginJoin extends Component<
             // else, user is not logged in
             button = (
                 <p onClick={this.openModal} className="stickynote-button">
-                    Log in/Join
+                    Register
                 </p>
             );
         }
@@ -495,7 +495,6 @@ export default class LoginJoin extends Component<
                     this.doNothing
                 )}
                 <div className="main-login">
-                    <img id="stickynote-img" src={stickyNotePic}></img>
                     {button}
                 </div>
                 <Modal
