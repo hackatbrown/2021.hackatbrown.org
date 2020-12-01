@@ -39,7 +39,7 @@ export default class SponsorHome extends React.Component<
                             <h1>Hack@Brown 2021</h1>
                             <p>
                                 Hack@Brown is Brown University’s annual
-                                hackathon, and we’re back for the seventh
+                                hackathon, and we’re back for the eighth
                                 time on <b>January 22-24, 2021</b>.
                             </p>
 

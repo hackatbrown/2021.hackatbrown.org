@@ -9,8 +9,8 @@
   font-family: Recoleta;
   font-weight: bold;
   font-size: 40px;  
-line-height: 40px;
-}
+  line-height: 40px;
+} 
 
 h3 {
   margin-bottom: 20px;
@@ -66,4 +66,9 @@ p {
 
 #sponsor-email{
   color: #46B5B8;;
+}
+
+ul {
+  list-style-position: inside;
+  padding: 0;
 }
