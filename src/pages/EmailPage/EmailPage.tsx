@@ -88,7 +88,7 @@ export default class EmailPage extends React.Component<{}, IState> {
                     <p style={{ color: "#A6D3D0", margin: "10px" }}>
                         {" "}
                         Our site is currently under construction to prepare for
-                        Hack@Brown 2020! <br />
+                        Hack@Brown 2021! <br />
                         Sign up to receive email alerts below and we'll let you
                         know when we're back.
                     </p>
@@ -118,6 +118,10 @@ export default class EmailPage extends React.Component<{}, IState> {
                 </div>
 
                 <div className="past-websites-link">
+                    <a href={"https://2020.hackatbrown.org/"}>
+                        Hack@Brown 2020
+                    </a>{" "}
+                    |{" "}
                     <a href={"https://2019.hackatbrown.org/"}>
                         Hack@Brown 2019
                     </a>{" "}
@@ -128,10 +132,6 @@ export default class EmailPage extends React.Component<{}, IState> {
                     |{" "}
                     <a href={"https://2017.hackatbrown.org/"}>
                         Hack@Brown 2017
-                    </a>{" "}
-                    |{" "}
-                    <a href={"https://2016.hackatbrown.org/"}>
-                        Hack@Brown 2016
                     </a>
                 </div>
             </div>
