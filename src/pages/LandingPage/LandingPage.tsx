@@ -9,6 +9,7 @@ import Footer from "./LandingPageComponents/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
 import Background from "../../assets/images/LandingPage/temp_background.png";
+import EmailPage from "../EmailPage/EmailPage";
 
 type LandingPageProps = {
   apiURL : string
@@ -38,7 +39,8 @@ export default class LandingPage extends React.Component<
     render() {
         return (
             <div className="landing-page">
-                <FirebaseContextConsumer>
+                <EmailPage />
+                {/* <FirebaseContextConsumer>
                     {firebase => (
                         <Toolbar
                             firebase={firebase == null ? null : firebase.firebase}
@@ -61,7 +63,7 @@ export default class LandingPage extends React.Component<
                 </div>
                 <div id="footer">
                     <Footer />
-                </div>
+                </div> */}
             </div>
         );
     }
