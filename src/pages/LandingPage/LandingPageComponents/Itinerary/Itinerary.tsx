@@ -203,7 +203,7 @@ export default class Itinerary extends React.Component<
                     <img id="itinerary-img" src={itinImg}></img>
                 </div>
 
-                <div className="sunday itin-table2">
+                {/* <div className="sunday itin-table2">
                     <div className="row">
                         <h3>Sunday, January 27th</h3>
                     </div>
@@ -264,9 +264,9 @@ export default class Itinerary extends React.Component<
                             </div>
                             <div className="row">Friedman 108</div>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="row event">
+                    {/* <div className="row event">
                         <div className="col">
                             <div className="row">2:30pm</div>
                         </div>
@@ -277,7 +277,7 @@ export default class Itinerary extends React.Component<
                             <div className="row">Salomon DECI</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }
