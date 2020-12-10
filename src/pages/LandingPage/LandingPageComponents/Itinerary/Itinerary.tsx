@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Itinerary.css";
 import itinImg from "../../../../assets/images/LandingPage/scene_itinerary_mobile.png";
+import src from "*.bmp";
 
 type ItineraryProps = {};
 
@@ -200,7 +201,11 @@ export default class Itinerary extends React.Component<
                 </div>
 
                 <div className="itinerary-img-div">
-                    <img id="itinerary-img" src={itinImg}></img>
+                <video id="samp" width="640" height="480" controls>
+                    <source src = {"/src/assets/LandingPage/itinerary.mp4"} type="video/mp4">
+                        Your browser does not support this video format.
+                    </source>
+                </video>
                 </div>
 
                 {/* <div className="sunday itin-table2">
