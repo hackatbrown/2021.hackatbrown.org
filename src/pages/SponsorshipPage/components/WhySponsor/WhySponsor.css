@@ -32,7 +32,7 @@ h3 {
 
 }
 
-a {
+#link, #link1, #link2, #link3, #link4 {
   font-weight: 700;
   color: #57C7B9 !important;
 }

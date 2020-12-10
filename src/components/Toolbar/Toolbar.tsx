@@ -199,6 +199,29 @@ export default class Toolbar extends React.Component<
                                     </div>
                                 </Col>
 
+                                <Col>
+                                    <div
+                                        className="toolbar-registration"
+                                        style={{
+                                            display:
+                                                window.location.pathname === "/"
+                                                    ? "initial"
+                                                    : "none"
+                                        }}
+                                    >
+                                        <Link id = "register"
+                                            activeClass="active"
+                                            to="register"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-70}
+                                            duration={500}
+                                        >        
+                                            Register
+                                        </Link>
+                                    </div>
+                                </Col>
+
                                 <Col>{button}</Col>
                             </Nav>
                         </Navbar.Collapse>
