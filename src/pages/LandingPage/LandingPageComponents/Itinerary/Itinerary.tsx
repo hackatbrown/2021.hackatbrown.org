@@ -65,7 +65,7 @@ export default class Itinerary extends React.Component<
                                 <div className="row font-weight-bold">
                                     Kickoff!
                                 </div>
-                                <div className="row">Location: Virtual 
+                                <div className="row">Location: Virtual
                                 Platform</div>
                             </div>
                         </div>
@@ -202,11 +202,12 @@ export default class Itinerary extends React.Component<
 
                 <div className="itinerary-img-div">
                 <video id="samp" width="640" height="480" controls>
-                    <source src = {"/src/assets/LandingPage/itinerary.mp4"} type="video/mp4">
+                    <source src = {"/src/assets/LandingPage/itinerary.mp4"} type="video/mp4"/>
                         Your browser does not support this video format.
-                    </source>
                 </video>
                 </div>
+
+
 
                 {/* <div className="sunday itin-table2">
                     <div className="row">
