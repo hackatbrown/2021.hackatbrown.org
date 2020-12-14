@@ -1,31 +1,12 @@
-@font-face {
-    font-family: "Covik Sans";
-    font-style: normal;
-    font-weight: 500;
-    src: url("../../../../assets/fonts/Covik-Sans-Regular.otf");
-}
-
-@font-face {
-    font-family: "Akkurat Pro";
-    font-style: normal;
-    font-weight: 500;
-    src: url("../../../../assets/fonts/Akkurat-Pro-Regular.otf");
-}
-
-@font-face {
-    font-family: Inter;
-    src: url("../../../../assets/fonts/Inter-Bold-slnt=0.ttf");
-}
-
 .error-message {
-    font-family: Akkurat Pro;
+    font-family: Inter;
     color: red;
     font-weight: bold;
     font-size: 13px;
 }
 
 .info-message {
-    font-family: Akkurat Pro;
+    font-family: Inter;
     font-size: 13px;
     color: black;
 }
@@ -68,7 +49,7 @@
     border: none;
     border-radius: 12px 0px;
 
-    font-family: Covik Sans;
+    font-family: Recoleta-Regular;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -89,9 +70,9 @@
     border: none;
     border-radius: 0px 12px;
 
-    font-family: Covik Sans;
+    font-family: Recoleta-Regular;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 100;
     font-size: 24px;
 }
 
@@ -100,7 +81,7 @@ form.loginJoin-form {
     text-align: left;
     padding-left: 47px;
     padding-right: 47px;
-    font-family: Akkurat Pro;
+    font-family: Inter-Regular;
     padding-bottom: 32px;
 }
 
