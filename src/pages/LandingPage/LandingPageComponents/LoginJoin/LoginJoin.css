@@ -2,14 +2,19 @@
     font-family: "Covik Sans";
     font-style: normal;
     font-weight: 500;
-    /* src: url("../../../../assets/fonts/Covik-Sans-Regular.otf"); */
+    src: url("../../../../assets/fonts/Covik-Sans-Regular.otf");
 }
 
 @font-face {
     font-family: "Akkurat Pro";
     font-style: normal;
     font-weight: 500;
-    /* src: url("../../../../assets/fonts/Akkurat-Pro-Regular.otf"); */
+    src: url("../../../../assets/fonts/Akkurat-Pro-Regular.otf");
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("../../../../assets/fonts/Inter-Bold-slnt=0.ttf");
 }
 
 .error-message {
@@ -130,11 +135,11 @@ label {
     width: 72.39px;
     height: 33px;
 
-    border: 1px solid #b8b8b8;
+    border: 1px solid #ED695B;
     box-sizing: border-box;
-    border-radius: 2px;
+    border-radius: 50px;
 
-    background: #009490;
+    background: #ED695B;
 
     font-size: 12px;
     line-height: 33px;
@@ -150,7 +155,7 @@ label {
 
     border: 1px solid #b8b8b8;
     box-sizing: border-box;
-    border-radius: 2px;
+    border-radius: 50px;
 
     background: #ffffff;
 
@@ -173,11 +178,11 @@ label {
     width: 72.39px;
     height: 33px;
 
-    border: 1px solid #b8b8b8;
+    border: 1px solid #ED695B;
     box-sizing: border-box;
-    border-radius: 2px;
+    border-radius: 50px;
 
-    background: #753bbd;
+    background: #ED695B;
 
     font-size: 12px;
     line-height: 33px;
@@ -188,21 +193,26 @@ label {
 }
 
 .stickynote-button:hover {
-    color: #00857a;
-    border: 2px solid #00857a;
     cursor: pointer;
 }
 
 .stickynote-button {
     /* transform: rotate(-15deg); */
     transition: 0.3s;
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
+    margin: 1rem 10% 1rem 10%;
     /* top: 25%;
   right: 22.5%; */
-    border-radius: 15px;
-    padding: 5px;
-    border: 2px solid black;
+    border-radius: 35px;
+    padding-top: 5px;
+    padding-bottom:5px;
+    padding-left:30px;
+    padding-right: 30px;
+    font-family: Inter;
+    color:#fff;
+    background:#ED695B;
+    border: 2px solid #ED695B;
 }
 
 @media screen and (max-width: 550px) {
