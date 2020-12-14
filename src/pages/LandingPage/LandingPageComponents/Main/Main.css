@@ -2,190 +2,45 @@
     /* min-height: 100vh; */
     align-content: center;
     margin-bottom: -300px;
-    animation: fadeInAnimation ease 1.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    font-family: "Covik Sans";
-    /* src: url("../../../../assets/fonts/Covik Sans-Regular.otf"); */
+    padding-bottom:300px;
+    background-color:#FDF7DC;
 }
 
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+@font-face {
+    font-family: Recoleta;
+    src: url("../../../../assets/fonts/Recoleta-Black.ttf");
 }
 
-#main-img {
-    max-width: 90%;
+@font-face {
+    font-family: Inter;
+    src: url("../../../../assets/fonts/Inter-Bold-slnt=0.ttf");
 }
 
-.main-text {
-    margin: 1rem 10% 1rem 10%;
+.top-text {
+    margin: 1rem 10% 1rem;
+    padding-top: 5rem;
     text-align: left;
     font-size: 2rem;
-    color: white;
+    font-family: Inter;
+    font-weight: bolder;
 }
 
-.main-div {
-    padding: 4rem 0 2rem 0;
-    margin: 0 5% 0 5%;
+.big-text{
+    font-family: Recoleta;
+    margin: 1rem 10% 1rem 10%;
+    font-size: 96px;
+    font-weight: bolder;
+    text-align:left;
 }
 
-.main-items {
-    margin: 0 5% 0 5%;
-    display: flex;
-    justify-content: space-around;
-}
-
-#calendar-img,
-#stickynote-img {
-    max-width: 20rem;
-    min-width: 5rem;
-}
-
-.main-login {
-    transform: rotate(-15deg);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-cal {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-date {
-    font-size: 2.5rem;
-    position: absolute;
-    top: 30%;
-}
-
-.registration-duedate {
-    font-size: 1rem;
-    color: black;
-}
-
-.dates {
-    margin: -1.5rem 0 0 0;
-}
-
-.stickynote-login:hover {
-    color: rgb(0, 146, 141);
-    border: 2px solid rgb(0, 146, 141);
-    cursor: pointer;
-}
-
-.stickynote-dashboard:hover {
-    color: rgb(0, 146, 141);
-    cursor: pointer;
-}
-
-.stickynote-login {
-    transition: 0.3s;
+.bottom-text {
+    margin: 1rem 10% 1rem;
+    text-align: left;
     font-size: 2rem;
-    position: absolute;
-    top: 25%;
-    right: 22.5%;
-    border-radius: 15px;
-    padding: 5px;
-    border: 2px solid black;
+    font-family: Inter;
+    font-weight: bolder;
 }
 
-.stickynote-dashboard {
-    transition: 0.3s;
-    font-size: 2rem;
-    position: absolute;
-    top: 50%;
-    right: 25%;
-}
-
-/* fix for "Welcome to Garage" */
-@media screen and (max-width: 1291px) {
-    .main {
-        margin-bottom: inherit;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    #calendar-img,
-    #stickynote-img {
-        max-width: 60vw;
-        min-width: 10vw;
-    }
-    .main-date {
-        font-size: 5vw;
-        right: 20%;
-        left: 20%;
-    }
-
-    .stickynote-login {
-        font-size: 4vw;
-        right: 22.5%;
-        padding: 2px;
-        border-radius: 10px;
-    }
-    .stickynote-dashboard {
-        font-size: 4vw;
-        right: 10%;
-    }
-    .registration-duedate {
-        font-size: 3.5vw;
-        color: black;
-    }
-
-    .dates {
-        margin: -1.5rem 0 0 0;
-    }
-}
-
-@media screen and (max-height: 600px) {
-    .main {
-        min-height: 50vh;
-    }
-    #calendar-img,
-    #stickynote-img {
-        max-width: 40vh;
-        min-width: 10vh;
-    }
-    .main-date {
-        font-size: 5vh;
-        right: 20%;
-        left: 20%;
-    }
-    .stickynote-login {
-        font-size: 4vh;
-        right: 22.5%;
-        padding: 2px;
-        border-radius: 10px;
-    }
-    .stickynote-dashboard {
-        font-size: 4vh;
-        right: 10%;
-    }
-    .registration-duedate {
-        font-size: 2.5vh;
-        color: black;
-    }
-
-    .dates {
-        margin: -1.5rem 0 0 0;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .main {
-        min-height: 50vh;
-    }
-
-    .main-items {
-        display: flex;
-        flex-wrap: wrap;
-    }
+.main-div{
+    padding-top: 5.5em;
 }
