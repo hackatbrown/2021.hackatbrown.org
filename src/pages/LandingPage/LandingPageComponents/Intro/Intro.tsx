@@ -3,7 +3,7 @@ import "./Intro.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import juiceImg from "../../../../assets/images/LandingPage/JuiceBattery.png";
+import juiceImg from "../../../../assets/images/LandingPage/JuiceBattery.gif";
 
 type IntroProps = {};
 
@@ -43,8 +43,9 @@ export default class Intro extends React.Component<IntroProps, IntroState> {
                         <br/><br/>
                         Whether you’re building your first website, dabbling in
                         Photoshop, or hacking with an Oculus Rift, Hack@Brown is
-                        for individuals of all backgrounds and experiences. This
-                        year, our theme is ‘After School,’ as a tribute to the
+                        for individuals of all backgrounds and experiences.
+                        <br/><br/>
+                        This year, our theme is ‘After School,’ as a tribute to the
                         technology, games, and experiences you had as a child.
                         We want you to take inspiration from your passions and
                         experiment with your wildest ideas. Build away at our

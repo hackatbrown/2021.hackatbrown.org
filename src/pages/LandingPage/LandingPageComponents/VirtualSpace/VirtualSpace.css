@@ -1,10 +1,11 @@
 .virtual {
     align-content: center;
-    margin: 4rem 10% 2rem 10%;
-    padding: 2rem 0 0 0;
+    margin-top: 2rem;
+    padding-top: 2rem;
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%;
+    max-width: 1400px;
+    width: 100%;
     align-items: flex-start;
     justify-content: flex-end;
     color: black;
@@ -13,14 +14,16 @@
 
 #spaceImg {
   max-width: 100%;
+  margin-right: 42px;
+
 }
 
 #registerBtn {
-    border-radius: 25px;
+    border-radius: 35px;
     border: 0px;
     width: 140px;
     height: 55px;
-    padding: 7px 30px;
+    padding: 5px 30px;
     margin-left: 2rem;
     background-color: #ED695B;
     color: white;

@@ -1,18 +1,23 @@
 .intro {
     align-content: center;
-    margin: 4rem 10% 2rem 10%;
-    padding: 2rem 0 0 0;
+    margin-top: 5rem;
+    padding-bottom: 60px;
+    padding-top: 4rem;
     display: flex;
     flex-wrap: wrap;
-    max-width: 100%;
+    max-width: 1400px;
+    width: 100%;
     align-items: flex-start;
     justify-content: flex-end;
     color: white;
-    background-color: #FF6853;
+    background-color: #E26052
+    /* background-color: #FF6853; */
 }
 
 #juiceImg {
-  max-width: 100%;
+  max-width: 120%;
+  min-width: 18rem;
+
 }
 
 .intro-blurb {
@@ -22,12 +27,14 @@
     text-align: left;
     position: relative;
     top: 250px;
+
 }
 
 .intro-blurb-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+
 }
 
 .intro-blurb-header {
