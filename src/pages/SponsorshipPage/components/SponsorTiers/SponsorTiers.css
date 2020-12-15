@@ -1,5 +1,6 @@
 .sponsor-tiers {
-  padding-bottom: 170px;
+  background: rgba(251,238,181,.3);
+  padding: 4rem 3rem 4rem 3rem;
 }
 
 h3.sponsor-tiers {
@@ -8,6 +9,14 @@ h3.sponsor-tiers {
   font-size: 36px;
 }
 
+h3.tiers-header {
+    font-family: Recoleta;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 30px;
+}
 
 svg {
     height: 1rem;
@@ -96,13 +105,14 @@ td:not(:first-child) {
 }
 
 .category {
-  color: #828282;
+    color: #444444 !important;
+    font-weight: bold;
 }
 
 th:nth-child(1),
 td:nth-child(1) {
-  font-weight: 600;
   font-size: 16px;
+  color: #444444;
 }
 
 th:nth-child(2),
@@ -172,5 +182,5 @@ table td.check:before {
     bottom: 0;
     left: 5%;
     right: 5%;
-    background-color: #EFEFF0;
+    background:rgba(253, 247, 220, 1);
 }

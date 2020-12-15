@@ -3,7 +3,7 @@
     z-index: 1;
     top: 0;
     width: 100%;
-    color: white;
+    color: white !important; 
     background-color: rgba(234, 142, 99, 0.9);
 }
 .navBarExtended {
@@ -61,7 +61,7 @@
 .toolbar-sponsors:hover,
 .toolbar-faq:hover {
     transition: 0.2s;
-    color: rgb(0, 146, 141);
+    color: white !important;
     cursor: pointer;
 }
 
@@ -69,4 +69,18 @@
     color: teal;
     border: 1px solid rgb(0, 146, 141);
     cursor: pointer;
+}
+
+a {
+    color: rgba(68, 68, 68, 1) !important;
+}
+
+#register {
+    color: rgba(68, 68, 68, 1);
+    border-radius: 25px;
+    border: 2px solid rgba(68, 68, 68, 1);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
 }

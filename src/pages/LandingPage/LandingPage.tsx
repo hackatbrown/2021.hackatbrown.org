@@ -7,6 +7,7 @@ import Main from "./LandingPageComponents/Main/Main";
 import Sponsors from "./LandingPageComponents/Sponsors/Sponsors";
 import Footer from "./LandingPageComponents/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
+import VirtualSpace from "./LandingPageComponents/VirtualSpace/VirtualSpace";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
 import Background from "../../assets/images/LandingPage/temp_background.png";
 
@@ -55,6 +56,9 @@ export default class LandingPage extends React.Component<
                 </div>
                 <div id="faq">
                     <FAQ />
+                </div>
+                <div id="virtualSpace">
+                    <VirtualSpace />
                 </div>
                 <div id="sponsors">
                     <Sponsors />

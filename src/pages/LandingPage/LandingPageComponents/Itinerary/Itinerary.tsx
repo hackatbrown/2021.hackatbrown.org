@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Itinerary.css";
 import itinImg from "../../../../assets/images/LandingPage/scene_itinerary_mobile.png";
+import src from "*.bmp";
 
 type ItineraryProps = {};
 
@@ -30,29 +31,29 @@ export default class Itinerary extends React.Component<
                             <h1 className="itinerary-header">Itinerary</h1>
                         </div>
                         <div className="row">
-                            <h3>Saturday, January 25th*</h3>
+                            <h3>Day 1</h3>
                         </div>
                         <div className="row">
                             <div className="col">
-                                <div className="row">9:00-10:00am</div>
+                                <div className="row">9:00-11:00am EST</div>
                             </div>
                             <div className="col">
                                 <div className="row font-weight-bold">
                                     Check in
                                 </div>
-                                <div className="row">Friedman Lobby</div>
+                                <div className="row">Location: (pending)</div>
                             </div>
                         </div>
 
                         <div className="row event">
                             <div className="col">
-                                <div className="row">10:00-11:00am</div>
+                                <div className="row">10:00-11:00am EST</div>
                             </div>
                             <div className="col">
                                 <div className="row font-weight-bold">
                                     Sponsor Fair
                                 </div>
-                                <div className="row">Sayles Auditorium</div>
+                                <div className="row">Location: Virtual Platform</div>
                             </div>
                         </div>
 
@@ -64,35 +65,36 @@ export default class Itinerary extends React.Component<
                                 <div className="row font-weight-bold">
                                     Kickoff!
                                 </div>
-                                <div className="row">Salomon DECI</div>
+                                <div className="row">Location: Virtual
+                                Platform</div>
                             </div>
                         </div>
 
                         <div className="row event">
                             <div className="col">
-                                <div className="row">12:00-1:00pm</div>
+                                <div className="row">12:00-1:00pm EST</div>
                             </div>
                             <div className="col">
                                 <div className="row font-weight-bold">
-                                    Lunch & Team Forming
+                                    Team Forming
                                 </div>
-                                <div className="row">Sayles and Friedman</div>
+                                <div className="row">Location: (Pending)</div>
                             </div>
                         </div>
 
                         <div className="row event">
                             <div className="col">
-                                <div className="row">1:00pm</div>
+                                <div className="row">1:00pm EST</div>
                             </div>
                             <div className="col">
                                 <div className="row font-weight-bold">
                                     Hacking Begins!
                                 </div>
-                                <div className="row">Sayles and Friedman</div>
+                                <div className="row">Location (pending)</div>
                             </div>
                         </div>
 
-                        <div className="row event">
+                        {/* <div className="row event">
                             <div className="col">
                                 <div className="row">6:00pm-7:00pm</div>
                             </div>
@@ -115,59 +117,60 @@ export default class Itinerary extends React.Component<
                                 <div className="row">Sayles Auditorium</div>
                             </div>
                         </div>
-                    </div>
+        </div> */}
 
                     <div className="sunday itin-table1">
                         <div className="placeholder-itinerary">.</div>
                         <div className="row">
-                            <h3>Sunday, January 26th</h3>
+                            <h3>Day 2</h3>
                         </div>
                         <div className="row">
                             <div className="col">
-                                <div className="row">8:00-9:00am</div>
+                                <div className="row">10:30am EST</div>
                             </div>
                             <div className="col">
                                 <div className="row font-weight-bold">
-                                    Breakfast
+                                    Hacking Ends
                                 </div>
-                                <div className="row">Sayles Auditorium</div>
+                                <div className="row">Location: *Submit your projects online!</div>
                             </div>
                         </div>
 
                         <div className="row event">
                             <div className="col">
-                                <div className="row">10:30am</div>
-                            </div>
-                            <div className="col">
-                                <div className="row font-weight-bold">
-                                    Hacking ends
-                                </div>
-                                <div className="row">
-                                    *Submit your projects online!
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="row event">
-                            <div className="col">
-                                <div className="row">11:00am</div>
+                                <div className="row">11:00am EST</div>
                             </div>
                             <div className="col">
                                 <div className="row font-weight-bold">
                                     Judging begins
                                 </div>
+                                <div className="row">
+                                    Location: (Zoom links when available)
+                                </div>
                             </div>
                         </div>
 
                         <div className="row event">
                             <div className="col">
-                                <div className="row">1:00pm-2:00pm</div>
+                                <div className="row">1:00pm - 2:00pm</div>
                             </div>
                             <div className="col">
                                 <div className="row font-weight-bold">
-                                    Lunch
+                                    Demo Fair
                                 </div>
-                                <div className="row">Sayles Auditorium</div>
+                                <div className="row">Location: (Zoom/Virtual Platform)</div></div>
+                            </div>
+                        </div>
+
+                        <div className="row event">
+                            <div className="col">
+                                <div className="row">2:30pm EST</div>
+                            </div>
+                            <div className="col">
+                                <div className="row font-weight-bold">
+                                    Closing Ceremonies
+                                </div>
+                                <div className="row">Location (Zoom link when available)</div>
                             </div>
                         </div>
 
@@ -198,10 +201,15 @@ export default class Itinerary extends React.Component<
                 </div>
 
                 <div className="itinerary-img-div">
-                    <img id="itinerary-img" src={itinImg}></img>
+                <video id="samp" width="640" height="480" controls>
+                    <source src = {"/src/assets/LandingPage/itinerary.mp4"} type="video/mp4"/>
+                        Your browser does not support this video format.
+                </video>
                 </div>
 
-                <div className="sunday itin-table2">
+
+
+                {/* <div className="sunday itin-table2">
                     <div className="row">
                         <h3>Sunday, January 27th</h3>
                     </div>
@@ -262,9 +270,9 @@ export default class Itinerary extends React.Component<
                             </div>
                             <div className="row">Friedman 108</div>
                         </div>
-                    </div>
+                    </div> */}
 
-                    <div className="row event">
+                    {/* <div className="row event">
                         <div className="col">
                             <div className="row">2:30pm</div>
                         </div>
@@ -275,7 +283,7 @@ export default class Itinerary extends React.Component<
                             <div className="row">Salomon DECI</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         );
     }

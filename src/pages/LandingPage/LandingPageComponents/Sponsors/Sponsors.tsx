@@ -19,27 +19,27 @@ import bluesocialImg from "../../../../assets/images/LandingPage/companylogo/blu
 type SponsorsProps = {};
 
 type SponsorsState = {
-    state: string;
+  state: string;
 };
 
 export default class Sponsors extends React.Component<
-    SponsorsProps,
-    SponsorsState
+  SponsorsProps,
+  SponsorsState
 > {
-    constructor(props: SponsorsProps) {
-        super(props);
-        this.state = {
-            state: "good"
-        };
-    }
-    render() {
-        return (
-            <div className="sponsors">
-                <div className="sponsors-heading">
-                    <h1>Sponsors</h1>
-                </div>
-                <div className="sponsors-items">
-                    {/* <div className="sponsors-peta">
+  constructor(props: SponsorsProps) {
+    super(props);
+    this.state = {
+      state: "good",
+    };
+  }
+  render() {
+    return (
+      <div className="sponsors">
+        <div className="sponsors-heading">
+          <h1>Sponsors</h1>
+        </div>
+        <div className="sponsors-items">
+          {/* <div className="sponsors-peta">
                         <h2 className="sponsors-name">Peta</h2>
                         <div className="sponsors-img">
                             <img className="sponsors-img-peta" src={placeholderImg}></img>
@@ -57,137 +57,88 @@ export default class Sponsors extends React.Component<
                             <img className="sponsors-img-tera" src={placeholderImg}></img>
                         </div>
                     </div> */}
-                    <div className="sponsors-giga">
-                        <h2 className="sponsors-name">Giga</h2>
-                        <div className="sponsors-img">
-                            <a href="https://www.facebook.com" target="_blank">
-                                <img
-                                    className="sponsors-img-giga"
-                                    src={facebookImg}
-                                ></img>
-                            </a>
-                            <a
-                                href="https://www.accenture.com/us-en"
-                                target="_blank"
-                            >
-                                <img
-                                    className="sponsors-img-giga"
-                                    src={assentureImg}
-                                    style={{
-                                        backgroundColor: "white",
-                                        padding: "20px",
-                                        objectFit: "fill"
-                                    }}
-                                ></img>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="sponsors-mega">
-                        <h2 className="sponsors-name">Mega</h2>
-                        <div className="sponsors-img">
-                            <a href="https://www.google.com/" target="_blank">
-                                <img
-                                    className="sponsors-img-mega"
-                                    src={googleImg}
-                                    style={{
-                                        backgroundColor: "white"
-                                    }}
-                                ></img>
-                            </a>
-                            <a
-                                href="https://www.citizensbank.com"
-                                target="_blank"
-                            >
-                                <img
-                                    className="sponsors-img-mega"
-                                    src={citizensbankImg}
-                                ></img>
-                            </a>
-                            <a href="https://www.bloomberg.com" target="_blank">
-                                <img
-                                    className="sponsors-img-mega"
-                                    src={bloombergImg}
-                                ></img>
-                            </a>
-                            <a href="https://www.dataminr.com" target="_blank">
-                                <img
-                                    className="sponsors-img-mega"
-                                    src={datamnrImg}
-                                ></img>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="sponsors-kilo">
-                        <h2 className="sponsors-name">Kilo</h2>
-                        <div className="sponsors-img">
-                            <a href="https://www.heroku.com/" target="_blank">
-                                <img
-                                    className="sponsors-img-kilo"
-                                    src={herokuImg}
-                                ></img>
-                            </a>
-                            <a href="https://www.redfin.com/" target="_blank">
-                                <img
-                                    className="sponsors-img-kilo"
-                                    src={redfinImg}
-                                ></img>
-                            </a>
-                            <a href="https://www.blue.social" target="_blank">
-                                <img
-                                    className="sponsors-img-kilo"
-                                    src={bluesocialImg}
-                                ></img>
-                            </a>
-                        </div>
-                    </div>
-                    <div className="sponsors-micro">
-                        <h2 className="sponsors-name">Micro</h2>
-                        <div className="sponsors-img">
-                            <a href="https://www.bookbub.com" target="_blank">
-                                <img
-                                    className="sponsors-img-micro"
-                                    src={bookbubImg}
-                                ></img>
-                            </a>
-                            <a href="https://www.pathrise.com" target="_blank">
-                                <img
-                                    className="sponsors-img-micro"
-                                    style={{
-                                        padding: "10px",
-                                        backgroundColor: "white"
-                                    }}
-                                    src={pathRiseimg}
-                                ></img>
-                            </a>
-                            <a href="https://www.mouser.com" target="_blank">
-                                <img
-                                    className="sponsors-img-micro"
-                                    style={{
-                                        padding: "10px",
-                                        backgroundColor: "white",
-                                        overflow: "hidden",
-                                        objectFit: "cover"
-                                    }}
-                                    src={mouserImg}
-                                ></img>
-                            </a>
-                            <a href="https://ripplematch.com/" target="_blank">
-                                <img
-                                    className="sponsors-img-micro"
-                                    style={{
-                                        padding: "10px",
-                                        backgroundColor: "white"
-                                    }}
-                                    src={ripplematchImg}
-                                ></img>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div className="sponsors-img">
-                    <img id="sponsors-image" src={sponsorsImg}></img>
-                </div>
+          <div className="sponsors-giga">
+            <h2 className="sponsors-name">Giga</h2>
+            <div className="sponsors-img">
+              {/* <a href="https://www.facebook.com" target="_blank">
+                <img className="sponsors-img-giga" src={facebookImg}></img>
+              </a> */}
             </div>
-        );
-    }
+          </div>
+          <div className="sponsors-mega">
+            <h2 className="sponsors-name">Mega</h2>
+            <div className="sponsors-img">
+              {/* <a href="https://www.google.com/" target="_blank">
+                <img
+                  className="sponsors-img-mega"
+                  src={googleImg}
+                  style={{
+                    backgroundColor: "white",
+                  }}
+                ></img>
+              </a> */}
+            </div>
+          </div>
+          <div className="sponsors-kilo">
+            <h2 className="sponsors-name">Kilo</h2>
+            <div className="sponsors-img">
+              <a href="https://www.bloomberg.com" target="_blank">
+                <img className="sponsors-img-mega" src={bloombergImg}></img>
+              </a>
+            </div>
+          </div>
+          <div className="sponsors-micro">
+            <h2 className="sponsors-name">Micro</h2>
+            <div className="sponsors-img">
+              {/* <a href="https://www.bookbub.com" target="_blank">
+                <img className="sponsors-img-micro" src={bookbubImg}></img>
+              </a>
+              <a href="https://www.pathrise.com" target="_blank">
+                <img
+                  className="sponsors-img-micro"
+                  style={{
+                    padding: "10px",
+                    backgroundColor: "white",
+                  }}
+                  src={pathRiseimg}
+                ></img>
+              </a>
+              <a href="https://www.mouser.com" target="_blank">
+                <img
+                  className="sponsors-img-micro"
+                  style={{
+                    padding: "10px",
+                    backgroundColor: "white",
+                    overflow: "hidden",
+                    objectFit: "cover",
+                  }}
+                  src={mouserImg}
+                ></img>
+              </a>
+              <a href="https://ripplematch.com/" target="_blank">
+                <img
+                  className="sponsors-img-micro"
+                  style={{
+                    padding: "10px",
+                    backgroundColor: "white",
+                  }}
+                  src={ripplematchImg}
+                ></img>
+              </a> */}
+            </div>
+          </div>
+        </div>
+        {/* <div className="sponsors-img">
+          <img id="sponsors-image" src={sponsorsImg}></img>
+        </div> */}
+        <div className="sponsors-text">
+          Interested in sponsoring Hack@Brown? Reach out to us on{" "}
+          <a href="mailto:sponsor@hackatbrown.org">
+            <b>sponsor@hackatbrown.org</b>
+          </a>
+          !
+        </div>
+      </div>
+    );
+  }
 }

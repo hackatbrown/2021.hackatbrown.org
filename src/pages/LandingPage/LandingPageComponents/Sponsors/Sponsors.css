@@ -1,13 +1,32 @@
 .sponsors {
     align-content: center;
-    margin: 0 10% 2rem 10%;
     text-align: left;
-    color: white;
+		color: #444444;
+		background-color: #FDF7DC;
 }
 
 .sponsors-heading {
     margin: 0 10% 2rem 10%;
-    padding: 3rem 0 0 0;
+		padding: 3rem 0 0 0;
+}
+
+.sponsors-heading h1 {
+	font-family: Recoleta;
+	font-style: normal;
+	font-weight: bold;
+	color: #444444;
+}
+
+.sponsors-text {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	margin: 0 10% 0 10%;
+	padding: 3rem 0 10rem 0;
+}
+
+.sponsors-text a {
+	text-decoration: none;
 }
 
 .sponsors-items {
@@ -18,8 +37,12 @@
     justify-content: space-between;
 }
 
+
 .sponsors-name {
-    margin: 2rem 0 1rem 0;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bold;
+	margin: 2rem 0 1rem 0;
 }
 
 /* .sponsors-peta {
