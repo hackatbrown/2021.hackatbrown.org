@@ -1,6 +1,6 @@
 import React from "react";
 import "./faq.css";
-import faqImg from "../../../../assets/images/LandingPage/scene_faq_transparent.png";
+import faqImg from "../../../../assets/images/LandingPage/faq.gif";
 
 type FAQprops = {};
 
@@ -31,7 +31,7 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
                     </div>
                     <br></br>
                     <div className="faq-2">
-                        <h4>I don't have a team. Can I still participate?</h4>
+                        <h4>I don't have a team. Can I still participate???</h4>
                         <p>
                             Of course! It is not necessary to have a team prior
                             to coming to Hack@Brown. We’ll have some fun
@@ -43,14 +43,10 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
                     <br></br>
                     <div className="faq-3">
                         <h4>
-                            Will there be a standby line the day-of the event?
+                           
                         </h4>
                         <p>
-                            Yes, there will be a standby line if accepted
-                            attendees do not show up! The line will open when
-                            registration starts (9am) and students will be
-                            admitted off the standby line after registration
-                            ends (10:30am).
+                           
                         </p>
                     </div>
                 </div>
