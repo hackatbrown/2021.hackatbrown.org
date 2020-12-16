@@ -4,17 +4,17 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-type ItineraryProps = {};
+type  FooterProps = {};
 
-type ItineraryState = {
+type FooterState = {
   state: string;
 };
 
 export default class Itinerary extends React.Component<
-  ItineraryProps,
-  ItineraryState
+  FooterProps,
+  FooterState
 > {
-  constructor(props: ItineraryProps) {
+  constructor(props: FooterProps) {
     super(props);
     this.state = {
       state: "good",
