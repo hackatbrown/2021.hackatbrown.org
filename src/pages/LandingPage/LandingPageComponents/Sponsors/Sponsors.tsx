@@ -14,6 +14,7 @@ import bloombergImg from "../../../../assets/images/LandingPage/companylogo/Bloo
 import redfinImg from "../../../../assets/images/LandingPage/companylogo/Redfin.jpg";
 import ripplematchImg from "../../../../assets/images/LandingPage/companylogo/ripplematch.svg";
 import datamnrImg from "../../../../assets/images/LandingPage/companylogo/dataminr.png";
+import neevaImg from "../../../../assets/images/LandingPage/companylogo/neeva.png";
 import bluesocialImg from "../../../../assets/images/LandingPage/companylogo/bluesocial.png";
 
 type SponsorsProps = {};
@@ -83,38 +84,17 @@ export default class Sponsors extends React.Component<
             <h2 className="sponsors-name">Kilo</h2>
             <div className="sponsors-img">
               <a href="https://www.bloomberg.com" target="_blank">
-                <img className="sponsors-img-mega" src={bloombergImg}></img>
+                <img className="sponsors-img-kilo" src={bloombergImg}></img>
+              </a>
+              <a href="https://www.neeva.co" target="_blank">
+                <img className="sponsors-img-kilo" src={neevaImg}></img>
               </a>
             </div>
           </div>
           <div className="sponsors-micro">
             <h2 className="sponsors-name">Micro</h2>
             <div className="sponsors-img">
-              {/* <a href="https://www.bookbub.com" target="_blank">
-                <img className="sponsors-img-micro" src={bookbubImg}></img>
-              </a>
-              <a href="https://www.pathrise.com" target="_blank">
-                <img
-                  className="sponsors-img-micro"
-                  style={{
-                    padding: "10px",
-                    backgroundColor: "white",
-                  }}
-                  src={pathRiseimg}
-                ></img>
-              </a>
-              <a href="https://www.mouser.com" target="_blank">
-                <img
-                  className="sponsors-img-micro"
-                  style={{
-                    padding: "10px",
-                    backgroundColor: "white",
-                    overflow: "hidden",
-                    objectFit: "cover",
-                  }}
-                  src={mouserImg}
-                ></img>
-              </a>
+              {/* 
               <a href="https://ripplematch.com/" target="_blank">
                 <img
                   className="sponsors-img-micro"
