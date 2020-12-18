@@ -3,8 +3,9 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./Itinerary.css";
-import itinImg from "../../../../assets/images/LandingPage/scene_itinerary_mobile.png";
+import itinImg from "../../../../assets/images/LandingPage/itinerary.mp4";
 import src from "*.bmp";
+
 
 type ItineraryProps = {};
 
@@ -29,11 +30,16 @@ export default class Itinerary extends React.Component<
                     <div className="saturday itin-table">
                         <div className="row">
                             <h1 className="itinerary-header">Itinerary</h1>
+                            <h2>Waiting for Embedding</h2>
+                            <video className="video" muted autoPlay loop src={itinImg} width={862} height={404}/>
                         </div>
-                        <div className="row">
+                        <div className="itinerary-img-div">
+                            
+                        </div>
+                        {/* <div className="row">
                             <h3>Day 1</h3>
-                        </div>
-                        <div className="row">
+                        </div> */}
+                        {/* <div className="row">
                             <div className="col">
                                 <div className="row">9:00-11:00am EST</div>
                             </div>
@@ -92,7 +98,7 @@ export default class Itinerary extends React.Component<
                                 </div>
                                 <div className="row">Location (pending)</div>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* <div className="row event">
                             <div className="col">
@@ -119,7 +125,7 @@ export default class Itinerary extends React.Component<
                         </div>
         </div> */}
 
-                    <div className="sunday itin-table1">
+                    {/* <div className="sunday itin-table1">
                         <div className="placeholder-itinerary">.</div>
                         <div className="row">
                             <h3>Day 2</h3>
@@ -196,16 +202,12 @@ export default class Itinerary extends React.Component<
                                 </div>
                                 <div className="row">Salomon DECI</div>
                             </div>
-                        </div>
-                    </div>
+                        </div> */}
+                    </div> 
                 </div>
+                
 
-                <div className="itinerary-img-div">
-                <video id="samp" width="640" height="480" controls>
-                    <source src = {"/src/assets/LandingPage/itinerary.mp4"} type="video/mp4"/>
-                        Your browser does not support this video format.
-                </video>
-                </div>
+                
 
 
 

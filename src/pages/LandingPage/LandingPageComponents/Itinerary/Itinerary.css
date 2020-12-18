@@ -27,6 +27,14 @@
     margin: 3rem 0 4rem 0;
 }
 
+.video {
+    width: 862px;
+    height: 404px;
+    left: 290px;
+    right: 290px;
+    padding-right: 10%;
+}
+
 .saturday {
     width: 540px;
     margin: 0 1rem 0 0;
