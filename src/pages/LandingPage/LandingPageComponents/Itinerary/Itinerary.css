@@ -22,16 +22,14 @@
     margin-right: -15px;
 }
 
-#itinerary-img {
+/* #itinerary-img {
     max-width: 90%;
     margin: 3rem 0 4rem 0;
-}
+} */
 
 .video {
     width: 862px;
-    height: 404px;
-    left: 290px;
-    right: 290px;
+    height: 404px;   
     padding-right: 10%;
 }
 
