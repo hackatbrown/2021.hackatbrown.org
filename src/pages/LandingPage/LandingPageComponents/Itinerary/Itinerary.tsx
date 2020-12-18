@@ -30,15 +30,18 @@ export default class Itinerary extends React.Component<
                     <div className="saturday itin-table">
                         <div className="row">
                             <h1 className="itinerary-header">Itinerary</h1>
-                            <h2>Waiting for Embedding</h2>
+                            <br></br>
+                            
+                           
+                        </div>
+                        <div className="row">
+                            <h3>Coming Soon!</h3>
                             <video className="video" muted autoPlay loop src={itinImg} width={862} height={404}/>
                         </div>
                         <div className="itinerary-img-div">
                             
                         </div>
-                        {/* <div className="row">
-                            <h3>Day 1</h3>
-                        </div> */}
+                        
                         {/* <div className="row">
                             <div className="col">
                                 <div className="row">9:00-11:00am EST</div>
