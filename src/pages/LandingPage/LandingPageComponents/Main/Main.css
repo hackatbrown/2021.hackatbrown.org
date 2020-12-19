@@ -1,9 +1,13 @@
+html,body{
+    overflow-x: hidden;
+}
 .main {
     /* min-height: 100vh; */
     align-content: center;
-    margin-bottom: -300px;
-    padding-bottom:300px;
+    margin-bottom: 0px;
+    padding-bottom:100px;
     background-color:#FDF7DC;
+    
 }
 
 @font-face {
@@ -43,4 +47,158 @@
 
 .main-div{
     padding-top: 5.5em;
+}
+
+.main-img{
+    height:60%;
+    width:60%;
+    margin-top:-400px;
+    margin-left:480px;
+}
+.plane-one{
+    height:28%;
+    width:28%;
+    transform: scaleX(-1);
+    margin-top:-370px;
+    position: absolute;
+    margin-left:-650px;
+}
+.plane-one-st{
+    height:28%;
+    width:28%;
+    transform: scaleX(-1);
+    margin-left:650px;
+    position: absolute;
+    margin-top:-490px;
+}
+.scene:hover .plane-one{
+    animation: onemove 5s ;
+    animation-iteration-count: 1
+}
+.scene:hover .plane-two{
+    animation: twomove 5s ;
+    animation-delay:0.3s;
+    animation-iteration-count: 1;
+}
+.scene:hover .plane-three{
+    animation: threemove 5s ;
+    animation-delay:0.2s;
+    animation-iteration-count: 1
+}
+.scene:hover .plane-one-st{
+    animation: oneupmove 5s infinite;
+    animation-delay: 1.2s;
+    animation-iteration-count: 1
+}
+.scene:hover .plane-two-st{
+    animation: twoupmove 5s infinite;
+    animation-delay: 1.3s;
+    animation-iteration-count: 1
+}
+.scene:hover .plane-three-st{
+    animation: threeupmove 5s infinite;
+    animation-delay:1.5s;
+    animation-iteration-count: 1
+}
+
+
+.plane-two{
+    height:23%;
+    width:23%;
+    transform: scaleX(-1);
+    position: absolute;
+    margin-top:-720px;
+    margin-left:220px;
+}
+.plane-two-st{
+    height:23%;
+    width:23%;
+    transform: scaleX(-1);
+    position: absolute;
+    margin-left:740px;
+    margin-top:-490px;
+}
+.plane-three{
+    height:18%;
+    width:18%;
+    margin-top:-600px;
+    margin-left: 450px;
+    position: absolute;
+    transform: scaleX(-1);
+}
+.plane-three-st{
+    height:18%;
+    width:18%;
+    position: absolute;
+    transform: scaleX(-1);
+    margin-left:700px;
+    margin-top:-520px;
+}
+@keyframes onemove {
+    0%{
+        margin-left:-650px;
+        margin-top:-370px
+    }
+    45%{
+        margin-left:-1500px;
+        margin-top:50px;
+    }
+    100%{
+        margin-left:-1600px;
+        margin-top:70px;
+    }
+}
+@keyframes twomove{
+    0%{
+        margin-left:220px;
+        margin-top:-720px
+    }
+    60%{
+        margin-left:-850px;
+        margin-top:-280px;
+    }
+    100%{
+        margin-left:-830px;
+        margin-top:-280px;
+    }
+}
+@keyframes threemove{
+    0%{
+        margin-left:450px;
+        margin-top:-600px
+    }
+    100%{
+        margin-left:-930px;
+        margin-top:-280px;
+    }
+}
+@keyframes oneupmove{
+    0%{
+        margin-left:650px;
+        margin-top:-490px;
+    }
+    100%{
+        margin-left:-20px;
+        margin-top:-795px;
+    }
+}
+@keyframes twoupmove{
+    0%{
+        margin-left:740px;
+        margin-top:-490px;
+    }
+    100%{
+        margin-left:225px;
+        margin-top:-815px;
+    }
+}
+@keyframes threeupmove{
+    0%{
+        margin-left:700px;
+        margin-top:-520px;
+    }
+    100%{
+        margin-left:440px;
+        margin-top:-695px;
+    }
 }
