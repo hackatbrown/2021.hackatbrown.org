@@ -15,6 +15,7 @@ import redfinImg from "../../../../assets/images/LandingPage/companylogo/Redfin.
 import ripplematchImg from "../../../../assets/images/LandingPage/companylogo/ripplematch.svg";
 import datamnrImg from "../../../../assets/images/LandingPage/companylogo/dataminr.png";
 import neevaImg from "../../../../assets/images/LandingPage/companylogo/neeva.png";
+import sketchImg from "../../../../assets/images/LandingPage/companylogo/sketch.png";
 import bluesocialImg from "../../../../assets/images/LandingPage/companylogo/bluesocial.png";
 
 type SponsorsProps = {};
@@ -94,17 +95,16 @@ export default class Sponsors extends React.Component<
           <div className="sponsors-micro">
             <h2 className="sponsors-name">Micro</h2>
             <div className="sponsors-img">
-              {/* 
-              <a href="https://ripplematch.com/" target="_blank">
+              <a href="https://www.sketch.com/" target="_blank">
                 <img
                   className="sponsors-img-micro"
                   style={{
                     padding: "10px",
                     backgroundColor: "white",
                   }}
-                  src={ripplematchImg}
+                  src={sketchImg}
                 ></img>
-              </a> */}
+              </a>
             </div>
           </div>
         </div>
