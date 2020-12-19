@@ -2,6 +2,10 @@ import React from "react";
 import "./Main.css";
 import { FirebaseContextConsumer } from "../../../../components/Firebase/context";
 import LoginJoin from "../LoginJoin/LoginJoin";
+import mainimg from "../../../../assets/images/LandingPage/main.png";
+import airplane from "../../../../assets/images/LandingPage/airplane.png";
+import airplane2 from "../../../../assets/images/LandingPage/airplane2.png";
+import airplane3 from "../../../../assets/images/LandingPage/airplane3.png";
 
 type MainProps = {
     hideToolbar: any;
@@ -21,23 +25,28 @@ export default class Main extends React.Component<MainProps, MainState> {
     }
     render() {
         return (
-            <div className="main">
+            <><div className="main">
                 <div className="main-div">
                     <h1 style={{ color: '#444' }} className="top-text">Hack@Brown 2021 presents:</h1>
                     <h1 style={{ color: '#444' }} className="big-text">AfterSchool</h1>
                     <h1 style={{ color: '#444' }} className="bottom-text">Jan 22-24</h1>
                 </div>
-                    <FirebaseContextConsumer>
-                        {firebase => (
-                            <LoginJoin
-                                apiURL={this.props.apiURL}
-                                firebase={
-                                    firebase == null ? null : firebase.firebase
-                                }
-                                hideToolbar={this.props.hideToolbar}
-                            />
-                        )}
-                    </FirebaseContextConsumer></div>
+                <FirebaseContextConsumer>
+                    {firebase => (
+                        <LoginJoin
+                            apiURL={this.props.apiURL}
+                            firebase={firebase == null ? null : firebase.firebase}
+                            hideToolbar={this.props.hideToolbar} />
+                    )}
+                </FirebaseContextConsumer>
+                <div className = "scene">
+                <img src={mainimg} className="main-img"></img>
+                <img src={airplane} className="plane-one"></img><br/>
+                <img src={airplane2} className="plane-two"></img><br/>
+                <img src={airplane3} className="plane-three"></img><br/>
+                <img src={airplane} className="plane-one-st"></img><br/><br/>
+                <img src={airplane2} className="plane-two-st"></img><br/>
+                <img src={airplane3} className="plane-three-st"></img></div></div></>
         );
     }
 }
