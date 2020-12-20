@@ -10,10 +10,3 @@
 .landing-page h1 {
     color: white;
 }
-
-.landing-page {
-    background-image: url("../../assets/images/LandingPage/background-tile.png");
-    background-repeat: repeat;
-    background-position: center;
-   /* background-attachment: fixed;*/
-}

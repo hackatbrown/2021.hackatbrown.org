@@ -9,7 +9,6 @@ import Footer from "./LandingPageComponents/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import VirtualSpace from "./LandingPageComponents/VirtualSpace/VirtualSpace";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
-import Background from "../../assets/images/LandingPage/temp_background.png";
 
 type LandingPageProps = {
   apiURL : string

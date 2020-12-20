@@ -22,10 +22,10 @@
     text-align: center;
     font-family: Inter, sans-serif;
     height: 100%;
-    background-image: url("assets/images/LandingPage/temp_background.png");
+    /* background-image: url("assets/images/LandingPage/temp_background.png");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
 }
 
 h1, h2, h3, h4, h5, h6 {
