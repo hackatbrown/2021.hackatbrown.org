@@ -191,9 +191,10 @@ label {
     padding-left:30px;
     padding-right: 30px;
     font-family: Inter;
-    color:#fff;
+    color:#fff !important;
     background:#ED695B;
-    border: 2px solid #ED695B;
+		border: 2px solid #ED695B;
+		display: flex;
 }
 
 @media screen and (max-width: 550px) {
