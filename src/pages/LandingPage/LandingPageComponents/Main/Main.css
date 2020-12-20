@@ -64,6 +64,7 @@ html,body{
     margin-left:-650px;
 }
 .plane-one-st{
+    display: None;
     height:28%;
     width:28%;
     transform: scaleX(-1);
@@ -86,16 +87,19 @@ html,body{
     animation-iteration-count: 1
 }
 .scene:hover .plane-one-st{
+    display: inline;
     animation: oneupmove 5s infinite;
     animation-delay: 1.2s;
     animation-iteration-count: 1
 }
 .scene:hover .plane-two-st{
+    display: inline;
     animation: twoupmove 5s infinite;
     animation-delay: 1.3s;
     animation-iteration-count: 1
 }
 .scene:hover .plane-three-st{
+    display: inline;
     animation: threeupmove 5s infinite;
     animation-delay:1.5s;
     animation-iteration-count: 1
@@ -111,6 +115,7 @@ html,body{
     margin-left:220px;
 }
 .plane-two-st{
+    display: None;
     height:23%;
     width:23%;
     transform: scaleX(-1);
@@ -127,6 +132,7 @@ html,body{
     transform: scaleX(-1);
 }
 .plane-three-st{
+    display: None;
     height:18%;
     width:18%;
     position: absolute;

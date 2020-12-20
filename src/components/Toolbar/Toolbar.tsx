@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Nav, Button, NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
-import logoImg from "../../assets/images/LandingPage/whitepaw.png";
+import logoImg from "../../assets/images/LandingPage/blackpaw.png";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Firebase from "../Firebase";
 import { Redirect } from "react-router-dom";
