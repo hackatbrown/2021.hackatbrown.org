@@ -5,9 +5,13 @@
 		background-color: #FDF7DC;
 }
 
+.sponsors-section {
+    margin: 2rem 2rem 2rem 0;
+}
+
 .sponsors-heading {
     margin: 0 10% 2rem 10%;
-		padding: 3rem 0 0 0;
+    padding: 3rem 0 0 0;
 }
 
 .sponsors-heading h1 {
@@ -34,7 +38,6 @@
     padding: 0 0 4rem 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 
@@ -129,7 +132,7 @@
     transition: 0.2s ease-in-out;
     max-width: 15vw;
     max-height: 60px;
-    margin: 0.5rem;
+    margin: 1rem 2rem 1rem 0;
     object-fit: cover;
 }
 
@@ -139,7 +142,11 @@
 }
 
 .sponsors-micro {
-    max-width: 30rem;
+    transition: 0.2s ease-in-out;
+    max-width: 13vw;
+    max-height: 30px;
+    margin: 1rem 2rem 1rem 0;
+    object-fit: cover;
 }
 
 .sponsors-img-micro {
@@ -153,9 +160,4 @@
 .sponsors-img-micro:hover {
     cursor: pointer;
     transform: scale(1.1);
-}
-
-#sponsors-image {
-    max-width: 90%;
-    margin: -3rem 0 4rem 0;
 }
