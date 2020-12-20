@@ -1,9 +1,10 @@
 .faq {
     align-content: start;
-    margin: 2rem 10% 2rem 10%;
+    /* margin: 2rem 10% 2rem 10%; */
     display: flex;
     flex-wrap: wrap;
     max-width: 100%;
+    min-height: 100vh;
     align-items: flex-start;
     justify-content: flex-start;
     color: white;
@@ -23,6 +24,12 @@
     max-width: 20rem;
     min-width: 30vw;
     text-align: left;
+    font-weight: 100;
+}
+
+.faq-subtitle {
+    font-family: 'Inter';
+    font-size: 1rem !important;
 }
 
 @media screen and (max-width: 952px) {

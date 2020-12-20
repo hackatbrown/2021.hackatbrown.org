@@ -24,14 +24,14 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
                     </div>
 
                     <div className="faq-1">
-                        <h4>Who can attend?</h4>
+                        <h4 className="faq-subtitle">Who can attend?</h4>
                         <p>
                             All undergraduate and graduate students are welcome.
                         </p>
                     </div>
                     <br></br>
                     <div className="faq-2">
-                        <h4>I don't have a team. Can I still participate???</h4>
+                        <h4 className="faq-subtitle">I don't have a team. Can I still participate?</h4>
                         <p>
                             Of course! It is not necessary to have a team prior
                             to coming to Hack@Brown. We’ll have some fun
@@ -40,15 +40,15 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
                             up to four people on a team.
                         </p>
                     </div>
-                    <br></br>
+                    {/* <br></br>
                     <div className="faq-3">
                         <h4>
-                           
+
                         </h4>
                         <p>
-                           
+
                         </p>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="faq-img-div">

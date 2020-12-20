@@ -3,12 +3,19 @@
 }
 
 .itinerary {
-    margin: 4rem 10% 1rem 20%;
+    /* margin: 4rem 10% 1rem 20%; */
     padding: 2rem 0 0 0;
+    min-height: 100vh;
     color: white;
     text-align: left;
     /* background-color: #46B5B8; */
     background-color: #49c2c3;
+}
+
+.coming-soon {
+    font-family: "Inter";
+    font-weight: 100;
+    font-size: 1.2rem;
 }
 
 .placeholder-itinerary {
