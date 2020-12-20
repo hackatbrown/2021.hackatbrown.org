@@ -7,7 +7,8 @@
     padding: 2rem 0 0 0;
     color: white;
     text-align: left;
-    background-color: #46B5B8;
+    /* background-color: #46B5B8; */
+    background-color: #49c2c3;
 }
 
 .placeholder-itinerary {
@@ -29,7 +30,7 @@
 
 .video {
     width: 862px;
-    height: 404px;   
+    height: 404px;
     padding-right: 10%;
 }
 
