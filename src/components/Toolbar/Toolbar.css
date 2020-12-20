@@ -3,8 +3,9 @@
     z-index: 1;
     top: 0;
     width: 100%;
-    color: white !important; 
+    color: white !important;
     background-color:#FDF7DC;
+    font-weight: 100;
 }
 .navBarExtended {
     padding: 1000px;

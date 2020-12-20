@@ -31,17 +31,17 @@ export default class Itinerary extends React.Component<
                         <div className="row">
                             <h1 className="itinerary-header">Itinerary</h1>
                             <br></br>
-                            
-                           
+
+
                         </div>
                         <div className="row">
-                            <h3>Coming Soon!</h3>
+                            <h3 className="coming-soon">Our itinerary will be posted here closer to the day of the event. Stay tuned!</h3>
                             <video className="video" muted autoPlay loop src={itinImg} width={862} height={404}/>
                         </div>
                         <div className="itinerary-img-div">
-                            
+
                         </div>
-                        
+
                         {/* <div className="row">
                             <div className="col">
                                 <div className="row">9:00-11:00am EST</div>
@@ -206,11 +206,11 @@ export default class Itinerary extends React.Component<
                                 <div className="row">Salomon DECI</div>
                             </div>
                         </div> */}
-                    </div> 
+                    </div>
                 </div>
-                
 
-                
+
+
 
 
 

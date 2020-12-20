@@ -125,8 +125,8 @@ export default class WhySponsor extends React.Component<
                         </Col>
                         <Col sm={4}>
                             <div className="why-sponsor-right">
-                                <b><p>Questions?</p>
-                                <a href="mailto:sponsor@hackatbrown.org">
+                                <b><p id="heading1">Questions?</p>
+                                <a id="sponsor-email" href="mailto:sponsor@hackatbrown.org">
                                     sponsor@hackatbrown.org
                                 </a></b>
 

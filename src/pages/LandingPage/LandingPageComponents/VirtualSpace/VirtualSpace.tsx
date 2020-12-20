@@ -30,7 +30,7 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                     </h1>
                     <p className="virtual-blurb-text">
                         To make our events more interactive, we are launching
-                        a new virtual space that allowd you to book coffee chats
+                        a new virtual space that allows you to book coffee chats
                         with sponsors, check out the latest announcements, and
                         find the links to workshops! Access the Virtual Space
                         by registering!
