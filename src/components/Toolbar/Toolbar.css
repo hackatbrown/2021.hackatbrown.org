@@ -3,7 +3,6 @@
     z-index: 1;
     top: 0;
     width: 100%;
-    color: white !important; 
     background-color:#FDF7DC;
     font-weight: 100;
 }
@@ -47,7 +46,7 @@
     flex-direction: row;
 }
 
-.toolbar-signin {
+/* .toolbar-signin {
     width: 6rem;
     color: white;
     padding: 0 1rem 0 1rem;
@@ -55,26 +54,32 @@
     border-radius: 10px;
     border: 1px solid white;
     transition: 0.2s;
+} */
+
+.toolbar-virtual-space,
+.toolbar-about,
+.toolbar-itinerary,
+.toolbar-sponsors,
+.toolbar-faq {
+    color: rgba(68, 68, 68, 1) !important;
 }
 
+.toolbar-virtual-space:hover,
 .toolbar-about:hover,
 .toolbar-itinerary:hover,
 .toolbar-sponsors:hover,
 .toolbar-faq:hover {
-    transition: 0.2s;
-    color: white !important;
+    /* transition: 0.2s;
+    color: white !important; */
     cursor: pointer;
+    border: none !important;
 }
 
-.toolbar-signin:hover {
+/* .toolbar-signin:hover {
     color: rgb(0, 146, 141);
     border: 1px solid rgb(0, 146, 141);
     cursor: pointer;
-}
-
-a {
-    color: rgba(68, 68, 68, 1) !important;
-}
+} */
 
 #register {
     color: rgba(68, 68, 68, 1);

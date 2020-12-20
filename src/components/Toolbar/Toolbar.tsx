@@ -178,6 +178,29 @@ export default class Toolbar extends React.Component<
 
                                 <Col>
                                     <div
+                                        className="toolbar-virtual-space"
+                                        style={{
+                                            display:
+                                                window.location.pathname === "/"
+                                                    ? "initial"
+                                                    : "none"
+                                        }}
+                                    >
+                                        <Link
+                                            activeClass="active"
+                                            to="virtual"
+                                            spy={true}
+                                            smooth={true}
+                                            offset={-70}
+                                            duration={500}
+                                        >
+                                            Virtual&nbsp;Space
+                                        </Link>
+                                    </div>
+                                </Col>
+
+                                <Col>
+                                    <div
                                         className="toolbar-sponsors"
                                         style={{
                                             display:
@@ -204,9 +227,10 @@ export default class Toolbar extends React.Component<
                                         className="toolbar-registration"
                                         style={{
                                             display:
-                                                window.location.pathname === "/"
-                                                    ? "initial"
-                                                    : "none"
+                                                // window.location.pathname === "/"
+                                                //     ? "initial"
+                                                //     : "none"
+                                                "none"
                                         }}
                                     >
                                         <Link id = "register"
