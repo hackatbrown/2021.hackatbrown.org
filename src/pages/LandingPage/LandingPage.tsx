@@ -43,7 +43,7 @@ export default class LandingPage extends React.Component<
                     {firebase => (
                         <Toolbar
                             firebase={firebase == null ? null : firebase.firebase}
-                            backgroundColor={"rgba(234, 142, 99, 0.9)"}
+                            backgroundColor={"#FDF7DC"}
                         />
                     )}
                 </FirebaseContextConsumer>
