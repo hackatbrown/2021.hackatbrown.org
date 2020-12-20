@@ -35,21 +35,17 @@ export default class Intro extends React.Component<IntroProps, IntroState> {
                         Welcome to H@B!
                     </h1>
                     <p className="intro-blurb-text">
-                        Hack@Brown is all about learning. Spend a virtual weekend
-                        with us to take a step out of your comfort zone. Use
-                        Hack@Brown as an opportunity to experiment with a new
-                        platform, API, or that idea that’s always been in the
-                        back of your mind!
+                        Hack@Brown is all about learning. Spend a <span className='bold'>virtual</span> weekend
+                        with 500 other students to take a step out of your comfort
+                        zone!
                         <br/><br/>
-                        Whether you’re building your first website, dabbling in
-                        Photoshop, or hacking with an Oculus Rift, Hack@Brown is
-                        for individuals of all backgrounds and experiences.
+                        Whether you’re building your first website, dabbling in Photoshop,
+                        or hacking with an Oculus Rift, Hack@Brown is for individuals of
+                        all backgrounds.
                         <br/><br/>
-                        This year, our theme is ‘After School,’ as a tribute to the
-                        technology, games, and experiences you had as a child.
-                        We want you to take inspiration from your passions and
-                        experiment with your wildest ideas. Build away at our
-                        first virtual iteration of Hack@Brown!
+                        This year, our theme is <span className='bold'>"After School." </span>
+                        Take inspiration from your passions and experiment with your wildest ideas.
+                        Build away!
                     </p>
                 </div>
                 </Col>
