@@ -32,7 +32,7 @@ export default class Intro extends React.Component<IntroProps, IntroState> {
                         <Col sm={5}>
                 <div className="intro-blurb">
                     <h1 className="intro-blurb-header">
-                        Welcome to After School!
+                        Welcome to H@B!
                     </h1>
                     <p className="intro-blurb-text">
                         Hack@Brown is all about learning. Spend a virtual weekend
