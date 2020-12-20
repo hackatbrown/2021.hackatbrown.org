@@ -1,22 +1,9 @@
 import React from "react";
 import "./Sponsors.css";
 import placeholderImg from "../../../../assets/images/LandingPage/placeholder2.png";
-import sponsorsImg from "../../../../assets/images/LandingPage/scene_sponsors_transparent_left1.png";
-import facebookImg from "../../../../assets/images/LandingPage/companylogo/facebook.png";
-import googleImg from "../../../../assets/images/LandingPage/companylogo/google.png";
-import bookbubImg from "../../../../assets/images/LandingPage/companylogo/bookbub.jpg";
-import assentureImg from "../../../../assets/images/LandingPage/companylogo/accenture.png";
-import herokuImg from "../../../../assets/images/LandingPage/companylogo/heroku-purple.png";
-import pathRiseimg from "../../../../assets/images/LandingPage/companylogo/pathrise.svg";
-import citizensbankImg from "../../../../assets/images/LandingPage/companylogo/Citizens-Logo-1.jpg";
-import mouserImg from "../../../../assets/images/LandingPage/companylogo/Mouser.jpg";
 import bloombergImg from "../../../../assets/images/LandingPage/companylogo/Bloomberg.png";
-import redfinImg from "../../../../assets/images/LandingPage/companylogo/Redfin.jpg";
-import ripplematchImg from "../../../../assets/images/LandingPage/companylogo/ripplematch.svg";
-import datamnrImg from "../../../../assets/images/LandingPage/companylogo/dataminr.png";
 import neevaImg from "../../../../assets/images/LandingPage/companylogo/neeva.png";
 import sketchImg from "../../../../assets/images/LandingPage/companylogo/sketch.png";
-import bluesocialImg from "../../../../assets/images/LandingPage/companylogo/bluesocial.png";
 
 type SponsorsProps = {};
 
@@ -59,29 +46,26 @@ export default class Sponsors extends React.Component<
                             <img className="sponsors-img-tera" src={placeholderImg}></img>
                         </div>
                     </div> */}
-          <div className="sponsors-giga">
+          <div className="sponsors-giga sponsors-section">
             <h2 className="sponsors-name">Giga</h2>
             <div className="sponsors-img">
+              <a href="#" target="_blank">
+                <img id="sponsors-img-giga" src={placeholderImg}></img>
+              </a>
               {/* <a href="https://www.facebook.com" target="_blank">
                 <img className="sponsors-img-giga" src={facebookImg}></img>
               </a> */}
             </div>
           </div>
-          <div className="sponsors-mega">
+          <div className="sponsors-mega sponsors-section">
             <h2 className="sponsors-name">Mega</h2>
             <div className="sponsors-img">
-              {/* <a href="https://www.google.com/" target="_blank">
-                <img
-                  className="sponsors-img-mega"
-                  src={googleImg}
-                  style={{
-                    backgroundColor: "white",
-                  }}
-                ></img>
-              </a> */}
+              <a href="#" target="_blank">
+                <img id="sponsors-img-mega" src={placeholderImg}></img>
+              </a>
             </div>
           </div>
-          <div className="sponsors-kilo">
+          <div className="sponsors-kilo sponsors-section">
             <h2 className="sponsors-name">Kilo</h2>
             <div className="sponsors-img">
               <a href="https://www.bloomberg.com" target="_blank">
@@ -92,7 +76,7 @@ export default class Sponsors extends React.Component<
               </a>
             </div>
           </div>
-          <div className="sponsors-micro">
+          <div className="sponsors-micro sponsors-section">
             <h2 className="sponsors-name">Micro</h2>
             <div className="sponsors-img">
               <a href="https://www.sketch.com/" target="_blank">
@@ -108,9 +92,6 @@ export default class Sponsors extends React.Component<
             </div>
           </div>
         </div>
-        {/* <div className="sponsors-img">
-          <img id="sponsors-image" src={sponsorsImg}></img>
-        </div> */}
         <div className="sponsors-text">
           Interested in sponsoring Hack@Brown? Reach out to us on{" "}
           <a href="mailto:sponsor@hackatbrown.org">
