@@ -6,6 +6,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import Radio from "@material-ui/core/Radio";
+import Checkbox from "@material-ui/core/Checkbox";
+import FormGroup from "@material-ui/core/FormGroup";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import NumberFormat from "react-number-format";
 import { Link } from "react-router-dom";
@@ -244,62 +246,106 @@ export default class BasicInfo extends React.Component<
             </FormControl>
           </div>
 
-          {/* TODO: style this better */}
-          <div className="basic-info-6">
+          <div className="basic-info-5">
             <div className="confirm">
               <FormControl className="mlhConduct">
-                <RadioGroup
-                  value={
-                    this.props.currentSelected["mlhConduct"] == null
-                      ? "none"
-                      : this.props.currentSelected["mlhConduct"]
-                      ? "yes"
-                      : "no"
-                  }
-                >
+                <FormGroup>
                   <FormControlLabel
-                    style={{ color: "white" }}
+                    style={{ color: "white", width: "550px" }}
                     control={
-                      <Radio
+                      <Checkbox
                         style={{ color: "white" }}
+                        checked={this.props.currentSelected["mlhConduct"]}
                         id="mlhConduct"
-                        value="yes"
+                        value={
+                          this.props.currentSelected["mlhConduct"]
+                            ? "no"
+                            : "yes"
+                        }
                       />
                     }
-                    label="I have read and agree to the MLH Code of Conduct"
+                    label={
+                      <div>
+                        <span>I have read and agree to the </span>
+                        <a
+                          href={
+                            "https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          MLH Code of Conduct{" "}
+                        </a>
+                      </div>
+                    }
                     onChange={this.props.handleFormChange}
                   />
-                </RadioGroup>
+                </FormGroup>
               </FormControl>
             </div>
           </div>
 
-          {/* TODO: style this better */}
           <div className="basic-info-6">
             <div className="confirm">
               <FormControl className="mlhPrivacy">
-                <RadioGroup
-                  value={
-                    this.props.currentSelected["mlhPrivacy"] == null
-                      ? "none"
-                      : this.props.currentSelected["mlhPrivacy"]
-                      ? "yes"
-                      : "no"
-                  }
-                >
+                <FormGroup>
                   <FormControlLabel
                     style={{ color: "white", width: "550px" }}
                     control={
-                      <Radio
+                      <Checkbox
                         style={{ color: "white" }}
+                        checked={this.props.currentSelected["mlhPrivacy"]}
                         id="mlhPrivacy"
-                        value="yes"
+                        value={
+                          this.props.currentSelected["mlhPrivacy"]
+                            ? "no"
+                            : "yes"
+                        }
                       />
                     }
-                    label="I authorize you to share my application/registration information for event administration, ranking, MLH adminstration, pre- and post- event informational e-mails, and occasional messages about hackathons in-line with MLH Privacy"
+                    label={
+                      <div>
+                        <span>
+                          I authorize you to share my application/registration
+                          information for event administration, ranking, MLH
+                          adminstration, pre- and post- event informational
+                          e-mails, and occasional messages about hackathons
+                          in-line with{" "}
+                          <a
+                            href={"https://mlh.io/privacy"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            MLH Privacy Policy{" "}
+                          </a>
+                          <span>
+                            . I further agree to the terms of both the{" "}
+                          </span>
+                          <a
+                            href={
+                              "https://github.com/MLH/mlh-policies/blob/master/prize-terms-and-conditions/contest-terms.md"
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            MLH Contest Teams and Conditions
+                          </a>
+                          <span> and the </span>
+                          <a
+                            href={"https://mlh.io/privacy"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "white !important" }}
+                          >
+                            MLH Privacy Policy
+                          </a>
+                          .
+                        </span>
+                      </div>
+                    }
                     onChange={this.props.handleFormChange}
                   />
-                </RadioGroup>
+                </FormGroup>
               </FormControl>
             </div>
           </div>
