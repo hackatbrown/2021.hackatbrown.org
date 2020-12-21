@@ -60,7 +60,8 @@ type RegistrationState = {
 };
 
 const buttonStyle: React.CSSProperties = {
-    textTransform: "none",
+		textTransform: "none",
+		fontFamily: "Akkurat Pro, sans-serif",
     color: "white",
     background: "transparent",
     borderRadius: "16.5px",

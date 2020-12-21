@@ -30,11 +30,19 @@ type OptionalInfoState = {
 
 const buttonStyle: React.CSSProperties = {
     textTransform: "none",
-    color: "white",
+		color: "white",
+		fontFamily: "Akkurat Pro, sans-serif",
     background: "transparent",
     borderRadius: "16.5px",
     border: "2px solid #FFFFFF",
     height: "40px"
+};
+
+const InputStyles = {
+	style: {
+		color: "white",
+		fontFamily: "Akkurat Pro, sans-serif",
+	},
 };
 
 export default class OptionalInfo extends React.Component<
@@ -105,11 +113,7 @@ export default class OptionalInfo extends React.Component<
                             placeholder="Website"
                             margin="normal"
                             onChange={this.props.handleFormChange}
-                            InputProps={{
-                                style: {
-                                    color: "white"
-                                }
-                            }}
+                            InputProps={InputStyles}
                         />
                     </div>
                     <div className="Github">
@@ -120,11 +124,7 @@ export default class OptionalInfo extends React.Component<
                             placeholder="Github"
                             margin="normal"
                             onChange={this.props.handleFormChange}
-                            InputProps={{
-                                style: {
-                                    color: "white"
-                                }
-                            }}
+                            InputProps={InputStyles}
                         />
                     </div>
                     <div className="Linkedin">
@@ -135,11 +135,7 @@ export default class OptionalInfo extends React.Component<
                             placeholder="Linkedin"
                             margin="normal"
                             onChange={this.props.handleFormChange}
-                            InputProps={{
-                                style: {
-                                    color: "white"
-                                }
-                            }}
+                            InputProps={InputStyles}
                         />
                     </div>
                     <p style={{ marginTop: "20px", marginBottom: "10px" }}>
@@ -154,11 +150,7 @@ export default class OptionalInfo extends React.Component<
                         rows={2}
                         rowsMax={4}
                         onChange={this.props.handleFormChange}
-                        InputProps={{
-                            style: {
-                                color: "white"
-                            }
-                        }}
+                        InputProps={InputStyles}
                     />
                 </div>
             </div>

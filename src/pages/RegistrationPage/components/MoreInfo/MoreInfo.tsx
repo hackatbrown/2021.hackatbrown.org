@@ -185,7 +185,9 @@ export default class MoreInfo extends React.Component<
       this.setState({
         genderPreferNot: this.state.genderPreferNot ? false: true,
       });
-    }
+		}
+		
+		dropButtonStyles = { fontFamily: "Akkurat Pro, sans-serif"}
 
     render() {
         return (
@@ -195,7 +197,7 @@ export default class MoreInfo extends React.Component<
                 <form>
                   <ClickAwayListener onClickAway={this.raceControl}>
                     <div className="raceDiv">
-                      <DropButton id="raceButton" onClick={this.raceControl}>
+                      <DropButton style={this.dropButtonStyles} id="raceButton" onClick={this.raceControl}>
                        {this.state.raceText}
                        <svg style={this.state.raceArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
@@ -226,7 +228,7 @@ export default class MoreInfo extends React.Component<
 
                   <ClickAwayListener onClickAway={this.genderControl}>
                     <div className="genderDiv">
-                      <DropButton id="genderButton" onClick={this.genderControl}>
+                      <DropButton style={this.dropButtonStyles} id="genderButton" onClick={this.genderControl}>
                         {this.state.genderText}
                         <svg style={this.state.genderArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                          <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
@@ -257,7 +259,7 @@ export default class MoreInfo extends React.Component<
 
                   <ClickAwayListener onClickAway={this.howFindOutControl}>
                     <div className="howFindOutDiv">
-                      <DropButton id="howFindOutButton" onClick={this.howFindOutControl}>
+                      <DropButton style={this.dropButtonStyles} id="howFindOutButton" onClick={this.howFindOutControl}>
                         {this.state.howFindOutText}
                         <svg style={this.state.findoutArrowTransform} className="dropArrow" width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                          <path d="M6.5 12L0.00481036 0.749999L12.9952 0.75L6.5 12Z" fill="white"/>
