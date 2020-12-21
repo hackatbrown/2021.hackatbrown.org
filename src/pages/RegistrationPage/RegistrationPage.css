@@ -4,7 +4,7 @@
   min-height: 100vh;
   padding-left: 10vw;
   text-align: left;
-  background-color: #4F5C6B;
+  background-color: #211959;
   display: block;
   overflow: auto;
   color: white;
@@ -20,8 +20,8 @@
 
 
 .form-name h1 {
-  font-family: Covik Sans, sans-serif;
-  font-weight: 500;
+  font-family: Recoleta;
+  font-weight: 700;
   color: white;
 }
 
@@ -38,12 +38,12 @@
 }
 
 .form-content {
-  font-family: Akkurat Pro, sans-serif;
+  font-family: Inter;
   margin-bottom: 30px;
 }
 
 .form-content-mobile {
-  font-family: Akkurat Pro, sans-serif;
+  font-family: Inter;
   min-height: 65vh;
   margin-bottom: 30px;
 }

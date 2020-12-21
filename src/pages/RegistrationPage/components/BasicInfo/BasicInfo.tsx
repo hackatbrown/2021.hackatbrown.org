@@ -93,7 +93,7 @@ export default class BasicInfo extends React.Component<
     const InputStyles = {
       style: {
         color: "white",
-        fontFamily: "Akkurat Pro, sans-serif",
+        fontFamily: "Inter",
       },
     };
 
