@@ -5,6 +5,11 @@ import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import { withStyles } from "@material-ui/core/styles";
 import { Popper, Paper, ClickAwayListener } from "@material-ui/core";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControl from "@material-ui/core/FormControl";
+import Grid from "@material-ui/core/Grid";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
 
 const DropButton = withStyles((theme) => ({
   root: {
@@ -278,6 +283,13 @@ export default class MoreInfo extends React.Component<
 
   dropButtonStyles = { fontFamily: "Inter" };
 
+  InputStyles = {
+    style: {
+      color: "white",
+      fontFamily: "Inter",
+    },
+  };
+
   render() {
     return (
       <div className="more-info">
@@ -464,6 +476,53 @@ export default class MoreInfo extends React.Component<
               ) : null}
             </div>
           </ClickAwayListener>
+          <div className="more-info-firsthack">
+            <FormControl required className="firstHack">
+              <FormLabel style={this.InputStyles.style}>
+                Is this your first hackathon?
+              </FormLabel>
+              <RadioGroup
+                value={
+                  this.props.currentSelected["firstHack"] == null
+                    ? "none"
+                    : this.props.currentSelected["firstHack"]
+                    ? "yes"
+                    : "no"
+                }
+              >
+                <Grid container spacing={2}>
+                  <Grid item>
+                    <FormControlLabel
+                      style={this.InputStyles.style}
+                      control={
+                        <Radio
+                          style={this.InputStyles.style}
+                          id="firstHack"
+                          value="yes"
+                        />
+                      }
+                      label="Yes"
+                      onChange={this.props.handleFormChange}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <FormControlLabel
+                      style={this.InputStyles.style}
+                      control={
+                        <Radio
+                          style={this.InputStyles.style}
+                          id="firstHack"
+                          value="no"
+                        />
+                      }
+                      label="No"
+                      onChange={this.props.handleFormChange}
+                    />
+                  </Grid>
+                </Grid>
+              </RadioGroup>
+            </FormControl>
+          </div>
         </form>
       </div>
     );

@@ -41,6 +41,10 @@
   margin-bottom: 80px;
 }
 
+.more-info-firsthack {
+	margin-bottom: 35px;
+}
+
 .form-popup {
   overflow-y: scroll;
   position: absolute;

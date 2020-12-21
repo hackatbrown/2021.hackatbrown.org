@@ -8,6 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import NumberFormat from "react-number-format";
+import { Link } from "react-router-dom";
 
 /**
  * define a type model for the props you are passing in to the component
@@ -127,6 +128,32 @@ export default class BasicInfo extends React.Component<
             />
           </div>
 
+          <div className="basic-info-5">
+            <TextField
+              required
+              label="Email"
+              autoComplete="new-password"
+              style={textLeft}
+              id="email"
+              value={this.props.currentSelected["email"]}
+              margin="normal"
+              onChange={this.props.handleFormChange}
+              InputProps={InputStyles}
+              InputLabelProps={InputStyles}
+            />
+            <TextField
+              id="phoneNumber"
+              value={this.props.currentSelected["phoneNumber"]}
+              required
+              label="Phone Number"
+              autoComplete="new-password"
+              margin="normal"
+              onChange={this.props.handleFormChange}
+              InputProps={InputStyles}
+              InputLabelProps={InputStyles}
+            />
+          </div>
+
           <div className="basic-info-2">
             <TextField
               style={textLeft}
@@ -217,117 +244,64 @@ export default class BasicInfo extends React.Component<
             </FormControl>
           </div>
 
-          <div className="basic-info-5">
-            <FormControl required className="firstHack">
-              <FormLabel style={InputStyles.style}>
-                Is this your first hackathon?
-              </FormLabel>
-              <RadioGroup
-                value={
-                  this.props.currentSelected["firstHack"] == null
-                    ? "none"
-                    : this.props.currentSelected["firstHack"]
-                    ? "yes"
-                    : "no"
-                }
-              >
-                <Grid container spacing={2}>
-                  <Grid item>
-                    <FormControlLabel
-                      style={InputStyles.style}
-                      control={
-                        <Radio
-                          style={InputStyles.style}
-                          id="firstHack"
-                          value="yes"
-                        />
-                      }
-                      label="Yes"
-                      onChange={this.props.handleFormChange}
-                    />
-                  </Grid>
-                  <Grid item>
-                    <FormControlLabel
-                      style={InputStyles.style}
-                      control={
-                        <Radio
-                          style={InputStyles.style}
-                          id="firstHack"
-                          value="no"
-                        />
-                      }
-                      label="No"
-                      onChange={this.props.handleFormChange}
-                    />
-                  </Grid>
-                </Grid>
-              </RadioGroup>
-            </FormControl>
+          {/* TODO: style this better */}
+          <div className="basic-info-6">
+            <div className="confirm">
+              <FormControl className="mlhConduct">
+                <RadioGroup
+                  value={
+                    this.props.currentSelected["mlhConduct"] == null
+                      ? "none"
+                      : this.props.currentSelected["mlhConduct"]
+                      ? "yes"
+                      : "no"
+                  }
+                >
+                  <FormControlLabel
+                    style={{ color: "white" }}
+                    control={
+                      <Radio
+                        style={{ color: "white" }}
+                        id="mlhConduct"
+                        value="yes"
+                      />
+                    }
+                    label="I have read and agree to the MLH Code of Conduct"
+                    onChange={this.props.handleFormChange}
+                  />
+                </RadioGroup>
+              </FormControl>
+            </div>
           </div>
 
+          {/* TODO: style this better */}
           <div className="basic-info-6">
-            <FormControl className="travelReimburse">
-              <FormLabel required style={InputStyles.style}>
-                Do you need travel reimbursements?
-              </FormLabel>
-              <FormLabel id="subtext" style={InputStyles.style}>
-                Reimbursements only available for travel within the U.S.
-              </FormLabel>
-              <RadioGroup
-                value={
-                  this.props.currentSelected["travelReimburse"] == null
-                    ? "none"
-                    : this.props.currentSelected["travelReimburse"]
-                    ? "yes"
-                    : "no"
-                }
-              >
-                <Grid container spacing={3}>
-                  <Grid item>
-                    <FormControlLabel
-                      style={InputStyles.style}
-                      control={
-                        <Radio
-                          style={InputStyles.style}
-                          id="travelReimburse"
-                          value="yes"
-                        />
-                      }
-                      label="Yes"
-                      onChange={this.props.handleFormChange}
-                      onInput={this.updateTravelReimbursePref}
-                    />
-                  </Grid>
-                  <Grid item>
-                    <FormControlLabel
-                      style={InputStyles.style}
-                      control={
-                        <Radio
-                          style={InputStyles.style}
-                          id="travelReimburse"
-                          value="no"
-                        />
-                      }
-                      label="No"
-                      onChange={this.props.handleFormChange}
-                      onInput={this.updateTravelReimbursePref}
-                    />
-                  </Grid>
-                  <Grid item>
-                    <TextField
-                      value={this.props.currentSelected["travelOrigin"]}
-                      style={dynamicTextField}
-                      id="travelOrigin"
-                      placeholder="Traveling from? (City, State)"
-                      margin="dense"
-                      fullWidth
-                      onChange={this.props.handleFormChange}
-                      InputProps={InputStyles}
-                    />
-                  </Grid>
-                </Grid>
-              </RadioGroup>
-            </FormControl>
+            <div className="confirm">
+              <FormControl className="mlhPrivacy">
+                <RadioGroup
+                  value={
+                    this.props.currentSelected["mlhPrivacy"] == null
+                      ? "none"
+                      : this.props.currentSelected["mlhPrivacy"]
+                      ? "yes"
+                      : "no"
+                  }
+                >
+                  <FormControlLabel
+                    style={{ color: "white", width: "550px" }}
+                    control={
+                      <Radio
+                        style={{ color: "white" }}
+                        id="mlhPrivacy"
+                        value="yes"
+                      />
+                    }
+                    label="I authorize you to share my application/registration information for event administration, ranking, MLH adminstration, pre- and post- event informational e-mails, and occasional messages about hackathons in-line with MLH Privacy"
+                    onChange={this.props.handleFormChange}
+                  />
+                </RadioGroup>
+              </FormControl>
+            </div>
           </div>
         </form>
       </div>

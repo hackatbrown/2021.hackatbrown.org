@@ -1,17 +1,27 @@
 .basic-info-1 {
   display: 'flex';
   flexWrap: 'wrap';
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 
 .basic-info-1 label {
   color: white !important;
 }
 
+.basic-info-5 {
+  display: 'flex';
+  flexWrap: 'wrap';
+  /* margin-bottom: 15px; */
+}
+
+.basic-info-5 label {
+  color: white !important;
+}
+
 .basic-info-2 {
   display: 'flex';
   flexWrap: 'wrap';
-  margin-bottom: 15px;
+  /* margin-bottom: 15px; */
 }
 
 .basic-info-2 label {
@@ -30,18 +40,10 @@
 }
 
 .basic-info-4 {
-  margin-bottom: 35px;
+  /* margin-bottom: 35px; */
 }
 
 .basic-info-4 label {
-  color: white !important;
-}
-
-.basic-info-5 {
-  margin-bottom: 35px;
-}
-
-.basic-info-5 label {
   color: white !important;
 }
 

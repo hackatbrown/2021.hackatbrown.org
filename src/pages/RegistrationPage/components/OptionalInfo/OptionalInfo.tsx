@@ -132,7 +132,7 @@ export default class OptionalInfo extends React.Component<
             />
           </div>
           <p style={{ marginTop: "20px", marginBottom: "10px" }}>
-            Why do you want to come to Hack@Brown? *
+            Additional Comment
           </p>
           <TextField
             id="comments"

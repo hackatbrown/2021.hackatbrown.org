@@ -40,13 +40,20 @@ type RegistrationState = {
   /* form submission information */
   firstName: string;
   lastName: string;
+  email: string;
+  phoneNumber: string;
   school: string;
   majors: string;
   gradDate: string /* consider changing type */;
   over18: boolean | null;
   firstHack: boolean | null;
-  travelReimburse: boolean | null;
-  travelOrigin: string;
+  /* travelReimburse: boolean | null;
+	travelOrigin: string;
+	
+	we're virtual for h@b 2021 woohoo!!!
+	*/
+  mlhConduct: boolean | null;
+  mlhPrivacy: boolean | null;
   gender: string[];
   race: string[];
   website: string;
@@ -87,13 +94,21 @@ export default class RegistrationPage extends React.Component<
       formStage: 0,
       firstName: "",
       lastName: "",
+      email: "",
+      phoneNumber: "",
+      mlhConduct: false,
+      mlhPrivacy: false,
       school: "",
       majors: "",
       gradDate: "" /* consider changing type */,
       over18: null,
       firstHack: null,
-      travelReimburse: null,
-      travelOrigin: "",
+      /* travelReimburse: null,
+			travelOrigin: "", 
+		
+			we're virtual for h@b 2021 woohoo!!!
+			*/
+
       gender: [],
       race: [],
       website: "",
@@ -306,14 +321,18 @@ export default class RegistrationPage extends React.Component<
       this.state.majors.trim() === "" ||
       this.state.gradDate.trim() === "" ||
       this.state.over18 === null ||
-      this.state.firstHack === null ||
-      this.state.travelReimburse === null
+      this.state.email.trim() === "" ||
+      this.state.phoneNumber.trim() === "" ||
+      !this.state.mlhConduct ||
+      !this.state.mlhPrivacy
+      // this.state.travelReimburse === null
     ) {
       return "You are missing required field(s) in the Basic Information section!";
     } else if (
       this.state.gender.length === 0 ||
       this.state.race.length === 0 ||
-      this.state.findout.length === 0
+      this.state.findout.length === 0 ||
+      this.state.firstHack === null
     ) {
       return "You are missing required field(s) in the More Information section!";
     }
@@ -332,8 +351,12 @@ export default class RegistrationPage extends React.Component<
       grad_date: this.state.gradDate,
       age: this.state.over18,
       first_hackathon: this.state.firstHack,
-      fund_travel: this.state.travelReimburse,
-      traveling_address: this.state.travelOrigin,
+      // fund_travel: this.state.travelReimburse,
+      // traveling_address: this.state.travelOrigin,
+      email: this.state.email,
+      phone_number: this.state.phoneNumber,
+      mlh_code: this.state.mlhConduct,
+      mlh_privacy: this.state.mlhPrivacy,
       gender: this.state.gender,
       race: this.state.race,
       website: this.state.website,
@@ -373,8 +396,8 @@ export default class RegistrationPage extends React.Component<
       gradDate: respData["grad_date"],
       over18: respData["age"],
       firstHack: respData["first_hackathon"],
-      travelReimburse: respData["fund_travel"],
-      travelOrigin: respData["traveling_address"],
+      email: respData["email"],
+      phoneNumber: respData["phone_number"],
       gender: respData["gender"],
       race: respData["race"],
       website: respData["website"],
