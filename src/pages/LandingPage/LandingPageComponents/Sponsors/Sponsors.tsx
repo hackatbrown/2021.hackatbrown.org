@@ -4,6 +4,7 @@ import placeholderImg from "../../../../assets/images/LandingPage/placeholder2.p
 import bloombergImg from "../../../../assets/images/LandingPage/companylogo/Bloomberg.png";
 import neevaImg from "../../../../assets/images/LandingPage/companylogo/neeva.png";
 import sketchImg from "../../../../assets/images/LandingPage/companylogo/sketch.png";
+import wolframImg from "../../../../assets/images/LandingPage/companylogo/wolfram.png";
 
 type SponsorsProps = {};
 
@@ -68,18 +69,38 @@ export default class Sponsors extends React.Component<
           <div className="sponsors-kilo sponsors-section">
             <h2 className="sponsors-name">Kilo</h2>
             <div className="sponsors-img">
-              <a href="https://www.bloomberg.com" target="_blank">
-                <img className="sponsors-img-kilo" src={bloombergImg}></img>
+              <a
+                href="https://www.bloomberg.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="sponsors-img-kilo"
+                  src={bloombergImg}
+                  alt="bloomberg"
+                ></img>
               </a>
-              <a href="https://www.neeva.co" target="_blank">
-                <img className="sponsors-img-kilo" src={neevaImg}></img>
+              <a
+                href="https://www.neeva.co"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="sponsors-img-kilo"
+                  src={neevaImg}
+                  alt="neeva"
+                ></img>
               </a>
             </div>
           </div>
           <div className="sponsors-micro sponsors-section">
             <h2 className="sponsors-name">Micro</h2>
             <div className="sponsors-img">
-              <a href="https://www.sketch.com/" target="_blank">
+              <a
+                href="https://www.sketch.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <img
                   className="sponsors-img-micro"
                   style={{
@@ -87,6 +108,22 @@ export default class Sponsors extends React.Component<
                     backgroundColor: "white",
                   }}
                   src={sketchImg}
+                  alt="sketch"
+                ></img>
+              </a>
+              <a
+                href="https://www.wolfram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="sponsors-img-micro"
+                  style={{
+                    padding: "10px",
+                    backgroundColor: "white",
+                  }}
+                  src={wolframImg}
+                  alt="wolfram"
                 ></img>
               </a>
             </div>
