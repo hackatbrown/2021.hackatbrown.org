@@ -97,6 +97,7 @@ export default class BasicInfo extends React.Component<
       style: {
         color: "white",
         fontFamily: "Inter",
+        fontWeight: 100,
       },
     };
 

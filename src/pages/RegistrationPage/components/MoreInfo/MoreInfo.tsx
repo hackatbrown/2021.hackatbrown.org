@@ -281,12 +281,13 @@ export default class MoreInfo extends React.Component<
     });
   };
 
-  dropButtonStyles = { fontFamily: "Inter" };
+  dropButtonStyles = { fontFamily: "Inter", fontWeight: 100 };
 
   InputStyles = {
     style: {
       color: "white",
       fontFamily: "Inter",
+      fontWeight: 100,
     },
   };
 

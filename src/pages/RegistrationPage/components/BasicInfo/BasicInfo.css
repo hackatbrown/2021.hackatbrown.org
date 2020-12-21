@@ -40,7 +40,7 @@
 }
 
 .basic-info-4 {
-  /* margin-bottom: 35px; */
+	margin-bottom: 0px;
 }
 
 .basic-info-4 label {
@@ -52,19 +52,18 @@
   color: rgba(255, 255, 255, 0.75) !important;
 }
 
+.basic-info-5 {
+	margin-bottom: 0px;
+}
+
 .basic-info-5 a {
 	color: white !important;
 	text-decoration: underline;
 }
 
-.basic-info-5 {
-	/* margin-bottom: 100px; */
-}
-
 .basic-info-6 a {
 	color: white !important;
 	text-decoration: underline;
-
 }
 
 /* .mlhPrivacy MuiFormControl-root mlhPrivacy{
