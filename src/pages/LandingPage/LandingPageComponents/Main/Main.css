@@ -22,7 +22,7 @@ html,body{
 
 .top-text {
     margin: 1rem 10% 2rem;
-    padding-top: 5rem;
+    padding-top: 0rem;
     text-align: left;
     font-size: 2rem;
     font-family: Inter;
@@ -58,7 +58,7 @@ html,body{
     width:60%;
     margin-top:-450px;
     margin-left:480px;
-}   
+}
 
 .static-scene {
     display: None;
