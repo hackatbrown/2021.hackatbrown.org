@@ -1,5 +1,15 @@
 #modal {
   background-color: green;
+  left: 50%; 
+  top: 50%; 
+  height: 80vh; 
+  min-width: 440px; 
+  border-radius: 1.5em; 
+  padding: 10vw; 
+  overflow: hidden; 
+  text-align: center;
+  font-size: 18px;
+
 }
 
 .close-button {
@@ -21,3 +31,41 @@
   right: 0;
   top: 0
 }
+
+#facebooklogo {
+  width: 231.47px;
+  height: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+}
+
+#sponsorTiers {
+  font-family: Recoletta;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  top: 25px; 
+  left: -50px;
+  transform: rotate(-45deg);
+  position: fixed;
+  width: 200px;
+  height: 35px;
+  position: absolute;
+  text-align: center;
+  background-color: #ED695B;
+}
+
+.p {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #444444;
+  align-content: center;  
+}
+
+

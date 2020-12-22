@@ -36,7 +36,7 @@ export default class SponsorBooth extends React.Component<
           <button onClick={this.openModal}>Launch demo modal 2</button>
           <Modal isOpen={this.state.modalIsOpen}>
             <SponsorBoothModal sponsorInfo={'elephants'} />
-            <button onClick={this.closeModal}>Close</button>
+            <button id="close" onClick={this.closeModal}>X</button>
           </Modal>
         </div>
     );
