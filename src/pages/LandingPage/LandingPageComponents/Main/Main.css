@@ -140,6 +140,28 @@ html,body{
     margin-left:700px;
     margin-top:-520px;
 }
+
+@media screen and (max-width: 900px) {
+    .plane-one {
+        display: none;
+    }
+    .plane-two { 
+        display: none;
+    }
+    .plane-three {
+        display: none;
+    }
+    .plane-one-st {
+        display: none;
+    }
+    .plane-two-st { 
+        display: none;
+    }
+    .plane-three-st {
+        display: none;
+    }
+}
+
 @keyframes onemove {
     0%{
         margin-left:-650px;
