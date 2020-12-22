@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import { Nav, Button, NavDropdown } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import logoImg from "../../assets/images/LandingPage/blackpaw.png";
+import mlhImg from "../../assets/images/LandingPage/mlh-badge.png";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Firebase from "../Firebase";
 import { Redirect } from "react-router-dom";
@@ -80,6 +81,11 @@ export default class Toolbar extends React.Component<
             return <Redirect to="/" />;
         } else {
             return (
+                <>
+                    <img
+                        id="mlh-img"
+                        src={mlhImg}
+                    ></img>
                 <div className="toolbar">
                     <Navbar
                         collapseOnSelect
@@ -251,6 +257,7 @@ export default class Toolbar extends React.Component<
                         </Navbar.Collapse>
                     </Navbar>
                 </div>
+                </>
             );
         }
     }
