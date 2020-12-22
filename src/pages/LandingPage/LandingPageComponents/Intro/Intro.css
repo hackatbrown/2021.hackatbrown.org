@@ -27,12 +27,12 @@
 }
 
 .intro-blurb {
-    margin: 5% 10% 0 2rem;
-    max-width: 20rem;
-    min-width: 35vw;
+    margin: 0 10% 0;
+    /* max-width: 20rem; */
+    /* min-width: 35vw; */
     text-align: left;
-    position: relative;
-    top: 250px;
+    /* position: relative; */
+    /* top: 250px; */
 
 }
 
@@ -41,6 +41,7 @@
     /* flex-direction: column; */
     /* justify-content: flex-end; */
     font-weight: 100;
+    font-size: 1.2rem;
 }
 
 .intro-blurb-header {
@@ -54,6 +55,10 @@
         position: block;
         top: initial;
         margin: 0 auto;
+    }
+
+    .intro .container {
+        margin: 0 3%;
     }
 
     #JuiceImg {
