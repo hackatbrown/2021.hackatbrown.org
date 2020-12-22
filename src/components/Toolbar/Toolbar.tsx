@@ -222,7 +222,7 @@ export default class Toolbar extends React.Component<
                                     </div>
                                 </Col>
 
-                                <Col>
+                                {/* <Col>
                                     <div
                                         className="toolbar-registration"
                                         style={{
@@ -244,9 +244,9 @@ export default class Toolbar extends React.Component<
                                             Register
                                         </Link>
                                     </div>
-                                </Col>
+                                </Col> */}
 
-                                <Col>{button}</Col>
+                                {/* <Col>{button}</Col> */}
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>

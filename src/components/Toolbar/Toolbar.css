@@ -30,14 +30,62 @@
     align-items: center;
 }
 
+@font-face {
+    font-family: Recoleta;
+    src: url("../../assets/fonts/Recoleta-Black.ttf");
+}
+
 @media screen and (max-width: 900px) {
+    .toolbar nav {
+        padding-left: 0vw !important;
+        padding-right: 0vw !important;
+        /* background-color: transparent !important; */
+    }
+
+    .toolbar nav .navbar-brand {
+        margin-left: 30px !important;
+    }
+
+    .toolbar nav .navbar-toggler {
+        margin-right: 4vw !important;
+        margin-bottom: 2vw !important;
+        margin-top: 1vw !important;
+    }
+
     .tool-bar-container {
-        height: 100vh;
-        padding-top: 50%;
-        padding-bottom: 50%;
+        height: 90vh;
+        padding-top: 0;
+        padding-bottom: 0;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+    }
+
+    .tool-bar-container .col {
+        /* width: 0; */
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        font-size: 25px;
+        height: 20%;
+        font-family: Recoleta;
+    }
+
+    .tool-bar-container .col:nth-of-type(1) {
+        background-color: rgba(253, 247, 220, 1);
+    }
+    .tool-bar-container .col:nth-of-type(2) {
+        background-color: rgba(237, 105, 91, 1);
+    }
+    .tool-bar-container .col:nth-of-type(3) {
+        background-color: rgba(70, 181, 184, 1);
+    }
+    .tool-bar-container .col:nth-of-type(4) {
+        background-color: rgba(237, 105, 91, 1);
+    }
+    .tool-bar-container .col:nth-of-type(5) {
+        background-color: rgba(253, 247, 220, 1);
     }
 }
 
