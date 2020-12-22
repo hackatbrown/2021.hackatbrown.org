@@ -26,21 +26,18 @@ export default class Itinerary extends React.Component<
     render() {
         return (
             <div className="itinerary">
-                <div className="parent-container d-flex justify-content-center">
-                    <div className="saturday itin-table">
-                        <div className="row">
+                    <Container>
+                    {/* <div className="saturday itin-table"> */}
+                        <Row>
                             <h1 className="itinerary-header">Itinerary</h1>
                             <br></br>
-
-
-                        </div>
-                        <div className="row">
+                        </Row>
+                        <Row>
                             <h3 className="coming-soon">Our itinerary will be posted here closer to the day of the event. Stay tuned!</h3>
-                            <video className="video" muted autoPlay loop src={itinImg} width={862} height={404}/>
-                        </div>
-                        <div className="itinerary-img-div">
-
-                        </div>
+                        </Row>
+                        <Row>
+                            <video className="video" muted autoPlay loop src={itinImg}/>
+                        </Row>
 
                         {/* <div className="row">
                             <div className="col">
@@ -206,12 +203,7 @@ export default class Itinerary extends React.Component<
                                 <div className="row">Salomon DECI</div>
                             </div>
                         </div> */}
-                    </div>
-                </div>
-
-
-
-
+                    {/* </div> */}
 
 
                 {/* <div className="sunday itin-table2">
@@ -289,6 +281,7 @@ export default class Itinerary extends React.Component<
                         </div>
                     </div>
                 </div> */}
+                </Container>
             </div>
         );
     }
