@@ -21,7 +21,7 @@ html,body{
 }
 
 .top-text {
-    margin: 1rem 10% 1rem;
+    margin: 1rem 10% 2rem;
     padding-top: 5rem;
     text-align: left;
     font-size: 2rem;
@@ -32,7 +32,7 @@ html,body{
 .big-text{
     font-family: Recoleta;
     margin: 1rem 10% 1rem 10%;
-    font-size: 96px;
+    font-size: 3rem;
     font-weight: bolder;
     text-align:left;
 }
@@ -45,16 +45,25 @@ html,body{
     font-weight: bolder;
 }
 
+.main{
+    height: 100vh;
+}
+
 .main-div{
-    padding-top: 5.5em;
+    padding-top: 10em;
 }
 
 .main-img{
     height:60%;
     width:60%;
-    margin-top:-400px;
+    margin-top:-450px;
     margin-left:480px;
+}   
+
+.static-scene {
+    display: None;
 }
+
 .plane-one{
     height:28%;
     width:28%;
@@ -72,33 +81,33 @@ html,body{
     position: absolute;
     margin-top:-490px;
 }
-.scene:hover .plane-one{
+.animated-scene:hover .plane-one{
     animation: onemove 5s ;
     animation-iteration-count: 1
 }
-.scene:hover .plane-two{
+.animated-scene:hover .plane-two{
     animation: twomove 5s ;
     animation-delay:0.3s;
     animation-iteration-count: 1;
 }
-.scene:hover .plane-three{
+.animated-scene:hover .plane-three{
     animation: threemove 5s ;
     animation-delay:0.2s;
     animation-iteration-count: 1
 }
-.scene:hover .plane-one-st{
+.animated-scene:hover .plane-one-st{
     display: inline;
     animation: oneupmove 5s infinite;
     animation-delay: 1.2s;
     animation-iteration-count: 1
 }
-.scene:hover .plane-two-st{
+.animated-scene:hover .plane-two-st{
     display: inline;
     animation: twoupmove 5s infinite;
     animation-delay: 1.3s;
     animation-iteration-count: 1
 }
-.scene:hover .plane-three-st{
+.animated-scene:hover .plane-three-st{
     display: inline;
     animation: threeupmove 5s infinite;
     animation-delay:1.5s;
@@ -141,7 +150,10 @@ html,body{
     margin-top:-520px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
+    .main{
+        height: 100%;
+    }
     .plane-one {
         display: none;
     }
@@ -159,6 +171,38 @@ html,body{
     }
     .plane-three-st {
         display: none;
+    }
+    .animated-scene {
+        display: None;
+    }
+    .main-div {
+        padding-top: 1em;
+        display: block;
+    }
+    .static-scene {
+        margin-top: 3rem;
+        display: block;
+        width: 100%;
+    }
+    .static-scene img {
+        width: 80vw;
+    }
+    .top-text {
+        margin: 1rem 10% 2rem;
+        padding-top: 5rem;
+        font-size: 1.2rem;
+    }
+
+    .big-text{
+        font-family: Recoleta;
+        margin: 1rem 10% 1rem 10%;
+        font-size: 2rem;
+    }
+
+    .bottom-text {
+        margin: 1rem 10% 1rem;
+        text-align: left;
+        font-size: 1rem;
     }
 }
 

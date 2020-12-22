@@ -2,7 +2,8 @@ import React from "react";
 import "./Main.css";
 import { FirebaseContextConsumer } from "../../../../components/Firebase/context";
 import LoginJoin from "../LoginJoin/LoginJoin";
-import mainimg from "../../../../assets/images/LandingPage/main.png";
+import mainImg from "../../../../assets/images/LandingPage/soccer_field.png";
+import mainMobileImg from "../../../../assets/images/LandingPage/soccer_field_mobile.png";
 import airplane from "../../../../assets/images/LandingPage/airplane.png";
 import airplane2 from "../../../../assets/images/LandingPage/airplane2.png";
 import airplane3 from "../../../../assets/images/LandingPage/airplane3.png";
@@ -39,14 +40,19 @@ export default class Main extends React.Component<MainProps, MainState> {
                             hideToolbar={this.props.hideToolbar} />
                     )}
                 </FirebaseContextConsumer>
-                <div className = "scene">
-                <img src={mainimg} className="main-img"></img>
-                <img src={airplane} className="plane-one"></img><br/>
-                <img src={airplane2} className="plane-two"></img><br/>
-                <img src={airplane3} className="plane-three"></img><br/>
-                <img src={airplane} className="plane-one-st"></img><br/><br/>
-                <img src={airplane2} className="plane-two-st"></img><br/>
-                <img src={airplane3} className="plane-three-st"></img></div></div></>
+                <div className = "animated-scene">
+                    <img src={mainImg} className="main-img"></img>
+                    <img src={airplane} className="plane-one"></img><br/>
+                    <img src={airplane2} className="plane-two"></img><br/>
+                    <img src={airplane3} className="plane-three"></img><br/>
+                    <img src={airplane} className="plane-one-st"></img><br/><br/>
+                    <img src={airplane2} className="plane-two-st"></img><br/>
+                    <img src={airplane3} className="plane-three-st"></img>
+                </div>
+                <div className = "static-scene">
+                    <img src={mainMobileImg}></img>
+                </div>
+            </div></>
         );
     }
 }

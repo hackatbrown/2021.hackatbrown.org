@@ -1,4 +1,4 @@
-.toolbar {
+/* .toolbar {
     position: fixed;
     z-index: 1;
     top: 0;
@@ -67,8 +67,9 @@
     justify-content: space-evenly;
     align-items: center;
 }
+*/
 
-@media screen and (max-width: 900px) {
+/* @media screen and (max-width: 900px) {
     .tool-bar-container {
         height: 100vh;
         padding-top: 50%;
@@ -77,4 +78,4 @@
         justify-content: space-evenly;
         align-items: center;
     }
-}
+} */

@@ -182,7 +182,7 @@ label {
     transition: 0.3s;
     font-size: 1.5rem;
     position: absolute;
-    margin: 1rem 10% 1rem 10%;
+    margin: 0rem 10% 1rem 10%;
     /* top: 25%;
   right: 22.5%; */
     border-radius: 35px;
@@ -211,7 +211,7 @@ label {
 /* fix sticky note overlap */
 @media screen and (max-width: 750px) {
     .stickynote-button {
-        font-size: 1.5rem;
+        font-size: 1rem;
         /* top: 30%;
       right: 29.5%; */
     }
