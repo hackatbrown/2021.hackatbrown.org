@@ -7,7 +7,7 @@
     justify-content: flex-end; */
     color: #444444;
     background-color: #FDF7DC;
-    padding: 5rem 0;
+    padding: 5rem 0 0;
 }
 
 #spaceImg {
@@ -51,7 +51,7 @@
 /* fix for "Welcome to After School" */
 @media screen and (max-width: 900px) {
     .virtual {
-        padding: 10% 5%;
+        padding: 10% 5% 0%;
     }
 
     #spaceImg {
