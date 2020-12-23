@@ -9,9 +9,9 @@
 }
 
 .basic-info-5 {
-  display: 'flex';
+  display: flex;
   flexWrap: 'wrap';
-  /* margin-bottom: 15px; */
+  margin-bottom: 15px;
 }
 
 .basic-info-5 label {
@@ -21,7 +21,7 @@
 .basic-info-2 {
   display: 'flex';
   flexWrap: 'wrap';
-  /* margin-bottom: 15px; */
+  margin-bottom: 15px;
 }
 
 .basic-info-2 label {
@@ -40,6 +40,7 @@
 }
 
 .basic-info-4 {
+	margin-top: 30px;
 	margin-bottom: 0px;
 }
 

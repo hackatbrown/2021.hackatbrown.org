@@ -131,32 +131,6 @@ export default class BasicInfo extends React.Component<
             />
           </div>
 
-          <div className="basic-info-5">
-            <TextField
-              required
-              label="Email"
-              autoComplete="new-password"
-              style={textLeft}
-              id="email"
-              value={this.props.currentSelected["email"]}
-              margin="normal"
-              onChange={this.props.handleFormChange}
-              InputProps={InputStyles}
-              InputLabelProps={InputStyles}
-            />
-            <TextField
-              id="phoneNumber"
-              value={this.props.currentSelected["phoneNumber"]}
-              required
-              label="Phone Number"
-              autoComplete="new-password"
-              margin="normal"
-              onChange={this.props.handleFormChange}
-              InputProps={InputStyles}
-              InputLabelProps={InputStyles}
-            />
-          </div>
-
           <div className="basic-info-2">
             <TextField
               style={textLeft}
@@ -183,20 +157,35 @@ export default class BasicInfo extends React.Component<
             />
           </div>
 
-          <div className="basic-info-3">
-            <label> Graduation Date * </label>
-            <br />
-            <NumberFormat
-              value={this.props.currentSelected["gradDate"]}
-              placeholder="MM/YY"
-              id="gradDate"
-              autoComplete="new-password"
-              onChange={this.props.handleFormChange}
-              customInput={TextField}
-              format={this.gradDateFormat}
-              InputProps={InputStyles}
-              InputLabelProps={InputStyles}
-            />
+          <div className="basic-info-5">
+            <div style={textLeft}>
+              <label> Graduation Date * </label>
+              <br />
+              <NumberFormat
+                value={this.props.currentSelected["gradDate"]}
+                placeholder="MM/YY"
+                id="gradDate"
+                autoComplete="new-password"
+                onChange={this.props.handleFormChange}
+                customInput={TextField}
+                format={this.gradDateFormat}
+                InputProps={InputStyles}
+                InputLabelProps={InputStyles}
+              />
+            </div>
+            <div style={{ position: "relative", bottom: "2px" }}>
+              <TextField
+                id="phoneNumber"
+                value={this.props.currentSelected["phoneNumber"]}
+                required
+                label="Phone Number"
+                autoComplete="new-password"
+                margin="normal"
+                onChange={this.props.handleFormChange}
+                InputProps={InputStyles}
+                InputLabelProps={InputStyles}
+              />
+            </div>
           </div>
 
           <div className="basic-info-4">
