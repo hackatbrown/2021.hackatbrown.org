@@ -45,10 +45,10 @@ dashboard button {
 
 .greeting h1 {
     font-size: 3.6vw;
-    font-family: Covik Sans, sans-serif;
+    font-family: Recoleta;
     font-style: normal;
-    font-weight: 500;
-    color: white;
+		font-weight: 400;
+    color: #444444;
     margin-top: 30px;
 }
 
@@ -59,9 +59,11 @@ dashboard button {
 #start {
     width: 34.5vw;
     height: 82px;
-    margin-top: 30px;
-    font-family: Akkurat Pro;
-    background-color: #1A9996;
+		margin-top: 30px;
+		color: #444444 !important;
+		font-family: Inter;
+		font-weight: 100;
+    background-color: #A6DCEC;
 }
 
 #start .MuiButton-label {
@@ -82,7 +84,7 @@ dashboard button {
     height: 7vh;
     margin-bottom: 30px !important;
     font-family: Akkurat Pro;
-    background-color: #1A9996;
+    background-color: #A6DCEC;
 }
 
 /* #status {
@@ -97,7 +99,7 @@ dashboard button {
     height: auto;
     margin-top: 40px;
     padding-bottom: 10px;
-    background-color: #1A9996;
+    background-color: #A6DCEC;
 }
 
 .dashboard .MuiButton-label {
@@ -111,7 +113,7 @@ dashboard button {
     height: 15vh;
     margin-top: 40px; */
     margin-top: 30px;
-    background-color: #1A9996;
+    background-color: #A6DCEC;
 }
 
 #apply-reimbursement {
@@ -142,8 +144,6 @@ dashboard button {
 
 @media screen and (max-width: 1024px) {
     .dashboard {
-        background: url("../../assets/images/Dashboard/tablet_dash.jpg")
-            no-repeat center center fixed;
         background-size: cover;
         background-position: top;
     }
@@ -210,7 +210,7 @@ dashboard button {
     }
 
     .dashboard-button {
-        background-color: #1A9996;
+        background-color: #A6DCEC;
         margin-left: auto;
         margin-right: auto;
         width: 83%;
@@ -226,15 +226,15 @@ dashboard button {
     }
 
     .inner-button {
-        background-color: #1A9996;
+        background-color: #A6DCEC;
     }
 
     #start {
-        background-color: #1A9996;
+        background-color: #A6DCEC;
     }
 
     #reimbursement {
-        background-color: #1A9996;
+        background-color: #A6DCEC;
     }
 }
 
@@ -333,8 +333,6 @@ dashboard button {
     }
 
     .dashboard {
-        background: url("../../assets/images/Dashboard/mobile_dash.jpg")
-            no-repeat center center fixed;
         background-size: cover;
     }
 
@@ -385,18 +383,18 @@ dashboard button {
         margin-left: 13vw;
     }
     /* .dashboard-button {
-        background-color: #1A9996;
+        background-color: #A6DCEC;
     } */
     .inner-button {
         width: 85%;
         float: center;
-        /* background-color: #1A9996; */
+        /* background-color: #A6DCEC; */
     }
 
     #start {
         width: 86%;
         height: auto;
-        /* background-color: #1A9996; */
+        /* background-color: #A6DCEC; */
     }
 
     #start .MuiButton-label {
@@ -404,7 +402,7 @@ dashboard button {
     }
 
     /* #reimbursement {
-        background-color: #1A9996;
+        background-color: #A6DCEC;
     } */
 
     #lamp {
@@ -460,6 +458,6 @@ dashboard button {
         width: 100%;
         height: 40%;
         padding-bottom: 10px;
-        background-color: #1A9996;
+        background-color: #A6DCEC;
     }
 }
