@@ -1,10 +1,50 @@
+.sponsorModal {
+  left: 50%;
+  top: 50%;
+  height: 80vh;
+  min-width: 440px;
+  border-radius: 1.5em;
+  padding: 10vw;
+  overflow: hidden;
+  text-align: center;
+  font-size: 18px;
+  margin: 100px;
+  background-color: white;
+}
+
+.sponsorTiers {
+  font-family: Recoletta;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  top: 130px;
+  left: 62px;
+  transform: rotate(-45deg);
+  width: 170px;
+  height: 35px;
+  position: absolute;
+  text-align: center;
+  background-color: #ED695B;
+  clip-path: polygon(
+    0 100%,
+    21% 0,
+    100% 0%,
+    79% 0%,
+    83% 20%,
+    100% 100%,
+    10% 100%,
+    0% 100%,
+    0% 0%
+  )
+}
+
 #close{
     color:#444444;
     border: none;
     background: transparent;
     position: absolute;
-    right: 32px;
-    top: 32px;
+    right: 132px;
+    top: 132px;
     width: 32px;
     height: 32px;
     font-weight: bold;

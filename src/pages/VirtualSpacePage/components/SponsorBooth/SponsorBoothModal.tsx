@@ -20,7 +20,6 @@ export default class SponsorBoothModal extends React.Component<
     render() {
         return (
             <div id='modal'>
-                <div id='sponsorTiers'>Giga</div>
                 <img id = "facebooklogo" src ={facebooklogo}></img><br></br>
                 <p> Facebook is a social media company lorem ipsum</p><br></br>
                 <p><b>Book a coffee chat below!</b></p><br></br>

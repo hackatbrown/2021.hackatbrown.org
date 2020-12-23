@@ -11,6 +11,7 @@ type SponsorBoothState = {
     modalIsOpen: boolean;
 };
 
+
 export default class SponsorBooth extends React.Component<
     SponsorBoothProps,
     SponsorBoothState
@@ -30,12 +31,14 @@ export default class SponsorBooth extends React.Component<
       this.setState({ modalIsOpen: false });
     }
 
+
     render() {
       return (
         <div>
-          <button onClick={this.openModal}>Launch demo modal 2</button>
-          <Modal isOpen={this.state.modalIsOpen}>
-            <SponsorBoothModal sponsorInfo={'elephants'} />
+          <button onClick={this.openModal}>Sponsor Modal</button>
+          <Modal style={{overlay: {backgroundColor: 'rgba(255,255,255,0)'}}} className='sponsorModal' isOpen={this.state.modalIsOpen}>
+            <SponsorBoothModal sponsorInfo={'facebook'} />
+            <div className='sponsorTiers'>Giga</div>
             <button id="close" onClick={this.closeModal}>X</button>
           </Modal>
         </div>
