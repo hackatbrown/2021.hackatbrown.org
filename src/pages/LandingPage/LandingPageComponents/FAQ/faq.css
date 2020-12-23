@@ -14,7 +14,6 @@
 .faq-subtitle {
     font-family: 'Inter';
     color: #444444 !important;
-    font-size: 1.5rem !important;
 }
 
 .faq p {
@@ -27,6 +26,40 @@
 
 @media screen and (max-width: 575px) {
     .faq {
-        padding: 6%;
+        padding: 8%;
+    }
+    .faq-subtitle {
+        font-size: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 534px) {
+    .faq-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .faq-header h1 {
+        font-size: 1.8rem;
+    }
+}
+
+
+@media screen and (max-width: 383px) {
+    .faq-header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 342px) {
+    .faq-header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .faq-header h1 {
+        font-size: 1.4rem;
     }
 }

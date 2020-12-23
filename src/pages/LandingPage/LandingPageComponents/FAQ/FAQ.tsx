@@ -25,7 +25,7 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
                 {/* <div className="faq-text"> */}
                     <Row>
                         <div className="faq-header">
-                            <h1>F.A.Q</h1>
+                            <h1>FAQ</h1>
                         </div>
                     </Row>
 
