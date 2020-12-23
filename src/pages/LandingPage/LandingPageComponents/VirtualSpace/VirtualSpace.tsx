@@ -32,7 +32,9 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                         To make our events more interactive, we are launching
                         a new virtual space that allows you to book coffee chats
                         with sponsors, check out the latest announcements, and
-                        find the links to workshops! Access the Virtual Space
+                        find the links to workshops! 
+                        <br/><br/>
+                        Access the Virtual Space
                         by registering!
                         <br/><br/>
                      </p>
@@ -43,9 +45,9 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                 </Col>
               </Row>
             </Container>
-              <div className="space">
-                  <img id="spaceImg" src={spaceImg}></img>
-              </div>
+                <div className="space">
+                    <img id="spaceImg" src={spaceImg}></img>
+                </div>
             </div>
         );
     }
