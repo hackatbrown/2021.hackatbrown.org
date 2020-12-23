@@ -252,7 +252,7 @@ export default class BasicInfo extends React.Component<
               <FormControl className="mlhConduct">
                 <FormGroup>
                   <FormControlLabel
-                    style={{ color: "white", width: "550px" }}
+                    style={{ color: "white", width: "min(550px, 80vw)" }}
                     control={
                       <Checkbox
                         style={{ color: "white" }}
@@ -291,7 +291,7 @@ export default class BasicInfo extends React.Component<
               <FormControl className="mlhPrivacy">
                 <FormGroup>
                   <FormControlLabel
-                    style={{ color: "white", width: "550px" }}
+                    style={{ color: "white", width: "min(550px, 80vw)" }}
                     control={
                       <Checkbox
                         style={{ color: "white" }}
