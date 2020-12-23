@@ -8,7 +8,7 @@
 }
 
 dashboard button {
-    font-family: Akkurat Pro, sans-serif;
+    font-family: Inter;
 }
 
 #lights-container {
@@ -56,6 +56,10 @@ dashboard button {
     color: white;
 }
 
+.app-status-message {
+	color: #211959;
+}
+
 #start {
     width: 34.5vw;
     height: 82px;
@@ -73,7 +77,7 @@ dashboard button {
 #app-stat {
     margin-top: 30px;
     font-size: 119%;
-    font-family: Akkurat Pro;
+    font-family: Inter;
 }
 
 .inner-button {
@@ -83,7 +87,7 @@ dashboard button {
     width: 30vw;
     height: 7vh;
     margin-bottom: 30px !important;
-    font-family: Akkurat Pro;
+    font-family: Inter;
     background-color: #A6DCEC;
 }
 
@@ -117,7 +121,7 @@ dashboard button {
 }
 
 #apply-reimbursement {
-    font-family: Akkurat Pro;
+    font-family: Inter;
     font-size: 20px;
     line-height: normal;
     margin-top: 30px;
@@ -125,7 +129,8 @@ dashboard button {
 }
 
 .button-title {
-    font-size: 119%;
+		font-size: 119%;
+		font-weight: 100;
 }
 
 .sub-text {

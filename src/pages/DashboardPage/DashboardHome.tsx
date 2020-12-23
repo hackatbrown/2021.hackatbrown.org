@@ -41,7 +41,7 @@ type DashboardState = {
 
 const buttonStyle: React.CSSProperties = {
   textTransform: "none",
-  color: "white",
+  color: "#444444",
   borderRadius: "15px",
   border: "2px solid #444444",
 };
@@ -325,14 +325,36 @@ export default class DashboardHome extends React.Component<
     } else if (this.state.appSubmitted && !this.state.accepted) {
       // if app has been submitted, but not accepted/decisions not out yet
       content = (
+        // <div>
+        //   <div className="dashboard-button" style={buttonStyle}>
+        //     <p id="app-stat">
+        //       <span className="button-title">Application Status</span>
+        //       <br></br>
+        //       <strong className="app-status-message">CLOSED</strong>
+        //     </p>
+        //     <p className="sub-text">We hope to see you next year!</p>
+        //   </div>
+        // </div>
         <div>
           <div className="dashboard-button" style={buttonStyle}>
             <p id="app-stat">
               <span className="button-title">Application Status</span>
               <br></br>
-              <strong>CLOSED</strong>
+              <strong className="app-status-message">IN PROGRESS</strong>
             </p>
-            <p className="sub-text">We hope to see you next year!</p>
+            <Button
+              id="start"
+              style={{
+                ...buttonStyle,
+                height: "75%",
+                width: "75%",
+                marginBottom: "20px",
+              }}
+              component={(props) => <Link to="/registration" {...props} />}
+              linkButton={true}
+            >
+              Edit Your Application
+            </Button>
           </div>
         </div>
       );
@@ -348,7 +370,9 @@ export default class DashboardHome extends React.Component<
                 Application Status
               </span>
               <br></br>
-              <strong>{this.appStatusMessage()}</strong>
+              <strong className="app-status-message">
+                {this.appStatusMessage()}
+              </strong>
             </p>
             <Button
               className="inner-button"
