@@ -47,7 +47,7 @@
 
 @media screen and (max-width: 900px) {
     #mlh-img {
-        display: none;
+        display: none !important;
     }
     
     .toolbar nav {
