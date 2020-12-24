@@ -10,7 +10,7 @@
 }
 
 .sponsors-heading {
-    margin: 0 11.5rem;
+    margin: 0rem 12% 0rem 12%;
     padding: 3rem 0 0 0;
 }
 
@@ -24,12 +24,18 @@
 .sponsors-text {
 	font-family: Inter;
 	font-style: normal;
-	font-weight: normal;
-	margin: 0 11.5rem;
+	font-weight: 100;
+	margin: 0rem 12% 0rem 12%;
 	padding: 1rem 0 3rem 0;
 }
 
 .sponsors-text a {
+    color: #444444;
+	text-decoration: none;
+}
+
+.sponsors-text a:hover {
+    color: #444444;
 	text-decoration: none;
 }
 
