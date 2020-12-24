@@ -1,10 +1,12 @@
 import React from "react";
 import "./Main.css";
-import mainPic from "../../../../assets/images/LandingPage/scene_garage_transparent.png";
-import calendarPic from "../../../../assets/images/LandingPage/asset_calendar_transparent.png";
-// import stickyNotePic from "../../../../assets/images/LandingPage/asset_sticky_note_transparent.png";
 import { FirebaseContextConsumer } from "../../../../components/Firebase/context";
 import LoginJoin from "../LoginJoin/LoginJoin";
+import mainImg from "../../../../assets/images/LandingPage/soccer_field.png";
+import mainMobileImg from "../../../../assets/images/LandingPage/soccer_field_mobile.png";
+import airplane from "../../../../assets/images/LandingPage/airplane.png";
+import airplane2 from "../../../../assets/images/LandingPage/airplane2.png";
+import airplane3 from "../../../../assets/images/LandingPage/airplane3.png";
 
 type MainProps = {
     hideToolbar: any;
@@ -24,41 +26,33 @@ export default class Main extends React.Component<MainProps, MainState> {
     }
     render() {
         return (
-            <div className="main">
+            <><div className="main">
                 <div className="main-div">
-                    <h1 className="main-text">Hack@Brown 2020 presents:</h1>
-                    <img id="main-img" src={mainPic}></img>
+                    <h1 style={{ color: '#444' }} className="top-text">Hack@Brown presents:</h1>
+                    <h1 style={{ color: '#444' }} className="big-text">AfterSchool</h1>
+                    <h1 style={{ color: '#444' }} className="bottom-text">January 22 - 24, 2021</h1>
                 </div>
-                <div className="main-items">
-                    {/* <div className="main-login">
-                        <img id="stickynote-img" src={stickyNotePic}></img> */}
-                    <FirebaseContextConsumer>
-                        {firebase => (
-                            <LoginJoin
-                                apiURL={this.props.apiURL}
-                                firebase={
-                                    firebase == null ? null : firebase.firebase
-                                }
-                                hideToolbar={this.props.hideToolbar}
-                            />
-                        )}
-                    </FirebaseContextConsumer>
-                    {/* <p className="stickynote-login">Log in/Join</p>
-                        <p className="stickynote-dashboard">Dashboard</p> */}
-                    {/* </div> */}
-
-                    <div className="main-cal">
-                        <img id="calendar-img" src={calendarPic}></img>
-                        <p className="main-date">
-                            <p style={{ marginBottom: "1rem" }}>January</p>{" "}
-                            <div className="dates">25-26</div>
-                            <p className="registration-duedate">
-                                Registration due January 12th
-                            </p>
-                        </p>
-                    </div>
+                <FirebaseContextConsumer>
+                    {firebase => (
+                        <LoginJoin
+                            apiURL={this.props.apiURL}
+                            firebase={firebase == null ? null : firebase.firebase}
+                            hideToolbar={this.props.hideToolbar} />
+                    )}
+                </FirebaseContextConsumer>
+                <div className = "animated-scene">
+                    <img src={mainImg} className="main-img"></img>
+                    <img src={airplane} className="plane-one"></img><br/>
+                    <img src={airplane2} className="plane-two"></img><br/>
+                    <img src={airplane3} className="plane-three"></img><br/>
+                    <img src={airplane} className="plane-one-st"></img><br/><br/>
+                    <img src={airplane2} className="plane-two-st"></img><br/>
+                    <img src={airplane3} className="plane-three-st"></img>
                 </div>
-            </div>
+                <div className = "static-scene">
+                    <img src={mainMobileImg}></img>
+                </div>
+            </div></>
         );
     }
 }

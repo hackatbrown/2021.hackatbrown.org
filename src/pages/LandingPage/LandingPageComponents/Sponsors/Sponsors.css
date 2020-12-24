@@ -1,25 +1,51 @@
 .sponsors {
     align-content: center;
-    margin: 0 10% 2rem 10%;
     text-align: left;
-    color: white;
+    color: #444444;
+    background-color: #FDF7DC;
+}
+
+.sponsors-section {
+    margin: 1rem 2rem 1rem 0;
 }
 
 .sponsors-heading {
-    margin: 0 10% 2rem 10%;
+    margin: 0 11.5rem;
     padding: 3rem 0 0 0;
 }
 
-.sponsors-items {
-    margin: 2rem 10% 2rem 10%;
-    padding: 0 0 4rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.sponsors-heading h1 {
+	font-family: Recoleta;
+	font-style: normal;
+	font-weight: bold;
+	color: #444444;
 }
 
+.sponsors-text {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: normal;
+	margin: 0 11.5rem;
+	padding: 1rem 0 3rem 0;
+}
+
+.sponsors-text a {
+	text-decoration: none;
+}
+
+.sponsors-items {
+    margin: 0rem 12% 0rem 12%;
+    /* padding: 0 0 4rem 0; */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
 .sponsors-name {
-    margin: 2rem 0 1rem 0;
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bold;
+	margin: 2rem 0 1rem 0;
 }
 
 /* .sponsors-peta {
@@ -54,7 +80,7 @@
 } */
 
 .sponsors-giga {
-    /* max-width: 30rem; */
+    width: 100%;
 }
 
 .sponsors-img-giga {
@@ -70,7 +96,7 @@
 }
 
 .sponsors-mega {
-    max-width: 30rem;
+    max-width: 40%;
 }
 
 .sponsors-img-mega {
@@ -86,7 +112,7 @@
 }
 
 .sponsors-kilo {
-    max-width: 30rem;
+    max-width: 40%;
 }
 
 @media (min-width: 1990px) {
@@ -106,7 +132,7 @@
     transition: 0.2s ease-in-out;
     max-width: 15vw;
     max-height: 60px;
-    margin: 0.5rem;
+    margin: 1rem 2rem 1rem 0;
     object-fit: cover;
 }
 
@@ -116,7 +142,11 @@
 }
 
 .sponsors-micro {
-    max-width: 30rem;
+    transition: 0.2s ease-in-out;
+    width: 100%;
+    /* max-height: 30px; */
+    margin: 1rem 2rem 1rem 0;
+    object-fit: cover;
 }
 
 .sponsors-img-micro {
@@ -132,7 +162,46 @@
     transform: scale(1.1);
 }
 
-#sponsors-image {
-    max-width: 90%;
-    margin: -3rem 0 4rem 0;
+.placeholderImg {
+    width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+    .sponsors-heading h1 {
+        font-size: 1.6rem;
+    }
+
+    .sponsors-heading {
+        margin: 0;
+        padding: 1rem 2rem;
+    }
+
+    .sponsors-name {
+        font-size: 1.5rem;
+        margin: 0.5rem 0 ;
+    }
+
+    .sponsors-section {
+        margin: 0 auto;
+    }
+    .sponsors-text {
+        font-size: 1rem;
+        padding: 2rem 2rem;
+        margin: 0;
+    }
+
+    .sponsors-items {
+        margin: 0rem 2rem;
+        /* padding: 0 0 4rem 0; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .sponsors-giga,
+    .sponsors-mega,
+    .sponsors-kilo,
+    .sponsors-micro {
+        margin-left: 0;
+        max-width: 100%;
+    }
 }

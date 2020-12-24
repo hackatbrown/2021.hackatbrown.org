@@ -1,6 +1,9 @@
 import React from "react";
 import "./faq.css";
-import faqImg from "../../../../assets/images/LandingPage/scene_faq_transparent.png";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import faqImg from "../../../../assets/images/LandingPage/faq.mp4";
 
 type FAQprops = {};
 
@@ -18,46 +21,87 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
     render() {
         return (
             <div className="faq">
-                <div className="faq-text">
-                    <div className="faq-header">
-                        <h1>F.A.Q</h1>
-                    </div>
+                <Container>
+                {/* <div className="faq-text"> */}
+                    <Row>
+                        <div className="faq-header">
+                            <h1>FAQ</h1>
+                        </div>
+                    </Row>
 
-                    <div className="faq-1">
-                        <h4>Who can attend?</h4>
-                        <p>
+                    <Row>
+                    <Col sm={5}>
+                        <Row>
+                            <h4 className="faq-subtitle">How does a virtual hackathon work?</h4>
+                            <p>
+                            More details regarding logistics will be coming soon, but you’ll receive the same perks and experiences as you would in an in-person hackathon, such as direct conversations with sponsors, help through mentors and workshops, and chances to hear from influential people in the tech world!
+                            </p>
+                        </Row>
+                        <Row>
+                            <h4 className="faq-subtitle">What about hardware hacks?</h4>
+                            <p>
+                            Support for hardware hacks, in the form of kits, will be given out through an application process -- more details on this will be in the registration form! 
+                            </p>
+                        </Row>
+                        <Row>
+                            <h4 className="faq-subtitle">How do teams work?</h4>
+                            <p>
+                            We’ll have some fun team-forming sessions where you can find an awesome group of people to work with. You’re welcome to have up to four people on a team.
+                            </p>
+                        </Row>
+                        <Row>
+                            <h4 className="faq-subtitle">Do we have to submit a project if we participate?</h4>
+                            <p>
+                            You are not required to submit a project to participate, but in order to be eligible for prizes and swag, you will need to submit to Devpost at the end of the hackathon!
+                            </p>
+                        </Row>
+                        <Row>
+                            <h4 className="faq-subtitle">I’m interested in sponsoring Hack@Brown - who can I contact?</h4>
+                            <p>
+                            We are so excited to have you join us! You can email <b>sponsor@hackatbrown.org</b> and we will email you ASAP!
+                            </p>
+                        </Row>
+                        <Row>
+                            <h4 className="faq-subtitle">My question is not answered here!</h4>
+                            <p>
+                            We’re here for you! Send us an email at <b>hello@hackatbrown.org</b> or reach out to us on Facebook, Twitter, and instagram!
+                            </p>
+                        </Row>
+                    </Col>
+                    <Col sm={2}></Col>
+                    <Col sm={5}>
+                        <Row>
+                            <h4 className="faq-subtitle">Who can attend?</h4>
+                            <p>
                             All undergraduate and graduate students are welcome.
-                        </p>
-                    </div>
-                    <br></br>
-                    <div className="faq-2">
-                        <h4>I don't have a team. Can I still participate?</h4>
-                        <p>
-                            Of course! It is not necessary to have a team prior
-                            to coming to Hack@Brown. We’ll have some fun
-                            team-forming sessions where you can find an awesome
-                            group of people to work with. You’re welcome to have
-                            up to four people on a team.
-                        </p>
-                    </div>
-                    <br></br>
-                    <div className="faq-3">
-                        <h4>
-                            Will there be a standby line the day-of the event?
-                        </h4>
-                        <p>
-                            Yes, there will be a standby line if accepted
-                            attendees do not show up! The line will open when
-                            registration starts (9am) and students will be
-                            admitted off the standby line after registration
-                            ends (10:30am).
-                        </p>
-                    </div>
-                </div>
-
-                <div className="faq-img-div">
-                    <img id="faq-img" src={faqImg}></img>
-                </div>
+                            </p>
+                        </Row>
+                        <Row>
+                            <h4 className="faq-subtitle">How will prizes work?</h4>
+                            <p>
+                            We will have a variety of sponsor prizes, hackathon specific prizes, and MLH prizes for projects. If you do win a prize, these prizes will be shipped directly to you! 
+                            </p>
+                        </Row>
+                        <Row>
+                            <h4 className="faq-subtitle">
+How much is this going to cost me?</h4>
+                            <p>
+                            Hack@Brown is completely free, including merch, coffee chats with sponsors, great talks with tech leads, and an unforgettable experience!
+                            </p>
+                        </Row>
+                        <Row>
+                            <h4 className="faq-subtitle">Will there still be swag?</h4>
+                            <p>
+                            If you reside in the United States, we will ship all swag to you, free of charge!
+                            </p>
+                        </Row>
+                        <Row>
+                            <video className="video" muted autoPlay loop src={faqImg}/>
+                        </Row>
+                    </Col>
+                    </Row>
+    
+                </Container>
             </div>
         );
     }

@@ -7,8 +7,8 @@ import Main from "./LandingPageComponents/Main/Main";
 import Sponsors from "./LandingPageComponents/Sponsors/Sponsors";
 import Footer from "./LandingPageComponents/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
+import VirtualSpace from "./LandingPageComponents/VirtualSpace/VirtualSpace";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
-import Background from "../../assets/images/LandingPage/temp_background.png";
 import EmailPage from "../EmailPage/EmailPage";
 
 type LandingPageProps = {
@@ -39,12 +39,11 @@ export default class LandingPage extends React.Component<
     render() {
         return (
             <div className="landing-page">
-                <EmailPage />
-                {/* <FirebaseContextConsumer>
+                <FirebaseContextConsumer>
                     {firebase => (
                         <Toolbar
                             firebase={firebase == null ? null : firebase.firebase}
-                            backgroundColor={"rgba(234, 142, 99, 0.9)"}
+                            backgroundColor={"#FDF7DC"}
                         />
                     )}
                 </FirebaseContextConsumer>
@@ -58,12 +57,15 @@ export default class LandingPage extends React.Component<
                 <div id="faq">
                     <FAQ />
                 </div>
+                <div id="virtualSpace">
+                    <VirtualSpace />
+                </div>
                 <div id="sponsors">
                     <Sponsors />
                 </div>
                 <div id="footer">
                     <Footer />
-                </div> */}
+                </div>
             </div>
         );
     }

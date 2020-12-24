@@ -1,191 +1,276 @@
+html,body{
+    overflow-x: hidden;
+}
 .main {
-    /* min-height: 100vh; */
+    min-height: 100vh;
     align-content: center;
-    margin-bottom: -300px;
-    animation: fadeInAnimation ease 1.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    font-family: "Covik Sans";
-    /* src: url("../../../../assets/fonts/Covik Sans-Regular.otf"); */
+    margin-bottom: 0px;
+    /* padding-bottom:100px; */
+    background-color:#FDF7DC;
+
 }
 
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+@font-face {
+    font-family: Recoleta;
+    src: url("../../../../assets/fonts/Recoleta-Black.ttf");
 }
 
-#main-img {
-    max-width: 90%;
+@font-face {
+    font-family: Inter;
+    src: url("../../../../assets/fonts/Inter-Bold-slnt=0.ttf");
 }
 
-.main-text {
-    margin: 1rem 10% 1rem 10%;
+.top-text {
+    margin: 1rem 10% 2rem;
+    padding-top: 0rem;
     text-align: left;
     font-size: 2rem;
-    color: white;
+    font-family: Inter;
+    font-weight: bolder;
 }
 
-.main-div {
-    padding: 4rem 0 2rem 0;
-    margin: 0 5% 0 5%;
+.big-text{
+    font-family: Recoleta;
+    margin: 1rem 10% 1rem 10%;
+    font-size: 5rem;
+    font-weight: bolder;
+    text-align:left;
 }
 
-.main-items {
-    margin: 0 5% 0 5%;
-    display: flex;
-    justify-content: space-around;
-}
-
-#calendar-img,
-#stickynote-img {
-    max-width: 20rem;
-    min-width: 5rem;
-}
-
-.main-login {
-    transform: rotate(-15deg);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-cal {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.main-date {
-    font-size: 2.5rem;
-    position: absolute;
-    top: 30%;
-}
-
-.registration-duedate {
-    font-size: 1rem;
-    color: black;
-}
-
-.dates {
-    margin: -1.5rem 0 0 0;
-}
-
-.stickynote-login:hover {
-    color: rgb(0, 146, 141);
-    border: 2px solid rgb(0, 146, 141);
-    cursor: pointer;
-}
-
-.stickynote-dashboard:hover {
-    color: rgb(0, 146, 141);
-    cursor: pointer;
-}
-
-.stickynote-login {
-    transition: 0.3s;
+.bottom-text {
+    margin: 1rem 10% 1rem;
+    text-align: left;
     font-size: 2rem;
+    font-family: Inter;
+    font-weight: bolder;
+}
+
+.main{
+    height: 110vh;
+}
+
+.main-div{
+    padding-top: 10em;
+}
+
+.main-img{
+    height:60%;
+    width:60%;
+    margin-top:-450px;
+    margin-left:480px;
+}
+
+.static-scene {
+    display: None;
+}
+
+.plane-one{
+    height:28%;
+    width:28%;
+    transform: scaleX(-1);
+    margin-top:-280px;
     position: absolute;
-    top: 25%;
-    right: 22.5%;
-    border-radius: 15px;
-    padding: 5px;
-    border: 2px solid black;
+    margin-left:-720px;
 }
-
-.stickynote-dashboard {
-    transition: 0.3s;
-    font-size: 2rem;
+.plane-one-st{
+    display: None;
+    height:28%;
+    width:28%;
+    transform: scaleX(-1);
+    margin-left:10000px;
     position: absolute;
-    top: 50%;
-    right: 25%;
+    margin-top:-490px;
+}
+.animated-scene:hover .plane-one{
+    animation: onemove 5s ;
+    animation-iteration-count: 1
+}
+.animated-scene:hover .plane-two{
+    animation: twomove 5s ;
+    animation-delay:0.3s;
+    animation-iteration-count: 1;
+}
+.animated-scene:hover .plane-three{
+    animation: threemove 5s ;
+    animation-delay:0.2s;
+    animation-iteration-count: 1
+}
+.animated-scene:hover .plane-one-st{
+    display: inline;
+    animation: oneupmove 5s infinite;
+    animation-delay: 1.2s;
+    animation-iteration-count: 1
+}
+.animated-scene:hover .plane-two-st{
+    display: inline;
+    animation: twoupmove 5s infinite;
+    animation-delay: 1.3s;
+    animation-iteration-count: 1
+}
+.animated-scene:hover .plane-three-st{
+    display: inline;
+    animation: threeupmove 5s infinite;
+    animation-delay:1.5s;
+    animation-iteration-count: 1
 }
 
-/* fix for "Welcome to Garage" */
-@media screen and (max-width: 1291px) {
-    .main {
-        margin-bottom: inherit;
+
+.plane-two{
+    height:23%;
+    width:23%;
+    transform: scaleX(-1);
+    position: absolute;
+    margin-top:-720px;
+    margin-left:220px;
+}
+.plane-two-st{
+    display: None;
+    height:23%;
+    width:23%;
+    transform: scaleX(-1);
+    position: absolute;
+    margin-left:10000px;
+    margin-top:-490px;
+}
+.plane-three{
+    height:18%;
+    width:18%;
+    margin-top:-600px;
+    margin-left: 450px;
+    position: absolute;
+    transform: scaleX(-1);
+}
+.plane-three-st{
+    display: None;
+    height:18%;
+    width:18%;
+    position: absolute;
+    transform: scaleX(-1);
+    margin-left:700px;
+    margin-top:-520px;
+}
+
+@media screen and (max-width: 1200px) {
+    .main{
+        height: 100%;
+    }
+    .plane-one {
+        display: none;
+    }
+    .plane-two { 
+        display: none;
+    }
+    .plane-three {
+        display: none;
+    }
+    .plane-one-st {
+        display: none;
+    }
+    .plane-two-st { 
+        display: none;
+    }
+    .plane-three-st {
+        display: none;
+    }
+    .animated-scene {
+        display: None;
+    }
+    .main-div {
+        padding-top: 1em;
+        display: block;
+    }
+    .static-scene {
+        margin-top: 3rem;
+        display: block;
+        width: 100%;
+    }
+    .static-scene img {
+        width: 80vw;
+    }
+    .top-text {
+        margin: 1rem 10% 2rem;
+        padding-top: 5rem;
+        font-size: 1.2rem;
+    }
+
+    .big-text{
+        font-family: Recoleta;
+        margin: 1rem 10% 1rem 10%;
+        font-size: 2rem;
+    }
+
+    .bottom-text {
+        margin: 1rem 10% 1rem;
+        text-align: left;
+        font-size: 1rem;
     }
 }
 
-@media screen and (max-width: 600px) {
-    #calendar-img,
-    #stickynote-img {
-        max-width: 60vw;
-        min-width: 10vw;
+@keyframes onemove {
+    0%{
+        margin-left:-720px;
+        margin-top:-280px;
     }
-    .main-date {
-        font-size: 5vw;
-        right: 20%;
-        left: 20%;
+    45%{
+        margin-left:-2000px;
+        margin-top:50px;
     }
-
-    .stickynote-login {
-        font-size: 4vw;
-        right: 22.5%;
-        padding: 2px;
-        border-radius: 10px;
-    }
-    .stickynote-dashboard {
-        font-size: 4vw;
-        right: 10%;
-    }
-    .registration-duedate {
-        font-size: 3.5vw;
-        color: black;
-    }
-
-    .dates {
-        margin: -1.5rem 0 0 0;
+    100%{
+        margin-left:-2200px;
+        margin-top:70px;
     }
 }
-
-@media screen and (max-height: 600px) {
-    .main {
-        min-height: 50vh;
+@keyframes twomove{
+    0%{
+        margin-left:220px;
+        margin-top:-720px
     }
-    #calendar-img,
-    #stickynote-img {
-        max-width: 40vh;
-        min-width: 10vh;
+    60%{
+        margin-left:-1100px;
+        margin-top:-280px;
     }
-    .main-date {
-        font-size: 5vh;
-        right: 20%;
-        left: 20%;
-    }
-    .stickynote-login {
-        font-size: 4vh;
-        right: 22.5%;
-        padding: 2px;
-        border-radius: 10px;
-    }
-    .stickynote-dashboard {
-        font-size: 4vh;
-        right: 10%;
-    }
-    .registration-duedate {
-        font-size: 2.5vh;
-        color: black;
-    }
-
-    .dates {
-        margin: -1.5rem 0 0 0;
+    100%{
+        margin-left:-1200px;
+        margin-top:-280px;
     }
 }
-
-@media screen and (max-width: 640px) {
-    .main {
-        min-height: 50vh;
+@keyframes threemove{
+    0%{
+        margin-left:450px;
+        margin-top:-600px
     }
-
-    .main-items {
-        display: flex;
-        flex-wrap: wrap;
+    100%{
+        margin-left:-1300px;
+        margin-top:-280px;
+    }
+}
+@keyframes oneupmove{
+    0%{
+        margin-left:650px;
+        margin-top:-490px;
+    }
+    100%{
+        margin-left:-20px;
+        margin-top:-795px;
+    }
+}
+@keyframes twoupmove{
+    0%{
+        margin-left:740px;
+        margin-top:-490px;
+    }
+    100%{
+        margin-left:225px;
+        margin-top:-815px;
+    }
+}
+@keyframes threeupmove{
+    0%{
+        margin-left:700px;
+        margin-top:-520px;
+    }
+    100%{
+        margin-left:440px;
+        margin-top:-695px;
     }
 }

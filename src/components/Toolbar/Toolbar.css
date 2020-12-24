@@ -3,8 +3,11 @@
     z-index: 1;
     top: 0;
     width: 100%;
-    color: white;
-    background-color: rgba(234, 142, 99, 0.9);
+    background-color:#FDF7DC;
+    font-weight: 100;
+}
+.toolbar a:hover {
+    text-decoration: none;
 }
 .navBarExtended {
     padding: 1000px;
@@ -12,8 +15,8 @@
 #logo-img {
     display: flex;
     align-content: flex-start;
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 40px;
+    max-height: 40px;
     width: auto;
     height: auto;
     transition: 0.2s;
@@ -24,21 +27,49 @@
     cursor: pointer;
 }
 
-.tool-bar-container {
+#mlh-img {
+    z-index: 2;
+    position: absolute;
+    right: 2rem;
+    top: 0;
+}
+
+.main-tool-bar-container {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-@media screen and (max-width: 900px) {
-    .tool-bar-container {
-        height: 100vh;
-        padding-top: 50%;
-        padding-bottom: 50%;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-    }
+@font-face {
+    font-family: Recoleta;
+    src: url("../../assets/fonts/Recoleta-Black.ttf");
+}
+
+.toolbar-virtual-space,
+.toolbar-about,
+.toolbar-itinerary,
+.toolbar-sponsors,
+.toolbar-faq {
+    color: #444444 !important;
+}
+
+.toolbar-virtual-space:hover,
+.toolbar-about:hover,
+.toolbar-itinerary:hover,
+.toolbar-sponsors:hover,
+.toolbar-faq:hover {
+    cursor: pointer !important;
+    border: none !important;
+}
+
+#register {
+    color: #444444;
+    border-radius: 25px;
+    border: 2px solid #444444;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .toolbar-items {
@@ -48,25 +79,101 @@
 
 .toolbar-signin {
     width: 6rem;
-    color: white;
+    font-weight: 100;
+    color: #444444;
     padding: 0 1rem 0 1rem;
     background-color: transparent;
-    border-radius: 10px;
+    border-radius: 16px;
+    border: 1px solid #444444;
+}
+
+.regist-tool-bar-container a {
+    color: white !important;
+}
+
+.regist-tool-bar-container .sign-in-col button {
+    color: white;
     border: 1px solid white;
-    transition: 0.2s;
 }
 
-.toolbar-about:hover,
-.toolbar-itinerary:hover,
-.toolbar-sponsors:hover,
-.toolbar-faq:hover {
-    transition: 0.2s;
-    color: rgb(0, 146, 141);
-    cursor: pointer;
-}
+@media screen and (max-width: 900px) {
+    #mlh-img {
+        display: none !important;
+    }
+    
+    .toolbar nav {
+        padding-left: 0vw !important;
+        padding-right: 0vw !important;
+        /* background-color: transparent !important; */
+    }
 
-.toolbar-signin:hover {
-    color: teal;
-    border: 1px solid rgb(0, 146, 141);
-    cursor: pointer;
+    .toolbar nav .navbar-brand {
+        margin-left: 30px !important;
+    }
+
+    .toolbar nav .navbar-toggler {
+        margin-right: 4vw !important;
+        margin-bottom: 2vw !important;
+        margin-top: 1vw !important;
+    }
+
+    .main-tool-bar-container {
+        height: 90vh;
+        padding-top: 0;
+        padding-bottom: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .main-tool-bar-container .col {
+        /* width: 0; */
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+        font-size: 25px;
+        height: 20%;
+        font-family: Recoleta;
+        font-weight: normal;
+    }
+
+    .main-tool-bar-container .col:nth-of-type(1) {
+        background-color: rgba(253, 247, 220, 1);
+    }
+    .main-tool-bar-container .col:nth-of-type(2) {
+        background-color: rgba(237, 105, 91, 1);
+    }
+    .main-tool-bar-container .col:nth-of-type(3) {
+        background-color: rgba(70, 181, 184, 1);
+    }
+    .main-tool-bar-container .col:nth-of-type(4) {
+        background-color: rgba(237, 105, 91, 1);
+    }
+    .main-tool-bar-container .col:nth-of-type(5) {
+        background-color: rgba(253, 247, 220, 1);
+    }
+    .main-tool-bar-container .sign-in-col {
+        display: none !important;
+    }
+
+    .dashboard-tool-bar-container,
+    .regist-tool-bar-container {
+        height: 100vh;
+        padding-top: 50%;
+        padding-bottom: 50%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 1.5rem;
+    }
+
+    .regist-tool-bar-container a {
+        color: white !important;
+    }
+
+    .regist-tool-bar-container .sign-in-col button {
+        color: white;
+        border: 1px solid white;
+    }
 }

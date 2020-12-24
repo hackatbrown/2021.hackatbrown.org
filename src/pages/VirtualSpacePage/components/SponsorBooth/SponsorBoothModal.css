@@ -1,0 +1,19 @@
+#facebooklogo {
+  width: 231.47px;
+  height: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -50px;
+}
+
+.p {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  color: #444444;
+  align-content: center;
+}
