@@ -51,7 +51,7 @@ export default class Sponsors extends React.Component<
             <h2 className="sponsors-name">Giga</h2>
             <div className="sponsors-img">
               <a href="#" target="_blank">
-                <img id="sponsors-img-giga" style={{width: "100%"}} src={placeholderImg}></img>
+                <img id="sponsors-img-giga" src={placeholderImg}></img>
               </a>
               {/* <a href="https://www.facebook.com" target="_blank">
                 <img className="sponsors-img-giga" src={facebookImg}></img>
@@ -62,7 +62,7 @@ export default class Sponsors extends React.Component<
             <h2 className="sponsors-name">Mega</h2>
             <div className="sponsors-img">
               <a href="#" target="_blank">
-                <img id="sponsors-img-mega" style={{width: "100%"}} src={placeholderImg}></img>
+                <img id="sponsors-img-mega" src={placeholderImg}></img>
               </a>
             </div>
           </div>
