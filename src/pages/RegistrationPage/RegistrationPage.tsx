@@ -49,7 +49,7 @@ type RegistrationState = {
   firstHack: boolean | null;
   /* travelReimburse: boolean | null;
 	travelOrigin: string;
-	
+
 	we're virtual for h@b 2021 woohoo!!!
 	*/
   mlhConduct: boolean | null;
@@ -104,8 +104,8 @@ export default class RegistrationPage extends React.Component<
       over18: null,
       firstHack: null,
       /* travelReimburse: null,
-			travelOrigin: "", 
-		
+			travelOrigin: "",
+
 			we're virtual for h@b 2021 woohoo!!!
 			*/
 
@@ -151,7 +151,7 @@ export default class RegistrationPage extends React.Component<
     this.setState({
       inTransition: true,
     });
-    setTimeout(this.incrementStage, 1000);
+    setTimeout(this.incrementStage, 1500);
   };
 
   renderImageSubmit = (event: any) => {
