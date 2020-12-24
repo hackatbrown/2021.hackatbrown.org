@@ -87,6 +87,15 @@
     border: 1px solid #444444;
 }
 
+.regist-tool-bar-container a {
+    color: white !important;
+}
+
+.regist-tool-bar-container .sign-in-col button {
+    color: white;
+    border: 1px solid white;
+}
+
 @media screen and (max-width: 900px) {
     #mlh-img {
         display: none !important;
@@ -166,6 +175,5 @@
     .regist-tool-bar-container .sign-in-col button {
         color: white;
         border: 1px solid white;
-        font-size: 1.5rem;
     }
 }

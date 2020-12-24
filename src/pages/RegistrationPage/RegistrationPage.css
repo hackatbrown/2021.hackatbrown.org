@@ -1,9 +1,8 @@
 .registration {
-  /* padding-top: 80px; */
+  padding-top: 80px;
   height: auto;
   min-height: 100vh;
-  /* padding-left: 10vw; */
-  padding: 5rem 1rem 0;
+  padding-left: 10vw;
   text-align: left;
   background-color: #211959;
   display: block;
@@ -25,6 +24,12 @@
   font-family: Recoleta;
   font-weight: 700;
   color: white;
+}
+
+@media screen and (max-width: 900px) {
+  .registration {
+    padding: 5rem 1rem 0;
+  }
 }
 
 @media screen and (min-width: 500px) {
