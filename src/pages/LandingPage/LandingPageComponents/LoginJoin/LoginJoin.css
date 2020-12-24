@@ -13,7 +13,7 @@
 
 .login-join-modal {
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -49,9 +49,9 @@
     border: none;
     border-radius: 12px 0px;
 
-    font-family: Recoleta-Regular;
+    font-family: Recoleta;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 100;
     font-size: 24px;
 
     /* Disable joining */
@@ -70,9 +70,9 @@
     border: none;
     border-radius: 0px 12px;
 
-    font-family: Recoleta-Regular;
+    font-family: Recoleta;
     font-style: normal;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 24px;
 }
 
@@ -81,7 +81,8 @@ form.loginJoin-form {
     text-align: left;
     padding-left: 47px;
     padding-right: 47px;
-    font-family: Inter-Regular;
+    font-family: Inter;
+    font-weight: 100;
     padding-bottom: 32px;
 }
 
@@ -123,7 +124,7 @@ label {
     background: #ED695B;
 
     font-size: 12px;
-    line-height: 33px;
+    font-weight: 100;
 
     color: #ffffff;
 
@@ -141,7 +142,7 @@ label {
     background: #ffffff;
 
     font-size: 12px;
-    line-height: 33px;
+    font-weight: 100;
 
     color: #2d3d53;
 }
@@ -191,11 +192,10 @@ label {
     padding-left:30px;
     padding-right: 30px;
     font-family: Inter;
+    font-weight: 100;
     color:#fff !important;
-    /* background:#ED695B;
-    border: 2px solid #ED695B; */
-    background: #808080;
-    border: 2px solid #808080;
+    background:#ED695B;
+    border: 2px solid #ED695B;
     display: flex;
 }
 

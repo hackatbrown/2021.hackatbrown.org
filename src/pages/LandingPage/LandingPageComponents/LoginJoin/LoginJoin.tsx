@@ -428,7 +428,7 @@ export default class LoginJoin extends Component<
     } else {
       // else, user is not logged in
       button = (
-        <p /*onClick={this.openModal}*/ className="stickynote-button">
+        <p onClick={this.openModal} className="stickynote-button">
           Register
         </p>
       );

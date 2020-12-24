@@ -11,6 +11,7 @@ import mlhImg from "../../assets/images/LandingPage/mlh-badge.png";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Firebase from "../Firebase";
 import { Redirect } from "react-router-dom";
+import { couldStartTrivia } from "typescript";
 
 type ToolbarProps = {
   firebase: Firebase | null;
@@ -81,9 +82,14 @@ export default class Toolbar extends React.Component<
     if (this.state.redirectLogout && window.location.pathname !== "/") {
       return <Redirect to="/" />;
     } else {
+      let hostname = window.location.href;
+      hostname = hostname.match(".+://.+/")[0];
       return (
         <>
-          <img id="mlh-img" src={mlhImg} alt="MLH"></img>
+          <img id="mlh-img" src={mlhImg} alt="MLH" style={{
+            display:
+              window.location.pathname === "/" ? "initial" : "none",
+          }}></img>
           <div className="toolbar">
             <Navbar
               collapseOnSelect
@@ -125,12 +131,9 @@ export default class Toolbar extends React.Component<
                 <Nav className="mr-auto"></Nav>
                 <Nav className="tool-bar-container">
                   <Col>
+                    {window.location.pathname === "/" ?
                     <div
                       className="toolbar-about"
-                      style={{
-                        display:
-                          window.location.pathname === "/" ? "initial" : "none",
-                      }}
                     >
                       <Link
                         activeClass="active"
@@ -142,16 +145,20 @@ export default class Toolbar extends React.Component<
                       >
                         About
                       </Link>
-                    </div>
+                    </div> : <div className="toolbar-about">
+                        <a
+                            href={hostname + "#about"}
+                            className="toolbar-about"
+                        >
+                        About
+                        </a>
+                    </div>}
                   </Col>
 
                   <Col>
+                    {window.location.pathname === "/" ?
                     <div
                       className="toolbar-itinerary"
-                      style={{
-                        display:
-                          window.location.pathname === "/" ? "initial" : "none",
-                      }}
                     >
                       <Link
                         activeClass="active"
@@ -163,16 +170,20 @@ export default class Toolbar extends React.Component<
                       >
                         Itinerary
                       </Link>
-                    </div>
+                    </div> : <div className="toolbar-itinerary">
+                        <a
+                            href={hostname + "#itinerary"}
+                            className="toolbar-itinerary"
+                        >
+                          Itinerary
+                        </a>
+                    </div>}
                   </Col>
 
                   <Col>
+                    {window.location.pathname === "/" ?
                     <div
                       className="toolbar-faq"
-                      style={{
-                        display:
-                          window.location.pathname === "/" ? "initial" : "none",
-                      }}
                     >
                       <Link
                         activeClass="active"
@@ -184,20 +195,24 @@ export default class Toolbar extends React.Component<
                       >
                         FAQ
                       </Link>
-                    </div>
+                    </div> : <div className="toolbar-faq">
+                        <a
+                            href={hostname + "#faq"}
+                            className="toolbar-faq"
+                        >
+                          FAQ
+                        </a>
+                    </div>}
                   </Col>
 
                   <Col>
+                    {window.location.pathname === "/" ?
                     <div
                       className="toolbar-virtual-space"
-                      style={{
-                        display:
-                          window.location.pathname === "/" ? "initial" : "none",
-                      }}
                     >
                       <Link
                         activeClass="active"
-                        to="virtual"
+                        to="virtualSpace"
                         spy={true}
                         smooth={true}
                         offset={-70}
@@ -205,16 +220,20 @@ export default class Toolbar extends React.Component<
                       >
                         Virtual&nbsp;Space
                       </Link>
-                    </div>
+                    </div> : <div className="toolbar-virtual-space">
+                        <a
+                            href={hostname + "#virtualSpace"}
+                            className="toolbar-virtual-space"
+                        >
+                        Virtual&nbsp;Space
+                        </a>
+                    </div>}
                   </Col>
 
                   <Col>
+                    {window.location.pathname === "/" ?
                     <div
                       className="toolbar-sponsors"
-                      style={{
-                        display:
-                          window.location.pathname === "/" ? "initial" : "none",
-                      }}
                     >
                       <Link
                         activeClass="active"
@@ -226,7 +245,14 @@ export default class Toolbar extends React.Component<
                       >
                         Sponsors
                       </Link>
-                    </div>
+                    </div> : <div className="toolbar-sponsors">
+                        <a
+                            href={hostname + "#sponsors"}
+                            className="toolbar-sponsors"
+                        >
+                        Sponsors
+                        </a>
+                    </div>}
                   </Col>
 
                   {/* <Col>
@@ -253,7 +279,7 @@ export default class Toolbar extends React.Component<
                                     </div>
                                 </Col> */}
 
-                  {/* <Col>{button}</Col> */}
+                  <Col className="sign-in-col">{button}</Col>
                 </Nav>
               </Navbar.Collapse>
             </Navbar>

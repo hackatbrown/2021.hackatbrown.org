@@ -68,16 +68,16 @@ html,body{
     height:28%;
     width:28%;
     transform: scaleX(-1);
-    margin-top:-370px;
+    margin-top:-280px;
     position: absolute;
-    margin-left:-650px;
+    margin-left:-720px;
 }
 .plane-one-st{
     display: None;
     height:28%;
     width:28%;
     transform: scaleX(-1);
-    margin-left:650px;
+    margin-left:10000px;
     position: absolute;
     margin-top:-490px;
 }
@@ -129,7 +129,7 @@ html,body{
     width:23%;
     transform: scaleX(-1);
     position: absolute;
-    margin-left:740px;
+    margin-left:10000px;
     margin-top:-490px;
 }
 .plane-three{
@@ -212,11 +212,11 @@ html,body{
         margin-top:-370px
     }
     45%{
-        margin-left:-1500px;
+        margin-left:-2000px;
         margin-top:50px;
     }
     100%{
-        margin-left:-1600px;
+        margin-left:-2200px;
         margin-top:70px;
     }
 }
@@ -226,11 +226,11 @@ html,body{
         margin-top:-720px
     }
     60%{
-        margin-left:-850px;
+        margin-left:-1100px;
         margin-top:-280px;
     }
     100%{
-        margin-left:-830px;
+        margin-left:-1200px;
         margin-top:-280px;
     }
 }
@@ -240,7 +240,7 @@ html,body{
         margin-top:-600px
     }
     100%{
-        margin-left:-930px;
+        margin-left:-1300px;
         margin-top:-280px;
     }
 }
