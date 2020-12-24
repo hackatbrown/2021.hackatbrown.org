@@ -208,8 +208,8 @@ html,body{
 
 @keyframes onemove {
     0%{
-        margin-left:-650px;
-        margin-top:-370px
+        margin-left:-720px;
+        margin-top:-280px;
     }
     45%{
         margin-left:-2000px;
