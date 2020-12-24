@@ -84,6 +84,20 @@ export default class Toolbar extends React.Component<
     } else {
       let hostname = window.location.href;
       hostname = hostname.match(".+://.+/")[0];
+
+      let toolbarContainerClassname; 
+      switch(window.location.pathname) {
+        case "/dashboard":
+          toolbarContainerClassname = "dashboard-tool-bar-container";
+          break;
+        case "/registration": 
+          toolbarContainerClassname = "regist-tool-bar-container";
+          break;
+        default:
+          toolbarContainerClassname = "main-tool-bar-container";
+          break;
+      }
+      console.log(toolbarContainerClassname)
       return (
         <>
           <img id="mlh-img" src={mlhImg} alt="MLH" style={{
@@ -126,10 +140,10 @@ export default class Toolbar extends React.Component<
                   )}
                 </div>
               </Navbar.Brand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto"></Nav>
-                <Nav className="tool-bar-container">
+                <Nav className={toolbarContainerClassname}>
                   <Col>
                     {window.location.pathname === "/" ?
                     <div

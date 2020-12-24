@@ -1,8 +1,9 @@
 .registration {
-  padding-top: 80px;
+  /* padding-top: 80px; */
   height: auto;
   min-height: 100vh;
-  padding-left: 10vw;
+  /* padding-left: 10vw; */
+  padding: 5rem 1rem 0;
   text-align: left;
   background-color: #211959;
   display: block;
