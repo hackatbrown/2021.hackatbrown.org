@@ -34,11 +34,12 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                         with sponsors, check out the latest announcements, and
                         find the links to workshops! 
                         <br/><br/>
-                        Access the Virtual Space
-                        by registering!
+                        {/* Access the Virtual Space
+                        by registering! */}
+                        Virtual space will be available closer to the day of the event!
                         <br/><br/>
                      </p>
-                     <button id="registerBtn">Register</button>
+                     {/* <button id="registerBtn">Register</button> */}
                   </div>
                 </Col>
                 <Col sm={6}>

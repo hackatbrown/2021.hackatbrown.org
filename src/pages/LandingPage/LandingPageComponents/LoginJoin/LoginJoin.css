@@ -158,7 +158,6 @@ label {
 
 #submit-button {
     width: 72.39px;
-    height: 33px;
 
     border: 1px solid #ED695B;
     box-sizing: border-box;
@@ -168,6 +167,7 @@ label {
 
     font-size: 12px;
     line-height: 33px;
+    font-weight: 100;
 
     color: #ffffff;
 
