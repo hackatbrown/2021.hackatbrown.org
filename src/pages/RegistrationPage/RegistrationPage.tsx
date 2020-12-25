@@ -5,12 +5,9 @@ import MoreInfo from "./components/MoreInfo/MoreInfo";
 import OptionalInfo from "./components/OptionalInfo/OptionalInfo";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import blocksImage from "../../assets/images/Registration/blocks_img.png";
-import boardImage from "../../assets/images/Registration/board_img.png";
-import wiiImage from "../../assets/images/Registration/wii_img.png";
-import boardGif from "../../assets/images/Registration/board_animation.gif";
-import wiiGif from "../../assets/images/Registration/wii_animation.gif";
-import blocksGif from "../../assets/images/Registration/blocks_animation.gif";
+import monopolyVideo from "../../assets/images/Registration/board_animation.mp4";
+import wiiVideo from "../../assets/images/Registration/wii_animation.mp4";
+import jengaVideo from "../../assets/images/Registration/blocks_animation.mp4";
 import { Link, Redirect } from "react-router-dom";
 import firebase from "firebase"; // for getting access to storage
 import Firebase from "../../components/Firebase"; // for user
@@ -63,7 +60,8 @@ type RegistrationState = {
   findout: string[];
   comments: string;
   fileName: string;
-  inTransition: boolean;
+  /* background animations */
+  background: HTMLVideoElement;
 };
 
 const buttonStyle: React.CSSProperties = {
@@ -76,6 +74,8 @@ const buttonStyle: React.CSSProperties = {
   height: "40px",
   fontSize: "16px",
 };
+
+const backgroundsList = [jengaVideo, monopolyVideo, wiiVideo];
 
 export default class RegistrationPage extends React.Component<
   RegistrationProps,
@@ -118,10 +118,12 @@ export default class RegistrationPage extends React.Component<
       findout: [],
       comments: "",
       fileName: "",
-      inTransition: false,
+      /* background animations */
+      background: null,
     };
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.getVideo = this.getVideo.bind(this);
   }
 
   // Check if user is logged in when component mounts
@@ -148,29 +150,25 @@ export default class RegistrationPage extends React.Component<
   };
 
   renderImageNext = () => {
-    this.setState({
-      inTransition: true,
-    });
-    setTimeout(this.incrementStage, 1500);
+    this.state.background.play();
+    setTimeout(this.incrementStage, 4000);
   };
 
   renderImageSubmit = (event: any) => {
-    this.setState({
-      inTransition: true,
-    });
 
     let errorMessage: string | null = this.checkMissing();
     if (errorMessage === null) {
+      // Play final animation
+      this.state.background.play();
       this.setState({
         missingInfo: "",
       });
       setTimeout(async () => {
         await this.submitForm(event);
         this.setState({
-          inTransition: false,
           backDashboard: true,
         });
-      }, 3000);
+      }, 4000);
     } else {
       this.setState({
         missingInfo: errorMessage,
@@ -183,8 +181,11 @@ export default class RegistrationPage extends React.Component<
     if (this.state.formStage + 1 <= 2) {
       this.setState({
         formStage: this.state.formStage + 1,
-        inTransition: false,
       });
+
+      // Load in the next video background
+      this.state.background.src = backgroundsList[this.state.formStage];
+      this.state.background.load()
     }
   };
 
@@ -192,9 +193,11 @@ export default class RegistrationPage extends React.Component<
     if (this.state.formStage - 1 >= 0) {
       this.setState({
         formStage: this.state.formStage - 1,
-        inTransition: false,
       });
     }
+    // Load in previous video background
+    this.state.background.src = backgroundsList[this.state.formStage - 1];
+    this.state.background.load()
   };
 
   /* Function to handle changing state based on submitted data */
@@ -488,6 +491,11 @@ export default class RegistrationPage extends React.Component<
   );
   buttonList = [this.basicButtons, this.moreButtons, this.submitButtons];
 
+  /* get the element representing the background video */
+  getVideo(elem: HTMLVideoElement) {
+    this.setState({background: elem})
+  }
+
   render() {
     if (this.state.backDashboard) {
       return <Redirect to="/dashboard" />;
@@ -528,8 +536,6 @@ export default class RegistrationPage extends React.Component<
       />
     );
     let compList = [basicComp, moreComp, optionalComp];
-    let backgroundImageList = [blocksImage, boardImage, wiiImage];
-    let gifImageList = [blocksGif, boardGif, wiiGif];
 
     if (isMobile) {
       return (
@@ -565,17 +571,16 @@ export default class RegistrationPage extends React.Component<
         </div>
       );
     } else {
+      // Jenga video is the first, needs to fit into browser window
+      const isJenga = this.state.formStage === 0;
+      const videoStyle = isJenga ? { height: '100%' } : { width: '100%', height: 'inherit' };
       return (
         <div
           className="registration"
-          style={{
-            backgroundImage: `url(${
-              this.state.inTransition && this.state.missingInfo === ""
-                ? gifImageList[this.state.formStage]
-                : backgroundImageList[this.state.formStage]
-            })`,
-          }}
         >
+          <video style={videoStyle} ref={this.getVideo} muted className="background">
+            <source src={backgroundsList[this.state.formStage]} type="video/mp4"/>
+          </video>
           <div className="form-name">
             <h1>{this.nameList[this.state.formStage]}</h1>
           </div>
