@@ -102,7 +102,7 @@
 }
 
 .sponsors-mega {
-    max-width: 40%;
+    max-width: 100%;
 }
 
 .sponsors-img-mega {
@@ -118,7 +118,7 @@
 }
 
 .sponsors-kilo {
-    max-width: 40%;
+    max-width: 100%;
 }
 
 @media (min-width: 1990px) {
@@ -127,11 +127,11 @@
     }
     .sponsors-mega .sponsors-img {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
     }
-    .sponsors-kilo {
+    /* .sponsors-kilo {
         margin-left: 1em;
-    }
+    } */
 }
 
 .sponsors-img-kilo {
