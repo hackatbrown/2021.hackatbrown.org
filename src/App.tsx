@@ -207,11 +207,11 @@ export default class App extends React.Component<AppProps, AppState> {
 
                         </div>
                     </Route> */}
-                    <Route path="/virtual-space">
+                    {/* <Route path="/virtual-space">
                     <div className="App">
                             <VirtualSpacePage />
                         </div>
-                    </Route>
+                    </Route> */}
                     <Route path="">
                         <div className="App">
                             <div className="App">
