@@ -1,4 +1,4 @@
-#facebooklogo {
+#logo {
   width: 231.47px;
   height: 70px;
   display: block;
@@ -16,4 +16,47 @@
   text-align: center;
   color: #444444;
   align-content: center;
+}
+
+.giga, .mega, .kilo, .micro {
+  font-family: Recoletta;
+  font-weight: bold;
+  font-size: 24px;
+  top: 130px;
+  left: 62px;
+  transform: rotate(-45deg);
+  text-transform: capitalize;
+  width: 170px;
+  height: 35px;
+  color: white;
+  position: absolute;
+  text-align: center;
+  clip-path: polygon(
+    0 100%,
+    21% 0,
+    100% 0%,
+    79% 0%,
+    83% 20%,
+    100% 100%,
+    10% 100%,
+    0% 100%,
+    0% 0%
+  )
+}
+
+.giga {
+  background-color: #ED695B;
+}
+
+.mega {
+  background-color: #46B5B8;
+}
+
+.kilo {
+  background-color: #211959;
+}
+
+.micro {
+  background-color: #A6DCEC;
+  color: black;
 }
