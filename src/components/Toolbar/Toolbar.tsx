@@ -12,10 +12,14 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import Firebase from "../Firebase";
 import { Redirect } from "react-router-dom";
 import { couldStartTrivia } from "typescript";
+import LoginJoin from '../../pages/LandingPage/LandingPageComponents/LoginJoin/LoginJoin';
+import { FirebaseContextConsumer } from "../Firebase/context";
 
 type ToolbarProps = {
   firebase: Firebase | null;
   backgroundColor: string;
+  hideToolbar: any;
+  apiURL: string;
 };
 
 type ToolbarState = {
@@ -68,7 +72,7 @@ export default class Toolbar extends React.Component<
       // TODO: Go to dashboard
       button = (
         <button onClick={this.logOut} className="toolbar-signin">
-          Log out
+          Log&nbsp;out
         </button>
       );
     } else {
@@ -77,6 +81,15 @@ export default class Toolbar extends React.Component<
       //     <button onClick={(this.props.firebase == null) ? this.doNothing : this.props.firebase.doLogOut} className="toolbar-signin">
       //                         <p>Join/Login</p>
       //                     </button>
+      button = 
+        <FirebaseContextConsumer>
+          {firebase => (
+              <LoginJoin
+                  apiURL={this.props.apiURL}
+                  firebase={firebase == null ? null : firebase.firebase}
+                  hideToolbar={this.props.hideToolbar} />
+          )}
+        </FirebaseContextConsumer>
     }
 
     if (this.state.redirectLogout && window.location.pathname !== "/") {
@@ -97,7 +110,7 @@ export default class Toolbar extends React.Component<
           toolbarContainerClassname = "main-tool-bar-container";
           break;
       }
-      console.log(toolbarContainerClassname)
+      
       return (
         <>
           <img id="mlh-img" src={mlhImg} alt="MLH" style={{

@@ -132,6 +132,8 @@ export default class App extends React.Component<AppProps, AppState> {
                                                         : firebase.firebase
                                                 }
                                                 backgroundColor={"#211959"}
+                                                hideToolbar={null}
+                                                apiURL={apiURL}
                                             />
                                         )}
                                     </FirebaseContextConsumer>
@@ -164,6 +166,8 @@ export default class App extends React.Component<AppProps, AppState> {
                                                     : firebase.firebase
                                             }
                                             backgroundColor={"#A6DCEC"}
+                                            hideToolbar={null}
+                                            apiURL={apiURL}
                                         />
                                     )}
                                 </FirebaseContextConsumer>

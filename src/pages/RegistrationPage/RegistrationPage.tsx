@@ -150,12 +150,17 @@ export default class RegistrationPage extends React.Component<
   };
 
   renderImageNext = () => {
-    this.state.background.play();
-    setTimeout(this.incrementStage, 4000);
+    let errorMessage: string | null = this.checkMissing();
+    if (errorMessage === null) {
+      this.state.background.play();
+      setTimeout(this.incrementStage, 4000);
+    }
+    this.setState({
+      missingInfo: errorMessage,
+    })
   };
 
   renderImageSubmit = (event: any) => {
-
     let errorMessage: string | null = this.checkMissing();
     if (errorMessage === null) {
       // Play final animation
@@ -169,11 +174,10 @@ export default class RegistrationPage extends React.Component<
           backDashboard: true,
         });
       }, 4000);
-    } else {
-      this.setState({
-        missingInfo: errorMessage,
-      });
     }
+    this.setState({
+      missingInfo: errorMessage,
+    });
   };
 
   /* Functions to change the stage of the form */
@@ -563,7 +567,7 @@ export default class RegistrationPage extends React.Component<
           <div
             className="error"
             style={{
-              visibility: this.state.formStage === 2 ? "visible" : "hidden",
+              visibility: this.state.formStage !== null ? "visible" : "hidden",
             }}
           >
             {this.state.missingInfo}
@@ -593,13 +597,13 @@ export default class RegistrationPage extends React.Component<
               <p>{this.state.formStage + 1}/3</p>
             </div>
           </div>
-          <div className="form-last-button">
-          </div>
+          {/* <div className="form-last-button">
+          </div> */}
           <div
             className="error"
             style={{
               paddingBottom: "1em",
-              visibility: this.state.formStage === 2 ? "visible" : "hidden",
+              visibility: this.state.formStage !== null ? "visible" : "hidden",
             }}
           >
             {this.state.missingInfo}
