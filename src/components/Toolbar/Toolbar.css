@@ -4,7 +4,7 @@
     top: 0;
     width: 100%;
     background-color:#FDF7DC;
-    font-weight: 100;
+    /* font-weight: 100; */
 }
 .toolbar a:hover {
     text-decoration: none;
@@ -28,8 +28,9 @@
 }
 
 #mlh-img {
+    width: 7%;
     z-index: 2;
-    position: absolute;
+    position: fixed;
     right: 2rem;
     top: 0;
 }
@@ -38,6 +39,10 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.main-tool-bar-container .col {
+    padding: 0 20px;
 }
 
 @font-face {
@@ -50,7 +55,7 @@
 .toolbar-itinerary,
 .toolbar-sponsors,
 .toolbar-faq {
-    color: #444444 !important;
+    color: #444444;
 }
 
 .toolbar-virtual-space:hover,
@@ -60,6 +65,8 @@
 .toolbar-faq:hover {
     cursor: pointer !important;
     border: none !important;
+    transition: 0.2s;
+    color: #ED695B;
 }
 
 #register {
@@ -79,21 +86,34 @@
 
 .toolbar-signin {
     width: 6rem;
-    font-weight: 100;
+    /* font-weight: 100; */
     color: #444444;
     padding: 0 1rem 0 1rem;
     background-color: transparent;
     border-radius: 16px;
-    border: 1px solid #444444;
+    border: 2px solid #444444;
+}
+
+.toolbar-signin:hover {
+    cursor: pointer !important;
+    transition: 0.2s;
+    color: #ED695B;
+    border: 2px solid #ED695B;
 }
 
 .regist-tool-bar-container a {
-    color: white !important;
+    color: white;
 }
 
 .regist-tool-bar-container .sign-in-col button {
     color: white;
-    border: 1px solid white;
+    border: 2px solid white;
+}
+
+.regist-tool-bar-container .sign-in-col button:hover {
+    transition: 0.2s;
+    color: #ED695B;
+    border: 2px solid #ED695B;
 }
 
 @media screen and (max-width: 900px) {
@@ -174,6 +194,6 @@
 
     .regist-tool-bar-container .sign-in-col button {
         color: white;
-        border: 1px solid white;
+        border: 2px solid white;
     }
 }
