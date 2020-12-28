@@ -58,13 +58,13 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
                         <Row>
                             <h4 className="faq-subtitle">I’m interested in sponsoring Hack@Brown - who can I contact?</h4>
                             <p>
-                            We are so excited to have you join us! You can email <b>sponsor@hackatbrown.org</b> and we will email you ASAP!
+                            We are so excited to have you join us! You can email <b> <a id= "sponsor-email" href="mailto:sponsor@hackatbrown.org">sponsor@hackatbrown.org</a></b> and we will email you ASAP!
                             </p>
                         </Row>
                         <Row>
                             <h4 className="faq-subtitle">My question is not answered here!</h4>
                             <p>
-                            We’re here for you! Send us an email at <b>hello@hackatbrown.org</b> or reach out to us on Facebook, Twitter, and instagram!
+                            We’re here for you! Send us an email at <b> <a id= "hello-email" href="mailto:hello@hackatbrown.org">hello@hackatbrown.org</a></b> or reach out to us on Facebook, Twitter, and instagram!
                             </p>
                         </Row>
                     </Col>
