@@ -594,15 +594,6 @@ export default class RegistrationPage extends React.Component<
             </div>
           </div>
           <div className="form-last-button">
-            <Button
-              className="backDashboard"
-              style={buttonStyle}
-              component={(props) => <Link to="/dashboard" {...props} />}
-              linkButton={true}
-            >
-              {" "}
-              Back to Dashboard{" "}
-            </Button>
           </div>
           <div
             className="error"
