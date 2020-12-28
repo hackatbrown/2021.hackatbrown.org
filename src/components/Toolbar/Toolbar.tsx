@@ -97,7 +97,7 @@ export default class Toolbar extends React.Component<
           toolbarContainerClassname = "main-tool-bar-container";
           break;
       }
-      console.log(toolbarContainerClassname)
+      
       return (
         <>
           <img id="mlh-img" src={mlhImg} alt="MLH" style={{
