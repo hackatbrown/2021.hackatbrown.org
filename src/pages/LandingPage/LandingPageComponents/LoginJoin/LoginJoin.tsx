@@ -422,15 +422,15 @@ export default class LoginJoin extends Component<
       // if true, user is logged in
       button = (
         <a href="/dashboard" className="stickynote-button transparent">
-          Dashboard
+          <b>Dashboard</b>
         </a>
       );
     } else {
       // else, user is not logged in
       button = (
-        <p onClick={this.openModal} className="stickynote-button">
-          <b>Join / Log in</b>
-        </p>
+        <button onClick={this.openModal} className="stickynote-button">
+          <b>Join&nbsp;/&nbsp;Log&nbsp;in</b>
+        </button>
       );
     }
 
@@ -463,10 +463,11 @@ export default class LoginJoin extends Component<
     );
 
     return (
-      <div>
+      <>
+        {button}
         {/* <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes"></meta> */}
         {this.state.justLogged ? <Redirect to="/dashboard" /> : this.doNothing}
-        <div className="main-login">{button}</div>
+        {/* <div className="main-login">{button}</div> */}
         <Modal
           className="login-join-body"
           overlayClassName="login-join-modal"
@@ -491,7 +492,7 @@ export default class LoginJoin extends Component<
           <br></br>
           {content}
         </Modal>
-      </div>
+      </>
     );
   }
 }

@@ -201,7 +201,7 @@ label {
     padding-right: 30px;
     font-family: Inter;
     font-weight: 100;
-    color:#fff !important;
+    color:#fff;
     background:#ED695B;
     border: 2px solid #ED695B;
     display: flex;
@@ -241,9 +241,10 @@ label {
 }
 
 .transparent {
-    color: black;
+    color: white;
 }
 
 .transparent:hover {
     text-decoration: none;
+    color: white;
 }
