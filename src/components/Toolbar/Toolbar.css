@@ -84,17 +84,20 @@
     flex-direction: row;
 }
 
-.toolbar-signin {
-    width: 6rem;
-    /* font-weight: 100; */
+.toolbar-signin,
+.sign-in-col .stickynote-button {
     color: #444444;
     padding: 0 1rem 0 1rem;
     background-color: transparent;
     border-radius: 16px;
     border: 2px solid #444444;
+    font-size: 1rem;
+    position: static;
+    margin: 0;
 }
 
-.toolbar-signin:hover {
+.toolbar-signin:hover,
+.sign-in-col .stickynote-button:hover {
     cursor: pointer !important;
     transition: 0.2s;
     color: #ED695B;

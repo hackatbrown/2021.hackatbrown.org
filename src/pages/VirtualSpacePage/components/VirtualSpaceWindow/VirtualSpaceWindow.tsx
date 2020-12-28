@@ -23,8 +23,8 @@ export default class VirtualSpaceWindow extends React.Component<VirtualSpaceWind
               <div>
                   // TODO: Place different booth buttons using SponsorBooth component
               </div>
-              <div id="SponsorTests">
-                  <SponsorBooth sponsorName={'dumbo'} />
+              <div id="SponsorModal">
+                  <SponsorBooth sponsorName='facebook' />
               </div>
             </div>
         );

@@ -199,6 +199,9 @@ export default class RegistrationPage extends React.Component<
         formStage: this.state.formStage - 1,
       });
     }
+    this.setState({
+      missingInfo: "",
+    });
     // Load in previous video background
     this.state.background.src = backgroundsList[this.state.formStage - 1];
     this.state.background.load()
@@ -321,8 +324,8 @@ export default class RegistrationPage extends React.Component<
   };
 
   checkMissing = () => {
-    if (
-      this.state.firstName.trim() === "" ||
+    if ( this.state.formStage === 0 &&
+      (this.state.firstName.trim() === "" ||
       this.state.lastName.trim() === "" ||
       this.state.school.trim() === "" ||
       this.state.majors.trim() === "" ||
@@ -331,15 +334,16 @@ export default class RegistrationPage extends React.Component<
       this.state.email.trim() === "" ||
       this.state.phoneNumber.trim() === "" ||
       !this.state.mlhConduct ||
-      !this.state.mlhPrivacy
+      !this.state.mlhPrivacy)
       // this.state.travelReimburse === null
     ) {
       return "You are missing required field(s) in the Basic Information section!";
     } else if (
-      this.state.gender.length === 0 ||
+      this.state.formStage === 1 &&
+      (this.state.gender.length === 0 ||
       this.state.race.length === 0 ||
       this.state.findout.length === 0 ||
-      this.state.firstHack === null
+      this.state.firstHack === null)
     ) {
       return "You are missing required field(s) in the More Information section!";
     }
