@@ -67,8 +67,8 @@ type RegistrationState = {
 const buttonStyle: React.CSSProperties = {
   textTransform: "none",
   fontFamily: "Inter",
-  color: "white",
-  background: "transparent",
+  color: "#241c5e",
+  background: "#fff",
   borderRadius: "16.5px",
   border: "2px solid #FFFFFF",
   height: "40px",
@@ -457,7 +457,7 @@ export default class RegistrationPage extends React.Component<
         style={buttonStyle}
         onClick={this.renderImageNext}
       >
-        Next
+        <b>Next</b>
       </Button>
     </div>
   );
@@ -468,14 +468,14 @@ export default class RegistrationPage extends React.Component<
         style={buttonStyle}
         onClick={this.decrementStage}
       >
-        Previous
+        <b>Previous</b>
       </Button>
       <Button
         className="next"
         style={buttonStyle}
         onClick={this.renderImageNext}
       >
-        Next
+        <b>Next</b>
       </Button>
     </div>
   );
@@ -486,14 +486,14 @@ export default class RegistrationPage extends React.Component<
         style={buttonStyle}
         onClick={this.decrementStage}
       >
-        Previous
+       <b>Previous</b>
       </Button>
       <Button
         className="submit"
         style={buttonStyle}
         onClick={this.renderImageSubmit}
       >
-        Submit Application
+        <b>Submit Application</b>
       </Button>
     </div>
   );
@@ -591,14 +591,14 @@ export default class RegistrationPage extends React.Component<
           </video>
           <div className="form-name">
             <h1>{this.nameList[this.state.formStage]}</h1>
+            <div className="stage">
+                  <p>{this.state.formStage + 1}/3</p>
+            </div>
           </div>
           <div className="form-content">{compList[this.state.formStage]}</div>
           <div className="form-progress">
             <div className="buttons">
               {this.buttonList[this.state.formStage]}
-            </div>
-            <div className="stage">
-              <p>{this.state.formStage + 1}/3</p>
             </div>
           </div>
           {/* <div className="form-last-button">
