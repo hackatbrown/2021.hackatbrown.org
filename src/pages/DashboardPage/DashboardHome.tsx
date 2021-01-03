@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Firebase from "../../components/Firebase";
 import axios from "axios";
 import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
+import VirtualSpaceWindow from "./components/VirtualSpaceWindow/VirtualSpaceWindow";
 
 /**
  * define a type model for the props you are passing in to the component
@@ -457,6 +458,7 @@ export default class DashboardHome extends React.Component<
     };
 
     return (
+      <>
       <div className="dashboard">
         <div id="lights-container"></div>
         <div className="main-pane">
@@ -466,6 +468,10 @@ export default class DashboardHome extends React.Component<
           {renderConfirmForm()}
         </div>
       </div>
+      <div className="virtual-space">
+        <VirtualSpaceWindow />
+      </div>
+      </>
     );
   }
 }
