@@ -1,8 +1,45 @@
 #window {
-    background-color: #FDF7DC;
-    height: 1000px; /* temporarily set for visibility */
+		background-color: #FDF7DC;
+		background: url("../../../../assets/images/VirtualSpace/base.png") no-repeat center;
+		background-size: 1000px;
+		height: 800px; /* temporarily set for visibility */
+		z-index: 1;
 }
 
-#SponsorModal {
-  margin-top: 100px;
+#announcement-button {
+	margin-top: 325px;
+	background: none;
+	outline: none;
+	border: none;
+	z-index: 2;
+}
+
+#announcement-image {
+	height: 40%;
+	width: 40%;
+}
+
+#bloomberg-button {
+	position: relative;
+	left: 205px;
+	bottom: 134px;
+}
+
+#neeva-button {
+	position: relative;
+	bottom: 122px;
+	right: 55px;
+}
+
+#wolfram-button {
+	position: relative;
+	bottom: 305px;
+	right: 175px;
+}
+
+#sketch-button {
+	position: relative;
+	bottom: 496px;
+	right: 25px;
+	z-index: 1;
 }
