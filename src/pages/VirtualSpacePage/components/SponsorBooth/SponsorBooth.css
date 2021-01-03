@@ -29,7 +29,12 @@
 	background: none;
 	outline: none;
 	border: none;
-	z-index: 2;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+}
+
+#sponsor-button:hover {
+  transform: scale(1.1);
 }
 
 #button-image {

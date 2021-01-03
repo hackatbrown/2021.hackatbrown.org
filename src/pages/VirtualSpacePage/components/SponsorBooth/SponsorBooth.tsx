@@ -37,7 +37,7 @@ export default class SponsorBooth extends React.Component<
     const sponsorImg = this.props.sponsorImg;
     const sponsorDict = getSponsorContent(sponsor);
     return (
-      <div>
+      <>
         <button onClick={this.openModal} id="sponsor-button">
           <img src={sponsorImg} id="button-image" alt={sponsor} />
         </button>
@@ -57,7 +57,7 @@ export default class SponsorBooth extends React.Component<
             X
           </button>
         </Modal>
-      </div>
+      </>
     );
   }
 }
