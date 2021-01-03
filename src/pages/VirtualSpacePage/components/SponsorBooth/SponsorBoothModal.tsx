@@ -5,7 +5,8 @@ type SponsorBoothModalProps = {
     sponsorDescription: string;
     sponsorURL: string;
     sponsorTier: string;
-    sponsorAsset: string;
+    sponsorLogoAsset: string;
+    sponsorGCalURL: string;
 };
 
 type SponsorBoothModalState = {
@@ -23,14 +24,17 @@ export default class SponsorBoothModal extends React.Component<
       const description = this.props.sponsorDescription;
       const url = this.props.sponsorURL;
       const tier = this.props.sponsorTier;
-      const asset = this.props.sponsorAsset;
+      const logo = this.props.sponsorLogoAsset;
+      const gcal = this.props.sponsorGCalURL
         return (
             <div id='modal'>
                 <div className={tier}>{tier}</div>
-                <img id ="logo" src ={asset} alt="Logo"/><br/>
+                <div className="logo-container">
+                    <img className="logo" src={logo} alt="Logo"/>
+                </div>
                 <p> {description}</p><br/>
                 <p><b>Book a coffee chat below!</b></p><br/>
-                <iframe src="https://calendar.google.com/calendar/embed?height=312&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%230B8043&amp;showTitle=0&amp;mode=WEEK&amp;showPrint=0&amp;showTabs=1" style={{border: 0.6}} width="691" height="312" frameBorder="0" scrolling="no"></iframe>
+                <iframe src={gcal} style={{border: 0.6}} width="691" height="312" frameBorder="0" scrolling="no"></iframe>
             </div>
         );
     }

@@ -4,8 +4,7 @@
   height: 80vh;
   min-width: 440px;
   border-radius: 1.5em;
-  padding: 10vw;
-  overflow: scroll;
+  overflow-y: scroll;
   text-align: center;
   font-size: 18px;
   margin: 100px;

@@ -249,7 +249,8 @@ export default class Toolbar extends React.Component<
                       </Link>
                     </div> : <div className="toolbar-virtual-space">
                         <a
-                            href={hostname + "#virtualSpace"}
+                            href={window.location.pathname !== "/virtual-space" ? 
+                            hostname + "#virtualSpace" : "javascript:void(0)"}
                             className="toolbar-virtual-space"
                         >
                         Virtual&nbsp;Space
