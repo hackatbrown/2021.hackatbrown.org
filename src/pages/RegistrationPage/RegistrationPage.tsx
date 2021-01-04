@@ -566,15 +566,13 @@ export default class RegistrationPage extends React.Component<
               </div>
             );
           })}
-          <div style={{ marginBottom: "50px" }}>
-            <Button
-              className="submit"
-              style={buttonStyle}
-              onClick={this.renderImageSubmit}
-            >
-              Submit Application
-            </Button>
-          </div>
+          <Button
+            className="submit"
+            style={buttonStyle}
+            onClick={this.renderImageSubmit}
+          >
+            Submit Application
+          </Button>
           <div
             className="error"
             style={{
