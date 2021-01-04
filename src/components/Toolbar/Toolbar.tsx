@@ -99,12 +99,57 @@ export default class Toolbar extends React.Component<
       hostname = hostname.match(".+://.+/")[0];
 
       let toolbarClassname; 
+      let applicationNav;
+      let brownTownNav;
       switch(window.location.pathname) {
         case "/dashboard":
           toolbarClassname = "dashboard-toolbar";
+          applicationNav = <div className="toolbar-about">
+              <Nav.Link 
+                eventKey="1" 
+                activeClass="active"
+                as={Link} 
+                to="dashboard" 
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}>
+                Application
+              </Nav.Link>
+            </div>
+          brownTownNav = <div className="toolbar-virtual-space">
+              <Nav.Link
+                eventKey="2"
+                activeClass="active"
+                as={Link} 
+                to="brown-town"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
+              >
+                Brown&nbsp;Town
+              </Nav.Link>
+            </div>
           break;
         case "/registration": 
           toolbarClassname = "regist-toolbar";
+          applicationNav = <div className="toolbar-about">
+                <a
+                    href={hostname + "dashboard#dashboard"}
+                    className="toolbar-about"
+                >
+                Application
+                </a>
+            </div>
+          brownTownNav = <div className="toolbar-virtual-space">
+                <a
+                    href={hostname + "dashboard#dashboard"}
+                    className="toolbar-virtual-space"
+                >
+                Brown&nbsp;Town
+                </a>
+            </div>
           break;
         default:
           toolbarClassname = "main-toolbar";
@@ -173,21 +218,7 @@ export default class Toolbar extends React.Component<
                         duration={500}>
                         About
                       </Nav.Link>
-                    </div> : <div
-                      className="toolbar-about"
-                    >
-                      <Nav.Link 
-                        eventKey="1" 
-                        activeClass="active"
-                        as={Link} 
-                        to="dashboard" 
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}>
-                        Application
-                      </Nav.Link>
-                    </div>}
+                    </div> : applicationNav}
                   </Col>
 
                   <Col>
@@ -207,22 +238,7 @@ export default class Toolbar extends React.Component<
                       >
                         Itinerary
                       </Nav.Link>
-                    </div> : <div
-                      className="toolbar-virtual-space"
-                    >
-                      <Nav.Link
-                        eventKey="2"
-                        activeClass="active"
-                        as={Link} 
-                        to="virtual-space"
-                        spy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={500}
-                      >
-                        Brown&nbsp;Town
-                      </Nav.Link>
-                    </div>}
+                    </div> : brownTownNav}
                   </Col>
 
                   {window.location.pathname === "/" ?
