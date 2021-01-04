@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-type  FooterProps = {};
+type FooterProps = {};
 
 type FooterState = {
   state: string;
@@ -117,6 +117,16 @@ export default class Itinerary extends React.Component<
               {/* TODO: update these links when respective pages are done */}
               <div className="links">
                 <h5 className="col-header">Links</h5>
+                <p>
+                  <a
+                    className="footerlink"
+                    href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    MLH Code of Conduct
+                  </a>
+                </p>
                 <p>
                   <a className="footerlink" href="/dashboard">
                     Application form
