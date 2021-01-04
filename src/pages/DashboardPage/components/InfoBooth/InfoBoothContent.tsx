@@ -1,4 +1,5 @@
-import pawLogo from "../../../assets/images/LandingPage/Hack@Brown.png";
+import pawLogo from "../../../../assets/images/LandingPage/Hack@Brown.png";
+
 
 type InfoContentType = {
     infoType: string,

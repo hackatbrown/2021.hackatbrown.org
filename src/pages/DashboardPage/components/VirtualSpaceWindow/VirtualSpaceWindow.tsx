@@ -6,7 +6,7 @@ import bloombergImg from "../../../../assets/images/VirtualSpace/bloomberg.png";
 import neevaImg from "../../../../assets/images/VirtualSpace/neeva.png";
 import wolframImg from "../../../../assets/images/VirtualSpace/wolfram.png";
 import sketchImg from "../../../../assets/images/VirtualSpace/sketch.png";
-import InfoBooth from "../../../DashboardPage/components/InfoBooth/InfoBooth";
+import InfoBooth from "../InfoBooth/InfoBooth";
 
 type VirtualSpaceWindowProps = {};
 
