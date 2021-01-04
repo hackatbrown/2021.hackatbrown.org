@@ -1,7 +1,7 @@
 import React from "react";
 import "./VirtualSpaceWindow.css";
 import SponsorBooth from "../SponsorBooth/SponsorBooth";
-
+import InfoBooth from "../../../DashboardPage/InfoBooth/InfoBooth";
 
 type VirtualSpaceWindowProps = {
 };
@@ -25,6 +25,15 @@ export default class VirtualSpaceWindow extends React.Component<VirtualSpaceWind
               </div>
               <div id="SponsorModal">
                   <SponsorBooth sponsorName="bloomberg" />
+              </div>
+              <div id="InfoModal">
+                  <InfoBooth infoType="Announcements" />
+              </div>
+              <div id="InfoModal">
+                  <InfoBooth infoType="Workshops" />
+              </div>
+              <div id="InfoModal">
+                  <InfoBooth infoType="Speaker Series" />
               </div>
             </div>
         );
