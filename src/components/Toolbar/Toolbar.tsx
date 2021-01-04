@@ -112,7 +112,7 @@ export default class Toolbar extends React.Component<
                 to="dashboard" 
                 spy={true}
                 smooth={true}
-                offset={-70}
+                offset={-65}
                 duration={500}>
                 Application
               </Nav.Link>
@@ -128,7 +128,7 @@ export default class Toolbar extends React.Component<
                 offset={0}
                 duration={500}
               >
-                Brown&nbsp;Town
+                H@B&nbsp;Town
               </Nav.Link>
             </div>
           break;
@@ -147,7 +147,7 @@ export default class Toolbar extends React.Component<
                     href={hostname + "dashboard#dashboard"}
                     className="toolbar-virtual-space"
                 >
-                Brown&nbsp;Town
+                H@B&nbsp;Town
                 </a>
             </div>
           break;
@@ -214,7 +214,7 @@ export default class Toolbar extends React.Component<
                         to="intro" 
                         spy={true}
                         smooth={true}
-                        offset={-70}
+                        offset={-65}
                         duration={500}>
                         About
                       </Nav.Link>
@@ -233,7 +233,7 @@ export default class Toolbar extends React.Component<
                         to="itinerary"
                         spy={true}
                         smooth={true}
-                        offset={-70}
+                        offset={-65}
                         duration={500}
                       >
                         Itinerary
@@ -253,7 +253,7 @@ export default class Toolbar extends React.Component<
                       to="faq"
                       spy={true}
                       smooth={true}
-                      offset={-70}
+                      offset={-65}
                       duration={500}
                     >
                       FAQ
@@ -273,10 +273,10 @@ export default class Toolbar extends React.Component<
                         to="virtualSpace"
                         spy={true}
                         smooth={true}
-                        offset={-70}
+                        offset={-65}
                         duration={500}
                       >
-                        Virtual&nbsp;Space
+                        H@B&nbsp;Town
                       </Nav.Link>
                     </div> 
                   </Col> : null}
@@ -293,7 +293,7 @@ export default class Toolbar extends React.Component<
                         to="sponsors"
                         spy={true}
                         smooth={true}
-                        offset={-70}
+                        offset={-65}
                         duration={500}
                       >
                         Sponsors

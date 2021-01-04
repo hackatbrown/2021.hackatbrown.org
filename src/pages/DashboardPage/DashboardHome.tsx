@@ -460,7 +460,7 @@ export default class DashboardHome extends React.Component<
 
     const scrollPrompt = (
       <div className="scroll-prompt">
-        <p><b>Scroll for Brown Town</b></p>
+        <p><b>Scroll for H@B Town</b></p>
         <img id="arrow" src={arrowImg}></img>
       </div>
     )
