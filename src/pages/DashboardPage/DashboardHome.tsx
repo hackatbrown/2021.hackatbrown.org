@@ -475,7 +475,7 @@ export default class DashboardHome extends React.Component<
           </div>
           {renderConfirmForm()}
         </div>
-        {scrollPrompt}
+      {scrollPrompt}
       </div>
       <div className="brown-town">
         <VirtualSpaceWindow />

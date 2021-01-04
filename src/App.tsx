@@ -16,7 +16,6 @@ import { FirebaseContextConsumer } from "./components/Firebase/context";
 import Firebase from "./components/Firebase";
 import CodeOfConductPage from "./pages/CodeOfConductPage/CodeOfConductPage";
 import HardwarePage from "./pages/HardwarePage/HardwarePage"
-import VirtualSpacePage from "./pages/VirtualSpacePage/VirtualSpacePage";
 
 const history = createBrowserHistory();
 
@@ -211,11 +210,6 @@ export default class App extends React.Component<AppProps, AppState> {
 
                         </div>
                     </Route> */}
-                    <Route path="/virtual-space">
-                    <div className="App">
-                            <VirtualSpacePage apiURL={apiURL} />
-                        </div>
-                    </Route>
                     <Route path="">
                         <div className="App">
                             <div className="App">
