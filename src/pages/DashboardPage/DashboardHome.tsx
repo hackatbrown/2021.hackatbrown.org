@@ -460,7 +460,7 @@ export default class DashboardHome extends React.Component<
 
     const scrollPrompt = (
       <div className="scroll-prompt">
-        <p><b>Scroll for H@B Town</b></p>
+        <p><b>Scroll for H@B Town</b> (Coming Soon)</p>
         <img id="arrow" src={arrowImg}></img>
       </div>
     )
@@ -477,9 +477,9 @@ export default class DashboardHome extends React.Component<
         </div>
       {scrollPrompt}
       </div>
-      <div className="brown-town">
+      {/* <div className="brown-town">
         <VirtualSpaceWindow />
-      </div>
+      </div> */}
       </>
     );
   }
