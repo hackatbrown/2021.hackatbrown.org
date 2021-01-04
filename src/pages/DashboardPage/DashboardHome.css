@@ -1,10 +1,16 @@
 .dashboard {
     overflow: hidden;
     background: url("../../assets/images/Dashboard/registration.png") no-repeat
-        center center fixed;
+        center top fixed;
     background-size: cover;
     height: 100vh;
     position: relative;
+}
+
+.virtual-space {
+    background-color: #FDF7DC;
+    height: 100vh;
+    overflow: hidden;
 }
 
 dashboard button {
