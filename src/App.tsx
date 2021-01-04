@@ -165,7 +165,7 @@ export default class App extends React.Component<AppProps, AppState> {
                                                     ? null
                                                     : firebase.firebase
                                             }
-                                            backgroundColor={"#A6DCEC"}
+                                            backgroundColor={null}
                                             hideToolbar={null}
                                             apiURL={apiURL}
                                         />

@@ -98,16 +98,16 @@ export default class Toolbar extends React.Component<
       let hostname = window.location.href;
       hostname = hostname.match(".+://.+/")[0];
 
-      let toolbarContainerClassname; 
+      let toolbarClassname; 
       switch(window.location.pathname) {
         case "/dashboard":
-          toolbarContainerClassname = "dashboard-tool-bar-container";
+          toolbarClassname = "dashboard-toolbar";
           break;
         case "/registration": 
-          toolbarContainerClassname = "regist-tool-bar-container";
+          toolbarClassname = "regist-toolbar";
           break;
         default:
-          toolbarContainerClassname = "main-tool-bar-container";
+          toolbarClassname = "main-toolbar";
           break;
       }
       
@@ -117,7 +117,7 @@ export default class Toolbar extends React.Component<
             display:
               window.location.pathname === "/" ? "initial" : "none",
           }}></img>
-          <div className="toolbar">
+          <div className={"toolbar " + toolbarClassname}>
             <Navbar
               collapseOnSelect
               expand="lg"
@@ -156,7 +156,7 @@ export default class Toolbar extends React.Component<
               <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
               <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto"></Nav>
-                <Nav className={toolbarContainerClassname}>
+                <Nav className="tool-bar-container">
                   <Col>
                     {window.location.pathname === "/" ?
                     <div
@@ -173,13 +173,20 @@ export default class Toolbar extends React.Component<
                         duration={500}>
                         About
                       </Nav.Link>
-                    </div> : <div className="toolbar-about">
-                        <a
-                            href={hostname + "#about"}
-                            className="toolbar-about"
-                        >
-                        About
-                        </a>
+                    </div> : <div
+                      className="toolbar-about"
+                    >
+                      <Nav.Link 
+                        eventKey="1" 
+                        activeClass="active"
+                        as={Link} 
+                        to="dashboard" 
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={500}>
+                        Application
+                      </Nav.Link>
                     </div>}
                   </Col>
 
@@ -200,45 +207,46 @@ export default class Toolbar extends React.Component<
                       >
                         Itinerary
                       </Nav.Link>
-                    </div> : <div className="toolbar-itinerary">
-                        <a
-                            href={hostname + "#itinerary"}
-                            className="toolbar-itinerary"
-                        >
-                          Itinerary
-                        </a>
-                    </div>}
-                  </Col>
-
-                  <Col>
-                    {window.location.pathname === "/" ?
-                    <div
-                      className="toolbar-faq"
+                    </div> : <div
+                      className="toolbar-virtual-space"
                     >
                       <Nav.Link
-                        eventKey="3"
+                        eventKey="2"
                         activeClass="active"
-                        as={Link}
-                        to="faq"
+                        as={Link} 
+                        to="virtual-space"
                         spy={true}
                         smooth={true}
                         offset={-70}
                         duration={500}
                       >
-                        FAQ
+                        Brown&nbsp;Town
                       </Nav.Link>
-                    </div> : <div className="toolbar-faq">
-                        <a
-                            href={hostname + "#faq"}
-                            className="toolbar-faq"
-                        >
-                          FAQ
-                        </a>
                     </div>}
                   </Col>
 
+                  {window.location.pathname === "/" ?
                   <Col>
-                    {window.location.pathname === "/" ?
+                    <div
+                      className="toolbar-faq"
+                    >
+                    <Nav.Link
+                      eventKey="3"
+                      activeClass="active"
+                      as={Link}
+                      to="faq"
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                    >
+                      FAQ
+                    </Nav.Link>
+                    </div> 
+                  </Col> : null}
+
+                  {window.location.pathname === "/" ?
+                  <Col>
                     <div
                       className="toolbar-virtual-space"
                     >
@@ -254,19 +262,11 @@ export default class Toolbar extends React.Component<
                       >
                         Virtual&nbsp;Space
                       </Nav.Link>
-                    </div> : <div className="toolbar-virtual-space">
-                        <a
-                            href={window.location.pathname !== "/virtual-space" ? 
-                            hostname + "#virtualSpace" : "javascript:void(0)"}
-                            className="toolbar-virtual-space"
-                        >
-                        Virtual&nbsp;Space
-                        </a>
-                    </div>}
-                  </Col>
+                    </div> 
+                  </Col> : null}
 
+                  {window.location.pathname === "/" ?
                   <Col>
-                    {window.location.pathname === "/" ?
                     <div
                       className="toolbar-sponsors"
                     >
@@ -282,15 +282,8 @@ export default class Toolbar extends React.Component<
                       >
                         Sponsors
                       </Nav.Link>
-                    </div> : <div className="toolbar-sponsors">
-                        <a
-                            href={hostname + "#sponsors"}
-                            className="toolbar-sponsors"
-                        >
-                        Sponsors
-                        </a>
-                    </div>}
-                  </Col>
+                    </div>
+                  </Col> : null}
                   <Col className="sign-in-col">{button}</Col>
                 </Nav>
               </Navbar.Collapse>
