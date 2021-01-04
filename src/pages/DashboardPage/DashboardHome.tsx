@@ -459,18 +459,18 @@ export default class DashboardHome extends React.Component<
 
     return (
       <>
-      <div className="dashboard">
-        <div id="lights-container"></div>
-        <div className="main-pane">
-          <div className="greeting">
-            <h1> Hi, {this.state.firstName}! </h1>
+        <div className="dashboard">
+          <div id="lights-container"></div>
+          <div className="main-pane">
+            <div className="greeting">
+              <h1> Hi, {this.state.firstName}! </h1>
+            </div>
+            {renderConfirmForm()}
           </div>
-          {renderConfirmForm()}
         </div>
-      </div>
-      <div className="virtual-space">
+        {/* <div className="virtual-space">
         <VirtualSpaceWindow />
-      </div>
+      </div> */}
       </>
     );
   }
