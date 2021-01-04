@@ -163,8 +163,12 @@ export default class RegistrationPage extends React.Component<
   renderImageSubmit = (event: any) => {
     let errorMessage: string | null = this.checkMissing();
     if (errorMessage === null) {
+      const { width } = this.state;
+      const isMobile = width <= 500;
       // Play final animation
-      this.state.background.play();
+      if (!isMobile) {
+        this.state.background.play();
+      }
       this.setState({
         missingInfo: "",
       });
