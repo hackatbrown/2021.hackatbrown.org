@@ -157,7 +157,7 @@ export default class RegistrationPage extends React.Component<
     }
     this.setState({
       missingInfo: errorMessage,
-    })
+    });
   };
 
   renderImageSubmit = (event: any) => {
@@ -193,7 +193,7 @@ export default class RegistrationPage extends React.Component<
 
       // Load in the next video background
       this.state.background.src = backgroundsList[this.state.formStage];
-      this.state.background.load()
+      this.state.background.load();
     }
   };
 
@@ -208,7 +208,7 @@ export default class RegistrationPage extends React.Component<
     });
     // Load in previous video background
     this.state.background.src = backgroundsList[this.state.formStage - 1];
-    this.state.background.load()
+    this.state.background.load();
   };
 
   /* Function to handle changing state based on submitted data */
@@ -328,26 +328,27 @@ export default class RegistrationPage extends React.Component<
   };
 
   checkMissing = () => {
-    if ( this.state.formStage === 0 &&
+    if (
+      this.state.formStage === 0 &&
       (this.state.firstName.trim() === "" ||
-      this.state.lastName.trim() === "" ||
-      this.state.school.trim() === "" ||
-      this.state.majors.trim() === "" ||
-      this.state.gradDate.trim() === "" ||
-      this.state.over18 === null ||
-      this.state.email.trim() === "" ||
-      this.state.phoneNumber.trim() === "" ||
-      !this.state.mlhConduct ||
-      !this.state.mlhPrivacy)
+        this.state.lastName.trim() === "" ||
+        this.state.school.trim() === "" ||
+        this.state.majors.trim() === "" ||
+        this.state.gradDate.trim() === "" ||
+        this.state.over18 === null ||
+        this.state.email.trim() === "" ||
+        this.state.phoneNumber.trim() === "" ||
+        !this.state.mlhConduct ||
+        !this.state.mlhPrivacy)
       // this.state.travelReimburse === null
     ) {
       return "You are missing required field(s) in the Basic Information section!";
     } else if (
       this.state.formStage === 1 &&
       (this.state.gender.length === 0 ||
-      this.state.race.length === 0 ||
-      this.state.findout.length === 0 ||
-      this.state.firstHack === null)
+        this.state.race.length === 0 ||
+        this.state.findout.length === 0 ||
+        this.state.firstHack === null)
     ) {
       return "You are missing required field(s) in the More Information section!";
     }
@@ -490,7 +491,7 @@ export default class RegistrationPage extends React.Component<
         style={buttonStyle}
         onClick={this.decrementStage}
       >
-       <b>Previous</b>
+        <b>Previous</b>
       </Button>
       <Button
         className="submit"
@@ -505,7 +506,7 @@ export default class RegistrationPage extends React.Component<
 
   /* get the element representing the background video */
   getVideo(elem: HTMLVideoElement) {
-    this.setState({background: elem})
+    this.setState({ background: elem });
   }
 
   render() {
@@ -565,13 +566,15 @@ export default class RegistrationPage extends React.Component<
               </div>
             );
           })}
-          <Button
-            className="submit"
-            style={buttonStyle}
-            onClick={this.renderImageSubmit}
-          >
-            Submit Application
-          </Button>
+          <div style={{ marginBottom: "50px" }}>
+            <Button
+              className="submit"
+              style={buttonStyle}
+              onClick={this.renderImageSubmit}
+            >
+              Submit Application
+            </Button>
+          </div>
           <div
             className="error"
             style={{
@@ -585,18 +588,26 @@ export default class RegistrationPage extends React.Component<
     } else {
       // Jenga video is the first, needs to fit into browser window
       const isJenga = this.state.formStage === 0;
-      const videoStyle = isJenga ? { height: '100%' } : { width: '100%', height: 'inherit' };
+      const videoStyle = isJenga
+        ? { height: "100%" }
+        : { width: "100%", height: "inherit" };
       return (
-        <div
-          className="registration"
-        >
-          <video style={videoStyle} ref={this.getVideo} muted className="background">
-            <source src={backgroundsList[this.state.formStage]} type="video/mp4"/>
+        <div className="registration">
+          <video
+            style={videoStyle}
+            ref={this.getVideo}
+            muted
+            className="background"
+          >
+            <source
+              src={backgroundsList[this.state.formStage]}
+              type="video/mp4"
+            />
           </video>
           <div className="form-name">
             <h1>{this.nameList[this.state.formStage]}</h1>
             <div className="stage">
-                  <p>{this.state.formStage + 1}/3</p>
+              <p>{this.state.formStage + 1}/3</p>
             </div>
           </div>
           <div className="form-content">{compList[this.state.formStage]}</div>

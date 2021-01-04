@@ -43,7 +43,7 @@ export default class VirtualSpacePage extends React.Component<
                          />
                      )}
                 </FirebaseContextConsumer>
-                <div id="window">
+                <div>
                     <VirtualSpaceWindow />
                 </div>
                 <div id="footer">
