@@ -132,6 +132,8 @@ export default class App extends React.Component<AppProps, AppState> {
                                                         : firebase.firebase
                                                 }
                                                 backgroundColor={"#211959"}
+                                                hideToolbar={null}
+                                                apiURL={apiURL}
                                             />
                                         )}
                                     </FirebaseContextConsumer>
@@ -163,7 +165,9 @@ export default class App extends React.Component<AppProps, AppState> {
                                                     ? null
                                                     : firebase.firebase
                                             }
-                                            backgroundColor={"#018C8A"}
+                                            backgroundColor={"#A6DCEC"}
+                                            hideToolbar={null}
+                                            apiURL={apiURL}
                                         />
                                     )}
                                 </FirebaseContextConsumer>
@@ -207,11 +211,11 @@ export default class App extends React.Component<AppProps, AppState> {
 
                         </div>
                     </Route> */}
-                    <Route path="/virtual-space">
+                    {/* <Route path="/virtual-space">
                     <div className="App">
-                            <VirtualSpacePage />
+                            <VirtualSpacePage apiURL={apiURL} />
                         </div>
-                    </Route>
+                    </Route> */}
                     <Route path="">
                         <div className="App">
                             <div className="App">

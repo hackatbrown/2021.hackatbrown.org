@@ -29,7 +29,7 @@ export default class Main extends React.Component<MainProps, MainState> {
             <><div className="main">
                 <div className="main-div">
                     <h1 style={{ color: '#444' }} className="top-text">Hack@Brown presents:</h1>
-                    <h1 style={{ color: '#444' }} className="big-text">AfterSchool</h1>
+                    <h1 style={{ color: '#444' }} className="big-text">After School</h1>
                     <h1 style={{ color: '#444' }} className="bottom-text">January 22 - 24, 2021</h1>
                 </div>
                 <FirebaseContextConsumer>

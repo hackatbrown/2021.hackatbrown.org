@@ -13,7 +13,7 @@
 
 .login-join-modal {
     position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     top: 0px;
     right: 0px;
     bottom: 0px;
@@ -35,11 +35,19 @@
 }
 
 #other-tab {
-    background: #e8e8e8;
+		background: #e8e8e8;
+		font-family: Recoleta;
+		font-style: normal;
+		font-weight: 400;
+		color: #444444;
 }
 
 #active-tab {
-    background: #ffffff;
+		background: #ffffff;
+		font-family: Recoleta;
+		font-style: normal;
+		font-weight: 500;
+		color: #444444;
 }
 
 .join-tab {
@@ -49,9 +57,9 @@
     border: none;
     border-radius: 12px 0px;
 
-    font-family: Recoleta-Regular;
+    font-family: Recoleta;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 100;
     font-size: 24px;
 
     /* Disable joining */
@@ -70,9 +78,9 @@
     border: none;
     border-radius: 0px 12px;
 
-    font-family: Recoleta-Regular;
+    font-family: Recoleta;
     font-style: normal;
-    font-weight: 100;
+    font-weight: 300;
     font-size: 24px;
 }
 
@@ -81,7 +89,8 @@ form.loginJoin-form {
     text-align: left;
     padding-left: 47px;
     padding-right: 47px;
-    font-family: Inter-Regular;
+    font-family: Inter;
+    font-weight: 100;
     padding-bottom: 32px;
 }
 
@@ -123,7 +132,7 @@ label {
     background: #ED695B;
 
     font-size: 12px;
-    line-height: 33px;
+    font-weight: 700;
 
     color: #ffffff;
 
@@ -141,7 +150,7 @@ label {
     background: #ffffff;
 
     font-size: 12px;
-    line-height: 33px;
+    font-weight: 700;
 
     color: #2d3d53;
 }
@@ -157,7 +166,6 @@ label {
 
 #submit-button {
     width: 72.39px;
-    height: 33px;
 
     border: 1px solid #ED695B;
     box-sizing: border-box;
@@ -167,6 +175,7 @@ label {
 
     font-size: 12px;
     line-height: 33px;
+    font-weight: 700;
 
     color: #ffffff;
 
@@ -191,11 +200,10 @@ label {
     padding-left:30px;
     padding-right: 30px;
     font-family: Inter;
-    color:#fff !important;
-    /* background:#ED695B;
-    border: 2px solid #ED695B; */
-    background: #808080;
-    border: 2px solid #808080;
+    font-weight: 100;
+    color:#fff;
+    background:#ED695B;
+    border: 2px solid #ED695B;
     display: flex;
 }
 
@@ -233,9 +241,10 @@ label {
 }
 
 .transparent {
-    color: black;
+    color: white;
 }
 
 .transparent:hover {
     text-decoration: none;
+    color: white;
 }

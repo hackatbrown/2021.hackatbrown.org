@@ -1,71 +1,75 @@
 .faq {
-    align-content: start;
-    /* margin: 2rem 10% 2rem 10%; */
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
     min-height: 100vh;
-    align-items: flex-start;
-    justify-content: flex-start;
-    color: white;
     /* background-color: #ff4d4d; */
-    background-color: #fc564b;
-    padding: 2rem 0 0 0;
-}
-
-#faq-img {
-    max-width: 30vw;
-    min-width: 18rem;
-    margin: 4rem 0 2rem 2rem;
-}
-
-.faq-text {
-    margin: 0 3rem 0 10%;
-    max-width: 20rem;
-    min-width: 30vw;
+    background-color: #AEEBFC;
+    padding: 5rem 0;
     text-align: left;
-    font-weight: 100;
+}
+
+.faq-header h1 {
+    color: #444444 !important;
+    padding-bottom: 1rem;
 }
 
 .faq-subtitle {
     font-family: 'Inter';
+    color: #444444 !important;
+}
+
+.faq p {
+    font-family: 'Inter';
+    color: #444444 !important;
     font-size: 1rem !important;
+    font-weight: 100;
+    padding-bottom: 3rem;
 }
 
-@media screen and (max-width: 952px) {
-    .faq-text {
-        margin: 2rem 3rem 0 10%;
-        max-width: 100%;
-        min-width: 30vw;
-        text-align: left;
-    }
+#hello-email{
+    color: #444444;
+    text-decoration: none !important;
+}
 
-    #faq-img {
-        max-width: 50vw;
-        min-width: 18rem;
-        margin: 4rem 0 2rem 2rem;
-    }
+#sponsor-email{
+    color: #444444 !important; 
+    text-decoration: none !important;
+}
 
+@media screen and (max-width: 575px) {
     .faq {
-        justify-content: center;
+        padding: 8%;
+    }
+    .faq-subtitle {
+        font-size: 1rem !important;
     }
 }
 
-@media screen and (max-width: 650px) {
-    .faq-text {
-        margin: 0 3rem 0 10%;
-        max-width: 100%;
-        min-width: 30vw;
-        text-align: left;
+@media screen and (max-width: 534px) {
+    .faq-header h1 {
+        font-size: 2rem;
     }
+}
 
-    #faq-img {
-        max-width: 50vw;
-        min-width: 10rem;
-        margin: 4rem 0 2rem 2rem;
+@media screen and (max-width: 426px) {
+    .faq-header h1 {
+        font-size: 1.8rem;
     }
+}
 
-    .faq {
-        justify-content: flex-start;
+
+@media screen and (max-width: 383px) {
+    .faq-header h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 342px) {
+    .faq-header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .faq-header h1 {
+        font-size: 1.4rem;
     }
 }

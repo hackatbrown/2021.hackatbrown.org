@@ -41,6 +41,8 @@ export default class HardwarePage extends React.Component<
                         <Toolbar
                             firebase={firebase == null ? null : firebase.firebase}
                             backgroundColor={"#415364"}
+                            hideToolbar={this.hideToolbar}
+                            apiURL={this.props.apiURL}
                         />
                     )}
                 </FirebaseContextConsumer>

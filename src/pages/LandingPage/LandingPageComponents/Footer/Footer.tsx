@@ -118,7 +118,7 @@ export default class Itinerary extends React.Component<
               <div className="links">
                 <h5 className="col-header">Links</h5>
                 <p>
-                  <a className="footerlink" href="/">
+                  <a className="footerlink" href="/dashboard">
                     Application form
                   </a>
                 </p>

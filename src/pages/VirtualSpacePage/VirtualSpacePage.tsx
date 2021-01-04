@@ -2,14 +2,15 @@ import React from "react";
 import "./VirtualSpacePage.css";
 import VirtualSpaceWindow from "./components/VirtualSpaceWindow/VirtualSpaceWindow";
 import Footer from "../LandingPage/LandingPageComponents/Footer/Footer";
-import Toolbar from "./components/Toolbar/Toolbar";
+import Toolbar from "../../components/Toolbar/Toolbar";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
 
 type VirtualSpacePageProps = {
+    apiURL : string
 };
 
 type VirtualSpacePageState = {
-  toolbarVisible : boolean
+    toolbarVisible : boolean
 };
 
 export default class VirtualSpacePage extends React.Component<
@@ -35,12 +36,14 @@ export default class VirtualSpacePage extends React.Component<
                 <FirebaseContextConsumer>
                    {firebase => (
                         <Toolbar
-                         firebase={firebase == null ? null : firebase.firebase}
-                         backgroundColor={"#FDF7DC"}
+                            firebase={firebase == null ? null : firebase.firebase}
+                            backgroundColor={"#FDF7DC"}
+                            apiURL={this.props.apiURL}
+                            hideToolbar={this.hideToolbar}
                          />
                      )}
                 </FirebaseContextConsumer>
-                <div id="window">
+                <div>
                     <VirtualSpaceWindow />
                 </div>
                 <div id="footer">

@@ -1,60 +1,13 @@
-#modal {
-  background-color: green;
-  left: 50%; 
-  top: 50%; 
-  height: 80vh; 
-  min-width: 440px; 
-  border-radius: 1.5em; 
-  padding: 10vw; 
-  overflow: hidden; 
-  text-align: center;
-  font-size: 18px;
-
+.logo-container {
+  margin: 0 auto;
+  width: 25%;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
-.close-button {
-  border: none;
-  display: inline-block;
-  padding: 8px 16px;
-  vertical-align: middle;
-  overflow: hidden;
-  text-decoration: none;
-  color: inherit;
-  background-color: inherit;
-  text-align: center;
-  cursor: pointer;
-  white-space: nowrap
-}
-
-.topright {
-  position: absolute;
-  right: 0;
-  top: 0
-}
-
-#facebooklogo {
-  width: 231.47px;
-  height: 70px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -50px;
-}
-
-#sponsorTiers {
-  font-family: Recoletta;
-  font-weight: bold;
-  font-size: 24px;
-  color: white;
-  top: 25px; 
-  left: -50px;
-  transform: rotate(-45deg);
-  position: fixed;
-  width: 200px;
-  height: 35px;
-  position: absolute;
-  text-align: center;
-  background-color: #ED695B;
+.logo {
+  max-width:100%;
+  max-height:100%;
 }
 
 .p {
@@ -65,7 +18,48 @@
   line-height: 26px;
   text-align: center;
   color: #444444;
-  align-content: center;  
+  align-content: center;
 }
 
+.giga, .mega, .kilo, .micro {
+  font-family: Recoletta;
+  font-weight: bold;
+  font-size: 24px;
+  top: 130px;
+  left: 62px;
+  transform: rotate(-45deg);
+  text-transform: capitalize;
+  width: 170px;
+  height: 35px;
+  color: white;
+  position: absolute;
+  text-align: center;
+  clip-path: polygon(
+    0 100%,
+    21% 0,
+    100% 0%,
+    79% 0%,
+    83% 20%,
+    100% 100%,
+    10% 100%,
+    0% 100%,
+    0% 0%
+  )
+}
 
+.giga {
+  background-color: #ED695B;
+}
+
+.mega {
+  background-color: #46B5B8;
+}
+
+.kilo {
+  background-color: #211959;
+}
+
+.micro {
+  background-color: #A6DCEC;
+  color: black;
+}

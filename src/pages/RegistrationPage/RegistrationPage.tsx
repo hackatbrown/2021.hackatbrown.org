@@ -5,12 +5,9 @@ import MoreInfo from "./components/MoreInfo/MoreInfo";
 import OptionalInfo from "./components/OptionalInfo/OptionalInfo";
 import Button from "@material-ui/core/Button";
 import axios from "axios";
-import blocksImage from "../../assets/images/Registration/blocks_img.png";
-import boardImage from "../../assets/images/Registration/board_img.png";
-import wiiImage from "../../assets/images/Registration/wii_img.png";
-import boardGif from "../../assets/images/Registration/board_animation.gif";
-import wiiGif from "../../assets/images/Registration/wii_animation.gif";
-import blocksGif from "../../assets/images/Registration/blocks_animation.gif";
+import monopolyVideo from "../../assets/images/Registration/board_animation.mp4";
+import wiiVideo from "../../assets/images/Registration/wii_animation.mp4";
+import jengaVideo from "../../assets/images/Registration/blocks_animation.mp4";
 import { Link, Redirect } from "react-router-dom";
 import firebase from "firebase"; // for getting access to storage
 import Firebase from "../../components/Firebase"; // for user
@@ -49,7 +46,7 @@ type RegistrationState = {
   firstHack: boolean | null;
   /* travelReimburse: boolean | null;
 	travelOrigin: string;
-	
+
 	we're virtual for h@b 2021 woohoo!!!
 	*/
   mlhConduct: boolean | null;
@@ -63,19 +60,22 @@ type RegistrationState = {
   findout: string[];
   comments: string;
   fileName: string;
-  inTransition: boolean;
+  /* background animations */
+  background: HTMLVideoElement;
 };
 
 const buttonStyle: React.CSSProperties = {
   textTransform: "none",
   fontFamily: "Inter",
-  color: "white",
-  background: "transparent",
+  color: "#241c5e",
+  background: "#fff",
   borderRadius: "16.5px",
   border: "2px solid #FFFFFF",
   height: "40px",
   fontSize: "16px",
 };
+
+const backgroundsList = [jengaVideo, monopolyVideo, wiiVideo];
 
 export default class RegistrationPage extends React.Component<
   RegistrationProps,
@@ -94,7 +94,7 @@ export default class RegistrationPage extends React.Component<
       formStage: 0,
       firstName: "",
       lastName: "",
-      email: "",
+      email: props.firebase.auth.currentUser.email,
       phoneNumber: "",
       mlhConduct: false,
       mlhPrivacy: false,
@@ -104,8 +104,8 @@ export default class RegistrationPage extends React.Component<
       over18: null,
       firstHack: null,
       /* travelReimburse: null,
-			travelOrigin: "", 
-		
+			travelOrigin: "",
+
 			we're virtual for h@b 2021 woohoo!!!
 			*/
 
@@ -118,10 +118,12 @@ export default class RegistrationPage extends React.Component<
       findout: [],
       comments: "",
       fileName: "",
-      inTransition: false,
+      /* background animations */
+      background: null,
     };
     this.handleFormChange = this.handleFormChange.bind(this);
     this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.getVideo = this.getVideo.bind(this);
   }
 
   // Check if user is logged in when component mounts
@@ -148,34 +150,38 @@ export default class RegistrationPage extends React.Component<
   };
 
   renderImageNext = () => {
+    let errorMessage: string | null = this.checkMissing();
+    if (errorMessage === null) {
+      this.state.background.play();
+      setTimeout(this.incrementStage, 4000);
+    }
     this.setState({
-      inTransition: true,
+      missingInfo: errorMessage,
     });
-    setTimeout(this.incrementStage, 1000);
   };
 
   renderImageSubmit = (event: any) => {
-    this.setState({
-      inTransition: true,
-    });
-
     let errorMessage: string | null = this.checkMissing();
     if (errorMessage === null) {
+      const { width } = this.state;
+      const isMobile = width <= 500;
+      // Play final animation
+      if (!isMobile) {
+        this.state.background.play();
+      }
       this.setState({
         missingInfo: "",
       });
       setTimeout(async () => {
         await this.submitForm(event);
         this.setState({
-          inTransition: false,
           backDashboard: true,
         });
-      }, 3000);
-    } else {
-      this.setState({
-        missingInfo: errorMessage,
-      });
+      }, 4000);
     }
+    this.setState({
+      missingInfo: errorMessage,
+    });
   };
 
   /* Functions to change the stage of the form */
@@ -183,8 +189,11 @@ export default class RegistrationPage extends React.Component<
     if (this.state.formStage + 1 <= 2) {
       this.setState({
         formStage: this.state.formStage + 1,
-        inTransition: false,
       });
+
+      // Load in the next video background
+      this.state.background.src = backgroundsList[this.state.formStage];
+      this.state.background.load();
     }
   };
 
@@ -192,9 +201,14 @@ export default class RegistrationPage extends React.Component<
     if (this.state.formStage - 1 >= 0) {
       this.setState({
         formStage: this.state.formStage - 1,
-        inTransition: false,
       });
     }
+    this.setState({
+      missingInfo: "",
+    });
+    // Load in previous video background
+    this.state.background.src = backgroundsList[this.state.formStage - 1];
+    this.state.background.load();
   };
 
   /* Function to handle changing state based on submitted data */
@@ -315,24 +329,26 @@ export default class RegistrationPage extends React.Component<
 
   checkMissing = () => {
     if (
-      this.state.firstName.trim() === "" ||
-      this.state.lastName.trim() === "" ||
-      this.state.school.trim() === "" ||
-      this.state.majors.trim() === "" ||
-      this.state.gradDate.trim() === "" ||
-      this.state.over18 === null ||
-      this.state.email.trim() === "" ||
-      this.state.phoneNumber.trim() === "" ||
-      !this.state.mlhConduct ||
-      !this.state.mlhPrivacy
+      this.state.formStage === 0 &&
+      (this.state.firstName.trim() === "" ||
+        this.state.lastName.trim() === "" ||
+        this.state.school.trim() === "" ||
+        this.state.majors.trim() === "" ||
+        this.state.gradDate.trim() === "" ||
+        this.state.over18 === null ||
+        this.state.email.trim() === "" ||
+        this.state.phoneNumber.trim() === "" ||
+        !this.state.mlhConduct ||
+        !this.state.mlhPrivacy)
       // this.state.travelReimburse === null
     ) {
       return "You are missing required field(s) in the Basic Information section!";
     } else if (
-      this.state.gender.length === 0 ||
-      this.state.race.length === 0 ||
-      this.state.findout.length === 0 ||
-      this.state.firstHack === null
+      this.state.formStage === 1 &&
+      (this.state.gender.length === 0 ||
+        this.state.race.length === 0 ||
+        this.state.findout.length === 0 ||
+        this.state.firstHack === null)
     ) {
       return "You are missing required field(s) in the More Information section!";
     }
@@ -354,7 +370,7 @@ export default class RegistrationPage extends React.Component<
       // fund_travel: this.state.travelReimburse,
       // traveling_address: this.state.travelOrigin,
       email: this.state.email,
-      phone_number: this.state.phoneNumber,
+      phone: this.state.phoneNumber,
       mlh_code: this.state.mlhConduct,
       mlh_privacy: this.state.mlhPrivacy,
       gender: this.state.gender,
@@ -397,7 +413,9 @@ export default class RegistrationPage extends React.Component<
       over18: respData["age"],
       firstHack: respData["first_hackathon"],
       email: respData["email"],
-      phoneNumber: respData["phone_number"],
+      mlhPrivacy: respData["mlh_privacy"],
+      mlhConduct: respData["mlh_code"],
+      phoneNumber: respData["phone"],
       gender: respData["gender"],
       race: respData["race"],
       website: respData["website"],
@@ -444,7 +462,7 @@ export default class RegistrationPage extends React.Component<
         style={buttonStyle}
         onClick={this.renderImageNext}
       >
-        Next
+        <b>Next</b>
       </Button>
     </div>
   );
@@ -455,14 +473,14 @@ export default class RegistrationPage extends React.Component<
         style={buttonStyle}
         onClick={this.decrementStage}
       >
-        Previous
+        <b>Previous</b>
       </Button>
       <Button
         className="next"
         style={buttonStyle}
         onClick={this.renderImageNext}
       >
-        Next
+        <b>Next</b>
       </Button>
     </div>
   );
@@ -473,18 +491,23 @@ export default class RegistrationPage extends React.Component<
         style={buttonStyle}
         onClick={this.decrementStage}
       >
-        Previous
+        <b>Previous</b>
       </Button>
       <Button
         className="submit"
         style={buttonStyle}
         onClick={this.renderImageSubmit}
       >
-        Submit Application
+        <b>Submit Application</b>
       </Button>
     </div>
   );
   buttonList = [this.basicButtons, this.moreButtons, this.submitButtons];
+
+  /* get the element representing the background video */
+  getVideo(elem: HTMLVideoElement) {
+    this.setState({ background: elem });
+  }
 
   render() {
     if (this.state.backDashboard) {
@@ -526,8 +549,6 @@ export default class RegistrationPage extends React.Component<
       />
     );
     let compList = [basicComp, moreComp, optionalComp];
-    let backgroundImageList = [blocksImage, boardImage, wiiImage];
-    let gifImageList = [blocksGif, boardGif, wiiGif];
 
     if (isMobile) {
       return (
@@ -545,17 +566,19 @@ export default class RegistrationPage extends React.Component<
               </div>
             );
           })}
-          <Button
-            className="submit"
-            style={buttonStyle}
-            onClick={this.renderImageSubmit}
-          >
-            Submit Application
-          </Button>
+          <div style={{ marginBottom: "50px" }}>
+            <Button
+              className="submit"
+              style={buttonStyle}
+              onClick={this.renderImageSubmit}
+            >
+              Submit Application
+            </Button>
+          </div>
           <div
             className="error"
             style={{
-              visibility: this.state.formStage === 2 ? "visible" : "hidden",
+              visibility: this.state.formStage !== null ? "visible" : "hidden",
             }}
           >
             {this.state.missingInfo}
@@ -563,45 +586,43 @@ export default class RegistrationPage extends React.Component<
         </div>
       );
     } else {
+      // Jenga video is the first, needs to fit into browser window
+      const isJenga = this.state.formStage === 0;
+      const videoStyle = isJenga
+        ? { height: "100%" }
+        : { width: "100%", height: "inherit" };
       return (
-        <div
-          className="registration"
-          style={{
-            backgroundImage: `url(${
-              this.state.inTransition && this.state.missingInfo === ""
-                ? gifImageList[this.state.formStage]
-                : backgroundImageList[this.state.formStage]
-            })`,
-          }}
-        >
+        <div className="registration">
+          <video
+            style={videoStyle}
+            ref={this.getVideo}
+            muted
+            className="background"
+          >
+            <source
+              src={backgroundsList[this.state.formStage]}
+              type="video/mp4"
+            />
+          </video>
           <div className="form-name">
             <h1>{this.nameList[this.state.formStage]}</h1>
+            <div className="stage">
+              <p>{this.state.formStage + 1}/3</p>
+            </div>
           </div>
           <div className="form-content">{compList[this.state.formStage]}</div>
           <div className="form-progress">
             <div className="buttons">
               {this.buttonList[this.state.formStage]}
             </div>
-            <div className="stage">
-              <p>{this.state.formStage + 1}/3</p>
-            </div>
           </div>
-          <div className="form-last-button">
-            <Button
-              className="backDashboard"
-              style={buttonStyle}
-              component={(props) => <Link to="/dashboard" {...props} />}
-              linkButton={true}
-            >
-              {" "}
-              Back to Dashboard{" "}
-            </Button>
-          </div>
+          {/* <div className="form-last-button">
+          </div> */}
           <div
             className="error"
             style={{
               paddingBottom: "1em",
-              visibility: this.state.formStage === 2 ? "visible" : "hidden",
+              visibility: this.state.formStage !== null ? "visible" : "hidden",
             }}
           >
             {this.state.missingInfo}

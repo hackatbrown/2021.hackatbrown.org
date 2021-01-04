@@ -47,25 +47,16 @@ export default class Sponsors extends React.Component<
                             <img className="sponsors-img-tera" src={placeholderImg}></img>
                         </div>
                     </div> */}
-          <div className="sponsors-giga sponsors-section">
+          {/* <div className="sponsors-giga sponsors-section">
             <h2 className="sponsors-name">Giga</h2>
             <div className="sponsors-img">
-              <a href="#" target="_blank">
-                <img id="sponsors-img-giga" src={placeholderImg}></img>
-              </a>
-              {/* <a href="https://www.facebook.com" target="_blank">
-                <img className="sponsors-img-giga" src={facebookImg}></img>
-              </a> */}
             </div>
           </div>
           <div className="sponsors-mega sponsors-section">
             <h2 className="sponsors-name">Mega</h2>
             <div className="sponsors-img">
-              <a href="#" target="_blank">
-                <img id="sponsors-img-mega" src={placeholderImg}></img>
-              </a>
             </div>
-          </div>
+          </div> */}
           <div className="sponsors-kilo sponsors-section">
             <h2 className="sponsors-name">Kilo</h2>
             <div className="sponsors-img">

@@ -9,6 +9,7 @@ import Footer from "./LandingPageComponents/Footer/Footer";
 import Toolbar from "../../components/Toolbar/Toolbar";
 import VirtualSpace from "./LandingPageComponents/VirtualSpace/VirtualSpace";
 import { FirebaseContextConsumer } from "../../components/Firebase/context";
+import EmailPage from "../EmailPage/EmailPage";
 
 type LandingPageProps = {
   apiURL : string
@@ -43,6 +44,8 @@ export default class LandingPage extends React.Component<
                         <Toolbar
                             firebase={firebase == null ? null : firebase.firebase}
                             backgroundColor={"#FDF7DC"}
+                            hideToolbar={this.hideToolbar}
+                            apiURL={this.props.apiURL}
                         />
                     )}
                 </FirebaseContextConsumer>
