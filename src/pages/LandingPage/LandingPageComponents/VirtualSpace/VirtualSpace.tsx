@@ -26,17 +26,17 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                 <Col sm={6}>
                   <div className="virtual-blurb">
                     <h1 className="virtual-blurb-header">
-                    Virtual Space
+                    H@B Town
                     </h1>
                     <p className="virtual-blurb-text">
                         To make our events more interactive, we are launching
-                        a new virtual space that allows you to book coffee chats
+                        a virtual space that allows you to book coffee chats
                         with sponsors, check out the latest announcements, and
                         find the links to workshops! 
                         <br/><br/>
                         {/* Access the Virtual Space
                         by registering! */}
-                        Virtual space will be available closer to the day of the event!
+                        H@B Town will be available closer to the day of the event!
                         <br/><br/>
                      </p>
                      {/* <button id="registerBtn">Register</button> */}
