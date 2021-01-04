@@ -38,7 +38,7 @@ export default class InfoBoothModal extends React.Component<
 
                 </div>
                 <div className="bottom">
-                    <Row>
+                  
                         <div className="dates">
 
                         </div>
@@ -46,11 +46,10 @@ export default class InfoBoothModal extends React.Component<
 
                         </div>
                         <div className="links"></div>
-                    </Row>
+    
                 </div>
             </div>
             <div className="Speaker Series">
-            <Row>
                         <div className="dates">
 
                         </div>
@@ -58,7 +57,6 @@ export default class InfoBoothModal extends React.Component<
 
                         </div>
                         <div className="links"></div>
-                    </Row>
             </div>
             
             <div id ='modal'>
@@ -69,6 +67,7 @@ export default class InfoBoothModal extends React.Component<
                 <p>{description}</p>
                 </div>
                 
+            </div>
             </div>
         );
     }
