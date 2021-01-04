@@ -23,6 +23,43 @@ export default class InfoBoothModal extends React.Component<
         const asset = this.props.logo_asset;
         return (
             // TODO
+            <div>
+            <div className="Announcements">
+                <div className="top">
+                    <img></img>
+                    <h1>Announcements</h1>
+                </div>
+                <div className="bottom">
+                    <p>Remember to submit your projects by 8AM! Use this devpost link!</p>
+                </div>
+            </div>
+            <div className="Workshops">
+                <div className="top">
+
+                </div>
+                <div className="bottom">
+                    <Row>
+                        <div className="dates">
+
+                        </div>
+                        <div className="times">
+
+                        </div>
+                        <div className="links"></div>
+                    </Row>
+                </div>
+            </div>
+            <div className="Speaker Series">
+            <Row>
+                        <div className="dates">
+
+                        </div>
+                        <div className="times">
+
+                        </div>
+                        <div className="links"></div>
+                    </Row>
+            </div>
             
             <div id ='modal'>
                 <div className = "logo-container">
