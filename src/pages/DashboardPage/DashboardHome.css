@@ -7,6 +7,20 @@
     position: relative;
 }
 
+.scroll-prompt {
+    z-index: 1;
+    position: absolute;
+    bottom: 2rem;
+    font-size: 1.5rem;
+    margin: auto;
+    width: 100%;
+    color: #444444;
+}
+
+#arrow {
+    margin-top: 1rem;
+}
+
 .virtual-space {
     background-color: #FDF7DC;
     height: 100vh;

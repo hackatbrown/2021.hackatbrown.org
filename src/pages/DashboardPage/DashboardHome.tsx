@@ -6,6 +6,7 @@ import Firebase from "../../components/Firebase";
 import axios from "axios";
 import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
 import VirtualSpaceWindow from "./components/VirtualSpaceWindow/VirtualSpaceWindow";
+import arrowImg from "../../assets/images/Dashboard/arrow.png";
 
 /**
  * define a type model for the props you are passing in to the component
@@ -457,6 +458,13 @@ export default class DashboardHome extends React.Component<
       }
     };
 
+    const scrollPrompt = (
+      <div className="scroll-prompt">
+        <p><b>Scroll for Brown Town</b></p>
+        <img id="arrow" src={arrowImg}></img>
+      </div>
+    )
+
     return (
       <>
       <div className="dashboard">
@@ -467,6 +475,7 @@ export default class DashboardHome extends React.Component<
           </div>
           {renderConfirmForm()}
         </div>
+        {scrollPrompt}
       </div>
       <div className="virtual-space">
         <VirtualSpaceWindow />
