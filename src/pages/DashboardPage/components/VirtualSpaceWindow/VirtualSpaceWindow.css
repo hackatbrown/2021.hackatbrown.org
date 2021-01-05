@@ -10,6 +10,7 @@
 #infomodal{
 	position:relative;
 	bottom: 58px;
+	z-index: 2;
 }
 
 #infomodal2{
@@ -34,6 +35,7 @@
 	position: relative;
 	right: 63px;
 	top: 333px;
+	z-index: 3;
 }
 
 #wolfram-button {
@@ -46,4 +48,5 @@
 	position: relative;
 	right: 37px;
 	bottom: 46px;
+	z-index: 2;
 }
