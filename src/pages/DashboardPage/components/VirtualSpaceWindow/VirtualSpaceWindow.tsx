@@ -46,13 +46,13 @@ export default class VirtualSpaceWindow extends React.Component<
           <div id="sketch-button">
             <SponsorBooth sponsorName="sketch" sponsorImg={sketchImg} />
           </div>
-          <div id="InfoModal">
+          <div id="infomodal">
                   <InfoBooth infoType="Announcements" />
           </div>
-          <div id="InfoModal">
+          <div id="infomodal2">
               <InfoBooth infoType="Workshops" />
           </div>
-          <div id="InfoModal">
+          <div id="infomodal3">
               <InfoBooth infoType="Speaker Series" />
           </div>
         </div>

@@ -7,6 +7,24 @@
 		overflow: hidden;
 }
 
+#infomodal{
+	position:relative;
+	left: 360px;
+	bottom: 234px;
+	z-index: 0;
+}
+#infomodal2{
+	position:relative;
+	left: 360px;
+	bottom: 234px;
+	z-index: 0;
+}
+#infomodal3{
+	position:relative;
+	left: 360px;
+	bottom: 234px;
+	z-index: 0;
+}
 #announcement-button {
 	margin-top: 325px;
 	background: none;
@@ -42,5 +60,5 @@
 	position: relative;
 	bottom: 496px;
 	right: 25px;
-	z-index: 1;
+	z-index: 0;
 }

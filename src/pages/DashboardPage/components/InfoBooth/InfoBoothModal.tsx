@@ -4,7 +4,8 @@ import "./InfoBoothModal.css";
 type InfoBoothModalProps = {
     infoType : string,
     description: string,
-    logo_asset: string
+    logo_asset: string,
+    //head_color:string,
 };
 
 type InfoBoothModalState = {
@@ -21,13 +22,15 @@ export default class InfoBoothModal extends React.Component<
     render() {
         const description = this.props.description;
         const asset = this.props.logo_asset;
+        const type = this.props.infoType;
+        //const color = this.props.head_color;
         return (
             // TODO
             <div>
             <div className="Announcements">
-                <div className="top">
-                    <img></img>
-                    <h1>Announcements</h1>
+                <div className="top" style={{backgroundColor: 'red'}}>
+                    <img src={asset} id="asset-image"></img>
+                    <h1>{type}</h1>
                 </div>
                 <div className="bottom">
                     <p>Remember to submit your projects by 8AM! Use this devpost link!</p>
@@ -61,7 +64,7 @@ export default class InfoBoothModal extends React.Component<
             
             <div id ='modal'>
                 <div className = "logo-container">
-                    <img className="logo" src={asset} />
+                    
                 </div>
                 <div className = "content-container">
                 <p>{description}</p>

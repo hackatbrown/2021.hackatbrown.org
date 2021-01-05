@@ -41,6 +41,7 @@ export default class InfoBooth extends React.Component<
                 <InfoBoothModal infoType = {infoDict["infoType"]}
                                 description = {infoDict['description']}
                                 logo_asset={infoDict['logo_asset']}
+                                //head_color={infoDict['head_color']}
                 />
             <button id="close" onClick={this.closeModal}>X</button>
             </Modal>
