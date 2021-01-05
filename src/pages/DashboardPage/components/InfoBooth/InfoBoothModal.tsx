@@ -29,7 +29,7 @@ export default class InfoBoothModal extends React.Component<
         return (
             // TODO
             <div>
-            <div className="Announcements modal">
+            <div className="Announcements">
                 <div className="top" style={{backgroundColor: color}}>
                     <img src={asset} id="asset-image"></img>
                     <h1 style={{color:textcolor}}>{type}</h1>
@@ -38,7 +38,7 @@ export default class InfoBoothModal extends React.Component<
                     <p>Remember to submit your projects by 8AM! Use this devpost link!</p>
                 </div>
             </div>
-            <div className="Workshops modal">
+            <div className="Workshops">
                 <div className="top">
 
                 </div>
@@ -94,7 +94,7 @@ export default class InfoBoothModal extends React.Component<
                             
                         </div>
             </div>
-            <div className="SpeakerSeries modal">
+            <div className="SpeakerSeries">
                     <div className="bottom">
                         <div className="grids">
                             <div className="dates">
