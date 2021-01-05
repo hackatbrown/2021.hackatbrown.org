@@ -2,51 +2,59 @@
 		background-color: #FDF7DC !important;
 		background: url("../../../../assets/images/VirtualSpace/base.png") no-repeat center;
 		background-size: 1000px;
-		height: 800px; /* temporarily set for visibility */
+		margin: 0 auto;
+		width: 1000px;
+		height: 750px;
 		z-index: 1;
 		overflow: hidden;
+		position: relative;
 }
 
-#infomodal{
-	position:relative;
-	bottom: 58px;
+.booth {
+	position: absolute;
+}
+
+#annoucement-button{
+	width: 116px;
+	margin-left: 440px;
+	margin-top: 310px;
 	z-index: 2;
 }
 
-#infomodal2{
-	position:relative;
-	right: 305px;
-	bottom: 332px;
+#workshops-button{
+	width: 113px;
+	margin-left: 130px;
+	margin-top: 180px;
 }
 
-#infomodal3{
-	position:relative;
-	left: 376px;
-	bottom: 484px;
+#speaker-button{
+	width: 136px;
+	margin-left: 800px;
+	margin-top: 250px;
 }
 
 #bloomberg-button {
-	position: relative;
-	left: 205px;
-	top: 311px;
+	width: 114px;
+	margin-left: 650px;
+	margin-top: 295px;
 }
 
 #neeva-button {
-	position: relative;
-	right: 63px;
-	top: 333px;
+	width: 114px;
+	margin-left: 390px;
+	margin-top: 420px;
 	z-index: 3;
 }
 
 #wolfram-button {
-	position: relative;
-	right: 188px;
-	top: 148px;
+	width: 80px;
+	margin-left: 285px;
+	margin-top: 345px;
 }
 
 #sketch-button {
-	position: relative;
-	right: 37px;
-	bottom: 46px;
+	width: 80px;
+	margin-left: 420px;
+	margin-top: 240px;
 	z-index: 2;
 }

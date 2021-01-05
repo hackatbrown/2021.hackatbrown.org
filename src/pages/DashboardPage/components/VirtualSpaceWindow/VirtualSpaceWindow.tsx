@@ -29,32 +29,30 @@ export default class VirtualSpaceWindow extends React.Component<
   render() {
     return (
       <div id="window">
-        <div>
           {/* // TODO: Place different booth buttons using SponsorBooth component */}
 
           {/* TODO: Figure out z-index issues */}
-          <div id="bloomberg-button">
+          <div id="bloomberg-button" className="booth">
             <SponsorBooth sponsorName="bloomberg" sponsorImg={bloombergImg} />
           </div>
-          <div id="neeva-button">
+          <div id="neeva-button" className="booth">
             <SponsorBooth sponsorName="neeva" sponsorImg={neevaImg} />
           </div>
-          <div id="wolfram-button">
+          <div id="wolfram-button" className="booth">
             <SponsorBooth sponsorName="wolfram" sponsorImg={wolframImg} />
           </div>
-          <div id="sketch-button">
+          <div id="sketch-button" className="booth">
             <SponsorBooth sponsorName="sketch" sponsorImg={sketchImg} />
           </div>
-          <div id="infomodal">
+          <div id="annoucement-button" className="booth">
             <InfoBooth infoType="Announcements" infoImg={announcementImg} />
           </div>
-          <div id="infomodal2">
+          <div id="workshops-button" className="booth">
             <InfoBooth infoType="Workshops" infoImg={workshopsImg} />
           </div>
-          <div id="infomodal3">
+          <div id="speaker-button" className="booth">
             <InfoBooth infoType="Speaker Series" infoImg={speakerImg} />
           </div>
-        </div>
       </div>
     );
   }
