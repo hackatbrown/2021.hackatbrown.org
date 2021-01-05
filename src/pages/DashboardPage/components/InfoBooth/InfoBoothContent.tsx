@@ -7,8 +7,6 @@ import { string } from "prop-types";
 
 
 type InfoContentType = {
-    infoType: string,
-    description: string,
     logo_asset: string,
     head_color: string,
     htext_color: string,
@@ -17,23 +15,17 @@ type InfoContentType = {
 
 const InfoContents: { [InfoType: string] : InfoContentType; } = {
     "Announcements" : {
-        "infoType":"Announcements",
-        "description": "Remember to submit your project by 8AM! Use this devpost link!",
         "logo_asset": bluepaw,
         'head_color': '#ED695B',
         'htext_color': '#ffffff',
         },
     "Workshops" : {
-        "infoType":"Workshops",
-        "description": "",
         "logo_asset": rocketlaunch,
         'head_color': '#A6DCEC',
         'htext_color': '#444444',
         },
 
     "Speaker Series" : {
-        "infoType":"Speaker Series",
-        "description": "",
         "logo_asset": cardtower,
         'head_color': '#46B5B8',
         'htext_color': '#ffffff',

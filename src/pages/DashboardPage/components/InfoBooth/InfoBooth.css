@@ -1,60 +1,32 @@
 /* From FIGMA */
-.modal {
-    left: 50%;
-    top: 50%;
-    /* sponsors: width: 60vw;
-    announcement/workshop/speakers: 40vw; */
-    height: 80vh;
-    min-width: 440px;
-    border-radius: 1.5em;
-    padding: 10vw;
-    overflow: hidden;   
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
-.infoModal {
-margin-top: 14vh;
-margin-left:57vh;
-left: 50%;
-top: 50%;
-height: 80vh;
-min-width: 440px;
-width:480px;
-border-radius: 1.5em;
-overflow-y: scroll;
-text-align: center;
-font-size: 18px;
 
-background-color: white;
-z-index: 3;
+.infoModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) !important;
+    width: 40vw;
+    overflow-y: scroll;
+    height: 80vh;
+    /* min-width: 440px; */
+    border-radius: 1.5em;
+    text-align: center;
+    background-color: white;
+    z-index: 3;
 }
 
 #info-close{
-
-border: none;
-background: transparent;
-position: absolute;
-right: 520px;
-top: 132px;
-width: 32px;
-height: 32px;
-font-weight: bold;
-font-size: 24px;
-}
-.modal-text {
-    padding: 0px 6vw;
-}
-.grids {
-    display: grid;
-    background-color: white;
-}
-.dates {
-    font-family: 'Inter Bold';
-    color: black;
-}
-
-.times {
-    font-family: 'InterBold';
-    color: black;
-}
-.links {
-    color: #46B5B8;
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 1vw;
+    top: 1vw;
+    width: 32px;
+    height: 32px;
+    font-weight: bold;
+    font-size: 24px;
 }

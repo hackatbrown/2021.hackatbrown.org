@@ -36,12 +36,11 @@ export default class InfoBooth extends React.Component<
         const xcolor= infoDict['htext_color']
         return (
             // TODO
-            <div>
+            <>
             <button onClick={this.openModal}>{type}</button>
-            <Modal style={{overlay: {backgroundColor: 'rgba(255,255,255,0)'}}} className='infoModal' isOpen={this.state.modalIsOpen}>
+            <Modal style={{overlay: {backgroundColor: 'rgba(255,255,255,0)'}}} className='infoModal' isOpen={this.state.modalIsOpen} centered>
 
-                <InfoBoothModal infoType = {infoDict["infoType"]}
-                                description = {infoDict['description']}
+                <InfoBoothModal infoType = {type}
                                 logo_asset={infoDict['logo_asset']}
                                 head_color={infoDict['head_color']}
                                 htext_color={infoDict['htext_color']}
@@ -50,7 +49,7 @@ export default class InfoBooth extends React.Component<
             </Modal>
 
             
-            </div>
+            </>
         );
     }
 }

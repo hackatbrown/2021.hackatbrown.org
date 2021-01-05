@@ -1,7 +1,7 @@
 .logo-container {
   margin: 0 auto;
   width: 25%;
-  margin-top: 4rem;
+  padding-top: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -25,14 +25,14 @@
   font-family: Recoletta;
   font-weight: bold;
   font-size: 24px;
-  top: 130px;
-  left: 62px;
+  left: -40px;
   transform: rotate(-45deg);
   text-transform: capitalize;
   width: 170px;
   height: 35px;
   color: white;
   position: absolute;
+  overflow: hidden;
   text-align: center;
   clip-path: polygon(
     0 100%,
