@@ -2,63 +2,48 @@
 		background-color: #FDF7DC !important;
 		background: url("../../../../assets/images/VirtualSpace/base.png") no-repeat center;
 		background-size: 1000px;
-		height: 100vh; /* temporarily set for visibility */
+		height: 800px; /* temporarily set for visibility */
 		z-index: 1;
 		overflow: hidden;
 }
 
 #infomodal{
 	position:relative;
-	left: 360px;
-	bottom: 234px;
-	z-index: 0;
-}
-#infomodal2{
-	position:relative;
-	left: 360px;
-	bottom: 234px;
-	z-index: 0;
-}
-#infomodal3{
-	position:relative;
-	left: 360px;
-	bottom: 234px;
-	z-index: 0;
-}
-#announcement-button {
-	margin-top: 325px;
-	background: none;
-	outline: none;
-	border: none;
-	z-index: 2;
+	bottom: 58px;
 }
 
-#announcement-image {
-	height: 40%;
-	width: 40%;
+#infomodal2{
+	position:relative;
+	right: 305px;
+	bottom: 332px;
+}
+
+#infomodal3{
+	position:relative;
+	left: 376px;
+	bottom: 484px;
 }
 
 #bloomberg-button {
 	position: relative;
 	left: 205px;
-	bottom: 134px;
+	top: 311px;
 }
 
 #neeva-button {
 	position: relative;
-	bottom: 122px;
-	right: 55px;
+	right: 63px;
+	top: 333px;
 }
 
 #wolfram-button {
 	position: relative;
-	bottom: 305px;
-	right: 175px;
+	right: 188px;
+	top: 148px;
 }
 
 #sketch-button {
 	position: relative;
-	bottom: 496px;
-	right: 25px;
-	z-index: 0;
+	right: 37px;
+	bottom: 46px;
 }
