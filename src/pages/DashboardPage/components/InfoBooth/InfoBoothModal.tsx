@@ -41,25 +41,87 @@ export default class InfoBoothModal extends React.Component<
 
                 </div>
                 <div className="bottom">
-                  
-                        <div className="dates">
-
+                        <div className="grid">
+                            <div className="dates">
+                                <p><strong>Jan 22</strong></p>
+                            </div>
+                            <div className="times">
+                                <p>9:00 - 10:00</p>
+                            </div>
+                            <div className="links">
+                                <p>Introduction to Python</p>
+                            </div>
+                            <div className="dates">
+                                <p><strong> </strong></p>
+                            </div>
+                            <div className="times">
+                                <p>12:00 - 13:00</p>
+                            </div>
+                            <div className="links">
+                                <p>Introduction to HTML/CSS</p>
+                            </div>
+                            <div className="dates">
+                                <p><strong>Jan 23</strong></p>
+                            </div>
+                            <div className="times">
+                                <p>12:00 - 13:00</p>
+                            </div>
+                            <div className="links">
+                                <p>Build a Chrome extension</p>
+                            </div>
+                            <div className="dates">
+                                <p><strong> </strong></p>
+                            </div>
+                            <div className="times">
+                                <p>12:00 - 13:00</p>
+                            </div>
+                            <div className="links">
+                                <p>Introduction to React</p>
+                            </div>
+                            <div className="dates">
+                                <p><strong> </strong></p>
+                            </div>
+                            <div className="times">
+                                <p>12:00 - 13:00</p>
+                            </div>
+                            <div className="links">
+                                <p>Introduction to Python</p>
+                            </div>
                         </div>
-                        <div className="times">
-
+                            
+                            
                         </div>
-                        <div className="links"></div>
-    
-                </div>
             </div>
             <div className="Speaker Series">
-                        <div className="dates">
-
+            <div className="grids">
+                            <div className="dates">
+                                <p><strong>Jan 22</strong></p>
+                            </div>
+                            <div className="times">
+                                <p>9:00 - 10:00</p>
+                            </div>
+                            <div className="links">
+                                <p><strong>John Smith, CEO of XXX</strong> Tech Social Change in the Time of Covid-19</p>
+                            </div>
+                            <div className="dates">
+                                <p><strong>Jan 23</strong></p>
+                            </div>
+                            <div className="times">
+                                <p>12:00 - 13:00</p>
+                            </div>
+                            <div className="links">
+                                <p><strong>Jane Doe, Ex-Software Engineer at Facebook</strong> How to Start at Startup</p>
+                            </div>
+                            <div className="dates">
+                                <p><strong> </strong></p>
+                            </div>
+                            <div className="times">
+                                <p>12:00 - 13:00</p>
+                            </div>
+                            <div className="links">
+                                <p><strong>Bob Henry, Brown Alum '01</strong> Changes in Tech since the 2000s</p>
+                            </div>
                         </div>
-                        <div className="times">
-
-                        </div>
-                        <div className="links"></div>
             </div>
             
             <div id ='modal'>

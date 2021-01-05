@@ -14,3 +14,19 @@
 .modal-text {
     padding: 0px 6vw;
 }
+.grids {
+    display: grid;
+    background-color: white;
+}
+.dates {
+    font-family: 'Inter Bold';
+    color: black;
+}
+
+.times {
+    font-family: 'InterBold';
+    color: black;
+}
+.links {
+    color: #46B5B8;
+}
