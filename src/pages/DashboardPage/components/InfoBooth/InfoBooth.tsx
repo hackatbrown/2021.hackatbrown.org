@@ -38,7 +38,7 @@ export default class InfoBooth extends React.Component<
             // TODO
             <>
             <button onClick={this.openModal}>{type}</button>
-            <Modal style={{overlay: {backgroundColor: 'rgba(255,255,255,0)'}}} className='infoModal' isOpen={this.state.modalIsOpen} centered>
+            <Modal style={{overlay: {backgroundColor: 'rgba(0,0,0,0.5)'}}} className='infoModal' isOpen={this.state.modalIsOpen} centered>
 
                 <InfoBoothModal infoType = {type}
                                 logo_asset={infoDict['logo_asset']}

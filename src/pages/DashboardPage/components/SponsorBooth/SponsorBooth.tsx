@@ -42,7 +42,7 @@ export default class SponsorBooth extends React.Component<
           <img src={sponsorImg} id="button-image" alt={sponsor} />
         </button>
         <Modal
-          style={{ overlay: { backgroundColor: "rgba(255,255,255,0)" } }}
+          style={{ overlay: { backgroundColor: "rgba(0,0,0,0.5)" } }}
           className="sponsorModal"
           isOpen={this.state.modalIsOpen}
         >
