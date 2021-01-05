@@ -18,14 +18,14 @@ type InfoContentType = {
 const InfoContents: { [InfoType: string] : InfoContentType; } = {
     "Announcements" : {
         "infoType":"Announcements",
-        "description": "Remember to submit your project by 8am! Use this devpost link",
+        "description": "Remember to submit your project by 8AM! Use this devpost link!",
         "logo_asset": bluepaw,
         'head_color': '#ED695B',
         'htext_color': '#ffffff',
         },
     "Workshops" : {
         "infoType":"Workshops",
-        "description": "Remember to submit your project by 9am! Use this devpost link",
+        "description": "",
         "logo_asset": rocketlaunch,
         'head_color': '#A6DCEC',
         'htext_color': '#444444',
@@ -33,7 +33,7 @@ const InfoContents: { [InfoType: string] : InfoContentType; } = {
 
     "Speaker Series" : {
         "infoType":"Speaker Series",
-        "description": "Remember to submit your project by 10am! Use this devpost link",
+        "description": "",
         "logo_asset": cardtower,
         'head_color': '#46B5B8',
         'htext_color': '#ffffff',
