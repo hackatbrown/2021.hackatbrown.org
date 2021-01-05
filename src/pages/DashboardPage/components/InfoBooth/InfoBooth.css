@@ -10,7 +10,35 @@
     padding: 10vw;
     overflow: hidden;   
 }
+.infoModal {
+margin-top: 14vh;
+margin-left:57vh;
+left: 50%;
+top: 50%;
+height: 80vh;
+min-width: 440px;
+width:480px;
+border-radius: 1.5em;
+overflow-y: scroll;
+text-align: center;
+font-size: 18px;
 
+background-color: white;
+z-index: 3;
+}
+
+#info-close{
+
+border: none;
+background: transparent;
+position: absolute;
+right: 520px;
+top: 132px;
+width: 32px;
+height: 32px;
+font-weight: bold;
+font-size: 24px;
+}
 .modal-text {
     padding: 0px 6vw;
 }

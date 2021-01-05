@@ -33,17 +33,20 @@ export default class InfoBooth extends React.Component<
     render() {
         const type = this.props.infoType
         const infoDict = getInfoContent(type);
+        const xcolor= infoDict['htext_color']
         return (
             // TODO
             <div>
             <button onClick={this.openModal}>{type}</button>
-            <Modal style={{overlay: {backgroundColor: 'rgba(255,255,255,0)'}}} className='sponsorModal' isOpen={this.state.modalIsOpen}>
+            <Modal style={{overlay: {backgroundColor: 'rgba(255,255,255,0)'}}} className='infoModal' isOpen={this.state.modalIsOpen}>
+
                 <InfoBoothModal infoType = {infoDict["infoType"]}
                                 description = {infoDict['description']}
                                 logo_asset={infoDict['logo_asset']}
                                 head_color={infoDict['head_color']}
+                                htext_color={infoDict['htext_color']}
                 />
-            <button id="close" onClick={this.closeModal}>X</button>
+            <button id="info-close" style={{color:xcolor}} onClick={this.closeModal}>X</button>
             </Modal>
 
             
