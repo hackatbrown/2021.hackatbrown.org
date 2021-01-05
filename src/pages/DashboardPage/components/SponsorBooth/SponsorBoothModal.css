@@ -63,3 +63,7 @@
   background-color: #A6DCEC;
   color: black;
 }
+
+.ReactModal__Overlay {
+	z-index: 10;
+}
