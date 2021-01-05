@@ -1,7 +1,9 @@
 import React from "react";
 import "./VirtualSpaceWindow.css";
 import SponsorBooth from "../SponsorBooth/SponsorBooth";
-import AnnouncementImg from "../../../../assets/images/VirtualSpace/annoucements.png";
+import announcementImg from "../../../../assets/images/VirtualSpace/annoucements.png";
+import speakerImg from "../../../../assets/images/VirtualSpace/speakers.png";
+import workshopsImg from "../../../../assets/images/VirtualSpace/workshops.png";
 import bloombergImg from "../../../../assets/images/VirtualSpace/bloomberg.png";
 import neevaImg from "../../../../assets/images/VirtualSpace/neeva.png";
 import wolframImg from "../../../../assets/images/VirtualSpace/wolfram.png";
@@ -29,9 +31,6 @@ export default class VirtualSpaceWindow extends React.Component<
       <div id="window">
         <div>
           {/* // TODO: Place different booth buttons using SponsorBooth component */}
-          <button id="announcement-button">
-            <img src={AnnouncementImg} id="announcement-image" />
-          </button>
 
           {/* TODO: Figure out z-index issues */}
           <div id="bloomberg-button">
@@ -47,13 +46,13 @@ export default class VirtualSpaceWindow extends React.Component<
             <SponsorBooth sponsorName="sketch" sponsorImg={sketchImg} />
           </div>
           <div id="infomodal">
-                  <InfoBooth infoType="Announcements" />
+            <InfoBooth infoType="Announcements" infoImg={announcementImg} />
           </div>
           <div id="infomodal2">
-              <InfoBooth infoType="Workshops" />
+            <InfoBooth infoType="Workshops" infoImg={workshopsImg} />
           </div>
           <div id="infomodal3">
-              <InfoBooth infoType="Speaker Series" />
+            <InfoBooth infoType="Speaker Series" infoImg={speakerImg} />
           </div>
         </div>
       </div>
