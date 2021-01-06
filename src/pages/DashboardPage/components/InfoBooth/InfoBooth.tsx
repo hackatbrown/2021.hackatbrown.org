@@ -6,7 +6,6 @@ import { getInfoContent } from "./InfoBoothContent";
 
 type InfoBoothProps = {
   infoType: string;
-  infoImg: any;
 };
 
 type InfoBoothState = {
@@ -32,14 +31,13 @@ export default class InfoBooth extends React.Component<
   };
   render() {
     const type = this.props.infoType;
-    const img = this.props.infoImg;
     const infoDict = getInfoContent(type);
     const xcolor = infoDict["htext_color"];
     return (
       // TODO
       <>
         <button onClick={this.openModal} id="info-button">
-          <img src={img} id="button-image" alt={type} />
+          <img src={infoDict["booth_asset"]} id="button-image" alt={type} />
         </button>
         <Modal
           style={{ overlay: { backgroundColor: "rgba(0,0,0,0.5)" } }}

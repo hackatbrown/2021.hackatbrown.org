@@ -1,13 +1,6 @@
 import React from "react";
 import "./VirtualSpaceWindow.css";
 import SponsorBooth from "../SponsorBooth/SponsorBooth";
-import announcementImg from "../../../../assets/images/VirtualSpace/annoucements.png";
-import speakerImg from "../../../../assets/images/VirtualSpace/speakers.png";
-import workshopsImg from "../../../../assets/images/VirtualSpace/workshops.png";
-import bloombergImg from "../../../../assets/images/VirtualSpace/bloomberg.png";
-import neevaImg from "../../../../assets/images/VirtualSpace/neeva.png";
-import wolframImg from "../../../../assets/images/VirtualSpace/wolfram.png";
-import sketchImg from "../../../../assets/images/VirtualSpace/sketch.png";
 import InfoBooth from "../InfoBooth/InfoBooth";
 
 type VirtualSpaceWindowProps = {};
@@ -33,25 +26,25 @@ export default class VirtualSpaceWindow extends React.Component<
 
           {/* TODO: Figure out z-index issues */}
           <div id="bloomberg-button" className="booth">
-            <SponsorBooth sponsorName="bloomberg" sponsorImg={bloombergImg} />
+            <SponsorBooth sponsorName="bloomberg" />
           </div>
           <div id="neeva-button" className="booth">
-            <SponsorBooth sponsorName="neeva" sponsorImg={neevaImg} />
+            <SponsorBooth sponsorName="neeva" />
           </div>
           <div id="wolfram-button" className="booth">
-            <SponsorBooth sponsorName="wolfram" sponsorImg={wolframImg} />
+            <SponsorBooth sponsorName="wolfram" />
           </div>
           <div id="sketch-button" className="booth">
-            <SponsorBooth sponsorName="sketch" sponsorImg={sketchImg} />
+            <SponsorBooth sponsorName="sketch" />
           </div>
           <div id="annoucement-button" className="booth">
-            <InfoBooth infoType="Announcements" infoImg={announcementImg} />
+            <InfoBooth infoType="Announcements" />
           </div>
           <div id="workshops-button" className="booth">
-            <InfoBooth infoType="Workshops" infoImg={workshopsImg} />
+            <InfoBooth infoType="Workshops" />
           </div>
           <div id="speaker-button" className="booth">
-            <InfoBooth infoType="Speaker Series" infoImg={speakerImg} />
+            <InfoBooth infoType="Speaker Series" />
           </div>
       </div>
     );

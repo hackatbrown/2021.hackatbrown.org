@@ -478,6 +478,7 @@ export default class DashboardHome extends React.Component<
       {scrollPrompt}
       </div>
       <div className="brown-town">
+        {/* TODO Add h@b blurb here */}
         <VirtualSpaceWindow />
       </div>
       </>

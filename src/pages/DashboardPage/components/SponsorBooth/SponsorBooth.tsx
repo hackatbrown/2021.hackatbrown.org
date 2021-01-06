@@ -6,7 +6,6 @@ import { getSponsorContent } from "./SponsorBoothContents";
 
 type SponsorBoothProps = {
   sponsorName: string;
-  sponsorImg: any;
 };
 
 type SponsorBoothState = {
@@ -34,12 +33,11 @@ export default class SponsorBooth extends React.Component<
 
   render() {
     const sponsor = this.props.sponsorName;
-    const sponsorImg = this.props.sponsorImg;
     const sponsorDict = getSponsorContent(sponsor);
     return (
       <>
         <button onClick={this.openModal} id="sponsor-button">
-          <img src={sponsorImg} id="button-image" alt={sponsor} />
+          <img src={sponsorDict["booth_asset"]} id="button-image" alt={sponsor} />
         </button>
         <Modal
           style={{ overlay: { backgroundColor: "rgba(0,0,0,0.5)" } }}
