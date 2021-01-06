@@ -1,6 +1,7 @@
 #window {
 		background-color: #FDF7DC !important;
-		background: url("../../../../assets/images/VirtualSpace/base.png") no-repeat center;
+		background: url("../../../../assets/images/VirtualSpace/base_w_booths.png") no-repeat center;
+		/* background: url("../../../../assets/images/VirtualSpace/base.png") no-repeat center; */
 		background-size: 1000px;
 		margin: 0 auto;
 		width: 1000px;
@@ -15,34 +16,34 @@
 }
 
 #annoucement-button{
-	width: 116px;
-	margin-left: 440px;
-	margin-top: 310px;
+	width: 125px;
+	margin-left: 441px;
+	margin-top: 305px;
 	z-index: 2;
 }
 
 #workshops-button{
-	width: 113px;
-	margin-left: 130px;
-	margin-top: 180px;
+	width: 127px;
+	margin-left: 127px;
+	margin-top: 157px;
 }
 
 #speaker-button{
-	width: 136px;
-	margin-left: 800px;
-	margin-top: 250px;
+	width: 150px;
+	margin-left: 788px;
+	margin-top: 230px;
 }
 
 #bloomberg-button {
-	width: 114px;
-	margin-left: 650px;
-	margin-top: 295px;
+	width: 129px;
+	margin-left: 660px;
+	margin-top: 269px;
 }
 
 #neeva-button {
-	width: 114px;
-	margin-left: 390px;
-	margin-top: 420px;
+	width: 129px;
+	margin-left: 371px;
+	margin-top: 407px;
 	z-index: 3;
 }
 
@@ -53,8 +54,8 @@
 }
 
 #sketch-button {
-	width: 80px;
-	margin-left: 420px;
-	margin-top: 240px;
+	width: 83px;
+	margin-left: 424px;
+	margin-top: 230px;
 	z-index: 2;
 }
