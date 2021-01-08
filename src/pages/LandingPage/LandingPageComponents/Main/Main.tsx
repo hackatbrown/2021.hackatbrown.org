@@ -32,9 +32,6 @@ export default class Main extends React.Component<MainProps, MainState> {
                     <h1 style={{ color: '#444' }} className="top-text">Hack@Brown presents:</h1>
                     <h1 style={{ color: '#444' }} className="big-text">After School</h1>
                     <h1 style={{ color: '#444' }} className="bottom-text">January 22 - 24, 2021</h1>
-                    <video className='videoTag' autoPlay loop muted>
-                        <source src={ bganim } type='video/mp4' />
-                    </video>
                 </div>
                 <FirebaseContextConsumer>
                     {firebase => (
@@ -45,7 +42,9 @@ export default class Main extends React.Component<MainProps, MainState> {
                     )}
                 </FirebaseContextConsumer>
                 <div className = "animated-scene">
-                    
+                    <video className='videoTag' autoPlay loop muted>
+                        <source src={ bganim } type='video/mp4' />
+                    </video>
                 </div>
                 <div className = "static-scene">
                     <img src={mainMobileImg}></img>
