@@ -30,6 +30,10 @@
     font-size: 120%;
 }
 
+.virtual .stickynote-button {
+    margin: 0;
+}
+
 .virtual-blurb {
     text-align: left;
 }
