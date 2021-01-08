@@ -1,15 +1,23 @@
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 .sponsorModal {
-  left: 50%;
+  position: absolute;
   top: 50%;
-  height: 80vh;
-  min-width: 440px;
-  border-radius: 1.5em;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  width: 60vw;
   overflow-y: scroll;
+  height: 80vh;
+  /* min-width: 440px; */
+  border-radius: 1.5em;
   text-align: center;
   font-size: 18px;
-  margin: 100px;
 	background-color: white;
-	z-index: 3;
+  z-index: 3;
+  padding: 2vw 2vw;
 }
 
 #close{
@@ -17,8 +25,8 @@
     border: none;
     background: transparent;
     position: absolute;
-    right: 132px;
-    top: 132px;
+    right: 2vw;
+    top: 1vw;
     width: 32px;
     height: 32px;
     font-weight: bold;
@@ -38,8 +46,8 @@
 }
 
 #button-image {
-	height: 40%;
-	width: 40%;
+	height: 100%;
+	width: 100%;
 	z-index: 2;
 }
 

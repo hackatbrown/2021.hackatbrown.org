@@ -1,11 +1,6 @@
 import React from "react";
 import "./VirtualSpaceWindow.css";
 import SponsorBooth from "../SponsorBooth/SponsorBooth";
-import AnnouncementImg from "../../../../assets/images/VirtualSpace/annoucements.png";
-import bloombergImg from "../../../../assets/images/VirtualSpace/bloomberg.png";
-import neevaImg from "../../../../assets/images/VirtualSpace/neeva.png";
-import wolframImg from "../../../../assets/images/VirtualSpace/wolfram.png";
-import sketchImg from "../../../../assets/images/VirtualSpace/sketch.png";
 import InfoBooth from "../InfoBooth/InfoBooth";
 
 type VirtualSpaceWindowProps = {};
@@ -27,35 +22,30 @@ export default class VirtualSpaceWindow extends React.Component<
   render() {
     return (
       <div id="window">
-        <div>
           {/* // TODO: Place different booth buttons using SponsorBooth component */}
-          <button id="announcement-button">
-            <img src={AnnouncementImg} id="announcement-image" />
-          </button>
 
           {/* TODO: Figure out z-index issues */}
-          <div id="bloomberg-button">
-            <SponsorBooth sponsorName="bloomberg" sponsorImg={bloombergImg} />
+          <div id="bloomberg-button" className="booth">
+            <SponsorBooth sponsorName="bloomberg" />
           </div>
-          <div id="neeva-button">
-            <SponsorBooth sponsorName="neeva" sponsorImg={neevaImg} />
+          <div id="neeva-button" className="booth">
+            <SponsorBooth sponsorName="neeva" />
           </div>
-          <div id="wolfram-button">
-            <SponsorBooth sponsorName="wolfram" sponsorImg={wolframImg} />
+          <div id="wolfram-button" className="booth">
+            <SponsorBooth sponsorName="wolfram" />
           </div>
-          <div id="sketch-button">
-            <SponsorBooth sponsorName="sketch" sponsorImg={sketchImg} />
+          <div id="sketch-button" className="booth">
+            <SponsorBooth sponsorName="sketch" />
           </div>
-          <div id="InfoModal">
-                  <InfoBooth infoType="Announcements" />
+          <div id="annoucement-button" className="booth">
+            <InfoBooth infoType="Announcements" />
           </div>
-          <div id="InfoModal">
-              <InfoBooth infoType="Workshops" />
+          <div id="workshops-button" className="booth">
+            <InfoBooth infoType="Workshops" />
           </div>
-          <div id="InfoModal">
-              <InfoBooth infoType="Speaker Series" />
+          <div id="speaker-button" className="booth">
+            <InfoBooth infoType="Speaker Series" />
           </div>
-        </div>
       </div>
     );
   }

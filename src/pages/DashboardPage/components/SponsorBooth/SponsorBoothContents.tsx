@@ -2,6 +2,10 @@ import bloombergLogo from "../../../../assets/images/LandingPage/companylogo/Blo
 import neevaLogo from "../../../../assets/images/LandingPage/companylogo/neeva.png";
 import wolframLogo from "../../../../assets/images/LandingPage/companylogo/wolfram.png";
 import sketchLogo from "../../../../assets/images/LandingPage/companylogo/sketch.png";
+import bloombergBoothImg from "../../../../assets/images/VirtualSpace/bloomberg.png";
+import neevaBoothImg from "../../../../assets/images/VirtualSpace/neeva.png";
+import wolframBoothImg from "../../../../assets/images/VirtualSpace/wolfram.png";
+import sketchBoothImg from "../../../../assets/images/VirtualSpace/sketch.png";
 
 type SponsorContentType = {
   description: string;
@@ -19,7 +23,7 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     url: "url",
     tier: "kilo",
     logo_asset: bloombergLogo,
-    booth_asset: "",
+    booth_asset: bloombergBoothImg,
     gcal_url:
       "https://calendar.google.com/calendar/embed?height=312&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%230B8043&amp;showTitle=0&amp;mode=WEEK&amp;showPrint=0&amp;showTabs=1",
   },
@@ -28,7 +32,7 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     url: "url",
     tier: "kilo",
     logo_asset: neevaLogo,
-    booth_asset: "",
+    booth_asset: neevaBoothImg,
     gcal_url:
       "https://calendar.google.com/calendar/embed?height=312&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%230B8043&amp;showTitle=0&amp;mode=WEEK&amp;showPrint=0&amp;showTabs=1",
   },
@@ -37,7 +41,7 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     url: "url",
     tier: "kilo",
     logo_asset: wolframLogo,
-    booth_asset: "",
+    booth_asset: wolframBoothImg,
     gcal_url:
       "https://calendar.google.com/calendar/embed?height=312&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%230B8043&amp;showTitle=0&amp;mode=WEEK&amp;showPrint=0&amp;showTabs=1",
   },
@@ -46,7 +50,7 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     url: "url",
     tier: "kilo",
     logo_asset: sketchLogo,
-    booth_asset: "",
+    booth_asset: sketchBoothImg,
     gcal_url:
       "https://calendar.google.com/calendar/embed?height=312&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%230B8043&amp;showTitle=0&amp;mode=WEEK&amp;showPrint=0&amp;showTabs=1",
   },

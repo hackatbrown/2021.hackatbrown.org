@@ -191,7 +191,7 @@ export default class BasicInfo extends React.Component<
           <div className="basic-info-4">
             <FormControl required className="over18">
               <FormLabel style={InputStyles.style}>
-                Will you be over 18 on January 26th?
+                Will you be over 18 on January 23th?
               </FormLabel>
               <RadioGroup
                 value={

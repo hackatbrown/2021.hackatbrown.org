@@ -1,46 +1,61 @@
 #window {
 		background-color: #FDF7DC !important;
+		/* background: url("../../../../assets/images/VirtualSpace/base_w_booths.png") no-repeat center; */
 		background: url("../../../../assets/images/VirtualSpace/base.png") no-repeat center;
 		background-size: 1000px;
-		height: 100vh; /* temporarily set for visibility */
+		margin: 0 auto;
+		width: 1000px;
+		height: 750px;
 		z-index: 1;
 		overflow: hidden;
+		position: relative;
 }
 
-#announcement-button {
-	margin-top: 325px;
-	background: none;
-	outline: none;
-	border: none;
+.booth {
+	position: absolute;
+}
+
+#annoucement-button{
+	width: 125px;
+	margin-left: 441px;
+	margin-top: 305px;
 	z-index: 2;
 }
 
-#announcement-image {
-	height: 40%;
-	width: 40%;
+#workshops-button{
+	width: 127px;
+	margin-left: 127px;
+	margin-top: 157px;
+}
+
+#speaker-button{
+	width: 150px;
+	margin-left: 788px;
+	margin-top: 230px;
 }
 
 #bloomberg-button {
-	position: relative;
-	left: 205px;
-	bottom: 134px;
+	width: 129px;
+	margin-left: 660px;
+	margin-top: 269px;
 }
 
 #neeva-button {
-	position: relative;
-	bottom: 122px;
-	right: 55px;
+	width: 129px;
+	margin-left: 371px;
+	margin-top: 407px;
+	z-index: 3;
 }
 
 #wolfram-button {
-	position: relative;
-	bottom: 305px;
-	right: 175px;
+	width: 80px;
+	margin-left: 285px;
+	margin-top: 345px;
 }
 
 #sketch-button {
-	position: relative;
-	bottom: 496px;
-	right: 25px;
-	z-index: 1;
+	width: 83px;
+	margin-left: 424px;
+	margin-top: 230px;
+	z-index: 2;
 }

@@ -56,12 +56,18 @@ export default class Toolbar extends React.Component<
     }
   };
 
-  logOut = () => {
+  logOut = async () => {
     if (this.props.firebase != null) {
-      this.props.firebase.doLogOut();
+      await this.props.firebase.doLogOut();
       this.setState({
         redirectLogout: true,
       });
+    }
+
+    // Refresh the page if logging out from homepage
+    // This is done in order to reset justLogged state in LoginJoin
+    if (window.location.pathname === "/") {
+      window.location.reload(); 
     }
   };
 
@@ -101,38 +107,38 @@ export default class Toolbar extends React.Component<
       let toolbarClassname; 
       let applicationNav;
       let brownTownNav;
-      switch(window.location.pathname) {
-        case "/dashboard":
-          toolbarClassname = "dashboard-toolbar";
-          applicationNav = <div className="toolbar-about">
-              <Nav.Link 
-                eventKey="1" 
-                activeClass="active"
-                as={Link} 
-                to="dashboard" 
-                spy={true}
-                smooth={true}
-                offset={-65}
-                duration={500}>
-                Application
-              </Nav.Link>
-            </div>
-          brownTownNav = <div className="toolbar-virtual-space">
-              <Nav.Link
-                eventKey="2"
-                activeClass="active"
-                as={Link} 
-                to="brown-town"
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500}
-              >
-                H@B&nbsp;Town
-              </Nav.Link>
-            </div>
-          break;
-        case "/registration": 
+      if (window.location.pathname === "/dashboard" 
+        && this.state.user !== null) {
+        toolbarClassname = "dashboard-toolbar";
+        applicationNav = <div className="toolbar-about">
+            <Nav.Link 
+              eventKey="1" 
+              activeClass="active"
+              as={Link} 
+              to="dashboard" 
+              spy={true}
+              smooth={true}
+              offset={-65}
+              duration={500}>
+              Application
+            </Nav.Link>
+          </div>
+        brownTownNav = <div className="toolbar-virtual-space">
+            <Nav.Link
+              eventKey="2"
+              activeClass="active"
+              as={Link} 
+              to="brown-town"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              H@B&nbsp;Town
+            </Nav.Link>
+          </div>
+      } else if (window.location.pathname === "/registration" 
+          && this.state.user !== null) {
           toolbarClassname = "regist-toolbar";
           applicationNav = <div className="toolbar-about">
                 <a
@@ -150,10 +156,8 @@ export default class Toolbar extends React.Component<
                 H@B&nbsp;Town
                 </a>
             </div>
-          break;
-        default:
-          toolbarClassname = "main-toolbar";
-          break;
+      } else {
+        toolbarClassname = "main-toolbar";
       }
       
       return (
@@ -203,7 +207,7 @@ export default class Toolbar extends React.Component<
                 <Nav className="mr-auto"></Nav>
                 <Nav className="tool-bar-container">
                   <Col>
-                    {window.location.pathname === "/" ?
+                    {window.location.pathname === "/" || this.state.user === null ?
                     <div
                       className="toolbar-about"
                     >
@@ -222,7 +226,7 @@ export default class Toolbar extends React.Component<
                   </Col>
 
                   <Col>
-                    {window.location.pathname === "/" ?
+                    {window.location.pathname === "/" || this.state.user === null ?
                     <div
                       className="toolbar-itinerary"
                     >
@@ -241,7 +245,7 @@ export default class Toolbar extends React.Component<
                     </div> : brownTownNav}
                   </Col>
 
-                  {window.location.pathname === "/" ?
+                  {window.location.pathname === "/" || this.state.user === null ?
                   <Col>
                     <div
                       className="toolbar-faq"
@@ -261,7 +265,7 @@ export default class Toolbar extends React.Component<
                     </div> 
                   </Col> : null}
 
-                  {window.location.pathname === "/" ?
+                  {window.location.pathname === "/" || this.state.user === null ?
                   <Col>
                     <div
                       className="toolbar-virtual-space"
@@ -281,7 +285,7 @@ export default class Toolbar extends React.Component<
                     </div> 
                   </Col> : null}
 
-                  {window.location.pathname === "/" ?
+                  {window.location.pathname === "/" || this.state.user === null ?
                   <Col>
                     <div
                       className="toolbar-sponsors"

@@ -8,7 +8,7 @@
 }
 
 .scroll-prompt {
-    z-index: 1;
+    z-index: 0;
     position: absolute;
     bottom: 2rem;
     font-size: 1.5rem;
@@ -24,7 +24,8 @@
 .brown-town {
     background-color: #FDF7DC;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 dashboard button {

@@ -6,7 +6,7 @@ html,body{
     align-content: center;
     margin-bottom: 0px;
     /* padding-bottom:100px; */
-    background-color:#FDF7DC;
+    background-color:#FEF7E1;
 
 }
 
@@ -157,7 +157,7 @@ html,body{
     .plane-one {
         display: none;
     }
-    .plane-two { 
+    .plane-two {
         display: none;
     }
     .plane-three {
@@ -166,7 +166,7 @@ html,body{
     .plane-one-st {
         display: none;
     }
-    .plane-two-st { 
+    .plane-two-st {
         display: none;
     }
     .plane-three-st {
