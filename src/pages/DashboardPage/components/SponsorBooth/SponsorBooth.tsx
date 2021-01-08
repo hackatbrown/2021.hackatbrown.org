@@ -50,6 +50,9 @@ export default class SponsorBooth extends React.Component<
             sponsorTier={sponsorDict["tier"]}
             sponsorLogoAsset={sponsorDict["logo_asset"]}
             sponsorGCalURL={sponsorDict["gcal_url"]}
+            sponsorReps={sponsorDict["reps"]}
+            sponsorDiscord1={sponsorDict["discord1"]}
+            sponsorDiscord2={sponsorDict["discord2"]}
           />
           <button id="close" onClick={this.closeModal}>
             X
