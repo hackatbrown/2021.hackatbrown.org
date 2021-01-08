@@ -48,8 +48,8 @@ export default class SponsorBoothModal extends React.Component<
                         <p> {description}</p><br/>
                         <p><b>Reps</b></p>
                         <p> {reps}</p><br></br>
-                        <a href={discord1} className="button"><b>Discord (Messaging)</b></a><br></br><br></br>
-                        <a href={discord2} className="button"><b>Discord Voice (Video/Call)</b></a>
+                        <a href={discord1} className="button" target="_blank"><b>Discord (Messaging)</b></a><br></br><br></br>
+                        <a href={discord2} className="button" target="_blank"><b>Discord Voice (Video/Call)</b></a>
                     </div>
                 </div>
                 <br></br><iframe src={gcal} style={{border: 0.6}} width="691" height="312" frameBorder="0" scrolling="no"></iframe>
