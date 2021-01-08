@@ -3,9 +3,14 @@ import "./VirtualSpace.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { FirebaseContextConsumer } from "../../../../components/Firebase/context";
+import LoginJoin from "../LoginJoin/LoginJoin";
 import spaceImg from "../../../../assets/images/LandingPage/virtual_space.png";
 
-type VirtualProps = {};
+type VirtualProps = {
+    hideToolbar: any;
+    apiURL: string;
+};
 
 type VirtualState = {
     state: string;
@@ -39,7 +44,14 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                         H@B Town will be available closer to the day of the event!
                         <br/><br/>
                      </p>
-                     {/* <button id="registerBtn">Register</button> */}
+                    <FirebaseContextConsumer>
+                        {firebase => (
+                            <LoginJoin
+                                apiURL={this.props.apiURL}
+                                firebase={firebase == null ? null : firebase.firebase}
+                                hideToolbar={this.props.hideToolbar} />
+                        )}
+                    </FirebaseContextConsumer>
                   </div>
                 </Col>
                 <Col sm={6}>

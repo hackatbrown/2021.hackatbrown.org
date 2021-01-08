@@ -24,13 +24,18 @@
     padding-bottom: 3rem;
 }
 
+#video {
+  margin: 0;
+  padding: 0;
+}
+
 #hello-email{
     color: #444444;
     text-decoration: none !important;
 }
 
 #sponsor-email{
-    color: #444444 !important; 
+    color: #444444 !important;
     text-decoration: none !important;
 }
 
