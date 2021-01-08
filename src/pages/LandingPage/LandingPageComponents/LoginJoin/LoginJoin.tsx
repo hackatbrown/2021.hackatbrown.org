@@ -62,9 +62,6 @@ export default class LoginJoin extends Component<
 
   // Check if user is logged in when component mounts
   componentDidMount = () => {
-    // this.setState({
-    //     justLogged: false
-    // });
     let currFirebase = this.props.firebase;
     if (currFirebase == null) {
       // if true, error
@@ -108,7 +105,7 @@ export default class LoginJoin extends Component<
     this.setState({ passwordConfirm: e.target.value });
   };
 
-  login = (e: { preventDefault: () => void }) => {
+  login = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     this.setState({
@@ -122,15 +119,12 @@ export default class LoginJoin extends Component<
         message: "Sorry, something went wrong. Please try again later.",
       });
     } else {
-      // this.setState({
-      //     justLogged: true
-      // });
-      currFirebase
+      await currFirebase
         .doSignInWithEmailAndPassword(this.state.email, this.state.password)
         .then(() => {
           this.setState({
             modalIsOpen: false, // close modal
-            // justLogged: true
+            justLogged: true
           });
           this.props.hideToolbar(true);
         })
@@ -143,7 +137,7 @@ export default class LoginJoin extends Component<
     }
   };
 
-  join = (e: { preventDefault: () => void }) => {
+  join = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     if (EmailValidator.validate(this.state.email)) {
@@ -167,7 +161,7 @@ export default class LoginJoin extends Component<
             });
           } else {
             let userEmail = this.state.email;
-            let temp = this;
+            let temp = await this;
             currFirebase
               .doCreateUserWithEmailAndPassword(
                 this.state.email,
@@ -461,7 +455,7 @@ export default class LoginJoin extends Component<
         {content}
       </Modal>
     );
-
+    
     return (
       <>
         {button}
