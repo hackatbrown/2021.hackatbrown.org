@@ -1,3 +1,24 @@
+.column1 {
+  float: left;
+  width: 50%;
+  padding-left: 30px;
+  text-align: left;
+}
+
+.column2 {
+  float: left;
+  width: 50%;
+  padding-right: 30px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .logo-container {
   margin: 0 auto;
   width: 25%;
@@ -16,9 +37,7 @@
   font-weight: normal;
   font-size: 18px;
   line-height: 26px;
-  text-align: center;
   color: #444444;
-  align-content: center;
 }
 
 .giga, .mega, .kilo, .micro {
@@ -32,8 +51,8 @@
   height: 35px;
   color: white;
   position: absolute;
-  overflow: hidden;
   text-align: center;
+  overflow: hidden;
   clip-path: polygon(
     0 100%,
     21% 0,
@@ -62,6 +81,27 @@
 .micro {
   background-color: #A6DCEC;
   color: black;
+}
+
+.button {
+  border-radius: 30px;
+  border: none;
+  color: white;
+  background-color: #46B5B8;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+a.button:hover, 
+a.button:visited, 
+a.button:link, 
+a.button:active {
+  text-decoration: none;
+  color: white;
 }
 
 .ReactModal__Overlay {
