@@ -49,7 +49,7 @@ export default class LandingPage extends React.Component<
                         />
                     )}
                 </FirebaseContextConsumer>
-                <Main apiURL={this.props.apiURL} hideToolbar ={this.hideToolbar}/>
+                <Main apiURL={this.props.apiURL} hideToolbar={this.hideToolbar}/>
                 <div id="about">
                     <Intro />
                 </div>
@@ -60,7 +60,7 @@ export default class LandingPage extends React.Component<
                     <FAQ />
                 </div>
                 <div id="virtualSpace">
-                    <VirtualSpace />
+                    <VirtualSpace apiURL={this.props.apiURL} hideToolbar={this.hideToolbar} />
                 </div>
                 <div id="sponsors">
                     <Sponsors />

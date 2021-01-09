@@ -23,9 +23,9 @@
 
 .brown-town {
     background-color: #FDF7DC;
-    height: 100vh;
     overflow-x: scroll;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 dashboard button {

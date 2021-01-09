@@ -4,6 +4,7 @@ import { FirebaseContextConsumer } from "../../../../components/Firebase/context
 import LoginJoin from "../LoginJoin/LoginJoin";
 import mainImg from "../../../../assets/images/LandingPage/soccer_field.png";
 import mainMobileImg from "../../../../assets/images/LandingPage/soccer_field_mobile.png";
+import bganim from './web_animation.mp4';
 import airplane from "../../../../assets/images/LandingPage/airplane.png";
 import airplane2 from "../../../../assets/images/LandingPage/airplane2.png";
 import airplane3 from "../../../../assets/images/LandingPage/airplane3.png";
@@ -30,7 +31,7 @@ export default class Main extends React.Component<MainProps, MainState> {
                 <div className="main-div">
                     <h1 style={{ color: '#444' }} className="top-text">Hack@Brown presents:</h1>
                     <h1 style={{ color: '#444' }} className="big-text">After School</h1>
-                    <h1 style={{ color: '#444' }} className="bottom-text">January 23 - 24, 2021</h1>
+                    <h1 style={{ color: '#444' }} className="bottom-text">January 22 - 24, 2021</h1>
                 </div>
                 <FirebaseContextConsumer>
                     {firebase => (
@@ -41,13 +42,9 @@ export default class Main extends React.Component<MainProps, MainState> {
                     )}
                 </FirebaseContextConsumer>
                 <div className = "animated-scene">
-                    <img src={mainImg} className="main-img"></img>
-                    <img src={airplane} className="plane-one"></img><br/>
-                    <img src={airplane2} className="plane-two"></img><br/>
-                    <img src={airplane3} className="plane-three"></img><br/>
-                    <img src={airplane} className="plane-one-st"></img><br/><br/>
-                    <img src={airplane2} className="plane-two-st"></img><br/>
-                    <img src={airplane3} className="plane-three-st"></img>
+                    <video className='videoTag' autoPlay loop muted>
+                        <source src={ bganim } type='video/mp4' />
+                    </video>
                 </div>
                 <div className = "static-scene">
                     <img src={mainMobileImg}></img>
