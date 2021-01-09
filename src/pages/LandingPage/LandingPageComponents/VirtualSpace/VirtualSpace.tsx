@@ -44,14 +44,14 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                         H@B Town will be available closer to the day of the event!
                         <br/><br/>
                      </p>
-                    <FirebaseContextConsumer>
+                    {/* <FirebaseContextConsumer>
                         {firebase => (
                             <LoginJoin
                                 apiURL={this.props.apiURL}
                                 firebase={firebase == null ? null : firebase.firebase}
                                 hideToolbar={this.props.hideToolbar} />
                         )}
-                    </FirebaseContextConsumer>
+                    </FirebaseContextConsumer> */}
                   </div>
                 </Col>
                 <Col sm={6}>
