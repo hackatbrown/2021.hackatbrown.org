@@ -1,0 +1,100 @@
+.brown-town {
+    background-color: #FDF7DC;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    color: #444444;
+    margin-top: -10px;
+}
+
+.brown-town-intro {
+    background-color: #FDF7DC;
+    color: #444444;
+    padding: 4rem 14rem 0 14rem;
+}
+
+.town-blurb {
+    display: inline-block;
+    text-align: left;
+    font-weight: 100;
+    width: 85%;
+}
+
+.town-blurb p {
+    margin-bottom: 0.5rem;
+}
+
+.town-buttons {
+    display: inline-block;
+    width: 15%;
+}
+
+.button-icon {
+    width: 30px;
+    margin-right: 15px;
+}
+
+.town-buttons a {
+    display: block;
+    color: white;
+    width: 180px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin: 1rem 0;
+    /* transition: all 0.2s ease-in-out; */
+}
+
+.town-buttons .live-button {
+    background-color: #ED695B;
+}
+
+.town-buttons .discord-button,
+.town-buttons .devpost-button {
+    background-color: #46B5B8;
+}
+
+.town-buttons a:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    /* transform: scale(1.1); */
+}
+
+@media screen and (max-width: 950px) {
+    .brown-town-intro {
+        padding: 2rem 2rem 2rem 2rem;
+    }
+    
+    .town-blurb {
+        display: block;
+        width: 100%;
+    }
+    
+    .town-blurb p {
+        margin-bottom: 0.5rem;
+    }
+    
+    .town-buttons {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .town-buttons a {
+        width: 30%;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .town-buttons {
+        display: block;
+        width: 100%;
+    }
+
+    .town-buttons a {
+        width: 100%;
+        font-size: 1rem;
+    }
+}

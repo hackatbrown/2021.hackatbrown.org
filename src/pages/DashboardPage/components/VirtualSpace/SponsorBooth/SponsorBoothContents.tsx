@@ -1,11 +1,11 @@
-import bloombergLogo from "../../../../assets/images/LandingPage/companylogo/Bloomberg.png";
-import neevaLogo from "../../../../assets/images/LandingPage/companylogo/neeva.png";
-import wolframLogo from "../../../../assets/images/LandingPage/companylogo/wolfram.png";
-import sketchLogo from "../../../../assets/images/LandingPage/companylogo/sketch.png";
-import bloombergBoothImg from "../../../../assets/images/VirtualSpace/bloomberg.png";
-import neevaBoothImg from "../../../../assets/images/VirtualSpace/neeva.png";
-import wolframBoothImg from "../../../../assets/images/VirtualSpace/wolfram.png";
-import sketchBoothImg from "../../../../assets/images/VirtualSpace/sketch.png";
+import bloombergLogo from "../../../../../assets/images/LandingPage/companylogo/Bloomberg.png";
+import neevaLogo from "../../../../../assets/images/LandingPage/companylogo/neeva.png";
+import wolframLogo from "../../../../../assets/images/LandingPage/companylogo/wolfram.png";
+import sketchLogo from "../../../../../assets/images/LandingPage/companylogo/sketch.png";
+import bloombergBoothImg from "../../../../../assets/images/VirtualSpace/bloomberg.png";
+import neevaBoothImg from "../../../../../assets/images/VirtualSpace/neeva.png";
+import wolframBoothImg from "../../../../../assets/images/VirtualSpace/wolfram.png";
+import sketchBoothImg from "../../../../../assets/images/VirtualSpace/sketch.png";
 
 type SponsorContentType = {
   description: string;

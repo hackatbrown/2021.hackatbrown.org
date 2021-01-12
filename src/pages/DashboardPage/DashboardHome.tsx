@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import Firebase from "../../components/Firebase";
 import axios from "axios";
 import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
-import VirtualSpaceWindow from "./components/VirtualSpaceWindow/VirtualSpaceWindow";
-import arrowImg from "../../assets/images/Dashboard/arrow.png";
+import VirtualSpaceHome from "./components/VirtualSpace/VirtualSpaceHome";
 
 /**
  * define a type model for the props you are passing in to the component
@@ -472,10 +471,7 @@ export default class DashboardHome extends React.Component<
           {renderConfirmForm()}
         </div>
       </div>
-      <div className="brown-town">
-        {/* TODO Add h@b blurb here */}
-        <VirtualSpaceWindow />
-      </div>
+      <VirtualSpaceHome />
       </>
     );
   }

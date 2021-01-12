@@ -1,10 +1,10 @@
-import pawLogo from "../../../../assets/images/LandingPage/Hack@Brown.png";
-import bluepaw from "../../../../assets/images/VirtualSpace/bluepaw.png";
-import cardtower from "../../../../assets/images/VirtualSpace/cardtower.png";
-import rocketlaunch from "../../../../assets/images/VirtualSpace/rocketlaunch.png";
-import announcementBoothImg from "../../../../assets/images/VirtualSpace/annoucements.png";
-import speakerBoothImg from "../../../../assets/images/VirtualSpace/speakers.png";
-import workshopsBoothImg from "../../../../assets/images/VirtualSpace/workshops.png";
+import pawLogo from "../../../../../assets/images/LandingPage/Hack@Brown.png";
+import bluepaw from "../../../../../assets/images/VirtualSpace/bluepaw.png";
+import cardtower from "../../../../../assets/images/VirtualSpace/cardtower.png";
+import rocketlaunch from "../../../../../assets/images/VirtualSpace/rocketlaunch.png";
+import announcementBoothImg from "../../../../../assets/images/VirtualSpace/annoucements.png";
+import speakerBoothImg from "../../../../../assets/images/VirtualSpace/speakers.png";
+import workshopsBoothImg from "../../../../../assets/images/VirtualSpace/workshops.png";
 
 
 type InfoContentType = {

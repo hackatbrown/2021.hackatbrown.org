@@ -1,7 +1,6 @@
 #window {
-		background-color: #FDF7DC !important;
 		/* background: url("../../../../assets/images/VirtualSpace/base_w_booths.png") no-repeat center; */
-		background: url("../../../../assets/images/VirtualSpace/base.png") no-repeat center;
+		background: url("../../../../../assets/images/VirtualSpace/base.png") no-repeat center;
 		background-size: 1200px;
 		margin: 0 auto;
 		width: 1200px;

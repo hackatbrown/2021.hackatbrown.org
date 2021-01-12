@@ -7,27 +7,6 @@
     position: relative;
 }
 
-.scroll-prompt {
-    z-index: 0;
-    position: absolute;
-    bottom: 2rem;
-    font-size: 1.5rem;
-    margin: auto;
-    width: 100%;
-    color: #444444;
-}
-
-#arrow {
-    margin-top: 1rem;
-}
-
-.brown-town {
-    background-color: #FDF7DC;
-    overflow-x: scroll;
-    overflow-y: scroll;
-    scrollbar-width: none;
-}
-
 dashboard button {
     font-family: Inter;
 }
