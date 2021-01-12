@@ -91,12 +91,12 @@ export default class ConfirmForm extends React.Component<
         if (this.props.currentSelected.size === "" ||
             this.props.currentSelected.legalFirstName.trim() === "" ||
             this.props.currentSelected.legalLastName.trim() === "" ||
-            this.props.currentSelected.phoneNumber.trim() === "" ||
-            this.props.currentSelected.projects.length === 0 ||
-            this.props.currentSelected.requireHost === null ||
-            this.props.currentSelected.brownStudent === null ||
-            this.props.currentSelected.willingHost === null ||
-            this.props.currentSelected.conduct === null) {
+            this.props.currentSelected.phoneNumber.trim() === "") {
+            // this.props.currentSelected.projects.length === 0 ||
+            // this.props.currentSelected.requireHost === null ||
+            // this.props.currentSelected.brownStudent === null ||
+            // this.props.currentSelected.willingHost === null ||
+            // this.props.currentSelected.conduct === null) {
 
           return "You are missing required field(s)!";
         } else {
@@ -114,15 +114,15 @@ export default class ConfirmForm extends React.Component<
               legal_first: this.props.currentSelected.legalFirstName,
               legal_last: this.props.currentSelected.legalLastName,
               phone: this.props.currentSelected.phoneNumber,
-              dietary: this.props.currentSelected.dietary,
-              additional_dietary: this.props.currentSelected.additionalDietary,
-              projects: this.props.currentSelected.projects,
-              require_host: this.props.currentSelected.requireHost,
-              brown_student: this.props.currentSelected.brownStudent,
-              willing_host: this.props.currentSelected.willingHost,
-              conduct: this.props.currentSelected.conduct
+              // dietary: this.props.currentSelected.dietary,
+              // additional_dietary: this.props.currentSelected.additionalDietary,
+              // projects: this.props.currentSelected.projects,
+              // require_host: this.props.currentSelected.requireHost,
+              // brown_student: this.props.currentSelected.brownStudent,
+              // willing_host: this.props.currentSelected.willingHost,
+              // conduct: this.props.currentSelected.conduct
           };
-          console.log(confirmData);
+          // console.log(confirmData);
 
           const api = this.props.apiURL;
           let session = this;
