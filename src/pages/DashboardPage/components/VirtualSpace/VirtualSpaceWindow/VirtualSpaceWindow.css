@@ -1,0 +1,60 @@
+#window {
+		/* background: url("../../../../assets/images/VirtualSpace/base_w_booths.png") no-repeat center; */
+		background: url("../../../../../assets/images/VirtualSpace/base.png") no-repeat center;
+		background-size: 1200px;
+		margin: 0 auto;
+		width: 1200px;
+		height: 900px;
+		z-index: 1;
+		overflow: hidden;
+		position: relative;
+}
+
+.booth {
+	position: absolute;
+}
+
+#annoucement-button{
+	width: 150px;
+	margin-left: 527px;
+	margin-top: 364px;
+	z-index: 2;
+}
+
+#workshops-button{
+	width: 148px;
+	margin-left: 151px;
+	margin-top: 188px;
+}
+
+#speaker-button{
+	width: 175px;
+	margin-left: 948px;
+	margin-top: 276px;
+}
+
+#bloomberg-button {
+	width: 153px;
+	margin-left: 775px;
+	margin-top: 345px;
+}
+
+#neeva-button {
+	width: 152px;
+	margin-left: 681px;
+	margin-top: 550px;
+	z-index: 3;
+}
+
+#wolfram-button {
+	width: 102px;
+	margin-left: 340px;
+	margin-top: 407px;
+}
+
+#sketch-button {
+	width: 100px;
+	margin-left: 506px;
+	margin-top: 273px;
+	z-index: 2;
+}

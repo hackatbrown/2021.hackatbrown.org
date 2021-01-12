@@ -26,7 +26,7 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
         appId: "1:1086163744289:web:0ac68dfa01daf1b9785560",
         measurementId: ""
     };
-    console.log(config);
+    // console.log(config);
 } else {
     // prod
     config = {

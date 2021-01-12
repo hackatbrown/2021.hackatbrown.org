@@ -1,0 +1,54 @@
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.sponsorModal {
+  scrollbar-width: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) !important;
+  width: 60vw;
+  overflow-y: scroll;
+  height: 80vh;
+  /* min-width: 440px; */
+  border-radius: 1.5em;
+  text-align: center;
+  font-size: 18px;
+	background-color: white;
+  z-index: 3;
+  padding: 2vw 2vw;
+}
+
+#close{
+    color:#444444;
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 2vw;
+    top: 1vw;
+    width: 32px;
+    height: 32px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+#sponsor-button {
+	background: none;
+	outline: none;
+	border: none;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+}
+
+#sponsor-button:hover {
+  transform: scale(1.1);
+}
+
+#button-image {
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+}
+
