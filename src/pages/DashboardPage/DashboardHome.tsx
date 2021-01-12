@@ -50,10 +50,10 @@ const buttonStyle: React.CSSProperties = {
 
 const buttonClickedStyle: React.CSSProperties = {
   textTransform: "none",
-  color: "#405464",
+  color: "#444444",
   borderRadius: "15px",
-  background: "white",
-  border: "2px solid #444444",
+  background: "#C4C4C4",
+  border: "2px solid #C4C4C4",
 };
 
 export default class DashboardHome extends React.Component<
@@ -297,7 +297,7 @@ export default class DashboardHome extends React.Component<
       this.state.rsvp &&
       this.state.formSubmitted
     ) {
-      return "CONFIRMED";
+      return "APPROVED";
     } else if (this.state.accepted && !this.state.rsvp) {
       return "NOT ATTENDING";
     } else if (!this.state.accepted) {
