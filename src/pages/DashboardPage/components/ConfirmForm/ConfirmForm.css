@@ -1,5 +1,6 @@
 .confirm-info {
   overflow-y: scroll;
+  scrollbar-width: none;
   border: 2px solid #444444;
   border-radius: 15px;
   color: #444444;
