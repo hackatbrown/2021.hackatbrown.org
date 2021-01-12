@@ -1,6 +1,6 @@
 .dashboard {
     overflow: hidden;
-    background: url("../../assets/images/Dashboard/registration.png") no-repeat
+    background: url("../../assets/images/Dashboard/registration.jpg") no-repeat
         center top fixed;
     background-size: cover;
     height: 100vh;
@@ -84,20 +84,19 @@ dashboard button {
 #start {
     width: 34.5vw;
     height: 82px;
-		margin-top: 30px;
-		color: #444444 !important;
-		font-family: Inter;
-		font-weight: 100;
+    color: #444444 !important;
+    font-family: Inter;
+    font-weight: 100;
     background-color: #A6DCEC;
 }
 
 #start .MuiButton-label {
-    font-size: 160%;
+    font-size: 120%;
 }
 
 #app-stat {
     margin-top: 30px;
-    font-size: 119%;
+    font-size: 120%;
     font-family: Inter;
 }
 
@@ -150,7 +149,7 @@ dashboard button {
 }
 
 .button-title {
-		font-size: 119%;
+		font-size: 120%;
 		font-weight: 100;
 }
 
