@@ -48,17 +48,18 @@ let projectsLabels = ["Web Application", "iOS Application", "Android Application
 
 const textLeft = {
   marginRight: '50px',
-  color: 'white',
-  fontFamily: "Akkurat Pro !important"
+  color: '#444444',
+  fontFamily: "Inter !important"
 };
 
 const buttonStyle: React.CSSProperties = {
     textTransform: "none",
-    color: "white",
+    color: "#444444",
     background: "transparent",
     borderRadius: "16.5px",
-    border: "2px solid #FFFFFF",
+    border: "2px solid #444444",
     height: "40px",
+    width: "100%",
     fontSize: "10px"
 };
 
@@ -161,45 +162,45 @@ export default class ConfirmForm extends React.Component<
     render() {
         return (
           <div className="confirm-info">
-            <h3> Awesome :) </h3>
-            <p> We can't wait to meet you in person. In the meantime, we have a couple
+            <h2> Awesome :) </h2>
+            <p> We can't wait to meet you. In the meantime, we have a couple
             more questions to make sure you have a great time: </p>
             <form>
               <div className="confirm">
                 <FormControl className="size">
-                  <FormLabel required style={{color: "white"}}>Sweatshirt Size</FormLabel>
+                  <FormLabel required style={{color: "#444444"}}>Sweatshirt Size</FormLabel>
                   <RadioGroup
                     value={this.props.currentSelected['size'] == null ?
                     "none" : this.props.currentSelected['size']}>
                   <Grid container spacing={2}>
                       <Grid item >
                         <FormControlLabel
-                          style={{color: "white"}}
-                          control={<Radio style={{color: "white"}} id="size" value="s" />}
+                          style={{color: "#444444"}}
+                          control={<Radio style={{color: "#444444"}} id="size" value="s" />}
                           label="S"
                           onChange={this.props.handleFormChange}
                         />
                       </Grid>
                       <Grid item>
                         <FormControlLabel
-                          style={{color: "white"}}
-                          control={<Radio style={{color: "white"}} id="size" value="m" />}
+                          style={{color: "#444444"}}
+                          control={<Radio style={{color: "#444444"}} id="size" value="m" />}
                           label="M"
                           onChange={this.props.handleFormChange}
                         />
                       </Grid>
                       <Grid item>
                         <FormControlLabel
-                          style={{color: "white"}}
-                          control={<Radio style={{color: "white"}} id="size" value="l" />}
+                          style={{color: "#444444"}}
+                          control={<Radio style={{color: "#444444"}} id="size" value="l" />}
                           label="L"
                           onChange={this.props.handleFormChange}
                         />
                       </Grid>
                       <Grid item>
                         <FormControlLabel
-                          style={{color: "white"}}
-                          control={<Radio style={{color: "white"}} id="size" value="xl" />}
+                          style={{color: "#444444"}}
+                          control={<Radio style={{color: "#444444"}} id="size" value="xl" />}
                           label="XL"
                           onChange={this.props.handleFormChange}
                         />
@@ -210,7 +211,7 @@ export default class ConfirmForm extends React.Component<
               </div>
 
               <div className="confirm-text">
-                <FormLabel required style={{color: "white"}}>Legal Name (in case of an emergency)</FormLabel>
+                <FormLabel required style={{color: "#444444"}}>Legal Name <span>(in case of an emergency)</span></FormLabel>
                 <div className="legal-name">
                   <TextField
                     placeholder="First Name"
@@ -222,7 +223,7 @@ export default class ConfirmForm extends React.Component<
                     onChange={this.props.handleFormChange}
                     InputProps={{
                         style: {
-                            color: "white"
+                            color: "#444444"
                         }
                     }}
                   />
@@ -235,7 +236,7 @@ export default class ConfirmForm extends React.Component<
                     onChange={this.props.handleFormChange}
                     InputProps={{
                         style: {
-                            color: "white"
+                            color: "#444444"
                         }
                     }}
                   />
@@ -243,7 +244,7 @@ export default class ConfirmForm extends React.Component<
               </div>
 
               <div className="confirm-text">
-                <FormLabel required style={{color: "white"}}>Phone Number</FormLabel>
+                <FormLabel required style={{color: "#444444"}}>Phone Number</FormLabel>
                 <br/>
                 <NumberFormat
                   value={this.props.currentSelected['phoneNumber']}
@@ -255,8 +256,10 @@ export default class ConfirmForm extends React.Component<
                 />
               </div>
 
-              <div className="confirm-select">
-                <FormLabel style={{color: "white"}}>Dietary Restrictions (select all that apply)</FormLabel>
+              {/*** CODE BELOW FROM HACK@BROWN 2020 IS COMMENTED BECAUSE OF REMOTE HACKATHON ***/}
+
+              {/* <div className="confirm-select">
+                <FormLabel style={{color: "#444444"}}>Dietary Restrictions (select all that apply)</FormLabel>
                 {dietary.slice(0, dietary.length - 1).map((value, index) => {
                   return <div className="options">
                     <FormControlLabel
@@ -268,7 +271,7 @@ export default class ConfirmForm extends React.Component<
                 })}
                 <div className="options-other">
                   <FormControlLabel
-                  control={<Checkbox style={{color: "white"}} checked={this.isChecked("dietary", "other-dietary")} id="dietary" value={"other-dietary"} />}
+                  control={<Checkbox style={{color: "#444444"}} checked={this.isChecked("dietary", "other-dietary")} id="dietary" value={"other-dietary"} />}
                   label={dietaryLabels[dietary.length - 1]}
                   onChange={this.props.handleMultiFormChange}
                   />
@@ -281,35 +284,35 @@ export default class ConfirmForm extends React.Component<
                     onChange={this.props.handleFormChange}
                     InputProps={{
                         style: {
-                            color: "white"
+                            color: "#444444"
                         }
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
 
-              <div className="confirm-select">
-                <FormLabel required style={{color: "white"}}>What kind of project are you planning to make or learn about? (select all that apply) </FormLabel>
-                <p> You can always change this! Having a better idea of what hackers are interested in helps us support you. </p>
-                {projects.slice(0, projects.length - 1).map((value, index) => {
-                  return <div className="options">
-                    <FormControlLabel
-                    control={<Checkbox disabled={this.state.projectUndecided} style={{color: "white"}} checked={this.isChecked("projects", value)} id="projects" value={value} />}
-                    label={projectsLabels[index]}
-                    onChange={this.props.handleMultiFormChange}
-                    />
-                  </div>
-                })}
-                <div className="options">
+            {/* <div className="confirm-select">
+              <FormLabel required style={{color: "white"}}>What kind of project are you planning to make or learn about? (select all that apply) </FormLabel>
+              <p> You can always change this! Having a better idea of what hackers are interested in helps us support you. </p>
+              {projects.slice(0, projects.length - 1).map((value, index) => {
+                return <div className="options">
                   <FormControlLabel
-                  control={<Checkbox onClick={this.disableRestProjects} style={{color: "white"}} checked={this.isChecked("projects", "undecided")} id="projects" value={"undecided"} />}
-                  label={projectsLabels[projects.length - 1]}
-                  onChange={this.props.handleDisableAll}
+                  control={<Checkbox disabled={this.state.projectUndecided} style={{color: "white"}} checked={this.isChecked("projects", value)} id="projects" value={value} />}
+                  label={projectsLabels[index]}
+                  onChange={this.props.handleMultiFormChange}
                   />
                 </div>
-            </div>
+              })}
+              <div className="options">
+                <FormControlLabel
+                control={<Checkbox onClick={this.disableRestProjects} style={{color: "white"}} checked={this.isChecked("projects", "undecided")} id="projects" value={"undecided"} />}
+                label={projectsLabels[projects.length - 1]}
+                onChange={this.props.handleDisableAll}
+                />
+              </div>
+            </div> */}
 
-            <div className="confirm">
+            {/* <div className="confirm">
               <FormControl className="requireHost">
                 <FormLabel required style={{color: "white"}}>Need somewhere to stay before or after the hackathon?</FormLabel>
                 <p> Hack@Brown is more than happy to host students who will be arriving early on Friday or leaving
@@ -332,9 +335,9 @@ export default class ConfirmForm extends React.Component<
                   />
                 </RadioGroup>
               </FormControl>
-            </div>
+            </div> */}
 
-            <div className="confirm">
+            {/* <div className="confirm">
               <FormControl className="brownStudent">
                 <FormLabel required style={{color: "white"}}>Are you a Brown student living on campus?</FormLabel>
                 <RadioGroup
@@ -354,9 +357,9 @@ export default class ConfirmForm extends React.Component<
                   />
                 </RadioGroup>
               </FormControl>
-            </div>
+            </div> */}
 
-            <div className="confirm">
+            {/* <div className="confirm">
               <FormControl className="willingHost">
                 <FormLabel required style={{color: "white"}}>Are you willing to host a hacker?</FormLabel>
                 <p> All you need is a place on the floor & we'll provide everything else (air mattresses,
@@ -384,24 +387,24 @@ export default class ConfirmForm extends React.Component<
                   />
                 </RadioGroup>
               </FormControl>
-            </div>
+            </div> */}
 
-            <div className="confirm">
+            {/* <div className="confirm">
               <FormControl className="conduct">
-                <FormLabel required style={{color: "white"}}>Please read over the Hack@Brown code of conduct.</FormLabel>
+                <FormLabel required style={{color: "#444444"}}>Please read over the Hack@Brown code of conduct.</FormLabel>
                 <p> Access the code of conduct <Link target="_blank" to="/code-of-conduct">here</Link>.</p>
                 <RadioGroup
                   value={this.props.currentSelected['conduct'] == null ?
                   "none" : this.props.currentSelected['conduct'] ? "yes" : "no"}>
                   <FormControlLabel
-                    style={{color: "white"}}
-                    control={<Radio style={{color: "white"}} id="conduct" value="yes" />}
+                    style={{color: "#444444"}}
+                    control={<Radio style={{color: "#444444"}} id="conduct" value="yes" />}
                     label="I have read over and agree to the Hack@Brown code of conduct."
                     onChange={this.props.handleFormChange}
                   />
                 </RadioGroup>
               </FormControl>
-            </div>
+            </div> */}
 
             <Button
                 className="submit"

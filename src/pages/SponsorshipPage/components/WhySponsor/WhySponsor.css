@@ -36,7 +36,7 @@ h3 {
   color: #57C7B9 !important;
 }
 
-p {
+.why-sponsor p {
   margin-bottom: 0px !important;
 }
 .why-sponsor-left{
@@ -69,7 +69,7 @@ p {
   color: #46B5B8;
 }
 
-ul {
+.why-sponsor ul {
   list-style-position: inside;
   padding: 0;
 }
