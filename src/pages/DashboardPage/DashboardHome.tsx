@@ -50,10 +50,10 @@ const buttonStyle: React.CSSProperties = {
 
 const buttonClickedStyle: React.CSSProperties = {
   textTransform: "none",
-  color: "#405464",
+  color: "#444444",
   borderRadius: "15px",
-  background: "white",
-  border: "2px solid #444444",
+  background: "#C4C4C4",
+  border: "2px solid #C4C4C4",
 };
 
 export default class DashboardHome extends React.Component<
@@ -297,7 +297,7 @@ export default class DashboardHome extends React.Component<
       this.state.rsvp &&
       this.state.formSubmitted
     ) {
-      return "CONFIRMED";
+      return "APPROVED";
     } else if (this.state.accepted && !this.state.rsvp) {
       return "NOT ATTENDING";
     } else if (!this.state.accepted) {
@@ -393,7 +393,10 @@ export default class DashboardHome extends React.Component<
               Not Attending Anymore
             </Button>
           </div>
-          <Button
+
+          {/*** CODE BELOW FROM HACK@BROWN 2020 IS COMMENTED BECAUSE OF REMOTE HACKATHON ***/}
+
+          {/* <Button
             className="dashboard-button"
             id="reimbursement"
             style={buttonStyle}
@@ -409,7 +412,7 @@ export default class DashboardHome extends React.Component<
                 Will be available after the hackathon!
               </div>
             </p>
-          </Button>
+          </Button> */}
         </div>
       );
     }
@@ -458,13 +461,6 @@ export default class DashboardHome extends React.Component<
       }
     };
 
-    const scrollPrompt = (
-      <div className="scroll-prompt">
-        <p><b>Scroll for H@B Town</b> (Coming Soon)</p>
-        <img id="arrow" src={arrowImg}></img>
-      </div>
-    )
-
     return (
       <>
       <div className="dashboard">
@@ -475,7 +471,6 @@ export default class DashboardHome extends React.Component<
           </div>
           {renderConfirmForm()}
         </div>
-      {scrollPrompt}
       </div>
       {/* <div className="brown-town">
         <VirtualSpaceWindow />
