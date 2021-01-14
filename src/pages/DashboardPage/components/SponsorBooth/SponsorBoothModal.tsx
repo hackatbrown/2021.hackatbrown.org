@@ -1,4 +1,7 @@
 import React from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import "./SponsorBoothModal.css";
 
 type SponsorBoothModalProps = {
@@ -38,21 +41,26 @@ export default class SponsorBoothModal extends React.Component<
                 <div className="logo-container">
                     <img className="logo" src={logo} alt="Logo"/>
                 </div>
-                <div className="row">
-                    <div className="column1">
-                        <p><b>Book a coffee chat below!</b></p>
-                        <p><b>Zoom links will be sent to your email.</b></p>
-                        
-                    </div>
-                    <div className="column2"> 
-                        <p> {description}</p><br/>
-                        <p><b>Reps</b></p>
-                        <p> {reps}</p><br></br>
-                        <a href={discord1} className="button" target="_blank"><b>Discord (Messaging)</b></a><br></br><br></br>
-                        <a href={discord2} className="button" target="_blank"><b>Discord Voice (Video/Call)</b></a>
-                    </div>
-                </div>
-                <br></br><iframe src={gcal} style={{border: 0.6}} width="691" height="312" frameBorder="0" scrolling="no"></iframe>
+                <Container>
+                    <Row>
+                        <Col sm={3}>
+                        <div>
+                          <p> {description} </p><br/>
+                          <p><b><u>Reps</u></b></p>
+                          <p> {reps}</p><br></br>
+                        </div>
+                        </Col>
+                        <Col sm={9}>
+                        <div>
+                          <p><b>Book a coffee chat below!</b> Check your email for Zoom links.</p>
+                          <iframe src={gcal} style={{border: 0.6}} width="691" height="312" frameBorder="0" scrolling="no" />
+                          <p><b>Video/call</b> with Discord Voice or <b>message</b> with Discord!</p><br/>
+                          <a href={discord1} className="button" target="_blank"><b>Discord</b></a>
+                          <a href={discord2} className="button" target="_blank"><b>Discord Voice</b></a>
+                        </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         );
     }
