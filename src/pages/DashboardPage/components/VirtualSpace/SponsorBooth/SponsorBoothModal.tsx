@@ -54,8 +54,10 @@ export default class SponsorBoothModal extends React.Component<
                         <Col sm={9}>
                         <div className="column2">
                           <p><b>Book a coffee chat below!</b> Check your email for Zoom links.</p>
-                          <iframe src={gcal} style={{border: 0.6}} width="500" height="312" frameBorder="0" scrolling="no" />
-                          <p><b>Video/call</b> with Discord Voice or <b>message</b> with Discord!</p><br/>
+                          <div className="hide">
+                            <iframe id="gcal" src={gcal} style={{border: 0.6}} width="500" height="500" frameBorder="0" scrolling="no" />
+                          </div>
+                          <p><br/><b>Video/call</b> with Discord Voice or <b>message</b> with Discord!</p><br/>
                           <a href={discord1} className="button" target="_blank"><b>Discord</b></a>
                           <a href={discord2} className="button" target="_blank"><b>Discord Voice</b></a>
                         </div>
