@@ -29,7 +29,7 @@ const InfoContents: { [InfoType: string] : InfoContentType; } = {
         htext_color: '#444444',
         },
 
-    "Speaker Series" : {
+    "Speaker Panel" : {
         logo_asset: cardtower,
         booth_asset: speakerBoothImg,
         head_color: '#46B5B8',

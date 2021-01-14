@@ -44,7 +44,7 @@ export default class VirtualSpaceWindow extends React.Component<
             <InfoBooth infoType="Workshops" />
           </div>
           <div id="speaker-button" className="booth">
-            <InfoBooth infoType="Speaker Series" />
+            <InfoBooth infoType="Speaker Panel" />
           </div>
       </div>
     );

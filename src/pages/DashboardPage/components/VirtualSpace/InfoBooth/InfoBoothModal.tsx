@@ -89,9 +89,9 @@ export default class InfoBoothModal extends React.Component<
                         </div>
                     </div>
                 </div>
-        } else if (infoType === "Speaker Series") {
+        } else if (infoType === "Speaker Panel") {
             bottomSection = 
-                <div className="bottom speaker-series">
+                <div className="bottom speaker-panel">
                     <div className="grids">
                         <div className="dates">
                             <p><strong>Jan 22</strong></p>
