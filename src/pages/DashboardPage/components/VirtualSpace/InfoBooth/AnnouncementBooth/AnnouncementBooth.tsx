@@ -3,16 +3,16 @@ import "./AnnouncementBooth.css";
 import InfoBoothModal from "../InfoBoothModal";
 import Modal from "react-modal";
 import { getInfoContent } from "../InfoBoothContent";
+import { getAnnouncementContent } from "./AnnouncementBoothContent";
 
-const DAY_ONE = "January 23, 2021 ";
-const DAY_TWO = "January 24, 2021 ";
+const TIME_ANNOUNCEMENTS_MAP = getAnnouncementContent();
 
-const TEST = "January 15, 2021 ";
+const WELCOME_ANNOUNCEMENTS = "Welcome to Hack@Brown! Keep H@B Town opened so you don't miss any upcoming announcements!";
+const SUBMISSION_ANNOUNCEMENTS = "Remember to submit your project by 2PM!";
 
-let TIME_RANGE_ANNOUNCEMENTS = new Map();
-  
-TIME_RANGE_ANNOUNCEMENTS.set([new Date(TEST.concat("19:57:00")), new Date(TEST.concat("19:57:59"))], "FIRST ANNOUNCEMENT");
-TIME_RANGE_ANNOUNCEMENTS.set([new Date(TEST.concat("19:58:00")), new Date(TEST.concat("19:58:59"))], "SECOND ANNOUNCEMENT");
+const REMIND_SUBMISSION_TIME = new Date("January 17, 2021 12:30:00"); // Remember to change to 1/24!
+
+const FETCH_INTERVAL = 300000; // 5 minutes
 
 type AnnouncementBoothProps = {
   infoType: string;
@@ -43,12 +43,12 @@ export default class AnnouncementBooth extends React.Component<
 
   openModal = () => {
     this.setState({ modalIsOpen: true });
-    // Opening announcement modal for the first time since announcement was updated.
+    // Opening announcement modal for the first time since announcement was last updated.
     if (!this.isAnnouncementChecked()) {
       localStorage.setItem("checkedLatest", "true");
       this.setState({ checkedLatest: true });
-      // Rest tab title in browser
-      document.title = 'Hack@Brown 2021';
+      // Reset tab title in browser
+      document.title = "Hack@Brown 2021";
     }
   };
 
@@ -63,16 +63,20 @@ export default class AnnouncementBooth extends React.Component<
   getCurrentAnnouncement = () => {
     const currentTime = new Date();
     let announcement;
-    TIME_RANGE_ANNOUNCEMENTS.forEach((value, key) => {
-      const start = key[0];
-      const end = key[1];
-      if (start <= currentTime && currentTime <= end) {
+    TIME_ANNOUNCEMENTS_MAP.forEach((value, key) => {
+      const startTime = key[0];
+      const endTime = key[1];
+      if (startTime <= currentTime && currentTime <= endTime) {
         announcement = value;
       }
     })
 
     if (!announcement) {
-      announcement = "HELLOOOOOO";
+      if (currentTime >= REMIND_SUBMISSION_TIME) {
+        announcement = SUBMISSION_ANNOUNCEMENTS;
+      } else {
+        announcement = WELCOME_ANNOUNCEMENTS;
+      }
     }
 
     return announcement;
@@ -80,6 +84,7 @@ export default class AnnouncementBooth extends React.Component<
 
   fetchAnnouncementUpdate = () => {
     const newAnnouncement = this.getCurrentAnnouncement();
+    // A new time window trigger a new announcement
     if (newAnnouncement !== this.state.currentAnnouncement) {
       const currentAnnouncement = this.state.currentAnnouncement;
       this.setState({ lastAnnouncement: currentAnnouncement, currentAnnouncement: newAnnouncement });
@@ -95,12 +100,13 @@ export default class AnnouncementBooth extends React.Component<
         this.setState({ checkedLatest: false });
 
         // Change tab title in browser
-        document.title = '(1) Hack@Brown 2021';
+        document.title = "(1) Hack@Brown 2021";
       }
     }
   }
 
   componentDidMount = () => {
+    // Initialize variable in cache
     if (localStorage.getItem("checkedLatest") === null) {
       localStorage.setItem("checkedLatest", "false");
     }
@@ -109,7 +115,8 @@ export default class AnnouncementBooth extends React.Component<
     const announcement = this.getCurrentAnnouncement();
     this.setState({ lastAnnouncement: announcement, currentAnnouncement: announcement, checkedLatest: this.isAnnouncementChecked() });
 
-    this.setState({ interval: setInterval(() => this.fetchAnnouncementUpdate(), 5000)});
+    // fetch announcement update every
+    this.setState({ interval: setInterval(() => this.fetchAnnouncementUpdate(), FETCH_INTERVAL)});
   }
 
   componentWillUnmount = () => {
