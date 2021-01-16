@@ -23,10 +23,11 @@
     font-family: Inter;
     font-weight: 100;
     padding: 0px 6vw;
+    color: #444444;
 }
 
 .announcements p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     align-self: center;
 }
 
@@ -36,12 +37,12 @@
 }
 .dates {
     font-family: 'Inter Bold';
-    color: black;
+    color: #444444;
 }
 
 .times {
     font-family: 'InterBold';
-    color: black;
+    color: #444444;
 }
 .bottom .links {
     color: #46B5B8;

@@ -4,8 +4,9 @@ import "./InfoBoothModal.css";
 type InfoBoothModalProps = {
     infoType : string,
     logo_asset: string,
-    head_color:string,
+    head_color: string,
     htext_color: string,
+    announcement?: string
 };
 
 type InfoBoothModalState = {
@@ -36,7 +37,8 @@ export default class InfoBoothModal extends React.Component<
         if (infoType === "Announcements") {
             bottomSection = 
                 <div className="announcements bottom">
-                    <p>Remember to submit your projects by 8AM! Use this devpost link!</p>
+                    {/* <p>Remember to submit your projects by 8AM! Use this devpost link!</p> */}
+                    <p>{this.props.announcement}</p>   
                 </div>
         } else if (infoType === "Workshops") {
             bottomSection = 
