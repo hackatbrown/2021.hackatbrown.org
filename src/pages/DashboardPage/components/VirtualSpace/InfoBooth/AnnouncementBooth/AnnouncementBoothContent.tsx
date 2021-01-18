@@ -1,8 +1,8 @@
 export function getAnnouncementContent() {
     // const DAY_ONE = "January 23, 2021 ";
     // const DAY_TWO = "January 24, 2021 ";
-    const DAY_ONE = "January 16, 2021 ";
-    const DAY_TWO = "January 17, 2021 ";
+    const DAY_ONE = "January 18, 2021 ";
+    const DAY_TWO = "January 19, 2021 ";
 
     let TIME_ANNOUNCEMENTS_MAP = new Map();
 
