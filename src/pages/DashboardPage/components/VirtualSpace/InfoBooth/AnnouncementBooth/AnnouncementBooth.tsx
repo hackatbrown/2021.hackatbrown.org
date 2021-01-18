@@ -10,7 +10,7 @@ const TIME_ANNOUNCEMENTS_MAP = getAnnouncementContent();
 const WELCOME_ANNOUNCEMENTS = "Welcome to Hack@Brown! Keep H@B Town opened so you don't miss any upcoming announcements!";
 const SUBMISSION_ANNOUNCEMENTS = "Remember to submit your project by 2PM!";
 
-const REMIND_SUBMISSION_TIME = new Date("January 17, 2021 12:30:00"); // Remember to change to 1/24!
+const REMIND_SUBMISSION_TIME = new Date("January 19, 2021 12:30:00"); // Remember to change to 1/24!
 
 const FETCH_INTERVAL = 300000; // 5 minutes
 
