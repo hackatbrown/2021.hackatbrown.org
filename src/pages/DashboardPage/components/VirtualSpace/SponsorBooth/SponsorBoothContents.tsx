@@ -84,10 +84,10 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     tier: "micro",
     logo_asset: mouserLogo,
     booth_asset: mouserBoothImg,
-    gcal_url: "",
-    reps: "reps",
-    discord1: "server1",
-    discord2: "server2",
+    gcal_url: "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg&fbclid=IwAR0lJQYpC8gXiBxB6Pe-1kWEEFMDZ0w5DZVdqvdtVvIHra3vmcvh9czizEE",
+    reps: "",
+    discord1: "https://discord.gg/8QE5mnytFc",
+    discord2: "https://discord.gg/eUAYyUJzhQ",
   },
   blue: {
     description:
@@ -96,10 +96,10 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     tier: "kilo",
     logo_asset: blueLogo,
     booth_asset: blueBoothImg,
-    gcal_url: "",
+    gcal_url: "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg&fbclid=IwAR0lJQYpC8gXiBxB6Pe-1kWEEFMDZ0w5DZVdqvdtVvIHra3vmcvh9czizEE",
     reps: "reps",
-    discord1: "server1",
-    discord2: "server2",
+    discord1: "https://discord.gg/wE5Nx3bESF",
+    discord2: "https://discord.gg/WXVn9bhDuC",
   },
 };
 
