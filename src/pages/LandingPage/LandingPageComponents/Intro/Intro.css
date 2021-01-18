@@ -23,7 +23,6 @@
 #juiceImg {
   max-width: 120%;
   min-width: 18rem;
-
 }
 
 .intro-blurb {
@@ -63,10 +62,6 @@
 
     .intro .container {
         margin: 0 3%;
-    }
-
-    #JuiceImg {
-        padding: 1em 0;
     }
 }
 

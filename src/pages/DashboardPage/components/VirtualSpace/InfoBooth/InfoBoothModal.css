@@ -1,0 +1,66 @@
+#asset-image{
+    width: 150px;
+    margin: 2% 0;
+    max-height:180px;
+}
+
+.top{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    padding: 6%;
+    height: 50%;
+}
+
+.bottom {
+    height: 50%;
+    display: flex;
+}
+
+.bottom p {
+    font-family: Inter;
+    font-weight: 100;
+    padding: 0px 6vw;
+    color: #444444;
+}
+
+.announcements p {
+    font-size: 1.5rem;
+    align-self: center;
+}
+
+.grids {
+    display: grid;
+    background-color: white;
+}
+.dates {
+    font-family: 'Inter Bold';
+    color: #444444;
+}
+
+.times {
+    font-family: 'InterBold';
+    color: #444444;
+}
+.bottom .links {
+    color: #46B5B8;
+}
+
+@media screen and (max-width: 800px) {
+    #asset-image{
+        width: 100px;
+        margin-bottom: 2%;
+        max-height:180px;
+    }
+
+    .top h1 {
+        font-size: 4vw;
+    }
+
+    .announcements p {
+        font-size: 3vw;
+        align-self: center;
+    }
+}

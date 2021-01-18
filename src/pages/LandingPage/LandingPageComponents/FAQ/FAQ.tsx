@@ -40,7 +40,7 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
                         <Row>
                             <h4 className="faq-subtitle">What about hardware hacks?</h4>
                             <p>
-                            Support for hardware hacks, in the form of kits, will be given out through an application process -- more details on this will be in the registration form! 
+                            Support for hardware hacks, in the form of kits, will be given out through an application process -- more details on this will be in the registration form!
                             </p>
                         </Row>
                         <Row>
@@ -79,7 +79,7 @@ export default class FAQ extends React.Component<FAQprops, FAQstate> {
                         <Row>
                             <h4 className="faq-subtitle">How will prizes work?</h4>
                             <p>
-                            We will have a variety of sponsor prizes, hackathon specific prizes, and MLH prizes for projects. If you do win a prize, these prizes will be shipped directly to you! 
+                            We will have a variety of sponsor prizes, hackathon specific prizes, and MLH prizes for projects. If you do win a prize, these prizes will be shipped directly to you!
                             </p>
                         </Row>
                         <Row>
@@ -96,11 +96,11 @@ How much is this going to cost me?</h4>
                             </p>
                         </Row>
                         <Row>
-                            <video className="video" muted autoPlay loop src={faqImg}/>
+                            <video id="video" className="video" muted autoPlay loop src={faqImg}/>
                         </Row>
                     </Col>
                     </Row>
-    
+
                 </Container>
             </div>
         );

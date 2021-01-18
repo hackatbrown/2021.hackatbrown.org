@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 import axios from "axios";
 import monopolyVideo from "../../assets/images/Registration/board_animation.mp4";
 import wiiVideo from "../../assets/images/Registration/wii_animation.mp4";
-import jengaVideo from "../../assets/images/Registration/blocks_animation.mp4";
+import jengaVideo from "../../assets/images/Registration/blocks_animation2.mp4";
 import { Link, Redirect } from "react-router-dom";
 import firebase from "firebase"; // for getting access to storage
 import Firebase from "../../components/Firebase"; // for user

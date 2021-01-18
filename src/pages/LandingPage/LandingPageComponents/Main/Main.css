@@ -5,8 +5,9 @@ html,body{
     min-height: 100vh;
     align-content: center;
     margin-bottom: 0px;
-    /* padding-bottom:100px; */
-    background-color:#FEF7E1;
+    padding-bottom:100px;
+    background-color:#FDF7DC;
+    background:url("web_animation.mp4");
 
 }
 
@@ -28,7 +29,16 @@ html,body{
     font-family: Inter;
     font-weight: bolder;
 }
-
+.videoTag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top:65px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover; 
+}
 .big-text{
     font-family: Recoleta;
     margin: 1rem 10% 1rem 10%;
@@ -46,7 +56,7 @@ html,body{
 }
 
 .main{
-    height: 110vh;
+    height: 100vh;
 }
 
 .main-div{
@@ -153,11 +163,15 @@ html,body{
 @media screen and (max-width: 1200px) {
     .main{
         height: 100%;
+        background-color:#FDF7DC;
+    }
+    .videoTag{
+        display: none;
     }
     .plane-one {
         display: none;
     }
-    .plane-two {
+    .plane-two { 
         display: none;
     }
     .plane-three {
@@ -166,7 +180,7 @@ html,body{
     .plane-one-st {
         display: none;
     }
-    .plane-two-st {
+    .plane-two-st { 
         display: none;
     }
     .plane-three-st {
@@ -200,7 +214,7 @@ html,body{
     }
 
     .bottom-text {
-        margin: 1rem 10% 3rem;
+        margin: 1rem 10% 1.5rem;
         text-align: left;
         font-size: 1rem;
     }
