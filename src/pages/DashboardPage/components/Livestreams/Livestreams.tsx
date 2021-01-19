@@ -64,7 +64,7 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
             content = (
                 <div className="ceremony-container">
                     <iframe 
-                    width="60%" 
+                    width="80%" 
                     src="https://www.youtube.com/embed/j9HPtZcssNo" 
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -76,7 +76,7 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
                 <div className="spotify-container">
                     <iframe 
                     src="https://open.spotify.com/embed/playlist/6ZZE3bWGdFooMPomeeiiX1" 
-                    width="60%" 
+                    width="80%" 
                     frameBorder="0" 
                     allow="encrypted-media
                     "></iframe>
