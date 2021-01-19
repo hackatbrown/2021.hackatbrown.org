@@ -6,6 +6,7 @@ import Firebase from "../../components/Firebase";
 import axios from "axios";
 import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
 import VirtualSpaceHome from "./components/VirtualSpace/VirtualSpaceHome";
+import Livestreams from "./components/Livestreams/Livestreams";
 
 /**
  * define a type model for the props you are passing in to the component
@@ -471,6 +472,7 @@ export default class DashboardHome extends React.Component<
           {renderConfirmForm()}
         </div>
       </div>
+      <Livestreams />
       <VirtualSpaceHome />
       </>
     );
