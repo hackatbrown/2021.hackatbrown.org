@@ -1,10 +1,10 @@
-import pawLogo from "../../../../assets/images/LandingPage/Hack@Brown.png";
-import bluepaw from "../../../../assets/images/VirtualSpace/bluepaw.png";
-import cardtower from "../../../../assets/images/VirtualSpace/cardtower.png";
-import rocketlaunch from "../../../../assets/images/VirtualSpace/rocketlaunch.png";
-import announcementBoothImg from "../../../../assets/images/VirtualSpace/annoucements.png";
-import speakerBoothImg from "../../../../assets/images/VirtualSpace/speakers.png";
-import workshopsBoothImg from "../../../../assets/images/VirtualSpace/workshops.png";
+import pawLogo from "../../../../../assets/images/LandingPage/Hack@Brown.png";
+import bluepaw from "../../../../../assets/images/VirtualSpace/bluepaw.png";
+import cardtower from "../../../../../assets/images/VirtualSpace/cardtower.png";
+import rocketlaunch from "../../../../../assets/images/VirtualSpace/rocketlaunch.png";
+import announcementBoothImg from "../../../../../assets/images/VirtualSpace/annoucements.png";
+import speakerBoothImg from "../../../../../assets/images/VirtualSpace/speakers.png";
+import workshopsBoothImg from "../../../../../assets/images/VirtualSpace/workshops.png";
 
 
 type InfoContentType = {
@@ -29,7 +29,7 @@ const InfoContents: { [InfoType: string] : InfoContentType; } = {
         htext_color: '#444444',
         },
 
-    "Speaker Series" : {
+    "Speaker Panel" : {
         logo_asset: cardtower,
         booth_asset: speakerBoothImg,
         head_color: '#46B5B8',

@@ -49,3 +49,9 @@
 	width: 100%;
 	z-index: 2;
 }
+
+@media screen and (max-width: 800px) {
+  .infoModal {
+    width: 95vw;
+  }
+}

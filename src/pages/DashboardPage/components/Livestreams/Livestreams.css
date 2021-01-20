@@ -1,0 +1,101 @@
+.livestreams-body {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url("../../../../assets/images/Dashboard/livestreams_bg.png");
+    background-size: auto 100vh;
+    padding: 5rem;
+}
+
+.livestreams-tabs {
+    display: flex;
+    justify-content: center;
+}
+
+.livestreams-body #other-tab {
+    background: #A6DCEC;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    color: #444444;
+}
+
+.livestreams-body #active-tab {
+    background: #ffffff;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 400;
+    color: #444444;
+}
+
+.welcome-tab, .ceremony-tab, .spotify-tab {
+    width: 30%;
+    height: 3rem;
+
+    border: none;
+    border-radius: 12px 12px 0px 0px;
+    margin: 0 1%;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.livestreams-content {
+    width: 94%;
+    height: 60vh;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 0 0 10px 10px;
+}
+
+.welcome-container, .ceremony-container, .spotify-container {
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.livestreams-body .button-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.hacker-guide-button, .zoom-bg-button {
+    width: 15rem;
+    height: 3rem;
+    margin: 1rem 2rem;
+    border: 1px black solid;
+    border-radius: 10px;
+    background-color: white;
+    font-family: Inter;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 878px) {
+    .welcome-tab, .ceremony-tab, .spotify-tab {
+        width: 30%;
+        height: 4rem;
+    
+        border: none;
+        border-radius: 12px 12px 0px 0px;
+        margin: 0 1%;
+    
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 100;
+        font-size: 15px;
+    }
+
+    .hacker-guide-button, .zoom-bg-button {
+        width: 10rem;
+        height: 4rem;
+        margin: 1rem;
+        border: 1px black solid;
+        border-radius: 10px;
+        background-color: white;
+        font-family: Inter;
+        font-weight: 100;
+    }
+}
