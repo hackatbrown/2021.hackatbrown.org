@@ -5,6 +5,7 @@ import bloombergImg from "../../../../assets/images/LandingPage/companylogo/Bloo
 import neevaImg from "../../../../assets/images/LandingPage/companylogo/neeva.png";
 import sketchImg from "../../../../assets/images/LandingPage/companylogo/sketch.png";
 import wolframImg from "../../../../assets/images/LandingPage/companylogo/wolfram.png";
+import googleCloudImg from "../../../../assets/images/LandingPage/companylogo/googleCloud.png";
 
 type SponsorsProps = {};
 
@@ -115,6 +116,24 @@ export default class Sponsors extends React.Component<
                   }}
                   src={wolframImg}
                   alt="wolfram"
+                ></img>
+              </a>
+            </div>
+            <div className="partnership">
+              <p>In partnership with</p>
+              <a
+                href="https://cloud.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="sponsors-img-micro"
+                  style={{
+                    padding: "10px",
+                    backgroundColor: "white",
+                  }}
+                  src={googleCloudImg}
+                  alt="google cloud"
                 ></img>
               </a>
             </div>
