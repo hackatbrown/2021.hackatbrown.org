@@ -1,6 +1,7 @@
 import React from "react";
 import "./DashboardHome.css";
 import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
 import { Link } from "react-router-dom";
 import Firebase from "../../components/Firebase";
 import axios from "axios";
@@ -364,6 +365,27 @@ export default class DashboardHome extends React.Component<
       // app has been accepted
       let confirmStyle = this.styleConfirmButton();
       let notConfirmStyle = this.styleNotConfirmButton();
+      const confirmButton = 
+        <Button
+          className="inner-button"
+          id="confirm"
+          style={confirmStyle}
+          onClick={this.confirmDenyAcceptance}
+        >
+          {this.state.rsvp ? "Attendance Confirmed!" : "Confirm Attendance"}
+        </Button>
+      // Use this confirm button when reservation closes
+      const disabledConfirmButton = 
+        <Tooltip title="No longer accepting">
+          <Button
+            className="inner-button"
+            id="confirm"
+            style={confirmStyle}
+            onClick={null}
+          >
+            {this.state.rsvp ? "Attendance Confirmed!" : "Confirm Attendance"}
+          </Button>
+        </Tooltip>;
       content = (
         <div>
           <div className="dashboard-button" style={buttonStyle}>
@@ -376,14 +398,10 @@ export default class DashboardHome extends React.Component<
                 {this.appStatusMessage()}
               </strong>
             </p>
-            <Button
-              className="inner-button"
-              id="confirm"
-              style={confirmStyle}
-              onClick={this.confirmDenyAcceptance}
-            >
-              {this.state.rsvp ? "Attendance Confirmed!" : "Confirm Attendance"}
-            </Button>
+            {/* When reservation closes  */}
+            {this.state.rsvp ? 
+              confirmButton : disabledConfirmButton
+            }
             <Button
               className="inner-button"
               id="deny"
