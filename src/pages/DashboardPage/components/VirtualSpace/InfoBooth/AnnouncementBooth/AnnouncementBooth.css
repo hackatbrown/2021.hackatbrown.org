@@ -61,3 +61,9 @@
           drop-shadow(2px -2px 4px #FDF7DC)
           drop-shadow(-2px -2px 4px #FDF7DC);
 }
+
+@media screen and (max-width: 800px) {
+  .announcementModal {
+    width: 95vw;
+  }
+}
