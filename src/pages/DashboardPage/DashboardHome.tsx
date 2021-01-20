@@ -6,6 +6,7 @@ import Firebase from "../../components/Firebase";
 import axios from "axios";
 import ConfirmForm from "./components/ConfirmForm/ConfirmForm";
 import VirtualSpaceHome from "./components/VirtualSpace/VirtualSpaceHome";
+import Livestreams from "./components/Livestreams/Livestreams";
 
 /**
  * define a type model for the props you are passing in to the component
@@ -359,7 +360,7 @@ export default class DashboardHome extends React.Component<
           </div>
         </div>
       );
-    } else if (this.state.accepted) {
+    } else if (this.state.accepted || this.state.rsvp) {
       // app has been accepted
       let confirmStyle = this.styleConfirmButton();
       let notConfirmStyle = this.styleNotConfirmButton();
@@ -471,7 +472,12 @@ export default class DashboardHome extends React.Component<
           {renderConfirmForm()}
         </div>
       </div>
-      <VirtualSpaceHome />
+      {this.state.rsvp || process.env.NODE_ENV === "development" ? 
+        <>
+          <Livestreams />
+          <VirtualSpaceHome />
+        </> : null
+      }
       </>
     );
   }
