@@ -48,46 +48,55 @@ export default class InfoBoothModal extends React.Component<
                             <p><strong>Jan 22</strong></p>
                         </div>
                         <div className="times">
-                            <p>9:00 - 10:00</p>
+                            <p>11:30 - 12:30</p>
                         </div>
                         <div className="links">
-                            <p>Introduction to Python</p>
+                            <p>Intro to HTML/CSS</p>
                         </div>
                         <div className="dates">
                             <p><strong> </strong></p>
                         </div>
                         <div className="times">
-                            <p>12:00 - 13:00</p>
+                            <p>13:00 - 14:00</p>
                         </div>
                         <div className="links">
-                            <p>Introduction to HTML/CSS</p>
+                            <p>Workshop: Google Cloud</p>
+                        </div>
+                        <div className="times">
+                            <p>17:30 - 18:30</p>
+                        </div>
+                        <div className="dates">
+                            <p><strong> </strong></p>
+                        </div>
+                        <div className="links">
+                            <p>Workshop: (MLH) Cybersecurity Cloud</p>
+                        </div>
+                        <div className="times">
+                            <p>18:00 - 19:00</p>
+                        </div>
+                        <div className="dates">
+                            <p><strong> </strong></p>
+                        </div>
+                        <div className="links">
+                            <p>Workshop: Intro to Deep Learning</p>
+                        </div>
+                        <div className="times">
+                            <p>20:00 - 21:00</p>
+                        </div>
+                        <div className="dates">
+                            <p><strong> </strong></p>
+                        </div>
+                        <div className="links">
+                            <p>Workshop: Introduction to Figma</p>
                         </div>
                         <div className="dates">
                             <p><strong>Jan 23</strong></p>
                         </div>
                         <div className="times">
-                            <p>12:00 - 13:00</p>
+                            <p>9:30 - 10:30</p>
                         </div>
                         <div className="links">
-                            <p>Build a Chrome extension</p>
-                        </div>
-                        <div className="dates">
-                            <p><strong> </strong></p>
-                        </div>
-                        <div className="times">
-                            <p>12:00 - 13:00</p>
-                        </div>
-                        <div className="links">
-                            <p>Introduction to React</p>
-                        </div>
-                        <div className="dates">
-                            <p><strong> </strong></p>
-                        </div>
-                        <div className="times">
-                            <p>12:00 - 13:00</p>
-                        </div>
-                        <div className="links">
-                            <p>Introduction to Python</p>
+                            <p>Workshop: Ethics in CS and Socially Responsible Computing</p>
                         </div>
                     </div>
                 </div>
@@ -99,28 +108,46 @@ export default class InfoBoothModal extends React.Component<
                             <p><strong>Jan 22</strong></p>
                         </div>
                         <div className="times">
-                            <p>9:00 - 10:00</p>
+                            <p>12:30 - 13:30</p>
                         </div>
                         <div className="links">
-                            <p><strong>John Smith, CEO of XXX</strong> Tech Social Change in the Time of Covid-19</p>
-                        </div>
-                        <div className="dates">
-                            <p><strong>Jan 23</strong></p>
-                        </div>
-                        <div className="times">
-                            <p>12:00 - 13:00</p>
-                        </div>
-                        <div className="links">
-                            <p><strong>Jane Doe, Ex-Software Engineer at Facebook</strong> How to Start at Startup</p>
+                            <p><strong>Talk: Professor Edgar</strong></p>
                         </div>
                         <div className="dates">
                             <p><strong> </strong></p>
                         </div>
                         <div className="times">
-                            <p>12:00 - 13:00</p>
+                            <p>14:00 - 15:00</p>
                         </div>
                         <div className="links">
-                            <p><strong>Bob Henry, Brown Alum '01</strong> Changes in Tech since the 2000s</p>
+                            <p><strong>Talk: Professor Litman</strong> The Four Ways We Tell Machines What We Want, and How We Can Do Better</p>
+                        </div>
+                        <div className="dates">
+                            <p><strong> </strong></p>
+                        </div>
+                        <div className="times">
+                            <p>15:00 - 16:00</p>
+                        </div>
+                        <div className="links">
+                            <p><strong>Panel: Diversity and Inclusion</strong></p>
+                        </div>
+                        <div className="dates">
+                            <p><strong> </strong></p>
+                        </div>
+                        <div className="times">
+                            <p>16:00 - 7:00</p>
+                        </div>
+                        <div className="links">
+                            <p><strong>Panel: Startups and Entrepeneurship</strong></p>
+                        </div>
+                        <div className="dates">
+                            <p><strong>Jan 23</strong></p>
+                        </div>
+                        <div className="times">
+                            <p>10:00 - 11:30</p>
+                        </div>
+                        <div className="links">
+                            <p><strong>Talk: Professor Srinath Sridhar</strong></p>
                         </div>
                     </div>
                 </div>
