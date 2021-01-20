@@ -106,6 +106,7 @@ export default class Toolbar extends React.Component<
 
       let toolbarClassname; 
       let applicationNav;
+      let ceremonyNav;
       let brownTownNav;
       if (window.location.pathname === "/dashboard" 
         && this.state.user !== null) {
@@ -123,12 +124,26 @@ export default class Toolbar extends React.Component<
               Application
             </Nav.Link>
           </div>
+        ceremonyNav = <div className="toolbar-itinerary">
+          <Nav.Link
+            eventKey="2"
+            activeClass="active"
+            as={Link} 
+            to="livestreams-body"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
+            Ceremonies
+          </Nav.Link>
+        </div>
         brownTownNav = <div className="toolbar-virtual-space">
             <Nav.Link
-              eventKey="2"
+              eventKey="3"
               activeClass="active"
               as={Link} 
-              to="brown-town"
+              to="brown-town-intro"
               spy={true}
               smooth={true}
               offset={0}
@@ -148,6 +163,14 @@ export default class Toolbar extends React.Component<
                 Application
                 </a>
             </div>
+          ceremonyNav = <div className="toolbar-about">
+            <a
+                href={hostname + "dashboard#dashboard"}
+                className="toolbar-itinerary"
+            >
+            Ceremonies
+            </a>
+        </div>
           brownTownNav = <div className="toolbar-virtual-space">
                 <a
                     href={hostname + "dashboard#dashboard"}
@@ -242,7 +265,7 @@ export default class Toolbar extends React.Component<
                       >
                         Itinerary
                       </Nav.Link>
-                    </div> : brownTownNav}
+                    </div> : ceremonyNav}
                   </Col>
 
                   {window.location.pathname === "/" || this.state.user === null ?
@@ -263,7 +286,7 @@ export default class Toolbar extends React.Component<
                       FAQ
                     </Nav.Link>
                     </div> 
-                  </Col> : null}
+                  </Col> : brownTownNav}
 
                   {window.location.pathname === "/" || this.state.user === null ?
                   <Col>

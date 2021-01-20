@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Livestreams.css";
+import guideIcon from "../../../../assets/images/Dashboard/document.png";
+import zoomIcon from "../../../../assets/images/Dashboard/download.png";
 
 type LivestreamsProps = {
 };
@@ -50,11 +52,11 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
                     ></iframe>
                     <div className="button-col">
                         <button onClick={()=>{}} className="hacker-guide-button" >
-                            <img src="../../../../assets/images/Dashboard/document.png"></img>
+                            <img className="button-icon" src={guideIcon} alt="Icon"/>
                             Hacker Guide
                         </button>
                         <button onClick={()=>{}} className="zoom-bg-button">
-                            <img src="../../../../assets/images/Dashboard/download.png"></img>
+                            <img className="button-icon" src={zoomIcon} alt="Icon"/>
                             Zoom Backgrounds
                         </button>
                     </div>
