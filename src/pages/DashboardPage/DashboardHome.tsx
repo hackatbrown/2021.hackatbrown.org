@@ -360,7 +360,7 @@ export default class DashboardHome extends React.Component<
           </div>
         </div>
       );
-    } else if (this.state.accepted) {
+    } else if (this.state.accepted || this.state.rsvp) {
       // app has been accepted
       let confirmStyle = this.styleConfirmButton();
       let notConfirmStyle = this.styleNotConfirmButton();
