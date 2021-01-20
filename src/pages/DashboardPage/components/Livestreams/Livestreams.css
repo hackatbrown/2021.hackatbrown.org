@@ -12,7 +12,7 @@
     justify-content: center;
 }
 
-#other-tab {
+.livestreams-body #other-tab {
     background: #A6DCEC;
     font-family: Inter;
     font-style: normal;
@@ -20,7 +20,7 @@
     color: #444444;
 }
 
-#active-tab {
+.livestreams-body #active-tab {
     background: #ffffff;
     font-family: Inter;
     font-style: normal;
@@ -57,7 +57,7 @@
     height: 100%;
 }
 
-.button-col {
+.livestreams-body .button-col {
     display: flex;
     flex-direction: column;
 }
