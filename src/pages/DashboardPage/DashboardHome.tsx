@@ -472,8 +472,12 @@ export default class DashboardHome extends React.Component<
           {renderConfirmForm()}
         </div>
       </div>
-      <Livestreams />
-      <VirtualSpaceHome />
+      {this.state.rsvp || process.env.NODE_ENV === "development" ? 
+        <>
+          <Livestreams />
+          <VirtualSpaceHome />
+        </> : null
+      }
       </>
     );
   }
