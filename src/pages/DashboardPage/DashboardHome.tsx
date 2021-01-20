@@ -361,7 +361,7 @@ export default class DashboardHome extends React.Component<
           </div>
         </div>
       );
-    } else if (this.state.accepted) {
+    } else if (this.state.accepted || true) {
       // app has been accepted
       let confirmStyle = this.styleConfirmButton();
       let notConfirmStyle = this.styleNotConfirmButton();
@@ -407,6 +407,7 @@ export default class DashboardHome extends React.Component<
               id="deny"
               style={notConfirmStyle}
               onClick={this.confirmDenyAcceptance}
+              disabled={this.state.rsvp ? true : false /* Disabled after reservation closes and hacker confrimed attendance */}
             >
               Not Attending Anymore
             </Button>
