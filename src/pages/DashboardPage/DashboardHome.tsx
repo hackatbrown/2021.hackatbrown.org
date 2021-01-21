@@ -370,7 +370,7 @@ export default class DashboardHome extends React.Component<
           className="inner-button"
           id="confirm"
           style={confirmStyle}
-          onClick={this.confirmDenyAcceptance}
+          onClick={null /* this.confirmDenyAcceptance    reservation closed*/}
         >
           {this.state.rsvp ? "Attendance Confirmed!" : "Confirm Attendance"}
         </Button>
