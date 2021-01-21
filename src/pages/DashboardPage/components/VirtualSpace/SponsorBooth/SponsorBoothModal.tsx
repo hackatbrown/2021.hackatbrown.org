@@ -47,7 +47,7 @@ export default class SponsorBoothModal extends React.Component<
                     <div className="column1">
                         <p>{description}</p>
                         <p><b>Reps</b></p>
-                        <p><b>{reps}</b></p>
+                        <p>{reps}</p>
                     </div>
                     </Col>
                     <Col sm={8}>
@@ -78,7 +78,7 @@ export default class SponsorBoothModal extends React.Component<
                         <p>{description}</p>
                         <br/>
                         <p><b>Reps</b></p>
-                        <p><b>{reps}</b></p>
+                        <p>{reps}</p>
                         <div className="discord-btn-container">
                             <a href={discord1} className="long-discord-button" target="_blank">
                                 <img className="discord-icon" src={discordIcon} alt="Icon"/>
@@ -98,10 +98,10 @@ export default class SponsorBoothModal extends React.Component<
                         <p>{description}</p>
                         <br/>
                         <p><b>Reps</b></p>
-                        <p><b>{reps}</b></p>
+                        <p>{reps}</p>
                         <br/>
                         <p><b>Contact Info</b></p>
-                        <p><b>{contact}</b></p>
+                        <p>{contact}</p>
                         
                     </div>
                 </Row>
