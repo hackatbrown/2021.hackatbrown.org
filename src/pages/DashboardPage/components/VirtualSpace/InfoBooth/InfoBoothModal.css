@@ -26,7 +26,11 @@
     color: #444444;
 }
 
-.announcements p {
+.bottom {
+    color: #46B5B8;
+}
+
+.announcements p a{
     font-size: 1.5rem;
     align-self: center;
 }
@@ -59,7 +63,7 @@
         font-size: 8vw;
     }
 
-    .announcements p {
+    .announcements p a{
         font-size: 5vw;
         align-self: center;
     }
