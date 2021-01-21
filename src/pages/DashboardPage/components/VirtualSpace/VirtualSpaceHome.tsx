@@ -38,7 +38,7 @@ export default class VirtualSpaceHome extends React.Component<
         <img className="button-icon" src={liveIcon} alt="Icon"/>
         <b>Live Stream</b>
       </a>
-      <a href={""} className="discord-button" target="_blank">
+      <a href={"https://discord.gg/s8u4PRGAJ3"} className="discord-button" target="_blank">
         <img className="button-icon" src={discordIcon} alt="Icon"/>
         <b>Discord</b>
       </a>

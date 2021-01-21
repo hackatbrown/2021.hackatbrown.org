@@ -34,7 +34,7 @@ export default class Itinerary extends React.Component<
                         </Row>
                         <Row>
                             {/* <h3 className="coming-soon">Our itinerary will be posted here closer to the day of the event. Stay tuned!</h3> */}
-                            <iframe src="https://calendar.google.com/calendar/embed?src=c_s7oav3jo2t2o2gqsltoq756lhc%40group.calendar.google.com&ctz=America%2FChicago" width="100%" height="700vh" scrolling="no"></iframe>
+                            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=Y19zN29hdjNqbzJ0Mm8yZ3FzbHRvcTc1NmxoY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23F6BF26&amp;mode=AGENDA&amp;showTitle=0&amp;showNav=0" style={{borderWidth: "0"}} width="100%" height="700vh" frameBorder="0" scrolling="no"></iframe>
                         </Row>
                         <Row>
                             <video className="video" muted autoPlay loop src={itinImg}/>

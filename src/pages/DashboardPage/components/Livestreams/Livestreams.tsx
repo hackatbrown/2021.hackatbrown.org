@@ -51,14 +51,26 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     ></iframe>
                     <div className="button-col">
-                        <button onClick={()=>{}} className="hacker-guide-button" >
-                            <img className="button-icon" src={guideIcon} alt="Icon"/>
-                            Hacker Guide
-                        </button>
-                        <button onClick={()=>{}} className="zoom-bg-button">
-                            <img className="button-icon" src={zoomIcon} alt="Icon"/>
-                            Zoom Backgrounds
-                        </button>
+                        <a 
+                            href="https://www.notion.so/H-B-Hacker-Guide-745f5a9083a64bf9819a1786e29d372e"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <button onClick={()=>{}} className="hacker-guide-button" >
+                                <img className="button-icon" src={guideIcon} alt="Icon"/>
+                                Hacker Guide
+                            </button>
+                        </a>
+                        <a 
+                            href="zoom_backgrounds.zip"
+                            target="_blank"
+                            download
+                        >
+                            <button onClick={()=>{}} className="zoom-bg-button">
+                                <img className="button-icon" src={zoomIcon} alt="Icon"/>
+                                Zoom Backgrounds
+                            </button>
+                        </a>
                     </div>
                 </div>
             );
