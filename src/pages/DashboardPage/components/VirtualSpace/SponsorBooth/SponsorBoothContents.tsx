@@ -13,7 +13,6 @@ import mouserBoothImg from "../../../../../assets/images/VirtualSpace/mouser.png
 
 type SponsorContentType = {
   description: string;
-  url: string;
   tier: string;
   logo_asset: string;
   booth_asset: string;
@@ -21,6 +20,7 @@ type SponsorContentType = {
   reps: string;
   discord1: string;
   discord2: string;
+  contact: string
 };
 
 // TODO: New sponsor contents need to be added here.
@@ -28,7 +28,6 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
   bloomberg: {
     description:
       "Bloomberg is a media conglomerate that is a provider of financial news and information, research, and financial data.",
-    url: "url",
     tier: "kilo",
     logo_asset: bloombergLogo,
     booth_asset: bloombergBoothImg,
@@ -37,24 +36,23 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     reps: "reps",
     discord1: "https://discord.gg/USjDxZrqSz",
     discord2: "https://discord.gg/VqRfaV5m3X",
+    contact: "",
   },
   neeva: {
     description:
       "Neeva is a search engine that looks for information on the web as well as personal files like emails and other documents while never profiting from user data.",
-    url: "url",
     tier: "kilo",
     logo_asset: neevaLogo,
     booth_asset: neevaBoothImg,
-    gcal_url:
-      "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg&fbclid=IwAR0lJQYpC8gXiBxB6Pe-1kWEEFMDZ0w5DZVdqvdtVvIHra3vmcvh9czizEE",
+    gcal_url: "",
     reps: "reps",
     discord1: "https://discord.gg/tTh6pPSeuQ",
     discord2: "https://discord.gg/VWhwZrrawA",
+    contact: "",
   },
   wolfram: {
     description:
       "Wolfram is a computer, web, and cloud software company focused on developing science and technology to improve tools for computation.",
-    url: "url",
     tier: "micro",
     logo_asset: wolframLogo,
     booth_asset: wolframBoothImg,
@@ -63,36 +61,35 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     reps: "reps",
     discord1: "https://discord.gg/JGqmsxjkXE",
     discord2: "https://discord.gg/5EZ4v6kzt5",
+    contact: "",
   },
   sketch: {
     description:
       "Sketch is a company that develops a tool for designing user interfaces, websites, and icons. It provides a platform enabling designers and teams to create, prototype, and collaborate.",
-    url: "url",
     tier: "micro",
     logo_asset: sketchLogo,
     booth_asset: sketchBoothImg,
-    gcal_url:
-      "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg&fbclid=IwAR0lJQYpC8gXiBxB6Pe-1kWEEFMDZ0w5DZVdqvdtVvIHra3vmcvh9czizEE",
+    gcal_url: "",
     reps: "reps",
     discord1: "https://discord.gg/JaMsxsVY7b",
     discord2: "https://discord.gg/UTEvgAT5Hw",
+    contact: "",
   },
   mouser: {
     description:
       "Mouser Electronics is a worldwide leading authorized distributor of semiconductors and electronic components for nearly 800 industry leading manufacturers.",
-    url: "url",
     tier: "micro",
     logo_asset: mouserLogo,
     booth_asset: mouserBoothImg,
-    gcal_url: "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg&fbclid=IwAR0lJQYpC8gXiBxB6Pe-1kWEEFMDZ0w5DZVdqvdtVvIHra3vmcvh9czizEE",
+    gcal_url: "",
     reps: "",
-    discord1: "https://discord.gg/8QE5mnytFc",
-    discord2: "https://discord.gg/eUAYyUJzhQ",
+    discord1: "",
+    discord2: "",
+    contact: "",
   },
   blue: {
     description:
       "Blue is both a hardware and software application that enables users to connect with others in real-life using NFC and Bluetooth technologies.",
-    url: "url",
     tier: "kilo",
     logo_asset: blueLogo,
     booth_asset: blueBoothImg,
@@ -100,6 +97,7 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     reps: "reps",
     discord1: "https://discord.gg/wE5Nx3bESF",
     discord2: "https://discord.gg/WXVn9bhDuC",
+    contact: "Eazhel.Breeden@mouser.com",
   },
 };
 
