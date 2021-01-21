@@ -34,7 +34,7 @@ export default class Itinerary extends React.Component<
                         </Row>
                         <Row>
                             {/* <h3 className="coming-soon">Our itinerary will be posted here closer to the day of the event. Stay tuned!</h3> */}
-                            <iframe src="https://calendar.google.com/calendar/embed?src=c_s7oav3jo2t2o2gqsltoq756lhc%40group.calendar.google.com&ctz=America%2FChicago" width="800" height="700vh" scrolling="no"></iframe>
+                            <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=ZXRoYW5nYXNpc0BnbWFpbC5jb20&amp;src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;src=YmU4bm1oNjhubmpvY2NhNDBuNzB0ZmNiajhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=Y25xbHNobHBqMTdqcjAzdjN2dmhwM3F1cjRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=azhyajI4M2lxczQ0ZGw3dTM1NWllNnY5ZWtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=cWhjMDBxaG5vc2FybTVuMW1yYXA4ZHY2NmNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=Y19hczZjMzYzYmE1MXY4dmM1MDdhNW9nNDYxa0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=Y19zN29hdjNqbzJ0Mm8yZ3FzbHRvcTc1NmxoY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=ZW4udXNhI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23039BE5&amp;color=%23F6BF26&amp;color=%2333B679&amp;color=%238E24AA&amp;color=%23C0CA33&amp;color=%23D50000&amp;color=%23D50000&amp;color=%23F6BF26&amp;color=%230B8043" width="800" height="700vh" scrolling="no"></iframe>
                         </Row>
                         <Row>
                             <video className="video" muted autoPlay loop src={itinImg}/>
