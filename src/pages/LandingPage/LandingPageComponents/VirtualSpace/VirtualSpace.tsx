@@ -41,7 +41,7 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                         <br/><br/>
                         {/* Access the Virtual Space
                         by registering! */}
-                        H@B Town will be available closer to the day of the event!
+                        H@B Town will be available on the day of the event!
                         <br/><br/>
                      </p>
                     {/* <FirebaseContextConsumer>
