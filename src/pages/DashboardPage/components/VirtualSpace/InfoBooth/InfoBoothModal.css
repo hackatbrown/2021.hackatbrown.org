@@ -31,7 +31,7 @@
     text-decoration: none;
 }
 
-.bottom a:hover {
+.bottom {
     color: #46B5B8;
     left: 50%; 
     top: 50%;
@@ -41,9 +41,6 @@
     border-radius: 1.5em;
     padding: 10vw;
     overflow: hidden;
-}
-.bottom a {
-    color: #46B5B8;
 }
 
 .announcements p {
