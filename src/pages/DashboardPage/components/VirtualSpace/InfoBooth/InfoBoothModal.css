@@ -28,6 +28,17 @@
 
 .bottom {
     color: #46B5B8;
+    left: 50%; 
+    top: 50%;
+    width: 40vw;
+    height: 80vh; 
+    min-width: 440px; 
+    border-radius: 1.5em;
+    padding: 10vw;
+    overflow: hidden;
+}
+.bottom a {
+    color: #46B5B8;
 }
 
 .announcements p a{
