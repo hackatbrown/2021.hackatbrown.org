@@ -6,6 +6,8 @@ import neevaImg from "../../../../assets/images/LandingPage/companylogo/neeva.pn
 import sketchImg from "../../../../assets/images/LandingPage/companylogo/sketch.png";
 import wolframImg from "../../../../assets/images/LandingPage/companylogo/wolfram.png";
 import googleCloudImg from "../../../../assets/images/LandingPage/companylogo/googleCloud.png";
+import blueSocialImg from "../../../../assets/images/LandingPage/companylogo/bluesocial.png";
+import mouserImg from "../../../../assets/images/LandingPage/companylogo/Mouser.jpg";
 
 type SponsorsProps = {};
 
@@ -83,6 +85,17 @@ export default class Sponsors extends React.Component<
                   alt="neeva"
                 ></img>
               </a>
+              <a
+                href="https://blue.social/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="sponsors-img-kilo"
+                  src={blueSocialImg}
+                  alt="blue social"
+                ></img>
+              </a>
             </div>
           </div>
           <div className="sponsors-micro sponsors-section">
@@ -118,6 +131,21 @@ export default class Sponsors extends React.Component<
                   alt="wolfram"
                 ></img>
               </a>
+              <a
+                href="https://www.mouser.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="sponsors-img-micro"
+                  style={{
+                    padding: "10px",
+                    backgroundColor: "white",
+                  }}
+                  src={mouserImg}
+                  alt="mouser electronics"
+                ></img>
+              </a>
             </div>
             <div className="partnership">
               <p>In partnership with</p>
@@ -129,8 +157,8 @@ export default class Sponsors extends React.Component<
                 <img
                   className="sponsors-img-micro"
                   style={{
-                    padding: "10px",
                     backgroundColor: "white",
+                    width: "15%",
                   }}
                   src={googleCloudImg}
                   alt="google cloud"
