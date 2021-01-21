@@ -24,7 +24,7 @@
 }
 
 #gcal {
-margin-top: -150px;
+  margin-top: -150px;
 }
 
 .logo-container {
@@ -131,6 +131,14 @@ a.discord-button:hover,
 a.discord-button:visited,
 a.discord-button:link,
 a.discord-button:active {
+  text-decoration: none;
+  color: white;
+}
+
+a.long-discord-button:hover,
+a.long-discord-button:visited,
+a.long-discord-button:link,
+a.long-discord-button:active {
   text-decoration: none;
   color: white;
 }

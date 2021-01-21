@@ -101,7 +101,7 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     logo_asset: mouserLogo,
     booth_asset: mouserBoothImg,
     gcal_url: "",
-    reps: "",
+    reps: "Eazhel Breeden",
     discord1: "",
     discord2: "",
     contact: "Eazhel.Breeden@mouser.com",
