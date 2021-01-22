@@ -46,7 +46,7 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
                 <div className="welcome-container">
                     <iframe 
                     width="60%" 
-                    src="https://www.youtube.com/embed/5qap5aO4i9A" 
+                    src="https://www.youtube-nocookie.com/embed/CrJM1i8g19I" 
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     ></iframe>
