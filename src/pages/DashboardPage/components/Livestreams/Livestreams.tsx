@@ -39,64 +39,7 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
         });
     };
 
-    livestreamsContent = () => {
-        let content;
-        if (this.state.tab == "welcome") {
-            content = (
-                <div className="welcome-container">
-                    <iframe 
-                    width="60%" 
-                    src="https://www.youtube-nocookie.com/embed/CrJM1i8g19I" 
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    ></iframe>
-                    <div className="button-col">
-                        <a 
-                            href="https://www.notion.so/H-B-Hacker-Guide-745f5a9083a64bf9819a1786e29d372e"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <button onClick={()=>{}} className="hacker-guide-button" >
-                                <img className="button-icon" src={guideIcon} alt="Icon"/>
-                                Hacker Guide
-                            </button>
-                        </a>
-                        <a 
-                            href="zoom_backgrounds.zip"
-                            target="_blank"
-                            download
-                        >
-                            <button onClick={()=>{}} className="zoom-bg-button">
-                                <img className="button-icon" src={zoomIcon} alt="Icon"/>
-                                Zoom Backgrounds
-                            </button>
-                        </a>
-                    </div>
-                </div>
-            );
-        } else if (this.state.tab == "ceremony") {
-            content = (
-                <div className="ceremony-container">
-                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhackatbrown%2Fposts%2F3401091640001981&width=1280" width="750" height="100%" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-                </div>
-            );
-        } else if (this.state.tab == "spotify") {
-            content = (
-                <div className="spotify-container">
-                    <iframe 
-                    src="https://open.spotify.com/embed/playlist/7hQvIt3sMOmhkb3WYFTbIw" 
-                    width="80%" 
-                    frameBorder="0"
-                    allow="encrypted-media"></iframe>
-                </div>
-            );
-        }
-        return content;
-    };
-
     render() {
-        let content = this.livestreamsContent();
-
         return (
             <div className="livestreams-body">
                 <div className="livestreams-tabs">
@@ -123,7 +66,58 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
                     </button>
                 </div>
                 <div className="livestreams-content">
-                {content}
+                    <div className="welcome-container" 
+                        style={{
+                            display: this.state.tab === "welcome" ? "flex" : "none"
+                    }}>
+                        <iframe 
+                        width="60%" 
+                        src="https://www.youtube-nocookie.com/embed/CrJM1i8g19I" 
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        ></iframe>
+                        <div className="button-col">
+                            <a 
+                                href="https://www.notion.so/H-B-Hacker-Guide-745f5a9083a64bf9819a1786e29d372e"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <button onClick={()=>{}} className="hacker-guide-button" >
+                                    <img className="button-icon" src={guideIcon} alt="Icon"/>
+                                    Hacker Guide
+                                </button>
+                            </a>
+                            <a 
+                                href="zoom_backgrounds.zip"
+                                target="_blank"
+                                download
+                            >
+                                <button onClick={()=>{}} className="zoom-bg-button">
+                                    <img className="button-icon" src={zoomIcon} alt="Icon"/>
+                                    Zoom Backgrounds
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div className="ceremony-container"
+                        style={{
+                            display: this.state.tab === "ceremony" ? "flex" : "none"
+                    }}>
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhackatbrown%2Fposts%2F3401091640001981&width=1280" 
+                        width="750" height="100%" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+
+                    <div className="spotify-container"
+                        style={{
+                            display: this.state.tab === "spotify" ? "flex" : "none"
+                    }}>
+                        <iframe 
+                        src="https://open.spotify.com/embed/playlist/7hQvIt3sMOmhkb3WYFTbIw" 
+                        width="80%" 
+                        frameBorder="0"
+                        allow="encrypted-media"></iframe>
+                    </div>
                 </div>
             </div>
           );

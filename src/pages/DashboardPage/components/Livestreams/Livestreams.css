@@ -52,7 +52,7 @@
 
 .welcome-container, .ceremony-container, .spotify-container {
     padding: 3rem 1rem;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     height: 100%;
 }
