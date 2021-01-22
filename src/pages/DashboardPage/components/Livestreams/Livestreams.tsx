@@ -77,12 +77,7 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
         } else if (this.state.tab == "ceremony") {
             content = (
                 <div className="ceremony-container">
-                    <iframe 
-                    width="80%" 
-                    src="https://www.youtube.com/embed/j9HPtZcssNo" 
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    ></iframe>
+                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fhackatbrown%2Fposts%2F3401091640001981&width=1280" width="750" height="100%" style={{border:"none", overflow:"hidden"}} scrolling="no" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                 </div>
             );
         } else if (this.state.tab == "spotify") {
