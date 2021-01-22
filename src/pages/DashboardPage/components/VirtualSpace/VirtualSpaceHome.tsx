@@ -34,7 +34,7 @@ export default class VirtualSpaceHome extends React.Component<
 
     const buttons = 
     <div className="town-buttons">
-      <a href={""} className="live-button" target="_blank">
+      <a href={"https://www.facebook.com/hackatbrown/posts/3401091640001981"} className="live-button" target="_blank">
         <img className="button-icon" src={liveIcon} alt="Icon"/>
         <b>Live Stream</b>
       </a>
