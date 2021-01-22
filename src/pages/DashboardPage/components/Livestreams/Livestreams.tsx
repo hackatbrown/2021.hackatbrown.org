@@ -84,11 +84,10 @@ export default class Livestreams extends Component<LivestreamsProps, Livestreams
             content = (
                 <div className="spotify-container">
                     <iframe 
-                    src="https://open.spotify.com/embed/playlist/6ZZE3bWGdFooMPomeeiiX1" 
+                    src="https://open.spotify.com/embed/playlist/7hQvIt3sMOmhkb3WYFTbIw" 
                     width="80%" 
-                    frameBorder="0" 
-                    allow="encrypted-media
-                    "></iframe>
+                    frameBorder="0"
+                    allow="encrypted-media"></iframe>
                 </div>
             );
         }

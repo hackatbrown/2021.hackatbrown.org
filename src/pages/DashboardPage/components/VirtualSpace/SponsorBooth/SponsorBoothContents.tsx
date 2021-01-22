@@ -33,8 +33,7 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     tier: "kilo",
     logo_asset: bloombergLogo,
     booth_asset: bloombergBoothImg,
-    gcal_url:
-      "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg&fbclid=IwAR0lJQYpC8gXiBxB6Pe-1kWEEFMDZ0w5DZVdqvdtVvIHra3vmcvh9czizEE",
+    gcal_url: "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg",
     reps: "Yamiley Joseph, Recruiter",
     discord1: "https://discord.gg/USjDxZrqSz",
     discord2: "https://discord.gg/VqRfaV5m3X",
@@ -46,23 +45,10 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     tier: "kilo",
     logo_asset: blueLogo,
     booth_asset: blueBoothImg,
-    gcal_url: "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg&fbclid=IwAR0lJQYpC8gXiBxB6Pe-1kWEEFMDZ0w5DZVdqvdtVvIHra3vmcvh9czizEE",
+    gcal_url: "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UURya2l1Z3AzR1Z5fGRlZmF1bHR8NzNiMDkzNzBkZDAyOWVhYmZlYjBkMmM4MTBjZjYwOGM",
     reps: "Christen Montero, Chief Marketing Officer/ Co-founder",
     discord1: "https://discord.gg/wE5Nx3bESF",
     discord2: "https://discord.gg/WXVn9bhDuC",
-    contact: "",
-  },
-  wolfram: {
-    description:
-      "Wolfram is a computer, web, and cloud software company focused on developing science and technology to improve tools for computation.",
-    tier: "micro",
-    logo_asset: wolframLogo,
-    booth_asset: wolframBoothImg,
-    gcal_url:
-      "https://calendar.google.com/calendar/u/0/selfsched?sstoken=UUxMSEtmVDZWeGFnfGRlZmF1bHR8NjM1ZmMzZmI3N2VlMjgxOTAxZDJmYWMwYjg1ODdkNjg&fbclid=IwAR0lJQYpC8gXiBxB6Pe-1kWEEFMDZ0w5DZVdqvdtVvIHra3vmcvh9czizEE",
-    reps: "Rory Foulger, Instructional Designer and Technologist",
-    discord1: "https://discord.gg/JGqmsxjkXE",
-    discord2: "https://discord.gg/5EZ4v6kzt5",
     contact: "",
   },
 
@@ -77,6 +63,19 @@ const sponsorContents: { [sponsorName: string]: SponsorContentType } = {
     reps: "Sandy Banerjee, Head of Marketing",
     discord1: "https://discord.gg/tTh6pPSeuQ",
     discord2: "https://discord.gg/VWhwZrrawA",
+    contact: "",
+  },
+
+  wolfram: {
+    description:
+      "Wolfram is a computer, web, and cloud software company focused on developing science and technology to improve tools for computation.",
+    tier: "micro",
+    logo_asset: wolframLogo,
+    booth_asset: wolframBoothImg,
+    gcal_url: "",
+    reps: "Rory Foulger, Instructional Designer and Technologist",
+    discord1: "https://discord.gg/JGqmsxjkXE",
+    discord2: "https://discord.gg/5EZ4v6kzt5",
     contact: "",
   },
   
