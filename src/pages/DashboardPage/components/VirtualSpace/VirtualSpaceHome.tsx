@@ -42,7 +42,7 @@ export default class VirtualSpaceHome extends React.Component<
         <img className="button-icon" src={discordIcon} alt="Icon"/>
         <b>Discord</b>
       </a>
-      <a href={""} className="devpost-button" target="_blank">
+      <a href={"https://hackatbrown2021.devpost.com"} className="devpost-button" target="_blank">
         <img className="button-icon" src={devpostIcon} alt="Icon"/>
         <b>Devpost</b>
       </a>
