@@ -39,19 +39,16 @@ export default class Virtual extends React.Component<VirtualProps, VirtualState>
                         with sponsors, check out the latest announcements, and
                         find the links to workshops! 
                         <br/><br/>
-                        {/* Access the Virtual Space
-                        by registering! */}
-                        H@B Town will be available on the day of the event!
-                        <br/><br/>
+                        Access the Virtual Space by logging into your Dashboard!
                      </p>
-                    {/* <FirebaseContextConsumer>
+                    <FirebaseContextConsumer>
                         {firebase => (
                             <LoginJoin
                                 apiURL={this.props.apiURL}
                                 firebase={firebase == null ? null : firebase.firebase}
                                 hideToolbar={this.props.hideToolbar} />
                         )}
-                    </FirebaseContextConsumer> */}
+                    </FirebaseContextConsumer>
                   </div>
                 </Col>
                 <Col sm={6}>
