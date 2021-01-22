@@ -48,9 +48,14 @@
     align-self: center;
 }
 
-.grids {
+/* .grid {
     display: grid;
     background-color: white;
+} */
+
+table{ 
+    border-collapse: collapse;
+    width: 25%;
 }
 .dates {
     font-family: 'Inter Bold';
