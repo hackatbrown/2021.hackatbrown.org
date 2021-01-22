@@ -23,51 +23,64 @@
 .bottom p {
     font-family: Inter;
     font-weight: 100;
-    padding: 0px 6vw;
     color: #444444;
 }
 
 .bottom a {
+    font-size: 18px;
     color: #46B5B8;
     text-decoration: none;
+}
+
+.bottom a:hover {
+    color: #46B5B8;
 }
 
 .announcements p {
     font-size: 1.5rem;
     align-self: center;
+    padding: 0px 6vw;
 }
 
-/* .grid {
-    display: grid;
-    background-color: white;
-} */
 .table{
-    top: 50%;
-    left: 50%;
-    width: 50%;
+    width: 100%;
+    padding: 2rem;
+    table-layout: fixed;
 }
 
-table{ 
-    width: 10%;
+.table td, .table th {
+    padding: 0.1rem !important;
+}
+
+.bottom table{ 
     border-spacing: 1em;
     border-collapse: collapse;
     border: none;
-    padding: -10%;
-    font-size: 12;
+    font-size: 18px;
+    table-layout: fixed;
+    width: 100%;
 }
 
-.dates {
+.bottom .dates {
     font-family: 'Inter Bold';
     color: #444444;
+    width: 15%;
+    border: none;
+    text-align: right;
 }
 
-.times {
+.bottom .times {
     font-family: 'InterBold';
     color: #444444;
+    width: 35%;
+    border: none;
+    text-align: center;
 }
 .bottom .links {
     color: #46B5B8;
     text-align: left;
+    width: 50%;
+    border: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -84,5 +97,9 @@ table{
     .announcements p {
         font-size: 5vw;
         align-self: center;
+    }
+
+    .table {
+        padding: 0.5rem;
     }
 }
