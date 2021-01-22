@@ -86,24 +86,26 @@ export default class InfoBoothModal extends React.Component<
                         </td>
                         </tr>
                         <tr>
-                        <td><div className="times grid-item">
-                            <p>18:00 - 19:00</p>
-                        </div></td>
                         <td><div className="dates grid-item">
                             <p><strong> </strong></p>
+                        </div>
+                        </td>
+                        <td><div className="times grid-item">
+                            <p>18:00 - 19:00</p>
                         </div></td>
                         <td><div className="links grid-item">
                             <a href="https://us02web.zoom.us/j/86347112241?pwd=K2ZNdmlxR2JDZ1RqbHhMb1hDL1laZz09">Workshop: Intro to Deep Learning</a>
                         </div></td>
                         </tr>
                         <tr>
+                        <td><div className="dates grid-item">
+                            <p><strong> </strong></p>
+                        </div>
+                        </td>
                         <td><div className="times grid-item">
                             <p>20:00 - 21:00</p>
                         </div>
                         </td>
-                        <td><div className="dates grid-item">
-                            <p><strong> </strong></p>
-                        </div></td>
                         <td><div className="links grid-item">
                             <a href="https://us02web.zoom.us/j/86301279007?pwd=THZwY0sxeUE3S3FmTE92V2lVbTFHQT09">Design Workshop: Introduction to Figma</a>
                         </div></td>
