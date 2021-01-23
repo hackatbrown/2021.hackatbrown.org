@@ -50,10 +50,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong>Jan 22</strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>11:30 - 12:30</p>
+                                <p>12:30 - 13:30</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/86545850944?pwd=V0pvMU5jcTV4L0lEUGkrZFlGaEx5QT09">Intro to HTML/CSS</a>
+                                <a href="https://us02web.zoom.us/j/86545850944?pwd=V0pvMU5jcTV4L0lEUGkrZFlGaEx5QT09" target="_blank">Intro to HTML/CSS</a>
                             </td>
                         </tr>
                         <tr>
@@ -61,10 +61,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>13:00 - 14:00</p>
+                                <p>14:00 - 15:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83295677717?pwd=U1V4cmZRTnFKWW5JaVNPMUFBeXdEdz09">Workshop: Google Cloud</a>
+                                <a href="https://us02web.zoom.us/j/83295677717?pwd=U1V4cmZRTnFKWW5JaVNPMUFBeXdEdz09" target="_blank">Google Cloud</a>
                             </td>
                         </tr>
                         <tr>
@@ -72,10 +72,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>17:30 - 18:30</p>
+                                <p>18:30 - 19:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83187295277?pwd=Mk9nYnZTdDBvRkoxMElwZXJZM2J1dz09">Workshop: (MLH) Cybersecurity Cloud</a>
+                                <a href="https://us02web.zoom.us/j/83187295277?pwd=Mk9nYnZTdDBvRkoxMElwZXJZM2J1dz09" target="_blank">Cybersecurity (MLH)</a>
                             </td>
                         </tr>
                         <tr>
@@ -83,10 +83,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>18:00 - 19:00</p>
+                                <p>19:00 - 20:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/86347112241?pwd=K2ZNdmlxR2JDZ1RqbHhMb1hDL1laZz09">Workshop: Intro to Deep Learning</a>
+                                <a href="https://us02web.zoom.us/j/86347112241?pwd=K2ZNdmlxR2JDZ1RqbHhMb1hDL1laZz09" target="_blank">Intro to Deep Learning</a>
                             </td>
                         </tr>
                         <tr>
@@ -94,10 +94,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>20:00 - 21:00</p>
+                                <p>21:00 - 22:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/86301279007?pwd=THZwY0sxeUE3S3FmTE92V2lVbTFHQT09">Design Workshop: Introduction to Figma</a>
+                                <a href="https://us02web.zoom.us/j/86301279007?pwd=THZwY0sxeUE3S3FmTE92V2lVbTFHQT09" target="_blank">Introduction to Figma</a>
                             </td>
                         </tr>
                         <tr>
@@ -105,10 +105,32 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong>Jan 23</strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>9:30 - 10:30</p>
+                                <p>10:30 - 11:30</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/84252904233?pwd=OERDVDJwdXNMK1JXcmF3dHRUeVlSQT09">Workshop: Ethics in CS and Socially Responsible Computing</a>
+                                <a href="https://us02web.zoom.us/j/84252904233?pwd=OERDVDJwdXNMK1JXcmF3dHRUeVlSQT09" target="_blank">Ethics in CS and Socially Responsible Computing</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="dates grid-item">
+                                <p><strong>Recorded</strong></p>
+                            </td>
+                            <td className="times grid-item">
+                                <p>Tech Talk</p>
+                            </td>
+                            <td className="links grid-item">
+                                <a href="https://www.twitch.tv/videos/871505809" target="_blank">How to collaborate on code projects with GitHub</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="dates grid-item">
+                                <p><strong></strong></p>
+                            </td>
+                            <td className="times grid-item">
+                                <p>Tech Talk</p>
+                            </td>
+                            <td className="links grid-item">
+                                <a href="https://www.youtube.com/watch?v=cgBB_JHBXSM&feature=youtu.be" target="_blank">Intro to Firebase</a>
                             </td>
                         </tr>
                         </table>
@@ -124,10 +146,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong>Jan 22</strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>12:30 - 13:30</p>
+                                <p>13:30 - 14:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/89725906434?pwd=c1hNbnVtUnVYSk8wa0RxdkExWGF1dz09"><strong>Talk: Professor Edgar</strong></a>
+                                <a href="https://us02web.zoom.us/j/89725906434?pwd=c1hNbnVtUnVYSk8wa0RxdkExWGF1dz09" target="_blank"><strong>Talk: Professor Edgar</strong> A (Really) Brief History of American Surveillance</a>
                             </td>
                         </tr>
                         <tr>
@@ -135,10 +157,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>14:00 - 15:00</p>
+                                <p>15:00 - 15:30</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83381000344?pwd=UXV3TktTbEpqdXpUZURVSXoxeE9BQT09"><strong>Talk: Professor Litman</strong> The Four Ways We Tell Machines What We Want, and How We Can Do Better</a>
+                                <a href="https://us02web.zoom.us/j/83381000344?pwd=UXV3TktTbEpqdXpUZURVSXoxeE9BQT09" target="_blank"><strong>Talk: Professor Littman</strong> The Four Ways We Tell Machines What We Want, and How We Can Do Better</a>
                             </td>
                         </tr>
                         <tr>
@@ -146,10 +168,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>15:00 - 16:00</p>
+                                <p>16:00 - 17:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/84344188222?pwd=aTBwc0x2dDdOMXZwNVU1Mi91eUU3UT09"><strong>Panel: Diversity and Inclusion</strong></a>
+                                <a href="https://us02web.zoom.us/j/84344188222?pwd=aTBwc0x2dDdOMXZwNVU1Mi91eUU3UT09" target="_blank"><strong>Panel: Diversity and Inclusion</strong></a>
                             </td>
                         </tr>
                         <tr>
@@ -157,10 +179,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>16:00 - 7:00</p>
+                                <p>17:00 - 18:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83877631019?pwd=N3RTbHpmSHNVaXVHdVRPMTQ4cW0xUT09"><strong>Panel: Startups and Entrepeneurship</strong></a>
+                                <a href="https://us02web.zoom.us/j/83877631019?pwd=N3RTbHpmSHNVaXVHdVRPMTQ4cW0xUT09" target="_blank"><strong>Panel: Start-ups and Entrepreneurship</strong></a>
                             </td>
                         </tr>
                         <tr>
@@ -168,10 +190,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong>Jan 23</strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>10:00 - 11:30</p>
+                                <p>11:30 - 12:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/84719148529?pwd=aEJDWVJ1ZGhLQzl3aS9Ock1vTldvdz09"><strong>Talk: Professor Srinath Sridhar</strong></a>
+                                <a href="https://us02web.zoom.us/j/84719148529?pwd=aEJDWVJ1ZGhLQzl3aS9Ock1vTldvdz09" target="_blank"><strong>Talk: Professor Srinath Sridhar</strong> Digitizing Physical Intelligence</a>
                             </td>
                         </tr>
                         </table>
