@@ -64,7 +64,7 @@ export default class InfoBoothModal extends React.Component<
                                 <p>14:00 - 15:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83295677717?pwd=U1V4cmZRTnFKWW5JaVNPMUFBeXdEdz09">Workshop: How to Collaborate on Code Projects with GitHub</a>
+                                <a href="https://us02web.zoom.us/j/83295677717?pwd=U1V4cmZRTnFKWW5JaVNPMUFBeXdEdz09">Workshop: Google Cloud</a>
                             </td>
                         </tr>
                         <tr>
@@ -72,10 +72,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>18:30 - 19:30</p>
+                                <p>18:30 - 19:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83187295277?pwd=Mk9nYnZTdDBvRkoxMElwZXJZM2J1dz09">Workshop: (MLH) Cybersecurity Cloud</a>
+                                <a href="https://us02web.zoom.us/j/83187295277?pwd=Mk9nYnZTdDBvRkoxMElwZXJZM2J1dz09">Workshop: Cybersecurity (MLH)</a>
                             </td>
                         </tr>
                         <tr>
@@ -124,10 +124,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong>Jan 22</strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>13:30 - 14:30</p>
+                                <p>13:30 - 14:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/89725906434?pwd=c1hNbnVtUnVYSk8wa0RxdkExWGF1dz09"><strong>Talk: Professor Edgar</strong></a>
+                                <a href="https://us02web.zoom.us/j/89725906434?pwd=c1hNbnVtUnVYSk8wa0RxdkExWGF1dz09"><strong>Talk: Professor Edgar</strong> A (Really) Brief History of American Surveillance</a>
                             </td>
                         </tr>
                         <tr>
@@ -135,10 +135,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong> </strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>15:00 - 16:00</p>
+                                <p>15:00 - 15:30</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83381000344?pwd=UXV3TktTbEpqdXpUZURVSXoxeE9BQT09"><strong>Talk: Professor Litman</strong> The Four Ways We Tell Machines What We Want, and How We Can Do Better</a>
+                                <a href="https://us02web.zoom.us/j/83381000344?pwd=UXV3TktTbEpqdXpUZURVSXoxeE9BQT09"><strong>Talk: Professor Littman</strong> The Four Ways We Tell Machines What We Want, and How We Can Do Better</a>
                             </td>
                         </tr>
                         <tr>
@@ -160,7 +160,7 @@ export default class InfoBoothModal extends React.Component<
                                 <p>17:00 - 18:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83877631019?pwd=N3RTbHpmSHNVaXVHdVRPMTQ4cW0xUT09"><strong>Panel: Startups and Entrepeneurship</strong></a>
+                                <a href="https://us02web.zoom.us/j/83877631019?pwd=N3RTbHpmSHNVaXVHdVRPMTQ4cW0xUT09"><strong>Panel: Start-ups and Entrepreneurship</strong></a>
                             </td>
                         </tr>
                         <tr>
@@ -168,10 +168,10 @@ export default class InfoBoothModal extends React.Component<
                                 <p><strong>Jan 23</strong></p>
                             </td>
                             <td className="times grid-item">
-                                <p>11:30 - 12:30</p>
+                                <p>11:30 - 12:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/84719148529?pwd=aEJDWVJ1ZGhLQzl3aS9Ock1vTldvdz09"><strong>Talk: Professor Srinath Sridhar</strong></a>
+                                <a href="https://us02web.zoom.us/j/84719148529?pwd=aEJDWVJ1ZGhLQzl3aS9Ock1vTldvdz09"><strong>Talk: Professor Srinath Sridhar</strong> Digitizing Physical Intelligence</a>
                             </td>
                         </tr>
                         </table>
