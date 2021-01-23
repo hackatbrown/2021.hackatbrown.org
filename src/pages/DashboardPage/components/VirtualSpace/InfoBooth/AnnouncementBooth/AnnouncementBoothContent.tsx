@@ -19,7 +19,7 @@ export function getAnnouncementContent() {
         [
             new Date(DAY_ONE.concat("13:55:00 EST")), 
             new Date(DAY_ONE.concat("14:54:59 EST"))
-        ], "Workshop: Google Cloud will take place from 2PM to 3PM EST!");
+        ], "Workshop: How to Collaborate on Code Projects with GitHub will take place from 2PM to 3PM EST!");
     TIME_ANNOUNCEMENTS_MAP.set(
         [
             new Date(DAY_ONE.concat("14:55:00 EST")), 
