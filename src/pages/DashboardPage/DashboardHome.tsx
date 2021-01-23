@@ -493,8 +493,8 @@ export default class DashboardHome extends React.Component<
       </div>
       {this.state.rsvp || process.env.NODE_ENV === "development" ? 
         <>
-          {/* <Livestreams />
-          <VirtualSpaceHome /> */}
+          <Livestreams />
+          <VirtualSpaceHome />
         </> : null
       }
       </>
