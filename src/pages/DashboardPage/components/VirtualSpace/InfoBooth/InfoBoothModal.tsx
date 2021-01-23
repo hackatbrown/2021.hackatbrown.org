@@ -53,7 +53,7 @@ export default class InfoBoothModal extends React.Component<
                                 <p>12:30 - 13:30</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/86545850944?pwd=V0pvMU5jcTV4L0lEUGkrZFlGaEx5QT09">Intro to HTML/CSS</a>
+                                <a href="https://us02web.zoom.us/j/86545850944?pwd=V0pvMU5jcTV4L0lEUGkrZFlGaEx5QT09">Workshop: Intro to HTML/CSS</a>
                             </td>
                         </tr>
                         <tr>
@@ -109,6 +109,28 @@ export default class InfoBoothModal extends React.Component<
                             </td>
                             <td className="links grid-item">
                                 <a href="https://us02web.zoom.us/j/84252904233?pwd=OERDVDJwdXNMK1JXcmF3dHRUeVlSQT09">Workshop: Ethics in CS and Socially Responsible Computing</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="dates grid-item">
+                                <p><strong>Recorded</strong></p>
+                            </td>
+                            <td className="times grid-item">
+                                <p>Tech Talk</p>
+                            </td>
+                            <td className="links grid-item">
+                                <a href="https://www.twitch.tv/videos/871505809">How to collaborate on code projects with GitHub</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="dates grid-item">
+                                <p><strong></strong></p>
+                            </td>
+                            <td className="times grid-item">
+                                <p>Tech Talk</p>
+                            </td>
+                            <td className="links grid-item">
+                                <a href="https://www.youtube.com/watch?v=cgBB_JHBXSM&feature=youtu.be">Intro to Firebase</a>
                             </td>
                         </tr>
                         </table>
