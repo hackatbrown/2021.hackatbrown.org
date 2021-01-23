@@ -47,7 +47,7 @@ export default class InfoBoothModal extends React.Component<
                         <table>
                         <tr>
                             <td className="dates grid-item">
-                                <p><strong>Jan 22</strong></p>
+                                <p><strong>Jan 23</strong></p>
                             </td>
                             <td className="times grid-item">
                                 <p>12:30 - 13:30</p>
@@ -102,7 +102,7 @@ export default class InfoBoothModal extends React.Component<
                         </tr>
                         <tr>
                             <td className="dates grid-item">
-                                <p><strong>Jan 23</strong></p>
+                                <p><strong>Jan 24</strong></p>
                             </td>
                             <td className="times grid-item">
                                 <p>10:30 - 11:30</p>
@@ -143,7 +143,7 @@ export default class InfoBoothModal extends React.Component<
                         <table>
                         <tr>
                             <td className="dates grid-item">
-                                <p><strong>Jan 22</strong></p>
+                                <p><strong>Jan 23</strong></p>
                             </td>
                             <td className="times grid-item">
                                 <p>13:30 - 14:00</p>
@@ -187,7 +187,7 @@ export default class InfoBoothModal extends React.Component<
                         </tr>
                         <tr>
                             <td className="dates grid-item">
-                                <p><strong>Jan 23</strong></p>
+                                <p><strong>Jan 24</strong></p>
                             </td>
                             <td className="times grid-item">
                                 <p>11:30 - 12:00</p>
