@@ -23,9 +23,20 @@ export function getAnnouncementContent() {
     TIME_ANNOUNCEMENTS_MAP.set(
         [
             new Date(DAY_ONE.concat("14:55:00 EST")), 
-            new Date(DAY_ONE.concat("15:24:59 EST"))
+            new Date(DAY_ONE.concat("15:30:00 EST"))
         ], "Talk: 'The Four Ways We Tell Machines What We Want, and How We Can Do Better' (Prof. Littman) will take place from 3PM to 3:30PM!");
-    // 3:30PM-6:25PM: Welcome to Hack@Brown! Keep H@B Town opened so you don't miss any upcoming announcements!
+    // 3:30PM-3:55PM: Welcome to Hack@Brown! Keep H@B Town opened so you don't miss any upcoming announcements!
+    TIME_ANNOUNCEMENTS_MAP.set(
+        [
+            new Date(DAY_ONE.concat("15:55:00 EST")), 
+            new Date(DAY_ONE.concat("16:54:59 EST"))
+        ], "[Panel] Diversity & Inclusion");
+    TIME_ANNOUNCEMENTS_MAP.set(
+        [
+            new Date(DAY_ONE.concat("16:55:00 EST")), 
+            new Date(DAY_ONE.concat("18:00:00 EST"))
+        ], "[Panel] Start-ups and Entrepreneurship");
+    // 6:00PM-6:25PM: Welcome to Hack@Brown! Keep H@B Town opened so you don't miss any upcoming announcements!
     TIME_ANNOUNCEMENTS_MAP.set(
         [
             new Date(DAY_ONE.concat("18:25:00 EST")), 
