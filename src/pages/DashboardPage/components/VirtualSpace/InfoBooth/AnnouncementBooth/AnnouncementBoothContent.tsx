@@ -30,12 +30,12 @@ export function getAnnouncementContent() {
         [
             new Date(DAY_ONE.concat("15:55:00 EST")), 
             new Date(DAY_ONE.concat("16:54:59 EST"))
-        ], "[Panel] Diversity & Inclusion");
+        ], "[Panel] Diversity & Inclusion will take place from 4PM to 5PM EST!");
     TIME_ANNOUNCEMENTS_MAP.set(
         [
             new Date(DAY_ONE.concat("16:55:00 EST")), 
             new Date(DAY_ONE.concat("18:00:00 EST"))
-        ], "[Panel] Start-ups and Entrepreneurship");
+        ], "[Panel] Start-ups and Entrepreneurship will take place from 5PM to 6PM EST!");
     // 6:00PM-6:25PM: Welcome to Hack@Brown! Keep H@B Town opened so you don't miss any upcoming announcements!
     TIME_ANNOUNCEMENTS_MAP.set(
         [
