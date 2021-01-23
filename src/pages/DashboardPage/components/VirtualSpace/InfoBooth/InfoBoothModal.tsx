@@ -64,7 +64,7 @@ export default class InfoBoothModal extends React.Component<
                                 <p>14:00 - 15:00</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://us02web.zoom.us/j/83295677717?pwd=U1V4cmZRTnFKWW5JaVNPMUFBeXdEdz09" target="_blank">Google Cloud</a>
+                                <a href="https://us02web.zoom.us/j/83295677717?pwd=U1V4cmZRTnFKWW5JaVNPMUFBeXdEdz09" target="_blank">Rapid Prototyping with Flutter and Firebase</a>
                             </td>
                         </tr>
                         <tr>
@@ -119,7 +119,7 @@ export default class InfoBoothModal extends React.Component<
                                 <p>Tech Talk</p>
                             </td>
                             <td className="links grid-item">
-                                <a href="https://www.twitch.tv/videos/871505809" target="_blank">How to collaborate on code projects with GitHub</a>
+                                <a href="https://www.twitch.tv/videos/871505809" target="_blank">How to Collaborate on Code Projects with GitHub</a>
                             </td>
                         </tr>
                         <tr>
