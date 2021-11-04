@@ -16,6 +16,7 @@ import { FirebaseContextConsumer } from "./components/Firebase/context";
 import Firebase from "./components/Firebase";
 import CodeOfConductPage from "./pages/CodeOfConductPage/CodeOfConductPage";
 import HardwarePage from "./pages/HardwarePage/HardwarePage"
+import AdminPanelHomePage from './pages/AdminPanel/AdminPanelHomePage'
 
 const history = createBrowserHistory();
 
@@ -112,11 +113,18 @@ export default class App extends React.Component<AppProps, AppState> {
                 {/* A <Switch> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
                 <Switch>
+                    <Route path="/admin-panel">
+                        <div className="App">
+                            <AdminPanelHomePage />
+                        </div>
+                    </Route>
+
                     <Route path="/sponsor">
                         <div className="App">
                             <SponsorshipPage />
                         </div>
                     </Route>
+
                     {this.state.user && (
                         <Route path="/registration">
                             <ThemeProvider theme={theme}>
@@ -217,7 +225,7 @@ export default class App extends React.Component<AppProps, AppState> {
                             </div>
                         </div>
                     </Route>
-                    
+
                 </Switch>
             </Router>
         );
