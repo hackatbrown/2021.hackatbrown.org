@@ -1,10 +1,13 @@
 <h1 align="center">
     <!--- <img src="https://2020.hackatbrown.org/static/media/scene_garage_transparent.dee6376d.png" width="500"> --->
     <br>
-    Hack@Brown 2021
+    Hack@Brown 2022
 </h1>
 
-The front-end for the [2021 Hack@Brown website](https://2021.hackatbrown.org/), written in React + TypeScript. For the back-end API, see [hackatbrown/api-2020.hackatbrown.org](https://github.com/hackatbrown/api-2020.hackatbrown.org). 
+<!-- The front-end for the [2021 Hack@Brown website](https://2021.hackatbrown.org/), written in React + TypeScript. For the back-end API, see [hackatbrown/api-2020.hackatbrown.org](https://github.com/hackatbrown/api-2020.hackatbrown.org).  -->
+
+The front-end for the 2022 Hack@Brown website (URL yet to be setup), written in React + TypeScript. For the back-end API, see [hackatbrown/api-2022.hackatbrown.org](https://github.com/hackatbrown/api-2022.hackatbrown.org). 
+
 
 ## New to Development?
 
@@ -81,8 +84,8 @@ The front-end is deployed using [Netlify](https://www.netlify.com/), a convenien
 
 | Branch  |                                    |                                                        |
 |---------|------------------------------------|--------------------------------------------------------|
-| master  | https://2021.hackatbrown.org/      | user-facing site                                       |
-| develop | https://hab2021-dev.netlify.com/   | test production implementation before going live       |
+| master  | TBD                                | user-facing site                                       |
+| develop | TBD                                | test production implementation before going live       |
 <!--- 
 | admin   | https://hab2020-admin.netlify.com/ | administrative tools (contact Dev leads for more info) |
 --->
