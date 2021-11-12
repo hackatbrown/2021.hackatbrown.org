@@ -9,7 +9,7 @@
 The front-end for the 2022 Hack@Brown website (URL yet to be setup), written in React + TypeScript. For the back-end API, see [hackatbrown/api-2022.hackatbrown.org](https://github.com/hackatbrown/api-2022.hackatbrown.org). 
 
 
-## New to Development?
+## New to Development?Hello
 
 We will be using:
 
