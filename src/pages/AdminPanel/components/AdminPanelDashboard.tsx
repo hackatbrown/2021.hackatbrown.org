@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import { UserData } from "./UserDummyData";
 
-export default class AdminPanelDashboard extends React.Component<{},{}>  {
+export default class AdminPanelDashboard extends React.Component<{}, {}> {
   render() {
     return (
       <div>
@@ -10,27 +11,18 @@ export default class AdminPanelDashboard extends React.Component<{},{}>  {
               <th>#</th>
               <th>First Name</th>
               <th>Last Name</th>
-              <th>Username</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td >Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            {UserData.map((item, index) => {
+              return (
+                <tr>
+                  <td>1</td>
+                  <td>{item.email}</td>
+                  <td>{item.signup_date}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
