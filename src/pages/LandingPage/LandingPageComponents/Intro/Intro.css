@@ -13,7 +13,7 @@
     color: white;
     /* background-color: #E26052 */
     background-color: #fc6951
-    /* background-color: #FF6853; */
+        /* background-color: #FF6853; */
 }
 
 .bold {
@@ -21,8 +21,8 @@
 }
 
 #juiceImg {
-  max-width: 120%;
-  min-width: 18rem;
+    max-width: 120%;
+    min-width: 18rem;
 }
 
 .intro-blurb {
@@ -44,7 +44,7 @@
 }
 
 .intro-blurb-header {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 /* fix for "Welcome to After School" */
