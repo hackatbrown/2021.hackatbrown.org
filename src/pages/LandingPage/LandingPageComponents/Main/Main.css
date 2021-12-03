@@ -1,20 +1,19 @@
-html, body {
+html,body{
     overflow-x: hidden;
 }
-
 .main {
     min-height: 100vh;
     align-content: center;
     margin-bottom: 0px;
-    padding-bottom: 100px;
-    background-color: #FDF7DC;
-    background: url("web_animation.mp4");
+    padding-bottom:100px;
+    background-color:#FDF7DC;
+    background:url("web_animation.mp4");
 
 }
 
 @font-face {
-    font-family: Eugusto;
-    src: url("../../../../assets/fonts/Eugusto\ Free\ Font.otf");
+    font-family: Recoleta;
+    src: url("../../../../assets/fonts/Recoleta-Black.ttf");
 }
 
 @font-face {
@@ -30,24 +29,22 @@ html, body {
     font-family: Inter;
     font-weight: bolder;
 }
-
 .videoTag {
     position: absolute;
     top: 0;
     left: 0;
-    margin-top: 65px;
+    margin-top:65px;
     width: 100%;
     height: 100%;
     z-index: -1;
-    object-fit: cover;
+    object-fit: cover; 
 }
-
-.big-text {
-    font-family: Eugusto;
+.big-text{
+    font-family: Recoleta;
     margin: 1rem 10% 1rem 10%;
     font-size: 5rem;
     font-weight: bolder;
-    text-align: left;
+    text-align:left;
 }
 
 .bottom-text {
@@ -58,182 +55,160 @@ html, body {
     font-weight: bolder;
 }
 
-.main {
+.main{
     height: 100vh;
 }
 
-.main-div {
+.main-div{
     padding-top: 10em;
 }
 
-.main-img {
-    height: 60%;
-    width: 60%;
-    margin-top: -450px;
-    margin-left: 480px;
+.main-img{
+    height:60%;
+    width:60%;
+    margin-top:-450px;
+    margin-left:480px;
 }
 
 .static-scene {
     display: None;
 }
 
-.plane-one {
-    height: 28%;
-    width: 28%;
+.plane-one{
+    height:28%;
+    width:28%;
     transform: scaleX(-1);
-    margin-top: -280px;
+    margin-top:-280px;
     position: absolute;
-    margin-left: -720px;
+    margin-left:-720px;
 }
-
-.plane-one-st {
+.plane-one-st{
     display: None;
-    height: 28%;
-    width: 28%;
+    height:28%;
+    width:28%;
     transform: scaleX(-1);
-    margin-left: 10000px;
+    margin-left:10000px;
     position: absolute;
-    margin-top: -490px;
+    margin-top:-490px;
 }
-
-.animated-scene:hover .plane-one {
-    animation: onemove 5s;
+.animated-scene:hover .plane-one{
+    animation: onemove 5s ;
     animation-iteration-count: 1
 }
-
-.animated-scene:hover .plane-two {
-    animation: twomove 5s;
-    animation-delay: 0.3s;
+.animated-scene:hover .plane-two{
+    animation: twomove 5s ;
+    animation-delay:0.3s;
     animation-iteration-count: 1;
 }
-
-.animated-scene:hover .plane-three {
-    animation: threemove 5s;
-    animation-delay: 0.2s;
+.animated-scene:hover .plane-three{
+    animation: threemove 5s ;
+    animation-delay:0.2s;
     animation-iteration-count: 1
 }
-
-.animated-scene:hover .plane-one-st {
+.animated-scene:hover .plane-one-st{
     display: inline;
     animation: oneupmove 5s infinite;
     animation-delay: 1.2s;
     animation-iteration-count: 1
 }
-
-.animated-scene:hover .plane-two-st {
+.animated-scene:hover .plane-two-st{
     display: inline;
     animation: twoupmove 5s infinite;
     animation-delay: 1.3s;
     animation-iteration-count: 1
 }
-
-.animated-scene:hover .plane-three-st {
+.animated-scene:hover .plane-three-st{
     display: inline;
     animation: threeupmove 5s infinite;
-    animation-delay: 1.5s;
+    animation-delay:1.5s;
     animation-iteration-count: 1
 }
 
 
-.plane-two {
-    height: 23%;
-    width: 23%;
+.plane-two{
+    height:23%;
+    width:23%;
     transform: scaleX(-1);
     position: absolute;
-    margin-top: -720px;
-    margin-left: 220px;
+    margin-top:-720px;
+    margin-left:220px;
 }
-
-.plane-two-st {
+.plane-two-st{
     display: None;
-    height: 23%;
-    width: 23%;
+    height:23%;
+    width:23%;
     transform: scaleX(-1);
     position: absolute;
-    margin-left: 10000px;
-    margin-top: -490px;
+    margin-left:10000px;
+    margin-top:-490px;
 }
-
-.plane-three {
-    height: 18%;
-    width: 18%;
-    margin-top: -600px;
+.plane-three{
+    height:18%;
+    width:18%;
+    margin-top:-600px;
     margin-left: 450px;
     position: absolute;
     transform: scaleX(-1);
 }
-
-.plane-three-st {
+.plane-three-st{
     display: None;
-    height: 18%;
-    width: 18%;
+    height:18%;
+    width:18%;
     position: absolute;
     transform: scaleX(-1);
-    margin-left: 700px;
-    margin-top: -520px;
+    margin-left:700px;
+    margin-top:-520px;
 }
 
 @media screen and (max-width: 1200px) {
-    .main {
+    .main{
         height: 100%;
-        background-color: #FDF7DC;
+        background-color:#FDF7DC;
     }
-
-    .videoTag {
+    .videoTag{
         display: none;
     }
-
     .plane-one {
         display: none;
     }
-
-    .plane-two {
+    .plane-two { 
         display: none;
     }
-
     .plane-three {
         display: none;
     }
-
     .plane-one-st {
         display: none;
     }
-
-    .plane-two-st {
+    .plane-two-st { 
         display: none;
     }
-
     .plane-three-st {
         display: none;
     }
-
     .animated-scene {
         display: None;
     }
-
     .main-div {
         padding-top: 1em;
         display: block;
     }
-
     .static-scene {
         margin-top: 3rem;
         display: block;
         width: 100%;
     }
-
     .static-scene img {
         width: 80vw;
     }
-
     .top-text {
         margin: 1rem 10% 2rem;
         padding-top: 5rem;
         font-size: 1.2rem;
     }
 
-    .big-text {
-        font-family: Eugusto;
+    .big-text{
+        font-family: Recoleta;
         margin: 1rem 10% 1rem 10%;
         font-size: 2rem;
     }
@@ -246,83 +221,70 @@ html, body {
 }
 
 @keyframes onemove {
-    0% {
-        margin-left: -720px;
-        margin-top: -280px;
+    0%{
+        margin-left:-720px;
+        margin-top:-280px;
     }
-
-    45% {
-        margin-left: -2000px;
-        margin-top: 50px;
+    45%{
+        margin-left:-2000px;
+        margin-top:50px;
     }
-
-    100% {
-        margin-left: -2200px;
-        margin-top: 70px;
+    100%{
+        margin-left:-2200px;
+        margin-top:70px;
     }
 }
-
-@keyframes twomove {
-    0% {
-        margin-left: 220px;
-        margin-top: -720px
+@keyframes twomove{
+    0%{
+        margin-left:220px;
+        margin-top:-720px
     }
-
-    60% {
-        margin-left: -1100px;
-        margin-top: -280px;
+    60%{
+        margin-left:-1100px;
+        margin-top:-280px;
     }
-
-    100% {
-        margin-left: -1200px;
-        margin-top: -280px;
+    100%{
+        margin-left:-1200px;
+        margin-top:-280px;
     }
 }
-
-@keyframes threemove {
-    0% {
-        margin-left: 450px;
-        margin-top: -600px
+@keyframes threemove{
+    0%{
+        margin-left:450px;
+        margin-top:-600px
     }
-
-    100% {
-        margin-left: -1300px;
-        margin-top: -280px;
+    100%{
+        margin-left:-1300px;
+        margin-top:-280px;
     }
 }
-
-@keyframes oneupmove {
-    0% {
-        margin-left: 650px;
-        margin-top: -490px;
+@keyframes oneupmove{
+    0%{
+        margin-left:650px;
+        margin-top:-490px;
     }
-
-    100% {
-        margin-left: -20px;
-        margin-top: -795px;
+    100%{
+        margin-left:-20px;
+        margin-top:-795px;
     }
 }
-
-@keyframes twoupmove {
-    0% {
-        margin-left: 740px;
-        margin-top: -490px;
+@keyframes twoupmove{
+    0%{
+        margin-left:740px;
+        margin-top:-490px;
     }
-
-    100% {
-        margin-left: 225px;
-        margin-top: -815px;
+    100%{
+        margin-left:225px;
+        margin-top:-815px;
     }
 }
-
-@keyframes threeupmove {
-    0% {
-        margin-left: 700px;
-        margin-top: -520px;
+@keyframes threeupmove{
+    0%{
+        margin-left:700px;
+        margin-top:-520px;
     }
-
-    100% {
-        margin-left: 440px;
-        margin-top: -695px;
+    100%{
+        margin-left:440px;
+        margin-top:-695px;
     }
 }
