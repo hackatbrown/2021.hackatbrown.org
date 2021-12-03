@@ -2,7 +2,7 @@
     align-content: center;
     text-align: left;
     color: #444444;
-    background-color: #FDF7DC;
+    background-color: var(--green2);
 }
 
 .sponsors-section {
@@ -15,10 +15,10 @@
 }
 
 .sponsors-heading h1 {
-	font-family: Recoleta;
-	font-style: normal;
-	font-weight: bold;
-	color: #444444;
+    font-family: Recoleta;
+    font-style: normal;
+    font-weight: bold;
+    color: #444444;
 }
 
 .partnership {
@@ -26,21 +26,21 @@
 }
 
 .sponsors-text {
-	font-family: Inter;
-	font-style: normal;
-	font-weight: 100;
-	margin: 0rem 12% 0rem 12%;
-	padding: 1rem 0 3rem 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 100;
+    margin: 0rem 12% 0rem 12%;
+    padding: 1rem 0 3rem 0;
 }
 
 .sponsors-text a {
     color: #444444;
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .sponsors-text a:hover {
     color: #444444;
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .sponsors-items {
@@ -52,10 +52,10 @@
 
 
 .sponsors-name {
-	font-family: Inter;
-	font-style: normal;
-	font-weight: bold;
-	margin: 2rem 0 1rem 0;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    margin: 2rem 0 1rem 0;
 }
 
 /* .sponsors-peta {
@@ -131,10 +131,12 @@
     .sponsors-mega {
         max-width: initial;
     }
+
     .sponsors-mega .sponsors-img {
         display: flex;
         flex-direction: row;
     }
+
     /* .sponsors-kilo {
         margin-left: 1em;
     } */
@@ -190,12 +192,13 @@
 
     .sponsors-name {
         font-size: 1.5rem;
-        margin: 0.5rem 0 ;
+        margin: 0.5rem 0;
     }
 
     .sponsors-section {
         margin: 0 auto;
     }
+
     .sponsors-text {
         font-size: 1rem;
         padding: 2rem 2rem;

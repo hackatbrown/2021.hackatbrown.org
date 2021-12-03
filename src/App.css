@@ -1,3 +1,13 @@
+:root {
+    --red1: #FAC3B1;
+    --red2: #FA6E6D;
+    --red3: #AC2153;
+    --green1: #759036;
+    --green2: #D7E484;
+    --blue1: #B9D8EE;
+}
+
+
 @font-face {
     font-family: "Eugusto";
     src: url("assets/fonts/Eugusto\ Free\ Font.otf");
