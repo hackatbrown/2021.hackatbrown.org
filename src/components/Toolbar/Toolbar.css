@@ -4,23 +4,18 @@
     top: 0;
     width: 100%;
 }
-
 .main-toolbar .toolbar {
-    background-color: var(--green2);
+    background-color: #FDF7DC;
 }
-
 .dashboard-toolbar .toolbar {
     background-color: transparent;
 }
-
 .toolbar a:hover {
     text-decoration: none;
 }
-
 .navBarExtended {
     padding: 1000px;
 }
-
 #logo-img {
     display: flex;
     align-content: flex-start;
@@ -136,7 +131,7 @@
     #mlh-img {
         display: none !important;
     }
-
+    
     .toolbar nav {
         padding-left: 0vw !important;
         padding-right: 0vw !important;
@@ -174,25 +169,20 @@
     }
 
     .main-toolbar .tool-bar-container .col:nth-of-type(1) {
-        background-color: rgba(237, 105, 91, 1);
+        background-color:rgba(237, 105, 91, 1);
     }
-
-    /* .main-toolbar .tool-bar-container .col:nth-of-type(2) {
+    .main-toolbar .tool-bar-container .col:nth-of-type(2) {
         background-color: rgba(70, 181, 184, 1);
-    } */
-
-    /* .main-toolbar .tool-bar-container .col:nth-of-type(3) {
+    }
+    .main-toolbar .tool-bar-container .col:nth-of-type(3) {
         background-color: #AEEBFC;
     }
-
     .main-toolbar .tool-bar-container .col:nth-of-type(4) {
         background-color: rgba(70, 181, 184, 1);
     }
-
     .main-toolbar .tool-bar-container .col:nth-of-type(5) {
         background-color: rgba(253, 247, 220, 1);
-    } */
-
+    }
     .main-toolbar .tool-bar-container .sign-in-col {
         display: none !important;
     }

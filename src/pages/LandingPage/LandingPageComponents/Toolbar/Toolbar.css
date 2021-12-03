@@ -5,7 +5,7 @@
     width: 100%;
     padding: 3vh 2rem 2vh 2rem;
     color: white;
-    background-color: var(--green2);
+    background-color: rgba(234, 142, 99, 0.9);
 }
 
 #logo-img {
@@ -46,7 +46,6 @@
 
 .toolbar-signin:hover {
     color: teal;
-    border: 1px solid rgb(0, 146, 141);
-    ;
+    border: 1px solid rgb(0, 146, 141);;
     cursor: pointer;
 }
