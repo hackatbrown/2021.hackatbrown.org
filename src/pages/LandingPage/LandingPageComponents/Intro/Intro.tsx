@@ -3,7 +3,7 @@ import "./Intro.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import plantImg from "../../../../assets/images/LandingPage/plant.png";
+import juiceImg from "../../../../assets/images/LandingPage/JuiceBattery.gif";
 
 type IntroProps = {};
 
@@ -37,7 +37,7 @@ export default class Intro extends React.Component<IntroProps, IntroState> {
                                 or hacking with an Oculus Rift, Hack@Brown is for individuals of
                                 all backgrounds.
                                 <br/><br/>
-                                This year, our theme is <span className='bold'>"Greenhouse." </span>
+                                This year, our theme is <span className='bold'>"After School." </span>
                                 Take inspiration from your passions and experiment with your wildest ideas.
                                 Build away!
                             </p>
@@ -45,7 +45,7 @@ export default class Intro extends React.Component<IntroProps, IntroState> {
                         </Col>
                         <Col sm={6} className="col-md-6 order-md-2">
                             <div className="juice">
-                                <img id="juiceImg" src={plantImg}></img>
+                                <img id="juiceImg" src={juiceImg}></img>
                             </div>
                         </Col>
                         <Col sm={1} className="col-md-1 order-md-2"></Col>
