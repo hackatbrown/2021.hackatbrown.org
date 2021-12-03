@@ -59,9 +59,9 @@ export default class LandingPage extends React.Component<
                 <div id="faq">
                     <FAQ />
                 </div>
-                <div id="virtualSpace">
+                {/* <div id="virtualSpace">
                     <VirtualSpace apiURL={this.props.apiURL} hideToolbar={this.hideToolbar} />
-                </div>
+                </div> */}
                 <div id="sponsors">
                     <Sponsors />
                 </div>

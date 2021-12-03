@@ -1,5 +1,5 @@
 .footer {
-    background-color: #211959;
+    background-color: var(--blue1);
     color: white;
     text-align: left;
     padding: 2rem 10% 1rem 10%;

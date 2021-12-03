@@ -1,7 +1,7 @@
 .faq {
     min-height: 100vh;
     /* background-color: #ff4d4d; */
-    background-color: #AEEBFC;
+    background-color: var(--red3);
     padding: 5rem 0;
     text-align: left;
 }
@@ -25,27 +25,29 @@
 }
 
 #video {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
-#hello-email{
+#hello-email {
     color: #444444;
     text-decoration: none !important;
 }
 
-#sponsor-email{
+#sponsor-email {
     color: #444444 !important;
     text-decoration: none !important;
 }
 
 @media screen and (max-width: 575px) {
     #video {
-        width:100%;
+        width: 100%;
     }
+
     .faq {
         padding: 8%;
     }
+
     .faq-subtitle {
         font-size: 1rem !important;
     }

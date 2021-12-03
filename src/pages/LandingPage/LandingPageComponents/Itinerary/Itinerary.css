@@ -9,7 +9,7 @@
     color: white;
     text-align: left;
     /* background-color: #46B5B8; */
-    background-color: #49c2c3;
+    background-color: var(--red2);
 }
 
 .coming-soon {
@@ -32,8 +32,9 @@
 
 @media screen and (max-width: 900px) {
     .video {
-        width:100%;
+        width: 100%;
     }
+
     .itinerary {
         padding: 8% 8%;
     }
